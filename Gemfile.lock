@@ -40,6 +40,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    airbrussh (1.3.0)
+      sshkit (>= 1.6.1, != 1.7.0)
     arel (8.0.0)
     autoprefixer-rails (9.1.4)
       execjs
@@ -60,6 +62,24 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (10.0.2)
+    capistrano (3.11.0)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.3.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-ext (1.2.1)
+      capistrano (>= 1.0.0)
+    capistrano-passenger (0.2.0)
+      capistrano (~> 3.0)
+    capistrano-rails (1.4.0)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-sidekiq (0.20.0)
+      capistrano (>= 3.9.0)
+      sidekiq (>= 3.4)
     capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -77,6 +97,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.2)
     crass (1.0.4)
     deprecation (1.0.0)
       activesupport
@@ -88,6 +109,10 @@ GEM
       warden (~> 1.2.3)
     devise-guests (0.6.1)
       devise
+    dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
     erubi (1.7.1)
     execjs (2.7.0)
     faraday (0.15.2)
@@ -131,13 +156,19 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     multipart-post (2.0.0)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (5.0.2)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
+    pg (0.21.0)
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.5)
+    rack-protection (2.0.4)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.1.6)
@@ -167,6 +198,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redis (4.0.2)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -191,6 +223,10 @@ GEM
     selenium-webdriver (3.14.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
+    sidekiq (5.2.2)
+      connection_pool (~> 2.2, >= 2.2.2)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.5, < 5)
     solr_wrapper (2.0.0)
       faraday
       retriable
@@ -209,6 +245,9 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
+    sshkit (1.17.0)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -242,18 +281,27 @@ PLATFORMS
 DEPENDENCIES
   blacklight (>= 6.1)
   byebug
+  capistrano
+  capistrano-bundler (~> 1.3)
+  capistrano-ext
+  capistrano-passenger
+  capistrano-rails
+  capistrano-sidekiq (~> 0.20.0)
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
   devise-guests (~> 0.6)
+  dotenv-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  pg
   puma (~> 3.7)
   rails (~> 5.1.6)
   rsolr (>= 1.0)
   sass-rails (~> 5.0)
   selenium-webdriver
+  sidekiq
   solr_wrapper (>= 0.3)
   spring
   spring-watcher-listen (~> 2.0.0)
