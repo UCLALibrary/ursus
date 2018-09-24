@@ -7,9 +7,25 @@ set :repo_url, "https://github.com/UCLALibrary/ursus.git"
 
 set :deploy_to, '/opt/ursus'
 
+if ENV['VIA_JUMP'] == "yes"
+  require 'net/ssh/proxy/command'
+
+  # Define the hostanme of the server to tunnel through
+  jump_host = ENV['JUMP_HOST'] || 'jump.library.ucla.edu'
+
+  # Define the port number of the jump host
+  jump_port = ENV['JUMP_PORT'] || '31926'
+
+  # Define the username for tunneling
+  jump_user = ENV['JUMP_USER'] || ENV['USER']
+
+  # Configure Capistrano to use the jump host as a proxy
+  ssh_command = "ssh -p #{jump_port} #{jump_user}@#{jump_host} -W %h:%p"
+  set :ssh_options, proxy: Net::SSH::Proxy::Command.new(ssh_command)
+end
+
 set :log_level, :debug
 set :bundle_flags, '--deployment'
-set :bundle_env_variables, nokogiri_use_system_libraries: 1
 
 set :keep_releases, 5
 set :assets_prefix, "#{shared_path}/public/assets"
@@ -47,4 +63,15 @@ namespace :sidekiq do
      execute :sudo, :systemctl, :restart, :sidekiq
    end
  end
+end
+
+# Capistrano passenger restart isn't working consistently,
+# so restart apache2 after a successful deploy, to ensure
+# changes are picked up.
+namespace :deploy do
+  after :finishing, :restart_apache do
+    on roles(:app) do
+      execute :sudo, :systemctl, :restart, :httpd
+    end
+  end
 end
