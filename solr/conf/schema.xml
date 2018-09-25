@@ -600,6 +600,23 @@
    <copyField source="*_t" dest="suggest"/>
    <copyField source="*_facet" dest="suggest"/>
 
+
+   <!-- Wildcards used by Samvera/ActiveFedora -->
+   <copyField source="*_dtsi"  dest="*_dt" />
+   <copyField source="*_teim"  dest="*_t"  />
+   <copyField source="*_si"    dest="*_t"  />
+   <copyField source="*_sim"   dest="*_t"  />
+   <copyField source="*_ssi"   dest="*_t"  />
+   <copyField source="*_ssim"  dest="*_t"  />
+   <copyField source="*_dtsi"  dest="*_t"  />
+   <copyField source="*_dtsim" dest="*_t"  />
+   <copyField source="*_ssm"   dest="*_display" />
+   <copyField source="*_ssi"   dest="*_display" />
+   <copyField source="*_ssim"  dest="*_display" />
+   <copyField source="*_dtsi"  dest="*_display" />
+   <copyField source="*_dtsim" dest="*_display" />
+
+
    <!-- Above, multiple source fields are copied to the [text] field.
 	  Another way to map multiple source fields to the same
 	  destination field is to use the dynamic field syntax.
