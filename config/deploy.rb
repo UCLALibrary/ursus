@@ -6,6 +6,7 @@ set :application, "ursus"
 set :repo_url, "https://github.com/UCLALibrary/ursus.git"
 
 set :deploy_to, '/opt/ursus'
+set :rails_env, 'production'
 
 if ENV['VIA_JUMP'] == "yes"
   require 'net/ssh/proxy/command'
@@ -27,18 +28,22 @@ end
 set :log_level, :debug
 set :bundle_flags, '--deployment'
 
+set :default_env, 'PASSENGER_INSTANCE_REGISTRY_DIR' => '/var/run'
+
 set :keep_releases, 5
 set :assets_prefix, "#{shared_path}/public/assets"
 
 SSHKit.config.command_map[:rake] = 'bundle exec rake'
 
-set :branch, ENV['REVISION'] || ENV['BRANCH_NAME'] || 'master'
+set :branch, ENV['REVISION'] || ENV['BRANCH'] || ENV['BRANCH_NAME'] || 'master'
 
 append :linked_dirs, "log"
 append :linked_dirs, "public/assets"
+append :linked_dirs, "tmp/pids"
+append :linked_dirs, "tmp/cache"
+append :linked_dirs, "tmp/sockets"
 
 append :linked_files, ".env.production"
-append :linked_files, "config/database.yml"
 append :linked_files, "config/secrets.yml"
 
 # We have to re-define capistrano-sidekiq's tasks to work with
