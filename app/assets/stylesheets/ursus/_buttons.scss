@@ -1,0 +1,12 @@
+@import 'colors';
+
+.btn-primary {
+  background-color: $ucla-secondary-blue-light !important;
+  border-color: $ucla-secondary-blue-light !important;
+}
+
+.btn-primary:hover {
+  background-color: $ucla-tertiary-yellow !important;
+  color: $ucla-secondary-blue-dark !important;
+  border-color: $ucla-tertiary-yellow !important;
+}
