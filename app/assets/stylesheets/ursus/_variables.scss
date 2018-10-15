@@ -1,0 +1,10 @@
+@import 'colors';
+
+//== Typography
+$system-font-stack: -apple-system,BlinkMacSystemFont,"Segoe UI",Cantarell,Roboto,Oxygen-Sans,Ubuntu,"Helvetica Neue",sans-serif;
+// See: http://brand.ucla.edu/brand/digital/typography/
+$font-family-sans-serif: "ProximaNova-Regular", "Verdana", $system-font-stack;
+
+//== Links
+$link-color: $ucla-link;
+$link-hover-color: $ucla-link-hover;
