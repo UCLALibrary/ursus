@@ -20,5 +20,5 @@ Requirements:
 1. Create an `ursus` database user, `urus_development` and `ursus_test` database and grant that user 
    all permissions to the ursus databases. 
 1. Run `rails db:migrate`
-1. Edit the `config/solr.yml` to point to a Californica solr index or another index 
+1. Edit the `config/blacklight.yml` to point to a Californica solr index or another index 
 1. Run `rails s`
