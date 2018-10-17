@@ -9,6 +9,12 @@
   .nav-item-dlp {
     font-size: 125%;
   }
+  
+  .navbar-nav {
+    .nav-link:hover{
+      color: $ucla-gold;
+    }
+  }
 }
 
 .navbar-brand {
