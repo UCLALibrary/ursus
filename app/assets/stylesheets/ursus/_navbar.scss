@@ -1,5 +1,22 @@
 @import 'colors';
 
+.navbar-header {
+  .nav-item-uclalibrary {
+    font-size: 150%;
+    font-weight: 450;
+  }
+
+  .nav-item-dlp {
+    font-size: 125%;
+  }
+  
+  .navbar-nav {
+    .nav-link:hover{
+      color: $ucla-gold;
+    }
+  }
+}
+
 .navbar-brand {
   margin-top: 1em;
   margin-left: 0 !important;
