@@ -1,5 +1,14 @@
-@import 'colors';
+.facet-values .facet-label {
+  display: block;
+  text-indent: 0;
+  padding-left: 0;
+  padding-bottom: 6px;
+  overflow-wrap: unset;
+  -webkit-hyphens: unset;
+  -o-hyphens: unset;
+  hyphens: unset;
+}
 
 .facet-values {
-  display: inline-flex;
+  display: block;
 }
