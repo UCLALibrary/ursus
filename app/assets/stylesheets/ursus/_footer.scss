@@ -1,11 +1,40 @@
 .footer {
   background-color: $ucla-secondary-blue-dark;
-  height: 100px;
+  // height: 100px;
+  color: snow;
+
+  a {
+    color: snow;
+  }
+
+  a:hover {
+    color: $ucla-gold;
+    text-decoration: none;
+  }
+
+  .footer-links {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.09);
+    border-bottom: .2px solid #1B3F8B;
+    margin: 10px;
+  }
+
+  .footer-version {
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 }
 
-.version {
-  color: snow;
-  float: right;
-  margin: 1em;
-  margin-top: 2em;
-}
+// .version {
+//   float: right;
+//   margin: 1em;
+//   margin-top: 2em;
+// }
