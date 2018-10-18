@@ -126,10 +126,9 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('extent', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('funding_note', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('latitude', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name("geographic_coordinates", :symbol), label: 'Geographic Coordinates'
     config.add_show_field ::Solrizer.solr_name('location', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('local_identifier', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('longitude', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('medium', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('named_subject', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('normalized_date', :stored_searchable)
