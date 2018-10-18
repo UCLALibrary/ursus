@@ -1,3 +1,5 @@
+@import 'colors';
+
 .footer {
   background-color: $ucla-secondary-blue-dark;
   // height: 100px;
@@ -8,14 +10,13 @@
   }
 
   a:hover {
-    color: $ucla-gold;
+    color: $ucla-tertiary-yellow;
     text-decoration: none;
   }
 
   .footer-links {
     padding-top: 15px;
     text-align: center;
-    font-size: 12px;
   }
 
   hr {

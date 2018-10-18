@@ -5,3 +5,11 @@
   margin-left: 0 !important;
   background: transparent image_url('logo.svg') no-repeat top left !important;
 }
+
+.nav-link:hover {
+  color: $ucla-tertiary-yellow !important;
+}
+
+.navbar-right {
+  margin-top:10px;
+}
