@@ -88,4 +88,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.user_account_ui_enabled = ENV['USER_ACCOUNT_UI_ENABLED'] || 'false'
 end

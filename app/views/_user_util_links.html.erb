@@ -1,4 +1,28 @@
 <ul class="navbar-nav navbar-right nav">
   <li class="nav-item"><a class="nav-link" href="http://www.library.ucla.edu">UCLA Library</a></li>
-  <li class="nav-item"><a class="nav-link" href="http://digital2.library.ucla.edus">UCLA Library Digital Collections</a></li>
+  <li class="nav-item"><a class="nav-link" href="http://digital2.library.ucla.edu">UCLA Library Digital Collections</a></li>
+
+  <%# This is the string 'true' or 'false' not the bool because it can be used with dotenv %>
+  <% if config.user_account_ui_enabled == 'true' %>
+    <%= render_nav_actions do |config, action|%>
+      <li class="nav-item"><%= action %></li>
+    <% end %>
+
+    <% if has_user_authentication_provider? %>
+      <% if current_user %>
+        <li class="nav-item">
+          <%= link_to t('blacklight.header_links.logout'), destroy_user_session_path, class: 'nav-link' %>
+        </li>
+        <% unless current_user.to_s.blank? -%>
+          <li class="nav-item">
+            <%= link_to current_user, edit_user_registration_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to t('blacklight.header_links.login'), new_user_session_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+    <% end %>
 </ul>
+  <% end %>
