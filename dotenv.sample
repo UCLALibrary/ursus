@@ -15,6 +15,9 @@ DATABASE_MIN_MESSAGES=warning
 RAILS_SERVE_STATIC_FILES=true
 RAILS_HOST=localhost
 
+
 # The solr for the Californica environment that this Ursus environment will use as its data source
 SOLR_URL=http://127.0.0.1:8983/solr/californica
 
+# Controls whether or not the login and bookmarks UI show up
+USER_ACCOUNT_UI_ENABLED=false
