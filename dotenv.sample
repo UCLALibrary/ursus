@@ -14,8 +14,7 @@ DATABASE_POOL=25
 DATABASE_MIN_MESSAGES=warning
 RAILS_SERVE_STATIC_FILES=true
 RAILS_HOST=localhost
-REDIS_HOST=localhost
-REDIS_PORT=6379
-REDIS_CABLE_DB=1
-SIDEKIQ_WORKERS=7
-SOLR_URL=http://127.0.0.1:8983/solr/ursus
+
+# The solr for the Californica environment that this Ursus environment will use as its data source
+SOLR_URL=http://127.0.0.1:8983/solr/californica
+
