@@ -20,7 +20,7 @@ en:
           repository_tesim: 'Repository'
           rights_country: 'Rights (country of creation)'
           rights_holder_tesim: 'Rights Holder'
-          subject_tesim: 'Subject'
+          subject_tesim: 'Subjects'
           title_tesim: 'Title'
         index:
           date_created_tesim: 'Date Created'
@@ -39,7 +39,7 @@ en:
           repository_tesim: 'Repository'
           rights_country: 'Rights (country of creation)'
           rights_holder_tesim: 'Rights Holder'
-          subject_tesim: 'Subject'
+          subject_tesim: 'Subjects'
           title_tesim: 'Title'
         show:
           date_created_tesim: 'Date Created'
@@ -58,5 +58,5 @@ en:
           repository_tesim: 'Repository'
           rights_country: 'Rights (country of creation)'
           rights_holder_tesim: 'Rights Holder'
-          subject_tesim: 'Subject'
+          subject_tesim: 'Subjects'
           title_tesim: 'Title'
