@@ -3,7 +3,7 @@
   <li class="nav-item"><a class="nav-link" href="http://digital2.library.ucla.edu">UCLA Library Digital Collections</a></li>
 
   <%# This is the string 'true' or 'false' not the bool because it can be used with dotenv %>
-  <% if config.user_account_ui_enabled == 'true' %>
+  <% if Rails.application.config.user_account_ui_enabled == 'true' %>
     <%= render_nav_actions do |config, action|%>
       <li class="nav-item"><%= action %></li>
     <% end %>
