@@ -2,13 +2,17 @@ language: ruby
 cache: bundler
 dist: trusty
 sudo: false
-
 jdk:
-- oraclejdk8
-
+  - oraclejdk8
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS ursus_test;'
+env:
+  - DATABASE_USERNAME=travis
 rvm:
   - 2.5.1
 script:
   - bundle exec rake spec
 notifications:
   email: false
+services:
+  - mysql2
