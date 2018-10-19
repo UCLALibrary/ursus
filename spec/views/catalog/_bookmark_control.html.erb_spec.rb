@@ -15,13 +15,13 @@ RSpec.describe 'catalog/_bookmark_control.html.erb' do
   end
 
   it 'does not display if turned off' do
-    Rails.application.config.user_account_ui_enabled = 'false'
+    allow(Rails.application.config).to receive(:user_account_ui_enabled).and_return('false')
     render
     expect(rendered).to eq('')
   end
 
   it 'displays if it is turned on' do
-    Rails.application.config.user_account_ui_enabled = 'true'
+    allow(Rails.application.config).to receive(:user_account_ui_enabled).and_return('true')
     render
     expect(rendered).to match(/bookmark-toggle/)
   end
