@@ -86,7 +86,7 @@ class CatalogController < ApplicationController
 
     config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description'
     config.add_index_field ::Solrizer.solr_name('keyword', :stored_searchable), itemprop: 'keywords', link_to_search: ::Solrizer.solr_name('keyword', :facetable)
-    config.add_index_field ::Solrizer.solr_name('subject', :stored_searchable), itemprop: 'about', link_to_search: ::Solrizer.solr_name('subject', :facetable)
+    config.add_index_field ::Solrizer.solr_name('subject', :stored_searchable), itemprop: 'about', helper_method: :values_with_line_breaks
     config.add_index_field ::Solrizer.solr_name('creator', :stored_searchable), itemprop: 'creator', link_to_search: ::Solrizer.solr_name('creator', :facetable)
     config.add_index_field ::Solrizer.solr_name('contributor', :stored_searchable), itemprop: 'contributor', link_to_search: ::Solrizer.solr_name('contributor', :facetable)
     config.add_index_field ::Solrizer.solr_name('publisher', :stored_searchable), itemprop: 'publisher', link_to_search: ::Solrizer.solr_name('publisher', :facetable)
@@ -102,11 +102,11 @@ class CatalogController < ApplicationController
     config.add_index_field ::Solrizer.solr_name('identifier', :stored_searchable)
 
     # solr fields to be displayed in the show (single result) view
-    #   The ordering of the field names is the order of the display
+    # The ordering of the field names is the order of the display
     config.add_show_field ::Solrizer.solr_name('title', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('description', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('keyword', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('subject', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('subject', :stored_searchable), helper_method: :values_with_line_breaks
     config.add_show_field ::Solrizer.solr_name('creator', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('contributor', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('publisher', :stored_searchable)
