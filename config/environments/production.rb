@@ -90,4 +90,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.user_account_ui_enabled = ENV['USER_ACCOUNT_UI_ENABLED'] || 'false'
+  config.thumbnail_url = ENV['THUMBNAIL_BASE_URL'] || ''
 end

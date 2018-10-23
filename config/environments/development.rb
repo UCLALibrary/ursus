@@ -53,4 +53,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.user_account_ui_enabled = ENV['USER_ACCOUNT_UI_ENABLED'] || 'false'
+  config.thumbnail_url = ENV['THUMBNAIL_BASE_URL'] || ''
 end
