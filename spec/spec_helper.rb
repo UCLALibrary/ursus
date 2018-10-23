@@ -1,9 +1,10 @@
 # frozen_string_literal: true
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 # Has been customized by Blacklight to work when application is in one place,
 # and actual spec/ stuff is in another (the blacklight gem checkout).
 
-ENV["RAILS_ENV"] ||= 'test'
+ENV['RAILS_ENV'] ||= 'test'
 
 require 'rsolr'
 require 'blacklight'
@@ -12,6 +13,11 @@ require 'rspec/collection_matchers'
 require 'capybara/rspec'
 require 'selenium-webdriver'
 require 'equivalent-xml'
+
+if ENV['TRAVIS'] == 'true'
+  require 'coveralls'
+  Coveralls.wear!('rails')
+end
 
 Capybara.javascript_driver = :headless_chrome
 

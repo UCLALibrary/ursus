@@ -69,6 +69,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'blacklight', ">= 6.1"
+gem 'coveralls', require: false
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
 gem 'jquery-rails'
