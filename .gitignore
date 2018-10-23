@@ -9,6 +9,8 @@
 .env.test
 .env.production
 
+spec/examples.txt
+
 # Ignore bundler config.
 /.bundle
 
