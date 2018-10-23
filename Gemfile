@@ -62,6 +62,7 @@ group :development do
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-sidekiq', '~> 0.20.0'
+  gem 'xray-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
