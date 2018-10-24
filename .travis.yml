@@ -1,5 +1,8 @@
 language: ruby
-cache: bundler
+cache:
+  bundler: true
+  directories:
+    - tmp/solr_downloads
 dist: trusty
 sudo: false
 jdk:
@@ -7,11 +10,12 @@ jdk:
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS ursus_test;'
 env:
-  - DATABASE_USERNAME=travis
+  global:
+    - DATABASE_USERNAME=travis
 rvm:
   - 2.5.1
 script:
-  - bundle exec rake spec
+  - bundle exec rake ci
 notifications:
   email: false
 services:
