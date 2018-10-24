@@ -85,21 +85,8 @@ class CatalogController < ApplicationController
     #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
     config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description'
-    config.add_index_field ::Solrizer.solr_name('keyword', :stored_searchable), itemprop: 'keywords', link_to_search: ::Solrizer.solr_name('keyword', :facetable)
-    config.add_index_field ::Solrizer.solr_name('subject', :stored_searchable), itemprop: 'about', helper_method: :values_with_line_breaks
-    config.add_index_field ::Solrizer.solr_name('creator', :stored_searchable), itemprop: 'creator', link_to_search: ::Solrizer.solr_name('creator', :facetable)
-    config.add_index_field ::Solrizer.solr_name('contributor', :stored_searchable), itemprop: 'contributor', link_to_search: ::Solrizer.solr_name('contributor', :facetable)
-    config.add_index_field ::Solrizer.solr_name('publisher', :stored_searchable), itemprop: 'publisher', link_to_search: ::Solrizer.solr_name('publisher', :facetable)
-    config.add_index_field ::Solrizer.solr_name('based_near_label', :stored_searchable), itemprop: 'contentLocation', link_to_search: ::Solrizer.solr_name('based_near_label', :facetable)
-    config.add_index_field ::Solrizer.solr_name('language', :stored_searchable), itemprop: 'inLanguage', link_to_search: ::Solrizer.solr_name('language', :facetable)
-    config.add_index_field ::Solrizer.solr_name('date_uploaded', :stored_sortable, type: :date), itemprop: 'datePublished'
-    config.add_index_field ::Solrizer.solr_name('date_modified', :stored_sortable, type: :date), itemprop: 'dateModified'
     config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated'
-    config.add_index_field ::Solrizer.solr_name('rights_statement', :stored_searchable)
-    config.add_index_field ::Solrizer.solr_name('license', :stored_searchable)
     config.add_index_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_search: ::Solrizer.solr_name('resource_type', :facetable)
-    config.add_index_field ::Solrizer.solr_name('file_format', :stored_searchable), link_to_search: ::Solrizer.solr_name('file_format', :facetable)
-    config.add_index_field ::Solrizer.solr_name('identifier', :stored_searchable)
 
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
