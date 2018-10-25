@@ -1,0 +1,8 @@
+port: 8985
+instance_dir: tmp/solr-test
+download_dir: tmp/solr_downloads
+verbose: true
+collection:
+  persist: true
+  dir: solr/conf
+  name: hydra-test

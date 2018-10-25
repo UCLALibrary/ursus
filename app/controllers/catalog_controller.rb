@@ -113,7 +113,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('extent', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('funding_note', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name("geographic_coordinates", :symbol), label: 'Geographic Coordinates'
+    config.add_show_field ::Solrizer.solr_name("geographic_coordinates", :symbol)
     config.add_show_field ::Solrizer.solr_name('location', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('local_identifier', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('medium', :stored_searchable)
@@ -122,6 +122,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('repository', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_country', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_holder', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('photographer', :stored_searchable)
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
