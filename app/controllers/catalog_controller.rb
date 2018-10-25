@@ -102,7 +102,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('date_uploaded', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('date_modified', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('date_created', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('rights_statement', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('human_readable_rights_statement', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('license', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type'
     config.add_show_field ::Solrizer.solr_name('format', :stored_searchable)

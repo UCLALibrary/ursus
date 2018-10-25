@@ -39,7 +39,7 @@ en:
           repository_tesim: 'Repository'
           rights_country_tesim: 'Rights (country of creation)'
           rights_holder_tesim: 'Rights Holder'
-          rights_statement_tesim: 'Copyright Status'
+          human_readable_rights_statement_tesim: 'Copyright Status'
           subject_tesim: 'Subjects'
           title_tesim: 'Title'
         show:
@@ -67,6 +67,6 @@ en:
           repository_tesim: 'Repository'
           rights_country_tesim: 'Rights (country of creation)'
           rights_holder_tesim: 'Rights Holder'
-          rights_statement_tesim: 'Copyright Status'
+          human_readable_rights_statement_tesim: 'Copyright Status'
           subject_tesim: 'Subjects'
           title_tesim: 'Title'

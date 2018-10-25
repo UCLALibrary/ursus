@@ -18,7 +18,7 @@ RSpec.feature "View a Work" do
       identifier_tesim: ['ark 123'],
       subject_tesim: ['Subj 1', 'Subj 2'],
       resource_type_tesim: ['still image'],
-      rights_statement_tesim: ['http://rightsstatements.org/vocab/InC/1.0/'],
+      human_readable_rights_statement_tesim: ['copyrighted'],
       genre_tesim: ['news photographs'],
       named_subject_tesim: ["Los Angeles County (Calif.). $b Board of Supervisors"],
       repository_tesim: ['University of California, Los Angeles. Library. Department of Special Collections'],
@@ -47,7 +47,7 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Subjects: Subj 1'
     expect(page).to have_content 'Subj 2'
     expect(page).to have_content 'Resource Type: still image'
-    expect(page).to have_content 'Copyright Status: http://rightsstatements.org/vocab/InC/1.0/'
+    expect(page).to have_content 'Copyright Status: copyrighted'
     expect(page).to have_content 'Genre: news photographs'
     expect(page).to have_content 'Name (subject): Los Angeles County (Calif.). $b Board of Supervisors'
     expect(page).to have_content 'Repository: University of California, Los Angeles. Library. Department of Special Collections'
