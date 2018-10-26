@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 require 'rails_helper'
-include Warden::Test::Helpers
 
 RSpec.feature 'The facet sidebar', :clean, js: false do
   it 'displays expected facet labels' do
