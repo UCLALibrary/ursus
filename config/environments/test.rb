@@ -41,4 +41,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.user_account_ui_enabled = ENV['USER_ACCOUNT_UI_ENABLED'] || 'false'
   config.thumbnail_url = ENV['THUMBNAIL_BASE_URL'] || ''
+  config.iiif_url = ENV['IIIF_URL'] || ''
 end
