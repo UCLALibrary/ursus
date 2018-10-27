@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Search the catalog' do
@@ -29,12 +30,6 @@ RSpec.feature 'Search the catalog' do
 
   scenario 'get correct search results' do
     visit root_path
-
-    within '#documents' do
-      expect(page).to have_link('Orange Carrot')
-      expect(page).to have_link('Yellow Banana')
-    end
-
     # Search for something
     fill_in 'q', with: 'carrot'
     click_on 'search'
