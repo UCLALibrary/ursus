@@ -56,7 +56,7 @@ class CatalogController < ApplicationController
     config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('genre', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('named_subject', :facetable), limit: 5
-    config.add_facet_field ::Solrizer.solr_name('location', :stored_searchable), limit: 5
+    config.add_facet_field ::Solrizer.solr_name('location', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('normalized_date', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('medium', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('dimensions', :facetable), limit: 5
