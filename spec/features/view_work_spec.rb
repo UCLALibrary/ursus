@@ -66,4 +66,15 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Language: No linguistic content'
     expect(page).to have_content 'Photographer: Poalillo, Charles'
   end
+  scenario 'only displays the tools we want to support' do
+    visit solr_document_path(id)
+
+    # we DO want the tools panel
+    expect(page).to have_content 'Tools'
+
+    # we DO NOT want the SMS This link
+    expect(page).to_not have_content 'SMS This'
+    
+  end
+
 end
