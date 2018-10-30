@@ -6,6 +6,7 @@ RSpec.feature "View a Work" do
     solr = Blacklight.default_index.connection
     solr.add(work_attributes)
     solr.commit
+    allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
   end
 
   let(:id) { '123' }
@@ -74,7 +75,10 @@ RSpec.feature "View a Work" do
 
     # we DO NOT want the SMS This link
     expect(page).to_not have_content 'SMS This'
-    
   end
 
+  scenario 'loads UV on the page with correct IIIF URI' do
+    visit solr_document_path(id)
+    expect(page.html).to match(/iiifResourceUri: \'https:\/\/example.com\/123\/manifest/)
+  end
 end
