@@ -48,6 +48,7 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Subjects: Subj 1'
     expect(page).to have_content 'Subj 2'
     expect(page).to have_content 'Resource Type: still image'
+    expect(page).to have_link    'still image'
     expect(page).to have_content 'Copyright Status: copyrighted'
     expect(page).to have_content 'Genre: news photographs'
     expect(page).to have_content 'Name (subject): Los Angeles County (Calif.). $b Board of Supervisors'
@@ -66,6 +67,7 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Caption: the caption'
     expect(page).to have_content 'Language: No linguistic content'
     expect(page).to have_content 'Photographer: Poalillo, Charles'
+    expect(page).to have_link    'Poalillo, Charles'
   end
   scenario 'only displays the tools we want to support' do
     visit solr_document_path(id)

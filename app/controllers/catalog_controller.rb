@@ -64,7 +64,7 @@ class CatalogController < ApplicationController
     config.add_facet_field ::Solrizer.solr_name('medium', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('dimensions', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('language', :facetable), limit: 5
-    
+
     # config.add_facet_field ::Solrizer.solr_name('human_readable_type', :facetable), label: 'Type', limit: 5
     # config.add_facet_field ::Solrizer.solr_name('creator', :facetable), limit: 5
     # config.add_facet_field ::Solrizer.solr_name('contributor', :facetable), label: 'Contributor', limit: 5
@@ -92,6 +92,7 @@ class CatalogController < ApplicationController
     config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description'
     config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_search: ::Solrizer.solr_name('resource_type', :facetable)
+    config.add_index_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_search: ::Solrizer.solr_name('photographer', :facetable)
 
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
@@ -109,7 +110,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('date_created', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('human_readable_rights_statement', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('license', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type'
+    config.add_show_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_search: ::Solrizer.solr_name('resource_type', :facetable)
     config.add_show_field ::Solrizer.solr_name('format', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('identifier', :stored_searchable)
 
@@ -127,7 +128,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('repository', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_country', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_holder', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('photographer', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_search: ::Solrizer.solr_name('photographer', :facetable)
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
