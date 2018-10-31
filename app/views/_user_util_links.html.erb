@@ -1,7 +1,4 @@
 <ul class="navbar-nav navbar-right nav">
-  <li class="nav-item"><a class="nav-link" href="http://www.library.ucla.edu">UCLA Library</a></li>
-  <li class="nav-item"><a class="nav-link" href="http://digital2.library.ucla.edu">UCLA Library Digital Collections</a></li>
-
   <%# This is the string 'true' or 'false' not the bool because it can be used with dotenv %>
   <% if Rails.application.config.user_account_ui_enabled == 'true' %>
     <%= render_nav_actions do |config, action|%>
@@ -25,4 +22,4 @@
       <% end %>
     <% end %>
 </ul>
-  <% end %>
+<% end %>
