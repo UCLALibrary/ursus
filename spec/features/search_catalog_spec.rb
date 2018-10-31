@@ -13,7 +13,8 @@ RSpec.feature 'Search the catalog' do
     {
       id: '111',
       has_model_ssim: ['Work'],
-      title_tesim: ['Orange Carrot']
+      title_tesim: ['Orange Carrot'],
+      photographer_tesim: ['Bittersweet Tangerine']
     }
   end
 
@@ -21,7 +22,8 @@ RSpec.feature 'Search the catalog' do
     {
       id: '222',
       has_model_ssim: ['Work'],
-      title_tesim: ['Yellow Banana']
+      title_tesim: ['Yellow Banana'],
+      photographer_tesim: ['Buff Saffron']
     }
   end
 
@@ -31,7 +33,7 @@ RSpec.feature 'Search the catalog' do
     within '#documents' do
       expect(page).to have_link('Orange Carrot')
       expect(page).to have_link('Yellow Banana')
-    end 
+    end
 
     # Search for something
     fill_in 'q', with: 'carrot'
@@ -40,6 +42,17 @@ RSpec.feature 'Search the catalog' do
     within '#documents' do
       expect(page).to     have_link('Orange Carrot')
       expect(page).to_not have_link('Yellow Banana')
+    end
+  end
+
+  scenario 'verify facet links are present' do
+    visit root_path
+    # Search for something
+    fill_in 'q', with: 'carrot'
+    click_on 'search'
+    within '#documents' do
+      expect(page).to have_link('Bittersweet Tangerine')
+      expect(page).to_not have_link('Buff Saffron')
     end
   end
 end
