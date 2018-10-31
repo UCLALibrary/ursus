@@ -89,7 +89,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
-    config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description'
+    config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', helper_method: :values_with_line_breaks
     config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_search: ::Solrizer.solr_name('resource_type', :facetable)
     config.add_index_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_search: ::Solrizer.solr_name('photographer', :facetable)
@@ -97,7 +97,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
     config.add_show_field ::Solrizer.solr_name('title', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('description', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('description', :stored_searchable), helper_method: :values_with_line_breaks
     config.add_show_field ::Solrizer.solr_name('keyword', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('subject', :stored_searchable), helper_method: :values_with_line_breaks
     config.add_show_field ::Solrizer.solr_name('creator', :stored_searchable)
