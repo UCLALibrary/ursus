@@ -118,7 +118,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('dimensions', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('extent', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('funding_note', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable), helper_method: :values_with_line_breaks_and_facet_links
     config.add_show_field ::Solrizer.solr_name("geographic_coordinates", :symbol)
     config.add_show_field ::Solrizer.solr_name('location', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('local_identifier', :stored_searchable)
