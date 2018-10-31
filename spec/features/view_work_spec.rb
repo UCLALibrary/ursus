@@ -20,9 +20,10 @@ RSpec.feature "View a Work" do
       subject_tesim: ['Subj 1', 'Subj 2'],
       resource_type_tesim: ['still image'],
       human_readable_rights_statement_tesim: ['copyrighted'],
-      genre_tesim: ['news photographs'],
-      named_subject_tesim: ["Los Angeles County (Calif.). $b Board of Supervisors"],
+      genre_tesim: ['Genre 1', 'Genre 2'],
+      named_subject_tesim: ["Named Subject 1", "Named Subject 2"],
       repository_tesim: ['University of California, Los Angeles. Library. Department of Special Collections'],
+      location_tesim: ['Los Angeles'],
       publisher_tesim: ['Los Angeles Daily News'],
       rights_country_tesim: ['US'],
       rights_holder_tesim: ['Charles E. Young'],
@@ -46,12 +47,11 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'The Title of my Work'
     expect(page).to have_content 'Identifier: ark 123'
     expect(page).to have_content 'Subjects: Subj 1'
-    expect(page).to have_content 'Subj 2'
     expect(page).to have_content 'Resource Type: still image'
-    expect(page).to have_link    'still image'
     expect(page).to have_content 'Copyright Status: copyrighted'
-    expect(page).to have_content 'Genre: news photographs'
-    expect(page).to have_content 'Name (subject): Los Angeles County (Calif.). $b Board of Supervisors'
+    expect(page).to have_content 'Genre: Genre 1'
+    expect(page).to have_content 'Name (subject): Named Subject 1'
+    expect(page).to have_content 'Location: Los Angeles'
     expect(page).to have_content 'Repository: University of California, Los Angeles. Library. Department of Special Collections'
     expect(page).to have_content 'Publisher: Los Angeles Daily News'
     expect(page).to have_content 'Rights (country of creation): US'
@@ -67,8 +67,31 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Caption: the caption'
     expect(page).to have_content 'Language: No linguistic content'
     expect(page).to have_content 'Photographer: Poalillo, Charles'
-    expect(page).to have_link    'Poalillo, Charles'
   end
+  
+  scenario 'displays facetable fields as links' do
+    visit solr_document_path(id)
+    expect(page.find('dd.blacklight-subject_tesim')).to have_link    'Subj 1'
+    expect(page.find('dd.blacklight-subject_tesim')).to have_link    'Subj 2'
+    expect(page.find('dd.blacklight-resource_type_tesim')).to have_link    'still image'
+    expect(page.find('dd.blacklight-genre_tesim')).to have_link    'Genre 1'
+    expect(page.find('dd.blacklight-genre_tesim')).to have_link    'Genre 2'
+    expect(page.find('dd.blacklight-named_subject_tesim')).to have_link    'Named Subject 1'
+    expect(page.find('dd.blacklight-location_tesim')).to have_link    'Los Angeles'
+    expect(page.find('dd.blacklight-photographer_tesim')).to have_link 'Poalillo, Charles'
+    expect(page.find('dd.blacklight-normalized_date_tesim')).to have_link '1947-09-17'
+    expect(page.find('dd.blacklight-medium_tesim')).to have_link '1 photograph'
+    expect(page.find('dd.blacklight-dimensions_tesim')).to have_link '10 x 12.5 cm.'
+    expect(page.find('dd.blacklight-language_tesim')).to have_link 'No linguistic content'
+  end
+
+  scenario 'displays line breaks between the values of certain fields' do
+    visit solr_document_path(id)
+    expect(page.find('dd.blacklight-subject_tesim').all(:css, 'br').length).to eq 1
+    expect(page.find('dd.blacklight-genre_tesim').all(:css, 'br').length).to eq 1
+    expect(page.find('dd.blacklight-named_subject_tesim').all(:css, 'br').length).to eq 1
+  end
+
   scenario 'only displays the tools we want to support' do
     visit solr_document_path(id)
 
