@@ -29,8 +29,9 @@ class CatalogController < ApplicationController
       fq: '{!term f=has_model_ssim v=Work}'
     }
 
-    #remove some actions from the show view toolbox (see story #72)
+    #remove some actions from the show view toolbox (see story #72, #74)
     config.show.document_actions.delete(:sms)
+    config.show.document_actions.delete(:email)
 
     # solr field configuration for document/show views
     config.index.title_field = ::Solrizer.solr_name('title', :stored_searchable)
