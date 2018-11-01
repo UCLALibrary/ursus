@@ -5,6 +5,12 @@ require 'solrizer'
 class CatalogController < ApplicationController
   include Blacklight::Catalog
 
+  BREAKS = {
+    words_connector: '<br/>',
+    two_words_connector: '<br/>',
+    last_word_connector: '<br/>'
+  }
+
   configure_blacklight do |config|
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
@@ -89,8 +95,9 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
-    config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', helper_method: :values_with_line_breaks
-    config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated'
+    config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', separator_options: BREAKS
+    config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated', link_to_search: ::Solrizer.solr_name('date_created', :facetable)
+    # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_search: ::Solrizer.solr_name('resource_type', :facetable)
     config.add_index_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_search: ::Solrizer.solr_name('photographer', :facetable)
 
@@ -99,12 +106,12 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('title', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('description', :stored_searchable), helper_method: :values_with_line_breaks
     config.add_show_field ::Solrizer.solr_name('keyword', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('subject', :stored_searchable), helper_method: :values_with_line_breaks
+    config.add_show_field ::Solrizer.solr_name('subject', :stored_searchable), link_to_search: ::Solrizer.solr_name('subject', :facetable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name('creator', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('contributor', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('publisher', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('based_near_label', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('language', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('language', :stored_searchable), link_to_search: ::Solrizer.solr_name('language', :facetable)
     config.add_show_field ::Solrizer.solr_name('date_uploaded', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('date_modified', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('date_created', :stored_searchable)
@@ -115,16 +122,16 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('identifier', :stored_searchable)
 
     config.add_show_field ::Solrizer.solr_name('caption', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('dimensions', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('dimensions', :stored_searchable), link_to_search: ::Solrizer.solr_name('dimensions', :facetable)
     config.add_show_field ::Solrizer.solr_name('extent', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('funding_note', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable), helper_method: :values_with_line_breaks_and_facet_links
+    config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable), link_to_search: ::Solrizer.solr_name('genre', :facetable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name("geographic_coordinates", :symbol)
-    config.add_show_field ::Solrizer.solr_name('location', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('location', :stored_searchable), link_to_search: ::Solrizer.solr_name('location', :facetable)
     config.add_show_field ::Solrizer.solr_name('local_identifier', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('medium', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('named_subject', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('normalized_date', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('medium', :stored_searchable), link_to_search: ::Solrizer.solr_name('medium', :facetable)
+    config.add_show_field ::Solrizer.solr_name('named_subject', :stored_searchable), link_to_search: ::Solrizer.solr_name('named_subject', :facetable), separator_options: BREAKS
+    config.add_show_field ::Solrizer.solr_name('normalized_date', :stored_searchable), link_to_search: ::Solrizer.solr_name('normalized_date', :facetable)
     config.add_show_field ::Solrizer.solr_name('repository', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_country', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_holder', :stored_searchable)
