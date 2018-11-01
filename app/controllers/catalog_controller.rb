@@ -95,14 +95,9 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
-<<<<<<< HEAD
-    config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', helper_method: :values_with_line_breaks
-    config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated'
-=======
-    config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description'
+    config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', separator_options: BREAKS
     config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated', link_to_search: ::Solrizer.solr_name('date_created', :facetable)
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
->>>>>>> wip: facet links
     config.add_index_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_search: ::Solrizer.solr_name('resource_type', :facetable)
     config.add_index_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_search: ::Solrizer.solr_name('photographer', :facetable)
 
