@@ -105,7 +105,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
     config.add_show_field ::Solrizer.solr_name('title', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('description', :stored_searchable), helper_method: :values_with_line_breaks
+    config.add_show_field ::Solrizer.solr_name('description', :stored_searchable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name('keyword', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('subject', :stored_searchable), link_to_search: ::Solrizer.solr_name('subject', :facetable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name('creator', :stored_searchable)

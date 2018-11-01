@@ -16,12 +16,13 @@ RSpec.feature "View a Work" do
       id: id,
       has_model_ssim: ['Work'],
       title_tesim: ['The Title of my Work'],
+      description_tesim: ['Description 1', 'Description 2'],
       identifier_tesim: ['ark 123'],
       subject_tesim: ['Subj 1', 'Subj 2'],
       resource_type_tesim: ['still image'],
       human_readable_rights_statement_tesim: ['copyrighted'],
-      genre_tesim: ['Genre 1', 'Genre 2'],
-      named_subject_tesim: ["Named Subject 1", "Named Subject 2"],
+      genre_tesim: ['Genre 1', 'Genre 2', 'Genre 3'],
+      named_subject_tesim: ["Named Subject 1", "Named Subject 2", "Named Subject 3", "Named Subject 4"],
       repository_tesim: ['University of California, Los Angeles. Library. Department of Special Collections'],
       location_tesim: ['Los Angeles'],
       publisher_tesim: ['Los Angeles Daily News'],
@@ -46,6 +47,8 @@ RSpec.feature "View a Work" do
 
     expect(page).to have_content 'The Title of my Work'
     expect(page).to have_content 'Identifier: ark 123'
+    expect(page).to have_content 'Description: Description 1'
+    expect(page).to have_content 'Description 2'
     expect(page).to have_content 'Subjects: Subj 1'
     expect(page).to have_content 'Resource Type: still image'
     expect(page).to have_content 'Copyright Status: copyrighted'
@@ -87,9 +90,10 @@ RSpec.feature "View a Work" do
 
   scenario 'displays line breaks between the values of certain fields' do
     visit solr_document_path(id)
+    expect(page.find('dd.blacklight-description_tesim').all(:css, 'br').length).to eq 1
     expect(page.find('dd.blacklight-subject_tesim').all(:css, 'br').length).to eq 1
-    expect(page.find('dd.blacklight-genre_tesim').all(:css, 'br').length).to eq 1
-    expect(page.find('dd.blacklight-named_subject_tesim').all(:css, 'br').length).to eq 1
+    expect(page.find('dd.blacklight-genre_tesim').all(:css, 'br').length).to eq 2
+    expect(page.find('dd.blacklight-named_subject_tesim').all(:css, 'br').length).to eq 3
   end
 
   scenario 'only displays the tools we want to support' do
