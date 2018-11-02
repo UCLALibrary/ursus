@@ -61,19 +61,4 @@ RSpec.feature "Search results page" do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
     expect(page.all('dd.blacklight-description_tesim')[1].all(:css, 'br').length).to eq 1
   end
-
-#   scenario 'only displays the tools we want to support' do
-#     visit solr_document_path(id)
-
-#     # we DO want the tools panel
-#     expect(page).to have_content 'Tools'
-
-#     # we DO NOT want the SMS This link
-#     expect(page).to_not have_content 'SMS This'
-#   end
-
-#   scenario 'loads UV on the page with correct IIIF URI' do
-#     visit solr_document_path(id)
-#     expect(page.html).to match(/iiifResourceUri: \'https:\/\/example.com\/123\/manifest/)
-#   end
 end
