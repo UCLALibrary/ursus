@@ -8,13 +8,28 @@
   li {
     display: inline-block;
     width: 150px;
+    vertical-align: middle;
   }
 
-  .logo-digital-collections {
-    width: 165px;
+  .logo-digital-collections a {
+    font-family: "Caslon 540", "Garamond", "Georgia", serif;
+    color:snow;
+    width: 300px;
+    vertical-align: middle;
+    margin-top: 12.5px;
   }
 }
 
 object[type*="svg"] {
   pointer-events: none;
-} 
+}
+
+.seperator {
+  vertical-align: middle;
+  color: snow;
+  margin: 0;
+  padding: 0;
+  float: left;
+  font-size: 2em;
+  padding-right: 5px;
+}
