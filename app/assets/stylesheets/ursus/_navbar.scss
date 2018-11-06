@@ -13,3 +13,7 @@
 .navbar-right {
   margin-top:10px;
 }
+
+.navbar + .navbar {
+  margin-top: 10px;
+}
