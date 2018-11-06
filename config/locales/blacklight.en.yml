@@ -34,6 +34,7 @@ en:
           subject_sim: 'Subject'
           subject_tesim: 'Subjects'
           title_tesim: 'Title'
+          year_isim: 'Date'
         index:
           date_created_tesim: 'Date Created'
           date_modified_dtsi: 'Date Modified'
