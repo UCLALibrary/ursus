@@ -1,7 +1,11 @@
 en:
   blacklight:
-    application_name: 'UCLA Library Digital Collections'
+    short_application_name: 'Distinctive Digital Collections'
+    application_name: 'UCLA Library Distinctive Digital Collections'
     search:
+      form:
+        search:
+          placeholder: 'Search Los Angeles Daily News Negatives'
       fields:
         facet:
           date_created_tesim: 'Date Created'

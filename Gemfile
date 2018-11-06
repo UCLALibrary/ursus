@@ -74,5 +74,6 @@ gem 'coveralls', require: false
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
 gem 'jquery-rails'
+gem 'loofah', '>= 2.2.3'
 gem 'rsolr', '>= 1.0'
 gem 'solrizer'

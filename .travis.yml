@@ -12,6 +12,7 @@ before_install:
 env:
   global:
     - DATABASE_USERNAME=travis
+    - secure: N7Xkgo7xtlzPeZoGMC8cQ+EL6dB6GjKhhx9dTcnAMu3zdod/5Eqbgmxn+FuYu7AuqBN9cPhFsAiDwjxPSla5CTKndtbNVnNOTsnNjpznC5xYLclRY4XdPlwNVzsfX43bSqlBGQnNO8GmjwyMycETxlkHNAZzhkbVaY5GTdolAKwyl4ak4wAxMDI1iyAY0So3YpkS9ZOVYXdnnS3SqatP4aJOMzs28Idfa7LUKVoRWGTU2x5v+LUj+R4uPykV0A7CPQ/c12TWOfktIY+N/y7vWcGzxT2xLzAD4wUZFI8ST4NiF6/aUg4bJCsMicz6Mzvs00TN5KQaLSHg1mte7H5J9NM+RIyAgH6GJFj80e8Q/Sh3zYZeoF5uA/5NDdGrd0hYksMISjXiz2Haa0Z1+/MwAzOnpP98hX7XRb36MR3W6l1R4PQ695T7ZTOGl08um1DpvHDPt5NQbrwUZVjLcVELRIlRENvawDQ76Y2icH0dKPeTAA34R7CCPGhl5XCHcrA3fgFzpNhLUMxsJdJgGRNDQXqwF+xO7uVr9Q8PxPOfxprv31WuTHn189FlCI63XYlh1BcTj3jXQsM9/cqUzQ1BwFPsJA9rogmOeIiDGHdM6Aq7xRUqaoe/7ZX1WM9JVletipLjFSJRniIdhJ/AvwUNBiybk+N6bl/oor/tTSLpy/Y=
 rvm:
   - 2.5.1
 script:
@@ -20,3 +21,8 @@ notifications:
   email: false
 services:
   - mysql2
+after_success:
+- |
+  if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
+    curl "$JENKINS_DEPLOY_URL"
+  fi
