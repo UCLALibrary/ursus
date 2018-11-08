@@ -32,7 +32,7 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       'Subject',
       'Resource Type',
       'Genre',
-      'Name (subject)',
+      'Names',
       'Location',
       'Date',
       'Medium',
