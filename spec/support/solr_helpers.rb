@@ -6,8 +6,4 @@ module SolrHelpers
     solr.delete_by_query('*:*')
     solr.commit
   end
-
-  RSpec.configure do |config|
-    config.include SolrHelpers
-  end
 end
