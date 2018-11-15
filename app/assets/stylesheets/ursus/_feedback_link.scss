@@ -2,11 +2,11 @@
 
 .feedback-link {
   text-transform: uppercase;
-  background-color: #343A40;
+  background-color: #dddddd;
   border-radius: 2rem 2rem 0rem 0rem;
-  a { 
-  	color: $ucla-gold;
-  	border-bottom: 1px solid $ucla-gold;
+  a {
+  	color: $ucla-blue;
+  	border-bottom: 1px solid $ucla-blue;
   }
   font-size: 1.25em;
   font-weight: 500;
@@ -24,7 +24,7 @@
 @media screen and (max-device-width: 480px) {
   .feedback-link {
       text-transform: uppercase;
-      background-color: #343A40;
+      background-color: #dddddd;
       border-radius: 2rem 2rem 0rem 0rem;
       font-size: .75em;
       /* font-weight: 500; */
