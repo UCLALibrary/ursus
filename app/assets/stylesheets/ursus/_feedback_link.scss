@@ -2,12 +2,9 @@
 
 .feedback-link {
   text-transform: uppercase;
-  background-color: #343A40;
+  background-color: #dddddd;
   border-radius: 2rem 2rem 0rem 0rem;
-  a { 
-  	color: $ucla-gold;
-  	border-bottom: 1px solid $ucla-gold;
-  }
+
   font-size: 1.25em;
   font-weight: 500;
   margin: 0px;
@@ -15,23 +12,24 @@
   position: fixed;
   bottom: 0;
   left: 3rem;
-  a:hover {
-  	color: $ucla-tertiary-yellow;
-  	border-bottom: 1px solid $ucla-tertiary-yellow;
+
+  a {
+    color: $ucla-blue;
   }
+
 }
 
 @media screen and (max-device-width: 480px) {
   .feedback-link {
-      text-transform: uppercase;
-      background-color: #343A40;
-      border-radius: 2rem 2rem 0rem 0rem;
-      font-size: .75em;
-      /* font-weight: 500; */
-      margin: 0px;
-      padding: 1rem 1rem 1.2rem 1.2rem;
-      position: fixed;
-      bottom: 0;
-      /* left: 3rem; */
+    text-transform: uppercase;
+    background-color: #dddddd;
+    border-radius: 2rem 2rem 0rem 0rem;
+    font-size: .75em;
+    /* font-weight: 500; */
+    margin: 0px;
+    padding: 1rem 1rem 1.2rem 1.2rem;
+    position: fixed;
+    bottom: 0;
+    /* left: 3rem; */
   }
 }
