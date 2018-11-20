@@ -7,6 +7,12 @@
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%# Google Analytics %>
+    <% if RAILS_ENV.eql?('production') %>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-T2SXV2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      <script type="text/javascript"> (function(w,d,s,l,i){ w[l]=w[l]||[]; w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'}); var f=d.getElementsByTagName(s)[0]; var j=d.createElement(s); var dl=l!='dataLayer'?'&l='+l:''; j.src='//www.googletagmanager.com/gtm.js?id='+i+dl; j.type='text/javascript'; j.async=true; f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-T2SXV2'); </script>
+    <% end %>
   </head>
 
   <body>
