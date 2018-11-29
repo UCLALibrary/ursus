@@ -83,3 +83,5 @@ en:
           human_readable_rights_statement_tesim: 'Copyright Status'
           subject_tesim: 'Subjects'
           title_tesim: 'Title'
+    tools:
+      citation: 'Cite This Item'

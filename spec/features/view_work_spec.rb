@@ -102,6 +102,9 @@ RSpec.feature "View a Work" do
     # we DO want the tools panel
     expect(page).to have_content 'Tools'
 
+    # we DO want the citation link
+    expect(page.find('a#citationLink')).to have_content 'Cite This Item'
+
     # we DO NOT want the SMS This or Email links
     expect(page).to_not have_content 'SMS This'
     expect(page).to_not have_selector '#emailLink'
