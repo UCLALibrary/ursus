@@ -9,6 +9,8 @@
 	    <dd class="blacklight-<%= field_name.parameterize %>"><%= doc_presenter.field_value field_name %></dd>
     <% end -%>
   <% end -%>
+      <dt class="blacklight-license">License:</dt>
+      <dd class="blacklight-license"><%= render_license %></dd>
 </dl>
 <style>
   #uv {
