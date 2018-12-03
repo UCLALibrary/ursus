@@ -3,7 +3,23 @@
 class SearchFieldService
   include Singleton
 
-  SEARCH_FIELDS = 'title_tesim subject_tesim named_subject_tesim location_tesim description_tesim caption_tesim identifier_tesim local_identifier_tesim normalized_date_tesim photographer_tesim'.freeze
+  SEARCH_FIELDS = [
+    ::Solrizer.solr_name('caption', :stored_searchable),
+    ::Solrizer.solr_name('contributor', :stored_searchable),
+    ::Solrizer.solr_name('creator', :stored_searchable),
+    ::Solrizer.solr_name('description', :stored_searchable),
+    ::Solrizer.solr_name('genre', :stored_searchable),
+    ::Solrizer.solr_name('identifier', :stored_searchable),
+    ::Solrizer.solr_name('local_identifier', :stored_searchable),
+    ::Solrizer.solr_name('location', :stored_searchable),
+    ::Solrizer.solr_name('medium', :stored_searchable),
+    ::Solrizer.solr_name('named_subject', :stored_searchable),
+    ::Solrizer.solr_name('normalized_date', :stored_searchable),
+    ::Solrizer.solr_name('photographer', :stored_searchable),
+    ::Solrizer.solr_name('publisher', :stored_searchable),
+    ::Solrizer.solr_name('subject', :stored_searchable),
+    ::Solrizer.solr_name('title', :stored_searchable)
+  ].join(' ').freeze
   def search_fields
     SEARCH_FIELDS
   end
