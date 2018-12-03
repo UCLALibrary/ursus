@@ -54,7 +54,7 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Resource Type: still image'
     expect(page).to have_content 'Copyright Status: copyrighted'
     expect(page).to have_content 'Genre: Genre 1'
-    expect(page).to have_content 'Name (subject): Named Subject 1'
+    expect(page).to have_content 'Names: Named Subject 1'
     expect(page).to have_content 'Location: Los Angeles'
     expect(page).to have_content 'Repository: University of California, Los Angeles. Library. Department of Special Collections'
     expect(page).to have_content 'Publisher: Los Angeles Daily News'
@@ -72,7 +72,7 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Language: No linguistic content'
     expect(page).to have_content 'Photographer: Poalillo, Charles'
   end
-
+ 
   context 'license' do
     scenario 'it displays the creative commons text and logo when there is a cc license' do
       visit solr_document_path(id)
@@ -110,6 +110,9 @@ RSpec.feature "View a Work" do
 
     # we DO want the tools panel
     expect(page).to have_content 'Tools'
+
+    # we DO want the citation link
+    expect(page.find('a#citationLink')).to have_content 'Cite This Item'
 
     # we DO NOT want the SMS This or Email links
     expect(page).to_not have_content 'SMS This'

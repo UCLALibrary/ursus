@@ -3,6 +3,8 @@
 require 'solrizer'
 
 class CatalogController < ApplicationController
+
+  include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
 
   BREAKS = {
@@ -67,7 +69,7 @@ class CatalogController < ApplicationController
     config.add_facet_field ::Solrizer.solr_name('genre', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('named_subject', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('location', :facetable), limit: 5
-    config.add_facet_field ::Solrizer.solr_name('normalized_date', :facetable), limit: 5
+    config.add_facet_field 'year_isim', limit: 5, range: true
     config.add_facet_field ::Solrizer.solr_name('medium', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('dimensions', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('language', :facetable), limit: 5

@@ -1,19 +1,23 @@
 .post-content {
-    text-align: center;
-    top: 0;
-    left: 0;
-    position: absolute;
-    margin-top: 25%;
-    margin-left: 21.2%;
-    font-size: xx-large;
-    color: white;
-    border: 3px solid white;
-    padding: 1em;
-    pointer-events: none;
-    background: rgba(0, 0, 0, 0.5);
-    min-width: 250px;
+  text-align: center;
+  font-size: xx-large;
+  color: snow;
+  border: 3px solid snow;
+  padding: 1em;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  bottom: 45%;
+  left: 10%;
 }
 
 .thumbnail{
-    position:relative;
+  position:relative;
+}
+
+.no-border {
+  border: none;
 }

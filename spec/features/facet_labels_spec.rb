@@ -11,12 +11,13 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
   let(:work_attributes) do
     {
       id: '123',
+      has_model_ssim: ['Work'],
       has_model_sim: ['Work'],
       subject_sim: ['Subj 1', 'Subj 2'],
       resource_type_sim: ['Photograph'],
       genre_sim: ['news photographs'],
       named_subject_sim: ['Los Angeles County (Calif.). Board of Supervisors'],
-      normalized_date_sim: ['1947-09-17'],
+      year_isim: [1947],
       medium_sim: ['1 photograph'],
       dimensions_sim: ['10 x 12.5 cm.'],
       language_sim: ['No linguistic content'],
@@ -31,7 +32,7 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       'Subject',
       'Resource Type',
       'Genre',
-      'Name (subject)',
+      'Names',
       'Location',
       'Date',
       'Medium',
