@@ -28,7 +28,6 @@ RSpec.feature "View a Work" do
       publisher_tesim: ['Los Angeles Daily News'],
       rights_country_tesim: ['US'],
       rights_holder_tesim: ['Charles E. Young'],
-      normalized_date_tesim: ['1947-09-17'],
       local_identifier_tesim: ['local id 123'],
       date_created_tesim: ["September 17, 1947"],
       medium_tesim: ['1 photograph'],
@@ -60,7 +59,6 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Publisher: Los Angeles Daily News'
     expect(page).to have_content 'Rights (country of creation): US'
     expect(page).to have_content 'Rights Holder: Charles E. Young'
-    expect(page).to have_content 'Normalized Date: 1947-09-17'
     expect(page).to have_content 'Local Identifier: local id 123'
     expect(page).to have_content 'Date Created: September 17, 1947'
     expect(page).to have_content 'Medium: 1 photograph'
@@ -91,7 +89,6 @@ RSpec.feature "View a Work" do
     expect(page.find('dd.blacklight-named_subject_tesim')).to have_link    'Named Subject 1'
     expect(page.find('dd.blacklight-location_tesim')).to have_link    'Los Angeles'
     expect(page.find('dd.blacklight-photographer_tesim')).to have_link 'Poalillo, Charles'
-    expect(page.find('dd.blacklight-normalized_date_tesim')).to have_link '1947-09-17'
     expect(page.find('dd.blacklight-medium_tesim')).to have_link '1 photograph'
     expect(page.find('dd.blacklight-dimensions_tesim')).to have_link '10 x 12.5 cm.'
     expect(page.find('dd.blacklight-language_tesim')).to have_link 'No linguistic content'
