@@ -133,7 +133,6 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('local_identifier', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('medium', :stored_searchable), link_to_search: ::Solrizer.solr_name('medium', :facetable)
     config.add_show_field ::Solrizer.solr_name('named_subject', :stored_searchable), link_to_search: ::Solrizer.solr_name('named_subject', :facetable), separator_options: BREAKS
-    config.add_show_field ::Solrizer.solr_name('normalized_date', :stored_searchable), link_to_search: ::Solrizer.solr_name('normalized_date', :facetable)
     config.add_show_field ::Solrizer.solr_name('repository', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_country', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_holder', :stored_searchable)
