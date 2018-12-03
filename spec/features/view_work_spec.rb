@@ -38,7 +38,8 @@ RSpec.feature "View a Work" do
       geographic_coordinates_ssim: ['34.0, -118.2'],
       caption_tesim: ['the caption'],
       language_tesim: ['No linguistic content'],
-      photographer_tesim: ['Poalillo, Charles']
+      photographer_tesim: ['Poalillo, Charles'],
+      license_tesim: ['https://creativecommons.org/licenses/by/4.0/']
     }
   end
 
@@ -71,7 +72,15 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Language: No linguistic content'
     expect(page).to have_content 'Photographer: Poalillo, Charles'
   end
-  
+
+  context 'license' do
+    scenario 'it displays the creative commons text and logo when there is a cc license' do
+      visit solr_document_path(id)
+      expect(page).to have_content 'License'
+      expect(page).to have_link 'Creative Commons Attribution 4.0 International License'
+    end
+  end
+
   scenario 'displays facetable fields as links' do
     visit solr_document_path(id)
     expect(page.find('dd.blacklight-subject_tesim')).to have_link    'Subj 1'
