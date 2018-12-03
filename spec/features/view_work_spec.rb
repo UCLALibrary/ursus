@@ -28,6 +28,7 @@ RSpec.feature "View a Work" do
       publisher_tesim: ['Los Angeles Daily News'],
       rights_country_tesim: ['US'],
       rights_holder_tesim: ['Charles E. Young'],
+      normalized_date_tesim: ['1934-56-78'],  # unique value so we can test it doesn't display
       local_identifier_tesim: ['local id 123'],
       date_created_tesim: ["September 17, 1947"],
       medium_tesim: ['1 photograph'],
@@ -59,6 +60,9 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Publisher: Los Angeles Daily News'
     expect(page).to have_content 'Rights (country of creation): US'
     expect(page).to have_content 'Rights Holder: Charles E. Young'
+    # normalized_date is a machine-readable field that shouldn't display!
+    expect(page).to_not have_content 'Normalized Date:'
+    expect(page).to_not have_content '1934-56-78'
     expect(page).to have_content 'Local Identifier: local id 123'
     expect(page).to have_content 'Date Created: September 17, 1947'
     expect(page).to have_content 'Medium: 1 photograph'
