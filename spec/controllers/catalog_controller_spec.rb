@@ -2,38 +2,31 @@
 require 'rails_helper'
 
 RSpec.describe CatalogController, type: :controller do
-  # describe 'facets' do
-  #   let(:facets) do
-  #     controller
-  #       .blacklight_config
-  #       .facet_fields.keys
-  #       .map { |field| field.gsub(/\_s+im$/, '') }
-  #   end
-  #
-  #   let(:expected_facets) do
-  #     ['human_readable_type',
-  #      'resource_type',
-  #      'creator',
-  #      'contributor',
-  #      'degree',
-  #      'institution',
-  #      'school',
-  #      'department',
-  #      'keyword',
-  #      'subject',
-  #      'language',
-  #      'license',
-  #      'based_near_label',
-  #      'file_format',
-  #      'member_of_collections',
-  #      'generic_type',
-  #      'rights_statement']
-  #   end
-  #
-  #   it 'has exactly expected facets' do
-  #     expect(facets).to contain_exactly(*expected_facets)
-  #   end
-  # end
+  describe 'facets' do
+    let(:facets) do
+      controller
+        .blacklight_config
+        .facet_fields.keys
+        .map { |field| field.gsub(/\_s+im$/, '') }
+    end
+
+    let(:expected_facets) do
+      ['subject',
+       'resource_type',
+       'genre',
+       'named_subject',
+       'location',
+       'year_isim',
+       'medium',
+       'language',
+       'dimensions',
+       'generic_type']
+    end
+
+    it 'has exactly expected facets' do
+      expect(facets).to contain_exactly(*expected_facets)
+    end
+  end
 
   describe 'index fields' do
     let(:index_fields) do

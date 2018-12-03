@@ -12,6 +12,7 @@ In 1984 to mark its 50th Anniversary, the UCLA Alumni Association commissioned "
 ---
 
 [![Build Status](https://travis-ci.org/UCLALibrary/ursus.svg?branch=master)](https://travis-ci.org/UCLALibrary/ursus)
+[![Apache 2.0 License](http://img.shields.io/badge/APACHE2-license-blue.svg)](./LICENSE)
 [![Coverage Status](https://coveralls.io/repos/github/UCLALibrary/ursus/badge.svg?branch=ci%2Fadd-coveralls)](https://coveralls.io/github/UCLALibrary/ursus?branch=ci%2Fadd-coveralls)
 
 ---

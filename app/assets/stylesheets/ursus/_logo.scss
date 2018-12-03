@@ -1,5 +1,17 @@
-#header-navbar {
-  height: 60px;
+@media screen and (max-device-width: 480px) {
+  #header-navbar {
+    height: 85px;
+  }
+
+  .seperator {
+    display:none;
+  }
+}
+
+@media screen and (min-device-width: 480px) {
+  #header-navbar {
+    height: 60px;
+  }
 }
 
 .logo-links {
