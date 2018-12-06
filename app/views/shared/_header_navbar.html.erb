@@ -20,14 +20,12 @@
       </ul>
     </div>
 
+    <div class="navbar-right">
+      <%= render_search_bar  %>
+    </div>
+
     <div class="collapse navbar-collapse" id="user-util-collapse">
       <%= render :partial=>'/user_util_links' %>
     </div>
-  </div>
-</div>
-
-<div id="search-navbar" class="navbar navbar-default navbar-static-top" role="navigation">
-  <div class="<%= container_classes %>">
-    <%= render_search_bar  %>
   </div>
 </div>
