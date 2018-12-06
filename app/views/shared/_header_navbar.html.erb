@@ -8,15 +8,15 @@
 	<span class="icon-bar"></span>
       </button>
       <ul class="logo-links">
-	<li>
-	  <a href="http://www.library.ucla.edu" style="display: block; z-index: 1;">
-	    <object data="<%= image_url('logo2.svg') %>" type="image/svg+xml">UCLA Library</object>
-	  </a>
-	</li>
-	<li class="logo-digital-collections">
-    <span class="seperator"> | </span>
-	  <a href="/" style="display: block; z-index: 1;"><%= t('blacklight.short_application_name') %> </a>
-	</li>
+        <li>
+          <a href="http://www.library.ucla.edu" style="display: block; z-index: 1;">
+            <object data="<%= image_url('logo2.svg') %>" type="image/svg+xml">UCLA Library</object>
+          </a>
+        </li>
+        <li class="logo-digital-collections">
+          <span class="seperator"> | </span>
+          <a href="/" style="display: block; z-index: 1;"><%= t('blacklight.short_application_name') %> </a>
+        </li>
       </ul>
     </div>
 
@@ -29,8 +29,5 @@
 <div id="search-navbar" class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="<%= container_classes %>">
     <%= render_search_bar  %>
-  </div>
-  <div class="container">
-    Or Browse by <a href="http://digital2.library.ucla.edu/">Collection</a>, <a href="http://digital2.library.ucla.edu/browseContents.do?coreDescTermId=5">Name</a>, <a href="http://digital2.library.ucla.edu/browseContents.do?coreDescTermId=9">Type</a>, or <a href="http://digital2.library.ucla.edu/browseContents.do?coreDescTermId=4">Subject</a>
   </div>
 </div>
