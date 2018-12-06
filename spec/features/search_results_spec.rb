@@ -53,7 +53,7 @@ RSpec.feature "Search results page" do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
     expect(page).to have_link 'Title One'
     expect(page).to have_link 'still image'
-    expect(page).to have_link 'Date 1'
+    expect(page).not_to have_link 'Date 1'
     expect(page).to have_link 'Person 1'
   end
 
