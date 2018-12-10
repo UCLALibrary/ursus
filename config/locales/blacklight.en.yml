@@ -1,7 +1,7 @@
 en:
   blacklight:
-    short_application_name: 'Distinctive Digital Collections'
-    application_name: 'UCLA Library Distinctive Digital Collections'
+    short_application_name: 'Digital Collections'
+    application_name: 'UCLA Library Digital Collections'
     search:
       form:
         search:
