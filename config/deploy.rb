@@ -25,6 +25,10 @@ if ENV['VIA_JUMP'] == "yes"
   set :ssh_options, proxy: Net::SSH::Proxy::Command.new(ssh_command)
 end
 
+set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
+set :rollbar_env, proc { fetch :stage }
+set :rollbar_role, proc { :app }
+
 set :log_level, :debug
 set :bundle_flags, '--deployment'
 
