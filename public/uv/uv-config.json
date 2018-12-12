@@ -1,8 +1,14 @@
 {
     "options": {
-
+        "rightPanelEnabled": false
     },
     "modules": {
-
+        "footerPanel": {
+            "options": {
+                "downloadEnabled": false,
+                "fullscreenEnabled": true,
+                "shareEnabled": false
+            }
+        }
     }
 }
