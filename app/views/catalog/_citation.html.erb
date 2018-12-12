@@ -1,0 +1,11 @@
+<% @documents.each do |document| %>
+  <h1 class="modal-title"><%= document_heading(document) %> - Citation</h1>
+  <hr>
+  <% if document.respond_to?(:export_as_ucla_citation_txt) %>
+    <h2><%= t('blacklight.citation.ucla') %></h2>
+    <h4><%= document.send(:export_as_ucla_citation_txt).html_safe %></h4>
+    <h4>web accessed: <%= Time.now.strftime('%A %B %d, %Y -- %l:%M %p') %></h4>
+  <% end %> 
+  <hr>
+  <h4><a href= "<%= solr_document_path %>">BACK</a></h4>
+<% end %>
