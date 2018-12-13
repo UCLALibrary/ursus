@@ -70,8 +70,6 @@ class CatalogController < ApplicationController
     config.add_facet_field ::Solrizer.solr_name('named_subject', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('location', :facetable), limit: 5
     config.add_facet_field 'year_isim', limit: 5, range: true
-    config.add_facet_field ::Solrizer.solr_name('medium', :facetable), limit: 5
-    config.add_facet_field ::Solrizer.solr_name('dimensions', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('language', :facetable), limit: 5
 
     # config.add_facet_field ::Solrizer.solr_name('human_readable_type', :facetable), label: 'Type', limit: 5
@@ -124,14 +122,14 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('identifier', :stored_searchable)
 
     config.add_show_field ::Solrizer.solr_name('caption', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('dimensions', :stored_searchable), link_to_search: ::Solrizer.solr_name('dimensions', :facetable)
+    config.add_show_field ::Solrizer.solr_name('dimensions', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('extent', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('funding_note', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable), link_to_search: ::Solrizer.solr_name('genre', :facetable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name("geographic_coordinates", :symbol)
     config.add_show_field ::Solrizer.solr_name('location', :stored_searchable), link_to_search: ::Solrizer.solr_name('location', :facetable)
     config.add_show_field ::Solrizer.solr_name('local_identifier', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('medium', :stored_searchable), link_to_search: ::Solrizer.solr_name('medium', :facetable)
+    config.add_show_field ::Solrizer.solr_name('medium', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('named_subject', :stored_searchable), link_to_search: ::Solrizer.solr_name('named_subject', :facetable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name('repository', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_country', :stored_searchable)

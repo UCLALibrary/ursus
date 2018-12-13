@@ -93,8 +93,6 @@ RSpec.feature "View a Work" do
     expect(page.find('dd.blacklight-named_subject_tesim')).to have_link    'Named Subject 1'
     expect(page.find('dd.blacklight-location_tesim')).to have_link    'Los Angeles'
     expect(page.find('dd.blacklight-photographer_tesim')).to have_link 'Poalillo, Charles'
-    expect(page.find('dd.blacklight-medium_tesim')).to have_link '1 photograph'
-    expect(page.find('dd.blacklight-dimensions_tesim')).to have_link '10 x 12.5 cm.'
     expect(page.find('dd.blacklight-language_tesim')).to have_link 'No linguistic content'
   end
 

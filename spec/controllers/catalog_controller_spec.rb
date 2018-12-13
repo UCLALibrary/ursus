@@ -17,9 +17,7 @@ RSpec.describe CatalogController, type: :controller do
        'named_subject',
        'location',
        'year_isim',
-       'medium',
        'language',
-       'dimensions',
        'generic_type']
     end
 

@@ -18,8 +18,6 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       genre_sim: ['news photographs'],
       named_subject_sim: ['Los Angeles County (Calif.). Board of Supervisors'],
       year_isim: [1947],
-      medium_sim: ['1 photograph'],
-      dimensions_sim: ['10 x 12.5 cm.'],
       language_sim: ['No linguistic content'],
       location_sim: ['LA']
     }
@@ -35,8 +33,6 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       'Names',
       'Location',
       'Date',
-      'Medium',
-      'Dimensions',
       'Language'
     )
   end
