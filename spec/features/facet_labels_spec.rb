@@ -19,7 +19,8 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       named_subject_sim: ['Los Angeles County (Calif.). Board of Supervisors'],
       year_isim: [1947],
       language_sim: ['No linguistic content'],
-      location_sim: ['LA']
+      location_sim: ['LA'],
+      dlcs_collection_name_sim: ['Connell']
     }
   end
 
@@ -33,7 +34,8 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       'Names',
       'Location',
       'Date',
-      'Language'
+      'Language',
+      'DLCS Collection Name'
     )
   end
 end
