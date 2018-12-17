@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
     <% if ENV["GOOGLE_TAG_MGR_ID"] %>
       <script type="text/javascript">(function(w,d,s,l,i){ w[l]=w[l]||[]; w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'}); var f=d.getElementsByTagName(s)[0]; var j=d.createElement(s); var dl=l!='dataLayer'?'&l='+l:''; j.src='//www.googletagmanager.com/gtm.js?id='+i+dl; j.type='text/javascript'; j.async=true; f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','<%= ENV["GOOGLE_TAG_MGR_ID"] %>'); </script>
     <% end %>
@@ -11,7 +10,7 @@
     <!-- Mobile viewport optimization h5bp.com/ad -->
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    
+
     <!-- Internet Explorer use the highest version available -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -47,5 +46,6 @@
   </div>
 
   <%= render :partial => 'shared/footer' %>
+  <script src="/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
