@@ -49,7 +49,7 @@ group :development, :test do
   gem 'rspec-its'
   gem 'rspec-rails', '~> 3.8'
   gem 'selenium-webdriver'
-  gem 'solr_wrapper', '>= 0.3'
+  gem 'solr_wrapper', '>= 2.1.0'
 end
 
 group :development do
