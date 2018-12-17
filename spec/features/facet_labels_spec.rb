@@ -35,7 +35,7 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       'Location',
       'Date',
       'Language',
-      'DLCS Collection Name'
+      'Collection'
     )
   end
 end

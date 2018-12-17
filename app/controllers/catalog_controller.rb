@@ -71,7 +71,7 @@ class CatalogController < ApplicationController
     config.add_facet_field ::Solrizer.solr_name('location', :facetable), limit: 5
     config.add_facet_field 'year_isim', limit: 5, range: true
     config.add_facet_field ::Solrizer.solr_name('language', :facetable), limit: 5
-    config.add_facet_field ::Solrizer.solr_name('dlcs_collection_name', :facetable), label: 'DLCS Collection Name', limit: 5
+    config.add_facet_field ::Solrizer.solr_name('dlcs_collection_name', :facetable), limit: 5
 
     # config.add_facet_field ::Solrizer.solr_name('human_readable_type', :facetable), label: 'Type', limit: 5
     # config.add_facet_field ::Solrizer.solr_name('creator', :facetable), limit: 5
@@ -106,6 +106,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
     config.add_show_field ::Solrizer.solr_name('title', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('dlcs_collection_name', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('description', :stored_searchable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name('keyword', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('subject', :stored_searchable), link_to_search: ::Solrizer.solr_name('subject', :facetable), separator_options: BREAKS
