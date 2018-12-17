@@ -58,7 +58,7 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Location: Los Angeles'
     expect(page).to have_content 'Repository: University of California, Los Angeles. Library. Department of Special Collections'
     expect(page).to have_content 'Publisher: Los Angeles Daily News'
-    expect(page).to have_content 'Rights (country of creation): US'
+    expect(page).to have_content 'Rights Country: US'
     expect(page).to have_content 'Rights Holder: Charles E. Young'
     # normalized_date is a machine-readable field that shouldn't display!
     expect(page).to_not have_content 'Normalized Date:'
