@@ -21,7 +21,8 @@ RSpec.feature "Search results page" do
       date_created_tesim: ["Date 1"],
       resource_type_tesim: ['still image'],
       photographer_tesim: ['Person 1', 'Person 2'],
-      location_tesim: ['search_results_spec'] # to control what displays
+      location_tesim: ['search_results_spec'], # to control what displays,
+      thumbnail_path_ss: ["/assets/work-ff055336041c3f7d310ad69109eda4a887b16ec501f35afc0a547c4adb97ee72.png"]
     }
   end
 
@@ -47,6 +48,7 @@ RSpec.feature "Search results page" do
     expect(page).to have_content 'Resource Type: still image'
     expect(page).to have_content 'Date Created: Date 1'
     expect(page).to have_content 'Photographer: Person 1'
+    expect(page).to have_xpath(".//*[@id='documents']/div[1]/div[2]/a/img[@alt='Title One']")
   end
   
   scenario 'displays facetable fields as links' do
