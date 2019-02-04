@@ -1,27 +1,20 @@
 <div id="header-navbar" class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="<%= container_classes %>">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle btn collapsed" data-toggle="collapse" data-target="#user-util-collapse">
-	<span class="sr-only">Toggle navigation</span>
-	<span class="icon-bar"></span>
-	<span class="icon-bar"></span>
-	<span class="icon-bar"></span>
-      </button>
       <ul class="logo-links">
         <li>
           <a href="http://www.library.ucla.edu" style="display: block; z-index: 1;">
-            <object data="<%= image_url('logo2.svg', alt: "UCLA Library Logo") %>" type="image/svg+xml">UCLA Library</object>
-          </a>
+            <object data="<%= image_url('logo2.svg', alt: "UCLA Library Logo") %>" type="image/svg+xml">UCLA Library</object></a>
         </li>
         <li class="logo-digital-collections">
           <span class="separator"> | </span>
-          <a href="/" style="display: block; z-index: 1;"><%= t('blacklight.short_application_name') %> </a>
+          <a href="/" style="display: block; z-index: 1;"> <%= t('blacklight.short_application_name') %> </a>
         </li>
       </ul>
     </div>
 
     <div class="navbar-right">
-      <%= render_search_bar  %>
+      <%= render_search_bar %>
     </div>
 
     <div class="collapse navbar-collapse" id="user-util-collapse">
