@@ -31,6 +31,11 @@ services:
     ports:
       - 8983:8983
 
+  solr_test:
+    image: uclalibrary/solr-ursus
+    ports:
+      - 8985:8983
+
 volumes:
   bundle_dir:
   mysql_data:
