@@ -5,7 +5,15 @@ RUN gem install bundler
 RUN bundle config --global frozen 1
 RUN apt-get update -qq && apt-get install -y mysql-client build-essential libpq-dev nodejs
 
+# Install Ruby Gems
+RUN gem install bundler
 ENV BUNDLE_PATH /usr/local/bundle
-COPY start-ursus.sh /start-ursus.sh
+WORKDIR /californica
+COPY Gemfile /californica/Gemfile
+COPY Gemfile.lock /californica/Gemfile.lock
+RUN bundle install
 
-CMD ["sh", "/start-ursus.sh"]
+
+# Add californica
+COPY / /ursus
+CMD ["sh", "/ursus/start-ursus.sh"]

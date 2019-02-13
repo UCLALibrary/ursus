@@ -2,13 +2,17 @@ version: "3.6"
 
 services:
   web:
-    build: .
+    image: uclalibrary/ursus
     depends_on:
       - db
       - solr
     env_file:
       - ./dotenv.sample
-      - ./samvera-docker.env
+    environment:
+      DATABASE_HOST: db
+      IIIF_URL: http://t-u-cantaloupe01.library.ucla.edu/images
+      SOLR_URL: http://solr:8983/solr/calursus
+      SOLR_TEST_URL: http://solr_test:8983/solr/calursus
     ports:
       - "3003:3000"
     volumes:
@@ -30,6 +34,11 @@ services:
     image: uclalibrary/solr-ursus
     ports:
       - 8983:8983
+
+  solr_test:
+    image: uclalibrary/solr-ursus
+    ports:
+      - 8985:8983
 
 volumes:
   bundle_dir:
