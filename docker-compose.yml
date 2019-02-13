@@ -2,7 +2,7 @@ version: "3.6"
 
 services:
   web:
-    build: .
+    image: uclalibrary/ursus
     depends_on:
       - db
       - solr
