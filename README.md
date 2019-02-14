@@ -19,7 +19,11 @@ In 1984 to mark its 50th Anniversary, the UCLA Alumni Association commissioned "
 
 ## Development
 
-### Prerequisites
+### Development environment with Docker
+https://github.com/UCLALibrary/ursus/wiki/Docker-Setup
+
+### Development environment without Docker
+#### Prerequisites
 
 Requirements:
 1. Ruby and Bundler
@@ -50,5 +54,3 @@ Requirements:
 1. Make sure the solr from your Californica `test` environment is running.
 1. Make sure mysql is running
 1. Run `rspec spec`
-
----
