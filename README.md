@@ -50,3 +50,5 @@ Requirements:
 1. Make sure the solr from your Californica `test` environment is running.
 1. Make sure mysql is running
 1. Run `rspec spec`
+
+---
