@@ -1,0 +1,27 @@
+version: "3.6"
+
+services:
+  web:
+    image: uclalibrary/ursus
+    env_file:
+      - ./dotenv.sample
+    environment:
+      DATABASE_HOST: db
+      DATABASE_USERNAME: californica
+      DATABASE_PASSWORD: californica
+      IIIF_URL: http://t-u-cantaloupe01.library.ucla.edu/images
+      SOLR_URL: http://solr:8983/solr/californica
+      SOLR_TEST_URL: http://solr_test:8983/solr/californica
+    ports:
+      - "3003:3000"
+    volumes:
+      - .:/ursus
+      - bundle_dir:/usr/local/bundle
+    working_dir: /ursus
+    networks:
+      - californica_default
+volumes:
+  bundle_dir:
+networks:
+  californica_default:
+    external: true
