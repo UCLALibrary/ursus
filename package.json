@@ -1,5 +1,14 @@
 {
   "name": "ursus",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "universalviewer": "^3.0.16"
+  },
+  "scripts": {
+    "preinstall": "rm -rf ./public/uv",
+    "postinstall": "shx cp -r ./node_modules/universalviewer/uv ./public/"
+  },
+  "devDependencies": {
+    "shx": "^0.3.2"
+  }
 }
