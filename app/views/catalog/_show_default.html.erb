@@ -1,4 +1,11 @@
-<div id="uv" class="uv"></div>
+<iframe
+    class="universal-viewer-iframe"
+    src="<%= request&.base_url %>/uv/uv.html#?manifest=<%= Rails.application.config.iiif_url %>/<%= document.id %>/manifest&config=uv-config.json"
+    width="640"
+    height="480"
+    allowfullscreen
+    frameborder="0">
+</iframe>
 </br>
 <% doc_presenter = show_presenter(document) %>
 <%# default partial to display solr document fields in catalog show view -%>
@@ -9,26 +16,6 @@
 	    <dd class="blacklight-<%= field_name.parameterize %>"><%= doc_presenter.field_value field_name %></dd>
     <% end -%>
   <% end -%>
-      <dt class="blacklight-license">License:</dt>
-      <dd class="blacklight-license"><%= render_license %></dd>
+  <dt class="blacklight-license">License:</dt>
+  <dd class="blacklight-license"><%= render_license %></dd>
 </dl>
-<style>
-  #uv {
-      width: 640px;
-      height: 480px;
-  }
-</style>
-<link rel="stylesheet" type="text/css" href="/uv/uv.css">
-<script src="/uv/lib/offline.js"></script>
-<script src="/uv/helpers.js"></script>
-<script>
-  window.addEventListener('uvLoaded', function (e) {
-      createUV('#uv', {
-          iiifResourceUri: '<%= Rails.application.config.iiif_url %>/<%= document.id %>/manifest',
-          configUri: '/uv/uv-config.json',
-	  root: '/uv/'
-      }, new UV.URLDataProvider());
-  }, false);
-</script>
-
-<script src="/uv/uv.js"></script>

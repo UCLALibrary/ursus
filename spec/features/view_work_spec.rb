@@ -74,7 +74,7 @@ RSpec.feature "View a Work" do
     expect(page).to have_content 'Language: No linguistic content'
     expect(page).to have_content 'Photographer: Poalillo, Charles'
   end
- 
+
   context 'license' do
     scenario 'it displays the creative commons text and logo when there is a cc license' do
       visit solr_document_path(id)
@@ -120,6 +120,6 @@ RSpec.feature "View a Work" do
 
   scenario 'loads UV on the page with correct IIIF URI' do
     visit solr_document_path(id)
-    expect(page.html).to match(/iiifResourceUri: \'https:\/\/example.com\/123\/manifest/)
+    expect(page.html).to match(/universal-viewer-iframe/)
   end
 end
