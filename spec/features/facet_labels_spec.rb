@@ -20,7 +20,7 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       year_isim: [1947],
       language_sim: ['No linguistic content'],
       location_sim: ['LA'],
-      dlcs_collection_name_sim: ['Connell']
+      member_of_collections_ssim: ['Connell']
     }
   end
 

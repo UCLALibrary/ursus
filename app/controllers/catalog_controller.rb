@@ -71,7 +71,7 @@ class CatalogController < ApplicationController
     config.add_facet_field ::Solrizer.solr_name('location', :facetable), limit: 5
     config.add_facet_field 'year_isim', limit: 5, range: true
     config.add_facet_field ::Solrizer.solr_name('language', :facetable), limit: 5
-    config.add_facet_field ::Solrizer.solr_name('dlcs_collection_name', :facetable), limit: 5
+    config.add_facet_field ::Solrizer.solr_name('member_of_collections', :symbol), limit: 5, label: 'Collection'
 
     # config.add_facet_field ::Solrizer.solr_name('human_readable_type', :facetable), label: 'Type', limit: 5
     # config.add_facet_field ::Solrizer.solr_name('creator', :facetable), limit: 5
