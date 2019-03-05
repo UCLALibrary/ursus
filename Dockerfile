@@ -5,7 +5,6 @@ RUN gem install bundler
 RUN bundle config --global frozen 1
 
 RUN apt-get update -qq
-
 # Add https support to apt to download yarn & newer node
 RUN apt-get install -y  apt-transport-https
 
@@ -14,6 +13,7 @@ RUN apt-get install -y  apt-transport-https
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update -qq
 RUN apt-get install mysql-client build-essential libpq-dev yarn nodejs -y
 
 # Install Ruby Gems
