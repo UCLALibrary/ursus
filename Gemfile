@@ -71,8 +71,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'blacklight', '>= 6.1'
-gem 'blacklight_range_limit'
+gem 'blacklight', '~> 7.0.1'
+gem 'blacklight_range_limit', '~> 7.0.0'
+gem 'bootstrap', '~> 4.0'
 gem 'coveralls', require: false
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
