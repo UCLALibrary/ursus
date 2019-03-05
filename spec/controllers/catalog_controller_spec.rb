@@ -19,7 +19,7 @@ RSpec.describe CatalogController, type: :controller do
        'year_isim',
        'language',
        'generic_type',
-       'dlcs_collection_name']
+       'member_of_collections']
     end
 
     it 'has exactly expected facets' do
