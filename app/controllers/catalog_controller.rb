@@ -3,9 +3,9 @@
 require 'solrizer'
 
 class CatalogController < ApplicationController
-
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
+  include BlacklightHelper
 
   BREAKS = {
     words_connector: '<br/>',
@@ -31,9 +31,8 @@ class CatalogController < ApplicationController
       fq: '{!term f=has_model_ssim v=Work}'
     }
 
-    #remove some actions from the show view toolbox (see story #72, #74)
-    config.show.document_actions.delete(:sms)
-    config.show.document_actions.delete(:email)
+    config.show.partials.insert(1, :uv)
+    config.show.partials.insert(3, :license)
 
     # solr field configuration for document/show views
     config.index.title_field = ::Solrizer.solr_name('title', :stored_searchable)
@@ -64,7 +63,7 @@ class CatalogController < ApplicationController
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
-    config.add_facet_field ::Solrizer.solr_name('subject', :facetable), limit: 5
+    config.add_facet_field ::Solrizer.solr_name('subject', :facetable), limit: 5, label: 'Subjects'
     config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('genre', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('named_subject', :facetable), limit: 5
@@ -100,8 +99,8 @@ class CatalogController < ApplicationController
     config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', separator_options: BREAKS
     config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated'
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
-    config.add_index_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_search: ::Solrizer.solr_name('resource_type', :facetable)
-    config.add_index_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_search: ::Solrizer.solr_name('photographer', :facetable)
+    config.add_index_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_facet: ::Solrizer.solr_name('resource_type', :facetable)
+    config.add_index_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_facet: ::Solrizer.solr_name('photographer', :facetable)
 
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
@@ -109,17 +108,17 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('dlcs_collection_name', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('description', :stored_searchable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name('keyword', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('subject', :stored_searchable), link_to_search: ::Solrizer.solr_name('subject', :facetable), separator_options: BREAKS
+    config.add_show_field ::Solrizer.solr_name('subject', :stored_searchable), link_to_facet: ::Solrizer.solr_name('subject', :facetable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name('creator', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('contributor', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('publisher', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('based_near_label', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('language', :stored_searchable), link_to_search: ::Solrizer.solr_name('language', :facetable)
+    config.add_show_field ::Solrizer.solr_name('language', :stored_searchable), link_to_facet: ::Solrizer.solr_name('language', :facetable)
     config.add_show_field ::Solrizer.solr_name('date_uploaded', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('date_modified', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('date_created', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('human_readable_rights_statement', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_search: ::Solrizer.solr_name('resource_type', :facetable)
+    config.add_show_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_facet: ::Solrizer.solr_name('resource_type', :facetable)
     config.add_show_field ::Solrizer.solr_name('format', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('identifier', :stored_searchable)
 
@@ -127,16 +126,16 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('dimensions', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('extent', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('funding_note', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable), link_to_search: ::Solrizer.solr_name('genre', :facetable), separator_options: BREAKS
+    config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable), link_to_facet: ::Solrizer.solr_name('genre', :facetable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name("geographic_coordinates", :symbol)
-    config.add_show_field ::Solrizer.solr_name('location', :stored_searchable), link_to_search: ::Solrizer.solr_name('location', :facetable)
+    config.add_show_field ::Solrizer.solr_name('location', :stored_searchable), link_to_facet: ::Solrizer.solr_name('location', :facetable)
     config.add_show_field ::Solrizer.solr_name('local_identifier', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('medium', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('named_subject', :stored_searchable), link_to_search: ::Solrizer.solr_name('named_subject', :facetable), separator_options: BREAKS
+    config.add_show_field ::Solrizer.solr_name('named_subject', :stored_searchable), link_to_facet: ::Solrizer.solr_name('named_subject', :facetable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name('repository', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_country', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('rights_holder', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_search: ::Solrizer.solr_name('photographer', :facetable)
+    config.add_show_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_facet: ::Solrizer.solr_name('photographer', :facetable)
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
@@ -191,9 +190,6 @@ class CatalogController < ApplicationController
     config.add_results_collection_tool(:per_page_widget)
     config.add_results_collection_tool(:view_type_group)
 
-    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
-    config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
-    config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
     config.add_show_tools_partial(:citation)
 
     config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?)

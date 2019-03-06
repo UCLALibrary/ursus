@@ -1,9 +1,11 @@
 @import 'colors';
 
 .navbar-brand {
-  margin-top: 1em;
   margin-left: 0 !important;
   background: transparent image_url('logo.svg') no-repeat top left !important;
+  height: inherit !important;
+  margin-top: 25px !important;
+  flex: 0 0 250px !important;
 }
 
 .nav-link:hover {
@@ -12,4 +14,8 @@
 
 .navbar-right {
   margin-top:10px;
+}
+
+.navbar-nav {
+  display: none !important;
 }

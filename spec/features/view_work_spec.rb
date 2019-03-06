@@ -118,7 +118,7 @@ RSpec.feature "View a Work" do
     expect(page).to_not have_selector '#emailLink'
   end
 
-  scenario 'loads UV on the page with correct IIIF URI' do
+  scenario 'loads UV on the page' do
     visit solr_document_path(id)
     expect(page.html).to match(/universal-viewer-iframe/)
   end
