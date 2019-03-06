@@ -13,8 +13,12 @@
 //= require rails-ujs
 //= require turbolinks
 //
+
+//= require tether
 // Required by Blacklight
 //= require jquery
+//= require popper
+//= require bootstrap
 //= require blacklight/blacklight
 
 //= require_tree .
@@ -23,4 +27,3 @@
 // For blacklight_range_limit built-in JS, if you don't want it you don't need
 // this:
 //= require 'blacklight_range_limit'
-

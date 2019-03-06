@@ -48,9 +48,8 @@ RSpec.feature "Search results page" do
     expect(page).to have_content 'Resource Type: still image'
     expect(page).to have_content 'Date Created: Date 1'
     expect(page).to have_content 'Photographer: Person 1'
-    expect(page).to have_xpath(".//*[@id='documents']/div[1]/div[2]/a/img[@alt='Title One']")
   end
-  
+
   scenario 'displays facetable fields as links' do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
     expect(page).to have_link 'Title One'
