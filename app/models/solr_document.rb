@@ -16,11 +16,11 @@ class SolrDocument
   use_extension(Blacklight::Document::DublinCore)
 
   def export_as_ucla_citation_txt
-    image = self 
-    title = image[:title_tesim].first
-    collection = image[:publisher_tesim].first
-    resource_type = image[:resource_type_tesim].first
+    image = self
+    title = (image[:title_tesim].to_a.first or 'Untitled')
+    collection = (image[:dlcs_collection_name_ssm].to_a.first or 'No collection')
+    resource_type = (image[:resource_type_tesim].to_a.first or 'unknown type')
     imageid = image[:id]
-    "#{title}. [ #{resource_type} ]. UCLA Library Digital Collections. #{collection}. https://ursus-test.library.ucla.edu/catalog/#{imageid}"
+    "#{title}. [#{resource_type}]. UCLA Library Digital Collections. #{collection}. https://#{ENV['RAILS_HOST']}/catalog/#{imageid}"
   end
 end
