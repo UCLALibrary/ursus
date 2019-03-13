@@ -28,7 +28,7 @@ class CatalogController < ApplicationController
       qt: 'search',
       rows: 10,
       qf: 'title_tesim description_tesim creator_tesim keyword_tesim',
-      fq: '{!term f=has_model_ssim v=Work}'
+      fq: '{!terms f=has_model_ssim v=Work,Collection}'
     }
 
     config.show.partials.insert(1, :uv)
