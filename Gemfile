@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'selenium-webdriver'
   gem 'solr_wrapper', '>= 2.1.0'
+  gem 'webmock'
 end
 
 group :development do
@@ -77,6 +78,7 @@ gem 'bootstrap', '~> 4.0'
 gem 'coveralls', require: false
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
+gem 'httparty'
 gem 'jquery-rails'
 gem 'loofah', '>= 2.2.3'
 gem 'rsolr', '>= 1.0'

@@ -12,9 +12,10 @@ RSpec.feature 'The genre field of the item display view' do
     {
       id: '123_genre_display',
       genre_tesim: ['genre1', 'genre2', 'genre3'],
+      has_model_ssim: ['Work']
     }
   end
-  
+
   it 'lists each genre on its own line, as a link to a search for that genre' do
     visit('/catalog/123_genre_display')
 
