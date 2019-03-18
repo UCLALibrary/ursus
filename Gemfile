@@ -81,3 +81,4 @@ gem 'jquery-rails'
 gem 'loofah', '>= 2.2.3'
 gem 'rsolr', '>= 1.0'
 gem 'solrizer'
+gem 'whenever', require: false
