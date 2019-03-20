@@ -4,6 +4,11 @@ cache:
   directories:
     - tmp/solr_downloads
 dist: trusty
+addons:
+  apt:
+    packages:
+    - chromium-browser
+    - chromium-chromedriver
 sudo: false
 jdk:
   - oraclejdk8
@@ -18,6 +23,10 @@ env:
     - secure: "AkeBX5IfGGlj9koT0Xr14kn3b1AgnNYJEXf/cwcVmwTPxEvcCa0f8Tcl6ToHxRg6RUUQP/znq4QUa3P0e91qBeZQpo6Kf8yGQXXXtt4R/hFDwcxQsfaNEeASnTxed83clPrelS4Q2N/XVpnYz2b+fDwh6lHvjn+KQue55r1MWQpqIoXCxO4x4WVP5f2umByWbV0iEWAt0zfPONLXNwGn/eMZXz3xVEUGG+6mxc1eWyIvUiPjxEPd5GVnyyIf9T4II7UgvF8Rx88stWTimvzcZK5TVdeNamjrjYrnCznNLGEISiN4Zbb1UQUHaKeLQc0VMdHdFLH3L5qdZ5DvVH2VH9ledXPjrfdYMYnWbrB+hVlJtYuSqs75Deu3qtoE6swaaq65q3dy/+YfwxTNIj3pr/HJOilwZtvN1GNj+5QtvhbTSbneBtZVBl9D/el8C5l209cHx69nsCYoCg1Wb35YlQSYBYuUv2ABRx6ixLB+7ZnewHSWFZPf9j1Ssw4PBw9kKhHLYMzyoyrnfiNJ26agpt3B5Q6uhSQ+QAKDKl6NZdhmsWBgXsxbte3h8pNlHjGtZqNYzSeIf0g4OTZVEcR38IPg/J3M9p0P+K+vQPQZ2JiMFlQ2eYmHwQj/8c6Hus8TEcq7LYDyFmVm+E55wofpdSNbUE2cLeCfvFxDPAI3hCg="
 rvm:
   - 2.5.1
+before_script:
+  - ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
+  - # start your web application and listen on `localhost`
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 script:
   - yarn install
   - bundle exec rake ci
