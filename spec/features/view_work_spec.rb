@@ -1,12 +1,14 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature "View a Work" do
+RSpec.feature "View a Work", js: true  do
   before do
     solr = Blacklight.default_index.connection
     solr.add(work_attributes)
     solr.commit
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
+    allow_any_instance_of(IiifService).to receive(:src).and_return('/uv/uv.html#?manifest=/manifest.json')
   end
 
   let(:id) { '123' }
@@ -96,14 +98,6 @@ RSpec.feature "View a Work" do
     expect(page.find('dd.blacklight-language_tesim')).to have_link 'No linguistic content'
   end
 
-  scenario 'displays line breaks between the values of certain fields' do
-    visit solr_document_path(id)
-    expect(page.find('dd.blacklight-description_tesim').all(:css, 'br').length).to eq 1
-    expect(page.find('dd.blacklight-subject_tesim').all(:css, 'br').length).to eq 1
-    expect(page.find('dd.blacklight-genre_tesim').all(:css, 'br').length).to eq 2
-    expect(page.find('dd.blacklight-named_subject_tesim').all(:css, 'br').length).to eq 3
-  end
-
   scenario 'only displays the tools we want to support' do
     visit solr_document_path(id)
 
@@ -118,8 +112,16 @@ RSpec.feature "View a Work" do
     expect(page).to_not have_selector '#emailLink'
   end
 
-  scenario 'loads UV on the page' do
+  scenario 'loads UV on the page with the correct controls' do
     visit solr_document_path(id)
     expect(page.html).to match(/universal-viewer-iframe/)
+
+    within_frame(find('#universal-viewer-iframe')) do
+      # Don't show download
+      expect(page).to have_selector('button.download', visible: false)
+      # Show fullscreen
+      expect(page).to have_selector('button.fullScreen', visible: true)
+
+    end
   end
 end

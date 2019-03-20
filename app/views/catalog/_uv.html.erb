@@ -1,8 +1,10 @@
+<% iiif_service = IiifService.new %>
 <iframe
     class="universal-viewer-iframe"
-    src="<%= request&.base_url %>/uv/uv.html#?manifest=<%= Rails.application.config.iiif_url %>/<%= document.id %>/manifest"
+    src=<%= iiif_service.src(request, document) %>
     width="640"
     height="480"
+    id="universal-viewer-iframe"
     allowfullscreen
     frameborder="0">
 </iframe>
