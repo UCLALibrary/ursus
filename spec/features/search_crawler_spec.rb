@@ -6,7 +6,7 @@ RSpec.describe "Search History Page" do
     it "does remember human searches" do
       visit root_path
       fill_in "q", with: 'cat'
-      expect { click_button 'Search' }.to change { Search.count == 1 }
+      expect { click_button 'Search' }.to change { Search.count }.by(1)
     end
 
     it "does not remember bot searches" do
