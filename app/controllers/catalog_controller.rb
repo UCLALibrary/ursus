@@ -23,6 +23,9 @@ class CatalogController < ApplicationController
     ## Model that maps search index responses to the blacklight response model
     # config.response_model = Blacklight::Solr::Response
 
+    # Do not store searches for anyone since they are not displayed and will fill up the database
+    config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT'] =~ /bot/ }
+
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
       qt: 'search',
