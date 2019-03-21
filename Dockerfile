@@ -1,8 +1,6 @@
 FROM ruby:2.5
 
 RUN gem install bundler
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
 
 RUN apt-get update -qq
 # Add https support to apt to download yarn & newer node
