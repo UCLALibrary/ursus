@@ -3,36 +3,34 @@
 .footer {
 
   margin-top: 2.5rem;
-  background-color: $ucla-secondary-blue-dark;
-  // height: 100px;
+  background-color: $ucla-blue;
   color: snow;
+  font-family: Helvetica;
+  line-height: 1.5em;
 
-  a {
-    color: snow;
-  }
 
   .footer-links {
-    padding-top: 15px;
+    font-size: 1em;
     text-align: center;
+    padding-top: 1.5em;
+
+    a {
+      color: snow;
+      display: inline-block;
+      padding: 0px 20px;
+    }
+
+    a:hover { 
+      color: $ucla-gold;
+      text-decoration: underline;
+    }
   }
 
-  hr {
-    border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.09);
-    border-bottom: .2px solid #1B3F8B;
-    margin: 10px;
-  }
+   .footer-version {
+     color: #FFFFFF;
+     font-size: .65em;
+     text-align: center;
+     padding-bottom: 1.5em;
+   }
 
-  .footer-version {
-    font-size: 10px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
 }
-
-// .version {
-//   float: right;
-//   margin: 1em;
-//   margin-top: 2em;
-// }
