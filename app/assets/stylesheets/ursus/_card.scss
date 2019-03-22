@@ -1,0 +1,44 @@
+.about-page {
+  #headingOne {
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+  }
+  .card {
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    .card-header {
+      border-radius: 0;
+      background-color: inherit;
+      border-bottom: 0;
+    }
+    button.collapsed::after {
+      content: "⌃";
+      font-weight: 800;
+      position: absolute;
+      right: 1em;
+      top: 25px;
+    }
+    button::after {
+      content: "⌄";
+      font-weight: 800;
+      position: absolute;
+      right: 1em;
+      top: 20px;
+    }
+    .card-body {
+      border-radius: 0;
+    }
+    .card-footer {
+      border-radius: 0;
+    }
+
+    .btn {
+      font-size: 1em;
+    }
+
+    .btn[aria-expanded="true"] {
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}

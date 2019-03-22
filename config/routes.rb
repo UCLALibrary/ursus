@@ -1,4 +1,7 @@
+
 Rails.application.routes.draw do
+  get '/about', to: 'static#about'
+
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   concern :searchable, Blacklight::Routes::Searchable.new
 
