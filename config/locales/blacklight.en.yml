@@ -3,6 +3,12 @@ en:
     short_application_name: 'Digital Collections'
     application_name: 'UCLA Library Digital Collections'
     search:
+      zero_results:
+        title: "No results found."
+        modify_search: ""
+        use_fewer_keywords: "Remove some filters or terms from your query and search again."
+        search_fields: "you searched by %{search_fields}"
+        search_everything: "try searching everything"
       form:
         search:
           placeholder: 'Search Los Angeles Daily News Negatives'
