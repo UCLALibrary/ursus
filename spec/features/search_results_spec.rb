@@ -58,6 +58,16 @@ RSpec.feature "Search results page" do
     expect(page).to have_link 'Person 1'
   end
 
+  scenario 'displays the old site link with page results' do
+    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
+    expect(page).to have_link 'original digital collections site'
+  end
+
+  scenario 'displays the old site link on page with no results' do
+    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=zebra'
+    expect(page).to have_link 'original digital collections site'
+  end
+
   scenario 'displays line breaks between the values of certain fields' do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
     expect(page.all('dd.blacklight-description_tesim')[1].all(:css, 'br').length).to eq 1
