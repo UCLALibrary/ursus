@@ -3,6 +3,8 @@ en:
     short_application_name: 'Digital Collections'
     application_name: 'UCLA Library Digital Collections'
     search:
+      facets:
+        title: 'Refine your search'
       zero_results:
         title: "No results found."
         modify_search: ""

@@ -38,4 +38,16 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       'Collection'
     )
   end
+
+  it 'has the text Refine your search not limit' do
+    visit('/catalog')
+    expect(page).to have_content('Refine your search')
+  end
+
+  it 'has buttons for the selected facet display' do
+    visit('/catalog')
+    click_on 'Subject'
+    click_on 'Subj 1'
+    expect(page).to have_selector('.facet-selected')
+  end
 end
