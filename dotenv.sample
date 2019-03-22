@@ -23,4 +23,3 @@ SOLR_URL=http://127.0.0.1:8983/solr/californica
 USER_ACCOUNT_UI_ENABLED=false
 
 THUMBNAIL_BASE_URL=''
-IIIF_URL=''
