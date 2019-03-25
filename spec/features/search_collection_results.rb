@@ -11,11 +11,11 @@ RSpec.feature "Search collection results page" do
 
   let(:collection_attributes) do
     {
-      id:'id123',
+      id: 'id123',
       has_model_ssim: ['Collection'],
       title_tesim: ['Title'],
       description_tesim: ['Description 1'],
-      thumbnail_path_ss:'/assets/collection-a38b932554788aa578debf2319e8c4ba8a7db06b3ba57ecda1391a548a4b6e0a.png',
+      thumbnail_path_ss: '/assets/collection-a38b932554788aa578debf2319e8c4ba8a7db06b3ba57ecda1391a548a4b6e0a.png',
       location_tesim: ['search_collection_results_spec'] # to control what displays
     }
   end

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class SolrDocument
   include Blacklight::Solr::Document
   # self.unique_key = 'id'
@@ -17,9 +18,9 @@ class SolrDocument
 
   def export_as_ucla_citation_txt
     image = self
-    title = (image[:title_tesim].to_a.first or 'Untitled')
-    collection = (image[:dlcs_collection_name_ssm].to_a.first or 'No collection')
-    resource_type = (image[:resource_type_tesim].to_a.first or 'unknown type')
+    title = (image[:title_tesim].to_a.first || 'Untitled')
+    collection = (image[:dlcs_collection_name_ssm].to_a.first || 'No collection')
+    resource_type = (image[:resource_type_tesim].to_a.first || 'unknown type')
     imageid = image[:id]
     "#{title}. [#{resource_type}]. UCLA Library Digital Collections. #{collection}. https://#{ENV['RAILS_HOST']}/catalog/#{imageid}"
   end

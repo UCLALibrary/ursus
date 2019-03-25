@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 server 'ursus-stage.library.ucla.edu', user: 'deploy', roles: [:web, :app, :db]
 
 # Capistrano passenger restart isn't working consistently,

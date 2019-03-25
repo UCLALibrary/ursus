@@ -28,7 +28,7 @@ RSpec.feature "View a a work with breaks" do
       publisher_tesim: ['Los Angeles Daily News'],
       rights_country_tesim: ['US'],
       rights_holder_tesim: ['Charles E. Young'],
-      normalized_date_tesim: ['1934-56-78'],  # unique value so we can test it doesn't display
+      normalized_date_tesim: ['1934-56-78'], # unique value so we can test it doesn't display
       local_identifier_tesim: ['local id 123'],
       date_created_tesim: ["September 17, 1947"],
       medium_tesim: ['1 photograph'],

@@ -37,6 +37,8 @@ Metrics/MethodLength:
 RSpec/DescribeClass:
   Exclude:
     - 'spec/tasks/**/*'
+    - 'spec/views/**/*'
+    - 'spec/features/**/*'
 
 RSpec/ExampleLength:
   Enabled: true
@@ -63,3 +65,6 @@ Layout/MultilineBlockLayout:
 Layout/BlockEndNewline:
   Exclude:
     - 'spec/features/search_catalog_spec.rb'
+
+RSpec/AnyInstance:
+  Enabled: false

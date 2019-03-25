@@ -101,7 +101,7 @@ RSpec.feature 'Search the catalog' do
     click_on 'search'
 
     within '#documents' do
-      result_titles = page.all(:css, 'h3.document-title-heading/a').to_a.map { |a| a.text }
+      result_titles = page.all(:css, 'h3.document-title-heading/a').to_a.map(&:text)
       expect(result_titles).to contain_exactly(
         'Target in creator',
         'Target in contributor',

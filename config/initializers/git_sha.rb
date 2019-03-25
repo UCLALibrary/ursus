@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 revisions_logfile = "/opt/#{ENV['PROJECT_NAME']}/revisions.log"
 GIT_SHA =
   if Rails.env.production? && File.exist?(revisions_logfile)

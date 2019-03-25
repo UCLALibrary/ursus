@@ -17,8 +17,6 @@ module CatalogHelper
     alt_title = document["title_tesim"][0]
     image_options[:alt] = alt_title
 
-    #image_options["aria-hidden"] = true
-
     value = if blacklight_config.view_config(document_index_view_type).thumbnail_method
               send(blacklight_config.view_config(document_index_view_type).thumbnail_method, document, image_options)
             elsif blacklight_config.view_config(document_index_view_type).thumbnail_field
@@ -26,13 +24,15 @@ module CatalogHelper
               image_tag url, image_options if url.present?
             end
 
-    if value
-      if url_options == false || url_options[:suppress_link]
-        value
-      else
-        link_to_document document, value, url_options
-      end
-    end
+    return unless value
+    check_for_suppress(document, value, url_options)
   end
 
+  def check_for_suppress(document, value, url_options = {})
+    if url_options == false || url_options[:suppress_link]
+      value
+    else
+      link_to_document document, value, url_options
+    end
+  end
 end

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature "View a Work", js: true  do
+RSpec.feature "View a Work", js: true do
   before do
     solr = Blacklight.default_index.connection
     solr.add(work_attributes)
@@ -30,7 +30,7 @@ RSpec.feature "View a Work", js: true  do
       publisher_tesim: ['Los Angeles Daily News'],
       rights_country_tesim: ['US'],
       rights_holder_tesim: ['Charles E. Young'],
-      normalized_date_tesim: ['1934-56-78'],  # unique value so we can test it doesn't display
+      normalized_date_tesim: ['1934-56-78'], # unique value so we can test it doesn't display
       local_identifier_tesim: ['local id 123'],
       date_created_tesim: ["September 17, 1947"],
       medium_tesim: ['1 photograph'],
@@ -93,7 +93,7 @@ RSpec.feature "View a Work", js: true  do
     expect(page.find('dd.blacklight-genre_tesim')).to have_link    'Genre 1'
     expect(page.find('dd.blacklight-genre_tesim')).to have_link    'Genre 2'
     expect(page.find('dd.blacklight-named_subject_tesim')).to have_link    'Named Subject 1'
-    expect(page.find('dd.blacklight-location_tesim')).to have_link    'Los Angeles'
+    expect(page.find('dd.blacklight-location_tesim')).to have_link 'Los Angeles'
     expect(page.find('dd.blacklight-photographer_tesim')).to have_link 'Poalillo, Charles'
     expect(page.find('dd.blacklight-language_tesim')).to have_link 'No linguistic content'
   end
@@ -121,7 +121,6 @@ RSpec.feature "View a Work", js: true  do
       expect(page).to have_selector('button.download', visible: false)
       # Show fullscreen
       expect(page).to have_selector('button.fullScreen', visible: true)
-
     end
   end
 end
