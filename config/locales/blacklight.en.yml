@@ -11,7 +11,7 @@ en:
         search_everything: "try searching everything"
       form:
         search:
-          placeholder: 'Search Los Angeles Daily News Negatives'
+          placeholder: 'Search UCLA Library Digital Collections'
       fields:
         facet:
           date_created_tesim: 'Date Created'
