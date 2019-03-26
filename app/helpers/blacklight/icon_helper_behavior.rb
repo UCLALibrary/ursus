@@ -12,7 +12,7 @@ module Blacklight::IconHelperBehavior
   def blacklight_icon(icon_name, options = {})
     Rails.cache.fetch([:blacklight_icons, icon_name, options]) do
       icon = Blacklight::Icon.new(icon_name, options)
-      content_tag(:span, icon.svg.html_safe, icon.options)
+      content_tag(:span, icon.svg.html_safe, icon.options) # rubocop:disable Rails/OutputSafety
     end
   end
 end
