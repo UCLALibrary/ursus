@@ -1,11 +1,46 @@
 @import 'colors';
 
+.navbar-logo-block {
+  height: 65px !important;
+  font-family: 'Helvetica';
+}
+
+.navbar-text-logo {
+  font-weight: 300;
+  position: relative;
+  top: -0.185em;
+  left: -1.25em;
+  color: #fff;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+}
+
+.navbar-text-logo:hover {
+  color: $ucla-gold;
+  text-decoration: none;
+}
+
+.navbar-pipe::after {
+  content: '|';
+  position: relative;
+  left: -1.25em;
+  top: -0.275em;
+  font-weight: 300;
+  color: $ucla-lighter-blue;
+}
+
 .navbar-brand {
-  margin-left: 0 !important;
-  background: transparent image_url('logo.svg') no-repeat top left !important;
-  height: inherit !important;
+  margin-left: 2px !important;
+  background: transparent image_url('logo2.svg') no-repeat top left !important;
+  height: 22px !important;
   margin-top: 25px !important;
   flex: 0 0 250px !important;
+  overflow: unset !important;
+  width: 118px !important;
+}
+
+.navbar > .container {
+  flex-wrap: nowrap;
 }
 
 .nav-link:hover {
@@ -13,7 +48,7 @@
 }
 
 .navbar-right {
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .navbar-nav {
