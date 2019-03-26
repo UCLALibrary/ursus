@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 server 'ursus-qa.curationexperts.com', user: 'deploy', roles: [:web, :app, :db]
 # Capistrano passenger restart isn't working consistently,
 # so restart apache2 after a successful deploy, to ensure

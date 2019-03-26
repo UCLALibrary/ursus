@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.feature 'Search the catalog' do
@@ -35,7 +36,7 @@ RSpec.feature 'Search the catalog' do
       expect(page).to have_link('Newt Nutrition')
     end
 
-    fill_in 'range_year_isim_begin', with: '1920' 
+    fill_in 'range_year_isim_begin', with: '1920'
     fill_in 'range_year_isim_end', with: '1925'
     click_on 'Limit'
 
@@ -44,5 +45,4 @@ RSpec.feature 'Search the catalog' do
       expect(page).to_not have_link('Newt Nutrition')
     end
   end
-
 end

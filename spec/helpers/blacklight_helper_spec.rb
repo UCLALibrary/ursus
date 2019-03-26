@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.describe BlacklightHelper, type: :helper  do
+RSpec.describe BlacklightHelper, type: :helper do
   before do
     allow(helper).to receive(:current_or_guest_user).and_return(User.new)
     @document = document

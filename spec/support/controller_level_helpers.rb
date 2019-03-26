@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 module ControllerLevelHelpers
   module ControllerViewHelpers
-
     def search_state
       @search_state ||= Blacklight::SearchState.new(params, blacklight_config, controller)
     end

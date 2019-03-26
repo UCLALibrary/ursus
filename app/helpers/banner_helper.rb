@@ -5,7 +5,7 @@ module BannerHelper
     return unless collection?(document)
     img_path = get_img_path(document['id'])
     return unless img_path
-    "<img width='800' alt='Collection banner' height='100' src='#{img_path}'/>".html_safe
+    "<img width='800' alt='Collection banner' height='100' src='#{img_path}'/>".html_safe # rubocop:disable Rails/OutputSafety
   end
 
   def collection?(document)
@@ -23,8 +23,8 @@ module BannerHelper
   end
 
   def get_branding_info(collection_id)
-      response = HTTParty.get(branding_info_url(collection_id))
-      branding_info_json = response.parsed_response["local_path"]
-      branding_info_json.split('/public/')
+    response = HTTParty.get(branding_info_url(collection_id))
+    branding_info_json = response.parsed_response["local_path"]
+    branding_info_json.split('/public/')
   end
 end

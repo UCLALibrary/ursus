@@ -29,6 +29,5 @@ RSpec.feature 'The genre field of the item display view' do
       expect(page).to have_link('genre2', href: '/catalog?f%5Bgenre_sim%5D%5B%5D=genre2')
       expect(page).to have_link('genre3', href: '/catalog?f%5Bgenre_sim%5D%5B%5D=genre3')
     end
-
   end
 end

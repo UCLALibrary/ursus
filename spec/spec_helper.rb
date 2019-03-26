@@ -51,7 +51,7 @@ RSpec.configure do |config|
   # instead of true.
   # config.use_transactional_fixtures = true
 
-  #config.infer_spec_type_from_file_location!
+  # config.infer_spec_type_from_file_location!
 
   config.include(ControllerLevelHelpers, type: :helper)
   config.before(:each, type: :helper) { initialize_controller_helpers(helper) }

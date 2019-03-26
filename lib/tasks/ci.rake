@@ -6,12 +6,12 @@ unless Rails.env.production?
   require 'solr_wrapper/rake_task'
 
   task :with_solr do
-    config_file = File.join(Rails.root, 'config', 'solr_wrapper_test.yml')
+    config_file = Rails.root.join('config', 'solr_wrapper_test.yml')
 
     SolrWrapper.wrap(config: config_file) do |solr|
       solr.with_collection(name: "hydra-test", dir: "solr/conf") do
         Rake::Task['spec'].invoke
       end
     end
-  end 
+  end
 end
