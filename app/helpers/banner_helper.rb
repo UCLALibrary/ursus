@@ -5,7 +5,7 @@ module BannerHelper
     return unless collection?(document)
     img_path = get_img_path(document['id'])
     return unless img_path
-    "<img width='800' alt='Collection banner' height='100' src='#{img_path}'/>".html_safe # rubocop:disable Rails/OutputSafety
+    "<div class='collection-banner' alt='Collection banner' style='background-image:url(#{img_path});'></div>".html_safe # rubocop:disable Rails/OutputSafety
   end
 
   def collection?(document)
