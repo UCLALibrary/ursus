@@ -1,0 +1,102 @@
+#facets {
+
+  #facet-year_isim > div > div > ul {
+    display: none;
+  }
+
+  .slider_js .slider-selection {
+    background: #C3D7EE;
+  }
+
+  .text-success, .facet-values li .selected {
+    color: #2774AE !important;
+  }
+
+  .border-success, .facet-limit-active {
+    border-color: initial !important;
+        color: #FFFF !important;
+  }
+
+  .facet-limit-active .card-header {
+    background-color: #2774AE !important;
+    color: #FFFF !important;
+  }
+
+  .facet-content {
+    border-left: 1px solid #C1C1C1;
+    border-right: 1px solid #C1C1C1;
+    border-bottom: 1px solid #C1C1C1;
+  }
+
+  span.facet-label > span.selected {
+    color: #2774AE !important;
+  }
+
+
+
+  .card-header.collapse-toggle[aria-expanded="true"] {
+    background-color: #C3D7EE;
+    color: #003B5C;
+    border: 1px solid #C1C1C1;
+  }
+
+
+  .card-header.collapse-toggle.collapsed::after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transition: -webkit-transform 0.1s ease;
+    transition: transform 0.1s ease;
+    transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+  }
+
+  .card-header.collapse-toggle::after {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    transition: -webkit-transform 0.1s ease;
+    transition: transform 0.1s ease;
+    transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+  }
+
+  .card {
+    border-radius: 0;
+    border: 0;
+
+    .card-header {
+      border-radius: 0;
+      border-bottom: 0;
+      background-color: inherit;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+    button.collapsed::after {
+      content: "⌃";
+      font-weight: 800;
+      position: absolute;
+      right: 1em;
+      top: 25px;
+    }
+    button::after {
+      content: "⌄";
+      font-weight: 800;
+      position: absolute;
+      right: 1em;
+      top: 20px;
+    }
+    .card-body {
+      border-radius: 0;
+    }
+    .card-footer {
+      border-radius: 0;
+    }
+
+    .btn {
+      font-size: 1em;
+      background-color: #2774AE;
+      margin-left: 5px;
+    }
+
+    .btn[aria-expanded="true"] {
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
