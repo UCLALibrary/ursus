@@ -11,6 +11,7 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
   let(:work_attributes) do
     {
       id: '123',
+      title_tesim: ['Title'],
       has_model_ssim: ['Work'],
       has_model_sim: ['Work'],
       subject_sim: ['Subj 1', 'Subj 2'],

@@ -15,11 +15,11 @@ module BannerHelper
   def get_img_path(collection_id)
     branding_info = get_branding_info(collection_id)
     banner_path = branding_info[1]
-    "#{Rails.configuration.thumbnail_url}/#{banner_path}"
+    "#{Rails.configuration.californica_thumbnail_url}/#{banner_path}"
   end
 
   def branding_info_url(collection_id)
-    "#{Rails.configuration.thumbnail_url}/branding_info/#{collection_id}.json"
+    "#{Rails.configuration.californica_thumbnail_url}/branding_info/#{collection_id}.json"
   end
 
   def get_branding_info(collection_id)
