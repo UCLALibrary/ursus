@@ -1,10 +1,16 @@
 .document-thumbnail {
-  margin-top: -1.75em;
+  margin-top: -1.75em!important;
   padding: 1px;
 }
 
 @media screen and (max-width: 991px) {
   .document-thumbnail {
-    margin-top: -2.5em;
+    margin-top: -2.5em!important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .document-thumbnail {
+    margin-top: -.5em!important;
   }
 }
