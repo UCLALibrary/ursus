@@ -13,6 +13,7 @@ module BannerHelper
   end
 
   def get_img_path(collection_id)
+    return unless get_branding_info(collection_id)
     branding_info = get_branding_info(collection_id)
     banner_path = branding_info[1]
     "#{Rails.configuration.californica_thumbnail_url}/#{banner_path}"
@@ -24,7 +25,11 @@ module BannerHelper
 
   def get_branding_info(collection_id)
     response = HTTParty.get(branding_info_url(collection_id))
-    branding_info_json = response.parsed_response["local_path"]
-    branding_info_json.split('/public/')
+    begin
+      branding_info_json = response.parsed_response["local_path"]
+      return branding_info_json.split('/public/')
+    rescue
+      return nil
+    end
   end
 end
