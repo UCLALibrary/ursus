@@ -1,0 +1,10 @@
+.document-thumbnail {
+  margin-top: -1.75em;
+  padding: 1px;
+}
+
+@media screen and (max-width: 991px) {
+  .document-thumbnail {
+    margin-top: -2.5em;
+  }
+}
