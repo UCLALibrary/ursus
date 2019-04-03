@@ -98,6 +98,7 @@ RSpec.feature "View a Work", js: true do
     expect(page.find('dd.blacklight-photographer_tesim')).to have_link 'Poalillo, Charles'
     expect(page.find('dd.blacklight-language_tesim')).to have_link 'No linguistic content'
     expect(page).to have_link 'Photographic Collection'
+    expect(page.html).to match(/member_of_collections_ssim/)
   end
 
   scenario 'only displays the tools we want to support' do
