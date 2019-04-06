@@ -11,8 +11,11 @@
   <h1 class='sr-only top-content-title'><%= t('blacklight.search.header') %></h1>
   <%= render 'constraints' %>
 <% end %>
+<h4 class='sort-pagination'><b><%= @response['response'].dig(:numFound) %></b> Catalog Results <%= render_results_collection_tools wrapping_class: "search-widgets float-md-right" %></h4>
 
-<%= render 'search_header' %>
+<div class='rectangle'> <%= render 'search_header' %> </div>
+
+<hr>
 
 <h2 class='sr-only'><%= t('blacklight.search.search_results') %></h2>
 
