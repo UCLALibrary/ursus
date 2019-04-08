@@ -14,13 +14,13 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       title_tesim: ['Title'],
       has_model_ssim: ['Work'],
       has_model_sim: ['Work'],
-      subject_sim: ['Subj 1', 'Subj 2'],
+      subject_sim: ['People', 'Crime'],
       resource_type_sim: ['Photograph'],
       genre_sim: ['news photographs'],
-      named_subject_sim: ['Los Angeles County (Calif.). Board of Supervisors'],
+      named_subject_sim: ['Aimee McPherson Semple'],
       year_isim: [1947],
       language_sim: ['No linguistic content'],
-      location_sim: ['LA'],
+      location_sim: ['Echo Park'],
       member_of_collections_ssim: ['Connell']
     }
   end
@@ -45,10 +45,24 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
     expect(page).to have_content('Refine your search')
   end
 
-  it 'has buttons for the selected facet display' do
+  it 'has a Subject button for the selected facet display' do
     visit('/catalog')
     click_on 'Subject'
-    click_on 'Subj 1'
+    click_on 'People'
+    expect(page).to have_selector('.facet-selected')
+  end
+
+  it 'has a Resource Type button for the selected facet display' do
+    visit('/catalog')
+    click_on 'Resource Type'
+    click_on 'Photograph'
+    expect(page).to have_selector('.facet-selected')
+  end
+
+  it 'has a Genre button for the selected facet display' do
+    visit('/catalog')
+    click_on 'Genre'
+    click_on 'news photographs'
     expect(page).to have_selector('.facet-selected')
   end
 end
