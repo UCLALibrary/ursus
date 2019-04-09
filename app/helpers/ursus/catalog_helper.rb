@@ -15,16 +15,5 @@ module Ursus
       index_presenter(document).thumbnail.thumbnail_tag(image_options, url_options)
     end
     deprecation_deprecate render_thumbnail_tag: "Use IndexPresenter#thumbnail.thumbnail_tag"
-
-    # Render value for a document's field as a truncate description
-    # div. Arguments come from Blacklight::DocumentPresenter's
-    # get_field_values method
-    # @param [Hash] args from get_field_values
-    def render_truncated_description(args)
-      content_tag :div, class: 'truncate-description' do
-        markup = args[:value][0] + link_to("View More", '#', class: 'btn btn-default view-btn').to_s
-        return markup.html_safe
-      end
-    end
   end
 end
