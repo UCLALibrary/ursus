@@ -106,7 +106,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
-    config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', separator_options: BREAKS
+    config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', helper_method: :render_truncated_description #, separator_options: BREAKS
     config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated'
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_facet: ::Solrizer.solr_name('resource_type', :facetable)
