@@ -70,6 +70,6 @@ RSpec.feature "Search results page" do
 
   scenario 'displays line breaks between the values of certain fields' do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
-    expect(page.all('dd.blacklight-description_tesim')[1].all(:css, 'br').length).to eq 1
+    expect(page.all('br').length).to eq 1
   end
 end
