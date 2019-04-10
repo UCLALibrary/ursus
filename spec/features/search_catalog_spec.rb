@@ -16,7 +16,8 @@ RSpec.feature 'Search the catalog' do
       id: '111',
       has_model_ssim: ['Work'],
       title_tesim: ['Orange Carrot'],
-      photographer_tesim: ['Bittersweet Tangerine']
+      photographer_tesim: ['Bittersweet Tangerine'],
+      description_tesim: ['Long description Long description Long description Long description Long description Long description']
     }
   end
 
@@ -122,5 +123,13 @@ RSpec.feature 'Search the catalog' do
       expect(page).to have_link('Bittersweet Tangerine')
       expect(page).to_not have_link('Buff Saffron')
     end
+  end
+
+  scenario 'verify view more links are present' do
+    visit root_path
+    # Search for something
+    fill_in 'q', with: 'carrot'
+    click_on 'search'
+    expect(page).to have_content('Read More')
   end
 end
