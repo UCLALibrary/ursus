@@ -14,7 +14,7 @@ class CatalogController < ApplicationController
   }.freeze
 
   configure_blacklight do |config|
-    config.view.gallery.partials = [:index_header, :index]
+    config.view.gallery.partials = [:gallery]
     # config.view.masonry.partials = [:index]
     # config.view.slideshow.partials = [:index]
 
@@ -103,9 +103,8 @@ class CatalogController < ApplicationController
     # handler defaults, or have no facets.
     config.add_facet_fields_to_solr_request!
 
-    # solr fields to be displayed in the index (search results) view
+    # solr fields to be displayed in the index (search results / list view
     #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
-
     config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', helper_method: :render_truncated_description
     config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated'
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
