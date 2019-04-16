@@ -1,8 +1,15 @@
 <%# index_header.html.erb / header bar for doc items in index view -%>
 <hr>
 <div class = 'gallery'>
-<header class = 'row gallery'>
-  <%= link_to_document document, :class => 'gallery-title' %>
+<header class = 'documentHeader row gallery'>
+    <% if counter = document_counter_with_offset(document_counter) %>
+      <span class='document-counter'>
+        <%= t('blacklight.search.documents.counter', counter: counter) %>
+        <%= link_to_document document, counter: counter, :class => 'gallery-title' %>
+      </span>
+    <% end %>
+
+    
 </header>
 </div>
 <!---

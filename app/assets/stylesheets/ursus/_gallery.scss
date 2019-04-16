@@ -16,14 +16,20 @@
     display: flex;
     flex: none;
     align-items: stretch;
-    outline: 1px solid #808080;
+    outline: 1px solid $border-outline-gray;
     margin: 15px;
     .thumbnail {
       width: 100%;
-      align:center;
+      align: center;
     }
     img {
-      align:center;
+      align: center;
+    }
+    .document-counter {
+      color: $ucla-blue;
+      padding-left: 1em;
+      margin-bottom: 1.5em;
+      margin-right: .5em;
     }
   }
 }
@@ -67,7 +73,24 @@
   }
 
   .gallery-title {
-    margin: 1rem;
     font-size: 1rem;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  #documents.row.gallery {
+    .document {
+      display: flex;
+      flex: none;
+      align-items: stretch;
+      outline: 15px solid $border-outline-gray;
+      margin: 75px;
+      .thumbnail {
+        width: 100%;
+        align: center;
+          border: 10px solid skyblue;
+      }
+    }
   }
 }
