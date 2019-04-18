@@ -1,16 +1,15 @@
 # frozen_string_literal: true
 module Ursus
   class SecondaryMetadataPresenter
-    attr_reader :document, :config
+    attr_reader :document
 
-    def initialize(document:, config:)
+    def initialize(document:)
       @document = document
-      @config = config
+      @config = YAML.safe_load(File.open(Rails.root.join('config', 'secondary_metadata.yml')))
     end
 
     def terms
-      keys = @config.keys.map(&:to_sym)
-      keys.map { |key| @document.slice(key) }
+      @document.select { |doc| @config.keys.include?(doc) }.sort_by { |_d| @config.keys }
     end
   end
 end

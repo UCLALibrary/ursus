@@ -49,6 +49,9 @@ RSpec.feature "View a Work", js: true do
   scenario 'displays the metadata' do
     visit solr_document_path(id)
 
+    expect(page).to have_selector('.primary-metadata')
+    expect(page).to have_selector('.secondary-metadata')
+
     expect(page).to have_content 'The Title of my Work'
     expect(page).to have_content 'Identifier: ark 123'
     expect(page).to have_content 'Description: Description 1'
