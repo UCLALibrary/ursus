@@ -1,45 +1,43 @@
 #facets {
-
   #facet-year_isim > div > div > ul {
     display: none;
   }
 
   .slider_js .slider-selection {
-    background: #C3D7EE;
+    background: #c3d7ee;
   }
 
-  .text-success, .facet-values li .selected {
-    color: #2774AE !important;
+  .text-success,
+  .facet-values li .selected {
+    color: #2774ae !important;
   }
 
-  .border-success, .facet-limit-active {
+  .border-success,
+  .facet-limit-active {
     border-color: initial !important;
-        color: #FFFF !important;
+    color: #ffff !important;
   }
 
   .facet-limit-active .card-header {
-    background-color: #2774AE !important;
-    color: #FFFF !important;
+    background-color: #2774ae !important;
+    color: #ffff !important;
   }
 
   .facet-content {
-    border-left: 1px solid #C1C1C1;
-    border-right: 1px solid #C1C1C1;
-    border-bottom: 1px solid #C1C1C1;
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
   }
 
   span.facet-label > span.selected {
-    color: #2774AE !important;
+    color: #2774ae !important;
   }
 
-
-
-  .card-header.collapse-toggle[aria-expanded="true"] {
-    background-color: #C3D7EE;
-    color: #003B5C;
-    border: 1px solid #C1C1C1;
+  .card-header.collapse-toggle[aria-expanded='true'] {
+    background-color: #c3d7ee;
+    color: #003b5c;
+    border: 1px solid #c1c1c1;
   }
-
 
   .card-header.collapse-toggle.collapsed::after {
     -webkit-transform: rotate(90deg);
@@ -68,14 +66,14 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     }
     button.collapsed::after {
-      content: "⌃";
+      content: '⌃';
       font-weight: 800;
       position: absolute;
       right: 1em;
       top: 25px;
     }
     button::after {
-      content: "⌄";
+      content: '⌄';
       font-weight: 800;
       position: absolute;
       right: 1em;
@@ -84,17 +82,20 @@
     .card-body {
       border-radius: 0;
     }
+    .card-body .mb-5 {
+      margin-bottom: 1rem !important;
+    }
     .card-footer {
       border-radius: 0;
     }
 
     .btn {
       font-size: 1em;
-      background-color: #2774AE;
+      background-color: #2774ae;
       margin-left: 5px;
     }
 
-    .btn[aria-expanded="true"] {
+    .btn[aria-expanded='true'] {
       font-weight: bold;
       text-decoration: none;
     }
