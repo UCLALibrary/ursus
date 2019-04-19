@@ -1,16 +1,42 @@
 @import 'colors';
 
 .btn-primary {
-  background-color: $ucla-secondary-blue-light !important;
-  border-color: $ucla-secondary-blue-light !important;
+  background-color: $ucla-blue !important;
+  border-color: $ucla-blue !important;
 }
 
 .btn-primary:hover {
-  background-color: $ucla-tertiary-yellow !important;
-  color: $ucla-secondary-blue-dark !important;
-  border-color: $ucla-tertiary-yellow !important;
+  background-color: $ucla-darker-blue !important;
+  color: $white !important;
+  border-color: $ucla-darker-blue !important;
+}
+
+.btn-secondary {
+  background-color: $light-gray !important;
+  border-color: $light-gray !important;
+}
+
+.btn-outline-secondary {
+  border-color: $light-gray !important;
+  color: $ucla-darker-blue !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: $light-gray !important;
+  border-color: $light-gray !important;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active {
+  background-color: $light-gray !important;
+  border-color: $light-gray !important;
+}
+
+.applied-filter .remove:hover {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  color: $white !important;
 }
 
 .facet-limit {
-  margin-bottom: .2rem !important;
+  margin-bottom: 0.2rem !important;
 }
