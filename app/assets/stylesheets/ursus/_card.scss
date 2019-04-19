@@ -6,28 +6,42 @@
     border-radius: 0;
     border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    .btn {
+      text-align: left;
+    }
     .card-header {
       border-radius: 0;
       background-color: inherit;
       border-bottom: 0;
     }
     button.collapsed::after {
-      content: "⌃";
+      content: '❯';
       font-weight: 800;
       position: absolute;
       right: 1em;
       top: 25px;
+      font-size: 16px;
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
     }
     button::after {
-      content: "⌄";
+      content: '❯';
       font-weight: 800;
       position: absolute;
       right: 1em;
       top: 20px;
+      font-size: 16px;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
     }
     .card-body {
       border-radius: 0;
+      padding: 1.25rem 2rem;
     }
+    .card-body .mb-5 {
+      margin-bottom: 1rem !important;
+    }
+
     .card-footer {
       border-radius: 0;
     }
@@ -36,7 +50,7 @@
       font-size: 1em;
     }
 
-    .btn[aria-expanded="true"] {
+    .btn[aria-expanded='true'] {
       font-weight: bold;
       text-decoration: none;
     }
