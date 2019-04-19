@@ -1,11 +1,16 @@
 @import 'colors';
 
 #documents.row.gallery {
-  display: block;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: black; 
+  .gallery-box {
+    outline: 1px solid #ddd;
+    padding: 5px;
+    height: 200px;
+    margin-bottom: 15px;
+  }
+
+  .gallery-text {
+    margin: 15px;
+   }
 
   .document-metadata dt {
     font-weight: normal;
@@ -13,17 +18,16 @@
     }
 
   .document {
-    display: flex;
-    flex: none;
-    align-items: stretch;
-    outline: 1px solid $border-outline-gray;
-    margin: 15px;
     .thumbnail {
-      width: 100%;
+      align: center;
+      outline: 1px solid #ddd;
+      margin: 5px;
       align: center;
     }
-    img {
+    .thumbnail img {
       align: center;
+      margin: 15px;
+      width: 80%;
     }
     .document-counter {
       color: $ucla-blue;
@@ -34,62 +38,48 @@
   }
 }
 
-.view-icon-gallery {
-  &:before { content: "\e011"; }
-}
-
-#documents {
-  .thumbnail img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
-  width: 100%;
-  }
-}
-
-.gallery {
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row wrap;
-  -webkit-flex-wrap: wrap;
-
-  .document {
-    border-bottom: none;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    min-width: 250px;
-    min-height: 250px;
-    -webkit-flex: 1 0 250px;
-    img {
-      align:center;
+@media screen and (max-width: 1199px) {
+  #documents.row.gallery {
+    .gallery-box {
+      outline: 1px solid #ddd;
+      padding: 5px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .gallery-text {
+      margin: 10px;
     }
   }
-
-  .gallery-title {
-    font-size: 1rem;
-  }
-
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 450px) {
   #documents.row.gallery {
+    .gallery-box {
+      outline: 1px solid #ddd;
+      padding: 5px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .gallery-text {
+      margin: 10px;
+    }
     .document {
-      display: flex;
-      flex: none;
-      align-items: stretch;
-      outline: 15px solid $border-outline-gray;
-      margin: 75px;
       .thumbnail {
-        width: 100%;
         align: center;
-          border: 10px solid skyblue;
+        outline: 1px solid #ddd;
+        margin: 5px;
+        align: center;
+      }
+      .thumbnail img {
+        align: center;
+        margin: 15px;
+        width: 80%;
+      }
+      .document-counter {
+        color: $ucla-blue;
+        padding-left: 1em;
+        margin-bottom: 1.5em;
+        margin-right: .5em;
       }
     }
   }
