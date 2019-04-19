@@ -3,14 +3,13 @@ module Ursus
   class PrimaryMetadataPresenter
     attr_reader :document, :config
 
-    def initialize(document:, config:)
+    def initialize(document:)
       @document = document
-      @config = config
+      @config = YAML.safe_load(File.open(Rails.root.join('config', 'secondary_metadata.yml')))
     end
 
     def terms
-      keys = @config.keys.map(&:to_sym)
-      @document.reject { |doc| keys.include?(doc) }
+      @document.reject { |doc| @config.keys.include?(doc) }
     end
   end
 end

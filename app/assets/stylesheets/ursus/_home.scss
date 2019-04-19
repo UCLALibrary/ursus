@@ -1,3 +1,9 @@
+@import 'variables';
+
+#main-container {
+  width: $container-padding;
+}
+
 p {
   padding: 10px 0px;
 }

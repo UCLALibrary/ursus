@@ -3,54 +3,16 @@ require 'rails_helper'
 
 RSpec.describe Ursus::SecondaryMetadataPresenter do
   let(:id) { '123' }
-  let(:pres) { described_class.new(document: doc, config: config) }
+  let(:pres) { described_class.new(document: doc) }
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'secondary_metadata.yml'))) }
   let(:doc) do
-    {
-      id: id,
-      has_model_ssim: ['Work'],
-      title_tesim: ['The Title of my Work'],
-      description_tesim: ['Description 1', 'Description 2'],
-      identifier_tesim: ['ark 123'],
-      subject_tesim: ['Subj 1', 'Subj 2'],
-      resource_type_tesim: ['still image'],
-      human_readable_rights_statement_tesim: ['copyrighted'],
-      genre_tesim: ['Genre 1', 'Genre 2', 'Genre 3'],
-      named_subject_tesim: ["Named Subject 1", "Named Subject 2", "Named Subject 3", "Named Subject 4"],
-      repository_tesim: ['University of California, Los Angeles. Library. Department of Special Collections'],
-      location_tesim: ['Los Angeles'],
-      publisher_tesim: ['Los Angeles Daily News'],
-      rights_country_tesim: ['US'],
-      rights_holder_tesim: ['Charles E. Young'],
-      normalized_date_tesim: ['1934-56-78'], # unique value so we can test it doesn't display
-      local_identifier_tesim: ['local id 123'],
-      date_created_tesim: ["September 17, 1947"],
-      medium_tesim: ['1 photograph'],
-      extent_tesim: ['1 photograph'],
-      dimensions_tesim: ['10 x 12.5 cm.'],
-      funding_note_tesim: ['Info about funding'],
-      geographic_coordinates_ssim: ['34.0, -118.2'],
-      caption_tesim: ['the caption'],
-      language_tesim: ['No linguistic content'],
-      photographer_tesim: ['Poalillo, Charles'],
-      member_of_collections_ssim: ['Photographic Collection'],
-      license_tesim: ['https://creativecommons.org/licenses/by/4.0/']
-    }
+    { "title_tesim" => { "key" => "title_tesim", "field" => "title_tesim", "label" => "Title Tesim", "if" => true, "unless" => false }, "description_tesim" => { "separator_options" => { "words_connector" => "<br/>", "two_words_connector" => "<br/>", "last_word_connector" => "<br/>" }, "key" => "description_tesim", "field" => "description_tesim", "label" => "Description Tesim", "if" => true, "unless" => false }, "subject_tesim" => { "link_to_facet" => "subject_sim", "separator_options" => { "words_connector" => "<br/>", "two_words_connector" => "<br/>", "last_word_connector" => "<br/>" }, "key" => "subject_tesim", "field" => "subject_tesim", "label" => "Subject Tesim", "if" => true, "unless" => false }, "publisher_tesim" => { "key" => "publisher_tesim", "field" => "publisher_tesim", "label" => "Publisher Tesim", "if" => true, "unless" => false }, "language_tesim" => { "link_to_facet" => "language_sim", "key" => "language_tesim", "field" => "language_tesim", "label" => "Language Tesim", "if" => true, "unless" => false }, "date_created_tesim" => { "key" => "date_created_tesim", "field" => "date_created_tesim", "label" => "Date Created Tesim", "if" => true, "unless" => false }, "human_readable_rights_statement_tesim" => { "key" => "human_readable_rights_statement_tesim", "field" => "human_readable_rights_statement_tesim", "label" => "Human Readable Rights Statement Tesim", "if" => true, "unless" => false }, "resource_type_tesim" => { "label" => "Resource Type", "link_to_facet" => "resource_type_sim", "key" => "resource_type_tesim", "field" => "resource_type_tesim", "if" => true, "unless" => false }, "identifier_tesim" => { "key" => "identifier_tesim", "field" => "identifier_tesim", "label" => "Identifier Tesim", "if" => true, "unless" => false }, "extent_tesim" => { "key" => "extent_tesim", "field" => "extent_tesim", "label" => "Extent Tesim", "if" => true, "unless" => false }, "genre_tesim" => { "link_to_facet" => "genre_sim", "separator_options" => { "words_connector" => "<br/>", "two_words_connector" => "<br/>", "last_word_connector" => "<br/>" }, "key" => "genre_tesim", "field" => "genre_tesim", "label" => "Genre Tesim", "if" => true, "unless" => false }, "location_tesim" => { "link_to_facet" => "location_sim", "key" => "location_tesim", "field" => "location_tesim", "label" => "Location Tesim", "if" => true, "unless" => false }, "local_identifier_tesim" => { "key" => "local_identifier_tesim", "field" => "local_identifier_tesim", "label" => "Local Identifier Tesim", "if" => true, "unless" => false }, "named_subject_tesim" => { "link_to_facet" => "named_subject_sim", "separator_options" => { "words_connector" => "<br/>", "two_words_connector" => "<br/>", "last_word_connector" => "<br/>" }, "key" => "named_subject_tesim", "field" => "named_subject_tesim", "label" => "Named Subject Tesim", "if" => true, "unless" => false }, "repository_tesim" => { "key" => "repository_tesim", "field" => "repository_tesim", "label" => "Repository Tesim", "if" => true, "unless" => false }, "rights_country_tesim" => { "key" => "rights_country_tesim", "field" => "rights_country_tesim", "label" => "Rights Country Tesim", "if" => true, "unless" => false }, "rights_holder_tesim" => { "key" => "rights_holder_tesim", "field" => "rights_holder_tesim", "label" => "Rights Holder Tesim", "if" => true, "unless" => false } } # rubocop:disable Metrics/LineLength
   end
 
-  let(:secondary) do
-    [{ repository_tesim: ["University of California, Los Angeles. Library. Department of Special Collections"] },
-     { funding_note_tesim: ["Info about funding"] },
-     { rights_country_tesim: ["US"] },
-     { rights_holder_tesim: ["Charles E. Young"] },
-     { license_tesim: ['https://creativecommons.org/licenses/by/4.0/'] },
-     { identifier_tesim: ["ark 123"] },
-     { local_identifier_tesim: ["local id 123"] }]
-  end
   context 'with a solr document containing secondary metadata' do
     describe '#terms' do
       it 'returns a hash that only has the secondary metadata' do
-        expect(pres.terms).to eq(secondary)
+        expect(pres.terms).not_to include('title_tesim')
       end
     end
   end

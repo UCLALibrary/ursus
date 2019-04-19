@@ -1,22 +1,22 @@
 @import 'colors';
 
 .footer {
-
   margin-top: 2.5rem;
   background-color: $ucla-blue;
-  color: snow;
+  color: #ffffff;
   line-height: 1.5em;
 
-
   .footer-links {
-    font-size: 1em;
+    font-size: 0.9em;
+    font-weight: 300;
     text-align: center;
     padding-top: 1.5em;
+    padding-bottom: 0.5em;
 
     a {
-      color: snow;
+      color: #ffffff;
       display: inline-block;
-      padding: 0px 20px;
+      padding: 0px 8px;
     }
 
     a:hover {
@@ -25,11 +25,25 @@
     }
   }
 
-   .footer-version {
-     color: #FFFFFF;
-     font-size: .65em;
-     text-align: center;
-     padding-bottom: 1.5em;
-   }
+  .footer-version {
+    color: #ffffff;
+    font-size: 0.65em;
+    text-align: center;
+    padding-bottom: 1.5em;
+  }
+}
 
+@media all and (max-width: 500px) {
+  .footer {
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      a {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+    }
+  }
 }
