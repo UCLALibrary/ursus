@@ -13,7 +13,7 @@ gem 'rails', '~> 5.1.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
@@ -43,6 +43,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'equivalent-xml'
+  gem 'factory_bot_rails'
   gem 'rspec-collection_matchers'
   gem 'rspec-its'
   gem 'rspec-rails', '~> 3.8'
