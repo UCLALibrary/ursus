@@ -35,6 +35,7 @@ class CatalogController < ApplicationController
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
       qt: 'search',
+      mm: '100%',
       rows: 10,
       qf: 'title_tesim description_tesim creator_tesim keyword_tesim',
       fq: '{!terms f=has_model_ssim v=Work,Collection}'
@@ -42,7 +43,6 @@ class CatalogController < ApplicationController
 
     config.show.partials.insert(1, :collection_banner)
     config.show.partials.insert(2, :uv)
-    config.show.partials.insert(3, :license)
 
     # solr field configuration for document/show views
     config.index.title_field = ::Solrizer.solr_name('title', :stored_searchable)
@@ -168,7 +168,8 @@ class CatalogController < ApplicationController
       title_name = ::Solrizer.solr_name('title', :stored_searchable)
       field.solr_parameters = {
         qf: search_field_service.search_fields,
-        pf: title_name.to_s
+        pf: title_name.to_s,
+        mm: '100%'
       }
     end
 
