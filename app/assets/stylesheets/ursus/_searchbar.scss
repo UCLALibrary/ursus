@@ -1,3 +1,15 @@
-.input-group { 
-  border: 10px solid #003B5C; 
+@import 'variables';
+
+.input-group {
+  border: 10px solid #003B5C;
+}
+
+.blacklight-catalog {
+  .navbar-search {
+    padding-left: 0;
+  }
+
+  .navbar-search > .container-fluid {
+    width: $container-padding;
+  }
 }

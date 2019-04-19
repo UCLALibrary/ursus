@@ -43,7 +43,6 @@ class CatalogController < ApplicationController
 
     config.show.partials.insert(1, :collection_banner)
     config.show.partials.insert(2, :uv)
-    config.show.partials.insert(3, :license)
 
     # solr field configuration for document/show views
     config.index.title_field = ::Solrizer.solr_name('title', :stored_searchable)
