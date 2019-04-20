@@ -94,4 +94,31 @@ RSpec.feature "Search results page" do
     expect(page).to have_content 'Title Three'
     expect(page).not_to have_content 'Title One'
   end
+
+  scenario 'displays Gallery View button' do
+    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
+    expect(page).to have_link 'Gallery'
+  end
+
+  scenario 'displays List View button' do
+    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
+    expect(page).to have_link 'List'
+  end
+
+  scenario 'displays Gallery View results' do
+    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec&view=gallery'
+    click_on 'Gallery'
+    expect(page).to have_selector('.view-type-gallery.active')
+    expect(page).to have_content 'Title One'
+  end
+
+  scenario 'displays List View results' do
+    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec&view=list'
+    click_on 'List'
+    expect(page).to have_selector('.view-type-list.active')
+    expect(page).to have_content 'Title One'
+    expect(page).to have_content 'Description: Description 1'
+    expect(page).to have_content 'Resource Type: still image'
+    expect(page).to have_content 'Date Created: Date 1'
+  end
 end

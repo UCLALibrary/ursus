@@ -1,15 +1,12 @@
-<%# index_header.html.erb / header bar for doc items in index view -%>
-<hr>
-<div class = 'gallery'>
-<header class = 'row gallery'>
-  <%= link_to_document document, :class => 'gallery-title' %>
-</header>
+<div class = 'gallery-box'>
+  <div class = 'gallery gallery-text ellipsis'>
+    <header class = 'documentHeader row gallery'>
+      <% if counter = document_counter_with_offset(document_counter) %>
+        <span class='document-counter'>
+          <%= t('blacklight.search.documents.counter', counter: counter) %>
+          <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' ')) %>
+        </span>
+      <% end %>
+    </header>
+  </div>
 </div>
-<!---
-<%# doc_presenter = index_presenter(document) %>
-<%# index.html.erb / default partial to display solr document fields in catalog index view -%>
-<dl class='document-metadata row'>
-  <%#= field_name.parameterize %> col-md-9'><%#= doc_presenter.field_value field %></dd>
-  <%# end -%>
-</dl>
--->
