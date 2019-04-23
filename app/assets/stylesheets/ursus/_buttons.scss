@@ -31,10 +31,30 @@
   border-color: $light-gray !important;
 }
 
+.show > .btn-outline-secondary.dropdown-toggle {
+  background-color: $light-gray !important;
+}
+
 .applied-filter .remove:hover {
   background-color: #dc3545 !important;
   border-color: #dc3545 !important;
   color: $white !important;
+}
+.applied-filter .filter-name:after {
+  color: $ucla-darker-blue !important;
+}
+
+.btn-group.applied-filter:hover {
+  background-color: $light-gray !important;
+}
+
+.per-page-dropdown.btn-group > .btn,
+.view-type-group.btn-group > .btn {
+  border-radius: 0rem !important;
+}
+
+.blacklight-icons svg g {
+  stroke: $ucla-darker-blue !important;
 }
 
 .facet-limit {
