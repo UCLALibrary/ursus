@@ -5,6 +5,12 @@
     font-weight: 400;
     font-size: 1rem;
     color: $ucla-blue;
+    a {
+      color: $ucla-blue;
+    }
+    a:hover {
+      color: $ucla-darker-blue;
+    }
   }
   dl.document-metadata {
     margin-left: 1em;

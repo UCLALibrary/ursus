@@ -7,3 +7,12 @@
 p {
   padding: 10px 0px;
 }
+
+.caption {
+  a {
+    color: $ucla-blue;
+  }
+  a:hover {
+    color: $ucla-darker-blue;
+  }
+}

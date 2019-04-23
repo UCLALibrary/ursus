@@ -9,7 +9,7 @@
 
   .text-success,
   .facet-values li .selected {
-    color: #2774ae !important;
+    color: $ucla-blue !important;
   }
 
   .border-success,
@@ -19,7 +19,7 @@
   }
 
   .facet-limit-active .card-header {
-    background-color: #2774ae !important;
+    background-color: $ucla-blue !important;
     color: #ffff !important;
   }
 
@@ -30,12 +30,17 @@
   }
 
   span.facet-label > span.selected {
-    color: #2774ae !important;
+    color: $ucla-blue !important;
+  }
+
+  .facet-label a,
+  .more_facets a {
+    color: $ucla-darker-blue;
   }
 
   .card-header.collapse-toggle[aria-expanded='true'] {
     background-color: #c3d7ee;
-    color: #003b5c;
+    color: $ucla-darkest-blue;
     border: 1px solid #c1c1c1;
   }
 
@@ -91,7 +96,7 @@
 
     .btn {
       font-size: 1em;
-      background-color: #2774ae;
+      background-color: $ucla-blue;
       margin-left: 5px;
     }
 
