@@ -1,11 +1,15 @@
-<% iiif_service = IiifService.new %>
-<iframe
-    class="universal-viewer-iframe"
-    src=<%= iiif_service.src(request, document) %>
-    width="640"
-    height="480"
-    id="universal-viewer-iframe"
-    allowfullscreen
-    frameborder="0">
-</iframe>
-</br>
+<div class='uv-container'>
+  <div class='universal-viewer'>
+    <% iiif_service = IiifService.new %>
+    <iframe
+        class='universal-viewer-iframe'
+        src=<%= iiif_service.src(request, document) %>
+        width='640'
+        height='480'
+        id='universal-viewer-iframe'
+        allowfullscreen
+        frameborder='0'>
+    </iframe>
+    <div class='link-and-icon'><i class='fa fa-link' aria-hidden="true"></i><%= render 'show_tools' %></div>
+  </div>
+</div>

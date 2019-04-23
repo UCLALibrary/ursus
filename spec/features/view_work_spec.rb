@@ -107,8 +107,8 @@ RSpec.feature "View a Work", js: true do
   scenario 'only displays the tools we want to support' do
     visit solr_document_path(id)
 
-    # we DO want the tools panel
-    expect(page).to have_content 'Tools'
+    # we DO NOT want the tools panel
+    expect(page).not_to have_content 'Tools'
 
     # we DO want the citation link
     expect(page.find('a#citationLink')).to have_content 'Cite This Item'
