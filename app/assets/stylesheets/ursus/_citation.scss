@@ -1,12 +1,24 @@
 .modal-content {
   padding: 20px;
 }
+
+.fa {
+  color:$ucla-darker-blue;
+  margin-right: 10px;
+}
+
 .citation-link {
-  color: $ucla-blue !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: $ucla-darker-blue !important;
 }
 
 .citation-link:hover {
   color: $ucla-darkest-blue !important;
+}
+
+.link-and-icon {
+  color: $ucla-darker-blue !important;
+  display: flex;
+  margin-top: 10px;
 }
