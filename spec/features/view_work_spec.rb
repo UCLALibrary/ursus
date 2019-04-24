@@ -16,6 +16,7 @@ RSpec.feature "View a Work", js: true do
   let(:work_attributes) do
     {
       id: id,
+      ark_ssi: 'ark:/24920492/029402',
       has_model_ssim: ['Work'],
       title_tesim: ['The Title of my Work'],
       description_tesim: ['Description 1', 'Description 2'],
@@ -79,6 +80,8 @@ RSpec.feature "View a Work", js: true do
     expect(page).to have_content 'Caption: the caption'
     expect(page).to have_content 'Language: No linguistic content'
     expect(page).to have_content 'Photographer: Poalillo, Charles'
+    expect(page).to have_content 'ark:/24920492/029402'
+    expect(page).to have_content 'ARK'
   end
 
   context 'license' do
