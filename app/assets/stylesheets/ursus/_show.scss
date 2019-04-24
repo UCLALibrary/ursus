@@ -4,13 +4,17 @@
   margin-bottom: 2px;
 }
 
-.item-value{
+.item-value {
   margin-bottom: 25px;
 }
 
 dd a {
   color: $ucla-blue;
   text-decoration: none;
+}
+
+dd a:hover {
+  color: $ucla-darker-blue;
 }
 
 .item-heading {

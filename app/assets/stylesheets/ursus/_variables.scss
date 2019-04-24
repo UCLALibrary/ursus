@@ -2,20 +2,20 @@
 @import 'bootstrap';
 @import 'bootstrap/variables';
 
-$grid-columns:      12;
+$grid-columns: 12;
 $grid-gutter-width: 30px;
 
 $grid-breakpoints: (
   // Extra small screen / phone
-  xs: 0,
+    xs: 0,
   // Small screen / phone
-  sm: 767px,
+    sm: 767px,
   // Medium screen / tablet
-  md: 991px,
+    md: 991px,
   // Large screen / desktop
-  lg: 992px,
+    lg: 992px,
   // Extra large screen / wide desktop
-  xl: 1200px
+    xl: 1200px
 );
 
 $container-max-widths: (
@@ -27,9 +27,5 @@ $container-max-widths: (
 
 //== Typography
 $font-family-sans-serif: 'Helvetica', 'Arial', sans-serif;
-
-//== Links
-$link-color: $ucla-blue;
-$link-hover-color: $ucla-darker-blue;
 
 $container-padding: 90%;
