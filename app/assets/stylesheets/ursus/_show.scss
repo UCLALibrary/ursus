@@ -1,3 +1,9 @@
+@import 'colors';
+
+.item-heading {
+  padding-top: 15px;
+}
+
 .item-label {
   color: $ucla-darkest-blue;
   font-weight: bold;
@@ -5,7 +11,7 @@
 }
 
 .item-value {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 dd a {
@@ -17,6 +23,11 @@ dd a:hover {
   color: $ucla-darker-blue;
 }
 
-.item-heading {
-  padding-top: 15px;
+dl {
+  padding-left: 7px;
+}
+
+h3 {
+  font-weight: 340;
+  font-size: 24px;
 }

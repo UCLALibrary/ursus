@@ -1,0 +1,71 @@
+<% doc_presenter = show_presenter(document) %>
+<% overview = Ursus::OverviewMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
+
+<% if overview.length > 0 %>
+  <div class="primary-metadata">
+    <h3>Item Overview</h3>
+    <dl class='row document-metadata'>
+      <% overview.each do |field_name, field| -%>
+        <dt class="blacklight-<%= field_name.parameterize %> col-md-6 item-label"><%= render_document_show_field_label document, field: field_name %><dd class="blacklight-<%= field_name.parameterize %> col-md-9 item-value"><%= doc_presenter.field_value field %></dd></dt>
+      <% end %>
+    </dl>
+  </div>
+<% end %>
+
+<!--
+Item Overview
+'title_tesim', 'description_tesim', 'creator_tesim', 'contributor_tesim', 'photographer_tesim', 'caption_tesim'
+
+Provenance
+'date_created_tesim', 'language_tesim', 'publisher_tesim', 'Collection_tesim', 'dlcs_collection_name_tesim', 'date_uploaded_tesim', 'date_modified_tesim'
+
+Subject
+'subject_tesim', 'named_subject_tesim', 'keyword_tesim', 'based_near_label_tesim', 'location_tesim', 'geographic_coordinates_tesim'
+
+Materials
+'resource_type_tesim', 'format_tesim', 'medium_tesim', 'genre_tesim', 'extent_tesim', 'dimensions_tesim'
+
+Source Item
+'repository_tesim', 'ark_ssi_tesim', 'local_identifier_tesim', 'identifier_tesim', 'funding_note_tesim'
+
+Rights
+'rights_country_tesim', 
+'rights_holder_tesim', 
+'human_readable_rights_statement_tesim'
+
+  item_overview = params.select { |key, value| key.to_s.match(/^choice\d+/) }
+  this will give the just an Array of the keys e.g. [:choice1, :choice2, :choice3]
+'title_tesim'
+'dlcs_collection_name_tesim'
+'description_tesim'
+'keyword_tesim'
+'subject_tesim'
+'creator_tesim'
+'contributor_tesim'
+'publisher_tesim'
+'based_near_label_tesim'
+'language_tesim'
+'date_uploaded_tesim'
+'date_modified_tesim'
+'date_created_tesim'
+'human_readable_rights_statement_tesim'
+'resource_type_tesim'
+'format_tesim'
+'identifier_tesim'
+'Collection_tesim'
+'caption_tesim'
+'dimensions_tesim',
+'extent_tesim'
+'funding_note_tesim'
+'genre_tesim'
+'geographic_coordinates_tesim'
+'location_tesim'
+'local_identifier_tesim'
+'medium_tesim'
+'named_subject_tesim'
+'repository_tesim'
+'rights_country_tesim'
+'rights_holder_tesim'
+'photographer_tesim'
+'ark_ssi_tesim'
+-->
