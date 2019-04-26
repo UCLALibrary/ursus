@@ -3,6 +3,7 @@ version: "3.6"
 services:
   web:
     image: uclalibrary/ursus
+    hostname: ursus
     stdin_open: true
     tty: true
     env_file:
