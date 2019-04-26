@@ -1,0 +1,10 @@
+{
+    "urls": [
+        "http://dockerhost:3003"
+    ],
+    "defaults": {
+        "chromeLaunchConfig": {
+            "args": ["--no-sandbox"]
+        }
+    }
+}

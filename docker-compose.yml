@@ -3,9 +3,11 @@ version: "3.6"
 services:
   web:
     image: uclalibrary/ursus
+    hostname: ursus
     depends_on:
       - db
       - solr
+      - dockerhost
     env_file:
       - ./dotenv.sample
     environment:
@@ -41,7 +43,10 @@ services:
     image: uclalibrary/solr-ursus
     ports:
       - 8985:8983
-
+  dockerhost:
+    image: qoomon/docker-host
+    cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
+    restart: on-failure
 volumes:
   bundle_dir:
   mysql_data:
