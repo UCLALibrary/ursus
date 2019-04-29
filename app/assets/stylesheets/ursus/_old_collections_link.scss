@@ -1,3 +1,9 @@
 .old-collections-link {
   margin-top: 1em;
+  a {
+    color: $ucla-blue;
+  }
+  a:hover {
+    color: $ucla-darker-blue;
+  }
 }
