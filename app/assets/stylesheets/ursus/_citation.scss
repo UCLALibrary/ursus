@@ -3,22 +3,25 @@
 }
 
 .fa {
-  color:$ucla-darker-blue;
+  color: $ucla-darker-blue;
   margin-right: 10px;
 }
 
 .citation-link {
   font-size: 14px;
   letter-spacing: 1px;
-  color: $ucla-darker-blue !important;
+  a {
+    color: $ucla-blue !important;
+  }
 }
 
-.citation-link:hover {
-  color: $ucla-darkest-blue !important;
+.citation-link a:hover {
+  color: $ucla-darker-blue !important;
 }
 
 .link-and-icon {
   color: $ucla-darker-blue !important;
   display: flex;
+  align-items: center;
   margin-top: 10px;
 }
