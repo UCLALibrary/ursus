@@ -1,0 +1,14 @@
+<% doc_presenter = show_presenter(document) %>
+<% provenance = Ursus::ProvenanceMetadataPresenter.new(document: doc_presenter.fields_to_render).provenance_terms %>
+
+<% if provenance.length > 0 %>
+  <div class="primary-metadata">
+    <hr>
+    <h3>Provenance</h3>
+    <dl class='row document-metadata'>
+      <% provenance.each do |field_name, field| -%>
+        <dt class="blacklight-<%= field_name.parameterize %> col-md-6 item-label"><%= render_document_show_field_label document, field: field_name %><dd class="blacklight-<%= field_name.parameterize %> col-md-9 item-value"><%= doc_presenter.field_value field %></dd></dt>
+      <% end %>
+    </dl>
+  </div>
+<% end %>

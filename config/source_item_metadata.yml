@@ -1,0 +1,5 @@
+repository_tesim: 'repository'
+ark_ssi: 'ARK'
+local_identifier_tesim: 'Local Identifier'
+identifier_tesim: 'Identifier'
+funding_note_tesim: 'Funding Note'

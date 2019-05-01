@@ -1,0 +1,14 @@
+Searching 3550 files for "item_value"
+
+/Users/jendiamond/samvera/ursus/app/assets/stylesheets/ursus/_primary_metadata.scss:
+    9  dd {
+   10  margin-bottom: 15px;
+   11:   .item-value {
+   12      margin-bottom: 15px;
+   13    }
+   14  }
+   15:   .item-value {
+   16      margin-bottom: 15px;
+   17    }
+
+2 matches in 1 file

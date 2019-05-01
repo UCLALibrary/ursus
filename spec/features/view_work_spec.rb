@@ -82,6 +82,10 @@ RSpec.feature "View a Work", js: true do
     expect(page).to have_content 'Photographer: Poalillo, Charles'
     expect(page).to have_content 'ark:/24920492/029402'
     expect(page).to have_content 'ARK'
+    expect(page).to have_content 'Item Overview'
+    expect(page).to have_content 'Provenance'
+    expect(page).to have_content 'Subjects'
+    expect(page).to have_content 'Materials'
   end
 
   context 'license' do
