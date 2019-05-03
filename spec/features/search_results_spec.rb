@@ -12,7 +12,6 @@ RSpec.feature "Search results page" do
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
   end
 
-  # Probably smarter to use an array of objects, but I'm not familiar enough w/ rail / blacklight [AW]
   let(:work_1_attributes) do
     {
       id: 'id123',
@@ -21,7 +20,7 @@ RSpec.feature "Search results page" do
       identifier_tesim: ['ark 123'],
       description_tesim: ['Description 1', 'Description 2'],
       date_created_tesim: ["Date 1"],
-      resource_type_tesim: ['still image'],
+      human_readable_resource_type_tesim: ['still image'],
       photographer_tesim: ['Person 1', 'Person 2'],
       location_tesim: ['search_results_spec'], # to control what displays,
       thumbnail_path_ss: ["/assets/work-ff055336041c3f7d310ad69109eda4a887b16ec501f35afc0a547c4adb97ee72.png"]
@@ -36,7 +35,7 @@ RSpec.feature "Search results page" do
       identifier_tesim: ['ark 456'],
       description_tesim: ['Description 3', 'Description 4'],
       date_created_tesim: ["Date 1"],
-      resource_type_tesim: ['still image'],
+      human_readable_resource_type_tesim: ['still image'],
       photographer_tesim: ['Person 1'],
       location_tesim: ['search_results_spec'] # to control what displays
     }
@@ -50,7 +49,7 @@ RSpec.feature "Search results page" do
       identifier_tesim: ['ark 456'],
       description_tesim: ['Description 3', 'Description 4', 'another desc'],
       date_created_tesim: ["Date 1"],
-      resource_type_tesim: ['still image'],
+      human_readable_resource_type_tesim: ['still image'],
       photographer_tesim: ['Person 1'],
       location_tesim: ['search_results_spec'] # to control what displays
     }

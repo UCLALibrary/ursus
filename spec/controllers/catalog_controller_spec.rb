@@ -12,7 +12,7 @@ RSpec.describe CatalogController, type: :controller do
 
     let(:expected_facets) do
       ['subject',
-       'resource_type',
+       'human_readable_resource_type',
        'genre',
        'named_subject',
        'location',
@@ -38,7 +38,7 @@ RSpec.describe CatalogController, type: :controller do
     let(:expected_index_fields) do
       ['description_tesim',
        'date_created_tesim',
-       'resource_type_tesim',
+       'human_readable_resource_type_tesim',
        'photographer_tesim']
     end
     it { expect(index_fields).to contain_exactly(*expected_index_fields) }

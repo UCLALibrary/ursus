@@ -9,7 +9,7 @@ RSpec.describe Ursus::MaterialsMetadataPresenter do
   context 'with a solr document containing overview metadata' do
     describe '#terms' do
       it 'returns the Resource Type Key' do
-        expect(config['resource_type_tesim'].to_s).to eq('Resource Type')
+        expect(config['human_readable_resource_type_tesim'].to_s).to eq('Resource Type')
       end
 
       it 'returns the Format Key' do

@@ -1,4 +1,4 @@
-resource_type_tesim: 'Resource Type'
+human_readable_resource_type_tesim: 'Resource Type'
 format_tesim: 'Format'
 medium_tesim: 'Medium'
 genre_tesim: 'Genre'
