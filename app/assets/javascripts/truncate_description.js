@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("turbolinks:load", function() {
   var viewMoreButtons = document.querySelectorAll('.view-more')
   viewMoreButtons.forEach(function (el) {
     var description = el.previousElementSibling
@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         description.classList.replace('description', 'description-full')
         description.innerText = originalText
       } else {
-        console.log(description.style.textOverflow)
         el.innerHTML = 'Read More <div class="down-arrow">&raquo;</div>'
         description.classList.replace('description-full', 'description')
         description.innerText = truncatedText
