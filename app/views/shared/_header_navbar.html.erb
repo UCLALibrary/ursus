@@ -23,8 +23,10 @@
 
 </nav>
 
-<div class="navbar-search navbar navbar-light bg-faded" role="navigation">
-  <div class="<%= container_classes %>">
-    <%= render_search_bar  %>
+<% unless current_page?(solr_document_path) %>
+  <div class="navbar-search navbar navbar-light bg-faded" role="navigation">
+    <div class="<%= container_classes %>">
+      <%= render_search_bar  %>
+    </div>
   </div>
-</div>
+<% end %>
