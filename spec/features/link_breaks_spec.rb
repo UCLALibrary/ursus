@@ -29,7 +29,7 @@ RSpec.feature "View a a work with breaks" do
       rights_country_tesim: ['US'],
       rights_holder_tesim: ['Charles E. Young'],
       normalized_date_tesim: ['1934-56-78'], # unique value so we can test it doesn't display
-      local_identifier_tesim: ['local id 123'],
+      local_identifier_ssm: ['local id 123'],
       date_created_tesim: ["September 17, 1947"],
       medium_tesim: ['1 photograph'],
       extent_tesim: ['1 photograph'],

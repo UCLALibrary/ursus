@@ -71,7 +71,7 @@ RSpec.feature "View a Work", js: true do
     # normalized_date is a machine-readable field that shouldn't display!
     expect(page).to_not have_content 'Normalized Date:'
     expect(page).to_not have_content '1934-56-78'
-    expect(page).to have_content 'Local Identifier: local id 123'
+    expect(page).to have_content 'Local identifier: local id 123'
     expect(page).to have_content 'Date Created: September 17, 1947'
     expect(page).to have_content 'Medium: 1 photograph'
     expect(page).to have_content 'Extent: 1 photograph'

@@ -78,7 +78,7 @@ RSpec.feature "View a Collection", js: true do
     expect(page.find('div.secondary-metadata dd.blacklight-local_identifier_ssm').text).to eq "Collection 686"
 
     expect(page).to have_content "Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)"
-    expect(page).to have_content 'Local Identifier: Collection 686'
+    expect(page).to have_content 'Local identifier: Collection 686'
     expect(page).to have_content "Description: #{description}"
   end
 

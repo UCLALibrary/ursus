@@ -138,7 +138,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable), link_to_facet: ::Solrizer.solr_name('genre', :facetable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name("geographic_coordinates", :symbol)
     config.add_show_field ::Solrizer.solr_name('location', :stored_searchable), link_to_facet: ::Solrizer.solr_name('location', :facetable)
-    config.add_show_field 'local_identifier_ssm', label: 'Local Identifier'
+    config.add_show_field 'local_identifier_ssm', label: 'Local identifier'
     config.add_show_field ::Solrizer.solr_name('medium', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('named_subject', :stored_searchable), link_to_facet: ::Solrizer.solr_name('named_subject', :facetable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name('repository', :stored_searchable)
