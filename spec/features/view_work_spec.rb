@@ -43,7 +43,8 @@ RSpec.feature "View a Work", js: true do
       language_tesim: ['No linguistic content'],
       photographer_tesim: ['Poalillo, Charles'],
       member_of_collections_ssim: ['Photographic Collection'],
-      license_tesim: ['https://creativecommons.org/licenses/by/4.0/']
+      license_tesim: ['https://creativecommons.org/licenses/by/4.0/'],
+      services_contact_ssm: ['UCLA Special Collections Services Contact']
     }
   end
 
@@ -86,6 +87,7 @@ RSpec.feature "View a Work", js: true do
     expect(page).to have_content 'Provenance'
     expect(page).to have_content 'Subjects'
     expect(page).to have_content 'Materials'
+    expect(page).to have_content 'UCLA Special Collections Services Contact'
   end
 
   context 'license' do
