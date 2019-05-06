@@ -6,14 +6,15 @@ en:
       facets:
         title: 'Refine your search'
       zero_results:
-        title: "No results found."
-        modify_search: ""
-        use_fewer_keywords: "Remove some filters or terms from your query and search again."
-        search_fields: "you searched by %{search_fields}"
-        search_everything: "try searching everything"
+        title: 'No results found.'
+        modify_search: ''
+        use_fewer_keywords: 'Remove some filters or terms from your query and search again.'
+        search_fields: 'you searched by %{search_fields}'
+        search_everything: 'try searching everything'
       form:
         search:
           placeholder: 'Search UCLA Library Digital Collections'
+      new_search: 'New Search'
       fields:
         facet:
           date_created_tesim: 'Date Created'
@@ -95,3 +96,4 @@ en:
           title_tesim: 'Title'
     tools:
       citation: 'Cite This Item'
+    back_to_search_results: 'Back to Search Results'

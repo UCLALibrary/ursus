@@ -1,4 +1,6 @@
-<%= render 'previous_next_doc' if @search_context %>
+<% if current_search_session && !controller.controller_name == 'catalog' && !controller.action_name == 'show' %>
+  <%= render 'previous_next_doc' if @search_context %>
+<% end %>
 
 <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe %>
 <% content_for(:head) { render_link_rel_alternates } %>

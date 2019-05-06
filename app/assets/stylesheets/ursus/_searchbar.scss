@@ -13,3 +13,33 @@
     width: $container-padding;
   }
 }
+
+.new-search-link{
+  padding-right: 15px;
+}
+
+.back-to-search-link{
+  margin-right: 20px;
+}
+
+.back-and-new-links-show {
+  float: right;
+  clear:left;
+  padding-top: 6px;
+}
+
+.back-and-new-container {
+  height: 46px;
+  background-color: #F5F5F5;
+  border-top: 1px solid #dee2e6;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.previous-next {
+  padding-left: 15px;
+  padding-top: 6px;
+  color: $ucla-blue;
+}
