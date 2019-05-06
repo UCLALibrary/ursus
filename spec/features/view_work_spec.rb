@@ -32,7 +32,7 @@ RSpec.feature "View a Work", js: true do
       rights_country_tesim: ['US'],
       rights_holder_tesim: ['Charles E. Young'],
       normalized_date_tesim: ['1934-56-78'], # unique value so we can test it doesn't display
-      local_identifier_tesim: ['local id 123'],
+      local_identifier_ssm: ['local id 123'],
       date_created_tesim: ["September 17, 1947"],
       medium_tesim: ['1 photograph'],
       extent_tesim: ['1 photograph'],
@@ -43,7 +43,8 @@ RSpec.feature "View a Work", js: true do
       language_tesim: ['No linguistic content'],
       photographer_tesim: ['Poalillo, Charles'],
       member_of_collections_ssim: ['Photographic Collection'],
-      license_tesim: ['https://creativecommons.org/licenses/by/4.0/']
+      license_tesim: ['https://creativecommons.org/licenses/by/4.0/'],
+      services_contact_ssm: ['UCLA Special Collections Services Contact']
     }
   end
 
@@ -70,7 +71,7 @@ RSpec.feature "View a Work", js: true do
     # normalized_date is a machine-readable field that shouldn't display!
     expect(page).to_not have_content 'Normalized Date:'
     expect(page).to_not have_content '1934-56-78'
-    expect(page).to have_content 'Local Identifier: local id 123'
+    expect(page).to have_content 'Local identifier: local id 123'
     expect(page).to have_content 'Date Created: September 17, 1947'
     expect(page).to have_content 'Medium: 1 photograph'
     expect(page).to have_content 'Extent: 1 photograph'
@@ -86,6 +87,7 @@ RSpec.feature "View a Work", js: true do
     expect(page).to have_content 'Provenance'
     expect(page).to have_content 'Subjects'
     expect(page).to have_content 'Materials'
+    expect(page).to have_content 'UCLA Special Collections Services Contact'
   end
 
   context 'license' do
