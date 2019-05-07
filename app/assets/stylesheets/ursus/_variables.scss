@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'bootstrap/functions';
 @import 'bootstrap';
 @import 'bootstrap/variables';
 
@@ -6,10 +7,11 @@ $grid-columns: 12;
 $grid-gutter-width: 30px;
 
 $grid-breakpoints: (
+  xxs: 0,
   // Extra small screen / phone
-    xs: 0,
+    xs: 767px,
   // Small screen / phone
-    sm: 767px,
+    sm: 991px,
   // Medium screen / tablet
     md: 991px,
   // Large screen / desktop
@@ -19,13 +21,16 @@ $grid-breakpoints: (
 );
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
+  xs: 767px,
+  sm: 991px,
+  md: 991px,
+  lg: 992px,
+  xl: 1200px
 );
 
 //== Typography
 $font-family-sans-serif: 'Helvetica', 'Arial', sans-serif;
 
-$container-padding: 90%;
+$container-padding: 95%;
+
+@import 'bootstrap';
