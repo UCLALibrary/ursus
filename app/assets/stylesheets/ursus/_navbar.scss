@@ -23,6 +23,9 @@
   flex: unset !important;
   overflow: unset !important;
   width: 118px !important;
+  .logo-name {
+    display: none;
+  }
 }
 
 .navbar-text-logo {
