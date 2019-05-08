@@ -15,7 +15,7 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       has_model_ssim: ['Work'],
       has_model_sim: ['Work'],
       subject_sim: ['People', 'Crime'],
-      resource_type_sim: ['Photograph'],
+      human_readable_resource_type_sim: ['Photograph'],
       genre_sim: ['news photographs'],
       named_subject_sim: ['Aimee McPherson Semple'],
       year_isim: [1947],

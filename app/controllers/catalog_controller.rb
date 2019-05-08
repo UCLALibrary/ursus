@@ -74,7 +74,8 @@ class CatalogController < ApplicationController
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
     config.add_facet_field ::Solrizer.solr_name('subject', :facetable), limit: 5, label: 'Subjects'
-    config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
+    # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
+    config.add_facet_field ::Solrizer.solr_name('human_readable_resource_type', :facetable), limit: 5, label: 'Resource Type'
     config.add_facet_field ::Solrizer.solr_name('genre', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('named_subject', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('location', :facetable), limit: 5
@@ -108,7 +109,7 @@ class CatalogController < ApplicationController
     config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', helper_method: :render_truncated_description
     config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated'
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
-    config.add_index_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_facet: ::Solrizer.solr_name('resource_type', :facetable)
+    config.add_index_field ::Solrizer.solr_name('human_readable_resource_type', :stored_searchable), label: 'Resource Type', link_to_facet: ::Solrizer.solr_name('human_readable_resource_type', :facetable)
     config.add_index_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_facet: ::Solrizer.solr_name('photographer', :facetable)
 
     # solr fields to be displayed in the show (single result) view
@@ -127,7 +128,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('date_modified', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('date_created', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('human_readable_rights_statement', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('resource_type', :stored_searchable), label: 'Resource Type', link_to_facet: ::Solrizer.solr_name('resource_type', :facetable)
+    config.add_show_field ::Solrizer.solr_name('human_readable_resource_type', :stored_searchable), label: 'Resource Type', link_to_facet: ::Solrizer.solr_name('human_readable_resource_type', :facetable)
     config.add_show_field ::Solrizer.solr_name('format', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('identifier', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('member_of_collections', :symbol), label: 'Collection', link_to_facet: ::Solrizer.solr_name('member_of_collections', :facetable)

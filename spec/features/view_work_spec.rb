@@ -22,7 +22,8 @@ RSpec.feature "View a Work", js: true do
       description_tesim: ['Description 1', 'Description 2'],
       identifier_tesim: ['ark 123'],
       subject_tesim: ['Subj 1', 'Subj 2'],
-      resource_type_tesim: ['still image'],
+      human_readable_resource_type_tesim: ['still image'],
+      human_readable_resource_type_sim: ['still image'],
       human_readable_rights_statement_tesim: ['copyrighted'],
       genre_tesim: ['Genre 1', 'Genre 2', 'Genre 3'],
       named_subject_tesim: ["Named Subject 1", "Named Subject 2", "Named Subject 3", "Named Subject 4"],
@@ -100,12 +101,12 @@ RSpec.feature "View a Work", js: true do
 
   scenario 'displays facetable fields as links' do
     visit solr_document_path(id)
-    expect(page.find('dd.blacklight-subject_tesim')).to have_link    'Subj 1'
-    expect(page.find('dd.blacklight-subject_tesim')).to have_link    'Subj 2'
-    expect(page.find('dd.blacklight-resource_type_tesim')).to have_link    'still image'
-    expect(page.find('dd.blacklight-genre_tesim')).to have_link    'Genre 1'
-    expect(page.find('dd.blacklight-genre_tesim')).to have_link    'Genre 2'
-    expect(page.find('dd.blacklight-named_subject_tesim')).to have_link    'Named Subject 1'
+    expect(page.find('dd.blacklight-subject_tesim')).to have_link 'Subj 1'
+    expect(page.find('dd.blacklight-subject_tesim')).to have_link 'Subj 2'
+    expect(page.find('dd.blacklight-human_readable_resource_type_tesim')).to have_link 'still image'
+    expect(page.find('dd.blacklight-genre_tesim')).to have_link 'Genre 1'
+    expect(page.find('dd.blacklight-genre_tesim')).to have_link 'Genre 2'
+    expect(page.find('dd.blacklight-named_subject_tesim')).to have_link 'Named Subject 1'
     expect(page.find('dd.blacklight-location_tesim')).to have_link 'Los Angeles'
     expect(page.find('dd.blacklight-photographer_tesim')).to have_link 'Poalillo, Charles'
     expect(page.find('dd.blacklight-language_tesim')).to have_link 'No linguistic content'
