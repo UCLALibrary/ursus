@@ -4,11 +4,18 @@ inherit_gem:
 AllCops:
   TargetRubyVersion: 2.4
 
-Metrics/ClassLength:
-  Enabled: true
+
+Layout/MultilineBlockLayout:
   Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/importers/californica_mapper.rb'
+    - 'spec/features/search_catalog_spec.rb'
+
+Layout/BlockEndNewline:
+  Exclude:
+    - 'spec/features/search_catalog_spec.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/helpers/blacklight/url_helper_behavior.rb'
 
 Metrics/BlockLength:
   Enabled: true
@@ -19,6 +26,16 @@ Metrics/BlockLength:
     - 'lib/tasks/ingest.rake'
     - 'lib/tasks/derivatives.rake'
     - app/models/ucla_metadata.rb
+
+Metrics/ClassLength:
+  Enabled: true
+  Exclude:
+    - 'app/controllers/catalog_controller.rb'
+    - 'app/importers/californica_mapper.rb'
+
+Metrics/CyclomaticComplexity: 
+  Exclude:
+    - 'app/helpers/blacklight/url_helper_behavior.rb'
 
 Metrics/LineLength:
   Exclude:
@@ -34,6 +51,15 @@ Metrics/MethodLength:
     - 'app/importers/californica_csv_parser.rb'
     - app/importers/actor_record_importer.rb
     - app/forms/hyrax/californica_collections_form.rb
+    - 'app/helpers/blacklight/url_helper_behavior.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'app/helpers/blacklight/url_helper_behavior.rb'
+
+Performance/RegexpMatch:
+  Exclude:
+    - 'app/helpers/blacklight/url_helper_behavior.rb'
 
 RSpec/DescribeClass:
   Exclude:
@@ -56,17 +82,21 @@ RSpec/LetSetup:
   Exclude:
     - 'spec/features/search_catalog_spec.rb'
 
+RSpec/AnyInstance:
+  Enabled: false
+
+Rails/OutputSafety:
+  Exclude:
+    - 'app/helpers/blacklight/url_helper_behavior.rb'
+
 Style/BlockDelimiters:
   Exclude:
     - 'spec/features/search_catalog_spec.rb'
 
-Layout/MultilineBlockLayout:
+Style/IfUnlessModifier:
   Exclude:
-    - 'spec/features/search_catalog_spec.rb'
+    - 'app/helpers/blacklight/url_helper_behavior.rb'
 
-Layout/BlockEndNewline:
+Style/MethodDefParentheses:
   Exclude:
-    - 'spec/features/search_catalog_spec.rb'
-
-RSpec/AnyInstance:
-  Enabled: false
+    - 'app/helpers/blacklight/url_helper_behavior.rb'

@@ -6,14 +6,15 @@ en:
       facets:
         title: 'Refine your search'
       zero_results:
-        title: "No results found."
-        modify_search: ""
-        use_fewer_keywords: "Remove some filters or terms from your query and search again."
-        search_fields: "you searched by %{search_fields}"
-        search_everything: "try searching everything"
+        title: 'No results found.'
+        modify_search: ''
+        use_fewer_keywords: 'Remove some filters or terms from your query and search again.'
+        search_fields: 'you searched by %{search_fields}'
+        search_everything: 'try searching everything'
       form:
         search:
           placeholder: 'Search UCLA Library Digital Collections'
+      new_search: 'New Search'
       fields:
         facet:
           date_created_tesim: 'Date Created'
@@ -27,7 +28,7 @@ en:
           genre_tesim: 'Genre'
           identifier_tesim: 'Identifier'
           language_sim: 'Language'
-          local_identifier_ssm: 'Local identifier'
+          local_identifier_tesim: 'Local Identifier'
           location_sim: 'Location'
           location_tesim: 'Location'
           medium_sim: 'Medium'
@@ -52,7 +53,7 @@ en:
           extent_tesim: 'Extent'
           genre_tesim: 'Genre'
           identifier_tesim: 'Identifier'
-          local_identifier_ssm: 'Local identifier'
+          local_identifier_tesim: 'Local Identifier'
           location_tesim: 'Location'
           named_subject_tesim: 'Names'
           normalized_date_sim: 'Date'
@@ -78,7 +79,7 @@ en:
           geographic_coordinates_ssim: 'Geographic Coordinates'
           identifier_tesim: 'Identifier'
           language_tesim: 'Language'
-          local_identifier_ssm: 'Local identifier'
+          local_identifier_tesim: 'Local Identifier'
           location_tesim: 'Location'
           medium_tesim: 'Medium'
           named_subject_tesim: 'Names'
@@ -93,5 +94,6 @@ en:
           human_readable_rights_statement_tesim: 'Copyright Status'
           subject_tesim: 'Subjects'
           title_tesim: 'Title'
+          back_to_search_results: 'Back to Search Results'
     tools:
       citation: 'Cite This Item'
