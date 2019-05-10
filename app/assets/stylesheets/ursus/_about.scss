@@ -50,6 +50,10 @@
       font-size: 1em;
     }
 
+    .btn-link {
+      color: $ucla-darker-blue;
+    }
+
     .btn[aria-expanded='true'] {
       font-weight: bold;
       text-decoration: none;

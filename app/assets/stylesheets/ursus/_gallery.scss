@@ -2,7 +2,7 @@
 
 #documents.row.gallery {
   .gallery-box {
-    outline: 1px solid #ddd;
+    outline: 1px solid $light-gray;
     padding: 5px;
     height: 200px;
     margin-bottom: 15px;
@@ -10,17 +10,17 @@
 
   .gallery-text {
     margin: 15px;
-   }
+  }
 
   .document-metadata dt {
     font-weight: normal;
     color: #808080;
-    }
+  }
 
   .document {
     .thumbnail {
       align: center;
-      outline: 1px solid #ddd;
+      outline: 1px solid $light-gray;
       margin: 5px;
       align: center;
     }
@@ -33,7 +33,7 @@
       color: $ucla-blue;
       padding-left: 1em;
       margin-bottom: 1.5em;
-      margin-right: .5em;
+      margin-right: 0.5em;
     }
   }
 }
@@ -41,7 +41,7 @@
 @media screen and (max-width: 1199px) {
   #documents.row.gallery {
     .gallery-box {
-      outline: 1px solid #ddd;
+      outline: 1px solid $light-gray;
       padding: 5px;
       height: 200px;
       margin-bottom: 10px;
@@ -55,7 +55,7 @@
 @media screen and (max-width: 450px) {
   #documents.row.gallery {
     .gallery-box {
-      outline: 1px solid #ddd;
+      outline: 1px solid $light-gray;
       padding: 5px;
       height: 200px;
       margin-bottom: 10px;
@@ -66,7 +66,7 @@
     .document {
       .thumbnail {
         align: center;
-        outline: 1px solid #ddd;
+        outline: 1px solid $light-gray;
         margin: 5px;
         align: center;
       }
@@ -79,7 +79,7 @@
         color: $ucla-blue;
         padding-left: 1em;
         margin-bottom: 1.5em;
-        margin-right: .5em;
+        margin-right: 0.5em;
       }
     }
   }

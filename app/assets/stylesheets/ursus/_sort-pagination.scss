@@ -10,10 +10,10 @@
 }
 
 .sort-pagination,
-  .pagination-search-widgets {
-    border-bottom: 0px !important;
-    margin-bottom: 0em;
-  }
+.pagination-search-widgets {
+  border-bottom: 0px !important;
+  margin-bottom: 0em;
+}
 
 .rectangle {
   background-color: #f5f5f5;
@@ -27,7 +27,7 @@ a.page-link {
   margin-left: -1px;
   line-height: 1.25;
   color: $ucla-darker-blue;
-  background-color: #ffffff;
+  background-color: $white;
   border: 1px solid #dee2e6;
 }
 

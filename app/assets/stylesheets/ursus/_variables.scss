@@ -33,4 +33,16 @@ $font-family-sans-serif: 'Helvetica', 'Arial', sans-serif;
 
 $container-padding: 95%;
 
+//== Linked text colors
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+#{$a-tags} {
+  color: $ucla-darker-blue !important;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: $ucla-darker-blue !important;
+}
+
 @import 'bootstrap';

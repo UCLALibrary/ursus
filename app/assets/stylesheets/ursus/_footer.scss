@@ -3,7 +3,7 @@
 .footer {
   margin-top: 2.5rem;
   background-color: $ucla-blue;
-  color: #ffffff;
+  color: $white;
   line-height: 1.5em;
 
   .footer-links {
@@ -14,19 +14,19 @@
     padding-bottom: 0.5em;
 
     a {
-      color: #ffffff;
+      color: $white !important;
       display: inline-block;
       padding: 0px 8px;
     }
 
     a:hover {
-      color: $ucla-gold;
+      color: $ucla-gold !important;
       text-decoration: underline;
     }
   }
 
   .footer-version {
-    color: #ffffff;
+    color: $white;
     font-size: 0.65em;
     text-align: center;
     padding-bottom: 1.5em;
