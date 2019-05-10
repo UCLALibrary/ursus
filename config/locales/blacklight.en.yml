@@ -66,6 +66,7 @@ en:
           subject_tesim: 'Subjects'
           title_tesim: 'Title'
         show:
+          architect_tesim: 'Architect'
           caption_tesim: 'Caption'
           date_created_tesim: 'Date Created'
           date_modified_dtsi: 'Date Modified'
