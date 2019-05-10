@@ -63,7 +63,7 @@ RSpec.feature "Search results page" do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
     expect(page).to have_content 'Title One'
     expect(page).to have_content 'Description: Description 1'
-    expect(page).to have_content 'Description 2'
+    expect(page).not_to have_content 'Description 2'
     expect(page).to have_content 'Resource Type: still image'
     expect(page).to have_content 'Date Created: Date 1'
     expect(page).to have_content 'Photographer: Person 1'

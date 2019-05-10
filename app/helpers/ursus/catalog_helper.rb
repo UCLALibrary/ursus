@@ -24,12 +24,9 @@ module Ursus
     def render_truncated_description(args)
       truncated_output = String.new
       content_tag :div, class: 'truncate-description' do
-        args[:value].each do |val|
-          description = val
-          button = "<span class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></span></br>"
-          truncated_output << "<div class='description'>#{description}</div>#{button}</br>"
-        end
-
+        description = args[:value].first
+        button = "<span class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></span></br>"
+        truncated_output << "<div class='description'>#{description}</div>#{button}</br>"
         return truncated_output.html_safe # rubocop:disable Rails/OutputSafety
       end
     end
