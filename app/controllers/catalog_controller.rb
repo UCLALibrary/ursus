@@ -176,6 +176,30 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field('subject') do |field|
+      solr_name = ::Solrizer.solr_name('subject', :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
+    config.add_search_field('title') do |field|
+      solr_name = ::Solrizer.solr_name('title', :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
+    config.add_search_field('collection') do |field|
+      solr_name = ::Solrizer.solr_name('collection', :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
