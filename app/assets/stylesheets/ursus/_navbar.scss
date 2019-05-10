@@ -33,9 +33,13 @@
   position: relative;
   top: 0.25em;
   left: 0.5em;
-  color: #fff;
+  color: $white !important;
   font-size: 0.9em;
   letter-spacing: 0.05em;
+}
+
+.navbar-text-logo:visited {
+  color: $white !important;
 }
 
 .navbar-text-logo:hover {
@@ -53,26 +57,25 @@
 }
 
 .nav-item a {
-  color: #fff;
+  color: $white !important;
   font-weight: 300;
   font-size: 0.9em;
   letter-spacing: 0.05em;
   margin-right: 1em;
 }
 
+.nav-item a:visited {
+  color: $white !important;
+}
+
 .nav-item a:hover {
-  color: $ucla-gold;
+  color: $ucla-gold !important;
   text-decoration: none;
 }
 
 .nav-link {
-  color: #fff !important;
   padding-left: 1rem !important;
   padding-right: 1rem !important;
-}
-
-.nav-link:hover {
-  color: $ucla-gold !important;
 }
 
 .navbar > .container {
@@ -123,7 +126,7 @@
   .nav-item:nth-child(1):hover {
     background-color: $ucla-darkest-blue;
     a {
-      color: #fff !important;
+      color: $white !important;
       text-decoration: none;
     }
   }

@@ -15,12 +15,12 @@
   .border-success,
   .facet-limit-active {
     border-color: initial !important;
-    color: #ffff !important;
+    color: $white !important;
   }
 
   .facet-limit-active .card-header {
     background-color: $ucla-blue !important;
-    color: #ffff !important;
+    color: $white !important;
   }
 
   .facet-content {
