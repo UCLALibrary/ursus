@@ -119,6 +119,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('description', :stored_searchable), separator_options: BREAKS
     config.add_show_field ::Solrizer.solr_name('keyword', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('subject', :stored_searchable), link_to_facet: ::Solrizer.solr_name('subject', :facetable), separator_options: BREAKS
+    config.add_show_field ::Solrizer.solr_name('architect', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('creator', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('contributor', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('publisher', :stored_searchable)

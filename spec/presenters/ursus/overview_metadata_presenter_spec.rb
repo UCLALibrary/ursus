@@ -12,6 +12,10 @@ RSpec.describe Ursus::OverviewMetadataPresenter do
         expect(config['title_tesim'].to_s).to eq('Title')
       end
 
+      it 'returns the Architect Key' do
+        expect(config['architect_tesim'].to_s).to eq('Architect')
+      end
+
       it 'returns the Description Key' do
         expect(config['description_tesim'].to_s).to eq('Description')
       end
