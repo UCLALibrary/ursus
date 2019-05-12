@@ -1,0 +1,27 @@
+<div class='facet-pagination top'>
+  <%= render :partial=>'facet_pagination' %>
+</div>
+
+<div class='modal-header'>
+  <h1 class='modal-title'><%= facet_field_label(@facet.key) %> <span class='modal_result_count'><b><%= @response['response'].dig(:numFound) %></b> Catalog Results</span></h1>
+
+  <button type='button' class='blacklight-modal-close close' data-dismiss='modal' aria-label="<%= t('blacklight.modal.close') %>">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+</div>
+DANIEL
+<div class='modal-body'>
+  <%= render partial: 'facet_index_navigation' if @facet.index_range && @display_facet.index? %>
+
+  <div class="facet-extended-list">
+  <%= render_facet_limit(@display_facet, layout: false) %>
+  </div>
+</div>
+
+<div class='modal-footer'>
+
+  <div class='facet-pagination bottom'>
+    <%= render :partial=>'facet_pagination' %>
+  </div>
+</div>
