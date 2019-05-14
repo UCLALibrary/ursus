@@ -1,19 +1,14 @@
-<div class="prev_next_links btn-group float-md-left">
-  <%= link_to_previous_page @pagination, raw(t('views.pagination.previous')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'btn btn-link', data: { blacklight_modal: "preserve" } do %>
-    <span class="disabled btn btn-disabled"><%= raw(t('views.pagination.previous')) %></span>
-  <% end %>
-
-  <%= link_to_next_page @pagination, raw(t('views.pagination.next')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'btn btn-link',  data: { blacklight_modal: "preserve" } do %>
-    <span class="disabled btn  btn-disabled"><%= raw(t('views.pagination.next')) %></span>
-  <% end %>
-</div>
-JEN
-<div class="sort-options btn-group float-md-right">
-  <% if @pagination.sort == 'index' -%>
-    <span class="active az btn btn-outline-secondary"><%= t('blacklight.search.facets.sort.index') %></span>
-    <%= link_to(t('blacklight.search.facets.sort.count'), @pagination.params_for_resort_url('count', search_state.to_h), class: "sort_change numeric btn btn-outline-secondary", data: { blacklight_modal: "preserve" }) %>
-  <% elsif @pagination.sort == 'count' -%>
-    <%=  link_to(t('blacklight.search.facets.sort.index'), @pagination.params_for_resort_url('index', search_state.to_h), class: "sort_change az btn btn-outline-secondary",  data: { blacklight_modal: "preserve" }) %>
-    <span class="active numeric btn btn-outline-secondary"><%= t('blacklight.search.facets.sort.count') %></span>
-  <% end -%>
+<!-- This pagination does not use the kaminari gem, 
+     it is implementing the previous/next here and using bootstrap for styling. -->
+<ul class="pagination">
+  <li class='page-item'>
+    <%= link_to_previous_page @pagination, raw(t('views.pagination.previous')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'page-link', data: { blacklight_modal: "preserve" } do %>
+      <span class="disabled page-link" tabindex='-1' disabled aria-disabled="true"><%= raw(t('views.pagination.previous')) %></span>
+    <% end %>
+  </li>
+  <li class='page-item' >
+    <%= link_to_next_page @pagination, raw(t('views.pagination.next')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'page-link',  data: { blacklight_modal: "preserve" } do %>
+      <span class="disabled page-link" tabindex='-1' disabled aria-disabled="true"><%= raw(t('views.pagination.next')) %></span>
+    <% end %>
+  </li>
 </div>

@@ -2,7 +2,7 @@
 
 .modal-header {
     display: flex;
-    background-color: $light-gray;
+    //background-color: $light-gray;
     align-items: flex-start;
     justify-content: space-between;
     padding: 1rem 1rem;
@@ -18,9 +18,7 @@
     font-weight: 300;
 }
 
-.modal_result_count {
-  float: right;
-  font-size: 1em;
-  font-weight: 300;
-  padding-left: 20px;
+small.modal_result_count {
+  font-weight: 450;
+  padding-left: 15px;
 }
