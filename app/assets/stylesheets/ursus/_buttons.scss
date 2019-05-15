@@ -19,6 +19,7 @@
 .btn-outline-secondary {
   border-color: $light-gray !important;
   color: $ucla-darker-blue !important;
+  border-radius: 0 !important;
 }
 
 .btn-outline-secondary:hover {
@@ -40,6 +41,18 @@
   background-color: $light-gray !important;
 }
 
+.btn-group.applied-filter:hover {
+  background-color: $light-gray !important;
+}
+
+.btn.btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.1rem rgba(108, 117, 125, 0.5) !important;
+}
+
+.view-type-gallery {
+  margin-left: 5px !important;
+}
+
 .applied-filter .remove:hover {
   background-color: #dc3545 !important;
   border-color: #dc3545 !important;
@@ -47,10 +60,6 @@
 }
 .applied-filter .filter-name:after {
   color: $ucla-darker-blue !important;
-}
-
-.btn-group.applied-filter:hover {
-  background-color: $light-gray !important;
 }
 
 .per-page-dropdown.btn-group > .btn,
@@ -64,4 +73,12 @@
 
 .facet-limit {
   margin-bottom: 0.2rem !important;
+}
+
+a.catalog_startOverLink:visited {
+  color: $white !important;
+}
+
+a.catalog_startOverLink:focus {
+  box-shadow: 0 0 0 0.1rem rgba(38, 143, 255, 0.5) !important;
 }
