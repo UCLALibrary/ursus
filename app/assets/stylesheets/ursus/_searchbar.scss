@@ -2,13 +2,21 @@
 
 .input-group {
   border: 10px solid #003B5C;
+  width: 1180px !important;
+}
+.ursus-search-bar {
+  margin-top: 20px;
+  padding-bottom: 0px !important;
+}
+
+#main-container {
+  padding-top: 0px !important;
 }
 
 .blacklight-catalog {
   .navbar-search {
     padding-left: 0;
   }
-
   .navbar-search > .container-fluid {
     width: $container-padding;
   }
@@ -42,4 +50,84 @@
   padding-left: 15px;
   padding-top: 6px;
   color: $ucla-blue;
+}
+
+.search-area {
+  margin-top: 20px;
+  display: flex;
+  background-color: $ucla-lightest-blue;
+  border-top: 6px solid $ucla-lightest-blue;
+  .btn {
+    background-color: $white;
+  }
+}
+.search-ucla {
+  margin-left: -15px;
+  margin-top: -15px;
+  max-width: 100%;
+}
+.search-breadcrumbs {
+  margin-left: 10px;
+  margin-top: -9px;
+}
+/* All Fields */
+#search_field {
+  background-color: $ucla-blue;
+  color: $white;
+}
+
+#appliedParams {
+  .btn-group {
+    .constraints-label {
+      background-color: indigo;
+      color: $white;
+    }
+    .filter-name {
+      color: $white;
+    }
+    .applied-filter .filter-name:after {
+      color: $white !important;
+    }
+    .filter-value {
+      color: $white;
+    }
+    .constraint-value {
+      background: $ucla-blue;
+    }
+    .constraint-value.btn-outline-secondary {
+      background: $ucla-blue;
+    }
+    .constraint-value.btn-outline-secondary:hover {
+      background: $gray !important;
+    }
+    .remove {
+      background-color: $ucla-blue !important;
+    }
+    .remove:hover {
+      background-color: $gray !important;
+      border: none !important;
+    }
+    .remove-icon {
+      color: white !important;
+      font-weight: 700;
+    }
+  }
+}
+.applied-filter .filter-name:after {
+  color: $white !important;
+}
+
+.filters-applied {
+  color: $gray;
+  font-weight: 700;
+}
+
+.filter-box {
+  width: 1180px;
+  display: flex;
+  background-color: $ucla-lightest-blue;
+  padding-left: 15px;
+  padding-top: 10px;
+  margin-left: -8px;
+  margin-bottom: 20px;
 }
