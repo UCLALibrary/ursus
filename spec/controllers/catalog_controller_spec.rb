@@ -37,7 +37,7 @@ RSpec.describe CatalogController, type: :controller do
 
     let(:expected_index_fields) do
       ['description_tesim',
-       'date_created_tesim',
+       'sort_year_isi',
        'human_readable_resource_type_tesim',
        'photographer_tesim']
     end

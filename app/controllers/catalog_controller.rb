@@ -107,7 +107,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results / list view
     #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
     config.add_index_field ::Solrizer.solr_name('description', :stored_searchable), itemprop: 'description', helper_method: :render_truncated_description
-    config.add_index_field ::Solrizer.solr_name('date_created', :stored_searchable), itemprop: 'dateCreated'
+    config.add_index_field 'sort_year_isi', label: 'Date Created'
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field ::Solrizer.solr_name('human_readable_resource_type', :stored_searchable), label: 'Resource Type', link_to_facet: ::Solrizer.solr_name('human_readable_resource_type', :facetable)
     config.add_index_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_facet: ::Solrizer.solr_name('photographer', :facetable)
@@ -169,35 +169,29 @@ class CatalogController < ApplicationController
     # since we aren't specifying it otherwise.
     search_field_service = ::SearchFieldService.instance
     config.add_search_field('all_fields', label: 'All Fields') do |field|
-      title_name = ::Solrizer.solr_name('title', :stored_searchable)
       field.solr_parameters = {
-        qf: search_field_service.search_fields,
-        pf: title_name.to_s,
-        mm: '100%'
+        qf: search_field_service.search_fields
       }
     end
 
     config.add_search_field('subject') do |field|
-      solr_name = ::Solrizer.solr_name('subject', :stored_searchable)
       field.solr_local_parameters = {
-        qf: solr_name,
-        pf: solr_name
+        qf: '$subject_qf',
+        pf: '$subject_pf'
       }
     end
 
     config.add_search_field('title') do |field|
-      solr_name = ::Solrizer.solr_name('title', :stored_searchable)
       field.solr_local_parameters = {
-        qf: solr_name,
-        pf: solr_name
+        qf: '$title_qf',
+        pf: '$title_pf'
       }
     end
 
     config.add_search_field('collection') do |field|
-      solr_name = ::Solrizer.solr_name('collection', :stored_searchable)
       field.solr_local_parameters = {
-        qf: solr_name,
-        pf: solr_name
+        qf: '$collection_qf',
+        pf: '$collection_qf'
       }
     end
 
@@ -207,9 +201,18 @@ class CatalogController < ApplicationController
     # except in the relevancy case).
     # label is key, solr field is value
 
-    config.add_sort_field 'sort_title_isi desc, system_create_dtsi desc', label: 'Title'
-    config.add_sort_field 'sort_year_isi desc, system_create_dtsi desc', label: 'Year (earliest)'
-    config.add_sort_field 'score desc, system_create_dtsi desc', label: 'Relevance'
+    # This is searching the sort_title_tesi, which cannot be
+    # sorted alphabetically. It needs an alpha sort field in the
+    # schema.xml across californica and ursus
+
+    # config.add_sort_field 'title' do |field|
+    #  field.sort = 'sort_title_tesi desc, sort_title_tesi asc'
+    #  field.label = 'Title'
+    # end
+
+    config.add_sort_field 'score desc', label: 'Relevance'
+    config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
+    config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.

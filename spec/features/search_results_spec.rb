@@ -20,6 +20,7 @@ RSpec.feature "Search results page" do
       identifier_tesim: ['ark 123'],
       description_tesim: ['Description 1', 'Description 2'],
       date_created_tesim: ["Date 1"],
+      sort_year_isi: 1923,
       human_readable_resource_type_tesim: ['still image'],
       subject_tesim: ['Testing', 'RSpec'],
       photographer_tesim: ['Person 1', 'Person 2'],
@@ -36,6 +37,7 @@ RSpec.feature "Search results page" do
       identifier_tesim: ['ark 456'],
       description_tesim: ['Description 3', 'Description 4'],
       date_created_tesim: ["Date 1"],
+      sort_year_isi: 1945,
       human_readable_resource_type_tesim: ['still image'],
       subject_tesim: ['Testing', 'Minitest'],
       photographer_tesim: ['Person 1'],
@@ -52,6 +54,7 @@ RSpec.feature "Search results page" do
       identifier_tesim: ['ark 456'],
       description_tesim: ['Description 3', 'Description 4', 'another desc'],
       date_created_tesim: ["Date 1"],
+      sort_year_isi: 1929,
       human_readable_resource_type_tesim: ['still image'],
       photographer_tesim: ['Person 1'],
       location_tesim: ['search_results_spec'], # to control what displays
@@ -65,7 +68,7 @@ RSpec.feature "Search results page" do
     expect(page).to have_content 'Description: Description 1'
     expect(page).not_to have_content 'Description 2'
     expect(page).to have_content 'Resource Type: still image'
-    expect(page).to have_content 'Date Created: Date 1'
+    expect(page).to have_content 'Date Created: 1923'
     expect(page).to have_content 'Photographer: Person 1'
   end
 
@@ -73,7 +76,7 @@ RSpec.feature "Search results page" do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
     expect(page).to have_link 'Title One'
     expect(page).to have_link 'still image'
-    expect(page).not_to have_link 'Date 1'
+    expect(page).not_to have_link '1923'
     expect(page).to have_link 'Person 1'
   end
 
@@ -122,7 +125,7 @@ RSpec.feature "Search results page" do
     expect(page).to have_content 'Title One'
     expect(page).to have_content 'Description: Description 1'
     expect(page).to have_content 'Resource Type: still image'
-    expect(page).to have_content 'Date Created: Date 1'
+    expect(page).to have_content 'Date Created: 1923'
   end
 
   scenario 'visiting the home page and getting the correct search field options' do
