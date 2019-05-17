@@ -19,7 +19,8 @@ class SearchFieldService
     ::Solrizer.solr_name('photographer', :stored_searchable),
     ::Solrizer.solr_name('publisher', :stored_searchable),
     ::Solrizer.solr_name('subject', :stored_searchable),
-    ::Solrizer.solr_name('title', :stored_searchable)
+    ::Solrizer.solr_name('title', :stored_searchable),
+    'ark_ssi'
   ].join(' ').freeze
   def search_fields
     SEARCH_FIELDS
