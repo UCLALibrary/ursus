@@ -33,28 +33,16 @@ services:
       - 3306:3306
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
   solr:
-    image: solr:6.5
-    volumes:
-      - solr_data:/opt/solr/server/solr/calursus/data
-      - ./solr/config:/opt/solr/server/solr/configsets/calursus
+    image: uclalibrary/solr-ursus
     ports:
-      - "8983:8983"
-    entrypoint:
-      - solr-precreate
-      - calursus
-      - /opt/solr/server/solr/configsets/calursus
+      - 8983:8983
+
   solr_test:
-    image: solr:6.5
-    volumes:
-      - solr_test_data:/opt/solr/server/solr/urus_test/data
-      - ./solr/config:/opt/solr/server/solr/configsets/calursus_test
+    image: uclalibrary/solr-ursus
     ports:
-      - "8985:8983"
-    entrypoint:
-      - solr-precreate
-      - calursus
-      - /opt/solr/server/solr/configsets/calursus_test
+      - 8985:8983
   dockerhost:
     image: qoomon/docker-host
     cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
@@ -62,5 +50,3 @@ services:
 volumes:
   bundle_dir:
   mysql_data:
-  solr_data:
-  solr_test_data:
