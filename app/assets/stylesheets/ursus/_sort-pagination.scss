@@ -16,11 +16,24 @@
   }
 }
 
+@media screen and (max-width: 991px) {
+  .catalog-results {
+    padding-left: 1rem;
+  }
+}
+
 .rectangle {
   background-color: #f5f5f5;
   border: none;
   margin-top: 1em;
   padding: 1em 0.5em;
+}
+
+@media screen and (max-width: 991px) {
+  .rectangle {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .sort-pagination {

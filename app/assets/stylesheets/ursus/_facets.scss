@@ -1,9 +1,19 @@
 #facets {
+  .navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .facets-heading {
+      margin-bottom: 0 !important;
+    }
+  }
+  .facets-heading {
+    line-height: 1 !important;
+  }
+
   #facet-year_isim > div > div > ul {
     display: none;
   }
-
-  margin-bottom: 1.5em;
 
   .slider_js .slider-selection {
     background: #c3d7ee;
@@ -113,7 +123,78 @@
     .btn[aria-expanded='true'] {
       font-weight: bold;
       text-decoration: none;
-      color: red !important;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #facets {
+    margin-bottom: 1.5em;
+
+    .navbar {
+      background-color: $ucla-lightest-blue;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+
+      .facets-heading {
+        color: $ucla-darkest-blue;
+      }
+    }
+
+    .navbar-toggler {
+      border-color: transparent !important;
+    }
+
+    button:focus {
+      outline: none !important;
+    }
+  }
+
+  .facets-toggleable-sm .navbar-toggler {
+    display: block;
+  }
+  .facets-toggleable-sm .facets-collapse {
+    display: block !important;
+  }
+  .collapse:not(.show) {
+    display: none !important;
+  }
+  .svg-icon {
+    width: 1.5em;
+    height: 1.5em;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transition: -webkit-transform 0.25s ease;
+    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+  }
+
+  .navbar-toggler.navbar-toggler-right[aria-expanded='true'] {
+    .svg-icon {
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+      transition: -webkit-transform 0.25s ease;
+      transition: transform 0.25s ease;
+      transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+    }
+  }
+
+  .svg-icon path {
+    fill: $ucla-darkest-blue;
+  }
+
+  .svg-icon {
+    stroke: $ucla-darkest-blue;
+    stroke-width: 0.05rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #facets {
+    .navbar {
+      padding-left: 1rem !important;
     }
   }
 }

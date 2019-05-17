@@ -82,3 +82,9 @@ a.catalog_startOverLink:visited {
 a.catalog_startOverLink:focus {
   box-shadow: 0 0 0 0.1rem rgba(38, 143, 255, 0.5) !important;
 }
+
+@media screen and (max-width: 767px) {
+  .view-name {
+    display: none;
+  }
+}
