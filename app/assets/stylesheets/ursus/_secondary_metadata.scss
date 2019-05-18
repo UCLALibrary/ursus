@@ -3,6 +3,31 @@
 .secondary-metadata {
   background: $ucla-lightest-blue;
   max-width: 375px;
-  padding-left: 2.5em;
-  padding-right: 2.5em;
+  padding-left: 2em;
+  padding-right: 0em;
+  dt: col-md-4;
+  .item-label {
+    width: 100%;
+    padding-right: 0px;
+  }
+  .item-value {
+    width: 100%;
+    padding-right: 0px;
+  }
+  dl {
+    margin-top: 0;
+    margin-bottom: .05rem;
+  }
+  .document-metadata {
+    padding-right: 0px;
+
+  }
+  hr {
+    margin-right: 2px;
+  }
+}
+.item-value {
+  width: 100%;
+  padding-right: 0px;
+  margin-bottom: 7px;
 }

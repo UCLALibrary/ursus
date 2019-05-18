@@ -1,0 +1,7 @@
+human_readable_resource_type_tesim: 'Resource Type'
+genre_tesim: 'Genre'
+subject_tesim: 'Subject'
+named_subject_tesim: 'Named Subject'
+location_tesim: 'Location'
+longitude_tesim: 'Longitude'
+latitude_tesim: 'Latitude'

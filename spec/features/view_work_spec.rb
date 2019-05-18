@@ -16,14 +16,12 @@ RSpec.feature "View a Work", js: true do
   let(:work_attributes) do
     {
       id: id,
-      ark_ssi: 'ark:/24920492/029402',
+      ark_ssi: ['ark:/24920492/029402'],
       has_model_ssim: ['Work'],
       title_tesim: ['The Title of my Work'],
       description_tesim: ['Description 1', 'Description 2'],
-      identifier_tesim: ['ark 123'],
       subject_tesim: ['Subj 1', 'Subj 2'],
       human_readable_resource_type_tesim: ['still image'],
-      human_readable_resource_type_sim: ['still image'],
       human_readable_rights_statement_tesim: ['copyrighted'],
       genre_tesim: ['Genre 1', 'Genre 2', 'Genre 3'],
       named_subject_tesim: ["Named Subject 1", "Named Subject 2", "Named Subject 3", "Named Subject 4"],
@@ -32,20 +30,30 @@ RSpec.feature "View a Work", js: true do
       publisher_tesim: ['Los Angeles Daily News'],
       rights_country_tesim: ['US'],
       rights_holder_tesim: ['Charles E. Young'],
-      normalized_date_tesim: ['1934-56-78'], # unique value so we can test it doesn't display
+      normalized_date_sim: ['1934-56-78'], # unique value so we can test it doesn't display
       local_identifier_ssm: ['local id 123'],
       date_created_tesim: ["September 17, 1947"],
       medium_tesim: ['1 photograph'],
       extent_tesim: ['1 photograph'],
       dimensions_tesim: ['10 x 12.5 cm.'],
       funding_note_tesim: ['Info about funding'],
-      geographic_coordinates_ssim: ['34.0, -118.2'],
       caption_tesim: ['the caption'],
       language_tesim: ['No linguistic content'],
       photographer_tesim: ['Poalillo, Charles'],
       member_of_collections_ssim: ['Photographic Collection'],
       license_tesim: ['https://creativecommons.org/licenses/by/4.0/'],
-      services_contact_ssm: ['UCLA Special Collections Services Contact']
+      services_contact_ssm: ['UCLA Special Collections Services Contact'],
+
+      longitude_tesim: ['-118.4398'],
+      latitude_tesim: ['34.0700'],
+      alternative_title_tesim: ['Alernative Title of my Work'],
+      uniform_title_tesim: ['Uniform Title of my Work'],
+      architect_tesim: ['Alexander Butterfly'],
+      # year_isim: ['1974'],
+      place_of_origin_tesim: ['Dudley, MA'],
+      oclc_tesim_ssi: ['Powell Library'],
+      format_tesim: ['Film Still'],
+      support_tesim: ['Mom & Dad']
     }
   end
 
@@ -54,9 +62,7 @@ RSpec.feature "View a Work", js: true do
 
     expect(page).to have_selector('.primary-metadata')
     expect(page).to have_selector('.secondary-metadata')
-
     expect(page).to have_content 'The Title of my Work'
-    expect(page).to have_content 'Identifier: ark 123'
     expect(page).to have_content 'Description: Description 1'
     expect(page).to have_content 'Description 2'
     expect(page).to have_content 'Subjects: Subj 1'
@@ -69,7 +75,6 @@ RSpec.feature "View a Work", js: true do
     expect(page).to have_content 'Publisher: Los Angeles Daily News'
     expect(page).to have_content 'Rights Country: US'
     expect(page).to have_content 'Rights Holder: Charles E. Young'
-    # normalized_date is a machine-readable field that shouldn't display!
     expect(page).to_not have_content 'Normalized Date:'
     expect(page).to_not have_content '1934-56-78'
     expect(page).to have_content 'Local identifier: local id 123'
@@ -78,17 +83,29 @@ RSpec.feature "View a Work", js: true do
     expect(page).to have_content 'Extent: 1 photograph'
     expect(page).to have_content 'Dimensions: 10 x 12.5 cm.'
     expect(page).to have_content 'Funding Note: Info about funding'
-    expect(page).to have_content 'Geographic Coordinates: 34.0, -118.2'
     expect(page).to have_content 'Caption: the caption'
     expect(page).to have_content 'Language: No linguistic content'
     expect(page).to have_content 'Photographer: Poalillo, Charles'
     expect(page).to have_content 'ark:/24920492/029402'
     expect(page).to have_content 'ARK'
     expect(page).to have_content 'Item Overview'
-    expect(page).to have_content 'Provenance'
-    expect(page).to have_content 'Subjects'
-    expect(page).to have_content 'Materials'
+    expect(page).to have_content 'Notes'
+    expect(page).to have_content 'Physical Description'
+    expect(page).to have_content 'Keywords'
+    expect(page).to have_content 'Find This Item'
+    expect(page).to have_content 'Access Condition'
     expect(page).to have_content 'UCLA Special Collections Services Contact'
+
+    expect(page).to have_content '-118.4398'
+    expect(page).to have_content '34.0700'
+    expect(page).to have_content 'Alernative Title of my Work'
+    expect(page).to have_content 'Uniform Title of my Work'
+    expect(page).to have_content 'Alexander Butterfly'
+    # expect(page).to have_content '1974'
+    expect(page).to have_content 'Dudley, MA'
+    expect(page).to have_content 'Powell Library'
+    expect(page).to have_content 'Film Still'
+    expect(page).to have_content 'Mom & Dad'
   end
 
   context 'license' do

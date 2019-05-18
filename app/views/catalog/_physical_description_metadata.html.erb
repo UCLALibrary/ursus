@@ -1,12 +1,12 @@
 <% doc_presenter = show_presenter(document) %>
-<% materials = Ursus::MaterialsMetadataPresenter.new(document: doc_presenter.fields_to_render).materials_terms %>
+<% physical_description = Ursus::PhysicalDescriptionMetadataPresenter.new(document: doc_presenter.fields_to_render).physical_description_terms %>
 
-<% if materials.length > 0 %>
+<% if physical_description.length > 0 %>
   <div class="primary-metadata">
     <hr>
-    <h3>Materials</h3>
+    <h5>Physical Description</h5>
     <dl class='row document-metadata'>
-      <% materials.each do |field_name, field| -%>
+      <% physical_description.each do |field_name, field| -%>
         <dt class="blacklight-<%= field_name.parameterize %> col-md-6 item-label"><%= render_document_show_field_label document, field: field_name %><dd class="blacklight-<%= field_name.parameterize %> col-md-9 item-value"><%= doc_presenter.field_value field %></dd></dt>
       <% end %>
     </dl>

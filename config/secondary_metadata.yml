@@ -1,10 +1,16 @@
 repository_tesim: 'Repository'
-funding_note_tesim: 'Funding Note'
-rights_country_tesim: 'Rights Country'
-rights_holder_tesim: 'Rights Holder'
-license_tesim: 'License'
-identifier_tesim: 'Identifier'
 local_identifier_ssm: 'Local identifier'
+# OCLC Number
 ark_ssi: 'ARK'
-services_contact_ssm: 'Rights services contact'
-human_readable_rights_statement_tesim: 'copyrighted'
+# Rights statement
+rights_country_tesim: 'Rights (country of creation)'
+rights_holder_tesim: 'Rights Holder'
+services_contact_ssm: 'Rights contact'
+license_tesim: 'License'
+funding_note_tesim: 'Funding Note'
+# Depositor
+date_uploaded_tesim: 'Date Uploaded'
+date_modified_tesim: 'Date Modified'
+# Filename
+# Import URL
+# Source

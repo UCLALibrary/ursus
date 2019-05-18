@@ -149,6 +149,13 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_facet: ::Solrizer.solr_name('photographer', :facetable)
     config.add_show_field ::Solrizer.solr_name('services_contact', :displayable), label: 'Rights services contact'
     config.add_show_field 'ark_ssi', label: 'ARK'
+    config.add_show_field 'support_tesim', label: 'Support'
+    config.add_show_field 'oclc_tesim_ssi', label: 'OCLC Number'
+    config.add_show_field 'longitude_tesim', label: 'Latitude'
+    config.add_show_field 'latitude_tesim', label: 'Longitude'
+    config.add_show_field 'alternative_title_tesim', label: 'Alternative title'
+    config.add_show_field 'uniform_title_tesim', label: 'Uniform title'
+    config.add_show_field 'place_of_origin_tesim', label: 'Place of Origin'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 module Ursus
-  class ProvenanceMetadataPresenter
+  class PhysicalDescriptionMetadataPresenter
     attr_reader :document, :config
 
     def initialize(document:)
       @document = document
-      @config = YAML.safe_load(File.open(Rails.root.join('config', 'provenance_metadata.yml')))
+      @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata/physical_description_metadata.yml')))
     end
 
-    def provenance_terms
+    def physical_description_terms
       @document.slice(*@config.keys)
     end
   end
