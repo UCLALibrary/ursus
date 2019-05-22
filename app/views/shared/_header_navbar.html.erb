@@ -23,8 +23,9 @@
 
 <!-- Searchbar -->
 <% unless controller.controller_name == 'catalog' && controller.action_name == 'show' %>
+<div class='container'>  
   <div class='navbar-search navbar navbar-light bg-faded ursus-search-bar' role='navigation'>
-    <div class='container'>
+    
       <%= render_search_bar %>
     </div>
   </div>
