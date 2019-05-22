@@ -1,13 +1,13 @@
 @import 'variables';
 
-.navbar + .container > .ursus-search-bar {
+#search-bar-container {
   padding-bottom: 0 !important;
 }
 
 .ursus-search-bar {
   margin-top: 20px;
-  padding: 0!important;
- .search-query-form {
+  padding: 0 !important;
+  .search-query-form {
     flex: 0 0 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
@@ -15,7 +15,7 @@
 }
 
 .input-group {
-  border: 10px solid #003B5C;
+  border: 10px solid #003b5c;
 }
 
 .blacklight-catalog {
@@ -27,23 +27,23 @@
   }
 }
 
-.new-search-link{
+.new-search-link {
   padding-right: 15px;
 }
 
-.back-to-search-link{
+.back-to-search-link {
   margin-right: 20px;
 }
 
 .back-and-new-links-show {
   float: right;
-  clear:left;
+  clear: left;
   padding-top: 6px;
 }
 
 .back-and-new-container {
   height: 46px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border-top: 1px solid #dee2e6;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -81,57 +81,69 @@
   color: $white;
 }
 
-#appliedParams {
-  .btn-group {
-    .constraints-label {
-      background-color: indigo;
-      color: $white;
-    }
-    .filter-name {
-      color: $white;
-    }
-    .applied-filter .filter-name:after {
-      color: $white !important;
-    }
-    .filter-value {
-      color: $white;
-    }
-    .constraint-value {
-      background: $ucla-blue;
-    }
-    .constraint-value.btn-outline-secondary {
-      background: $ucla-blue;
-    }
-    .constraint-value.btn-outline-secondary:hover {
-      background: $gray !important;
-    }
-    .remove {
-      background-color: $ucla-blue !important;
-    }
-    .remove:hover {
-      background-color: $gray !important;
-      border: none !important;
-    }
-    .remove-icon {
-      color: white !important;
-      font-weight: 700;
-    }
-  }
+.filter-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: $ucla-lightest-blue;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
 }
-.applied-filter .filter-name:after {
-  color: $white !important;
+@media screen and (max-width: 767px) {
+  .filter-box {
+    display: block;
+  }
 }
 
 .filters-applied {
-  color: $gray;
-  font-weight: 700;
+  color: $ucla-darkest-blue;
+  font-weight: 600;
 }
 
-.filter-box {
-  // width: 1180px;
-  display: flex;
-  background-color: $ucla-lightest-blue;
-  padding-left: 15px;
-  padding-top: 10px;
-  margin-bottom: 20px;
+#appliedParams {
+  padding-top: 15px !important;
+
+  .btn-group {
+    margin-bottom: 0.35rem;
+
+    .constraints-container {
+      flex: 0 0 88% !important;
+      max-width: 100% !important;
+    }
+
+    .constraint-value,
+    .remove {
+      color: $white !important;
+      background: $ucla-blue !important;
+      border: 0 !important;
+    }
+    .filter-name:after {
+      color: $white !important;
+    }
+    .constraint-value:hover {
+      color: $ucla-darkest-blue !important;
+      background: $light-gray !important;
+      .filter-name:after {
+        color: $ucla-darkest-blue !important;
+      }
+    }
+    .remove:hover {
+      background: red !important;
+      margin-left: -1px !important;
+    }
+  }
+}
+
+.startover-container {
+  flex: 0 0 12% !important;
+  max-width: 100px !important;
+  align-self: center;
+}
+@media screen and (max-width: 767px) {
+  .startover-container {
+    padding-bottom: 10px;
+  }
 }
