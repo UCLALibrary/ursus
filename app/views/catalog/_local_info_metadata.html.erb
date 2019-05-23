@@ -1,0 +1,15 @@
+<% doc_presenter = show_presenter(document) %>
+<% local_info = Ursus::LocalInfoMetadataPresenter.new(document: doc_presenter.fields_to_render).local_info_terms %>
+
+<% if local_info.length > 0 %>
+  <% doc_presenter = show_presenter(document) %>
+  <% local_info = Ursus::LocalInfoMetadataPresenter.new(document: doc_presenter.fields_to_render).local_info_terms %>
+  <div >
+    <h4 class='item-heading'>Find This Item</h4>
+    <dl class='row document-metadata'>
+      <% local_info.each do |field_name, field| -%>
+        <dt class="blacklight-<%= field_name.parameterize %> col-md-6 item-label"><%= render_document_show_field_label document, field: field_name %><dd class="blacklight-<%= field_name.parameterize %> col-md-9 item-value"><%= doc_presenter.field_value field %></dd></dt>
+      <% end %>
+    </dl>
+  </div>
+<% end %>

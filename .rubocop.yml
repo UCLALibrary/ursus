@@ -61,6 +61,9 @@ Performance/RegexpMatch:
   Exclude:
     - 'app/helpers/blacklight/url_helper_behavior.rb'
 
+Rails/FilePath:
+  Enabled: false
+
 RSpec/DescribeClass:
   Exclude:
     - 'spec/tasks/**/*'
