@@ -1,0 +1,5 @@
+<% if query_has_constraints? %>
+  <div class='startover-container'>
+    <%=link_to t('blacklight.search.start_over'), start_over_path, class: "catalog_startOverLink" %>
+  </div>
+<% end %>

@@ -75,9 +75,17 @@
   margin-bottom: 0.2rem !important;
 }
 
+a.catalog_startOverLink,
+a.catalog_startOverLink:active,
+a.catalog_startOverLink:focus,
 a.catalog_startOverLink:visited {
-  color: $white !important;
+  color: $ucla-darkest-blue !important;
+  font-weight: 600 !important;
 }
+
+// a.catalog_startOverLink:visited {
+//   color: $white !important;
+// }
 
 a.catalog_startOverLink:focus {
   box-shadow: 0 0 0 0.1rem rgba(38, 143, 255, 0.5) !important;

@@ -10,7 +10,10 @@
 <!-- This adds the Filtered result (breadcrumbs) -->
 <% content_for(:container_header) do -%>
   <h1 class='sr-only top-content-title'><%= t('blacklight.search.header') %></h1>
-  <div class='filter-box'><%= render 'constraints' %></div>
+  <div class='filter-box'>
+    <%= render 'constraints' %>
+    <%= render 'startover' %>
+  </div>
 <% end %>
 
 <h4 class='catalog-results'><%= @response['response'].dig(:numFound) %> Catalog Results <%= render_results_collection_tools wrapping_class: "search-widgets" %></h4>
