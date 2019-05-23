@@ -38,7 +38,7 @@ RSpec.feature "View a Work", js: true do
       dimensions_tesim: ['10 x 12.5 cm.'],
       funding_note_tesim: ['Info about funding'],
       caption_tesim: ['the caption'],
-      language_tesim: ['No linguistic content'],
+      human_readable_language_tesim: ['No linguistic content'],
       photographer_tesim: ['Poalillo, Charles'],
       member_of_collections_ssim: ['Photographic Collection'],
       license_tesim: ['https://creativecommons.org/licenses/by/4.0/'],
@@ -126,7 +126,7 @@ RSpec.feature "View a Work", js: true do
     expect(page.find('dd.blacklight-named_subject_tesim')).to have_link 'Named Subject 1'
     expect(page.find('dd.blacklight-location_tesim')).to have_link 'Los Angeles'
     expect(page.find('dd.blacklight-photographer_tesim')).to have_link 'Poalillo, Charles'
-    expect(page.find('dd.blacklight-language_tesim')).to have_link 'No linguistic content'
+    expect(page.find('dd.blacklight-human_readable_language_tesim')).to have_link 'No linguistic content'
     expect(page).to have_link 'Photographic Collection'
     expect(page.html).to match(/member_of_collections_ssim/)
   end

@@ -19,7 +19,7 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       genre_sim: ['news photographs'],
       named_subject_sim: ['Aimee McPherson Semple'],
       year_isim: [1947],
-      language_sim: ['No linguistic content'],
+      human_readable_language_sim: ['No linguistic content'],
       location_sim: ['Echo Park'],
       member_of_collections_ssim: ['Connell']
     }

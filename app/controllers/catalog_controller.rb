@@ -80,7 +80,7 @@ class CatalogController < ApplicationController
     config.add_facet_field ::Solrizer.solr_name('named_subject', :facetable), limit: 5
     config.add_facet_field ::Solrizer.solr_name('location', :facetable), limit: 5
     config.add_facet_field 'year_isim', limit: 5, range: true
-    config.add_facet_field ::Solrizer.solr_name('language', :facetable), limit: 5
+    config.add_facet_field ::Solrizer.solr_name('human_readable_language', :facetable), limit: 5
     config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
 
     # config.add_facet_field ::Solrizer.solr_name('human_readable_type', :facetable), label: 'Type', limit: 5
@@ -124,7 +124,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('contributor', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('publisher', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('based_near_label', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('language', :stored_searchable), link_to_facet: ::Solrizer.solr_name('language', :facetable)
+    config.add_show_field ::Solrizer.solr_name('human_readable_language', :stored_searchable), link_to_facet: ::Solrizer.solr_name('human_readable_language', :facetable)
     config.add_show_field ::Solrizer.solr_name('date_uploaded', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('date_modified', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('date_created', :stored_searchable)
