@@ -49,7 +49,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       end
 
       it 'returns the Language Key' do
-        expect(config['language_tesim'].to_s).to eq('Language')
+        expect(config['human_readable_language_tesim'].to_s).to eq('Language')
       end
 
       it 'returns the Collection (native) Key' do
