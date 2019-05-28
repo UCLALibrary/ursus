@@ -181,26 +181,9 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('subject') do |field|
-      field.solr_local_parameters = {
-        qf: '$subject_qf',
-        pf: '$subject_pf'
-      }
-    end
-
-    config.add_search_field('title') do |field|
-      field.solr_local_parameters = {
-        qf: '$title_qf',
-        pf: '$title_pf'
-      }
-    end
-
-    config.add_search_field('collection') do |field|
-      field.solr_local_parameters = {
-        qf: '$collection_qf',
-        pf: '$collection_qf'
-      }
-    end
+    config.add_search_field 'title_tesim', label: 'Title'
+    config.add_search_field 'collection_tesim', label: 'Collection'
+    config.add_search_field 'subject_tesim', label: 'Subject'
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
