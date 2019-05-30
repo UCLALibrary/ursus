@@ -16,6 +16,9 @@
   </div>
 <% end %>
 
+
+<%= render 'collection_block' %>
+
 <h4 class='catalog-results'><%= @response['response'].dig(:numFound) %> Catalog Results <%= render_results_collection_tools wrapping_class: "search-widgets" %></h4>
 
 <div class='rectangle'> <%= render 'search_header' %> </div>
