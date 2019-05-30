@@ -27,3 +27,7 @@ h3 {
   font-weight: 700;
   color: $ucla-darkest-blue;
 }
+
+.sort-pagination, .pagination-search-widgets {
+  border-bottom: 0px !important;
+}
