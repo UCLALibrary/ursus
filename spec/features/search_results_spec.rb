@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.feature "Search results page" do
+RSpec.feature "Search results page", :clean do
   before do
     solr = Blacklight.default_index.connection
     solr.add(work_1_attributes)
@@ -12,55 +12,11 @@ RSpec.feature "Search results page" do
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
   end
 
-  let(:work_1_attributes) do
-    {
-      id: 'id123',
-      has_model_ssim: ['Work'],
-      title_tesim: ['Title One'],
-      identifier_tesim: ['ark 123'],
-      description_tesim: ['Description 1', 'Description 2'],
-      date_created_tesim: ["Date 1"],
-      sort_year_isi: 1923,
-      human_readable_resource_type_tesim: ['still image'],
-      subject_tesim: ['Testing', 'RSpec'],
-      photographer_tesim: ['Person 1', 'Person 2'],
-      location_tesim: ['search_results_spec'], # to control what displays,
-      thumbnail_path_ss: ["/assets/work-ff055336041c3f7d310ad69109eda4a887b16ec501f35afc0a547c4adb97ee72.png"]
-    }
-  end
+  let(:work_1_attributes) { SECOND_WORK }
 
-  let(:work_2_attributes) do
-    {
-      id: 'id456',
-      has_model_ssim: ['Work'],
-      title_tesim: ['Title Two'],
-      identifier_tesim: ['ark 456'],
-      description_tesim: ['Description 3', 'Description 4'],
-      date_created_tesim: ["Date 1"],
-      sort_year_isi: 1945,
-      human_readable_resource_type_tesim: ['still image'],
-      subject_tesim: ['Testing', 'Minitest'],
-      photographer_tesim: ['Person 1'],
-      location_tesim: ['search_results_spec'], # to control what displays
-      collection_tesim: ['Slide Film', 'Analog', 'Photographs']
-    }
-  end
+  let(:work_2_attributes) { THIRD_WORK }
 
-  let(:work_3_attributes) do
-    {
-      id: 'id456',
-      has_model_ssim: ['Work'],
-      title_tesim: ['Title Three'],
-      identifier_tesim: ['ark 456'],
-      description_tesim: ['Description 3', 'Description 4', 'another desc'],
-      date_created_tesim: ["Date 1"],
-      sort_year_isi: 1929,
-      human_readable_resource_type_tesim: ['still image'],
-      photographer_tesim: ['Person 1'],
-      location_tesim: ['search_results_spec'], # to control what displays
-      collection_tesim: ['Photographs', 'Digital']
-    }
-  end
+  let(:work_3_attributes) { FOURTH_WORK }
 
   scenario 'displays: title, description, date_created, resource_type, and photographer' do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
