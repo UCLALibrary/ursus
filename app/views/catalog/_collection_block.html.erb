@@ -1,0 +1,8 @@
+<% collection_block_presenter = Ursus::CollectionBlockPresenter.new(response: @response) %>
+<% if collection_block_presenter.collection_selected? %>
+  <div class="row mb-5">
+    <div class="col-sm">
+      <h3>Explore the <%= collection_block_presenter.collection_name %> Collection </h3>
+    </div>
+  </div>
+<% end %>
