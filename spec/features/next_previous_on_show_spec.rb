@@ -18,8 +18,13 @@ RSpec.feature "the result bar displays the correct links", :clean, js: true do
 
   scenario 'visiting the initial search page and then viewing the show page' do
     visit '/catalog?q=Person&search_field=all_fields'
-    expect(page).to have_content('2 Catalog Results')
+    expect(page).to have_content '2 Catalog Results'
+    expect(page).to have_content 'Filters Applied: Person'
+    expect(page).to have_content 'Start Over'
     click_link('Title One', match: :first)
-    expect(page).to have_content('1 of 2 results')
+    expect(page).to have_content '1 of 2 results'
+    expect(page).to have_content 'Back to Search'
+    expect(page).to have_content 'New Search'
+    expect(page).to have_content 'Cite This Item'
   end
 end
