@@ -16,5 +16,9 @@ RSpec.feature "Search results page", :clean do
   scenario 'viewing a collection via a facet' do
     visit '/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Photographic%20Collection'
     expect(page).to have_content 'Explore the Photographic Collection'
+    expect(page).to have_content 'Description'
+    expect(page).to have_content 'Date created'
+    expect(page).to have_content 'Repository'
+    expect(page).not_to have_content 'Languages'
   end
 end

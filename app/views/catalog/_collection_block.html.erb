@@ -3,6 +3,19 @@
   <div class="row mb-5">
     <div class="col-sm">
       <h3>Explore the <%= collection_block_presenter.collection_name %> Collection </h3>
+      <div class="collection-metadata">
+        <% if collection_block_presenter.collection_description %>
+          <strong>Description : &nbsp;</strong> <%= collection_block_presenter.collection_description %><br>
+        <% end %>
+        <% if collection_block_presenter.collection_date_created %>
+          <strong>Date created : &nbsp;</strong> <%= collection_block_presenter.collection_date_created %><br>
+        <% end %>
+        <% if collection_block_presenter.collection_repository %>
+          <strong>Repository : &nbsp;</strong> <%= collection_block_presenter.collection_repository %><br>
+        <% end %>
+        <% if collection_block_presenter.collection_languages %>
+          <strong>Languages : &nbsp;</strong> <%= collection_block_presenter.collection_languages %><br>
+        <% end %>
+      </div>
     </div>
-  </div>
 <% end %>
