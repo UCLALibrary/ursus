@@ -56,26 +56,28 @@
   color: $ucla-lighter-blue;
 }
 
-.nav-item a {
-  color: $white !important;
-  font-weight: 300;
-  font-size: 0.9em;
-  letter-spacing: 0.05em;
-  margin-right: 1em;
-}
+.topbar {
+  .nav-item a {
+    color: $white !important;
+    font-weight: 300;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+    margin-right: 1em;
+  }
 
-.nav-item a:visited {
-  color: $white !important;
-}
+  .nav-item a:visited {
+    color: $white !important;
+  }
 
-.nav-item a:hover {
-  color: $ucla-gold !important;
-  text-decoration: none;
-}
+  .nav-item a:hover {
+    color: $ucla-gold !important;
+    text-decoration: none;
+  }
 
-.nav-link {
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
+  .nav-link {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 .navbar > .container {

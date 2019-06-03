@@ -5,6 +5,7 @@ module BlacklightHelper
   # TODO: This method should correctly render methods other than CC-BY 4.0 and
   # be able to distinguish between them.
   def render_license
+    return 'No license recorded' unless @document
     return 'No license recorded' unless @document[:license_tesim]
     license = @document[:license_tesim].first
     if license.match?(/creativecommons.org/)
