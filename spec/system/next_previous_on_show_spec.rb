@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature "the result bar displays the correct links", :clean, js: true do
+RSpec.describe 'the result bar displays the correct links', :clean, type: :system, js: true do
   let(:work_1_attributes) { SECOND_WORK }
   let(:work_2_attributes) { THIRD_WORK }
   let(:work_3_attributes) { FOURTH_WORK }
@@ -16,7 +16,7 @@ RSpec.feature "the result bar displays the correct links", :clean, js: true do
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
   end
 
-  scenario 'visiting the initial search page and then viewing the show page' do
+  it 'has expected fields on initial search page and show page' do
     visit '/catalog?q=Person&search_field=all_fields'
     expect(page).to have_content '2 Catalog Results'
     expect(page).to have_content 'Filters Applied: Person'

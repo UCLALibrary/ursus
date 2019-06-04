@@ -96,6 +96,9 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = :random
 
+  # Do not run smoketests by default
+  config.filter_run_excluding smoketest: true
+
   # Seed global randomization in this process using the `--seed` CLI option.
   # Setting this allows you to use `--seed` to deterministically reproduce
   # test failures related to randomization by passing the same `--seed` value

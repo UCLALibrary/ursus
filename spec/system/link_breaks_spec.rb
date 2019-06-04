@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.feature "View a a work with breaks" do
+RSpec.describe 'View a a work with breaks', type: :system do
   before do
     solr = Blacklight.default_index.connection
     solr.add(work_attributes)
@@ -43,7 +43,7 @@ RSpec.feature "View a a work with breaks" do
     }
   end
 
-  scenario 'displays line breaks between the values of certain fields' do
+  it 'displays line breaks between the values of certain fields' do
     visit solr_document_path(id)
     expect(page.find('dd.blacklight-description_tesim').all(:css, 'br').length).to eq 1
     expect(page.find('dd.blacklight-subject_tesim').all(:css, 'br').length).to eq 1

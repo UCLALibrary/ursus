@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.feature 'The facet sidebar', :clean, js: false do
+RSpec.describe 'The facet sidebar', :clean, type: :system do
   before do
     solr = Blacklight.default_index.connection
     solr.add(work_attributes)
