@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.system "viewing the about page" do
+RSpec.describe 'viewing the about page', :clean, type: :system, js: false do
   it 'has the right header' do
     visit('/about')
     expect(page.html).to match(/About UCLA Digital Collections/)
