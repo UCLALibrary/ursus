@@ -1,0 +1,18 @@
+<h4 class='catalog-results'><%= @response['response'].dig(:numFound) %> Catalog Results <%= render_results_collection_tools wrapping_class: "search-widgets" %></h4>
+
+<div class='rectangle'> <%= render 'search_header' %> </div>
+
+<hr>
+
+<h2 class='sr-only'><%= t('blacklight.search.search_results') %></h2>
+
+<%- if @response.empty? %>
+  <%= render 'zero_results' %>
+<%- elsif render_grouped_response? %>
+  <%= render_grouped_document_index %>
+<%- else %>
+  <%= render_document_index %>
+<%- end %>
+
+<div class='rectangle'><%= render 'results_pagination' %></div>
+<%= render 'old_collections' %>

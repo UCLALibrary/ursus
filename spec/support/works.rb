@@ -54,8 +54,8 @@ SECOND_WORK = {
   subject_tesim: ['Testing', 'RSpec'],
   photographer_tesim: ['Person 1', 'Person 2'],
   location_tesim: ['search_results_spec'], # to control what displays,
-  thumbnail_path_ss: ["/assets/work-ff055336041c3f7d310ad69109eda4a887b16ec501f35afc0a547c4adb97ee72.png"]
-
+  thumbnail_path_ss: ["/assets/work-ff055336041c3f7d310ad69109eda4a887b16ec501f35afc0a547c4adb97ee72.png"],
+  member_of_collection_ids_ssim: ['coll123']
 }.freeze
 
 THIRD_WORK = {
@@ -70,8 +70,14 @@ THIRD_WORK = {
   subject_tesim: ['Testing', 'Minitest'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
-  collection_tesim: ['Slide Film', 'Analog', 'Photographs']
+  collection_tesim: ['Slide Film', 'Analog', 'Photographs'],
+  member_of_collections_ssim: ['Photographic Collection'],
+  member_of_collection_ids_ssim: ['coll123']
+}.freeze
 
+FIRST_COLLECTION = {
+  id: 'coll123',
+  services_contact_ssm: ['someone somewhere']
 }.freeze
 
 FOURTH_WORK = {
