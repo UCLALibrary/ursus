@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Setup chrome headless driver
 Capybara.server = :puma, { Silent: true }
 

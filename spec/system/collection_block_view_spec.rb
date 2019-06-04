@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-
 RSpec.feature "Search results page", :clean do
   let(:work_3_attributes) { THIRD_WORK }
   let(:collection) { FIRST_COLLECTION }
