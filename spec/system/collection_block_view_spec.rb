@@ -25,6 +25,6 @@ RSpec.feature "Search results page", :clean do
     expect(page).to have_content 'Description'
     expect(page).to have_content 'Date created'
     expect(page).to have_content 'Repository'
-    expect(page).not_to have_content 'Languages'
+    expect(page).to have_content 'Languages'
   end
 end

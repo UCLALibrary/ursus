@@ -28,19 +28,19 @@ RSpec.describe Ursus::CollectionBlockPresenter do
     end
 
     it ' can get the description' do
-      collection_document['description_tesim']
+      expect(collection_presenter.collection_document['description_tesim'][0]).to eq('Description 3')
     end
 
     it ' can get the date the collection was created' do
-      collection_document['date_created_tesim']
+      expect(collection_presenter.collection_document['date_created_tesim']).to eq(['Date 1'])
     end
 
     it ' can get the repository name' do
-      collection_document['repository_tesim']
+      expect(collection_presenter.collection_document['repository_tesim']).to eq(['UCLA Collection'])
     end
 
     it ' can get the languages of the collection' do
-      collection_document['languages_tesim']
+      expect(collection_presenter.collection_document['languages_tesim']).to eq(['English', 'Spanish', 'Greek'])
     end
   end
 

@@ -77,7 +77,11 @@ THIRD_WORK = {
 
 FIRST_COLLECTION = {
   id: 'coll123',
-  services_contact_ssm: ['someone somewhere']
+  services_contact_ssm: ['someone somewhere'],
+  description_tesim: ['Description 3', 'Description 4', 'another desc'],
+  date_created_tesim: ["Date 1"],
+  repository_tesim: ['UCLA Collection'],
+  languages_tesim: ['English', 'Spanish', 'Greek']
 }.freeze
 
 FOURTH_WORK = {
