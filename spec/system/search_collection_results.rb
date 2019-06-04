@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.feature "Search collection results page" do
+RSpec.describe 'Search collection results page', type: :system, js: false do
   before do
     solr = Blacklight.default_index.connection
     solr.add(collection_attributes)
@@ -20,18 +20,18 @@ RSpec.feature "Search collection results page" do
     }
   end
 
-  scenario 'displays collection: title, description,' do
+  it 'displays collection: title, description,' do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_collection_results_spec'
     expect(page).to have_content 'Title'
     expect(page).to have_content 'Description: Description 1'
   end
 
-  scenario 'has a gallery view button' do
+  it 'has a gallery view button' do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_collection_results_spec'
     expect(page).to have_selector '.view-type-gallery'
   end
 
-  scenario 'has a list view button' do
+  it 'has a list view button' do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_collection_results_spec'
     expect(page).to have_selector '.view-type-list'
   end

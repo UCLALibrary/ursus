@@ -33,7 +33,7 @@ Metrics/ClassLength:
     - 'app/controllers/catalog_controller.rb'
     - 'app/importers/californica_mapper.rb'
 
-Metrics/CyclomaticComplexity: 
+Metrics/CyclomaticComplexity:
   Exclude:
     - 'app/helpers/blacklight/url_helper_behavior.rb'
 
@@ -72,6 +72,7 @@ RSpec/DescribeClass:
 
 RSpec/ExampleLength:
   Enabled: true
+  Max: 50
   Exclude:
     - 'spec/features**/*'
     - 'spec/tasks/ingest_spec.rb'

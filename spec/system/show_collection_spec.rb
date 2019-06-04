@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature "View a Collection", js: true do
+RSpec.describe 'Search results page', type: :system, js: true do
   let(:id) { "m8f11000zz-89112" }
   let(:services_contact) do
     "UCLA Charles E. Young Research Library Department of Special Collections Phone: (310)825-4988"
@@ -69,7 +69,7 @@ RSpec.feature "View a Collection", js: true do
     allow_any_instance_of(IiifService).to receive(:src).and_return('/uv/uv.html#?manifest=/manifest.json')
   end
 
-  scenario 'displays the metadata' do
+  it 'displays the metadata' do
     visit solr_document_path(id)
 
     expect(page).to have_selector('.primary-metadata')
@@ -83,7 +83,7 @@ RSpec.feature "View a Collection", js: true do
   end
 
   context 'license' do
-    scenario 'it displays the creative commons text and logo when there is a cc license' do
+    it 'displays the creative commons text and logo when there is a cc license' do
       visit solr_document_path(id)
       expect(page).to have_content 'License'
       expect(page).to have_link 'Creative Commons Attribution 4.0 International License'

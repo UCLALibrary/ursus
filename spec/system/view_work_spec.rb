@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature "View a Work", :clean, js: true do
+RSpec.describe 'View a Work', type: :system, js: true do
   before do
     solr = Blacklight.default_index.connection
     solr.add(work_attributes)
@@ -14,7 +14,7 @@ RSpec.feature "View a Work", :clean, js: true do
   let(:work_attributes) { FIRST_WORK }
   let(:id) { FIRST_WORK[:id] }
 
-  scenario 'displays the metadata' do
+  it 'displays the metadata' do
     visit solr_document_path(id)
 
     expect(page).to have_selector('.primary-metadata')
@@ -66,14 +66,14 @@ RSpec.feature "View a Work", :clean, js: true do
   end
 
   context 'license' do
-    scenario 'it displays the creative commons text and logo when there is a cc license' do
+    it 'displays the creative commons text and logo when there is a cc license' do
       visit solr_document_path(id)
       expect(page).to have_content 'License'
       expect(page).to have_link 'Creative Commons Attribution 4.0 International License'
     end
   end
 
-  scenario 'displays facetable fields as links' do
+  it 'displays facetable fields as links' do
     visit solr_document_path(id)
     expect(page.find('dd.blacklight-subject_tesim')).to have_link 'Subj 1'
     expect(page.find('dd.blacklight-subject_tesim')).to have_link 'Subj 2'
@@ -88,7 +88,7 @@ RSpec.feature "View a Work", :clean, js: true do
     expect(page.html).to match(/member_of_collections_ssim/)
   end
 
-  scenario 'only displays the tools we want to support' do
+  it 'only displays the tools we want to support' do
     visit solr_document_path(id)
 
     # we DO NOT want the tools panel
@@ -102,7 +102,7 @@ RSpec.feature "View a Work", :clean, js: true do
     expect(page).to_not have_selector '#emailLink'
   end
 
-  scenario 'loads UV on the page with the correct controls' do
+  it 'loads UV on the page with the correct controls' do
     visit solr_document_path(id)
     expect(page.html).to match(/universal-viewer-iframe/)
 
