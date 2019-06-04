@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.feature "Search results page", :clean do
+RSpec.describe 'Search results page', :clean, type: :system, js: true do
   let(:work_3_attributes) { FIRST_WORK }
 
   before do
@@ -13,7 +13,7 @@ RSpec.feature "Search results page", :clean do
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
   end
 
-  scenario 'viewing a collection via a facet' do
+  it 'displays a collection via a facet' do
     visit '/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Photographic%20Collection'
     expect(page).to have_content 'Explore the Photographic Collection'
   end

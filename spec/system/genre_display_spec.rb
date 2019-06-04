@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.feature 'The genre field of the item display view' do
+RSpec.describe 'The genre field of the item display view', :clean, type: :system do
   before do
     solr = Blacklight.default_index.connection
     solr.add(work_attributes)

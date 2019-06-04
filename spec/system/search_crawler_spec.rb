@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.describe "Search History Page" do
+RSpec.describe 'Search History Page', type: :system, js: false do
   describe "crawler search" do
     it "does remember human searches" do
       visit root_path

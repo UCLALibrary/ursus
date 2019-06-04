@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.feature 'Search the catalog' do
+RSpec.describe 'Search the catalog', :clean, type: :system do
   before do
     delete_all_documents_from_solr
     solr = Blacklight.default_index.connection
@@ -27,7 +27,7 @@ RSpec.feature 'Search the catalog' do
     }
   end
 
-  scenario 'get correct search results' do
+  it 'gets correct search results' do
     visit root_path
     click_on 'search'
 
