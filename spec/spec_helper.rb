@@ -19,18 +19,6 @@ if ENV['TRAVIS'] == 'true'
   Coveralls.wear!('rails')
 end
 
-Capybara.javascript_driver = :headless_chrome
-
-Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w[headless disable-gpu no-sandbox] }
-  )
-
-  Capybara::Selenium::Driver.new(app,
-                                 browser: :chrome,
-                                 desired_capabilities: capabilities)
-end
-
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 # Blacklight, again, make sure we're looking in the right place for em.
@@ -95,6 +83,9 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = :random
+
+  # Do not run smoketests by default
+  config.filter_run_excluding smoketest: true
 
   # Seed global randomization in this process using the `--seed` CLI option.
   # Setting this allows you to use `--seed` to deterministically reproduce

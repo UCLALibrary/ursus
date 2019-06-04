@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature 'Search the catalog' do
+RSpec.describe 'Search the catalog', type: :system, js: false do
   before do
     delete_all_documents_from_solr
     solr = Blacklight.default_index.connection
@@ -84,7 +84,7 @@ RSpec.feature 'Search the catalog' do
     }
   end
 
-  scenario 'get correct search results' do
+  it 'gets correct search results' do
     visit root_path
     # Search for something
     fill_in 'q', with: 'carrot'
@@ -96,7 +96,7 @@ RSpec.feature 'Search the catalog' do
     end
   end
 
-  scenario 'searches the right fields' do
+  it 'searches the right fields' do
     visit root_path
     fill_in 'q', with: '3Guv4P44'
     click_on 'search'
@@ -114,7 +114,7 @@ RSpec.feature 'Search the catalog' do
     end
   end
 
-  scenario 'verify facet links are present' do
+  it 'has expected facet links' do
     visit root_path
     # Search for something
     fill_in 'q', with: 'carrot'
@@ -125,7 +125,7 @@ RSpec.feature 'Search the catalog' do
     end
   end
 
-  scenario 'verify view more links are present' do
+  it 'has expected view more links' do
     visit root_path
     # Search for something
     fill_in 'q', with: 'carrot'
