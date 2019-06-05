@@ -22,5 +22,9 @@ RSpec.feature "Search results page", :clean do
     expect(page).to have_content 'About the Collection'
     expect(page).to have_content 'Contact'
     expect(page).to have_content 'Find This Collection'
+    expect(page).to have_content 'Description'
+    expect(page).to have_content 'Date created'
+    expect(page).to have_content 'Repository'
+    expect(page).to have_content 'Languages'
   end
 end
