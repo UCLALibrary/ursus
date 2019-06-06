@@ -4,6 +4,7 @@ class SearchFieldService
   include Singleton
 
   SEARCH_FIELDS = [
+    ::Solrizer.solr_name('alternative_title', :stored_searchable),
     ::Solrizer.solr_name('architect', :stored_searchable),
     ::Solrizer.solr_name('caption', :stored_searchable),
     ::Solrizer.solr_name('contributor', :stored_searchable),

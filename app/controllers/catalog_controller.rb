@@ -134,6 +134,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('identifier', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('member_of_collections', :symbol), label: 'Collection', link_to_facet: ::Solrizer.solr_name('member_of_collections', :facetable)
     config.add_show_field ::Solrizer.solr_name('caption', :stored_searchable)
+    config.add_show_field ::Solrizer.solr_name('alternative_title', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('dimensions', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('extent', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('funding_note', :stored_searchable)
@@ -153,7 +154,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'oclc_tesim_ssi', label: 'OCLC Number'
     config.add_show_field 'longitude_tesim', label: 'Latitude'
     config.add_show_field 'latitude_tesim', label: 'Longitude'
-    config.add_show_field 'alternative_title_tesim', label: 'Alternative title'
     config.add_show_field 'uniform_title_tesim', label: 'Uniform title'
     config.add_show_field 'place_of_origin_tesim', label: 'Place of Origin'
 

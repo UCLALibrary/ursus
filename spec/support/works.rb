@@ -29,7 +29,6 @@ FIRST_WORK = {
   member_of_collections_ssim: ['Photographic Collection'],
   license_tesim: ['https://creativecommons.org/licenses/by/4.0/'],
   services_contact_ssm: ['UCLA Special Collections Services Contact'],
-
   longitude_tesim: ['-118.4398'],
   latitude_tesim: ['34.0700'],
   alternative_title_tesim: ['Alernative Title of my Work'],
