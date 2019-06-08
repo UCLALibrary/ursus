@@ -139,7 +139,8 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('extent', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('funding_note', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('genre', :stored_searchable), link_to_facet: ::Solrizer.solr_name('genre', :facetable), separator_options: BREAKS
-    config.add_show_field ::Solrizer.solr_name("geographic_coordinates", :symbol)
+    config.add_show_field ::Solrizer.solr_name('place_of_origin', :stored_searchable), separator_options: BREAKS
+    config.add_show_field ::Solrizer.solr_name('geographic_coordinates', :symbol)
     config.add_show_field ::Solrizer.solr_name('location', :stored_searchable), link_to_facet: ::Solrizer.solr_name('location', :facetable)
     config.add_show_field 'local_identifier_ssm', label: 'Local identifier'
     config.add_show_field ::Solrizer.solr_name('medium', :stored_searchable)
@@ -154,8 +155,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'oclc_tesim_ssi', label: 'OCLC Number'
     config.add_show_field 'longitude_tesim', label: 'Latitude'
     config.add_show_field 'latitude_tesim', label: 'Longitude'
-    config.add_show_field 'uniform_title_tesim', label: 'Uniform title'
-    config.add_show_field 'place_of_origin_tesim', label: 'Place of Origin'
+    config.add_show_field 'uniform_title_tesim', label: 'Uniform Title'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
