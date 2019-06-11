@@ -18,6 +18,7 @@ class SearchFieldService
     ::Solrizer.solr_name('named_subject', :stored_searchable),
     ::Solrizer.solr_name('normalized_date', :stored_searchable),
     ::Solrizer.solr_name('photographer', :stored_searchable),
+    ::Solrizer.solr_name('place_of_origin', :stored_searchable),
     ::Solrizer.solr_name('publisher', :stored_searchable),
     ::Solrizer.solr_name('subject', :stored_searchable),
     ::Solrizer.solr_name('title', :stored_searchable),

@@ -52,6 +52,7 @@ SECOND_WORK = {
   human_readable_resource_type_tesim: ['still image'],
   subject_tesim: ['Testing', 'RSpec'],
   photographer_tesim: ['Person 1', 'Person 2'],
+  place_of_origin_tesim: ['Boston, MA', 'Philadelphia, PA', 'New York, NY', 'Los Angeles, CA'],
   location_tesim: ['search_results_spec'], # to control what displays,
   thumbnail_path_ss: ["/assets/work-ff055336041c3f7d310ad69109eda4a887b16ec501f35afc0a547c4adb97ee72.png"],
   member_of_collection_ids_ssim: ['coll123']
