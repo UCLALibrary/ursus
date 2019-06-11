@@ -10,6 +10,6 @@ RSpec.describe SearchFieldService do
                                                          contributor_tesim creator_tesim description_tesim genre_tesim
                                                          identifier_tesim local_identifier_ssm location_tesim medium_tesim
                                                          named_subject_tesim normalized_date_tesim
-                                                         photographer_tesim place_of_origin_tesim publisher_tesim subject_tesim title_tesim ark_ssi ].join(' '))
+                                                         photographer_tesim place_of_origin_tesim publisher_tesim subject_tesim title_tesim uniform_title_tesim ark_ssi ].join(' '))
   end
 end
