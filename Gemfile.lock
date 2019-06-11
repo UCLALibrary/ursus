@@ -68,6 +68,10 @@ GEM
       kaminari (>= 0.15)
       nokogiri (~> 1.6)
       rails (~> 5.1)
+    blacklight-access_controls (6.0.0)
+      blacklight (> 6.0, < 8)
+      cancancan (~> 1.8)
+      deprecation (~> 1.0)
     blacklight_range_limit (7.0.0)
       blacklight
       jquery-rails
@@ -79,6 +83,7 @@ GEM
       sassc-rails (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
+    cancancan (1.17.0)
     capistrano (3.11.0)
       airbrussh (>= 1.0.0)
       i18n
@@ -380,6 +385,7 @@ PLATFORMS
 DEPENDENCIES
   bixby
   blacklight (~> 7.0.1)
+  blacklight-access_controls
   blacklight-gallery!
   blacklight_range_limit (~> 7.0.0)
   bootstrap (~> 4.0)

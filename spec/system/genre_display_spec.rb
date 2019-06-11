@@ -12,6 +12,7 @@ RSpec.describe 'The genre field of the item display view', :clean, type: :system
     {
       id: '123_genre_display',
       genre_tesim: ['genre1', 'genre2', 'genre3'],
+      read_access_group_ssim: ["public"],
       has_model_ssim: ['Work']
     }
   end

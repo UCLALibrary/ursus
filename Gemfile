@@ -73,6 +73,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'blacklight', '~> 7.0.1'
+gem 'blacklight-access_controls'
 gem 'blacklight_range_limit', '~> 7.0.0'
 gem 'bootstrap', '~> 4.0'
 gem 'coveralls', require: false

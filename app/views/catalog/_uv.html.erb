@@ -1,3 +1,5 @@
+<% if can?(:read, document) %>
+
 <div class='uv-container'>
   <div class='universal-viewer'>
     <% iiif_service = IiifService.new %>
@@ -13,3 +15,5 @@
     <div class='link-and-icon'><i class='fa fa-link' aria-hidden="true"></i><%= render 'show_tools' %></div>
   </div>
 </div>
+
+<% end %>
