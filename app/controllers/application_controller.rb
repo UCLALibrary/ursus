@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
   layout 'blacklight'
 
   protect_from_forgery with: :exception
+
+  rescue_from Blacklight::AccessControls::AccessDenied, with: :render_404
+
+  def render_404
+    render file: Rails.root.join('public', '404.html'), status: :not_found, layout: false
+  end
 end

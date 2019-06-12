@@ -38,7 +38,8 @@ FIRST_WORK = {
   place_of_origin_tesim: ['Dudley, MA'],
   oclc_tesim_ssi: ['Powell Library'],
   format_tesim: ['Film Still'],
-  support_tesim: ['Mom & Dad']
+  support_tesim: ['Mom & Dad'],
+  read_access_group_ssim: ["public"]
 }.freeze
 
 SECOND_WORK = {
@@ -55,7 +56,8 @@ SECOND_WORK = {
   place_of_origin_tesim: ['Boston, MA', 'Philadelphia, PA', 'New York, NY', 'Los Angeles, CA'],
   location_tesim: ['search_results_spec'], # to control what displays,
   thumbnail_path_ss: ["/assets/work-ff055336041c3f7d310ad69109eda4a887b16ec501f35afc0a547c4adb97ee72.png"],
-  member_of_collection_ids_ssim: ['coll123']
+  member_of_collection_ids_ssim: ['coll123'],
+  read_access_group_ssim: ["public"]
 }.freeze
 
 THIRD_WORK = {
@@ -72,7 +74,8 @@ THIRD_WORK = {
   location_tesim: ['search_results_spec'], # to control what displays
   collection_tesim: ['Slide Film', 'Analog', 'Photographs'],
   member_of_collections_ssim: ['Photographic Collection'],
-  member_of_collection_ids_ssim: ['coll123']
+  member_of_collection_ids_ssim: ['coll123'],
+  read_access_group_ssim: ["public"]
 }.freeze
 
 FIRST_COLLECTION = {

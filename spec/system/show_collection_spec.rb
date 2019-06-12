@@ -53,6 +53,7 @@ RSpec.describe 'Search results page', type: :system, js: true do
       ],
       thumbnail_path_ss: "/assets/collection-a38b932554788aa578debf2319e8c4ba8a7db06b3ba57ecda1391a548a4b6e0a.png",
       visibility_ssi: "open",
+      read_access_group_ssim: ["public"],
       ursus_id_ssi: "21198-zz00011f8m",
       human_readable_type_tesim: [
         "Collection"

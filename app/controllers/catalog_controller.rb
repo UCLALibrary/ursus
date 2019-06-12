@@ -5,6 +5,11 @@ require 'solrizer'
 class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
+  include Blacklight::AccessControls::Catalog
+
+  # Apply the blacklight-access_controls
+  before_action :enforce_show_permissions, only: :show
+
   include BlacklightHelper
 
   BREAKS = {
@@ -235,5 +240,17 @@ class CatalogController < ApplicationController
 
     config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?)
     config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
+  end
+
+  # Override this method from the
+  # blacklight-access_controls gem to allow the
+  # user to view the show page if they have at least
+  # 'discovery'-level permission.
+  def enforce_show_permissions(_opts = {})
+    permissions = current_ability.permissions_doc(params[:id])
+    unless can? :discover, permissions
+      raise Blacklight::AccessControls::AccessDenied.new('You do not have sufficient access privileges to view this document, which has been marked private.', :discover, params[:id])
+    end
+    permissions
   end
 end

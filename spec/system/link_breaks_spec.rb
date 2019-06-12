@@ -39,6 +39,7 @@ RSpec.describe 'View a a work with breaks', type: :system do
       caption_tesim: ['the caption'],
       language_tesim: ['No linguistic content'],
       photographer_tesim: ['Poalillo, Charles'],
+      read_access_group_ssim: ["public"],
       license_tesim: ['https://creativecommons.org/licenses/by/4.0/']
     }
   end
