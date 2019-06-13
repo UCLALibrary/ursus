@@ -42,7 +42,7 @@ RSpec.describe 'The facet sidebar', :clean, type: :system do
 
   it 'has the text Refine your search not limit' do
     visit('/catalog')
-    expect(page).to have_content('Refine your search')
+    expect(page).to have_content('Browse items')
   end
 
   it 'has a Subject button for the selected facet display' do
