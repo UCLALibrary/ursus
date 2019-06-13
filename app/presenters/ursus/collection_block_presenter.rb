@@ -35,17 +35,17 @@ module Ursus
     end
 
     def collection_date_created
-      date = collection_document['date_created_tesim']
+      date = Array.wrap(collection_document['date_created_tesim'])
       date[0]
     end
 
     def collection_repository
-      repo = collection_document['repository_tesim']
+      repo = Array.wrap(collection_document['repository_tesim'])
       repo[0]
     end
 
     def collection_languages
-      languages = collection_document['languages_tesim']
+      languages = Array.wrap(collection_document['languages_tesim'])
       languages
     end
   end
