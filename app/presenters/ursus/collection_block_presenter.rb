@@ -30,7 +30,7 @@ module Ursus
     end
 
     def collection_description
-      description = collection_document['description_tesim']
+      description = Array.wrap(collection_document['description_tesim'])
       description[0]
     end
 
