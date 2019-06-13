@@ -27,4 +27,13 @@ RSpec.feature "Search results page", :clean do
     expect(page).to have_content 'Repository'
     expect(page).to have_content 'Languages'
   end
+
+  context 'when collection data is missing' do
+    let(:collection) { { id: 'coll123' } }
+
+    it 'loads without an error' do
+      visit '/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Photographic%20Collection'
+      expect(page).to have_content 'Explore the Photographic Collection'
+    end
+  end
 end
