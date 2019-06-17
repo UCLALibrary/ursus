@@ -121,11 +121,15 @@
     margin-right: 0;
   }
 
-  .nav-item:nth-child(1) {
-    padding: 10px 0;
+  .nav-item {
+    padding: 8px 0;
   }
 
-  .nav-item:nth-child(1):hover {
+  .nav-item:nth-child(1) {
+    border-bottom: 1px solid #c3d7ee;
+  }
+
+  .nav-item:hover {
     background-color: $ucla-darkest-blue;
     a {
       color: $white !important;
