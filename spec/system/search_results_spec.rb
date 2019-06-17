@@ -46,9 +46,10 @@ RSpec.describe 'Search results page', type: :system, js: false do
     expect(page).to have_link 'original digital collections site'
   end
 
+  # Changed to not look for break tags - See URS-423
   it 'displays line breaks between the values of certain fields' do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
-    expect(page.all('br').length).to eq 1
+    expect(page.all('br').length).not_to eq 1
   end
 
   it 'uses AND not OR for search results by default' do
