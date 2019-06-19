@@ -6,6 +6,7 @@
     text-align: right;
     margin-right: 20px;
     font-size: 12px;
+    margin-right: 20px;
   }
   a:link {
     color: $gray !important;
@@ -25,7 +26,7 @@
   }
 }
 .jumbotron {
-  background-image: url('ucla_ladnn_cole_brothers_circus_elephants.jpg');
+  background-image: image-url('ucla_ladnn_cole_brothers_circus_elephants.jpg');
   background-size: cover;
   height: 600px;
   max-height: 600px;
