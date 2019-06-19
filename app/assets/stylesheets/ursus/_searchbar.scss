@@ -7,6 +7,7 @@
 .ursus-search-bar {
   margin-top: 20px;
   padding: 0 !important;
+  margin-top: -8px;
   .search-query-form {
     flex: 0 0 100% !important;
     max-width: 100% !important;
@@ -16,6 +17,10 @@
 
 .input-group {
   border: 10px solid #003b5c;
+}
+
+.input-group-append{
+  background-color: $white;
 }
 
 .blacklight-catalog {
