@@ -10,7 +10,7 @@ RSpec.describe 'viewing the home page', :clean, type: :system, js: false do
 
   it 'has h1' do
     visit('/')
-    expect(page).to have_selector 'h1', text: 'UCLA Library Digital Collections'
+    expect(page).to have_content 'UCLA Library Digital Collections'
   end
 
   it 'has an About link' do
