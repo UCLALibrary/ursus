@@ -1,0 +1,59 @@
+.featured-collections {
+    color: $ucla-darker-blue;
+    font-weight: bold;
+    border-bottom: solid 2px $ucla-darker-blue;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.collection-link:hover {
+    text-decoration: none;    
+}
+.collection-box {
+  min-height: 300px;
+  min-width: 100px;
+  color: $white;
+  display: flex;
+  align-items: flex-end;
+
+  h5 {
+      margin-left: 0.5em;
+      font-weight: bold;		      
+  }
+}
+
+.collection-box-one {
+    background-image: image-url('ladnn_collection.jpg');
+    background-size: cover;
+}
+
+.collection-box-two {
+    background-image: image-url('bennett_collection.jpg');
+    background-size: cover;
+}
+
+.collection-box-three {
+    background-image: image-url('will_connell_collection.jpg');
+    background-size: cover;
+}
+
+
+.collection-box-four {
+    background-image: image-url('collection_of_california_postcards.jpg');
+    background-size: cover;
+}
+
+.collection-box-five {
+    background-image: image-url('ethiopic_manuscript.jpg');
+    background-size: cover;
+}
+
+.collection-box-six {
+    background-image: image-url('arkotov_collection.jpg');
+    background-size: cover;
+}
+
+
+
+
+ 
