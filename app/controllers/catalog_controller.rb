@@ -1,3 +1,4 @@
+# coding: utf-8
 # frozen_string_literal: true
 
 require 'solrizer'
@@ -206,17 +207,9 @@ class CatalogController < ApplicationController
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
     # label is key, solr field is value
-
-    # This is searching the sort_title_tesi, which cannot be
-    # sorted alphabetically. It needs an alpha sort field in the
-    # schema.xml across californica and ursus
-
-    # config.add_sort_field 'title' do |field|
-    #  field.sort = 'sort_title_tesi desc, sort_title_tesi asc'
-    #  field.label = 'Title'
-    # end
-
     config.add_sort_field 'score desc', label: 'Relevance'
+    config.add_sort_field 'sort_title_ssort asc', label: 'Title (A-Z)'
+    config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
     config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
     config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
 
