@@ -1,13 +1,13 @@
 .featured-collections {
-    color: $ucla-darker-blue;
-    font-weight: bold;
-    border-bottom: solid 2px $ucla-darker-blue;
-    margin-right: 15px;
-    margin-left: 15px;
+  color: $ucla-darker-blue;
+  font-weight: bold;
+  border-bottom: solid 2px $ucla-darker-blue;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .collection-link:hover {
-    text-decoration: none;    
+  text-decoration: none;
 }
 .collection-box {
   min-height: 300px;
@@ -15,45 +15,53 @@
   color: $white;
   display: flex;
   align-items: flex-end;
-
   h5 {
-      margin-left: 0.5em;
-      font-weight: bold;		      
+    margin-left: 0.5em;
+    font-weight: bold;
   }
 }
 
 .collection-box-one {
-    background-image: image-url('ladnn_collection.jpg');
-    background-size: cover;
+  background-image: image-url('ladnn_collection.jpg');
+  background-size: cover;
+  margin-top: 10px;
+  margin-right: -10px;
+  margin-bottom: 20px;
 }
 
 .collection-box-two {
-    background-image: image-url('bennett_collection.jpg');
-    background-size: cover;
+  background-image: image-url('bennett_collection.jpg');
+  background-size: cover;
+  margin-top: 10px;
+  margin-right: -10px;
+  margin-bottom: 20px;
+}.featured-collections {
+  color: $ucla-darker-blue;
+  font-weight: bold;
+  border-bottom: solid 2px $ucla-darker-blue;
 }
 
 .collection-box-three {
-    background-image: image-url('will_connell_collection.jpg');
-    background-size: cover;
+  background-image: image-url('will_connell_collection.jpg');
+  background-size: cover;
+  margin-top: 10px;
 }
 
-
 .collection-box-four {
-    background-image: image-url('collection_of_california_postcards.jpg');
-    background-size: cover;
+  background-image: image-url('collection_of_california_postcards.jpg');
+  background-size: cover;
+  margin-right: -10px;
+  margin-bottom: 20px;
 }
 
 .collection-box-five {
-    background-image: image-url('ethiopic_manuscript.jpg');
-    background-size: cover;
+  background-image: image-url('ethiopic_manuscript.jpg');
+  background-size: cover;
+  margin-right: -10px;
+  margin-bottom: 20px;
 }
 
 .collection-box-six {
-    background-image: image-url('arkotov_collection.jpg');
-    background-size: cover;
+  background-image: image-url('arkotov_collection.jpg');
+  background-size: cover;
 }
-
-
-
-
- 
