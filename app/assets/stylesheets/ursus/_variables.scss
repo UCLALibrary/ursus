@@ -7,15 +7,14 @@ $grid-columns: 12;
 $grid-gutter-width: 30px;
 
 $grid-breakpoints: (
-  xxs: 0,
   // Extra small screen / phone
-    xs: 767px,
+    xs: 0,
   // Small screen / phone
-    sm: 990px,
+    sm: 540px,
   // Medium screen / tablet
-    md: 991px,
+    md: 720px,
   // Large screen / desktop
-    lg: 992px,
+    lg: 960px,
   // Extra large screen / wide desktop
     xl: 1200px
 );
@@ -44,5 +43,8 @@ $a-tags-hover: 'a:active, a:hover';
 #{$a-tags-hover} {
   color: $ucla-darker-blue !important;
 }
+
+$grid-gutter-width: 15px !default;
+
 
 @import 'bootstrap';
