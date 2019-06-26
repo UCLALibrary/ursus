@@ -17,7 +17,7 @@ RSpec.feature "Search results page", :clean do
 
   it 'displays a collection via a facet' do
     visit '/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Photographic%20Collection'
-    expect(page).to have_content 'Explore the Photographic Collection'
+    expect(page).to have_content 'Photographic'
     expect(page).to have_content 'Browse by Title'
     expect(page).to have_content 'About the Collection'
     expect(page).to have_content 'Contact'
@@ -33,7 +33,7 @@ RSpec.feature "Search results page", :clean do
 
     it 'loads without an error' do
       visit '/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Photographic%20Collection'
-      expect(page).to have_content 'Explore the Photographic Collection'
+      expect(page).to have_content 'Photographic'
     end
   end
 end
