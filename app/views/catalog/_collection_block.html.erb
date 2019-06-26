@@ -1,7 +1,7 @@
 <% collection_block_presenter = Ursus::CollectionBlockPresenter.new(response: @response) %>
 <div class="row mb-5">
   <div class="col-sm">
-    <h3>Explore the <%= collection_block_presenter.collection_name %> Collection </h3>
+    <h3><%= collection_block_presenter.collection_name %></h3>
     <div class="collection-metadata">
       <% if collection_block_presenter.collection_description %>
         <strong>Description : &nbsp;</strong> <%= collection_block_presenter.collection_description %><br>
