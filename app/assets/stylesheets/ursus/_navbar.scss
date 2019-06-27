@@ -89,7 +89,7 @@
   position: absolute;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 719px) {
   .navbar {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -150,4 +150,56 @@
   .custom-toggler .navbar-toggler-icon:hover {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,209,0, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
   }
+}
+
+@media (max-width:720px) and (min-width:990px) {
+  .navbar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .navbar > .container {
+    max-width: 100%;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .navbar-nav.nav {
+    background-color: $ucla-darker-blue;
+    display: inline-block;
+    width: 100%;
+    align-items: normal;
+    position: static;
+    margin-top: 20px;
+  }
+
+  .navbar-collapse {
+    margin-bottom: -8px;
+    min-width: 768px;
+    position: relative;
+    left: -15px;
+  }
+
+  .nav-item a {
+    margin-right: 0;
+    background-color: green;
+    color: white;
+  }
+
+  .nav-item {
+    padding: 8px 0;
+  }
+
+  .nav-item:nth-child(1) {
+    border-bottom: 1px solid #c3d7ee;
+  }
+
+  .nav-item:hover {
+    background-color: $ucla-darkest-blue;
+    a {
+      color: $white !important;
+      text-decoration: none;
+    }
+  }
+
 }
