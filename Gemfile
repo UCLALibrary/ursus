@@ -42,6 +42,7 @@ group :development, :test do
   gem 'byebug'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'capybara-mechanize'
   gem 'equivalent-xml'
   gem 'factory_bot_rails'
   gem 'rspec-collection_matchers'
