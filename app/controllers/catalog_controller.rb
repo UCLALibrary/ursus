@@ -138,7 +138,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('human_readable_resource_type', :stored_searchable), label: 'Resource Type', link_to_facet: ::Solrizer.solr_name('human_readable_resource_type', :facetable)
     config.add_show_field ::Solrizer.solr_name('format', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('identifier', :stored_searchable)
-    config.add_show_field ::Solrizer.solr_name('member_of_collections', :symbol), label: 'Collection', link_to_facet: ::Solrizer.solr_name('member_of_collections', :facetable)
+    config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim'
     config.add_show_field ::Solrizer.solr_name('caption', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('alternative_title', :stored_searchable)
     config.add_show_field ::Solrizer.solr_name('dimensions', :stored_searchable)
