@@ -24,9 +24,11 @@ module Ursus
     end
 
     def collection_document
-      return unless @response['response']['docs'].first['member_of_collections_ssim']
-      collection_id = @response['response']['docs'].first['member_of_collection_ids_ssim'][0]
-      SolrDocument.find(collection_id)
+      @collection_document ||= begin
+        return unless @response['response']['docs'].first['member_of_collections_ssim']
+        collection_id = @response['response']['docs'].first['member_of_collection_ids_ssim'][0]
+        SolrDocument.find(collection_id)
+      end
     end
 
     def collection_description

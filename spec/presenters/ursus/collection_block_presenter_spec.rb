@@ -55,6 +55,13 @@ RSpec.describe Ursus::CollectionBlockPresenter do
   end
 
   describe '#collection_document' do
+    it 'caches the SolrDocument' do
+      allow(SolrDocument).to receive(:find).and_return('First Solr Call')
+      collection_presenter.collection_document
+      allow(SolrDocument).to receive(:find).and_return('Second Solr Call')
+      expect(collection_presenter.collection_document).to eq 'First Solr Call'
+    end
+
     it 'can get the collection document' do
       expect(collection_presenter.collection_document[:id]).to eq('coll123')
     end
