@@ -45,8 +45,8 @@ module Ursus
     end
 
     def collection_languages
-      languages = Array.wrap(collection_document['languages_tesim'])
-      languages
+      languages = Array.wrap(collection_document['human_readable_language_tesim']).to_sentence
+      languages.empty? ? nil : languages
     end
   end
 end

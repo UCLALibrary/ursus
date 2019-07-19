@@ -18,8 +18,40 @@ RSpec.describe Ursus::CollectionBlockPresenter do
     expect(collection_presenter.collection_selected?).to eq(true)
   end
 
-  it ' can get the collection name' do
-    expect(collection_presenter.collection_name).to eq('Connell (Will) Papers')
+  describe '#collection_name' do
+    it 'is correct' do
+      expect(collection_presenter.collection_name).to eq('Connell (Will) Papers')
+    end
+  end
+
+  describe '#service_contact' do
+    it 'is correct' do
+      expect(collection_presenter.service_contact).to eq('someone somewhere')
+    end
+  end
+
+  describe '#collection_description' do
+    it 'is correct' do
+      expect(collection_presenter.collection_description).to eq('Description 3')
+    end
+  end
+
+  describe '#collection_date_created' do
+    it 'is correct' do
+      expect(collection_presenter.collection_date_created).to eq('Date 1')
+    end
+  end
+
+  describe '#collection_repository' do
+    it 'is correct' do
+      expect(collection_presenter.collection_repository).to eq('UCLA Collection')
+    end
+  end
+
+  describe '#collection_languages' do
+    it 'is correct' do
+      expect(collection_presenter.collection_languages).to eq('English, Spanish, and Greek')
+    end
   end
 
   describe '#collection_document' do
@@ -40,13 +72,7 @@ RSpec.describe Ursus::CollectionBlockPresenter do
     end
 
     it ' can get the languages of the collection' do
-      expect(collection_presenter.collection_document['languages_tesim']).to eq(['English', 'Spanish', 'Greek'])
-    end
-  end
-
-  describe '#service_contact' do
-    it 'can get the service contact' do
-      expect(collection_presenter.service_contact).to eq('someone somewhere')
+      expect(collection_presenter.collection_document['human_readable_language_tesim']).to eq(['English', 'Spanish', 'Greek'])
     end
   end
 end
