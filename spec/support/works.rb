@@ -87,7 +87,8 @@ FIRST_COLLECTION = {
   description_tesim: ['Description 3', 'Description 4', 'another desc'],
   date_created_tesim: ["Date 1"],
   repository_tesim: ['UCLA Collection'],
-  languages_tesim: ['English', 'Spanish', 'Greek']
+  languages_tesim: ['en', 'es', 'gk'],
+  human_readable_language_tesim: ['English', 'Spanish', 'Greek']
 }.freeze
 
 FOURTH_WORK = {
