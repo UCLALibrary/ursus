@@ -53,7 +53,7 @@ class CatalogController < ApplicationController
     # solr field configuration for document/show views
     config.index.title_field = 'title_tesim'
     config.index.display_type_field = 'has_model_ssim'
-    config.index.thumbnail_field = 'thumbnail_path_ss'
+    config.index.thumbnail_field = 'thumbnail_url_ss'
 
     # solr path which will be added to solr base url before the other solr params.
     # config.solr_path = 'select'
