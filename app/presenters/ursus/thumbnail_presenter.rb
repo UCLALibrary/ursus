@@ -19,7 +19,7 @@ module Ursus
     end
 
     def thumbnail_value_from_document(document)
-      "#{Rails.application.config.californica_thumbnail_url}#{document[:thumbnail_path_ss]}"
+      "#{Rails.application.config.californica_thumbnail_url}#{document[:thumbnail_url_ss]}"
     end
   end
 end
