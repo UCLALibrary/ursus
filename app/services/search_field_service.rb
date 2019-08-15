@@ -21,6 +21,7 @@ class SearchFieldService
     ::Solrizer.solr_name('place_of_origin', :stored_searchable),
     ::Solrizer.solr_name('publisher', :stored_searchable),
     ::Solrizer.solr_name('subject', :stored_searchable),
+    ::Solrizer.solr_name('summary', :stored_searchable),
     ::Solrizer.solr_name('title', :stored_searchable),
     ::Solrizer.solr_name('uniform_title', :stored_searchable),
     'ark_ssi'
