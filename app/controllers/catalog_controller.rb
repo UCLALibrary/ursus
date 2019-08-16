@@ -161,6 +161,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_holder_tesim'
     config.add_show_field 'services_contact_ssm', label: 'Rights services contact'
     config.add_show_field 'subject_tesim', link_to_facet: 'subject_sim', separator_options: BREAKS
+    config.add_show_field 'summary_tesim', label: 'Summary'
     config.add_show_field 'support_tesim', label: 'Support'
     config.add_show_field 'title_tesim'
     config.add_show_field 'uniform_title_tesim'
