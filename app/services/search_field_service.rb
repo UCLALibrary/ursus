@@ -13,6 +13,7 @@ class SearchFieldService
     ::Solrizer.solr_name('description', :stored_searchable),
     ::Solrizer.solr_name('genre', :stored_searchable),
     ::Solrizer.solr_name('identifier', :stored_searchable),
+    'illustrations_note_tesim',
     'local_identifier_ssm',
     ::Solrizer.solr_name('location', :stored_searchable),
     ::Solrizer.solr_name('medium', :stored_searchable),
@@ -21,11 +22,13 @@ class SearchFieldService
     'page_layout_ssim',
     ::Solrizer.solr_name('photographer', :stored_searchable),
     ::Solrizer.solr_name('place_of_origin', :stored_searchable),
+    'provenance_tesim',
     ::Solrizer.solr_name('publisher', :stored_searchable),
     ::Solrizer.solr_name('subject', :stored_searchable),
     'subject_topic_tesim',
     ::Solrizer.solr_name('summary', :stored_searchable),
     ::Solrizer.solr_name('title', :stored_searchable),
+    'toc_tesim',
     ::Solrizer.solr_name('uniform_title', :stored_searchable),
     'ark_ssi'
   ].join(' ').freeze

@@ -27,6 +27,18 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       it 'returns the Dimensions Key' do
         expect(config['dimensions_tesim'].to_s).to eq('Dimensions')
       end
+
+      it 'returns the Page layout Key' do
+        expect(config['page_layout_ssim'].to_s).to eq('Page layout')
+      end
+
+      it 'returns the Binding note Key' do
+        expect(config['binding_note_ssi'].to_s).to eq('Binding note')
+      end
+
+      it 'returns the Illustrations note Key' do
+        expect(config['illustrations_note_tesim'].to_s).to eq('Illustrations note')
+      end
     end
   end
 end
