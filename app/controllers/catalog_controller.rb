@@ -145,6 +145,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'human_readable_rights_statement_tesim'
     config.add_show_field 'human_readable_language_tesim', link_to_facet: 'human_readable_language_sim'
     config.add_show_field 'identifier_tesim'
+    config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note'
     config.add_show_field 'keyword_tesim'
     config.add_show_field 'latitude_tesim', label: 'Longitude'
     config.add_show_field 'location_tesim', link_to_facet: 'location_sim'
@@ -157,6 +158,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
     config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
     config.add_show_field 'place_of_origin_tesim', separator_options: BREAKS
+    config.add_show_field 'provenance_tesim', label: 'Provenance'
     config.add_show_field 'publisher_tesim'
     config.add_show_field 'repository_tesim'
     config.add_show_field 'rights_country_tesim'
@@ -167,6 +169,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'summary_tesim', label: 'Summary'
     config.add_show_field 'support_tesim', label: 'Support'
     config.add_show_field 'title_tesim'
+    config.add_show_field 'toc_tesim', label: 'Table of Contents'
     config.add_show_field 'uniform_title_tesim'
 
     # "fielded" search configuration. Used by pulldown among other places.
