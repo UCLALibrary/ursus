@@ -80,6 +80,7 @@ gem 'bootstrap', '~> 4.0'
 gem 'coveralls', require: false
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
+gem 'flipflop'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'httparty'
 gem 'jquery-rails'

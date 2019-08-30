@@ -9,6 +9,10 @@ Bundler.require(*Rails.groups)
 
 module Ursus
   class Application < Rails::Application
+    # Before filter for Flipflop dashboard. Replace with a lambda or method name
+    # defined in ApplicationController to implement access control.
+    config.flipflop.dashboard_access_filter = -> { head :forbidden }
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
