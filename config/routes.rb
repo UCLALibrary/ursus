@@ -1,6 +1,7 @@
 
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  mount Flipflop::Engine => "/flipflop"
   get '/about', to: 'static#about'
 
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
