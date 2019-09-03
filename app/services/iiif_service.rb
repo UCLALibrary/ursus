@@ -2,7 +2,7 @@
 
 class IiifService
   def src(request, document)
-    "#{request&.base_url}/uv/uv.html#?manifest=#{Rails.application.config.iiif_url}/#{document.id}/manifest"
+    "#{request&.base_url}/uv/uv.html#?manifest=#{iiif_manifest_url(document)}"
   end
 
   def iiif_manifest_url(document)
