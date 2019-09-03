@@ -5,7 +5,7 @@ require 'cgi'
 RSpec.describe 'total number of items in a particular collection', :clean, type: :system, smoketest: true, js: true do
   let(:url) { 'https://ursus.library.ucla.edu/' }
   let(:ladnn_url) { 'https://ursus.library.ucla.edu/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Los+Angeles+Daily+News+Negatives' }
-  let(:arkatov_url) { 'https://ursus.library.ucla.edu/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Arkatov+%28James%29+Collection' }
+  let(:arkatov_url) { 'https://ursus.library.ucla.edu/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Arkatov+%28James%29+collection' }
   let(:bennett_url) { 'https://ursus.library.ucla.edu/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Bennett+%28Walter+E.%29+Photographic+Collection%2C+1937-1983+%28bulk+1952-1982%29' }
   let(:connell_url) { 'https://ursus.library.ucla.edu/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Connell+%28Will%29+Papers' }
   let(:postcards_url) { 'https://ursus.library.ucla.edu/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Collection+of+California+Postcards' }
