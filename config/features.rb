@@ -25,6 +25,6 @@ Flipflop.configure do
   #   description: "Take over the world."
 
   feature :use_manifest_store,
-          default: false,
+          default: true,
           description: "Load IIIF manifests from the external manifest-store service when possible."
 end

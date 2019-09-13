@@ -6,7 +6,7 @@ RSpec.describe IiifService do
   let(:service) { described_class.new }
   let(:solr_document) do
     SolrDocument.new(id: 'abc123',
-                     iiif_manifest_url_ssi: 'https://manifest.store/abc123/manifest')
+                     iiif_manifest_url_ssi: 'https://manifest.store/ark%3A%2Fabc%2F123/manifest')
   end
 
   before do
@@ -17,7 +17,7 @@ RSpec.describe IiifService do
     context 'when a url is stored and feature enabled' do
       it 'uses that url' do
         allow(Flipflop).to receive(:use_manifest_store?).and_return(true)
-        expect(service.iiif_manifest_url(solr_document)).to eq 'https://manifest.store/abc123/manifest'
+        expect(service.iiif_manifest_url(solr_document)).to eq 'https://manifest.store/ark%3A%2Fabc%2F123/manifest'
       end
     end
 
