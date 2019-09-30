@@ -31,8 +31,8 @@
 .navbar-text-logo {
   font-weight: 300;
   position: relative;
-  top: 0.25em;
-  left: 0.5em;
+  top: 0.16em;
+  left: 0.7em;
   color: $white !important;
   font-size: 0.9em;
   letter-spacing: 0.05em;
@@ -50,8 +50,8 @@
 .navbar-pipe::after {
   content: '|';
   position: relative;
-  left: 0.175em;
-  top: 0.12em;
+  left: 0em;
+  top: 0em;
   font-weight: 300;
   color: $ucla-lighter-blue;
 }
