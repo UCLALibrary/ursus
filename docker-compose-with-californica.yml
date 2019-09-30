@@ -7,7 +7,7 @@ services:
     stdin_open: true
     tty: true
     env_file:
-      - ./dotenv.sample
+      - ./default.env
     environment:
       DATABASE_HOST: db
       DATABASE_USERNAME: californica

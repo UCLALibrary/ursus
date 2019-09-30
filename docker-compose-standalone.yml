@@ -9,7 +9,7 @@ services:
       - solr
       - dockerhost
     env_file:
-      - ./dotenv.sample
+      - ./default.env
     environment:
       DATABASE_HOST: db
       IIIF_URL: https://californica-test.library.ucla.edu/concern/works
