@@ -49,7 +49,7 @@ group :development, :test do
   gem 'rspec-its'
   gem 'rspec-rails', '~> 3.8'
   gem 'rubocop'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '>= 3.142.3'
   gem 'solr_wrapper', '>= 2.1.0'
   gem 'webmock'
 end
