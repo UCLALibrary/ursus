@@ -13,6 +13,7 @@ class SearchFieldService
     ::Solrizer.solr_name('description', :stored_searchable),
     ::Solrizer.solr_name('genre', :stored_searchable),
     ::Solrizer.solr_name('identifier', :stored_searchable),
+    'illuminator_tesim',
     'illustrations_note_tesim',
     'local_identifier_ssm',
     ::Solrizer.solr_name('location', :stored_searchable),

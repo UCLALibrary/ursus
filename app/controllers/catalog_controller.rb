@@ -145,6 +145,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'human_readable_rights_statement_tesim'
     config.add_show_field 'human_readable_language_tesim', link_to_facet: 'human_readable_language_sim'
     config.add_show_field 'identifier_tesim'
+    config.add_show_field 'illuminator_tesim', label: 'Illuminator'
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note'
     config.add_show_field 'keyword_tesim'
     config.add_show_field 'latitude_tesim', label: 'Longitude'

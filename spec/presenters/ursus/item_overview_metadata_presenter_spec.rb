@@ -55,6 +55,10 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       it 'returns the Collection (native) Key' do
         expect(config['member_of_collections_ssim'].to_s).to eq('Collection')
       end
+
+      it 'returns the Illuminator Key' do
+        expect(config['illuminator_tesim'].to_s).to eq('Illuminator')
+      end
     end
   end
 end
