@@ -4,10 +4,18 @@
   <% if search_fields.length > 1 %>
     <label for="search_field" class="sr-only"><%= t('blacklight.search.form.search_field.label') %></label>
   <% end %>
-  <div class="input-group">
-    <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
-    <%= text_field_tag :q, params[:q], placeholder: t('blacklight.search.form.search.placeholder'), class: "search-q q form-control", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) }  %>
 
+  <div class="input-group">
+  <% url = request.original_url %>
+  <% if url.include?('member_of_collections_ssim') %>
+    <% placeholder_text = t('blacklight.search.form.search.placeholder_collection') %>
+    <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
+    <%= text_field_tag :q, params[:q], placeholder: "#{placeholder_text}", class: "search-q q form-control", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
+  <% else %>
+    <% placeholder_text = t('blacklight.search.form.search.placeholder') %>
+    <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
+    <%= text_field_tag :q, params[:q], placeholder: "#{placeholder_text}", class: "search-q q form-control", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
+  <% end %>
     <span class="input-group-append">
       <button type="submit" class="btn search-btn" id="search">
         <%= blacklight_icon :search %>

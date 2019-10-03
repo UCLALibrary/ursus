@@ -26,6 +26,19 @@ RSpec.feature "Search results page", :clean do
     expect(page).to have_content 'Date created'
     expect(page).to have_content 'Repository'
     expect(page).to have_content 'Languages'
+    expect(page).to have_xpath("//input[@placeholder='Search this collection']")
+  end
+
+  context 'the placeholder displays the correct search prompt' do
+    it 'when on a search open to a particular collection' do
+      visit '/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Photographic%20Collection'
+      expect(page).to have_xpath("//input[@placeholder='Search this collection']")
+    end
+
+    it 'when on the home page' do
+      visit '/'
+      expect(page).to have_xpath("//input[@placeholder='Search UCLA Library Digital Collections']")
+    end
   end
 
   context 'when collection data is missing' do
