@@ -59,6 +59,18 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       it 'returns the Illuminator Key' do
         expect(config['illuminator_tesim'].to_s).to eq('Illuminator')
       end
+
+      it 'returns the Scribe Key' do
+        expect(config['scribe_tesim'].to_s).to eq('Scribe')
+      end
+
+      it 'returns the Lyricist Key' do
+        expect(config['lyricist_tesim'].to_s).to eq('Lyricist')
+      end
+
+      it 'returns the Composer Key' do
+        expect(config['composer_tesim'].to_s).to eq('Composer')
+      end
     end
   end
 end

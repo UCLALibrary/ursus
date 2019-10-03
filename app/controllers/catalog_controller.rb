@@ -128,6 +128,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'based_near_label_tesim'
     config.add_show_field 'binding_note_ssi', label: 'Binding note'
     config.add_show_field 'caption_tesim'
+    config.add_show_field 'collation_ssi'
+    config.add_show_field 'composer_tesim', label: 'Composer'
+    config.add_show_field 'contents_note_tesim'
     config.add_show_field 'contributor_tesim'
     config.add_show_field 'creator_tesim'
     config.add_show_field 'date_created_tesim'
@@ -137,6 +140,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'dimensions_tesim'
     config.add_show_field 'dlcs_collection_name_tesim'
     config.add_show_field 'extent_tesim'
+    config.add_show_field 'foliation_ssi'
     config.add_show_field 'format_tesim'
     config.add_show_field 'funding_note_tesim'
     config.add_show_field 'genre_tesim', link_to_facet: 'genre_sim', separator_options: BREAKS
@@ -152,6 +156,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'location_tesim', link_to_facet: 'location_sim'
     config.add_show_field 'local_identifier_ssm', label: 'Local identifier'
     config.add_show_field 'longitude_tesim', label: 'Latitude'
+    config.add_show_field 'lyricist_tesim', label: 'Lyricist'
     config.add_show_field 'medium_tesim'
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim'
     config.add_show_field 'named_subject_tesim', link_to_facet: 'named_subject_sim', separator_options: BREAKS
@@ -164,6 +169,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'repository_tesim'
     config.add_show_field 'rights_country_tesim'
     config.add_show_field 'rights_holder_tesim'
+    config.add_show_field 'scribe_tesim', label: 'Scribe'
     config.add_show_field 'services_contact_ssm', label: 'Rights services contact'
     config.add_show_field 'subject_tesim', link_to_facet: 'subject_sim', separator_options: BREAKS
     config.add_show_field 'subject_topic_tesim', label: 'Subject topic'
