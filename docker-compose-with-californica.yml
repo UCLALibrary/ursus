@@ -19,11 +19,13 @@ services:
     volumes:
       - .:/ursus
       - bundle_dir:/usr/local/bundle
+      - ursus_tmp:/ursus/tmp
     working_dir: /ursus
     networks:
       - californica_default
 volumes:
   bundle_dir:
+  ursus_tmp:
 networks:
   californica_default:
     external: true
