@@ -46,6 +46,10 @@ RSpec.describe 'Search results page', type: :system, js: false do
 
     # it 'displays List View button' do
     expect(page).to have_link 'List'
+
+    # shows thumbnails for 'public' visibility, not for 'discovery'
+    expect(page).not_to have_css("img[src*='work3.jpg']")
+    expect(page).to have_css("img[src*='work4.jpg']")
   end
 
   it 'displays the old site link on page with no results' do
