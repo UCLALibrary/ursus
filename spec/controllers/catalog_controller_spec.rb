@@ -39,7 +39,8 @@ RSpec.describe CatalogController, type: :controller do
       ['description_tesim',
        'sort_year_isi',
        'human_readable_resource_type_tesim',
-       'photographer_tesim']
+       'photographer_tesim',
+       'member_of_collections']
     end
     it { expect(index_fields).to contain_exactly(*expected_index_fields) }
   end
