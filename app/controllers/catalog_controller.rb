@@ -111,13 +111,15 @@ class CatalogController < ApplicationController
     # handler defaults, or have no facets.
     config.add_facet_fields_to_solr_request!
 
-    # solr fields to be displayed in the index (search results / list view
+    # solr fields to be displayed in the index search results / list view
     #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
+
     config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
     config.add_index_field 'sort_year_isi', label: 'Date Created'
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
     config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
+    config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim'
 
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display

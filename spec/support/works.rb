@@ -40,7 +40,9 @@ FIRST_WORK = {
   oclc_tesim_ssi: ['Powell Library'],
   format_tesim: ['Film Still'],
   support_tesim: ['Mom & Dad'],
-  read_access_group_ssim: ["public"]
+  read_access_group_ssim: ["public"],
+  thumbnail_url_ss: ["http://thumbnail/work1.jpg"],
+  visibility_ssi: ['open']
 }.freeze
 
 SECOND_WORK = {
@@ -57,9 +59,10 @@ SECOND_WORK = {
   photographer_tesim: ['Person 1', 'Person 2'],
   place_of_origin_tesim: ['Boston, MA', 'Philadelphia, PA', 'New York, NY', 'Los Angeles, CA'],
   location_tesim: ['search_results_spec'], # to control what displays,
-  thumbnail_path_ss: ["/assets/work-ff055336041c3f7d310ad69109eda4a887b16ec501f35afc0a547c4adb97ee72.png"],
   member_of_collection_ids_ssim: ['coll123'],
-  read_access_group_ssim: ["public"]
+  read_access_group_ssim: ["public"],
+  thumbnail_url_ss: ["http://thumbnail/work2.jpg"],
+  visibility_ssi: ['open']
 }.freeze
 
 THIRD_WORK = {
@@ -78,7 +81,9 @@ THIRD_WORK = {
   collection_tesim: ['Slide Film', 'Analog', 'Photographs'],
   member_of_collections_ssim: ['Photographic Collection'],
   member_of_collection_ids_ssim: ['coll123'],
-  read_access_group_ssim: ["public"]
+  read_access_group_ssim: ["public"],
+  thumbnail_url_ss: ["http://thumbnail/work3.jpg"],
+  visibility_ssi: ['discovery']
 }.freeze
 
 FIRST_COLLECTION = {
@@ -103,5 +108,7 @@ FOURTH_WORK = {
   human_readable_resource_type_tesim: ['still image'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
-  collection_tesim: ['Photographs', 'Digital']
+  collection_tesim: ['Photographs', 'Digital'],
+  thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
+  visibility_ssi: ['open']
 }.freeze
