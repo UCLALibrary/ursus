@@ -101,6 +101,10 @@ RSpec.describe 'Search results page', type: :system, js: false do
     visit '/catalog?search_field=collection&q=photographs' do
       expect(page).to have_content('2 Catalog Results')
     end
+
+    visit '/catalog?search_field=collection&q=unicorn' do
+      expect(page).to have_content('No Results found')
+    end
   end
 
   it 'has correct sorting behavior for title' do
