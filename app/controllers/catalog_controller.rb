@@ -44,13 +44,7 @@ class CatalogController < ApplicationController
       mm: '100%',
       rows: 10,
       qf: 'title_tesim description_tesim creator_tesim keyword_tesim',
-      ###fq: '(((has_model_ssim:Work) OR (has_model_ssim:Collection)))'
       fq: '(((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !(visibility_ssi:restricted))'
-      ###fq: '(((has_model_ssim:Work) OR (has_model_ssim:Collection)))'
-      ###fq: '{!terms f=has_model_ssim v=Work,Collection}',
-      ###fq: '{!terms f=visibility_ssi v=open}'
-
-      ###fq: '(has_model_ssim:Work)'
       ### we want to only return works where visibility_ssi == open (not restricted)
     }
 
