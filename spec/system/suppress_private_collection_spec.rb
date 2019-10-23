@@ -2,13 +2,13 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Suppress private results page', type: :system, js: true do
-  let(:id) { 'm8f11000zz-89113' }
+RSpec.describe 'Search results page', type: :system, js: true do
+  let(:id) { 'm8f11000zz-89112' }
   let(:services_contact) do
     'UCLA Charles E. Young Research Library Department of Special Collections Phone: (310)825-4988'
   end
   let(:description) do
-    'Susan F. Collet (1821-1895) first science result.'
+    'Walter E. Bennett (1921-1995) was the first salaried photographer for Time, where he worked from 1952 to 1982.'
   end
   let(:collection_attributes) do
     {
@@ -29,7 +29,7 @@ RSpec.describe 'Suppress private results page', type: :system, js: true do
       date_created_tesim: ['1937-1983'],
       extent_tesim: ['still image'],
       thumbnail_path_ss: '/assets/collection-a38b932554788aa578debf2319e8c4ba8a7db06b3ba57ecda1391a548a4b6e0a.png',
-      visibility_ssi: 'private',
+      visibility_ssi: 'restricted',
       read_access_group_ssim: ['public'],
       ursus_id_ssi: '21198-zz00011f8m',
       human_readable_type_tesim: ['Collection'],
@@ -48,27 +48,26 @@ RSpec.describe 'Suppress private results page', type: :system, js: true do
 
   it 'displays the metadata' do
     visit solr_document_path(id)
-
-    expect(page).to have_no_content 'Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'
-    expect(page).to have_no_content 'Local identifier: Collection 686'
-    expect(page).to have_no_content 'Description: description'
+    expect(page).to_not have_content 'Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'
+    expect(page).to_not have_content 'Local identifier: Collection 686'
+    expect(page).to_not have_content 'Description: description'
   end
 
   it 'displays headings' do
     visit solr_document_path(id)
-    expect(page).to have_no_content 'Item Overview'
-    expect(page).to have_no_content 'Notes'
-    expect(page).to have_no_content 'Physical Description'
-    expect(page).to have_no_content 'Keywords'
-    expect(page).to have_no_content 'Find This Item'
-    expect(page).to have_no_content 'Access Condition'
+    expect(page).to_not have_content 'Item Overview'
+    expect(page).to_not have_content 'Notes'
+    expect(page).to_not have_content 'Physical Description'
+    expect(page).to_not have_content 'Keywords'
+    expect(page).to_not have_content 'Find This Item'
+    expect(page).to_not have_content 'Access Condition'
   end
 
   context 'license' do
     it 'displays the creative commons text and logo when there is a cc license' do
       visit solr_document_path(id)
-      expect(page).to have_no_content 'License'
-      expect(page).to have_no_link 'Creative Commons Attribution 4.0 International License'
+      expect(page).to_not have_content 'License'
+      expect(page).to_not have_link 'Creative Commons Attribution 4.0 International License'
     end
   end
 end
