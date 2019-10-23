@@ -3,12 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Suppress private results page', type: :system, js: true do
-  let(:id) { 'm8f11000zz-89112' }
+  let(:id) { 'm8f11000zz-89113' }
   let(:services_contact) do
     'UCLA Charles E. Young Research Library Department of Special Collections Phone: (310)825-4988'
   end
   let(:description) do
-    'Walter E. Bennett (1921-1995) was the first salaried photographer for Time, where he worked from 1952 to 1982.'
+    'Susan F. Collet (1821-1895) first science result.'
   end
   let(:collection_attributes) do
     {
