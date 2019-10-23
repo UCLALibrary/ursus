@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Search results page', type: :system, js: true do
-  let(:id) { 'm8f11000zz-89112' }
+  let(:id) { 'm8f11000zz-89113' }
   let(:services_contact) do
     'UCLA Charles E. Young Research Library Department of Special Collections Phone: (310)825-4988'
   end
@@ -15,7 +15,7 @@ RSpec.describe 'Search results page', type: :system, js: true do
       id: id,
       has_model_ssim: ['Collection'],
       accessControl_ssim: ['7b1af782-af1f-46a6-9bd2-b53be0f1bb68'],
-      title_tesim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
+      title_tesim: ['NotBennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
       collection_type_gid_ssim: ['gid://californica/hyrax-collectiontype/1'],
       ark_ssi: 'ark:/21198/zz00011f8m',
       local_identifier_ssm: ['Collection 686'],
@@ -63,11 +63,4 @@ RSpec.describe 'Search results page', type: :system, js: true do
     expect(page).to_not have_content 'Access Condition'
   end
 
-  context 'license' do
-    it 'displays the creative commons text and logo when there is a cc license' do
-      visit solr_document_path(id)
-      expect(page).to_not have_content 'License'
-      expect(page).to_not have_link 'Creative Commons Attribution 4.0 International License'
-    end
-  end
 end
