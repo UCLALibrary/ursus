@@ -1,10 +1,13 @@
+<nav class='navbar navbar-expand-md beta-bar'>
+  <span class='beta-text'>UCLA's (Beta) Digital Library Interface | Content from our <a href='http://digital2.library.ucla.edu/'  target='_blank'>Legacy Site</a> is being migrated into this interface.</span>
+</nav>
 <nav class='navbar navbar-expand-md navbar-dark bg-dark topbar' role='navigation'>
   <div class='container-fluid'>
 
     <div class='navbar-logo-block'>
       <a href='https://library.ucla.edu' class='navbar-brand'><span class='logo-name'>UCLA Library Logo</span></a>
       <span class='navbar-pipe'></span>
-      <%= link_to 'Digital Collections', root_path, class: 'navbar-text-logo' %>
+      <%= link_to 'Digital Collections', root_path, class: 'navbar-text-logo' %> <span class='beta'>BETA</span>
     </div>
 
     <button class='navbar-toggler custom-toggler' type='button' data-toggle='collapse' data-target='#user-util-collapse' aria-controls='user-util-collapse' aria-expanded='false' aria-label='Toggle navigation'>
@@ -13,8 +16,8 @@
 
     <div class='collapse navbar-collapse justify-content-md-end' id='user-util-collapse'>
       <ul class='navbar-nav nav ml-auto'>
-        <li class='nav-item'><a href='/about' class='nav-link'>About</a></li>
-        <li class='nav-item'><a href='mailto:dlp@library.ucla.edu' class='nav-link feedback-link'>Give us feedback</a></li>
+        <li class='nav-item'><a href='/about'>About</a></li>
+        <li class='give-us-feedback'><a href='mailto:dlp@library.ucla.edu' >Give us feedback</a></li>
       </ul>
     </div>
 

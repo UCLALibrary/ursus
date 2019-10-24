@@ -44,7 +44,7 @@
 
 .navbar-text-logo:hover {
   color: $ucla-gold !important;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .navbar-pipe::after {
@@ -58,6 +58,7 @@
 
 .topbar {
   .nav-item a {
+    padding-left: 30px;
     color: $white !important;
     font-weight: 300;
     font-size: 0.9em;
@@ -71,7 +72,7 @@
 
   .nav-item a:hover {
     color: $ucla-gold !important;
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   .nav-link {
@@ -122,6 +123,7 @@
   }
 
   .nav-item {
+    padding-left: 30px;
     padding: 8px 0;
   }
 
@@ -188,6 +190,15 @@
 
   .nav-item {
     padding: 8px 0;
+    .about {
+      a {
+        color: $white !important;
+      }
+      a:hover {
+        color: $ucla-gold !important;
+        text-decoration: underline;
+      }
+    }
   }
 
   .nav-item:nth-child(1) {
@@ -201,5 +212,15 @@
       text-decoration: none;
     }
   }
+}
 
+.give-us-feedback {
+  padding: 10px 0px 10px 30px;
+  a {
+    color: $ucla-gold !important;
+  }
+  a:hover {
+    color: $ucla-gold !important;
+    text-decoration: underline;
+  }
 }
