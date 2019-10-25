@@ -37,7 +37,6 @@ RSpec.describe 'Search results page', type: :system, js: true do
       medium_tesim: ['b&w negative']
     }
   end
-
   before do
     solr = Blacklight.default_index.connection
     solr.add(collection_attributes)
@@ -45,14 +44,12 @@ RSpec.describe 'Search results page', type: :system, js: true do
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
     allow_any_instance_of(IiifService).to receive(:src).and_return('/uv/uv.html#?manifest=/manifest.json')
   end
-
   it 'displays the metadata' do
     visit solr_document_path(id)
     expect(page).to_not have_content 'Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'
     expect(page).to_not have_content 'Local identifier: Collection 686'
     expect(page).to_not have_content 'Description: description'
   end
-
   it 'displays headings' do
     visit solr_document_path(id)
     expect(page).to_not have_content 'Item Overview'
@@ -62,5 +59,4 @@ RSpec.describe 'Search results page', type: :system, js: true do
     expect(page).to_not have_content 'Find This Item'
     expect(page).to_not have_content 'Access Condition'
   end
-
 end
