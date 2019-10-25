@@ -44,7 +44,8 @@ class CatalogController < ApplicationController
       mm: '100%',
       rows: 10,
       qf: 'title_tesim description_tesim creator_tesim keyword_tesim',
-      fq: '{!terms f=has_model_ssim v=Work,Collection}'
+      fq: '(((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !(visibility_ssi:restricted))'
+      ### we want to only return works where visibility_ssi == open (not restricted)
     }
 
     config.show.partials.insert(1, :collection_banner)
