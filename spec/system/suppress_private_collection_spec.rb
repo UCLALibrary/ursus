@@ -15,7 +15,7 @@ RSpec.describe 'Search results page', type: :system, js: true do
       id: id,
       has_model_ssim: ['Collection'],
       accessControl_ssim: ['7b1af782-af1f-46a6-9bd2-b53be0f1bb68'],
-      title_tesim: ['NotBennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
+      title_tesim: ['Zen and the Art of Motorcycle Maintenance: An Inquiry Into Values'],
       collection_type_gid_ssim: ['gid://californica/hyrax-collectiontype/1'],
       ark_ssi: 'ark:/21198/zz00011f8m',
       local_identifier_ssm: ['Collection 686'],
@@ -30,7 +30,7 @@ RSpec.describe 'Search results page', type: :system, js: true do
       extent_tesim: ['still image'],
       thumbnail_path_ss: '/assets/collection-a38b932554788aa578debf2319e8c4ba8a7db06b3ba57ecda1391a548a4b6e0a.png',
       visibility_ssi: 'restricted',
-      read_access_group_ssim: ['public'],
+      read_access_group_ssim: ['private'],
       ursus_id_ssi: '21198-zz00011f8m',
       human_readable_type_tesim: ['Collection'],
       license_tesim: ['https://creativecommons.org/licenses/by/4.0/'],
@@ -46,7 +46,7 @@ RSpec.describe 'Search results page', type: :system, js: true do
   end
   it 'displays the metadata' do
     visit solr_document_path(id)
-    expect(page).to_not have_content 'Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'
+    expect(page).to_not have_content 'Zen and the Art of Motorcycle Maintenance: An Inquiry Into Values'
     expect(page).to_not have_content 'Local identifier: Collection 686'
     expect(page).to_not have_content 'Description: description'
   end
