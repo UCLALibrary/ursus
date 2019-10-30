@@ -29,10 +29,10 @@
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= ENV["GOOGLE_TAG_MGR_ID"] %>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     <% end %>
-
+<div class="d-flex flex-column" style="min-height: 100vh">
     <%= render partial: 'shared/header_navbar' %>
     <%= render 'catalog/jumbotron' %>
-
+<div class="container flex-grow-1">
     <div id="main-container" class="<%= container_classes %>">
       <%= content_for(:container_header) %>
       <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
@@ -40,8 +40,9 @@
         <%= content_for?(:content) ? yield(:content) : yield %>
       </div>
     </div>
-
+</div>
     <%= render partial: 'shared/footer' %>
     <%= render partial: 'shared/modal' %>
+    </div>
   </body>
 </html>
