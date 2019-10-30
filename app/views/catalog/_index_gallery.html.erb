@@ -3,6 +3,19 @@
     <%= render_thumbnail_tag(document, {}, :counter => document_counter_with_offset(document_counter)) %>
     <div class="caption">
       <%= render_document_partials document, blacklight_config.view_config(:gallery).partials, :document_counter => document_counter %>
+
+<%# Present a See More link after the final result if there are more pages. %>
+<%# When there are only 1-2 thumbs (out of three spots) in the bottom row %>
+<%# it can look like there are no more results. This link is hidden via CSS %>
+<%# at breakpoints where it would be on its own row. %>
     </div>
   </div>
 </div>
+
+<% if document_counter + 1 == current_per_page and @response.total != current_per_page %>
+  <div class="document col-xs-6 col-sm-6 col-md-4 extra-result-see-more">
+         <%= link_to(url_for(params.merge(only_path: false, page: @response.next_page.to_s))) do %>
+            See More &raquo;
+         <% end %>
+  </div>
+<% end %>

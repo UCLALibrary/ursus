@@ -26,4 +26,16 @@ module BlacklightHelper
       Creative Commons Attribution 4.0 International License
       </a>. )
   end
+
+  def render_body_class
+    # Overrides this method in 
+    # /projectblacklight/blacklight/app/helpers/blacklight/blacklight_helper_behavior.rb
+    # Gives more fine-tuned control over CSS & JS selectors (esp for GA event tracking)
+    body_class = extra_body_classes.join " "
+    if controller.is_a? Blacklight::Catalog and has_search_parameters?
+      body_class << ' search-results-page'
+    end
+    body_class << ' ' + controller.action_name
+    body_class
+  end
 end

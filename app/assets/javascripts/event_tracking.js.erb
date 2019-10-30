@@ -1,0 +1,809 @@
+<%#
+Configure which elements and interactions generate GA Event data using
+the @selectors hash.  Each element selector is a top-level hash key, so
+must be unique. Selectors can be combined (comma-separated).
+
+OPTIONS FOR CUSTOMIZING THE DATA SENT FOR EACH ELEMENT MATCHED BY SELECTOR
+==========================================================================
+(Order doesn't matter)
+1. event
+2. link
+3. category
+4. action
+5. label
+6. document_listener
+7. intercept
+////////////////////
+1. event
+--------
+Which event on the element has to happen to send GA Event Track data? 
+default: 'click contextmenu'
+This catches both left ('click') & right ('contextmenu') clicks.
+Other possibilities: 'submit', 'focus', etc. Also can use custom events, e.g.,
+'foo' will catch $('#element').trigger('foo')... this technique
+is used for A/V player events
+2. link
+-------
+Which DOM element provides context for the event? (especially for default values)
+default: $(this) -- whatever element was specified by the selector
+3. category
+-----------
+The Category value to submit to GA Event Tracking. Limited by Google to 150 bytes.
+default: result of defaultCategory(link)
+4. action
+----------
+The Action value to submit to GA Event Tracking. Limited by Google to 500 bytes.
+default: result of defaultAction(link)
+5. label
+--------
+The Label value to submit to GA Event Tracking. Limited by Google to 500 bytes.
+default: result of defaultLabel(link)
+6. document_listener
+--------------------
+By default, listeners will get attached to the element identified by the selector, e.g.:
+  $('div.something a').on('click', function(){ ... });
+But in some cases we have to attach the listener to the document node in the DOM, e.g.:
+  $(document).on('click', 'div.something a', function(){ ... });
+This syntax enables listening for events on elements that are dynamically added to the DOM
+after the initial pageload. Also, in some cases we have to explicitly match the syntax used
+by Blacklight's own event listeners.
+
+Possible values: true
+
+
+7. intercept
+------------
+Optional instructions inserted immediately after the click/event. In some cases we need to
+prevent the default browser behavior for the action; others we need to stop the click
+from propagating up to parent elements to prevent unwanted click events. E.g.:
+
+  e.preventDefault();
+  e.stopPropagation();
+
+======================================================================================
+%>
+
+<% 
+@selectors = {
+
+
+  #// MASTHEAD & FOOTER
+  #// ===================
+
+  #// Branding
+  "#logo-col a.navbar-dul" => {
+    :category => "'masthead'",
+    :action => "'branding logos'",
+    :label => "'dul logo'"
+    },
+  "#logo-col a.navbar-ddr" => {
+    :category => "'masthead'",
+    :action => "'branding logos'",
+    :label => "'ddr logo'"
+    },
+
+  #// Search Box
+  "#search-col form button[data-toggle=dropdown]" => {
+    :category => "'search box'",
+    :action => "'search scope selector'"
+    },
+  "#search-col form ul.dropdown-menu a" => {
+    :category => "'search box'",
+    :action => "'search scope selector'"
+    },
+  "#search-col form input#q" => {
+    :category => "'search box'",
+    :action => "'basic search'",
+    :label => "'keyword search field click'"
+    },
+  "#search-col form" => {
+    :event => "submit",
+    :category => "'search box'",
+    :action => "'submit search box'",
+    :label => "$('input#q').val()"
+    },
+
+  #// Login / My Account
+  "#user-col a" => {
+    :category => "'masthead'",
+    :action => "'user account'"
+    },
+  "#mobile-menu button" => {
+    :category => "'masthead'",
+    :action => "'mobile menu'"      
+    },
+
+  #// Alert Banner Links
+  "#main-flashes a" => {
+    :category => "'masthead'",
+    :action => "'alerts'"      
+    },
+
+  #// Aptman Footer
+  "#aptman a" => {
+    :category => "'footer'",
+    :action => "'adopt a collection'"
+    },
+
+  #// Footer
+  ".footer a" => {
+    :category => "'footer'",
+    :action => "'footer links'"
+    },
+
+  #// DDR HOMEPAGE
+  #// ==============================
+
+  ".homepage-intro a" => {
+    :category => "'homepage'",
+    :action => "'homepage intro'"
+    },
+  ".home-mission a" => {
+    :category => "'homepage'",
+    :action => "'homepage mission'"
+    },
+  ".homepage-content a" => {
+    :category => "'homepage'",
+    :action => "'program areas'"
+    },
+
+  #// COLLECTION HOMEPAGES & PORTALS
+  #// ==============================
+
+  #// Collection Top Area
+  "#browse-all-colls-btn" => {
+    :category => "'collection home'",
+    :action => "'browse all collections'",
+    :label => "'browse all collections (main button)'"
+    },
+  "#browse-all-items-btn" => {
+    :category => "'collection home'",
+    :action => "'browse all items'",
+    :label => "'browse all items (main button)'"
+    },
+  "div.collection-start a.more-link" => {
+    :category => "'collection home'",
+    :action => "'about the collection'",
+    :label => "'more about (from collection summary)'"
+    },
+  "ul#showcase-link-list a" => {
+     :category => "'collection home'",
+     :action => "'related link'"
+    },
+
+  #// Collection Info (Metadata Links)
+  "#collection-info dd a" => {
+    :category => "'metadata link'",
+    :action => "$(this).parent('dd').attr('class')"
+    },
+
+  #// Featured Collections
+  "#featured-collections a" => {
+    :category => "'collection home'",
+    :action => "'featured collection'",
+    :label => "$(this).attr('href')"
+    },
+
+  #// Featured Items (Showcase & Highlights)
+  "div.collection-showcase a" => {
+    :category => "'collection home'",
+    :action => "'showcase image'",
+    :label => "$(this).attr('href')"
+    },
+  "div.collection-highlight a" => {
+    :category => "'collection home'",
+    :action => "'highlight image'",
+    :label => "$(this).attr('href')"
+    },
+  "a#view-all-featured" => {
+    :category => "'collection home'",
+    :action => "'featured items link'"
+    },
+
+  #// Items List
+  "#items-in-collection #documents.gallery .document .thumbnail-wrapper .caption a" => {
+    :category => "'collection home'",
+    :action => "'document result | grid view | title'",
+    :label => "$(this).attr('href')"
+    },
+  "#items-in-collection #documents.gallery .document .thumbnail-wrapper > a" => {
+    :category => "'collection home'",
+    :action => "'document result | grid view | thumbnail'",
+    :label => "$(this).attr('href')"
+    },
+  "#items-in-collection .feature-head a" => {
+    :category => "'collection home'",
+    :action => "'browse all items'",
+    :label => "'browse all items (items section header)'"
+    },
+  "#items-in-collection .browse-more a" => {
+    :category => "'collection home'",
+    :action => "'browse all items'",
+    :label => "'browse all items (items section bottom)'"
+    },
+
+  #// About the Collection
+  "#about-collection a" => {
+    :category => "'collection home'",
+    :action => "'about the collection'"
+    },
+
+  #// Adopt a Collection
+  ".collection-sponsor a" => {
+    :category => "'collection home'",
+    :action => "'adopt a collection'"
+    },
+
+  #// Archival Collection Guide
+  "#source-collection a" => {
+    :category => "'collection home'",
+    :action => "'finding aid'"
+    },
+
+  #// Blog Posts
+  "#blog-posts a" => {
+    :category => "'collection home'",
+    :action => "'blog posts'",
+    :label => "$(this).attr('href')"
+    },
+
+  #// About Pages
+  "body.about ul.nav a" => {
+    :category => "'collection about page'",
+    :action => "'tab navigation'"
+    },
+
+  #// SEARCH & BROWSE RESULTS
+  #// =======================
+
+  #// You Searched For...
+  "#appliedParams a" => {
+    :category => "'search results'",
+    :action => "'search revision'"
+    },
+
+  #// Collection Results (appear in the "matching collections" strip)
+  "body.search-results-page #collections.gallery .document a" => {
+    :category => "'search results'",
+    :action => "'collection result'",
+    :label => "$(this).attr('href')"
+    },
+
+  #// Document Results (Usually items but can be collections or components)
+  "body.search-results-page #documents.documents-list .document .documentHeader a" => {
+    :category => "'search results'",
+    :action => "'document result | list view | title'",
+    :label => "$(this).attr('href')"
+    },
+  "body.search-results-page #documents.documents-list .document .document-thumbnail a" => {
+    :category => "'search results'",
+    :action => "'document result | list view | thumbnail'",
+    :label => "$(this).attr('href')"
+    },
+  "body.search-results-page #documents.gallery .document .thumbnail-wrapper .caption a" => {
+    :category => "'search results'",
+    :action => "'document result | grid view | title'",
+    :label => "$(this).attr('href')"
+    },
+  "body.search-results-page #documents.gallery .document .thumbnail-wrapper > a" => {
+    :category => "'search results'",
+    :action => "'document result | grid view | thumbnail'",
+    :label => "$(this).attr('href')"
+    },
+  "body.search-results-page #documents.documents-list .document .document-metadata a:not(.btn-file-download)" => {
+    :category => "'metadata link'",
+    :action => "$(this).parent('dd').attr('class')"
+    },
+
+  #// Display Options (sort, per page, grid/list)
+  "body.search-results-page #sortAndPerPage .page_links a" => {
+    :category => "'search results'",
+    :action => "'pagination top'"
+    },
+  "body.search-results-page #sortAndPerPage #sort-dropdown a, body.search-results-page #sortAndPerPage #sort-dropdown button" => {
+    :category => "'search results'",
+    :action => "'sort by'"
+    },
+  "body.search-results-page #sortAndPerPage #per_page-dropdown a, body.search-results-page #sortAndPerPage #per_page-dropdown button" => {
+    :category => "'search results'",
+    :action => "'per page'"
+    },
+  "body.search-results-page #sortAndPerPage .view-type a" => {
+    :category => "'search results'",
+    :action => "'layout toggle'"
+    },
+  "body.search-results-page div.pagination ul.pagination a" => {
+    :category => "'search results'",
+    :action => "'pagination bottom'"
+    },
+  "body.search-results-page .extra-result-see-more a" => {
+    :category => "'search results'",
+    :action => "'pagination bottom'",
+    :label => "'see more (ghost item link)'"
+    },
+
+  #// Featured Items Page
+  "body.featured #documents.gallery .document .thumbnail-wrapper .caption a" => {
+    :category => "'featured items page'",
+    :action => "'document result | grid view | title'",
+    :label => "$(this).attr('href')"
+    },
+  "body.featured #documents.gallery .document .thumbnail-wrapper > a" => {
+    :category => "'featured items page'",
+    :action => "'document result | grid view | thumbnail'",
+    :label => "$(this).attr('href')"
+    },
+
+  #// FACETS
+  #// =====================
+
+  "div.facet_limit div.panel-heading" => {
+    :link => "$(this).find('a').first()",
+    :category => "'facets'",
+    :action => "$(this).attr('data-target').substring(1)",
+    :label => "defaultLabel(link) + ($(this).hasClass('collapsed') ? ' [expand]' : ' [collapse]')"
+    },
+  "div.facet_limit ul.facet-values a" => {
+    :category => "'facets'"
+    },
+  "#ajax-modal.facet-browse a" => {
+    :category => "'facets'",
+    :document_listener => true
+    },
+
+  #// Blacklight Range Limit Plugin Facet
+  "#facet-year_facet_iim input#range_year_facet_iim_begin" => {
+    :category => "'facets'",
+    :action => "'facet-year_facet_iim'",
+    :label => "'year range begin'",
+    :document_listener => true
+    },
+  "#facet-year_facet_iim input#range_year_facet_iim_end" => {
+    :category => "'facets'",
+    :action => "'facet-year_facet_iim'",
+    :label => "'year range end'",
+    :document_listener => true
+    },
+  "#facet-year_facet_iim div.slider-track" => {
+    :category => "'facets'",
+    :action => "'facet-year_facet_iim'",
+    :label => "'year range slider'",
+    :document_listener => true
+    },
+  "#facet-year_facet_iim div.chart_js" => {
+    :category => "'facets'",
+    :action => "'facet-year_facet_iim'",
+    :label => "'year range histogram'",
+    :document_listener => true
+    },
+  "#facet-year_facet_iim form" => {
+    :event => "submit",
+    :category => "'facets'",
+    :action => "'facet-year_facet_iim'",
+    :label => "'year range submit limit'",
+    :document_listener => true
+    },
+
+  #// SIDEBAR CONTEXT
+  #// =====================
+
+  "#research-help h4 a" => {
+    :category => "'sidebar context'",
+    :action => "'research help'",
+    :label => "'owner link'"
+    },
+  "#research-help a[data-toggle=dropdown]" => {
+    :category => "'sidebar context'",
+    :action => "'research help'",
+    :label => "'contact link' + ($(this).attr('aria-expanded') == 'true' ? ' [collapse]' : ' [expand]')"
+    },
+  "#research-help ul.dropdown-menu a" => {
+    :category => "'sidebar context'",
+    :action => "'research help'"
+    },
+  "#collection-context a#admin-set" => {
+    :category => "'sidebar context'",
+    :action => "'collection context'",
+    :label => "'admin set'"
+    },
+  "#collection-context a#parent-collection" => {
+    :category => "'sidebar context'",
+    :action => "'collection context'",
+    :label => "'parent collection'"
+    },
+  "#collection-context a#parent-item" => {
+    :category => "'sidebar context'",
+    :action => "'collection context'",
+    :label => "'parent item'"
+    },
+  "#collection-context a#more-digital-collections" => {
+    :category => "'sidebar context'",
+    :action => "'collection context'",
+    :label => "'more digital collections'"
+    },
+  "#finding-aid a:not(#faid-deep-link)" => {
+    :category => "'sidebar context'",
+    :action => "'finding aid'",
+    :label => "'finding aid top'"
+    },
+  "#finding-aid a#faid-deep-link" => {
+    :category => "'sidebar context'",
+    :action => "'finding aid'",
+    :label => "'finding aid deep link'"
+    },
+
+  #// ITEM OR COMPONENT SHOW PAGE
+  #// ===========================
+
+  "#previousNextDocument a" => {
+    :category => "'item to results nav'"
+    },
+  "#item-info dd a:not(.btn-file-download)" => {
+    :category => "'metadata link'",
+    :action => "$(this).parent('dd').attr('class')"
+    },
+
+  #// Component (File) List
+
+  "#item-components #documents .document .documentHeader a" => {
+    :category => "'item contents'",
+    :action => "'document result | list view | title'",
+    :label => "$(this).attr('href')"
+    },
+  "#item-components #documents .document .document-thumbnail a" => {
+    :category => "'item contents'",
+    :action => "'document result | list view | thumbnail'",
+    :label => "$(this).attr('href')"
+    },
+  "#item-components #documents.documents-list .document .document-metadata a:not(.btn-file-download)" => {
+    :category => "'metadata link'",
+    :action => "$(this).parent('dd').attr('class')"
+    },
+  "#item-components .feature-head a" => {
+    :category => "'item contents'",
+    :action => "'browse all components'",
+    :label => "'browse all components (items section header)'"
+    },
+  "#item-components .browse-more a" => {
+    :category => "'item contents'",
+    :action => "'browse all components'",
+    :label => "'browse all components (items section bottom)'"
+    },
+
+  #// Item Options Bar
+  "#item-options #imagecount-indicator" => {
+    :category => "'item options'",
+    :action => "'image count'" 
+    },
+
+  "#item-options #file-dropdown" => {
+    :category => "'item options'",
+    :action => "'file link'" 
+    },
+  "#item-options #file-menu input[type=submit]" => {
+    :category => "'item options'",
+    :action => "'file link'"
+    },
+  "#item-options #file-menu a" => {
+    :category => "'item options'",
+    :action => "'file link'",
+    :label => "defaultLabel(link) + ' | ' + $(this).attr('href')"
+    },
+  "#item-options #file-link a" => {
+    :category => "'item options'",
+    :action => "'file link'",
+    :label => "defaultLabel(link) + ' | ' + $(this).attr('href')"
+    },
+
+
+  "#item-options #download-dropdown" => {
+    :category => "'item options'",
+    :action => "'download'" 
+    },
+  "#item-options #download-menu input[type=submit]" => {
+    :category => "'file download'",
+    :action => "'derivative file'"
+    },
+  "#item-options #download-menu a" => {
+    :category => "'file download'",
+    :action => "'derivative file'",
+    :label => "defaultLabel(link) + ' | ' + $(this).attr('href')"
+    },
+  "#item-options #share-dropdown" => {
+    :category => "'item options'",
+    :action => "'share'" 
+    },
+  "#item-options #copyable-embed-code" => {
+    :category => "'item options'",
+    :action => "'embed'",
+    :label => "'embed code box'"
+    },
+  "#item-options #copyable-permalink" => {
+    :category => "'item options'",
+    :action => "'permalink'",
+    :label => "'permalink box'"
+    },
+
+  #// Related Items
+  "#related-items #documents.gallery .document .thumbnail-wrapper .caption a" => {
+    :category => "'related items'",
+    :action => "'document result | grid view | title'",
+    :label => "$(this).attr('href')"
+    },
+  "#related-items #documents.gallery .document .thumbnail-wrapper > a" => {
+    :category => "'related items'",
+    :action => "'document result | grid view | thumbnail'",
+    :label => "$(this).attr('href')"
+    },
+
+
+  #// OPEN SEADRAGON IMAGE VIEWER
+  #// ===========================
+
+  ".openseadragon-container [id*=referencestrip-]" => {
+    :category => "'image toolbar'",
+    :action => "'thumb strip'",
+    :label => "'page ' + (link.index() + 1)",
+    :intercept => "e.stopPropagation();",
+    :document_listener => true
+    },
+  ".openseadragon-container #image-toolbar button .btn-wrapper" => {
+    :link => "$(this).parent()",
+    :category => "'image toolbar'",
+    :document_listener => true
+    },
+  ".openseadragon-container #image-toolbar a" => {
+    :category => "'image toolbar'",
+    :document_listener => true
+    },
+  ".openseadragon-container #image-toolbar input#page-jumper-text" => {
+    :category => "'image toolbar'",
+    :action => "'page jumper'",
+    :label => "'click box'",
+    :document_listener => true
+    },
+  ".openseadragon-container #image-toolbar form#page-jumper" => {
+    :event => "submit",
+    :category => "'image toolbar'",
+    :action => "'page jumper'",
+    :label => "'jump to page'",
+    :document_listener => true
+    },
+
+    #// EMBEDDED UI FOR OPEN SEADRAGON
+    #// =============================
+    ".iframe-embed-title" => {
+      :category => "'embedded item info'",
+      :action => "'title'"
+    },
+    ".iframe-embed-collection" => {
+      :category => "'embedded item info'",
+      :action => "'collection'"
+    },
+    "#iframe-embed-info-button" => {
+      :category => "'embedded item info'",
+      :action => "'info button'"
+    },
+    "#iframe-embed-share-button" => {
+      :category => "'embedded item info'",
+      :action => "'share button'"
+    },
+
+  #// JWPLAYER AUDIO & VIDEO PLAYER
+  #// =============================
+  "#jwplayer-element" => {
+    :event => "play complete fullscreen playlist-item-change playlist-complete",
+    :category => "'audiovisual'",
+    :action => "(e.handleObj.type.match('^playlist') ? 'av playlist: ' : 'av file: ') + e.handleObj.type",
+    :label => "$(this).find('video').attr('src')", #// works for audio & video alike
+    :document_listener => true
+  },
+  "#av-playlist-nav ul a" => {
+    :category => "'audiovisual'",
+    :action => "'av playlist: playlist-item-change navstrip'",
+    :label => "$(this).attr('href')",
+    :document_listener => true
+  },
+  "#interactive-transcript .tr-cue" => {
+    :category => "'audiovisual'",
+    :action => "'interactive transcript: cue click'",
+    :label => "$(this).attr('id')"
+  },
+  "#transcript-expand" => {
+    :category => "'audiovisual'",
+    :action => "'interactive transcript: expand'",
+    :label => "$(this).data('state')"
+  },
+  ".jump-av" => {
+    :category => "'audiovisual'",
+    :action => "'description timecode: click'",
+    :label => "$(this).data('jump-sec')",
+    :document_listener => true
+  },
+  "#download-transcript-dropdown" => {
+    :category => "'audiovisual'",
+    :action => "'interactive transcript: show download menu'"
+  },
+  "ul.caption-download-menu > li > ul > li > a" => {
+    :category => "'audiovisual'",
+    :action => "'interactive transcript: download'"
+  },
+  "ul.caption-download-menu > li > ul > li.dropdown-submenu > ul > li > a" => {
+    :category => "'audiovisual'",
+    :action => "'interactive transcript: download'",
+    :label => "$(this).closest('ul.dropdown-menu').prev('a').text().trim() + ' ' + $(this).text().trim()"
+  }
+
+}
+
+%>
+
+var eventTracking = (function () {
+
+  var config = {
+    categoryDataAttribute: 'ga-category',
+    actionDataAttribute: 'ga-action',
+    labelDataAttribute: 'ga-label'
+  }
+
+  // PUBLIC METHODS
+  // ===============
+
+  function listenForClicks () {
+
+    <%# Create an event listener for each selector configured above %>
+
+    <% @selectors.each do |selector, props| %>
+      <% if (props[:document_listener] === true) %>
+        $(document).on('<%= props[:event] || "click contextmenu" %>', '<%= selector %>', function(e){
+      <% else %>
+        $('<%= selector %>').on('<%= props[:event] || "click contextmenu" %>', function(e){
+      <% end %> 
+           <%= props[:intercept] %>
+           var link = <%= props[:link] || "$(this)" %>;
+           var ga_event = {};
+           ga_event.category = <%= props[:category] || "defaultCategory(link)" %>;
+           ga_event.action = <%= props[:action] || "defaultAction(link)" %>;
+           ga_event.label = <%= props[:label] || "defaultLabel(link)" %>;
+           ga_event.custom_dimensions = {};
+           sendEventData(ga_event);
+         });
+    <% end %>
+
+
+    <%#// Listen for Download Button clicks, track as a GA event %>
+    $('.btn-file-download').on('click contextmenu', function(e){
+
+      <%#// Google Analytics Custom Dimensions to Track on Download %>
+      <%#// See https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets %>
+      var ga_event = {};
+      ga_event.category = 'file download';
+      ga_event.action = 'master file';
+      ga_event.label = $(this).attr('href');
+      ga_event.custom_dimensions = {};
+      ga_event.custom_dimensions = {
+        'dimension1': 'file download', // DDR View Type
+        'dimension2': $(this).data('ga-permanent-id'), // DDR Permanent ID
+        'dimension3': 'component', // DDR Document Model
+        'dimension4': $(this).data('ga-admin-set'), // DDR Admin Set
+        'dimension5': $(this).data('ga-collection'), // DDR Collection
+        'dimension6': $(this).data('ga-item'), // DDR Item
+      };
+      sendEventData(ga_event);
+    });
+
+  }
+
+  // PRIVATE METHODS
+  // ===============
+  
+  function defaultCategory (link) {
+    var category;
+
+    // Default Category Determination Progression: 
+    // 1. a@data-ga-category
+    // 2. id of 1st parent element with id
+
+    if (link.data(config.categoryDataAttribute)) { // this might need camelCase for hyphenated attribute like data-ga-category; see http://stackoverflow.com/questions/22753629/jquery-get-html-5-data-attributes-with-hyphens-and-case-sensitivity 
+      category = link.data(config.categoryDataAttribute);
+    } else if (link.parent().closest('[id]').attr('id')) {
+      category = link.parent().closest('[id]').attr('id'); // id from nearest ancestor with one
+    } else {
+      category = "top-level";
+    }
+    return category;
+  }
+
+  function defaultAction (link) {
+    var action;
+
+    // Default Action Determination Progression: 
+    // 1. a@data-ga-action
+    // 2. a@id self
+    // 3. id of 1st parent element w/id
+
+    if (link.data(config.actionDataAttribute)) {
+      action = link.data(config.actionDataAttribute);
+    } else if ( link.closest('[id]').attr('id') ) {
+      action = link.closest('[id]').attr('id'); // own id, else nearest ancestor with one
+    } else {
+      action = "top-level";
+    }
+    return action;
+  }
+
+  function defaultLabel (link) {
+    var label;
+
+    // Default Label Determination Progression: 
+    // 1. @data-ga-label
+    // 2. use the link text or a property, different for <a>, <button>, <input> elements
+
+    if (link.data(config.labelDataAttribute)) {
+      label = link.data(config.labelDataAttribute);
+    } else {
+
+      if(link.is("[data-toggle=dropdown]")) {
+        label = "dropdown" + (link.attr('aria-expanded') == 'true' ? ' [collapse]' : ' [expand]');
+      } else if (link.is('a')) {
+        label = ($.trim(link.text()) || link.children('img:first').attr('alt') || link.attr('title'));              
+      } else if (link.is('button')) {
+        label = (link.attr('aria-label') || link.attr('title') || $.trim(link.text()) );
+          if(link.is("[data-toggle=collapse]")) {
+            label += (link.attr('aria-expanded') == 'true' ? ' [collapse]' : ' [expand]');
+          }
+      } else if (link.is('input')) {
+        label = (link.attr('name') || link.attr('value') || link.attr('placeholder'));
+      } else {
+        label = "no label";
+      }
+    }
+
+    return label;
+  }
+
+  function sendEventData(ga_event) {
+
+    <% if ENV['GOOGLE_ANALYTICS_TRACKING_ID'].present? %>
+      sendDataToGoogleAnalytics(ga_event);
+    <% end %>
+    <% if ENV['GOOGLE_ANALYTICS_DEBUG'] == 'true' %>
+      console.log('GA Event Track', [ga_event.category, ga_event.action, ga_event.label, ga_event.custom_dimensions]);
+    <% end %>
+  }
+
+  function sendDataToGoogleAnalytics(ga_event) {
+
+    <%# Event data gets sent via asynchronous beacon, rather than use a timeout delay or %>
+    <%# hitCallback method. This is set in the GA partial: ga('set', 'transport', 'beacon'); %>
+    <%# More info: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon %>
+    <%# https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits#specifying_different_transport_mechanisms %>
+    <%# http://caniuse.com/#feat=beacon %>
+
+    ga('send', 'event', ga_event.category, ga_event.action, ga_event.label, ga_event.custom_dimensions);
+
+  }
+
+  return {
+    // Expose Public Methods       
+    listenForClicks: listenForClicks
+  };
+
+})();
+
+$( document ).ready(function() {
+  eventTracking.listenForClicks();
+
+  // Facet values and modal "more" browse helper
+  // -------------------------------------------
+
+  $(document).on('click', 'ul.facet-values a, .facet_pagination a.more_facets_link', function(e){
+    var link = $(this);
+    // Carry the facet ID over to the modal "more" browse so clicks in there
+    // can be attributed to the respective facet in GA Event Tracking.
+    $('#ajax-modal').addClass('facet-browse');
+    $('#ajax-modal .modal-dialog').first().attr('id', link.closest('[id]').attr('id'));
+  });
+
+
+});
