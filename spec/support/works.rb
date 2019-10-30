@@ -83,7 +83,7 @@ THIRD_WORK = {
   member_of_collection_ids_ssim: ['coll123'],
   read_access_group_ssim: ["public"],
   thumbnail_url_ss: ["http://thumbnail/work3.jpg"],
-  visibility_ssi: ['discovery']
+  visibility_ssi: ['open']
 }.freeze
 
 FIRST_COLLECTION = {
