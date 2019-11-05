@@ -40,16 +40,6 @@
         text-align: center;
       }
     }
-
-    .extra-result-see-more {
-      display: none;
-      a {
-        border: 1px solid #ddd;
-        padding: 20px;
-        font-size: 18px;
-        display: block;
-      }
-    }
   }
   @media screen and (max-width: 1199px) {
     #documents.row.gallery {
@@ -109,3 +99,13 @@
     }
   }
 }
+
+    .extra-result-see-more {
+      a {
+        border: 1px solid #ddd;
+        padding: 20px;
+        font-size: 18px;
+        display: block;
+        margin-top: 60px;
+      }
+    }
