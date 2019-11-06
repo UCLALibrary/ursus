@@ -6,15 +6,3 @@
     </div>
   </div>
 </div>
-
-<% if document_counter + 1 == current_per_page and @response.total != current_per_page %>
-  <div class='document col-6 col-sm-6 col-md-6 col-lg-4 extra-result-see-more'>
-    <% current_next_page = @response.next_page.to_s %>
-    <%= page_parameters = params.merge(:only_path => false, page: current_next_page) %>
-    <% page_params = page_parameters['page'] %>
-    <% per_page_params = page_parameters['per_page'] || 10 %>
-    <% q_params = page_parameters['q'] %>
-    <% search_field_params = page_parameters['search_field'] %>
-    <%= link_to "See More >", "/catalog?page=#{page_params}&per_page=#{per_page_params}&q=#{q_params}&search_field=#{search_field_params}" %>
-  </div>
-<% end %>
