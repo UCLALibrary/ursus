@@ -13,12 +13,13 @@ $grid-breakpoints: (
     sm: 540px,
   // Medium screen / tablet
     md: 720px,
-  // Large screen / desktop
-    lg: 960px,
+  // Large screen / desktop was 960
+    lg: 990px,
   // Extra large screen / wide desktop
     xl: 1200px
 );
 
+// this affects the catalog results on the index page
 $container-max-widths: (
   xs: 767px,
   sm: 990px,
