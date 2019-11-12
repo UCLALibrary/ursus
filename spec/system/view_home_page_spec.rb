@@ -38,6 +38,16 @@ RSpec.describe 'viewing the home page', :clean, type: :system, js: false do
     expect(page).to have_link 'Contact'
   end
 
+  it 'has a link to the legacy site' do
+    visit('/')
+    expect(page).to have_link 'Visit Our Legacy Site'
+  end
+
+  it 'has a feedback link' do
+    visit('/')
+    expect(page).to have_link 'Give Us Feedback'
+  end
+
   it 'doesn\'t have Google Analytics when it shouldn\'t' do
     visit('/')
     expect(page).not_to have_selector 'script#analytics-script'
