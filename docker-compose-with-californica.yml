@@ -15,7 +15,7 @@ services:
       SOLR_URL: http://solr:8983/solr/californica
       SOLR_TEST_URL: http://solr_test:8983/solr/californica
     ports:
-      - "3003:3000"
+      - "127.0.0.1:3003:3000"
     volumes:
       - .:/ursus
       - bundle_dir:/usr/local/bundle

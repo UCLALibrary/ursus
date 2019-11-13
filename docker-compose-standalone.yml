@@ -17,7 +17,7 @@ services:
       SOLR_URL: http://solr:8983/solr/calursus
       SOLR_TEST_URL: http://solr_test:8983/solr/calursus
     ports:
-      - "3003:3000"
+      - "127.0.0.1:3003:3000"
     volumes:
       - .:/ursus
       - bundle_dir:/usr/local/bundle
@@ -28,19 +28,19 @@ services:
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - mysql_data:/var/lib/mysql
     ports:
-      - 3306:3306
+      - "127.0.0.1:3306:3306"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
 
   solr:
     image: uclalibrary/solr-ursus
     ports:
-      - 8983:8983
+      - "127.0.0.1:8983:8983"
 
   solr_test:
     image: uclalibrary/solr-ursus
     ports:
-      - 8985:8983
+      - "127.0.0.1:8985:8983"
   dockerhost:
     image: qoomon/docker-host
     cap_add: [ 'NET_ADMIN', 'NET_RAW' ]

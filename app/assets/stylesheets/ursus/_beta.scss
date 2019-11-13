@@ -2,9 +2,9 @@
   color: #ffd100;
   font-weight: 700;
   position: relative;
-  top: 0.16em;
-  left: 1em;
-  font-size: .875em;
+  top: 0.22em;
+  left: 0.40em;
+  font-size: 1.25em;
   letter-spacing: 0.05em;
 }
 .beta-bar {
@@ -14,4 +14,11 @@
   padding: 2px 0px 2px 22px;
   font-size: .875em;
   font-weight: 800;
+}
+@media all and (max-width: 500px) {
+  .beta{
+    font-weight:600;
+    left:0.30em;
+    top:0.16em;
+  }
 }
