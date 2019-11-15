@@ -37,7 +37,7 @@ RSpec.feature "Search results page", :clean do
 
     it 'when on the home page' do
       visit '/'
-      expect(page).to have_xpath("//input[@placeholder='Search UCLA Library Digital Collections']")
+      expect(page).to have_xpath("//input[@placeholder='Search']")
     end
   end
 

@@ -4,8 +4,14 @@
       <% if counter = document_counter_with_offset(document_counter) %>
         <span class='document-counter'>
           <%= t('blacklight.search.documents.counter', counter: counter) %>
-          <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' ')) %>
-        </span>
+          <% if document[:has_model_ssim][0] == 'Collection' %>
+            <a href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=<%= document[:title_tesim][0] %>">
+              <%= document[:title_tesim][0] %>
+            </a>
+          <% else %>
+              <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' '), counter: counter) %>
+          <% end %> 
+            </span>
       <% end %>
     </header>
   </div>

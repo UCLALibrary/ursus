@@ -41,6 +41,18 @@
       }
     }
   }
+  @media screen and (max-width: 1199px) {
+    #documents.row.gallery {
+      .gallery-box {
+        outline: 1px solid $light-gray;
+        padding: 5px;
+        height: 200px;
+      }
+      .gallery-text {
+        margin: 10px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1199px) {
@@ -87,3 +99,20 @@
     }
   }
 }
+
+.extra-result-see-more {
+  display: none;
+
+  @media (min-width: 960px) {
+    display: block;
+  }
+
+   a {
+    border: 1px solid #ddd;
+    padding: 20px;
+    font-size: 18px;
+    display: block;
+    margin-top: 60px;
+  }
+}
+

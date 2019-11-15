@@ -13,6 +13,10 @@ Layout/BlockEndNewline:
   Exclude:
     - 'spec/features/search_catalog_spec.rb'
 
+Lint/RequireParentheses:
+  Exclude:
+    - app/helpers/blacklight_helper.rb
+
 Metrics/AbcSize:
   Exclude:
     - 'app/helpers/blacklight/url_helper_behavior.rb'
@@ -100,6 +104,11 @@ Style/BlockDelimiters:
 Style/IfUnlessModifier:
   Exclude:
     - 'app/helpers/blacklight/url_helper_behavior.rb'
+    - app/helpers/blacklight_helper.rb
+
+Style/AndOr:
+  Exclude:
+  - app/helpers/blacklight_helper.rb
 
 Style/MethodDefParentheses:
   Exclude:

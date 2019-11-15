@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-FIRST_WORK = {
-  id: '123',
+TEST1_WORK = {
+  id: 'test1123',
   ark_ssi: ['ark:/24920492/029402'],
   has_model_ssim: ['Work'],
   title_tesim: ['The Title of my Work'],
@@ -27,7 +27,8 @@ FIRST_WORK = {
   caption_tesim: ['the caption'],
   human_readable_language_tesim: ['No linguistic content'],
   photographer_tesim: ['Poalillo, Charles'],
-  member_of_collections_ssim: ['Photographic Collection'],
+  member_of_collections_ssim: ['Bennett'],
+  member_of_collection_ids_ssim: ['coll456'],
   license_tesim: ['https://creativecommons.org/licenses/by/4.0/'],
   services_contact_ssm: ['UCLA Special Collections Services Contact'],
   longitude_tesim: ['-118.4398'],
@@ -41,12 +42,12 @@ FIRST_WORK = {
   format_tesim: ['Film Still'],
   support_tesim: ['Mom & Dad'],
   read_access_group_ssim: ["public"],
-  thumbnail_url_ss: ["http://thumbnail/work1.jpg"],
+  thumbnail_url_ss: ["http://thumbnail/work_1.jpg"],
   visibility_ssi: ['open']
 }.freeze
 
-SECOND_WORK = {
-  id: 'id123',
+TEST2_WORK = {
+  id: 'test2id123',
   has_model_ssim: ['Work'],
   title_tesim: ['Title One'],
   sort_title_ssort: 'Title One',
@@ -59,19 +60,20 @@ SECOND_WORK = {
   photographer_tesim: ['Person 1', 'Person 2'],
   place_of_origin_tesim: ['Boston, MA', 'Philadelphia, PA', 'New York, NY', 'Los Angeles, CA'],
   location_tesim: ['search_results_spec'], # to control what displays,
-  member_of_collection_ids_ssim: ['coll123'],
+  member_of_collections_ssim: ['Bennett'],
+  member_of_collection_ids_ssim: ['coll456'],
   read_access_group_ssim: ["public"],
-  thumbnail_url_ss: ["http://thumbnail/work2.jpg"],
+  thumbnail_url_ss: ["http://thumbnail/work_2.jpg"],
   visibility_ssi: ['open']
 }.freeze
 
-THIRD_WORK = {
-  id: 'id456',
+TEST3_WORK = {
+  id: 'test3id456',
   has_model_ssim: ['Work'],
   title_tesim: ['Title Two'],
   sort_title_ssort: 'Title Two',
   identifier_tesim: ['ark 456'],
-  description_tesim: ['Description 3', 'Description 4'],
+  description_tesim: ['bennett', 'Description 4'],
   date_created_tesim: ["Date 1"],
   sort_year_isi: 1945,
   human_readable_resource_type_tesim: ['still image'],
@@ -79,36 +81,39 @@ THIRD_WORK = {
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
   collection_tesim: ['Slide Film', 'Analog', 'Photographs'],
-  member_of_collections_ssim: ['Photographic Collection'],
-  member_of_collection_ids_ssim: ['coll123'],
+  member_of_collections_ssim: ['Bennett'],
+  member_of_collection_ids_ssim: ['coll456'],
   read_access_group_ssim: ["public"],
-  thumbnail_url_ss: ["http://thumbnail/work3.jpg"],
+  thumbnail_url_ss: ["http://thumbnail/work_3.jpg"],
   visibility_ssi: ['open']
 }.freeze
 
-FIRST_COLLECTION = {
-  id: 'coll123',
+BENNETT_COLLECTION = {
+  id: 'coll456',
+  title_tesim: ['Bennett'],
   services_contact_ssm: ['someone somewhere'],
-  description_tesim: ['Description 3', 'Description 4', 'another desc'],
+  description_tesim: ['bennett', 'Description 4', 'another desc'],
   date_created_tesim: ["Date 1"],
   repository_tesim: ['UCLA Collection'],
   languages_tesim: ['en', 'es', 'gk'],
   human_readable_language_tesim: ['English', 'Spanish', 'Greek']
 }.freeze
 
-FOURTH_WORK = {
-  id: 'id456',
+TEST4_WORK = {
+  id: 'test4id456',
   has_model_ssim: ['Work'],
   title_tesim: ['Title Three'],
   sort_title_ssort: 'Title Three',
   identifier_tesim: ['ark 456'],
-  description_tesim: ['Description 3', 'Description 4', 'another desc'],
+  description_tesim: ['bennett', 'Description 4', 'another desc'],
   date_created_tesim: ["Date 1"],
   sort_year_isi: 1929,
   human_readable_resource_type_tesim: ['still image'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
   collection_tesim: ['Photographs', 'Digital'],
-  thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
+  thumbnail_url_ss: ["http://thumbnail/work_4.jpg"],
+  member_of_collections_ssim: ['Bennett'],
+  member_of_collection_ids_ssim: ['coll456'],
   visibility_ssi: ['open']
 }.freeze

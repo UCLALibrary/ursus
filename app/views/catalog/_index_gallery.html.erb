@@ -6,3 +6,10 @@
     </div>
   </div>
 </div>
+
+<% if document_counter + 1 == current_per_page and @response.total != current_per_page %>
+  <div class='document col-6 col-sm-6 col-md-6 col-lg-4 extra-result-see-more'>
+    <% current_next_page = @response.next_page.to_s %>
+    <%=  link_to "See More Results >", url_for(request.parameters.merge(:only_path => false, page: current_next_page)) %>
+  </div>
+<% end %>

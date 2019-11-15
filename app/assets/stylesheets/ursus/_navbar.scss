@@ -1,6 +1,6 @@
 @import 'colors';
 
-.navbar.navbar-expand-md.navbar-dark.bg-dark.topbar {
+.navbar.navbar-expand-lg.navbar-dark.bg-dark.topbar {
   background-color: $ucla-blue !important;
   padding-left: 0.75em !important;
   padding-right: 0.75em !important;
@@ -44,7 +44,7 @@
 
 .navbar-text-logo:hover {
   color: $ucla-gold !important;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .navbar-pipe::after {
@@ -58,6 +58,7 @@
 
 .topbar {
   .nav-item a {
+    padding-left: 30px;
     color: $white !important;
     font-weight: 300;
     font-size: 0.9em;
@@ -71,7 +72,7 @@
 
   .nav-item a:hover {
     color: $ucla-gold !important;
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   .nav-link {
@@ -122,6 +123,7 @@
   }
 
   .nav-item {
+    padding-left: 30px;
     padding: 8px 0;
   }
 
@@ -152,7 +154,8 @@
   }
 }
 
-@media (max-width:720px) and (min-width:990px) {
+
+@media (min-width:720px) and (max-width:990px) {
   .navbar {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -165,7 +168,7 @@
   }
 
   .navbar-nav.nav {
-    background-color: $ucla-darker-blue;
+   background-color: $ucla-darker-blue;
     display: inline-block;
     width: 100%;
     align-items: normal;
@@ -178,16 +181,26 @@
     min-width: 768px;
     position: relative;
     left: -15px;
+    margin-left: -15px;
+    margin-right: -27px;
   }
 
   .nav-item a {
     margin-right: 0;
-    background-color: green;
     color: white;
   }
 
   .nav-item {
     padding: 8px 0;
+    .about {
+      a {
+        color: $white !important;
+      }
+      a:hover {
+        color: $ucla-gold !important;
+        text-decoration: underline;
+      }
+    }
   }
 
   .nav-item:nth-child(1) {
@@ -202,4 +215,28 @@
     }
   }
 
+  .navbar-toggler {
+    border-color: transparent !important;
+    outline: none !important;
+  }
+
+  .navbar-toggler.custom-toggler {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .custom-toggler .navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,209,0, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+  }
+}
+
+.give-us-feedback {
+  padding: 10px 0px 10px 30px;
+  a {
+    color: $ucla-gold !important;
+  }
+  a:hover {
+    color: $ucla-gold !important;
+    text-decoration: underline;
+  }
 }
