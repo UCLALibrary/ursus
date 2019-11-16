@@ -2,6 +2,10 @@
 Rails.application.routes.draw do
   mount Flipflop::Engine => "/flipflop"
   get '/about', to: 'static#about'
+  get '/copyrights_and_collections', to: 'static#copyright'
+  get '/privacy_policy', to: 'static#privacy'
+  get '/contact', to: 'static#contact'
+  get '/migration_updates', to: 'static#migration_updates'
   get '/static', to: 'static#static_pages'
 
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new

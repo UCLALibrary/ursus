@@ -2,18 +2,27 @@
   margin-top: 50px;
 }
 
-.yellow-liner-static {
+.yellow-liner {
   height: 15px;
-  width: 385px;
   background-color: $ucla-gold;
   margin-bottom: 50px;
 }
-.yellow-liner-about {
-  height: 15px;
+.privacy {
+  width: 105px;
+}
+.contact {
+  width: 115px;
+}
+.about {
   width: 135px;
-  background-color: $ucla-gold;
-  margin-bottom: 50px;
 }
+.updates {
+  width: 262px;
+}
+.copyrights {
+  width: 385px;
+}
+
 .static-page-titles {
   color: $ucla-blue;
   font-family: Helvetica, Arial, sans-serif;
@@ -26,7 +35,6 @@
 .static-page-text {
   font-size: 12px;
   line-height: 2em;
-
 }
 
 .text-header1 {
