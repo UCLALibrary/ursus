@@ -1,0 +1,27 @@
+.static-page-title {
+  margin-top: 50px;
+}
+
+.yellow-liner {
+  height: 15px;
+  width: 469px;
+  background-color: $ucla-gold;
+  margin-bottom: 50px;
+}
+.static-page-titles {
+  color: $ucla-blue;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  line-height: 2em;
+}
+
+.static-page-text {
+  font-size: 12px;
+  line-height: 2em;
+}
+
+hr.static-page {
+  border-top: 1px solid $ucla-lighter-blue;
+}
