@@ -2,16 +2,22 @@
   margin-top: 50px;
 }
 
-.yellow-liner {
+.yellow-liner-static {
   height: 15px;
-  width: 469px;
+  width: 385px;
+  background-color: $ucla-gold;
+  margin-bottom: 50px;
+}
+.yellow-liner-about {
+  height: 15px;
+  width: 135px;
   background-color: $ucla-gold;
   margin-bottom: 50px;
 }
 .static-page-titles {
   color: $ucla-blue;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: .15em;
   line-height: 2em;
@@ -20,6 +26,19 @@
 .static-page-text {
   font-size: 12px;
   line-height: 2em;
+
+}
+
+.text-header1 {
+  font-size: 14px;
+  color: $ucla-blue;
+  margin-bottom: 3px;
+}
+.text-header {
+  font-size: 14px;
+  color: $ucla-blue;
+  margin-top: 15px;
+  margin-bottom: 3px;
 }
 
 hr.static-page {
