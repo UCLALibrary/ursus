@@ -15,14 +15,8 @@
         <%= t('blacklight.search.documents.counter', counter: counter) %>
       </span>
     <% end %>
-    
-    <% if document[:has_model_ssim][0] == 'Collection' %>
-      <a href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=<%= document[:title_tesim][0] %>">
-        <%= document[:title_tesim][0] %>
-      </a>
-    <% else %>
-      <%= link_to_document document, counter: counter %>
-    <% end %>
+    <%= link_to_document document, counter: counter %>
+   
   </h3>
 
   <%= document_actions %>

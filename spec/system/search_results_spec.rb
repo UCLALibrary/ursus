@@ -8,9 +8,6 @@ RSpec.describe 'Search results page', type: :system, js: false do
     solr.add(work_1_attributes)
     solr.add(work_2_attributes)
     solr.add(work_3_attributes)
-    solr.add(collection_1_attributes)
-    solr.add(work_4_attributes)
-    solr.add(work_5_attributes)
     solr.commit
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
   end
@@ -20,12 +17,6 @@ RSpec.describe 'Search results page', type: :system, js: false do
   let(:work_2_attributes) { THIRD_WORK }
 
   let(:work_3_attributes) { FOURTH_WORK }
-
-  let(:collection_1_attributes) { BENNETT_COLLECTION }
-
-  let(:work_4_attributes) { TEST4_WORK }
-
-  let(:work_5_attributes) { TEST3_WORK }
 
   scenario do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
@@ -79,14 +70,6 @@ RSpec.describe 'Search results page', type: :system, js: false do
     expect(page).to have_content 'Title One'
   end
 
-  it 'displays Gallery View results with a collection item' do
-    visit '/catalog?q=bennett&search_field=all_fields'
-    click_on 'Gallery'
-    expect(page).to have_selector('.view-type-gallery.active')
-    expect(page).to have_content 'Bennett'
-    page.find_link('Bennett').click
-    expect(page).to have_current_path(/f%5Bmember_of_collections_ssim%5D%5B%5D=Bennett/)
-  end
   it 'displays List View results' do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec&view=list'
     click_on 'List'
@@ -95,14 +78,6 @@ RSpec.describe 'Search results page', type: :system, js: false do
     expect(page).to have_content 'Description: Description 1'
     expect(page).to have_content 'Resource Type: still image'
     expect(page).to have_content 'Date Created: 1923'
-  end
-
-  it 'displays List View results with a collection item' do
-    visit '/catalog?q=bennett&search_field=all_fields'
-    click_on 'List'
-    expect(page).to have_selector('.view-type-list.active')
-    expect(page).to have_content 'Bennett'
-    expect(page).to have_link(href: '/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Bennett')
   end
 
   it 'visiting the home page and getting the correct search field options' do
