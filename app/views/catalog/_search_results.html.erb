@@ -21,7 +21,7 @@
   <%= render 'browse_results' %>
 <% else %>
 <% if !@response['response']['docs'].empty? %>
-    <%= render 'collection_block' %>
+    <!--<%#= render 'collection_block' %>
     <ul class="nav nav-tabs mb-3" id="browse-by-title-tab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="browse-by-title-tab" data-toggle="tab" href="#browse-by-title" role="tab" aria-controls="home" aria-selected="true">Browse by Title</a>
@@ -36,20 +36,20 @@
         <a class="nav-link" id="find-this-collection-tab" data-toggle="tab" href="#find-this" role="tab" aria-controls="contact" aria-selected="false">Find This Collection</a>
       </li>
     </ul>
-    <% document = collection_block_presenter.collection_document %>
+    <% document = collection_block_presenter.collection_document %> -->
     <div class="tab-content" id="collection-tab-content">
       <div class="tab-pane fade show active" id="browse-by-title" role="tabpanel" aria-labelledby="browse-by-title-tab">
         <%= render 'browse_results' %>
       </div>
-      <div class="tab-pane fade" id="about-collection" role="tabpanel" aria-labelledby="about-this-collection-tab">
-        <%= render 'catalog/collection/about_this_collection',  document: document  %>
+      <!--<div class="tab-pane fade" id="about-collection" role="tabpanel" aria-labelledby="about-this-collection-tab">
+        <%#= render 'catalog/collection/about_this_collection',  document: document  %>
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <%= render 'catalog/collection/service_contact', presenter: collection_block_presenter  %>
+        <%#= render 'catalog/collection/service_contact', presenter: collection_block_presenter  %>
       </div>
       <div class="tab-pane fade" id="find-this" role="tabpanel" aria-labelledby="find-this-collection-tab">
-        <%= render 'catalog/collection/find_this_collection', document: document  %>
-      </div>
+        <%#= render 'catalog/collection/find_this_collection', document: document  %>
+      </div> -->
     </div>
   <% else %>
     No Results found.
