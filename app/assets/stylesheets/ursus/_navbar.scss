@@ -28,6 +28,18 @@
   }
 }
 
+.navbar-logo {
+  display: block;
+  margin-left: 2px !important;
+  height: inherit !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  flex: unset !important;
+  overflow: unset !important;
+  width: 350px !important;
+  
+}
+
 .navbar-text-logo {
   font-weight: 300;
   position: relative;
@@ -60,7 +72,7 @@
   .nav-item a {
     padding-left: 30px;
     color: $white !important;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 0.9em;
     letter-spacing: 0.05em;
     margin-right: 1em;
@@ -234,9 +246,16 @@
   padding: 10px 0px 10px 30px;
   a {
     color: $ucla-gold !important;
+    font-weight: 600;
   }
   a:hover {
     color: $ucla-gold !important;
     text-decoration: underline;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .navbar-logo{
+    width: 300px !important;
   }
 }
