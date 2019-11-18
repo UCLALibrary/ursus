@@ -1,6 +1,20 @@
-<nav class='navbar navbar-expand-lg beta-bar' style="display:<%= @display_option %>">
+<script type="application/javascript">
+function toggleFunction() {
+  document.getElementById("yellowBar").style.display = "none";
+}
+</script>
+
+<nav class='navbar navbar-expand-lg beta-bar' style="display:<%= @display_option %>" id="yellowBar">
   <span class='beta-text'>Welcome to Digital Collections (Beta)! This site is growing each week as we migrate content from our <a href='http://digital2.library.ucla.edu/'  target='_blank'>Legacy Site</a>.</span>
+  <span class='beta-text' style="float:right">
+  <div class='container-fluid'>
+  <div class='collapse navbar-collapse justify-content-md-end' id='user-util-collapse'>
+  <span class='beta-text'><a href='' onclick="toggleFunction()">Close X</a></span>
+      </div>
+      </div>
+      </span>
 </nav>
+
 <nav class='navbar navbar-expand-lg navbar-dark bg-dark topbar' role='navigation'>
   <div class='container-fluid'>
 
