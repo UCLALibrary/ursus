@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
 
   def display_banner?
     @path_check = ''
-    
-    if has_cookie?
+    if cookie?
       @display_option = "none"
     else
       @display_option = "block"
@@ -13,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def has_cookie?
+  def cookie?
     @has_cookie = cookies[:banner_display_option]
   end
 
