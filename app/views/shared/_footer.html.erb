@@ -1,14 +1,27 @@
-<footer class="footer">
-  <div class="container-fluid">
-
-    <div class="footer-links">
-      <a href="http://digital2.library.ucla.edu/copyright.html">Copyright and Collections</a>
-      <a href="http://www.library.ucla.edu/use/access-privileges/privacy-policy">Privacy Policy</a>
-      <a href="http://digital2.library.ucla.edu/contact.html">Contact</a>
+<footer>
+  <div class='footer-wrapper'>
+    <div class="col1">
+      <%= link_to(image_tag('ucla-library-logo.svg', class: 'logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank') %>
     </div>
-
-    <div class="footer-version">
-      <span class="version">Version <span title="<%= GIT_SHA %>"><%= BRANCH %> updated <%= LAST_DEPLOYED %></span></span>
+    <div class="col2">
+      <ul>
+        <li><%= link_to 'Copyright and Collections', 'http://digital2.library.ucla.edu/copyright.html', target: '_blank' %></li>
+        <li><%= link_to 'Privacy Policy', 'http://www.library.ucla.edu/use/access-privileges/privacy-policy', target: '_blank' %></li>
+        <li><%= link_to 'Contact Us', 'http://digital2.library.ucla.edu/contact.html', target: '_blank' %></li>
+      </ul>
+    </div>
+    <div class="col3">
+      <ul>
+        <li><%= link_to 'Visit Our Legacy Site', 'http://digital2.library.ucla.edu/', target: '_blank' %></li>
+        <li><a href='mailto:dlp@library.ucla.edu' target='_blank' >Give Us Feedback</a></li>
+        <!--<li>Migration Updates</li>-->
+      </ul>
     </div>
   </div>
 </footer>
+
+<div class='copyright'>
+  <div class='uc-regents'>
+    @ 2019 UC Regents. All rights reserved.
+  </div>
+</div>
