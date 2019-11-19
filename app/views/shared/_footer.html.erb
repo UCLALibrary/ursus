@@ -1,27 +1,92 @@
-<footer>
-  <div class='footer-wrapper'>
-    <div class="col1">
-      <%= link_to(image_tag('ucla-library-logo.svg', class: 'logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank') %>
-    </div>
-    <div class="col2">
-      <ul>
-        <li><%= link_to 'Copyright and Collections', 'http://digital2.library.ucla.edu/copyright.html', target: '_blank' %></li>
-        <li><%= link_to 'Privacy Policy', 'http://www.library.ucla.edu/use/access-privileges/privacy-policy', target: '_blank' %></li>
-        <li><%= link_to 'Contact Us', 'http://digital2.library.ucla.edu/contact.html', target: '_blank' %></li>
-      </ul>
-    </div>
-    <div class="col3">
-      <ul>
-        <li><%= link_to 'Visit Our Legacy Site', 'http://digital2.library.ucla.edu/', target: '_blank' %></li>
-        <li><a href='mailto:dlp@library.ucla.edu' target='_blank' >Give Us Feedback</a></li>
-        <!--<li>Migration Updates</li>-->
-      </ul>
-    </div>
-  </div>
-</footer>
+footer {
+  background-color: $ucla-darker-blue;
+  font-family: Helvetica;
+  padding: 50px 0 50px 50px;
+  margin-top: 100px;
 
-<div class='copyright'>
-  <div class='uc-regents'>
-    @ 2019 UC Regents. All rights reserved.
-  </div>
-</div>
+  .footer-wrapper {
+    display: flex !important;
+    max-width: 1440px;
+    width: 100%;
+  }
+
+  ul {
+  padding: 0;
+  list-style-type: none;
+  }
+
+  li {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.2rem;
+    padding: .75rem 0;
+    margin-left: 0;
+  }
+  .logo {
+    max-width: 12.5rem;
+    width: 100%;
+  }
+}
+
+.copyright {
+  background-color: $ucla-blue;
+  width: 100%;
+  height: 40px;
+  .uc-regents {
+    color: $white;
+    font-size: 0.75em;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 12px;
+  }
+}
+
+// col-spans
+
+.col1 {
+  flex-basis: 25%;
+  align-self: center;
+  margin-right: 1rem;
+}
+.col2 {
+  flex-grow: 2;
+  flex-shrink: 0;
+  flex-basis: max-content;
+  li {
+    color: #fff;
+    a {
+      color: $white !important;
+      display: inline-block;
+    }
+    a:hover {
+      color: $ucla-gold !important;
+      text-decoration: underline;
+    }
+  }
+}
+.col3 {
+  flex-grow: 8;
+  li {
+    color: #FFD100;
+    a {
+      color: $ucla-gold !important;
+      display: inline-block;
+    }
+    a:hover {
+      color: $ucla-gold !important;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 768px){
+  footer {
+    .footer-wrapper {
+      display: block !important;
+    }
+    .col2 {
+      margin-top: 1.5rem;
+    }
+  }
+}
