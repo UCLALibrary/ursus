@@ -1,5 +1,25 @@
 # frozen_string_literal: true
 class ApplicationController < ActionController::Base
+  before_action :display_banner?
+
+  def display_banner?
+    @path_check = ''
+    if cookie?
+      @display_option = "none"
+    else
+      @display_option = "block"
+      set_banner_cookie
+    end
+  end
+
+  def cookie?
+    @has_cookie = cookies[:banner_display_option]
+  end
+
+  def set_banner_cookie
+    cookies[:banner_display_option] = "banner_off"
+  end
+
   helper Openseadragon::OpenseadragonHelper
   # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
