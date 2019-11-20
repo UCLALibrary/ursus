@@ -1,54 +1,77 @@
-.static-page-title {
-  margin-top: 50px;
+.static-container {
+   max-width: 1140px;
+   padding: 0px 50px;
+   margin-top: 50px;
 }
 
-.yellow-liner {
-  height: 15px;
-  background-color: $ucla-gold;
+.static-page-title {
+  display: inline-block;
   margin-bottom: 50px;
-}
-.privacy {
-  width: 105px;
-}
-.contact {
-  width: 115px;
-}
-.about {
-  width: 135px;
-}
-.updates {
-  width: 262px;
-}
-.copyrights {
-  width: 385px;
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    border-bottom: 15px solid $ucla-gold;
+    padding-bottom: 8px;
+  }
 }
 
 .static-page-titles {
+  width: 35%;
   color: $ucla-blue;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: .15em;
-  line-height: 2em;
+  line-height: 30px;
 }
 
 .static-page-text {
-  font-size: 12px;
-  line-height: 2em;
-}
-
-.text-header1 {
-  font-size: 14px;
-  color: $ucla-blue;
-  margin-bottom: 3px;
-}
-.text-header {
-  font-size: 14px;
-  color: $ucla-blue;
-  margin-top: 15px;
-  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 36px;
+  padding: 0px 10px;
 }
 
 hr.static-page {
   border-top: 1px solid $ucla-lighter-blue;
+  margin: 40px 0px;
+}
+
+@media screen and (max-width: 576px) {
+  .static-container {
+    max-width: 1140px;
+    padding: 0px 10px;
+    margin-top: 50px;
+ }
+ 
+ .static-page-title {
+   display: inline-block;
+   margin-bottom: 50px;
+   h2 {
+     font-size: 30px;
+     font-weight: 700;
+     border-bottom: 15px solid $ucla-gold;
+     padding-bottom: 8px;
+   }
+ }
+ 
+ .static-page-titles {
+   color: $ucla-blue;
+   font-family: Helvetica, Arial, sans-serif;
+   font-size: 18px;
+   font-weight: 700;
+   letter-spacing: .15em;
+   line-height: 28px;
+   margin-bottom: 20px;
+ }
+ 
+ .static-page-text {
+   font-size: 16px;
+   line-height: 32px;
+   padding: 0px 0px;
+ }
+ 
+ hr.static-page {
+   border-top: 1px solid $ucla-lighter-blue;
+   margin: 40px 0px;
+ }
 }
