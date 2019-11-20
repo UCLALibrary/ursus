@@ -1,0 +1,50 @@
+@import "colors";
+
+.beta-bar {
+  background-color: #ffd100;
+  font-weight: 700;
+  font-size: 0.875em;
+
+  .beta-bar-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .beta-text {
+    padding: 2px 0px 2px 20px;
+    flex-basis: 90%;
+  }
+
+  .beta-close {
+    font-weight: 500;
+  }
+
+  .beta-close:hover {
+    text-decoration: underline;
+  }
+
+  .fa-close {
+    color: $black;
+    padding-left: 0.5rem;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .beta-bar {
+    font-size: 0.8rem;
+
+    .beta-bar-wrapper {
+      align-items: flex-start;
+    }
+
+    .beta-text {
+      padding-top: 0;
+      padding-left: 0;
+      flex-basis: 80%;
+    }
+
+    .fa {
+      margin-right: 0;
+    }
+  }
+}
