@@ -1,117 +1,83 @@
-@import 'colors';
+@import "colors";
 
-.navbar.navbar-expand-lg.navbar-dark.bg-dark.topbar {
+.site-navbar {
   background-color: $ucla-blue !important;
   padding-left: 0.75em !important;
   padding-right: 0.75em !important;
-}
 
-.navbar-logo-block {
-  height: 44px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-.navbar-brand {
-  display: block;
-  margin-left: 2px !important;
-  background: transparent image_url('logo2.svg') no-repeat center !important;
-  height: inherit !important;
-  margin-right: 0 !important;
-  margin-top: 0 !important;
-  flex: unset !important;
-  overflow: unset !important;
-  width: 118px !important;
-  .logo-name {
-    display: none;
+  .navbar-logo-block {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-}
 
-.navbar-logo {
-  display: block;
-  margin-left: 2px !important;
-  height: inherit !important;
-  margin-right: 0 !important;
-  margin-top: 0 !important;
-  flex: unset !important;
-  overflow: unset !important;
-  width: 350px !important;
-  
-}
+  .navbar-logo {
+    width: 350px !important;
+  }
 
-.navbar-text-logo {
-  font-weight: 300;
-  position: relative;
-  top: 0.16em;
-  left: 0.7em;
-  color: $white !important;
-  font-size: 0.9em;
-  letter-spacing: 0.05em;
-}
+  .beta-logo {
+    color: #ffd100;
+    font-weight: 700;
+    position: relative;
+    top: 0.22em;
+    left: 0.4em;
+    font-size: 1.25em;
+    letter-spacing: 0.05em;
+  }
 
-.navbar-text-logo:visited {
-  color: $white !important;
-}
-
-.navbar-text-logo:hover {
-  color: $ucla-gold !important;
-  text-decoration: underline;
-}
-
-.navbar-pipe::after {
-  content: '|';
-  position: relative;
-  left: 0em;
-  top: 0em;
-  font-weight: 300;
-  color: $ucla-lighter-blue;
-}
-
-.topbar {
   .nav-item a {
-    padding-left: 30px;
     color: $white !important;
     font-weight: 600;
     font-size: 0.9em;
     letter-spacing: 0.05em;
-    margin-right: 1em;
+    margin-right: 2em;
+
+    &:hover {
+      color: $ucla-gold !important;
+      text-decoration: underline;
+    }
   }
 
-  .nav-item a:visited {
-    color: $white !important;
-  }
-
-  .nav-item a:hover {
-    color: $ucla-gold !important;
-    text-decoration: underline;
-  }
-
-  .nav-link {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  .nav-item-feedback {
+    // padding: 10px 0px 10px 30px;
+    a {
+      color: $ucla-gold !important;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      // margin-right: 2em;
+    }
+    a:hover {
+      color: $ucla-gold !important;
+      text-decoration: underline;
+    }
   }
 }
 
-.navbar > .container {
-  flex-wrap: nowrap;
-}
-
-.navbar-nav.nav {
-  align-items: center;
-  position: absolute;
-}
-
-@media screen and (max-width: 719px) {
-  .navbar {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+@media (max-width: 990px) {
+  .navbar-toggler {
+    border-color: transparent !important;
+    outline: none !important;
   }
 
-  .navbar > .container {
-    max-width: 100%;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+  .navbar-toggler.custom-toggler {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .custom-toggler .navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,209,0, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+  }
+
+  .site-navbar {
+    .navbar-logo-block {
+      height: 45px;
+    }
+
+    .nav-item a,
+    .nav-item-feedback a {
+      padding-left: 15px;
+    }
   }
 
   .navbar-nav.nav {
@@ -134,9 +100,10 @@
     margin-right: 0;
   }
 
-  .nav-item {
+  .nav-item,
+  .nav-item-feedback {
     padding-left: 30px;
-    padding: 8px 0;
+    padding: 12px 0;
   }
 
   .nav-item:nth-child(1) {
@@ -150,112 +117,16 @@
       text-decoration: none;
     }
   }
-
-  .navbar-toggler {
-    border-color: transparent !important;
-    outline: none !important;
-  }
-
-  .navbar-toggler.custom-toggler {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .custom-toggler .navbar-toggler-icon:hover {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,209,0, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
-  }
 }
 
-
-@media (min-width:720px) and (max-width:990px) {
-  .navbar {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .navbar > .container {
-    max-width: 100%;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-
-  .navbar-nav.nav {
-   background-color: $ucla-darker-blue;
-    display: inline-block;
-    width: 100%;
-    align-items: normal;
-    position: static;
-    margin-top: 20px;
-  }
-
-  .navbar-collapse {
-    margin-bottom: -8px;
-    min-width: 768px;
-    position: relative;
-    left: -15px;
-    margin-left: -15px;
-    margin-right: -27px;
-  }
-
-  .nav-item a {
-    margin-right: 0;
-    color: white;
-  }
-
-  .nav-item {
-    padding: 8px 0;
-    .about {
-      a {
-        color: $white !important;
-      }
-      a:hover {
-        color: $ucla-gold !important;
-        text-decoration: underline;
-      }
+@media (max-width: 576px) {
+  .site-navbar {
+    .navbar-logo {
+      width: 250px !important;
     }
-  }
 
-  .nav-item:nth-child(1) {
-    border-bottom: 1px solid #c3d7ee;
-  }
-
-  .nav-item:hover {
-    background-color: $ucla-darkest-blue;
-    a {
-      color: $white !important;
-      text-decoration: none;
+    .beta-logo {
+      font-size: 1rem;
     }
-  }
-
-  .navbar-toggler {
-    border-color: transparent !important;
-    outline: none !important;
-  }
-
-  .navbar-toggler.custom-toggler {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .custom-toggler .navbar-toggler-icon:hover {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,209,0, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
-  }
-}
-
-.give-us-feedback {
-  padding: 10px 0px 10px 30px;
-  a {
-    color: $ucla-gold !important;
-    font-weight: 600;
-  }
-  a:hover {
-    color: $ucla-gold !important;
-    text-decoration: underline;
-  }
-}
-
-@media all and (max-width: 500px) {
-  .navbar-logo{
-    width: 300px !important;
   }
 }

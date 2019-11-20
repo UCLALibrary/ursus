@@ -1,15 +1,5 @@
 @import "colors";
 
-.beta {
-  color: #ffd100;
-  font-weight: 700;
-  position: relative;
-  top: 0.22em;
-  left: 0.4em;
-  font-size: 1.25em;
-  letter-spacing: 0.05em;
-}
-
 .beta-bar {
   background-color: #ffd100;
   font-weight: 700;
@@ -49,7 +39,12 @@
 
     .beta-text {
       padding-top: 0;
+      padding-left: 0;
       flex-basis: 80%;
+    }
+
+    .fa {
+      margin-right: 0;
     }
   }
 }
