@@ -1,27 +1,55 @@
+@import "colors";
+
 .beta {
   color: #ffd100;
   font-weight: 700;
   position: relative;
   top: 0.22em;
-  left: 0.40em;
+  left: 0.4em;
   font-size: 1.25em;
   letter-spacing: 0.05em;
 }
+
 .beta-bar {
   background-color: #ffd100;
-}
-.beta-text {
-  padding: 2px 0px 2px 22px;
-  font-size: .875em;
-  font-weight: 800;
-}
-@media all and (max-width: 500px) {
-  .beta{
-    font-weight:600;
-    left:0.30em;
-    top:0.16em;
+  font-weight: 700;
+  font-size: 0.875em;
+
+  .beta-bar-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .beta-text {
+    padding: 2px 0px 2px 20px;
+    flex-basis: 90%;
+  }
+
+  .beta-close {
+    font-weight: 500;
+  }
+
+  .beta-close:hover {
+    text-decoration: underline;
+  }
+
+  .fa-close {
+    color: $black;
+    padding-left: 0.5rem;
   }
 }
-.fa-close:hover{
-  text-decoration: underline;
- }
+
+@media all and (max-width: 768px) {
+  .beta-bar {
+    font-size: 0.8rem;
+
+    .beta-bar-wrapper {
+      align-items: flex-start;
+    }
+
+    .beta-text {
+      padding-top: 0;
+      flex-basis: 80%;
+    }
+  }
+}
