@@ -51,6 +51,10 @@
     color: $ucla-darker-blue;
   }
 
+  .range_limit input.range_begin, .range_limit input.range_end {
+    width: 4.0em;
+  }
+
   .card-header.collapse-toggle[aria-expanded='true'] {
     background-color: #c3d7ee;
     color: $ucla-darkest-blue;
