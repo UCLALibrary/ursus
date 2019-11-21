@@ -75,3 +75,8 @@ flycheck_*.el
 .dir-locals.el
 
 public/uv
+
+*.DS_Store
+app/assets/images/.DS_Store
+app/assets/.DS_Store
+

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'static#contact'
   get '/migration_updates', to: 'static#migration_updates'
   get '/static', to: 'static#static_pages'
+  get '/version', to: 'static#version'
 
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   concern :searchable, Blacklight::Routes::Searchable.new

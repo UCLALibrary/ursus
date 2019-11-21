@@ -36,7 +36,7 @@ hr.static-page {
   margin: 40px 0px;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 960px) {
   .static-container {
     max-width: 1140px;
     padding: 0px 10px;
@@ -67,7 +67,7 @@ hr.static-page {
  .static-page-text {
    font-size: 16px;
    line-height: 32px;
-   padding: 0px 0px;
+   padding: 0px 0px 0px 0px;
  }
  
  hr.static-page {
