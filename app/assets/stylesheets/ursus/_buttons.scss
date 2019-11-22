@@ -14,6 +14,13 @@
 .btn-secondary {
   background-color: $light-gray !important;
   border-color: $light-gray !important;
+  color: $black !important;
+}
+
+input.btn-secondary[name="commit"] {
+  margin-left: 8px !important;
+  background-color: $ucla-blue !important;
+  color: $white !important;
 }
 
 .btn-outline-secondary {
