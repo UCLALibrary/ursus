@@ -1,0 +1,24 @@
+--- 
+en: 
+  static_pages: 
+    copyright_and_collections: 
+      copyright_statement: 'Copyright'
+      opt_out_procedure: 'Opt-Out Procedure'
+      page_title: 'Copyrights and Collections'
+      permission_to_publish: 'Requesting Reproductions or Permissions to Publish'
+    about:
+      page_title: 'About Us'
+      criteria: 'UCLA Library Criteria for Digital Projects'
+      mission: 'Our Mission'
+      services: 'Our Services'
+    privacy:
+      page_title: 'Privacy'
+      privacy_statement: 'UCLA Library Privacy Statement'
+    contact:
+      page_title: 'Contact'
+      collection_inquires: 'Collection inquiries, requesting reproductions, and permissions to publish'
+      special_collections: 'UCLA Library Special Collections'
+      not_working: 'Something not working?'
+    updates:
+      page_title: 'Migration Updates'
+      migration_updates: 'Migration Updates'
