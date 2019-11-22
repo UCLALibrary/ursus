@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   mount Flipflop::Engine => "/flipflop"
   get '/about', to: 'static#about'
+  get '/version', to: 'static#version'
 
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   concern :searchable, Blacklight::Routes::Searchable.new
