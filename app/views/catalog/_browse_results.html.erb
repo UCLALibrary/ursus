@@ -1,4 +1,9 @@
-<h4 class='catalog-results'><%= @response['response'].dig(:numFound) %> Catalog Results <%= render_results_collection_tools wrapping_class: "search-widgets" %></h4>
+<% url = request.original_url %>
+<% if url.include?('has_model_ssim') && url.include?('Collection') %>
+  <h4 class='catalog-results'><%= @response['response'].dig(:numFound) %> Collections <%= render_results_collection_tools wrapping_class: "search-widgets" %></h4>
+<% else %>
+  <h4 class='catalog-results'><%= @response['response'].dig(:numFound) %> Catalog Results <%= render_results_collection_tools wrapping_class: "search-widgets" %></h4>
+<% end %>
 
 <div class='rectangle'> <%= render 'search_header' %> </div>
 

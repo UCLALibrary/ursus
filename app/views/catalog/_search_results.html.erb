@@ -10,10 +10,15 @@
 <!-- This adds the Filtered result (breadcrumbs) -->
 <% content_for(:container_header) do -%>
   <h1 class='sr-only top-content-title'><%= t('blacklight.search.header') %></h1>
-  <div class='filter-box'>
-    <%= render 'constraints' %>
-    <%= render 'startover' %>
-  </div>
+  <% url = request.original_url %>
+  <% if url.include?('has_model_ssim') && url.include?('Collection') %>
+  <div class='space'></div>
+  <% else %>
+    <div class='filter-box'>
+      <%= render 'constraints' %>
+      <%= render 'startover' %>
+    </div>
+  <% end %>
 <% end %>
 
 <% collection_block_presenter = Ursus::CollectionBlockPresenter.new(response: @response) %>
