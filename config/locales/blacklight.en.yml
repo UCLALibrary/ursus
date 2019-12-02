@@ -15,7 +15,7 @@ en:
         search:
           placeholder: 'Search'
           placeholder_collection: 'Search this collection'
-      new_search: 'New Search'
+      new_search: 'Start New Search'
       fields:
         facet:
           date_created_tesim: 'Date Created'

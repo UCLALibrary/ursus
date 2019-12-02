@@ -2,16 +2,16 @@
 
   <div id='appliedParams' class='back-and-new-container'>
     <div class= 'previous-next'><%= render 'previous_next_doc' if @search_context %></div>
-    <div class='back-new'>
-      <%= link_to t('blacklight.search.new_search'), start_over_path, class: 'new-search-link back-and-new-links-show' %>
-      <%= link_back_to_catalog class: 'back-and-new-links-show back-to-search-link' %>
+    <div class='back-and-new-links-show' >
+      <%= link_to t('blacklight.search.new_search'), start_over_path, class: 'new-search-link btn' %>
+      <%= link_back_to_catalog label:'Back to Search Results', class: 'btn back-to-search-link' %>
     </div>
   </div>
 
 <% elsif current_search_session %>
 
   <div id='appliedParams' class='clearfix constraints-container'>
-    <%= link_to t('blacklight.search.start_over'), start_over_path, class: 'catalog_startOverLink btn btn-primary' %>
+    <%= link_to t('blacklight.search.start_over'), start_over_path, class: 'btn catalog_startOverLink' %>
     <%= link_back_to_catalog class: 'btn btn-outline-secondary' %>
   </div>
 
