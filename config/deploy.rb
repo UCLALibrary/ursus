@@ -49,3 +49,20 @@ append :linked_dirs, "tmp/sockets"
 
 append :linked_files, ".env.production"
 append :linked_files, "config/secrets.yml"
+
+### Ursus Feature Flags ################
+
+# Enable Sinai Manuscripts features
+if ENV['FEATURE_FLAG'] == 'sinaimanu'
+  namespace :ursus do
+    task :enable_sinai_manuscript_features do
+      on roles(:app) do
+        execute "cd #{deploy_to}/current; /usr/bin/env bundle exec rake ursus:sinai:on RAILS_ENV=production"
+      end
+    end
+  end
+
+  after 'deploy:published', 'ursus:enable_sinai_manuscript_features'
+end
+
+########################################
