@@ -1,115 +1,203 @@
-@import 'colors';
+@import "colors";
 
 .header-image-block {
-  p {
-    color: $gray;
-    text-align: right;
-    margin-right: 20px;
-    font-size: 12px;
-    margin-right: 20px;
-  }
-  a:link {
-    color: $gray !important;
-    text-align: right;
-    text-decoration: underline;
-    font-size: 12px;
-  }
-  a:active {
-    color: $gray !important;
-    text-align: right;
-    font-size: 12px;
-  }
-  a:hover {
-    color: $ucla-darkest-blue !important;
-    text-align: right;
-    font-size: 12px;
-  }
-}
-.jumbotron {
-  background-image: image-url('ucla_ladnn_cole_brothers_circus_elephants.jpg');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
+    url("ursus_home_masthead_img-sears-roebuck.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: 600px;
-  max-height: 600px;
-  margin-bottom: 0px !important;
-  margin-top: -6em;
+  position: relative;
+  height: 550px;
+  max-height: 550px;
 }
-
-.ucla-rectangle {
-  float: right;
-  max-height: 241px;
-  max-width: 630px;
-  background-color: rgba(0,0,0,0.73);
-  padding: 25px;
-  z-index: -500;
-  margin: 175px 20px 20px 20px;
-
+.header-image-overlay {
+  background-color: rgba(0, 0, 0, 0.73);
+  max-width: 599px;
+  width: 100%;
+  padding: 37px 28px;
+  position: absolute;
+  bottom: 0;
+  right: 50px;
   h1 {
-    color: #F6F1F1;
-    font-size: 3em;
-    line-height: 1em;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 50px;
   }
-  span {
-    color: $ucla-lighter-blue;
-  }
+}
+.header-image-caption {
+  color: #fff;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 14px;
+  position: absolute;
+  bottom: 5px;
+  left: 50px;
+}
+
+.home-page-lead {
   p {
-    color: white;
-    font-family: Helvetica;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    line-height: 19px;
-    text-align: left !important;
+    color: #333;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 36px;
   }
 }
 
-@media screen and (max-width: 1088px) {
-  .ucla-rectangle {
-    margin-top: 20px;
-    h1 {
-      color: #F6F1F1;
-      font-size: 2em;
-      line-height: 1em;
-      margin-bottom: 0.1em;
-    }
-  }
+hr.static-page {
+  border-top: 1px solid #8bb8e8;
+  margin: 40px 0px;
 }
 
-@media screen and (max-width: 547px) {
-  .ucla-rectangle {
-    float: none;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-    max-width: 95%;
-    max-height: 210px;
-    h1 {
-      color: #F6F1F1;
-      font-size: 1.75em;
-      line-height: 1em;
-    }
+@media (max-width: 1230px) {
+  .header-image-caption {
+    display: none;
   }
 }
-
-@media screen and (max-width: 539px) {
-  .ucla-rectangle {
-    float: none;
-    margin-top: 63px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-    max-width: 95%;
-    min-height: 215px;
+@media (max-width: 700px) {
+  .header-image-overlay {
+    right: 0;
+    max-width: 700px;
+    padding: 24px 15px;
     h1 {
-      color: #F6F1F1;
-      font-size: 1.5em;
-      line-height: 1em;
-      padding-bottom: 2px;
-      margin-bottom: 2px;
+      font-size: 40px;
+      line-height: 40px;
+      margin: 0 auto;
     }
+  }
+  .home-page-lead {
     p {
-      font-size: 12px;
-      padding-top: none;
-      margin-top: none;
+      font-size: 20px;
+      line-height: 30px;
     }
   }
 }
+
+@media (max-width: 576px) {
+  .header-image-overlay {
+    h1 {
+      font-size: 30px;
+      line-height: 30px;
+    }
+  }
+  .home-page-lead {
+    p {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+}
+
+// .header-image-block {
+//   p {
+//     color: $gray;
+//     text-align: right;
+//     margin-right: 20px;
+//     font-size: 12px;
+//     margin-right: 20px;
+//   }
+//   a:link {
+//     color: $gray !important;
+//     text-align: right;
+//     text-decoration: underline;
+//     font-size: 12px;
+//   }
+//   a:active {
+//     color: $gray !important;
+//     text-align: right;
+//     font-size: 12px;
+//   }
+//   a:hover {
+//     color: $ucla-darkest-blue !important;
+//     text-align: right;
+//     font-size: 12px;
+//   }
+// }
+// .jumbotron {
+//   background-image: image-url('ucla_ladnn_cole_brothers_circus_elephants.jpg');
+//   background-size: cover;
+//   height: 600px;
+//   max-height: 600px;
+//   margin-bottom: 0px !important;
+//   margin-top: -6em;
+// }
+
+// .ucla-rectangle {
+//   float: right;
+//   max-height: 241px;
+//   max-width: 630px;
+//   background-color: rgba(0,0,0,0.73);
+//   padding: 25px;
+//   z-index: -500;
+//   margin: 175px 20px 20px 20px;
+
+//   h1 {
+//     color: #F6F1F1;
+//     font-size: 3em;
+//     line-height: 1em;
+//   }
+//   span {
+//     color: $ucla-lighter-blue;
+//   }
+//   p {
+//     color: white;
+//     font-family: Helvetica;
+//     font-size: 16px;
+//     letter-spacing: 0.5px;
+//     line-height: 19px;
+//     text-align: left !important;
+//   }
+// }
+
+// @media screen and (max-width: 1088px) {
+//   .ucla-rectangle {
+//     margin-top: 20px;
+//     h1 {
+//       color: #F6F1F1;
+//       font-size: 2em;
+//       line-height: 1em;
+//       margin-bottom: 0.1em;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 547px) {
+//   .ucla-rectangle {
+//     float: none;
+//     margin-top: 20px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     padding: 15px;
+//     max-width: 95%;
+//     max-height: 210px;
+//     h1 {
+//       color: #F6F1F1;
+//       font-size: 1.75em;
+//       line-height: 1em;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 539px) {
+//   .ucla-rectangle {
+//     float: none;
+//     margin-top: 63px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     padding: 15px;
+//     max-width: 95%;
+//     min-height: 215px;
+//     h1 {
+//       color: #F6F1F1;
+//       font-size: 1.5em;
+//       line-height: 1em;
+//       padding-bottom: 2px;
+//       margin-bottom: 2px;
+//     }
+//     p {
+//       font-size: 12px;
+//       padding-top: none;
+//       margin-top: none;
+//     }
+//   }
+// }
