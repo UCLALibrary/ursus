@@ -33,10 +33,8 @@ function toggleFunction() {
 </nav>
 
 <!-- Searchbar -->
-<% unless controller.controller_name == 'catalog' && controller.action_name == 'show' %>
-  <div class='container' id='search-bar-container'>
-    <div class='navbar-search navbar navbar-light bg-faded ursus-search-bar' role='navigation'>
-      <%= render_search_bar %>
-    </div>
+<%# unless controller.controller_name == 'catalog' && controller.action_name == 'show' %>
+  <div class="navbar site-searchbar" role="search">
+    <%= render_search_bar %>
   </div>
-<% end %>
+<%# end %>
