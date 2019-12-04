@@ -116,7 +116,10 @@
 
     .btn {
       font-size: 1em;
-      background-color: $ucla-blue;
+      color: $ucla-gold;
+      background-color: $ucla-lightest-blue;
+      // border-color: $ucla-blue;
+      // border-width: 2px;
       margin-left: 5px;
     }
 
