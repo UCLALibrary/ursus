@@ -12,7 +12,7 @@ RSpec.describe 'view static pages', :clean, type: :system, js: false do
   context 'view About page' do
     it 'has the right header' do
       visit('/about')
-      expect(page).to have_content 'About UCLA Digital Collections'
+      expect(page).to have_content 'About Us'
     end
   end
 

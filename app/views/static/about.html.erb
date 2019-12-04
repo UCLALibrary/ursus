@@ -1,133 +1,71 @@
 <div class='static-container'>
-  <div class="about-page">
-    <h1 class="mt-3 mb-3">About UCLA Digital Collections</h1>
-    <hr></hr>
-    <div class="row">
-      <div class="col-md-12 mt-4 mb-4">
-        Give us feedback at <a href="mailto:dlp@library.ucla.edu">dlp@library.ucla.edu</a>.
-      </div>
+  <div class='static-page-title'>
+    <h2><%= t('static_pages.about.page_title') %></h2>
+    <div class='yellow-liner about'></div>
+  </div>
+
+  <div class='row'>
+    <div class='col-lg-4 static-page-titles'>
+      <%= t('static_pages.about.mission').upcase %>
     </div>
-    <div id="accordion">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              The UCLA Digital Collection's Mission
-            </button>
-          </h5>
-        </div>
-
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body">
-            The UCLA Digital Library Program (DLP) serves as the catalyst for the creation, management, and delivery of digital content in support of the UCLA Library mission and goals. The Program provides for the storage and dissemination of digital objects, including text, images, audio, and video in their various digital manifestations and combinations. The UCLA Library provides a web presence for digital collections, and provides storage, backup and digital preservation support for all digital content accepted into, or developed by, the Library.
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Our Services
-            </button>
-          </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-          <div class="card-body">
-            <h3 class="mb-5">Project Planning</h3>
-            <p>
-              Digital Library Program staff can provide assistance in the planning and management of digital projects. We work with faculty and various campus organizations to create digital collections to support both teaching and research. DLP staff can provide advice during the development of grant applications. Areas of expertise include: digitization standards, digitization costs, digitization methods, metadata standards, rights management, and usability issues.</p>
-              <h3 class="mt-5 mb-5">Project Management</h3>
-              <p>One of the keys to a successful project is strong project management. Once a digital project has been approved and funded, the Digital Library Program staff can work with the project team to assure proper management. DLP staff is experienced with the hiring and training of staff, establishing workflow and procedures, quality control, and budget management.</p>
-
-              <h3 class="mt-5 mb-5">Production Partner</h3>
-              <p><a href="#">Southern Regional Library Facility</a></p>
-              <p>Digital Library Program staff can provide assistance in the planning and management of digital projects. We work with faculty and various campus organizations to create digital collections to support both teaching and research. DLP staff can provide advice during the development of grant applications. Areas of expertise include: digitization standards, digitization costs, digitization methods, metadata standards, rights management, and usability issues.
-              </p>
-              <h3 class="mt-5 mb-5">Digital Preservation and Access</h3>
-              <p>The Digital Library provides backup and digital preservation support for all its collections. Digital master files are stored in their original, uncompressed format and can be made web accessible. Backup services are provided by Library Information Technology. In addition, the Library is working with the CDL Digital Preservation Program to provide for long-term preservation of the UCLA Library's digital assets.</p>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              UCLA Library Criteria for Digital Projects
-            </button>
-          </h5>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-          <div class="card-body">
-            <p>These criteria have been adopted by the UCLA Library as an aid in evaluating whether projects will be a good return on investment, and to help in establishing a strong rationale when requesting support from internal or external sources.</p>
-            <p>The criteria are designed to assess strengths and weaknesses and promote an analytical approach, but they do not have equal weight, and not all may be relevant to any given project.</p>
-            <ul>
-              <li>The project provides significant support for UCLA research and instruction.
-
-              </li><li>There are faculty and library advocates for the project.
-              </li><li>The project's intrinsic value will ensure long-term use by a significant audience within and/or beyond the UCLA community.
-              </li><li>The project can be completed with available funding, or has the potential to generate funding through grants, donors, or other external fund sources.
-              </li><li>The project will strengthen or enhance an existing CDL or UCLA resource, become part of an important virtual collection, or support a national initiative such as those sponsored by Association of Research Libraries and Digital Library Federation.
-              </li><li>UCLA has intellectual property rights to the content and can manage any required restrictions to access, or can realistically solve any rights issues.
-              </li><li>The project falls within traditional areas of library service or moves our services in a direction consonant with the Library's strategic directions.
-              </li><li>The project advances sustainable models for scholarly publishing.
-              </li><li>The project brings credit to UCLA library in a manner likely to generate further digital library projects and funding.
-              </li><li>The project has local or regional importance, and represents an effort only UCLA can initiate.
-              </li><li>The project is reasonable, practical, and achievable.
-              </li><li>The project saves money in the long term by eliminating the need to acquire resources, or by freeing up staff time.
-              </li><li>The project creates or sustains a partnership that the library will find valuable for future development.
-              </li><li>There is a compelling argument for digitizing material that is deteriorating.
-              </li><li>The project will expand our technical infrastructure or contribute to the development of national digital library standards. </li></ul>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingFour">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-              Copyright and Collections
-            </button>
-          </h5>
-        </div>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-          <div class="card-body">
-            <h3 class="mb-5">Requesting Reproductions or Permissions to Publish</h3>
-            The UCLA Digital Library does not handle requests for reproductions or permissions to publish. All requests for reproductions or permissions to publish should be directed to the item's holding repository. The name of the home repository can be found in either the item-level metadata (see an example) or in the collection record (example). In most cases, this will be the the UCLA Library Special Collections unit. Users can find information on requesting reproductions, as well as the "Request to Publish Form" on their "Special Collections Reproductions" page, or you can email spec-coll@library.ucla.edu.
-
-            <h3 class="mt-5 mb-5">Copyright</h3>
-            Materials in this collection may be protected by domestic and/or international copyright and property laws. Distribution or reproduction of copyrighted materials beyond that allowed by fair use requires the written permission of the copyright owners. To the extent that restrictions other than copyright apply, permission for distribution or reproduction from the applicable rights holder is also required. Responsibility for obtaining permission, and for any use, rests exclusively with the user.
-
-            <h3 class="mt-5 mb-5">Opt-Out Procedure</h3>
-            Your content helps us fulfill the UCLA Library mission of preserving and providing access to important cultural, political, and public health records. We urge you to let us preserve and make it available and accessible.
-
-            If your material has been included in our digital collections, you can request that we limit its public access. We ask that you consider this option very carefully. Should you decide that your content should be removed from our pages, we will continue to preserve it. For more information, contact: copyright@library.ucla.edu.
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingFive">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-              Contact
-            </button>
-          </h5>
-        </div>
-        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-          <div class="card-body">
-            <h3 class="mb-5">Collection inquiries, requesting reproductions, and permissions to publish</h3>
-            <p>For inquiries related to digital collections content or to request reproductions or permissions to publish, please contact the item's holding repository.</p>
-
-            <h3 class="mt-5 mb-5">Contact information</h3>
-            <b>UCLA Library Special Collections</b>:
-            <p>Users can find information on requesting reproductions, as well as the "Request to Publish Form" on their <a href="http://www.library.ucla.edu/use/access-privileges/print-copy-scan/special-collections-reproductions">Special Collections Reproductions</a> page, or you can email <a href="mailto:spec-coll@library.ucla.edu">spec-coll@library.ucla.edu</a>.</p>
-
-            <b>Chicano Studies Research Center</b>:
-            <p>Visit the <a href="http://www.chicano.ucla.edu/library">CSRC website</a> or send an email to <a href="mailto:librarian@chicano.ucla.edu">librarian@chicano.ucla.edu</a>.</p>
-
-            <h3 class="mt-5 mb-5">Something not working?</h3>
-            <p>If you experience any technical issues, please let us know <a href="mailto:dlp@library.ucla.edu">here</a></p>
-          </div>
-        </div>
+    <div class='col-lg-8'>
+      <div class='static-page-text'>
+        The UCLA Digital Library Program (DLP) serves as the catalyst for the creation, management, and delivery of digital content in support of the UCLA Library mission and goals. The Program provides for the storage and dissemination of digital objects, including text, images, audio, and video in their various digital manifestations and combinations. The UCLA Library provides a web presence for digital collections, and provides storage, backup and digital preservation support for all digital content accepted into, or developed by, the Library.
       </div>
     </div>
   </div>
+
+  <hr class='static-page'>
+
+  <div class='row'>
+    <div class='col-lg-4 static-page-titles'>
+      <%= t('static_pages.about.services').upcase %>
+    </div>
+    <div class='col-lg-8'>
+      <div class='static-page-text'>
+        <div class='text-header1'>Project Planning</div>
+          Digital Library Program staff can provide assistance in the planning and management of digital projects. We work with faculty and various campus organizations to create digital collections to support both teaching and research. DLP staff can provide advice during the development of grant applications. Areas of expertise include: digitization standards, digitization costs, digitization methods, metadata standards, rights management, and usability issues.
+        <div class='text-header'>Project Management</div>
+          One of the keys to a successful project is strong project management. Once a digital project has been approved and funded, the Digital Library Program staff can work with the project team to assure proper management. DLP staff is experienced with the hiring and training of staff, establishing workflow and procedures, quality control, and budget management.
+        <div class='text-header'>Production Partner</div>
+          <a href="#">Southern Regional Library Facility</a>
+          Digital Library Program staff can provide assistance in the planning and management of digital projects. We work with faculty and various campus organizations to create digital collections to support both teaching and research. DLP staff can provide advice during the development of grant applications. Areas of expertise include: digitization standards, digitization costs, digitization methods, metadata standards, rights management, and usability issues.
+        <div class='text-header'>Digital Preservation and Access</div>
+          The Digital Library provides backup and digital preservation support for all its collections. Digital master files are stored in their original, uncompressed format and can be made web accessible. Backup services are provided by Library Information Technology. In addition, the Library is working with the CDL Digital Preservation Program to provide for long-term preservation of the UCLA Library's digital assets.
+      </div>
+    </div>
+  </div>
+
+  <hr class='static-page'>
+
+  <div class='row'>
+    <div class='col-lg-4 static-page-titles'>
+      <%= t('static_pages.about.criteria').upcase %>
+    </div>
+    <div class='col-lg-8'>
+      <div class='static-page-text'>
+        These criteria have been adopted by the UCLA Library as an aid in evaluating whether projects will be a good return on investment, and to help in establishing a strong rationale when requesting support from internal or external sources.
+        <br><br>
+        The criteria are designed to assess strengths and weaknesses and promote an analytical approach, but they do not have equal weight, and not all may be relevant to any given project.
+        <ul>
+          <li>The project provides significant support for UCLA research and instruction.</li>
+          <li>There are faculty and library advocates for the project.</li>
+          <li>The project's intrinsic value will ensure long-term use by a significant audience within and/or beyond the UCLA community.</li>
+          <li>The project can be completed with available funding, or has the potential to generate funding through grants, donors, or other external fund sources.</li>
+          <li>The project will strengthen or enhance an existing CDL or UCLA resource, become part of an important virtual collection, or support a national initiative such as those sponsored by Association of Research Libraries and Digital Library Federation.</li>
+          <li>UCLA has intellectual property rights to the content and can manage any required restrictions to access, or can realistically solve any rights issues.</li>
+          <li>The project falls within traditional areas of library service or moves our services in a direction consonant with the Library's strategic directions.</li>
+          <li>The project advances sustainable models for scholarly publishing.</li><li>The project brings credit to UCLA library in a manner likely to generate further digital library projects and funding.</li>
+          <li>The project has local or regional importance, and represents an effort only UCLA can initiate.</li>
+          <li>The project is reasonable, practical, and achievable.</li>
+          <li>The project saves money in the long term by eliminating the need to acquire resources, or by freeing up staff time.</li>
+          <li>The project creates or sustains a partnership that the library will find valuable for future development.</li>
+          <li>There is a compelling argument for digitizing material that is deteriorating.</li>
+          <li>The project will expand our technical infrastructure or contribute to the development of national digital library standards.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class='static-page'>
 </div>
