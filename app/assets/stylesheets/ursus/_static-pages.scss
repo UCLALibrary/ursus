@@ -5,62 +5,46 @@
 }
 
 .static-page-title {
- display: inline-block;
- margin-bottom: 50px;
- h2 {
-   font-size: 36px;
-   font-weight: 700;
-   border-bottom: 15px solid $ucla-gold;
-   padding-bottom: 8px;
- }
+  display: inline-block;
+  margin-bottom: 50px;
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    border-bottom: 15px solid $ucla-gold;
+    padding-bottom: 8px;
+  }
 }
 
-.static-page-titles {
- width: 35%;
- color: $ucla-blue;
- font-family: Helvetica, Arial, sans-serif;
- font-size: 20px;
- font-weight: 700;
- letter-spacing: .15em;
- line-height: 30px;
+.static-page-subtitles {
+  width: 35%;
+  color: $ucla-blue;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  line-height: 30px;
 }
 
 .static-page-text {
- font-size: 18px;
- line-height: 36px;
- padding: 0px 10px;
-}
-
-hr.static-page {
- border-top: 1px solid $ucla-lighter-blue;
- margin: 40px 0px;
+  font-size: 18px;
+  line-height: 36px;
+  padding: 0px 10px;
 }
 
 @media screen and (max-width: 960px) {
-   .static-container {
-     max-width: 1140px;
-     padding: 0px 10px;
-     margin-top: 50px;
+  .static-container {
+    padding: 0px 10px;
   }
 
   .static-page-title {
-    display: inline-block;
-    margin-bottom: 50px;
     h2 {
       font-size: 30px;
-      font-weight: 700;
-      border-bottom: 15px solid $ucla-gold;
-      padding-bottom: 8px;
     }
   }
 
-  .static-page-titles {
+  .static-page-subtitles {
     color: $ucla-blue;
-    font-family: Helvetica, Arial, sans-serif;
     font-size: 18px;
-    font-weight: 700;
-    letter-spacing: .15em;
-    line-height: 28px;
+    line-height: 27px;
     margin-bottom: 20px;
   }
 
@@ -68,10 +52,5 @@ hr.static-page {
     font-size: 16px;
     line-height: 32px;
     padding: 0px 0px 0px 0px;
-  }
-
-  hr.static-page {
-    border-top: 1px solid $ucla-lighter-blue;
-    margin: 40px 0px;
   }
 }

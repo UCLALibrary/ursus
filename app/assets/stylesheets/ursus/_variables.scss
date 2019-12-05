@@ -1,39 +1,21 @@
-@import 'colors';
-//@import 'bootstrap/functions';
-//@import 'bootstrap';
-//@import 'bootstrap/variables';
+@import "colors";
 
-$grid-columns: 12;
-$grid-gutter-width: 30px;
-
-$grid-breakpoints: (
-  // Extra small screen / phone
-    xs: 0,
-  // Small screen / phone
-    sm: 540px,
-  // Medium screen / tablet
-    md: 720px,
-  // Large screen / desktop was 960
-    lg: 990px,
-  // Extra large screen / wide desktop
-    xl: 1200px
-);
-
-// this affects the catalog results on the index page
-$container-max-widths: (
-  xs: 767px,
-  sm: 990px,
-  md: 991px,
-  lg: 992px,
-  xl: 1200px
-);
+html {
+  background-color: #272c31;
+}
+body {
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto !important;
+  overflow-x: hidden;
+}
 
 //== Typography
-$font-family-sans-serif: 'Helvetica', 'Arial', sans-serif;
+$font-family-sans-serif: "Helvetica", "Arial", sans-serif;
 
 //== Linked text colors
-$a-tags: 'a, a:active, a:hover, a:visited';
-$a-tags-hover: 'a:active, a:hover';
+$a-tags: "a, a:active, a:hover, a:visited";
+$a-tags-hover: "a:active, a:hover";
 
 #{$a-tags} {
   color: $ucla-darker-blue !important;
@@ -43,7 +25,8 @@ $a-tags-hover: 'a:active, a:hover';
   color: $ucla-darker-blue !important;
 }
 
-$grid-gutter-width: 15px !default;
-
-
-//@import 'bootstrap';
+// Utilities
+hr.divider__blue {
+  border-top: 1px solid $ucla-lighter-blue;
+  margin: 40px 0px;
+}
