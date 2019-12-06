@@ -1,0 +1,7 @@
+<div class='collection-masthead-overlay'>
+  <h1><%= document[:title_tesim][0] %></h1>
+  <div class='item-info'>
+    <div class='collection-count'><%= collection_count %> items</div>
+    <%= link_to  'Browse items in this collection', "/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=#{document[:title_tesim][0]}", class:'btn btn-lg btn-browse' %>
+  </div>
+</div>

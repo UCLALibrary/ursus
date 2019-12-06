@@ -15,10 +15,11 @@ RSpec.feature "View a metadata-only Work", js: true do
     {
       id: discovery_work_id,
       ark_ssi: ['ark:/123/111'],
-      has_model_ssim: ['Work'],
-      title_tesim: ['Work with Discovery Access'],
+      discover_access_group_ssim: ["public"],
       edit_access_group_ssim: ["admin"],
-      discover_access_group_ssim: ["public"]
+      has_model_ssim: ['Work'],
+      iiif_manifest_url_ssi: 'https://iiif.server/url/manifest',
+      title_tesim: ['Work with Discovery Access']
     }
   end
 
@@ -26,10 +27,11 @@ RSpec.feature "View a metadata-only Work", js: true do
     {
       id: open_work_id,
       ark_ssi: ['ark:/123/222'],
-      has_model_ssim: ['Work'],
-      title_tesim: ['Work with Open Access'],
       edit_access_group_ssim: ["admin"],
-      read_access_group_ssim: ["public"]
+      has_model_ssim: ['Work'],
+      iiif_manifest_url_ssi: 'https://iiif.server/url/manifest',
+      read_access_group_ssim: ["public"],
+      title_tesim: ['Work with Open Access']
     }
   end
 

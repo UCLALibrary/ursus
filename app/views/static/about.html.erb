@@ -4,8 +4,9 @@
     <div class='yellow-liner about'></div>
   </div>
 
+<!-- OUR MISSION -->
   <div class='row'>
-    <div class='col-lg-4 static-page-subtitles'>
+    <div class='col-lg-4 static-page-titles'>
       <%= t('static_pages.about.mission').upcase %>
     </div>
     <div class='col-lg-8'>
@@ -15,33 +16,95 @@
     </div>
   </div>
 
-  <hr class='divider__blue'>
+  <hr class='static-page'>
 
+<!-- OUR SERVICES -->
   <div class='row'>
-    <div class='col-lg-4 static-page-subtitles'>
+    <div class='col-lg-4 static-page-titles'>
       <%= t('static_pages.about.services').upcase %>
     </div>
-    <div class='col-lg-8'>
-      <div class='static-page-text'>
-        <div class='text-header1'>Project Planning</div>
-          Digital Library Program staff can provide assistance in the planning and management of digital projects. We work with faculty and various campus organizations to create digital collections to support both teaching and research. DLP staff can provide advice during the development of grant applications. Areas of expertise include: digitization standards, digitization costs, digitization methods, metadata standards, rights management, and usability issues.
-        <div class='text-header'>Project Management</div>
-          One of the keys to a successful project is strong project management. Once a digital project has been approved and funded, the Digital Library Program staff can work with the project team to assure proper management. DLP staff is experienced with the hiring and training of staff, establishing workflow and procedures, quality control, and budget management.
-        <div class='text-header'>Production Partner</div>
-          <a href="#">Southern Regional Library Facility</a>
-          Digital Library Program staff can provide assistance in the planning and management of digital projects. We work with faculty and various campus organizations to create digital collections to support both teaching and research. DLP staff can provide advice during the development of grant applications. Areas of expertise include: digitization standards, digitization costs, digitization methods, metadata standards, rights management, and usability issues.
-        <div class='text-header'>Digital Preservation and Access</div>
-          The Digital Library provides backup and digital preservation support for all its collections. Digital master files are stored in their original, uncompressed format and can be made web accessible. Backup services are provided by Library Information Technology. In addition, the Library is working with the CDL Digital Preservation Program to provide for long-term preservation of the UCLA Library's digital assets.
-      </div>
-    </div>
-  </div>
 
-  <hr class='divider__blue'>
+    <div class='col-lg-8 static-page-text about-page'>
+      <div id="accordion">
 
+        <!-- Project Planning -->
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class='card-title'>
+              <button class="btn btn-link collapsed.in" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Project Planning
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse.in" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              The UCLA Digital Library Program (DLP) serves as the catalyst for the creation, management, and delivery of digital content in support of the UCLA Library mission and goals. The Program provides for the storage and dissemination of digital objects, including text, images, audio, and video in their various digital manifestations and combinations. The UCLA Library provides a web presence for digital collections, and provides storage, backup and digital preservation support for all digital content accepted into, or developed by, the Library.
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Management -->
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Project Management
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              One of the keys to a successful project is strong project management. Once a digital project has been approved and funded, the Digital Library Program staff can work with the project team to assure proper management. DLP staff is experienced with the hiring and training of staff, establishing workflow and procedures, quality control, and budget management.
+          </div>
+        </div>
+
+        <!-- Production Partner -->
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Production Partner
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              <a href="#">Southern Regional Library Facility</a>
+            Digital Library Program staff can provide assistance in the planning and management of digital projects. We work with faculty and various campus organizations to create digital collections to support both teaching and research. DLP staff can provide advice during the development of grant applications. Areas of expertise include: digitization standards, digitization costs, digitization methods, metadata standards, rights management, and usability issues.
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital Preservation and Access -->
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                Digital Preservation and Access
+              </button>
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="card-body">
+              The Digital Library provides backup and digital preservation support for all its collections. Digital master files are stored in their original, uncompressed format and can be made web accessible. Backup services are provided by Library Information Technology. In addition, the Library is working with the CDL Digital Preservation Program to provide for long-term preservation of the UCLA Library's digital assets.
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- accordian -->
+    </div> <!-- col-lg-8 -->
+  </div> <!-- row -->
+</div>
+
+<hr class='static-page'>
+
+<!-- UCLA LIBRARY CRITERIA FOR DIGITAL PROJECTS -->
   <div class='row'>
-    <div class='col-lg-4 static-page-subtitles'>
+    <hr class='static-page'>
+    <div class='col-lg-4 static-page-titles'>
       <%= t('static_pages.about.criteria').upcase %>
     </div>
+
     <div class='col-lg-8'>
       <div class='static-page-text'>
         These criteria have been adopted by the UCLA Library as an aid in evaluating whether projects will be a good return on investment, and to help in establishing a strong rationale when requesting support from internal or external sources.
@@ -63,9 +126,7 @@
           <li>There is a compelling argument for digitizing material that is deteriorating.</li>
           <li>The project will expand our technical infrastructure or contribute to the development of national digital library standards.</li>
         </ul>
-      </div>
-    </div>
-  </div>
-
-  <hr class='divider__blue'>
-</div>
+      </div><!-- static-page-text -->
+    </div> <!-- static-page-titles -->
+  </div> <!-- row -->
+</div> <!-- static-container -->
