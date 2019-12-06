@@ -3,7 +3,7 @@
 .beta-bar {
   background-color: #ffd100;
   font-weight: 700;
-  font-size: 0.875em;
+  font-size: 0.875rem;
 
   .beta-bar-wrapper {
     display: flex;
@@ -29,7 +29,7 @@
   }
 }
 
-@media all and (max-width: 768px) {
+@media (max-width: 768px) {
   .beta-bar {
     font-size: 0.8rem;
 
@@ -46,5 +46,11 @@
     .fa {
       margin-right: 0;
     }
+  }
+}
+
+@media (max-width: 374px) {
+  .beta-bar {
+    font-size: 0.7rem;
   }
 }
