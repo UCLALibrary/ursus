@@ -126,7 +126,7 @@ class CatalogController < ApplicationController
     # The ordering of the field names is the order of the display
     # ::Solrizer.solr_name('funding_note', :stored_searchable) == 'funding_note_tesim'
     config.add_show_field 'architect_tesim'
-    config.add_show_field 'alternative_title_tesim'
+    config.add_show_field 'alternative_title_tesim', separator_options: BREAKS
     config.add_show_field 'ark_ssi', label: 'ARK'
     config.add_show_field 'based_near_label_tesim'
     config.add_show_field 'binding_note_ssi', label: 'Binding note'
@@ -136,7 +136,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'contents_note_tesim'
     config.add_show_field 'contributor_tesim'
     config.add_show_field 'creator_tesim'
-    config.add_show_field 'date_created_tesim'
+    config.add_show_field 'date_created_tesim', separator_options: BREAKS
     config.add_show_field 'date_modified_tesim'
     config.add_show_field 'date_uploaded_tesim'
     config.add_show_field 'description_tesim', separator_options: BREAKS
@@ -157,7 +157,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'keyword_tesim'
     config.add_show_field 'latitude_tesim', label: 'Longitude'
     config.add_show_field 'location_tesim', link_to_facet: 'location_sim'
-    config.add_show_field 'local_identifier_ssm', label: 'Local identifier'
+    config.add_show_field 'local_identifier_ssm', label: 'Local identifier', separator_options: BREAKS
     config.add_show_field 'longitude_tesim', label: 'Latitude'
     config.add_show_field 'lyricist_tesim', label: 'Lyricist'
     config.add_show_field 'medium_tesim'
@@ -263,5 +263,25 @@ class CatalogController < ApplicationController
       raise Blacklight::AccessControls::AccessDenied.new('You do not have sufficient access privileges to view this document, which has been marked private.', :discover, params[:id])
     end
     permissions
+  end
+
+  # override this method from Blacklight::Catalog.rb to find the collection count
+  def show
+    deprecated_response, @document = search_service.fetch(params[:id])
+    @response = ActiveSupport::Deprecation::DeprecatedObjectProxy.new(deprecated_response, 'The @response instance variable is deprecated; use @document.response instead.')
+    respond_to do |format|
+      format.html { @search_context = setup_next_and_previous_documents }
+      format.json
+      additional_export_formats(@document, format)
+    end
+    if @document[:has_model_ssim][0] == 'Collection'
+      @response_collection = search_service.facet_field_response('member_of_collections_ssim')
+      @display_facet = @response_collection.aggregations["member_of_collections_ssim"]
+      @display_facet.items.each do |facet_item|
+        if facet_item.value == @document[:title_tesim][0]
+          @collection_count = facet_item.hits
+        end
+      end
+    end
   end
 end

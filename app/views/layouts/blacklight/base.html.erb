@@ -33,13 +33,13 @@
     <%= render partial: 'shared/header_navbar' %>
     <%= render 'catalog/homepage_banner' %>
 <div class="container flex-grow-1">
-    <div  class="<%= container_classes %>">
+    <!--<div  class="<%#= container_classes %>">-->
       <%= content_for(:container_header) %>
       <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
       <div class="row">
         <%= content_for?(:content) ? yield(:content) : yield %>
       </div>
-    </div>
+    <!--</div> -->
 </div>
     <%= render partial: 'shared/footer' %>
     <%= render partial: 'shared/modal' %>
