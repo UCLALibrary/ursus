@@ -1,11 +1,11 @@
 .about-page {
   #headingOne {
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
+   // border-top: 1px solid rgba(0, 0, 0, 0.125);
   }
   .card {
     border-radius: 0;
     border: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  //  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     .btn {
       text-align: left;
     }
@@ -13,33 +13,31 @@
       border-radius: 0;
       background-color: inherit;
       border-bottom: 0;
+      padding-left: 0px;
     }
-    button.collapsed::after {
-      content: '❯';
-      font-weight: 800;
-      position: absolute;
-      right: 1em;
+
+    button.collapsed::before,
+    button::before {
+      font-weight: 600;
+      font-size: 16px;
+      font-family: 'FontAwesome';
+      margin-right: 10px;
+      display:inline-block;
+    }
+    button.collapsed::before {
+      content: '\f067';
       top: 25px;
-      font-size: 16px;
-      -webkit-transform: rotate(270deg);
-      transform: rotate(270deg);
     }
-    button::after {
-      content: '❯';
-      font-weight: 800;
-      position: absolute;
-      right: 1em;
+    button::before {
+      content: '\f068';
       top: 20px;
-      font-size: 16px;
-      -webkit-transform: rotate(90deg);
-      transform: rotate(90deg);
     }
     .card-body {
       border-radius: 0;
-      padding: 1.25rem 2rem;
+      padding: 0rem 2rem;
     }
     .card-body .mb-5 {
-      margin-bottom: 1rem !important;
+      margin-bottom: .5rem !important;
     }
 
     .card-footer {
@@ -51,11 +49,10 @@
     }
 
     .btn-link {
-      color: $ucla-darker-blue;
+      color: $ucla-blue;
     }
 
     .btn[aria-expanded='true'] {
-      font-weight: bold;
       text-decoration: none;
     }
   }
