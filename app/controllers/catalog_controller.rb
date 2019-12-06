@@ -142,7 +142,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'description_tesim', separator_options: BREAKS
     config.add_show_field 'dimensions_tesim'
     config.add_show_field 'dlcs_collection_name_tesim'
-    config.add_show_field 'extent_tesim'
+    config.add_show_field 'extent_tesim', separator_options: BREAKS
     config.add_show_field 'foliation_ssi'
     config.add_show_field 'format_tesim'
     config.add_show_field 'funding_note_tesim'
@@ -165,7 +165,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'named_subject_tesim', link_to_facet: 'named_subject_sim', separator_options: BREAKS
     config.add_show_field 'oclc_tesim_ssi', label: 'OCLC Number'
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
-    config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
+    config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim', separator_options: BREAKS
     config.add_show_field 'place_of_origin_tesim', separator_options: BREAKS
     config.add_show_field 'provenance_tesim', label: 'Provenance'
     config.add_show_field 'publisher_tesim'
