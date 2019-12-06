@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Search results page', type: :system, js: true do
+RSpec.describe 'View a Collection', type: :system, js: true do
   let(:id) { 'm8f11000zz-89112' }
   let(:services_contact) do
     'UCLA Charles E. Young Research Library Department of Special Collections Phone: (310)825-4988'
