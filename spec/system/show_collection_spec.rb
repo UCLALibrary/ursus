@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Search results page', type: :system, js: true do
+RSpec.describe 'View a Collection', type: :system, js: true do
   let(:id) { 'm8f11000zz-89112' }
   let(:services_contact) do
     'UCLA Charles E. Young Research Library Department of Special Collections Phone: (310)825-4988'
@@ -25,6 +25,7 @@ RSpec.describe 'Search results page', type: :system, js: true do
       services_contact_ssm: ['UCLA'],
       human_readable_resource_type_tesim: ['still image'],
       description_tesim: ['description'],
+      summary_tesim: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'],
       rights_statement_tesim: ['http://vocabs.library.ucla.edu/rights/copyrighted'],
       date_created_tesim: ['1937-1983'],
       extent_tesim: ['still image'],
