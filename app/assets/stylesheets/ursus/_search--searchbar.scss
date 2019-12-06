@@ -2,7 +2,6 @@
 
 .site-searchbar {
   background-color: $ucla-darker-blue;
-  max-width: 1440px;
   height: 70px;
   max-height: 70px;
 
@@ -28,7 +27,7 @@
     padding: 0 !important;
   }
 
-  /* All Fields */
+  // Dropdown field
   #search_field {
     background-color: $ucla-darkest-blue;
     color: $white;
@@ -45,4 +44,9 @@
   }
 }
 
-//
+// At mobile resolution of less than 375px, hide dropdown fields
+@media (max-width: 374px) {
+  #search_field {
+    display: none;
+  }
+}

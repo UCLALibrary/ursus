@@ -40,12 +40,10 @@
   }
 
   .nav-item-feedback {
-    // padding: 10px 0px 10px 30px;
     a {
       color: $ucla-gold !important;
       font-weight: 600;
       letter-spacing: 0.05em;
-      // margin-right: 2em;
     }
     a:hover {
       color: $ucla-gold !important;
@@ -127,6 +125,20 @@
 
     .beta-logo {
       font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 374px) {
+  .site-navbar {
+    .navbar-logo-block {
+      flex-direction: column;
+      justify-content: unset;
+      align-items: flex-start;
+    }
+    .beta-logo {
+      left: 0;
+      top: 0;
     }
   }
 }
