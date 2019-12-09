@@ -1,0 +1,8 @@
+<% doc_presenter = show_presenter(document) %>
+<% tagline = Ursus::TaglineMetadataPresenter.new(document: doc_presenter.fields_to_render).tagline_terms %>
+
+<% if tagline.length > 0 %>
+      <% tagline.each do |field_name, field| -%>
+        <p class="grid-summary-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></p>
+      <% end %>
+<% end %>

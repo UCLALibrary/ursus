@@ -7,11 +7,7 @@
   padding-bottom: 24px;
 }
 
-.collection-boxes {
-  .home_blocks-small_block {
-    margin-bottom: 30px;
-  }
-
+.collection-grid {
   a.grid-wrapper {
     color: #333 !important;
     text-decoration: none !important;
@@ -21,6 +17,7 @@
     -webkit-transform: translateY(0);
     transform: translateY(0);
     transition: all 300ms ease-in-out 0s;
+    margin-bottom: 30px;
   }
 
   .grid-wrapper:hover {
@@ -68,24 +65,23 @@
 
   .grid-yellow-liner {
     border-top: 3px solid $ucla-gold;
-    margin: 10px 0 30px 0;
+    margin: 10px 0 25px 0;
     width: 100px;
+  }
+
+  .grid-summary {
+    margin-bottom: 0 !important;
   }
 
   .grid-btn {
     padding-left: 0 !important;
   }
 
-  .grid-btn::after {
-    content: "\f105";
-    font-family: FontAwesome;
-    font-size: 14px;
+  .grid-btn .fa {
+    font-size: 15px;
     margin-left: 5px;
-    position: relative;
+    font-weight: 600;
   }
-  // .grid-btn::after:hover {
-  //   text-decoration: none !important;
-  // }
 
   .grid-btn,
   .grid-btn:active,
@@ -96,6 +92,10 @@
     letter-spacing: 1px !important;
     line-height: 14px !important;
     text-transform: uppercase !important;
+  }
+
+  .grid-btn:hover {
+    text-decoration: underline !important;
   }
 
   .grid-btn__main {
@@ -110,5 +110,9 @@
   a.grid-btn__main:visited {
     color: #333 !important;
     text-decoration: none !important;
+  }
+
+  a.grid-btn__main:hover {
+    background-color: $ucla-darker-gold !important;
   }
 }
