@@ -1,74 +1,118 @@
 .featured-collections {
   color: $ucla-darker-blue;
   font-weight: bold;
-  border-bottom: solid 2px $ucla-darker-blue;
+  font-size: 36px;
   margin-right: 5px;
   margin-left: 0px;
+  padding-bottom: 24px;
 }
 
-.collection-link:hover {
-  text-decoration: none;
-}
+.collection-grid {
+  a.grid-wrapper {
+    color: #333 !important;
+    text-decoration: none !important;
+  }
 
-.collection-box {
-  min-height: 300px;
-  min-width: 100px;
-  color: $white;
-  display: flex;
-  align-items: flex-end;
+  .grid-wrapper {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    transition: all 300ms ease-in-out 0s;
+    margin-bottom: 30px;
+  }
 
-  h5 {
-    margin-left: 0.5em;
+  .grid-wrapper:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  .grid-image {
+    height: 375px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .grid-one {
+    background-image: image-url("home-collection-grid/ladnn_collection.jpg");
+  }
+
+  .grid-two {
+    background-image: image-url("home-collection-grid/bennett_collection.jpg");
+  }
+
+  .grid-three {
+    background-image: image-url("home-collection-grid/connell_collection.jpg");
+  }
+
+  .grid-four {
+    background-image: image-url("home-collection-grid/california_postcards.jpg");
+  }
+
+  .grid-five {
+    background-image: image-url("home-collection-grid/ethiopic_manuscripts.jpg");
+  }
+
+  .grid-six {
+    background-image: image-url("home-collection-grid/arkatov_collection.jpg");
+  }
+
+  .grid-title {
+    font-size: 20px;
     font-weight: bold;
+    line-height: 24px;
+    padding-top: 20px;
   }
-}
 
-.collection-link {
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-
-.collection-boxes {
-  [class*='col-'] {
-    padding-right: 5px;
-    padding-left: 0px;
-    padding-bottom: 5px;
+  .grid-yellow-liner {
+    border-top: 3px solid $ucla-gold;
+    margin: 10px 0 25px 0;
+    width: 100px;
   }
-}
 
-.collection-box-one {
-  background-image: image-url('ladnn_collection.jpg');
-  background-size: cover;
-}
+  .grid-summary {
+    margin-bottom: 0 !important;
+  }
 
-.collection-box-two {
-  background-image: image-url('bennett_collection.jpg');
-  background-size: cover;
-}
+  .grid-btn {
+    padding-left: 0 !important;
+  }
 
-.featured-collections {
-  color: $ucla-darker-blue;
-  font-weight: bold;
-  border-bottom: solid 2px $ucla-darker-blue;
-}
+  .grid-btn .fa {
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: 600;
+  }
 
-.collection-box-three {
-  background-image: image-url('will_connell_collection.jpg');
-  background-size: cover;
-}
+  .grid-btn,
+  .grid-btn:active,
+  .grid-btn:visited {
+    color: $ucla-blue !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    letter-spacing: 1px !important;
+    line-height: 14px !important;
+    text-transform: uppercase !important;
+  }
 
-.collection-box-four {
-  background-image: image-url('collection_of_california_postcards.jpg');
-  background-size: cover;
-}
+  .grid-btn:hover {
+    text-decoration: underline !important;
+  }
 
-.collection-box-five {
-  background-image: image-url('ethiopic_manuscript.jpg');
-  background-size: cover;
-}
+  .grid-btn__main {
+    background-color: $ucla-gold !important;
+    font-weight: 500;
+    padding: 14px 40px !important;
+  }
 
-.collection-box-six {
-  background-image: image-url('arkotov_collection.jpg');
-  background-size: cover;
+  a.grid-btn__main,
+  a.grid-btn__main:active,
+  a.grid-btn__main:hover,
+  a.grid-btn__main:visited {
+    color: #333 !important;
+    text-decoration: none !important;
+  }
+
+  a.grid-btn__main:hover {
+    background-color: $ucla-darker-gold !important;
+  }
 }

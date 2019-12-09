@@ -10,6 +10,13 @@ body {
   overflow-x: hidden;
 }
 
+.main-content-container {
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
 //== Typography
 $font-family-sans-serif: "Helvetica", "Arial", sans-serif;
 
