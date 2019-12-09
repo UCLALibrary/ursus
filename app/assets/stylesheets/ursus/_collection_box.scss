@@ -1,74 +1,114 @@
 .featured-collections {
   color: $ucla-darker-blue;
   font-weight: bold;
-  border-bottom: solid 2px $ucla-darker-blue;
+  font-size: 36px;
   margin-right: 5px;
   margin-left: 0px;
+  padding-bottom: 24px;
 }
-
-.collection-link:hover {
-  text-decoration: none;
-}
-
-.collection-box {
-  min-height: 300px;
-  min-width: 100px;
-  color: $white;
-  display: flex;
-  align-items: flex-end;
-
-  h5 {
-    margin-left: 0.5em;
-    font-weight: bold;
-  }
-}
-
-.collection-link {
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
 
 .collection-boxes {
-  [class*='col-'] {
-    padding-right: 5px;
-    padding-left: 0px;
-    padding-bottom: 5px;
+  .home_blocks-small_block {
+    margin-bottom: 30px;
   }
-}
 
-.collection-box-one {
-  background-image: image-url('ladnn_collection.jpg');
-  background-size: cover;
-}
+  a.grid-wrapper {
+    color: #333 !important;
+    text-decoration: none !important;
+  }
 
-.collection-box-two {
-  background-image: image-url('bennett_collection.jpg');
-  background-size: cover;
-}
+  .grid-wrapper {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    transition: all 300ms ease-in-out 0s;
+  }
 
-.featured-collections {
-  color: $ucla-darker-blue;
-  font-weight: bold;
-  border-bottom: solid 2px $ucla-darker-blue;
-}
+  .grid-wrapper:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
 
-.collection-box-three {
-  background-image: image-url('will_connell_collection.jpg');
-  background-size: cover;
-}
+  .grid-image {
+    height: 375px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 
-.collection-box-four {
-  background-image: image-url('collection_of_california_postcards.jpg');
-  background-size: cover;
-}
+  .grid-one {
+    background-image: image-url("home-collection-grid/ladnn_collection.jpg");
+  }
 
-.collection-box-five {
-  background-image: image-url('ethiopic_manuscript.jpg');
-  background-size: cover;
-}
+  .grid-two {
+    background-image: image-url("home-collection-grid/bennett_collection.jpg");
+  }
 
-.collection-box-six {
-  background-image: image-url('arkotov_collection.jpg');
-  background-size: cover;
+  .grid-three {
+    background-image: image-url("home-collection-grid/connell_collection.jpg");
+  }
+
+  .grid-four {
+    background-image: image-url("home-collection-grid/california_postcards.jpg");
+  }
+
+  .grid-five {
+    background-image: image-url("home-collection-grid/ethiopic_manuscripts.jpg");
+  }
+
+  .grid-six {
+    background-image: image-url("home-collection-grid/arkatov_collection.jpg");
+  }
+
+  .grid-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    padding-top: 20px;
+  }
+
+  .grid-yellow-liner {
+    border-top: 3px solid $ucla-gold;
+    margin: 10px 0 30px 0;
+    width: 100px;
+  }
+
+  .grid-btn {
+    padding-left: 0 !important;
+  }
+
+  .grid-btn::after {
+    content: "\f105";
+    font-family: FontAwesome;
+    font-size: 14px;
+    margin-left: 5px;
+    position: relative;
+  }
+  // .grid-btn::after:hover {
+  //   text-decoration: none !important;
+  // }
+
+  .grid-btn,
+  .grid-btn:active,
+  .grid-btn:visited {
+    color: $ucla-blue !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    letter-spacing: 1px !important;
+    line-height: 14px !important;
+    text-transform: uppercase !important;
+  }
+
+  .grid-btn__main {
+    background-color: $ucla-gold !important;
+    font-weight: 500;
+    padding: 14px 40px !important;
+  }
+
+  a.grid-btn__main,
+  a.grid-btn__main:active,
+  a.grid-btn__main:hover,
+  a.grid-btn__main:visited {
+    color: #333 !important;
+    text-decoration: none !important;
+  }
 }
