@@ -7,6 +7,18 @@
   padding-bottom: 24px;
 }
 
+@media (max-width: 960px) {
+  .featured-collections {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .featured-collections {
+    font-size: 26px;
+  }
+}
+
 .collection-grid {
   a.grid-wrapper {
     color: #333 !important;
@@ -29,7 +41,7 @@
     height: 375px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
   }
 
   .grid-one {
@@ -79,7 +91,7 @@
 
   .grid-btn .fa {
     font-size: 15px;
-    margin-left: 5px;
+    margin-left: 3px;
     font-weight: 600;
   }
 
@@ -97,22 +109,22 @@
   .grid-btn:hover {
     text-decoration: underline !important;
   }
+}
+.grid-btn__main {
+  background-color: $ucla-gold !important;
+  font-weight: 500;
+  padding: 14px 40px !important;
+  margin-left: 15px;
+}
 
-  .grid-btn__main {
-    background-color: $ucla-gold !important;
-    font-weight: 500;
-    padding: 14px 40px !important;
-  }
+a.grid-btn__main,
+a.grid-btn__main:active,
+a.grid-btn__main:hover,
+a.grid-btn__main:visited {
+  color: #333 !important;
+  text-decoration: none !important;
+}
 
-  a.grid-btn__main,
-  a.grid-btn__main:active,
-  a.grid-btn__main:hover,
-  a.grid-btn__main:visited {
-    color: #333 !important;
-    text-decoration: none !important;
-  }
-
-  a.grid-btn__main:hover {
-    background-color: $ucla-darker-gold !important;
-  }
+a.grid-btn__main:hover {
+  background-color: $ucla-darker-gold !important;
 }
