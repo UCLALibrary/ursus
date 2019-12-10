@@ -1,3 +1,8 @@
+<div class='search-filter-container'>
+  <%= render 'catalog/constraints' %>
+</div>
+
+<div class='results_container'>
 <% url = request.original_url %>
 <% if url.include?('has_model_ssim') && url.include?('Collection') %>
   <h4 class='catalog-results'><%= @response['response'].dig(:numFound) %> Collections <%= render_results_collection_tools wrapping_class: "search-widgets" %></h4>
@@ -21,3 +26,4 @@
 
 <div class='rectangle'><%= render 'results_pagination' %></div>
 <%= render 'old_collections' %>
+</div>

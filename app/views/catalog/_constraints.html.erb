@@ -1,9 +1,9 @@
 <% if query_has_constraints? %>
   <div id='appliedParams' class='clearfix constraints-container'>
-
     <h2 class='sr-only'><%= t('blacklight.search.search_constraints_header') %></h2>
-    <span class='filters-applied'>Filters Applied: </span>
+    <span class='filters-applied'>You searched for: </span>
     <%= render_constraints(params) %>
-
+    <%= render 'catalog/startover' %>
   </div>
 <% end %>
+<hr>
