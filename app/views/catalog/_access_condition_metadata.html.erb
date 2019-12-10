@@ -4,11 +4,16 @@
 <% if access_condition.length > 0 %>
   <% doc_presenter = show_presenter(document) %>
   <% access_condition = Ursus::AccessConditionMetadataPresenter.new(document: doc_presenter.fields_to_render).access_condition_terms %>
-  <div >
+  <div class='access-condition-metadata'>
     <h4 class='item-heading'>Access Condition</h4>
     <dl class='row document-metadata'>
       <% access_condition.each do |field_name, field| -%>
-        <dt class="blacklight-<%= field_name.parameterize %> col-md-6 item-label"><%= render_document_show_field_label document, field: field_name %><dd class="blacklight-<%= field_name.parameterize %> col-md-9 item-value"><%= doc_presenter.field_value field %></dd></dt>
+        <dt class="blacklight-<%= field_name.parameterize %> col-12 col-sm-4 item-label">
+          <%= (render_document_show_field_label document, field: field_name).tr(':','') %>
+          <dd class="blacklight-<%= field_name.parameterize %> col-12 col-sm-8 item-value">
+            <%= doc_presenter.field_value field %>
+          </dd>
+        </dt>
       <% end %>
       <%= render 'license' %>
     </dl>

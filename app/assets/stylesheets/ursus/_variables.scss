@@ -17,6 +17,20 @@ body {
   margin-bottom: 50px;
 }
 
+@media (max-width: 768px) {
+  .main-content-container {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content-container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
 //== Typography
 $font-family-sans-serif: "Helvetica", "Arial", sans-serif;
 
