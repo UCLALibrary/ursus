@@ -10,7 +10,9 @@
     </div>
     <div class='col-lg-8'>
       <div class='static-page-text'>
-        For research, permissions, and reproduction inquiries please contact the original repository. In most cases, this will be the the UCLA Library Special Collections.
+        <p>For inquiries related to digital collections content or to request reproductions or permissions to publish, please contact the item's holding repository.</p>
+        
+        <p>The name of the home repository can be found in either the item-level metadata (<a href="/catalog/jmn09000zz-89112">see example</a>) or in the collection record (<a href="/catalog/zwb98000zz-89112">example</a>). In most cases, this will be the UCLA Library Special Collections department, the Chicano Studies Research Center (CSRC), or the UCLA Art Library.</p>
       </div>
     </div>
   </div>
@@ -36,7 +38,21 @@
     </div>
     <div class='col-lg-8'>
       <div class='static-page-text'>
-        If you experience any technical issues, please let us know at dlp@library.ucla.edu.
+        <%= form_tag do %>
+          <div class="form-group">
+            <%= label_tag(:name, 'Full Name:') %>
+            <%= text_field_tag(:name, '', class: 'form-control') %>
+          </div>
+          <div class="form-group">
+            <%= label_tag(:email, 'Email:') %>
+            <%= text_field_tag(:email, '', class: 'form-control') %>
+          </div>
+          <div class="form-group">
+            <%= label_tag(:message, 'Message:') %>
+            <%= text_area_tag(:message, '', class: 'form-control') %>
+          </div>
+          <%= submit_tag("Submit Your Message", class: 'btn btn-warning rounded-0') %>
+        <% end %>
       </div>
     </div>
   </div>
