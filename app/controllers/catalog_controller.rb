@@ -275,12 +275,11 @@ class CatalogController < ApplicationController
       additional_export_formats(@document, format)
     end
     if @document[:has_model_ssim][0] == 'Collection'
-      @response_collection = search_service.facet_field_response('member_of_collections_ssim')
-      @display_facet = @response_collection.aggregations["member_of_collections_ssim"]
-      @display_facet.items.each do |facet_item|
-        if facet_item.value == @document[:title_tesim][0]
-          @collection_count = facet_item.hits
-        end
+      facet_member_of_collections = blacklight_config.facet_fields['member_of_collections_ssim']
+      @response_collection = search_service.facet_field_response(facet_member_of_collections.key, "f.member_of_collections_ssim.facet.contains" => @document[:title_tesim][0])
+      @display_facet = @response_collection.aggregations[facet_member_of_collections.field]
+      if @display_facet&.items && @display_facet.items.first
+        @collection_count = @display_facet.items.first.hits
       end
     end
   end
