@@ -92,11 +92,17 @@
     }
 
     .btn-browse {
-      font-size: 17px;
-      color: $ucla-gold !important;
-      border: 2px solid $ucla-gold;
-      border-radius: 0;
+        font-size: 17px;
+        color: $ucla-gold !important;
+        border: 2px solid $ucla-gold;
+        border-radius: 0;
     }
+    .btn-browse:hover {
+      font-size: 17px;
+      color: black !important;
+      background-color: $ucla-gold;
+    }
+
   }
   span {
     color: $ucla-lighter-blue;
