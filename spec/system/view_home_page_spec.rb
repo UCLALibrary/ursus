@@ -54,11 +54,12 @@ RSpec.describe 'viewing the home page', :clean, type: :system, js: false do
     expect(page).not_to have_selector 'noscript#analytics-noscript'
   end
 
-  it 'has Google Analytics when it should' do
-    ENV['GOOGLE_TAG_MGR_ID'] = '123456789'
+  it 'has Google Analytics when it should', :aggregate_failures do
+    allow(ENV).to receive(:[]).and_call_original
+    allow(ENV).to receive(:[]).with('GOOGLE_TAG_MGR_ID').and_return('123456789')
+
     visit('/')
-    expect(page).to have_selector '#analytics-script'
-    expect(page).to have_selector '#analytics-noscript'
-    ENV.delete('GOOGLE_TAG_MGR_ID')
+    expect(page).to have_selector('#analytics-script', visible: false)
+    expect(page).to have_selector('#analytics-noscript', visible: false)
   end
 end
