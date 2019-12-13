@@ -2,13 +2,16 @@
 <% physical_description = Ursus::PhysicalDescriptionMetadataPresenter.new(document: doc_presenter.fields_to_render).physical_description_terms %>
 
 <% if physical_description.length > 0 %>
-  <div class="primary-metadata">
     <hr>
     <h5>Physical Description</h5>
     <dl class='row document-metadata'>
       <% physical_description.each do |field_name, field| -%>
-        <dt class="blacklight-<%= field_name.parameterize %> col-md-6 item-label"><%= render_document_show_field_label document, field: field_name %><dd class="blacklight-<%= field_name.parameterize %> col-md-9 item-value"><%= doc_presenter.field_value field %></dd></dt>
+        <dt class="blacklight-<%= field_name.parameterize %> col-12 col-sm-4 item-label">
+          <%= (render_document_show_field_label document, field: field_name).tr(':','') %>
+          <dd class="blacklight-<%= field_name.parameterize %> col-12 col-sm-8 item-value">
+            <%= doc_presenter.field_value field %>
+          </dd>
+        </dt>
       <% end %>
     </dl>
-  </div>
 <% end %>
