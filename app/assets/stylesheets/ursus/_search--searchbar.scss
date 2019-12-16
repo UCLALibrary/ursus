@@ -2,8 +2,8 @@
 
 .site-searchbar {
   background-color: $ucla-darker-blue;
-  height: 70px;
-  max-height: 70px;
+  height: 66px;
+  max-height: 66px;
 
   :-ms-input-placeholder,
   ::-ms-input-placeholder,
@@ -40,6 +40,13 @@
   .site-searchbar {
     ::placeholder {
       font-size: 0.75rem;
+    }
+  }
+  .search-form {
+    .custom-select {
+      font-size: 0.75rem;
+      min-height: 38px;
+      padding: 0 1rem 0 0 !important;
     }
   }
 }
