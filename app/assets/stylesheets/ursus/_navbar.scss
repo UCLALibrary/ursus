@@ -2,9 +2,7 @@
 
 .site-navbar {
   background-color: $ucla-blue !important;
-  padding: 0.25rem 0.75rem !important;
-  // padding-left: 0.75em !important;
-  // padding-right: 0.75em !important;
+  padding: 0.25rem 0 0 0 !important;
 
   .navbar-logo-block {
     height: 50px;
@@ -21,18 +19,18 @@
     color: #ffd100;
     font-weight: 700;
     position: relative;
-    top: 0.22em;
-    left: 0.4em;
-    font-size: 1.25em;
-    letter-spacing: 0.05em;
+    top: 0.22rem;
+    left: 0.4rem;
+    font-size: 1.25rem;
+    letter-spacing: 0.05rem;
   }
 
   .nav-item a {
     color: $white !important;
     font-weight: 600;
     font-size: 0.9em;
-    letter-spacing: 0.05em;
-    margin-right: 2em;
+    letter-spacing: 0.05rem;
+    margin-right: 2rem;
 
     &:hover {
       color: $ucla-gold !important;
@@ -44,7 +42,8 @@
     a {
       color: $ucla-gold !important;
       font-weight: 600;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.05rem;
+      margin-right: 0;
     }
     a:hover {
       color: $ucla-gold !important;
@@ -53,67 +52,43 @@
   }
 }
 
-@media (max-width: 990px) {
-  .navbar-toggler {
-    border-color: transparent !important;
-    outline: none !important;
-  }
-
-  .navbar-toggler.custom-toggler {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .custom-toggler .navbar-toggler-icon:hover {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,209,0, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
-  }
-
+@media (max-width: 991px) {
   .site-navbar {
     .navbar-logo-block {
       height: 45px;
+      padding-left: 0.75rem;
     }
 
-    .nav-item a,
-    .nav-item-feedback a {
-      padding-left: 15px;
+    .navbar-toggler {
+      border-color: transparent !important;
     }
-  }
 
-  .navbar-nav.nav {
-    background-color: $ucla-darker-blue;
-    display: inline-block;
-    width: 100%;
-    align-items: normal;
-    position: static;
-    margin-top: 20px;
-  }
+    .navbar-nav.nav {
+      background-color: $ucla-darker-blue;
+      width: 100%;
+    }
 
-  .navbar-collapse {
-    margin-bottom: -8px;
-    min-width: 768px;
-    position: relative;
-    left: -15px;
-  }
+    .navbar-collapse {
+      background: $ucla-darker-blue;
+    }
 
-  .nav-item a {
-    margin-right: 0;
-  }
+    .nav-item a {
+      margin-right: 0;
+    }
 
-  .nav-item,
-  .nav-item-feedback {
-    padding-left: 30px;
-    padding: 12px 0;
-  }
+    .nav-item {
+      padding: 12px 15px;
+    }
 
-  .nav-item:nth-child(1) {
-    border-bottom: 1px solid #c3d7ee;
-  }
+    .nav-item {
+      border-bottom: 1px solid #c3d7ee;
+    }
 
-  .nav-item:hover {
-    background-color: $ucla-darkest-blue;
-    a {
-      color: $white !important;
-      text-decoration: none;
+    .nav-item:hover {
+      background-color: $ucla-darkest-blue;
+      a {
+        color: $ucla-gold !important;
+      }
     }
   }
 }
@@ -136,6 +111,7 @@
       flex-direction: column;
       justify-content: unset;
       align-items: flex-start;
+      height: 50px;
     }
     .beta-logo {
       left: 0;
