@@ -20,6 +20,7 @@ Lint/RequireParentheses:
 Metrics/AbcSize:
   Exclude:
     - app/helpers/blacklight/url_helper_behavior.rb
+    - app/controllers/catalog_controller.rb
 
 Metrics/BlockLength:
   Enabled: true
