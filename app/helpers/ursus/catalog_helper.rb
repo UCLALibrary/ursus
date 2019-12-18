@@ -27,7 +27,8 @@ module Ursus
         description = args[:value].first
         button = "<span class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></span></br>"
         truncated_output << "<div class='description'>#{description}</div>#{button}</br>"
-        return truncated_output.html_safe # rubocop:disable Rails/OutputSafety
+        # return truncated_output.html_safe
+        return description
       end
     end
   end

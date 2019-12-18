@@ -130,6 +130,6 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
     # Search for something
     fill_in 'q', with: 'carrot'
     click_on 'search'
-    expect(page).to have_content('Read More')
+    expect(page).not_to have_content('Read More')
   end
 end
