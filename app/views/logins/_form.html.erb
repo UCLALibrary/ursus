@@ -1,0 +1,22 @@
+<%= form_with(model: login, local: true) do |form| %>
+  <% if login.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(login.errors.count, "error") %> prohibited this login from being saved:</h2>
+
+      <ul>
+      <% login.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :token %>
+    <%= form.text_field :token, id: :login_token %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
