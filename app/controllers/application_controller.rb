@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :display_banner?
 
   def display_banner?
+    @check = "start"
     @path_check = ''
     if cookie?
       @display_option = "none"
@@ -19,12 +20,12 @@ class ApplicationController < ActionController::Base
       else
         if has_sinai_cookie?
           # do nothing
-          'has_sinai_cookie You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
+          @check = 'has_sinai_cookie You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
         elsif has_token?
           # user has a token so we then need to set the cookie based on the fact that they have a token in the database
           set_auth_cookie
           set_iv_cookie
-          'has_token You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
+          @check = 'has_token You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
         else
           redirect_to "/login?callback=#{request.original_url}"
         end
