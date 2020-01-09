@@ -7,6 +7,9 @@ services:
     env_file:
       - ./dotenv.sample
     environment:
+      SINAIID_UCLA_KEY: 'cfa59195dbbb31094beda066891bf5112be0f15e161834c4a8f4b2237a5bfae4'
+      SINAIID_URL: 'https://sinai-id.org/authorize'
+      CIPHER_KEY: 'ThisPasswordIsReallyHardToGuess!'
       DATABASE_HOST: db
       DATABASE_USERNAME: californica
       DATABASE_PASSWORD: californica
