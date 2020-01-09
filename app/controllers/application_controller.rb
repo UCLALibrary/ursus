@@ -18,10 +18,10 @@ class ApplicationController < ActionController::Base
       if request.fullpath.include?(login_path)
         @path_check = request.fullpath.include?(login_path)
       else
-        if has_sinai_cookie?
+        if sinai_cookie?
           # do nothing
           @check = 'has_sinai_cookie You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
-        elsif has_token?
+        elsif token?
           # user has a token so we then need to set the cookie based on the fact that they have a token in the database
           set_auth_cookie
           set_iv_cookie
@@ -43,12 +43,12 @@ class ApplicationController < ActionController::Base
     cookies[:banner_display_option] = "banner_off"
   end
 
-  def has_sinai_cookie?
+  def sinai_cookie?
     # Does user have the sinai cookie?
     @has_sinai_cookie = cookies[:sinai_authenticated]
   end
 
-  def has_token?
+  def token?
     # Does user have the sinai token in the database?
     params[:token].present? && SinaiToken.find_by(sinai_token: params[:token])
   end
@@ -60,17 +60,17 @@ class ApplicationController < ActionController::Base
   def set_auth_cookie
     @encryptd_str = create_encrypted_string
     cookies[:sinai_authenticated] = {
-      value: @cipher_text_unPacked,
-      expires: Time.now + 90.days,
+      value: @cipher_text_unpacked,
+      expires: Time.zone.now + 90.days,
       domain: ENV['DOMAIN']
     }
   end
 
   def set_iv_cookie
-    @iv_unPacked = @iv.unpack('H*')[0].upcase
+    @iv_unpacked = @iv.unpack('H*')[0].upcase
     cookies[:initialization_vector] = {
-      value: @iv_unPacked,
-      expires: Time.now + 90.days,
+      value: @iv_unpacked,
+      expires: Time.zone.now + 90.days,
       domain: ENV['DOMAIN']
     }
   end
@@ -83,7 +83,7 @@ class ApplicationController < ActionController::Base
     cipher.key = ENV['CIPHER_KEY']
     cipher.iv = @iv
     @cipher_text_packed = cipher.update("Authenticated #{todays_date}") + cipher.final
-    @cipher_text_unPacked = @cipher_text_packed.unpack('H*')[0].upcase
+    @cipher_text_unpacked = @cipher_text_packed.unpack('H*')[0].upcase
   end
 
   helper Openseadragon::OpenseadragonHelper
