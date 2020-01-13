@@ -1,0 +1,2 @@
+class SinaiToken < ApplicationRecord
+end
