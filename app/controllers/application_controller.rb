@@ -62,17 +62,17 @@ class ApplicationController < ActionController::Base
   def set_auth_cookie
     @encryptd_str = create_encrypted_string
     cookies[:sinai_authenticated] = {
-      value: @cipher_text_unPacked,
-      expires: Time.now + 90.days,
+      value: @cipher_text_unpacked,
+      expires: Time.zone.now + 90.days,
       domain: ENV['DOMAIN']
     }
   end
 
   def set_iv_cookie
-    @iv_unPacked = @iv.unpack('H*')[0].upcase
+    @iv_unpacked = @iv.unpack('H*')[0].upcase
     cookies[:initialization_vector] = {
-      value: @iv_unPacked,
-      expires: Time.now + 90.days,
+      value: @iv_unpacked,
+      expires: Time.zone.now + 90.days,
       domain: ENV['DOMAIN']
     }
   end
@@ -85,7 +85,7 @@ class ApplicationController < ActionController::Base
     cipher.key = ENV['CIPHER_KEY']
     cipher.iv = @iv
     @cipher_text_packed = cipher.update("Authenticated #{todays_date}") + cipher.final
-    @cipher_text_unPacked = @cipher_text_packed.unpack('H*')[0].upcase
+    @cipher_text_unpacked = @cipher_text_packed.unpack('H*')[0].upcase
   end
 
   helper Openseadragon::OpenseadragonHelper
