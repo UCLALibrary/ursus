@@ -12,42 +12,45 @@ class ApplicationController < ActionController::Base
     end
     if Flipflop.sinai?
       @current_site = "SinaiPOC"
-
-      # Checks to see if we are on the Login page and do nothing
-      if request.fullpath.include?(login_path)
-        @path_check = request.fullpath.include?(login_path)
-      else
-        if has_sinai_cookie?
-          # do nothing
-          'has_sinai_cookie You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
-        elsif has_token?
-          # user has a token so we then need to set the cookie based on the fact that they have a token in the database
-          set_auth_cookie
-          set_iv_cookie
-          'has_token You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
-        else
-          redirect_to "/login?callback=#{request.original_url}"
-        end
-      end
+      sinai_authn_check
     else
       @current_site = "UCLA"
     end
   end
 
+  def sinai_authn_check
+    # Checks to see if we are on the Login page and do nothing
+    if request.fullpath.include?(login_path)
+      @path_check = request.fullpath.include?(login_path)
+    else
+      if sinai_cookie?
+        # do nothing
+        'sinai_cookie You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
+      elsif ucla_cookie?
+        # user has a token so we then need to set the cookie based on the fact that they have a token in the database
+        set_auth_cookie
+        set_iv_cookie
+        'ucla_cookie You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
+      else
+        redirect_to "/login?callback=#{request.original_url}"
+      end
+    end
+  end
+
   def cookie?
-    @has_cookie = cookies[:banner_display_option]
+    @banner_cookie = cookies[:banner_display_option]
   end
 
   def set_banner_cookie
     cookies[:banner_display_option] = "banner_off"
   end
 
-  def has_sinai_cookie?
+  def sinai_cookie?
     # Does user have the sinai cookie?
-    @has_sinai_cookie = cookies[:sinai_authenticated]
+    @sinai_cookie = cookies[:sinai_authenticated]
   end
 
-  def has_token?
+  def ucla_cookie?
     # Does user have the sinai token in the database?
     params[:token].present? && SinaiToken.find_by(sinai_token: params[:token])
   end

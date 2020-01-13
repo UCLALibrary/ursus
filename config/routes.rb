@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
   get '/login', to: 'login#new', as: 'login'
-  get '/login_response', to: 'login#login_response'
-
+  
   mount Flipflop::Engine => "/flipflop"
   get '/about', to: 'static#about'
   get '/copyrights_and_collections', to: 'static#copyright'
