@@ -1,0 +1,53 @@
+@import "colors";
+
+html {
+  background-color: #272c31;
+}
+body {
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto !important;
+  overflow-x: hidden;
+}
+
+.main-content-container {
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .main-content-container {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content-container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+//== Typography
+$font-family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+//== Linked text colors
+$a-tags: "a, a:active, a:hover, a:visited";
+$a-tags-hover: "a:active, a:hover";
+
+#{$a-tags} {
+  color: $ucla-darker-blue !important;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: $ucla-darker-blue !important;
+}
+
+// Utilities
+hr.divider__blue {
+  border-top: 1px solid $ucla-lighter-blue;
+  margin: 40px 0px;
+}

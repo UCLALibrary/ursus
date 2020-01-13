@@ -1,0 +1,17 @@
+@import 'colors';
+
+a.sinai-registration-button,
+a.sinai-registration-button:active,
+a.sinai-registration-button:focus,
+a.sinai-registration-button:visited {
+  color: $sinai-gold !important;
+  font-weight: 600 !important;
+}
+
+input, button, select, optgroup, textarea {
+  background-color: $sinai-gold !important;
+  font-weight: 600 !important;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 5px 15px;
+}
