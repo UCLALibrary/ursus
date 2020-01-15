@@ -120,3 +120,7 @@ Style/MethodDefParentheses:
 Style/GuardClause:
   Exclude:
     - app/controllers/catalog_controller.rb
+
+Style/IfInsideElse:
+  Exclude:
+     - app/controllers/application_controller.rb

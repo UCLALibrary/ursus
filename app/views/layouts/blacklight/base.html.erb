@@ -2,6 +2,7 @@
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Internet Explorer use the highest version available -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,23 +34,35 @@
   <body class="<%= render_body_class %>">
     <% if ENV["GOOGLE_TAG_MGR_ID"] %>
         <noscript id='analytics-noscript'><iframe src="https://www.googletagmanager.com/ns.html?id=<%= ENV["GOOGLE_TAG_MGR_ID"] %>"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <% end %>
-<div class="d-flex flex-column" style="min-height: 100vh">
-    <%= render partial: 'shared/header_navbar' %>
-    <%= render 'catalog/homepage_banner' %>
-    <!--<div class="container flex-grow-1">-->
-    <div class="container-fluid main-content-container flex-grow-1">
-    
-      <%= content_for(:container_header) %>
-      <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
-      <div class="row">
-        <%= content_for?(:content) ? yield(:content) : yield %>
+
+    <div class="d-flex flex-column" style="min-height: 100vh">
+
+      <% if Flipflop.sinai? %>
+        <%= render partial: 'shared/sinai_header_navbar' %>
+        <%= render 'sinai/homepage_banner' %>
+      <% else %>
+        <%= render partial: 'shared/header_navbar' %>
+        <%= render 'catalog/homepage_banner' %>
+      <% end %>
+
+      <!--<div class="container flex-grow-1">-->
+      <div class="container-fluid main-content-container flex-grow-1">
+        <%= content_for(:container_header) %>
+        <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
+        <div class="row">
+          <%= content_for?(:content) ? yield(:content) : yield %>
+        </div>
       </div>
 
-</div>
-    <%= render partial: 'shared/footer' %>
-    <%= render partial: 'shared/modal' %>
+      <% if Flipflop.sinai? %>
+        <%= render partial: 'shared/sinai_footer' %>
+      <% else %>
+        <%= render partial: 'shared/footer' %>
+      <% end %>
+
+      <%= render partial: 'shared/modal' %>
     </div>
   </body>
 </html>

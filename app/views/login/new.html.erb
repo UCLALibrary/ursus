@@ -1,0 +1,2 @@
+<h4>To access the Sinai Digital Manuscripts, <br>please register for an account.</h4>
+<%= button_to 'Sinai Digital Manuscript Registration', ENV['SINAIID_URL'], params: {'key' => ENV['SINAIID_UCLA_KEY'], callback_url: "#{@requested_path}", token: @token}, method: :post, class:'sinai-registration-button'  %>
