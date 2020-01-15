@@ -23,14 +23,16 @@ class ApplicationController < ActionController::Base
     if request.fullpath.include?(login_path)
       @path_check = request.fullpath.include?(login_path)
     else
+      # if the cookie named sinai_authenticated already exists
       if sinai_cookie?
         # do nothing
         'sinai_cookie You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
-      elsif ucla_cookie?
-        # user has a token so we then need to set the cookie based on the fact that they have a token in the database
+      # elsif the token EMEL sent back is in the database
+      elsif ucla_token?
         set_auth_cookie
         set_iv_cookie
-        'ucla_cookie You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
+        'ucla_token You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
+      # else go to the button page
       else
         redirect_to "/login?callback=#{request.original_url}"
       end
@@ -50,7 +52,7 @@ class ApplicationController < ActionController::Base
     @sinai_cookie = cookies[:sinai_authenticated]
   end
 
-  def ucla_cookie?
+  def ucla_token?
     # Does user have the sinai token in the database?
     params[:token].present? && SinaiToken.find_by(sinai_token: params[:token])
   end
