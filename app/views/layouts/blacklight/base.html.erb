@@ -8,11 +8,11 @@
     <meta name="Description" content="The UCLA Library Digital Collections includes rare and unique digital materials developed by the UCLA Library to support education, research, service, and creative expression. This website is our new interface for discovery and engagement of these collections. See collections of historic photographs and manuscripts. More collections added weekly.">
 
     <% if ENV["GOOGLE_TAG_MGR_ID"] %>
-      <script id='analytics-script'>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      <script type="text/javascript" id='analytics-script' >(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer',<%= ENV["GOOGLE_TAG_MGR_ID"] %>);</script>
+      })(window,document,'script','dataLayer','<%= ENV["GOOGLE_TAG_MGR_ID"] %>');</script>
     <% end %>
 
     <title><%= render_page_title %></title>
