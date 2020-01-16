@@ -1,3 +1,9 @@
-<div class='header-image-overlay'>
-  <h1>UCLA&nbsp;LIBRARY DIGITAL&nbsp;COLLECTIONS</h1>
-</div>
+<% if Flipflop.sinai? %>
+  <div class='header-image-overlay'>
+    <h1>SINAI DIGITAL MANUSCRIPTS</h1>
+  </div>
+<% else %>
+  <div class='header-image-overlay'>
+    <h1>UCLA&nbsp;LIBRARY DIGITAL&nbsp;COLLECTIONS</h1>
+  </div>
+<% end %>
