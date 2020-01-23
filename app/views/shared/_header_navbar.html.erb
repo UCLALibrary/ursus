@@ -1,40 +1,10 @@
-<script type="application/javascript">
-function toggleFunction() {
-  document.getElementById("yellowBar").style.display = "none";
-}
-</script>
-
-<nav class='navbar beta-bar' style="display:<%= @display_option %>" id="yellowBar">
-  <div class="beta-bar-wrapper">
-    <span class='beta-text'>Welcome to Digital Collections (Beta)! This site is growing each week as we migrate content from our <a href='http://digital2.library.ucla.edu/'  target='_blank' rel="noopener">Legacy Site</a>.</span>
-    <span class='beta-close' onclick="toggleFunction()">Close<i class="fa fa-close"></i></span>
-  </div>  
-</nav>
-
-<nav class='navbar navbar-expand-lg navbar-dark site-navbar' role='navigation'>
-  <div class='container-fluid'>
-    <div class='navbar-logo-block'>
-      <%= link_to(image_tag('logo/ucla-library-digital-collections_logo.svg', class: 'navbar-logo', alt: 'UCLA Library Digital Collections Logo',), root_path) %>
-      <span class='beta-logo'>BETA</span>
-    </div>
-
-    <button class='navbar-toggler custom-toggler' type='button' data-toggle='collapse' data-target='#user-util-collapse' aria-controls='user-util-collapse' aria-expanded='false' aria-label='Toggle navigation'>
-      <span class='navbar-toggler-icon'></span>
-    </button>
-    
-    <div class='collapse navbar-collapse' id='user-util-collapse'>
-      <ul class='navbar-nav nav ml-auto'>
-        <li class='nav-item'><a href='/about'>About</a></li>
-        <li class='nav-item nav-item-feedback'><a href='https://forms.gle/x2BV9dJMK241VsAJA' target='_blank' rel="noopener" >Give us feedback</a></li>
-      </ul>
-    </div>
-
-  </div>
-</nav>
+<% if Flipflop.sinai? %>
+  <%= render partial: 'shared/sinai_header' %>
+<% else %>
+  <%= render partial: 'shared/ursus_header' %>
+<% end %>
 
 <!-- Searchbar -->
-<%# unless controller.controller_name == 'catalog' && controller.action_name == 'show' %>
-  <div class="navbar site-searchbar" role="search">
-    <%= render_search_bar %>
-  </div>
-<%# end %>
+<div class="navbar site-searchbar" role="search">
+  <%= render_search_bar %>
+</div>
