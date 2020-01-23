@@ -1,12 +1,9 @@
 <div class = 'gallery-box'>
   <div class = 'gallery gallery-text ellipsis'>
     <header class = 'documentHeader row gallery'>
-      <% if counter = document_counter_with_offset(document_counter) %>
         <span class='document-counter'>
-          <%= t('blacklight.search.documents.counter', counter: counter) %>
-          <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' '), counter: counter) %>            
+          <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' ')) %>
         </span>
-      <% end %>
     </header>
   </div>
 </div>
