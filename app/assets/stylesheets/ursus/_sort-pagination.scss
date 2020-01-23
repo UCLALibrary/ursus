@@ -11,6 +11,7 @@
   .catalog-results {
     display: block;
   }
+
   .search-widgets {
     margin-top: 1rem;
   }
@@ -22,7 +23,7 @@
   }
 }
 
-.rectangle {
+.pagination-rectangle {
   background-color: #f5f5f5;
   border: none;
   margin-top: 1em;
@@ -30,7 +31,7 @@
 }
 
 @media screen and (max-width: 991px) {
-  .rectangle {
+  .pagination-rectangle {
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -73,6 +74,7 @@ a.page-link {
   background-color: $ucla-blue !important;
   border-color: $ucla-blue !important;
 }
+
 .page-item:first-child .page-link,
 .page-item:last-child .page-link {
   border-radius: 0rem !important;

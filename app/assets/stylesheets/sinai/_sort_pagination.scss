@@ -1,0 +1,17 @@
+.pagination-rectangle {
+  background-color: $callisto-beige;
+  margin-top: 1em;
+  padding: 1em 0.5em;
+}
+
+.page-item .page-link {
+  border-color: $gray-10 !important;
+  background-color: $white !important;
+  color: $gray-80 !important;
+}
+
+.page-item.active .page-link {
+  background-color: $callisto-drk-red !important;
+  border-color: $callisto-drk-red !important;
+  color: $callisto-beige !important;
+}
