@@ -6,6 +6,7 @@ class LoginController < ApplicationController
 
   def new
     @requested_path = params[:callback]
+    cookies[:requested_path3] = @requested_path
   end
 
   def create_token
