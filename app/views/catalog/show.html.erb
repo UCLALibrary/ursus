@@ -3,10 +3,10 @@
 <% else %>
   <% if current_search_session && controller.controller_name == 'catalog' && controller.action_name == 'show' %>
 
+<%# PAGINATION %>
     <div id='appliedParams' class='back-and-new-container'>
       <div class= 'previous-next'><%= render 'previous_next_doc' if @search_context %></div>
       <div class='back-and-new-links-show' >
-        <%#= link_to t('blacklight.search.new_search'), start_over_path, class: 'new-search-link btn' %>
         <%= link_back_to_catalog label:'Back to Search Results', class: 'btn back-to-search-link' %>
       </div>
     </div>
