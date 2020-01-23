@@ -25,7 +25,7 @@
 
     <%= opensearch_description_tag application_name, opensearch_catalog_url(format: 'xml') %>
     <%= favicon_link_tag %>
-    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= stylesheet_link_tag (Flipflop.sinai? ? "sinai": "application"), media: "all" %>
     <%= javascript_include_tag "application", defer: Rails.env.development? ? false : true %>
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
