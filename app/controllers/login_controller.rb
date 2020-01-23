@@ -6,7 +6,8 @@ class LoginController < ApplicationController
 
   def new
     @requested_path = params[:callback]
-    cookies[:requested_path3] = @requested_path
+    # save in order to allow later verification that the login page was accessed
+    cookies[:requested_path] = @requested_path
   end
 
   def create_token
