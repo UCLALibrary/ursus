@@ -29,8 +29,8 @@ class ApplicationController < ActionController::Base
         'sinai_cookie You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
       # elsif the token EMEL sent back is in the database
       elsif ucla_token?
-        set_auth_cookie
-        set_iv_cookie
+        ###set_auth_cookie
+        ###set_iv_cookie
         'ucla_token You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
       # else go to the button page
       else
@@ -53,8 +53,32 @@ class ApplicationController < ActionController::Base
   end
 
   def ucla_token?
-    # Does user have the sinai token in the database?
-    params[:token].present? && SinaiToken.find_by(sinai_token: params[:token])
+    # Does user have the UCLA token in the database?
+    # check for case when original request has a query string
+    # EMEL currently appends the token to the end of the callback with a ? even for multi value strings when a & should be used
+    if((request.fullpath) && (request.fullpath.include? (("?token=") || ("&token=")) ))
+      returned_token_array = request.fullpath.split(/\?token=|\&token=/)
+      returned_token = returned_token_array[1]
+      cookies[:token_found] = returned_token
+      ### only accept token if requested path was set in the login page (disallow direct token injection)
+      if ( SinaiToken.find_by(sinai_token: returned_token) && cookies[:requested_path3] )
+        set_auth_cookie
+        set_iv_cookie
+        redirect_to cookies[:requested_path3]
+        ###return 0
+      else
+        redirect_to "#{root_url}auth_error"
+        return 0
+      end
+    # check for case when original request does not have a query string
+    ###elsif
+      #### Does user have the sinai token in the database?
+      ###params[:token].present? && SinaiToken.find_by(sinai_token: params[:token])
+      ###return 0
+    ###else
+      ###redirect_to "/login?callback=#{request.original_url}"
+      ###return 0
+    end
   end
 
   def set_session_cookie
