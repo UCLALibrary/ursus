@@ -47,6 +47,7 @@ class CatalogController < ApplicationController
       fq: '(((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !((visibility_ssi:restricted) OR (visibility_ssi:discovery) OR (visibility_ssi:sinai)))'
       ### we want to only return works where visibility_ssi == open (not restricted)
     }
+    config.default_solr_params[:fq] = '(((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !(visibility_ssi:restricted))' if Flipflop.sinai?
 
     # config.show.partials.insert(1, :collection_banner)
     config.show.partials.insert(2, :uv)

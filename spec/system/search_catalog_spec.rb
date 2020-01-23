@@ -6,8 +6,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
   before do
     delete_all_documents_from_solr
     solr = Blacklight.default_index.connection
-    solr.add([orange, banana])
-    solr.add([creator, contributor, publisher, genre, medium, named_subject])
+    solr.add([orange, banana, creator, contributor, publisher, genre, medium, named_subject, sinai_work])
     solr.commit
   end
 
@@ -84,6 +83,15 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
     }
   end
 
+  let(:sinai_work) do
+    {
+      id: '999',
+      has_model_ssim: ['Work'],
+      title_tesim: 'Sinai work RsYAM429',
+      visibility_ssi: 'sinai'
+    }
+  end
+
   it 'gets correct search results' do
     visit root_path
     # Search for something
@@ -131,5 +139,18 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
     fill_in 'q', with: 'carrot'
     click_on 'search'
     expect(page).not_to have_content('Read More')
+  end
+
+  context 'when the sinai? flag is disabled' do
+    before { allow(Flipflop).to receive(:sinai?).and_return(false) }
+
+    it 'doesn\'t return works with "sinai" visibility' do
+      visit root_path
+      fill_in 'q', with: 'RsYAM429'
+      click_on 'search'
+
+      expect(page).to_not have_link('Sinai work RsYAM429')
+      expect(page).to have_content('0 Catalog Results')
+    end
   end
 end
