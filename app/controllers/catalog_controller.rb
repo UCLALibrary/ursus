@@ -82,15 +82,26 @@ class CatalogController < ApplicationController
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
-    config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
-    # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
-    config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
-    config.add_facet_field 'genre_sim', limit: 5
-    config.add_facet_field 'named_subject_sim', limit: 5
-    config.add_facet_field 'location_sim', limit: 5
-    config.add_facet_field 'year_isim', limit: 5, range: true
-    config.add_facet_field 'human_readable_language_sim', limit: 5
-    config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
+    if Flipflop.sinai?
+      config.add_facet_field 'genre_sim', limit: 5
+      config.add_facet_field 'place_of_origin_tesim', limit: 5
+      config.add_facet_field 'year_isim', limit: 5, range: true
+      config.add_facet_field 'human_readable_language_sim', limit: 5
+      # config.add_facet_field 'writing_system_tesim', limit:5
+      # config.add_facet_field 'script_tesim', limit:5
+      # config.add_facet_field 'features_tesim', limit:5
+      config.add_facet_field 'support_tesim', limit:5
+    else  
+      config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
+      # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
+      config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
+      config.add_facet_field 'genre_sim', limit: 5
+      config.add_facet_field 'named_subject_sim', limit: 5
+      config.add_facet_field 'location_sim', limit: 5
+      config.add_facet_field 'year_isim', limit: 5, range: true
+      config.add_facet_field 'human_readable_language_sim', limit: 5
+      config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
+    end
 
     # config.add_facet_field ::Solrizer.solr_name('human_readable_type', :facetable), label: 'Type', limit: 5
     # config.add_facet_field ::Solrizer.solr_name('creator', :facetable), limit: 5
