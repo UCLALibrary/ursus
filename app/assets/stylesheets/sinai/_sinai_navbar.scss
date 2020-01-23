@@ -50,7 +50,7 @@
     }
 
     .custom-toggler .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128, 0, 32, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     }
 
     .navbar-nav.nav {
@@ -80,7 +80,11 @@
 }
 
 @media (max-width: 576px) {
-  .site-navbar {
+  .sinai-site-navbar {
+    .sinai-navbar-logo a {
+      font-size: 1.25em;
+      font-weight: 600;
+    }
     .navbar-logo {
       width: 250px !important;
     }
@@ -88,7 +92,12 @@
 }
 
 @media (max-width: 374px) {
-  .site-navbar {
+  .sinai-site-navbar {
+    .sinai-navbar-logo a {
+      font-size: .95em;
+      font-weight: 600;
+      margin-top: 10px;
+    }
     .navbar-logo-block {
       flex-direction: column;
       justify-content: unset;
