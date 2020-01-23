@@ -1,0 +1,99 @@
+@import "ursus/colors";
+
+.sinai-site-navbar {
+  background-color: $white !important;
+  padding: 0.25rem 0 100 0 !important;
+  font-family: Helvetica, sans-serif;
+
+  .navbar-logo-block {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sinai-navbar-logo a {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: $gray-80 !important;
+    line-height: 29px;
+
+    &:hover {
+      color: $callisto-drk-red !important;
+      text-decoration: underline;
+    }
+  }
+
+  .nav-item a {
+    color: $gray-80 !important;
+    font-weight: 400;
+    font-size: 1em;
+    letter-spacing: 0.05rem;
+    margin-right: 2rem;
+
+    &:hover {
+      color: $callisto-drk-red !important;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .sinai-site-navbar {
+    .navbar-logo-block {
+      height: 45px;
+      padding-left: 0.75rem;
+    }
+
+    .navbar-toggler {
+      border-color: transparent !important;
+    }
+
+    .custom-toggler .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .navbar-nav.nav {
+      background-color: $white;
+      width: 100%;
+    }
+
+    .navbar-collapse {
+      background: $white;
+    }
+
+    .nav-item a {
+      margin-right: 0;
+    }
+
+    .nav-item {
+      padding: 12px 15px;
+      border-bottom: 1px solid $callisto-light-red;
+    }
+
+    .nav-item:hover {
+      a {
+        color: $callisto-drk-red !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .site-navbar {
+    .navbar-logo {
+      width: 250px !important;
+    }
+  }
+}
+
+@media (max-width: 374px) {
+  .site-navbar {
+    .navbar-logo-block {
+      flex-direction: column;
+      justify-content: unset;
+      align-items: flex-start;
+      height: 50px;
+    }
+  }
+}
