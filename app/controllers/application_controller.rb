@@ -67,7 +67,7 @@ class ApplicationController < ActionController::Base
     # set redirect if injected token is not in the database
     @redirect_target = "#{root_url}auth_error"
     # set return to false so that setting of the set_auth_cookie and set_iv_cookie is skipped if the token is invalid
-    return_false
+    !return_false = 0
   end
 
   def set_session_cookie
