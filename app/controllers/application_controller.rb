@@ -25,21 +25,17 @@ class ApplicationController < ActionController::Base
     else
       # if the cookie named sinai_authenticated already exists
       if sinai_authenticated?
-        # do nothing
+        # fall through and go to requested page
         'sinai_authenticated You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
-      # elsif the token EMEL sent back is in the database
+      # else is the token EMEL sent back in the database
       elsif ucla_token?
         set_auth_cookie
         set_iv_cookie
         redirect_to cookies[:requested_path]
         'ucla_token You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
-      # else go to the button page
+      # else go to the login button page or Authn error page (on injected token)
       else
-        if @returned_token
-          redirect_to "#{root_url}auth_error"
-        else
-          redirect_to "/login?callback=#{request.original_url}"
-        end
+        redirect_to @redirect_target
       end
     end
   end
@@ -58,12 +54,20 @@ class ApplicationController < ActionController::Base
   end
 
   def ucla_token?
-    # does the querystring contain a param named token and, if so, was it previously written to the database?
+    # default target if user is not logged in
+    @redirect_target = "/login?callback=#{request.original_url}"
+    # does the request have a querystring containing a param named token and, if so, was it previously written to the database?
     return true if params[:token].present? && SinaiToken.find_by(sinai_token: params[:token])
+    # does the request have a querystring containing the character "?token=" and, if so, extract the token
     return false unless request.fullpath.include?("?token=")
     returned_token_array = request.fullpath.split(/\?token=/)
     @returned_token = returned_token_array[1]
+    # is the extracted token in the database and did the user pass through the login page?
     return true if SinaiToken.find_by(sinai_token: @returned_token) && cookies[:requested_path]
+    # set redirect if injected token is not in the database
+    @redirect_target = "#{root_url}auth_error"
+    # set return to false so that setting of the set_auth_cookie and set_iv_cookie is skipped if the token is invalid
+    return_false
   end
 
   def set_session_cookie
