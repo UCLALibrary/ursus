@@ -1,9 +1,10 @@
+@import "sinai/document";
 @import "sinai/facets";
+@import "sinai/footer";
 @import "sinai/gallery";
+@import "sinai/search_searchbar";
 @import "sinai/sinai_navbar";
 @import "sinai/sort_pagination";
-@import "sinai/search_searchbar";
-@import "sinai/document";
-@import "sinai/utilities";
+@import "sinai/search--filter";
 @import "sinai/search_results";
-@import "sinai/search--filter"
+@import "sinai/utilities";
