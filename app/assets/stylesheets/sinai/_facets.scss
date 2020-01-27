@@ -1,0 +1,60 @@
+@import "ursus/colors";
+
+#facets {
+  a {
+    color: $callisto-drk-red !important;
+  }
+
+  .facet-content {
+    border-left: 1px solid $gray-10;
+    border-right: 1px solid $gray-10;
+    border-bottom: 1px solid $gray-10;
+  }
+
+  .facets-heading {
+    color: $gray-80 !important;
+  }
+
+  .card-header.collapsed {
+    a {
+      color: $gray-80 !important;
+    }
+  }
+
+  .card-header.collapse-toggle[aria-expanded="true"] {
+    background-color: $callisto-drk-red !important;
+    color: $callisto-beige !important;
+
+    a {
+      color: $callisto-beige !important;
+    }
+  }
+
+  .card-header.collapse-toggle.collapsed::after {
+    color: $gray-80;
+  }
+
+  .card-header.collapse-toggle::after {
+    color: $callisto-beige;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #facets {
+
+    .navbar {
+      background-color: $callisto-drk-red !important;
+
+      .facets-heading {
+        color: $callisto-beige !important;
+      }
+    }
+
+    .navbar-toggler {
+      .svg-icon path {
+        stroke: $callisto-beige !important;
+        fill: $callisto-beige !important;
+      }
+    }
+  }
+}
