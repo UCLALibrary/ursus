@@ -13,7 +13,7 @@
   }
 
   .sinai-navbar-logo a {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 600;
     color: $gray-80 !important;
     line-height: 29px;
@@ -42,7 +42,6 @@
   .sinai-site-navbar {
     .navbar-logo-block {
       height: 45px;
-      padding-left: 0.75rem;
     }
 
     .navbar-toggler {
@@ -82,7 +81,7 @@
 @media (max-width: 576px) {
   .sinai-site-navbar {
     .sinai-navbar-logo a {
-      font-size: 1.25em;
+      font-size: 1.15rem;
       font-weight: 600;
     }
     .navbar-logo {
@@ -94,7 +93,7 @@
 @media (max-width: 374px) {
   .sinai-site-navbar {
     .sinai-navbar-logo a {
-      font-size: .95em;
+      font-size: .9rem;
       font-weight: 600;
       margin-top: 10px;
     }
