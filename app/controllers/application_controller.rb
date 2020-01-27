@@ -94,7 +94,18 @@ class ApplicationController < ActionController::Base
 
   def create_encrypted_string
     todays_date = Time.zone.today
-    cipher = OpenSSL::Cipher::AES256.new :CBCgit
+    cipher = OpenSSL::Cipher::AES256.new :CBC
+    cipher.encrypt
+    @iv = cipher.random_iv
+    cipher.key = ENV['CIPHER_KEY']
+    cipher.iv = @iv
+    @cipher_text_packed = cipher.update("Authenticated #{todays_date}") + cipher.final
+    @cipher_text_unpacked = @cipher_text_packed.unpack('H*')[0].upcase
+  end
+
+  helper Openseadragon::OpenseadragonHelper
+  # Adds a few additional behaviors into the application controller
+  include Blacklight::Controller
   layout 'blacklight'
 
   protect_from_forgery with: :exception

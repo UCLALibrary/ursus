@@ -124,3 +124,7 @@ Style/GuardClause:
 Style/IfInsideElse:
   Exclude:
      - app/controllers/application_controller.rb
+
+Lint/UselessAssignment:
+  Exclude:
+     - app/controllers/application_controller.rb
