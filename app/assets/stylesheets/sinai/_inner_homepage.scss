@@ -1,3 +1,5 @@
+@import "ursus/colors";
+
 .sinai-homepage-masthead {
   background-image: image-url("sinai/inner-homepage-masthead-syr0127_0009_f_004r.jpg");
   background-position: center center;
@@ -6,4 +8,17 @@
   position: relative;
   height: 400px;
   max-height: 400px;
+}
+
+.page-lead {
+  margin: 80px 0;
+  p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 40px;
+  }
+}
+
+.divider__callisto--beige {
+  border-top: 1px solid $callisto-drk-beige;
 }
