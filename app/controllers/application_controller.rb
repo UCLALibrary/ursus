@@ -1,9 +1,9 @@
 # frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   before_action :display_banner?
 
   def display_banner?
-    @path_check = ''
     if cookie?
       @display_option = "none"
     else
@@ -19,24 +19,13 @@ class ApplicationController < ActionController::Base
   end
 
   def sinai_authn_check
-    # Checks to see if we are on the Login page and, if so, do nothing.
-    if request.fullpath.include?(login_path)
-      @path_check = request.fullpath.include?(login_path)
+    return if [login_path, version_path].include?(request.path) || sinai_authenticated?
+    if ucla_token?
+      set_auth_cookie
+      set_iv_cookie
+      redirect_to cookies[:requested_path]
     else
-      # if the cookie named sinai_authenticated already exists
-      if sinai_authenticated?
-        # fall through and go to requested page
-        'sinai_authenticated You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
-      # else is the token EMEL sent back in the database
-      elsif ucla_token?
-        set_auth_cookie
-        set_iv_cookie
-        redirect_to cookies[:requested_path]
-        'ucla_token You have a valid cookie that is allowing you to browse the Sinai Digital Library.'
-      # else go to the login button page or Authn error page (on injected token)
-      else
-        redirect_to @redirect_target
-      end
+      redirect_to @redirect_target
     end
   end
 
