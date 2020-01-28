@@ -82,15 +82,26 @@ class CatalogController < ApplicationController
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
-    config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
-    # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
-    config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
-    config.add_facet_field 'genre_sim', limit: 5
-    config.add_facet_field 'named_subject_sim', limit: 5
-    config.add_facet_field 'location_sim', limit: 5
-    config.add_facet_field 'year_isim', limit: 5, range: true
-    config.add_facet_field 'human_readable_language_sim', limit: 5
-    config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
+    if Flipflop.sinai?
+      config.add_facet_field 'genre_sim', limit: 5
+      config.add_facet_field 'place_of_origin_tesim', limit: 5, label: 'Place of origin'
+      config.add_facet_field 'year_isim', limit: 5, range: true
+      config.add_facet_field 'human_readable_language_sim', limit: 5
+      # config.add_facet_field 'writing_system_tesim', limit:5
+      # config.add_facet_field 'script_tesim', limit:5
+      # config.add_facet_field 'features_tesim', limit:5
+      config.add_facet_field 'support_tesim', limit: 5, label: 'Support'
+    else
+      config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
+      # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
+      config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
+      config.add_facet_field 'genre_sim', limit: 5
+      config.add_facet_field 'named_subject_sim', limit: 5
+      config.add_facet_field 'location_sim', limit: 5
+      config.add_facet_field 'year_isim', limit: 5, range: true
+      config.add_facet_field 'human_readable_language_sim', limit: 5
+      config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
+    end
 
     # config.add_facet_field ::Solrizer.solr_name('human_readable_type', :facetable), label: 'Type', limit: 5
     # config.add_facet_field ::Solrizer.solr_name('creator', :facetable), limit: 5
@@ -277,10 +288,12 @@ class CatalogController < ApplicationController
     end
     if @document[:has_model_ssim][0] == 'Collection'
       facet_member_of_collections = blacklight_config.facet_fields['member_of_collections_ssim']
-      @response_collection = search_service.facet_field_response(facet_member_of_collections.key, "f.member_of_collections_ssim.facet.contains" => @document[:title_tesim][0])
-      @display_facet = @response_collection.aggregations[facet_member_of_collections.field]
-      if @display_facet&.items && @display_facet.items.first
-        @collection_count = @display_facet.items.first.hits
+      if facet_member_of_collections
+        @response_collection = search_service.facet_field_response(facet_member_of_collections.key, "f.member_of_collections_ssim.facet.contains" => @document[:title_tesim][0])
+        @display_facet = @response_collection.aggregations[facet_member_of_collections.field]
+        if @display_facet&.items && @display_facet.items.first
+          @collection_count = @display_facet.items.first.hits
+        end
       end
     end
   end
