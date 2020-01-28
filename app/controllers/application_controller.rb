@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def sinai_authn_check
+    return true
     # Checks to see if we are on the Login page and do nothing
     if request.fullpath.include?(login_path)
       @path_check = request.fullpath.include?(login_path)
