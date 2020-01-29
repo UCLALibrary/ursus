@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def sinai_authn_check
-    return true #temporary short-circuit for dev purposes, do NOT commit, rubocop will catch it
     return if !Flipflop.sinai? || [login_path, version_path].include?(request.path) || sinai_authenticated?
     if ucla_token?
       set_auth_cookies
