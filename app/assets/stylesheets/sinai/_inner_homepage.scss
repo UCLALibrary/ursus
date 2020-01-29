@@ -52,13 +52,12 @@
   .img-grid-lg {
     background-image: image-url("sinai/inner-hmpg-grid-lg-arb0151_0059_f_029r.jpg");
     @include bground-img();
-    transition: transform 0.8s;
     height: 580px;
     max-height: 580px;
+    transition: transform 0.7s;
   }
-
   .img-grid-lg:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
 
   .img-grid-sm {
@@ -87,7 +86,7 @@
       font-size: 1.5rem;
     }
     p {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 100;
       line-height: 1.5;
       padding-top: 1.75rem !important;
