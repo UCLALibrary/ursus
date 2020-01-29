@@ -11,7 +11,12 @@
 <% end %>
 <% if show_pagination? and @response.total_pages > 1 %>
   <div class='pagination-rectangle'> <%= render 'search_header' %> </div>
-  <hr>
+<% if Flipflop.sinai? %>
+    <hr class='divider__red'>
+  <% else %>
+    <hr class='divider__blue'>
+  <% end %>
+
 <% end %>
 
 

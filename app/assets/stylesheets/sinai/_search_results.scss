@@ -1,0 +1,28 @@
+// the search results on the index view of the catalog
+
+
+$spacer: 10px;
+
+.documents-list {
+  .document {
+    border-bottom: 1px solid $callisto-drk-red;
+    margin-top: 0;
+    padding-top: 0;
+
+    // bookmarks checkbox on index, give it some
+    // lower margin when it collapses
+    .index-document-functions {
+      margin-bottom: ($spacer);
+
+      @media (min-width: breakpoint-min(sm)) {
+        margin-bottom: 0;
+      }
+    }
+
+    .document-thumbnail {
+      float: right;
+      margin-bottom: $spacer;
+      padding-left: 0;
+    }
+  }
+}

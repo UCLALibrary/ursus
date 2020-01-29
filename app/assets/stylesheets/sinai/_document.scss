@@ -1,4 +1,4 @@
-@import 'colors';
+@import 'ursus/colors';
 
 #documents {
   .document-title-heading {
@@ -15,7 +15,21 @@
   }
 
   .document-metadata {
+    font-weight: 500;
     margin-right: 0px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .document-metadata-title {
+    margin-right: 0px;
+    margin-left: 30px;
+    color: $black;
+    font-weight: 500;
+    font-size: 1.2rem;
+    a:link {
+      color: $black !important;
+    }
   }
 
   dl.document-metadata {
@@ -37,12 +51,13 @@
   }
 
   .document-thumbnail img {
-    max-width: 100px;
+    width: 100px;
+    height: 100px;
   }
 
   @media screen and (max-width: 766px) {
     .metadata-thumbnail-wrapper {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
     dl.document-metadata {
       margin-left: 0;
