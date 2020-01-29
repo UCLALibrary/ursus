@@ -25,14 +25,15 @@
 }
 
 .sinai-hmpg-content-wrapper {
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .grid-title,
-.grid-subtitle {
+.grid-subtitle,
+.grid-subtitle-sm {
   font-family: "Cormorant Garamond", serif;
   letter-spacing: 1px;
 }
@@ -49,14 +50,36 @@
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 550px;
-    max-height: 550px;
+    height: 580px;
+    max-height: 580px;
+  }
+
+  .img-grid-sm {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    max-height: 400px;
+  }
+
+  .img-grid-sm-lt {
+    background-image: image-url("sinai/manuscript-sample3.jpg");
+  }
+  .img-grid-sm-rt {
+    background-image: image-url("sinai/manuscript-sample3.jpg");
   }
 
   .text-grid {
-    h3 {
-      font-size: 1.75rem;
+    .grid-subtitle,
+    .grid-subtitle-sm {
       font-weight: 600;
+    }
+
+    .grid-subtitle {
+      font-size: 1.75rem;
+    }
+    .grid-subtitle-sm {
+      font-size: 1.5rem;
     }
     p {
       font-size: 1rem;
@@ -91,10 +114,12 @@
 
 @media (max-width: 767px) {
   .callisto-hmpg-grid {
-    .img-grid-lg {
+    .img-grid-lg,
+    .img-grid-sm {
       height: 450px;
       max-height: 450px;
     }
+
     .text-grid {
       p {
         padding-top: 1rem !important;
