@@ -2,7 +2,6 @@
 <% overview = Ursus::ItemOverviewMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
 
 <% if overview.length > 0 %>
-  
     <h5>Item Overview</h5>
     <dl class='row document-metadata'>
       <% overview.each do |field_name, field| -%>
@@ -14,7 +13,6 @@
         </dt>
       <% end %>
     </dl>
-  
 <% end %>
 
 <!--
