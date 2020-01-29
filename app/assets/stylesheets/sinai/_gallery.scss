@@ -28,14 +28,14 @@
     .sinai_thumbnail img {
       align: center;
       margin: 15px;
-      width: 255px;
+      max-width: 255px;
     }
     .document-counter {
       padding-left: 1em;
       margin-bottom: 1.5em;
       margin-right: 0.5em;
       a {
-        color: $gray-60 !important;
+        color: $gray-80 !important;
         text-align: center;
       }
     }
@@ -90,7 +90,7 @@
         margin-bottom: 1.5em;
         margin-right: 0.5em;
         a {
-          color: $gray-60 !important;
+          color: $gray-80 !important;
         }
       }
     }
@@ -110,6 +110,7 @@
     font-size: 18px;
     display: block;
     margin-top: 60px;
+    color: $gray-80 !important;
   }
 }
 
