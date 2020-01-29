@@ -6,32 +6,18 @@ footer {
   .primary-footer-wrapper {
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    align-items: center;
+    .logo-wrapper {
+      flex: 0 0 19%;
+    }
+    .logo-wrapper:nth-child(2) {
+      mix-blend-mode: multiply;
+    }
+    .footer-logo {
+      max-width: 50%;
+      height: auto;
+    }
   }
-}
-// LOGOS
-.navbar-logo {
-  width:100px;
-}
-.logo1 {
-  width: 100px;
-  margin-top: 35px;
-}
-.logo2 {
-
-  mix-blend-mode: multiply;
-}
-.logo3 {
-
-}
-.logo4 {
-
-  margin-top: 20px;
-}
-.logo5 {
-
-  margin-top: 35px;
-  margin-right: 20px;
 }
 
 //----------------------------------------
@@ -43,10 +29,8 @@ footer {
   font-family: Helvetica;
   font-size: 16px;
   background-color: $callisto-drk-beige;
+  padding: 30px 0 30px 20px;
   .footer-links {
-    text-align: left;
-    margin: 5px 25px 15px 100px;
-    padding-top: 12px;
     a {
       color: black !important;
       font-size: 1rem;
@@ -84,68 +68,34 @@ footer {
     color: $white;
     font-size: 0.75em;
     text-align: left;
-    margin-left: 100px;
+    margin-left: 0px;
     padding-top: 12px;
+    padding-left: 20px;
   }
 }
 
 //----------------------------------------
 
-@media (max-width: 875px){
-
+@media (max-width: 992px) {
   footer {
-    padding: 20px 10px 20px 30px;
-
     .primary-footer-wrapper {
-      display: flex;
-      justify-content: space-evenly;
       flex-wrap: wrap;
-    }
-  }
-  // LOGOS
-  .navbar-logo {
-    width: 80pxpx;
-  }
-  .logo1 {
-    width: 100px;
-    margin-top: 35px;
-  }
-  .logo2 {
-    width: 100px;
-    mix-blend-mode: multiply;
-  }
-  .logo3 {
-    width: 100px;
-  }
-  .logo4 {
-    width: 100px;
-    margin-top: 20px;
-  }
-  .logo5 {
-    width: 100px;
-    margin-top: 35px;
-    margin-right: 20px;
-  }
-
-  //-------
-
-  .secondary-footer-wrapper {
-    max-width: 768px;
-    width: 100%;
-    .footer-links {
-      margin: 5px 25px 15px 50px;
-      ul {
-        padding: 0;
-        display: inline;
+      .logo-wrapper {
+        flex: 0 0 33%;
       }
     }
   }
 
-  //-------
-
-  .copyright {
-    .uc-regents {
-      margin-left: 50px;
+  .secondary-footer-wrapper {
+    padding: 30px 0 10px 20px;
+    .footer-links {
+      ul {
+        padding: 0;
+        display: inline;
+        li {
+          margin-bottom: 16px;
+        }
+      }
     }
   }
 }
