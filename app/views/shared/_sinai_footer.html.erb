@@ -1,33 +1,36 @@
 <footer>
   <div class='primary-footer-wrapper'>
-    <div class="col1">
-    https://catalin.red/how-to-create-triangle-shapes/
-  <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" margin="0 auto" fill="#800020" >
-    <polygon points="0,0 25,0 12.5,25"/>
-  </svg>
-  
+    <div class="logo1">
+      <%= link_to(image_tag('sinai/logo-uclalib-blk.svg', class: 'logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank', rel: 'noopener') %>
     </div>
-    <div class="col2">
-      <%= link_to(image_tag('logo/ucla-library-logo.svg', class: 'logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank', rel: 'noopener') %>
+    <div class="logo2">
+      <%= image_tag('sinai/logo-sinai.png', class: 'navbar-logo sinai-logo', alt: 'UCLA Library Digital Collections Logo') %>
     </div>
-    <div class="col3">
-      <%= link_to(image_tag('logo/ucla-library-logo.svg', class: 'logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank', rel: 'noopener') %>
+    <div class="logo3">
+      <%= image_tag('sinai/logo-emel.png', class: 'navbar-logo', alt: 'UCLA Library Digital Collections Logo') %>
     </div>
-  </div>
-
-  <div class='secondary-footer-wrapper'>
-    <div class="col4">
-      <%= link_to(image_tag('logo/ucla-library-logo.svg', class: 'logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank', rel: 'noopener') %>
+    <div class="logo4">
+      <%= image_tag('sinai/logo-ahmanson.png', class: 'navbar-logo', alt: 'UCLA Library Digital Collections Logo') %>
     </div>
-    <div class="col5">
-      <%= link_to(image_tag('logo/ucla-library-logo.svg', class: 'logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank', rel: 'noopener') %>
+    <div class="logo5">
+      <%= image_tag('sinai/logo-arcadia.png', class: 'navbar-logo', alt: 'UCLA Library Digital Collections Logo') %>
     </div>
   </div>
 </footer>
 
-<div class='copyright'>
-  <div class='uc-regents'>
-
-    &#169; 2020
+<div class='secondary-footer-wrapper'>
+  <div class='footer-links'>
+    <ul>
+      <li><%= link_to 'UCLA Library Digital Collections', 'https://www.library.ucla.edu/'  %></li>
+      <li><%= link_to 'Contact Us', 'https://www.library.ucla.edu/' %></li>
+    </ul>
   </div>
 </div>
+
+<div class='copyright'>
+  <div class="uc-regents">
+    © <span id="copyright-year"></span> UC Regents. All rights reserved.
+  </div>
+</div>
+
+<script>$("#copyright-year").text(new Date().getFullYear());</script>
