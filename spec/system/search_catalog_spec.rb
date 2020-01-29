@@ -153,4 +153,19 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       expect(page).to have_content('0 Catalog Results')
     end
   end
+
+  xcontext 'when the sinai? flag is enabled' do
+    before do
+      allow(Flipflop).to receive(:sinai?).and_return(true)
+      allow_any_instance_of(ApplicationController).to receive(:sinai_authn_check).and_return(true)
+    end
+
+    it 'return works with "sinai" visibility' do
+      visit root_path
+      fill_in 'q', with: 'RsYAM429'
+      click_on 'search'
+      expect(page).to have_link('Sinai work RsYAM429')
+      # expect(page).to have_content('0 Catalog Results')
+    end
+  end
 end

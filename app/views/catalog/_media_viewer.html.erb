@@ -1,14 +1,14 @@
 <% if can?(:read, document) %>
 
-<div class='uv-container'>
-  <div class='universal-viewer'>
+<div class='media-viewer-container'>
+  <div class='media-viewer'>
     <% iiif_service = IiifService.new %>
     <iframe
-        class='universal-viewer-iframe'
+        class='media-viewer-iframe'
         src=<%= iiif_service.src(request, document) %>
         width='924px'
         height='668px'
-        id='universal-viewer-iframe'
+        id='media-viewer-iframe'
         allowfullscreen
         frameborder='0'>
     </iframe>

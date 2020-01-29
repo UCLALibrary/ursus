@@ -3,27 +3,58 @@ require 'rails_helper'
 
 RSpec.describe CatalogController, type: :controller do
   describe 'facets' do
-    let(:facets) do
-      controller
-        .blacklight_config
-        .facet_fields.keys
-        .map { |field| field.gsub(/\_s+im$/, '') }
+    context 'in the default site' do
+      before do
+        allow(Flipflop).to receive(:sinai?).and_return(false)
+      end
+
+      let(:facets) do
+        controller
+          .blacklight_config
+          .facet_fields.keys
+          .map { |field| field.gsub(/\_s+im$/, '') }
+      end
+
+      let(:expected_facets) do
+        ['subject',
+         'human_readable_resource_type',
+         'genre',
+         'named_subject',
+         'location',
+         'year_isim',
+         'human_readable_language',
+         'generic_type',
+         'member_of_collections']
+      end
+
+      it 'has exactly expected facets' do
+        expect(facets).to contain_exactly(*expected_facets)
+      end
     end
 
-    let(:expected_facets) do
-      ['subject',
-       'human_readable_resource_type',
-       'genre',
-       'named_subject',
-       'location',
-       'year_isim',
-       'human_readable_language',
-       'generic_type',
-       'member_of_collections']
-    end
+    xcontext 'in the sinai site' do
+      before do
+        allow(Flipflop).to receive(:sinai?).and_return(true)
+      end
 
-    it 'has exactly expected facets' do
-      expect(facets).to contain_exactly(*expected_facets)
+      let(:facets_sinai) do
+        controller
+          .blacklight_config
+          .facet_fields.keys
+          .map { |field| field.gsub(/\_s+im$/, '') }
+      end
+
+      let(:expected_facets) do
+        ['genre',
+         'place_of_origin',
+         'year_isim',
+         'human_readable_language',
+         'support']
+      end
+
+      it 'has exactly expected facets' do
+        expect(facets_sinai).to contain_exactly(*expected_facets)
+      end
     end
   end
 

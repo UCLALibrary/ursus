@@ -1,0 +1,36 @@
+<footer>
+  <div class='primary-footer-wrapper'>
+    <div class="logo-wrapper">
+      <%= link_to(image_tag('sinai/logo-uclalib-blk.svg', class: 'footer-logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank', rel: 'noopener') %>
+    </div>
+    <div class="logo-wrapper">
+      <%= image_tag('sinai/logo-sinai.png', class: 'footer-logo', alt: 'UCLA Library Digital Collections Logo') %>
+    </div>
+    <div class="logo-wrapper">
+      <%= image_tag('sinai/logo-emel.png', class: 'footer-logo', alt: 'UCLA Library Digital Collections Logo') %>
+    </div>
+    <div class="logo-wrapper">
+      <%= image_tag('sinai/logo-ahmanson.png', class: 'footer-logo', alt: 'UCLA Library Digital Collections Logo') %>
+    </div>
+    <div class="logo-wrapper">
+      <%= image_tag('sinai/logo-arcadia.png', class: 'footer-logo', alt: 'UCLA Library Digital Collections Logo') %>
+    </div>
+  </div>
+</footer>
+
+<div class='secondary-footer-wrapper'>
+  <div class='footer-links'>
+    <ul>
+      <li><%= link_to 'UCLA Library Digital Collections', 'https://www.library.ucla.edu/'  %></li>
+      <li><%= link_to 'Contact Us', 'https://www.library.ucla.edu/' %></li>
+    </ul>
+  </div>
+</div>
+
+<div class='copyright'>
+  <div class="uc-regents">
+    © <span id="copyright-year"></span> UC Regents. All rights reserved.
+  </div>
+</div>
+
+<script>$("#copyright-year").text(new Date().getFullYear());</script>
