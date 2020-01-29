@@ -1,20 +1,24 @@
 @import "ursus/colors";
 @import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,600&display=swap");
 
-.sinai-homepage-masthead {
-  background-image: image-url("sinai/inner-homepage-masthead-syr0127_0009_f_004r.jpg");
+@mixin bground-img {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.sinai-homepage-masthead {
+  background-image: image-url("sinai/inner-homepage-masthead-syr0127_0009_f_004r.jpg");
+  @include bground-img();
+
   height: 400px;
   max-height: 400px;
 }
 
 .page-lead {
   margin: 80px 0;
-  // background-color: blue;
   p {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 300;
     line-height: 40px;
   }
@@ -27,8 +31,8 @@
 .sinai-hmpg-content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .grid-title,
@@ -39,34 +43,35 @@
 }
 
 .grid-title {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 500;
   text-transform: uppercase;
 }
 
 .callisto-hmpg-grid {
   .img-grid-lg {
-    background-image: image-url("sinai/manuscript-sample3.jpg");
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: image-url("sinai/inner-hmpg-grid-lg-arb0151_0059_f_029r.jpg");
+    @include bground-img();
+    transition: transform 0.8s;
     height: 580px;
     max-height: 580px;
   }
 
+  .img-grid-lg:hover {
+    transform: scale(1.05);
+  }
+
   .img-grid-sm {
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include bground-img();
     height: 400px;
     max-height: 400px;
   }
 
-  .img-grid-sm-lt {
-    background-image: image-url("sinai/manuscript-sample3.jpg");
+  .img-grid-sm-lf {
+    background-image: image-url("sinai/inner-hmpg-grid-sm-lf-arb0265_0384_f_191v.jpg");
   }
   .img-grid-sm-rt {
-    background-image: image-url("sinai/manuscript-sample3.jpg");
+    background-image: image-url("sinai/inner-hmpg-grid-sm-rt-arb0121_0076_f_035v.jpg");
   }
 
   .text-grid {
@@ -111,8 +116,33 @@
     }
   }
 }
+@media (max-width: 810px) {
+  .callisto-hmpg-grid {
+    .text-grid {
+      a {
+        font-size: 0.65rem;
+      }
+    }
+  }
+}
 
 @media (max-width: 767px) {
+  .sinai-homepage-masthead {
+    height: 350px;
+    max-height: 350px;
+  }
+
+  .page-lead {
+    margin: 60px 0;
+    p {
+      font-size: 1.125rem;
+      line-height: 2.25rem;
+    }
+  }
+  .grid-title {
+    font-size: 2rem;
+  }
+
   .callisto-hmpg-grid {
     .img-grid-lg,
     .img-grid-sm {
@@ -121,8 +151,12 @@
     }
 
     .text-grid {
+      .grid-subtitle {
+        font-size: 1.5rem;
+      }
       p {
-        padding-top: 1rem !important;
+        font-size: 0.875rem;
+        padding-top: 0.25rem !important;
       }
     }
   }
