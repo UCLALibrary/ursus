@@ -1,3 +1,9 @@
+<% if Flipflop.sinai? %>
+  <% if current_page?(root_path) %>
+  <%= render 'homepage_sinai' %>
+  <% end %>
+<% else%>
+
 <% if current_page?(root_path) %>
 
     <div class='header-image-block jumbotron jumbotron-fluid mb-0'>
@@ -40,4 +46,6 @@
 ),url(<%= image_path "ucla_powell_library.jpg" %>);">
     <%= render 'collection_masthead_overlay', document: @document, collection_count: @collection_count%>
   </div>
+<% end %>
+
 <% end %>
