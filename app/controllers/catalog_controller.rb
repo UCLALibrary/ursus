@@ -50,7 +50,7 @@ class CatalogController < ApplicationController
     config.default_solr_params[:fq] = '(((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !(visibility_ssi:restricted))' if Flipflop.sinai?
 
     # config.show.partials.insert(1, :collection_banner)
-    config.show.partials.insert(2, :uv)
+    config.show.partials.insert(2, :media_viewer)
 
     # solr field configuration for document/show views
     config.index.title_field = 'title_tesim'

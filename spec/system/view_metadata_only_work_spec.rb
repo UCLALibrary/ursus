@@ -35,7 +35,7 @@ RSpec.feature "View a metadata-only Work", js: true do
     }
   end
 
-  let(:css_selector_for_uv) { '.universal-viewer' }
+  let(:css_selector_for_uv) { '.media-viewer' }
 
   it 'only displays Universal Viewer if user has at least "read"-level access' do
     # Should see Universal Viewer
