@@ -1,42 +1,52 @@
-<% if Flipflop.sinai? %>
-<% doc_presenter = index_presenter(document) %>
-<div class="metadata-thumbnail-wrapper">
-<!-- default partial to display solr document fields in catalog index view -->
-  <dl class="document-metadata dl-invert row">
+<% if Flipflop.sinai? %><!-- SINAI -->
+  <% doc_presenter = index_presenter(document) %>
+  <div class="metadata-thumbnail-wrapper">
+    <!-- default partial to display solr document fields in catalog index view -->
+    <dl class="document-metadata dl-invert row">
+      <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
+        <div class="document-thumbnail"><%= tn %></div>
+      <% end %>
+
+      <div class="document-metadata-title">
+        <% if counter = document_counter_with_offset(document_counter) %>
+        <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' '), counter: counter) %>
+      <% end %>
+      </div>
+    </dl>
+  </div>
+
+<% else %><!-- URSUS -->
+  <% doc_presenter = index_presenter(document) %>
+  <div class="metadata-thumbnail-wrapper">
+    <!-- default partial to display solr document fields in catalog index view -->
+    <dl class="document-metadata dl-invert row">
+      <% doc_presenter.fields_to_render.each do | field_name, field | %>
+      <% if field_name == "member_of_collections_ssim" %>
+        <% if document[:member_of_collections_ssim] && document[:member_of_collection_ids_ssim] %>
+          <dt class="blacklight-<%= field_name.parameterize %> col-md-3">
+            <%= render_index_field_label document, field: field_name %>
+          </dt>
+          <dd class="blacklight-<%= field_name.parameterize %> col-md-9">
+            <%= link_to  document[:member_of_collections_ssim][0], "/catalog/#{document[:member_of_collection_ids_ssim][0]}" %>
+          </dd>
+        <% end %>
+
+        <% else %>
+          <dt class="blacklight-<%= field_name.parameterize %> col-md-3">
+            <%= render_index_field_label document, field: field_name %>
+          </dt>
+          <dd class="blacklight-<%= field_name.parameterize %> col-md-9">
+            <%= doc_presenter.field_value field %>
+          </dd>
+          <% if field_name == "Description" %>
+            <dt class="blacklight-<%= field_name.parameterize %> col-md-3"></dt>
+            <dd class="blacklight-<%= field_name.parameterize %> col-md-9">&nbsp;&nbsp;&nbsp;</dd>
+          <% end %>
+        <% end %>
+      <% end %>
+    </dl>
     <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
       <div class="document-thumbnail"><%= tn %></div>
     <% end %>
-    <div class="document-metadata-title">
-    <% if counter = document_counter_with_offset(document_counter) %>
-      <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' '), counter: counter) %>
-    <% end %>
-    </div>
-  </dl>
-</div>
-<% else %> <!-- URSUS -->
-<% doc_presenter = index_presenter(document) %>
-<div class="metadata-thumbnail-wrapper">
-<!-- default partial to display solr document fields in catalog index view -->
-
-<dl class="document-metadata dl-invert row">
-  <% doc_presenter.fields_to_render.each do | field_name, field | %>
-    <% if field_name == "member_of_collections_ssim" %>
-      <% if document[:member_of_collections_ssim] && document[:member_of_collection_ids_ssim] %>
-        <dt class="blacklight-<%= field_name.parameterize %> col-md-3"><%= render_index_field_label document, field: field_name %></dt>
-        <dd class="blacklight-<%= field_name.parameterize %> col-md-9"><%= link_to  document[:member_of_collections_ssim][0], "/catalog/#{document[:member_of_collection_ids_ssim][0]}" %></dd>
-      <% end %>
-        <% else %>
-      <dt class="blacklight-<%= field_name.parameterize %> col-md-3"><%= render_index_field_label document, field: field_name %></dt>
-      <dd class="blacklight-<%= field_name.parameterize %> col-md-9"><%= doc_presenter.field_value field %></dd>
-      <% if field_name == "Description" %>
-        <dt class="blacklight-<%= field_name.parameterize %> col-md-3"></dt>
-        <dd class="blacklight-<%= field_name.parameterize %> col-md-9">&nbsp;&nbsp;&nbsp;</dd>
-      <% end %>  
-    <% end %>  
-  <% end %>
-</dl>
-  <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-    <div class="document-thumbnail"><%= tn %></div>
-  <% end %>
-</div>
+  </div>
 <% end %>
