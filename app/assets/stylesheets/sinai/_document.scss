@@ -27,6 +27,7 @@
     color: $black;
     font-weight: 500;
     font-size: 1.2rem;
+
     a:link {
       color: $black !important;
     }
@@ -35,15 +36,18 @@
   dl.document-metadata {
     padding-left: 0px;
     margin-left: 1em;
+
     dt {
       font-weight: bold;
       color: $ucla-darkest-blue;
       font-size: 1rem;
     }
+
     dd {
       flex: 0 0 70%;
       max-width: 70%;
     }
+
     .description,
     .description-full {
       width: 100%;
@@ -53,14 +57,17 @@
   .document-thumbnail img {
     width: 100px;
     height: 100px;
+    object-fit: none;
   }
 
   @media screen and (max-width: 766px) {
     .metadata-thumbnail-wrapper {
       flex-direction: column;
     }
+
     dl.document-metadata {
       margin-left: 0;
+
       dd {
         flex: 0 0 100%;
         max-width: 100%;
@@ -70,6 +77,7 @@
     dd.document-metadata {
       margin-right: 15px;
     }
+
     .document-thumbnail {
       text-align: center;
       padding-bottom: 1rem;
