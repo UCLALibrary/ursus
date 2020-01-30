@@ -34,13 +34,13 @@
 
     .constraint-value,
     .remove {
-      color: $ucla-darkest-blue !important;
-      border-left: 2px solid $ucla-darkest-blue;
-      background-color: $ucla-lightest-blue !important;
+      color: $callisto-beige !important;
+      border-left: 2px solid $callisto-beige;
+      background-color: $callisto-drk-red !important;
       //border: 0 !important;
     }
     .filter-name:after {
-      color: $ucla-darkest-blue !important;
+      color: $callisto-beige !important;
     }
     /*.constraint-value:hover {
       color: $ucla-tertiary-gray !important;
@@ -76,15 +76,15 @@
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    border: 1px solid $ucla-blue;
+    border: 1px solid $callisto-light-red;
     border-radius: 0px;
     padding: 6px ;
   }
   a:hover {
     height: 30px;
     width: 138px;
-    color: $white !important;
-    background-color: $ucla-darker-blue;
+    color: $callisto-beige !important;
+    background-color: $callisto-drk-red;
     font-family: Helvetica;
     font-size: 14px;
     line-height: 17px;
@@ -99,9 +99,6 @@
 search-filter-container
 .results_container {
   margin-bottom: 50px;
-  hr {
-    color: $callisto-light-red;
-  }
 }
 
 
