@@ -1,0 +1,112 @@
+@import "ursus/colors";
+
+.authn-page {
+  margin: 0 auto;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+}
+
+.image-block {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1302838/sinai-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 600px;
+  height: 100%;
+}
+
+.overlay-block {
+  background-color: $callisto-drk-red;
+  color: white;
+  padding: 1.75rem 1rem;
+  p {
+    // font-size: 18px;
+    font-weight: 300;
+    line-height: 1.2;
+    padding: 1rem 0;
+  }
+
+  .sinai-registration-btn {
+    color: $white;
+    background: none;
+    border: 2px solid $white;
+    padding: 0.5rem 1.25rem;
+  }
+}
+
+.text-block {
+  padding: 3rem 1rem;
+  p {
+    line-height: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .authn-page {
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 0.25fr 0.25fr 3fr;
+    // grid-template-rows: 0.25fr 0.25fr 0.5fr 0.25fr 0.25fr 0.5fr 0.5fr 0.25fr 0.25fr;
+    // grid-template-columns:
+    // grid-template-rows:
+    padding-top: 0;
+    h2 {
+      font-size: 36px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .image-block {
+    grid-column: 3 / span 3;
+    grid-row: 2 / span 6;
+  }
+
+  .overlay-block {
+    grid-column: 1 / span 4;
+    grid-row: 3 / span 2;
+    // padding-left: 3rem;
+    p {
+      // padding: 2rem 0;
+    }
+  }
+
+  .text-block {
+    grid-column: 1 / span 2;
+    grid-row: 6 / span 3;
+    // padding-top: 2rem;
+    // padding-left: 0rem;
+    // padding-right: 1rem;
+  }
+}
+
+@media (min-width: 991px) {
+  .authn-page {
+    // grid-template-rows: .25fr .25fr .5fr .25fr .25fr .5fr .5fr .25fr .25fr;
+    max-width: 1400px;
+    width: 100%;
+
+    h2 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .overlay-block {
+    grid-row: 3 / span 3;
+    p {
+      font-size: 24px;
+    }
+  }
+}
