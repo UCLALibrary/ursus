@@ -1,0 +1,82 @@
+
+.new-search-link {
+  padding-right: 15px;
+  margin-right: 2px;
+  float: right;
+}
+
+.back-to-search-link {
+  color: black !important;
+  margin-right: 20px;
+  float: right;
+  width: 175px !important;
+  border-left: solid;
+  border-left: 1px solid $callisto-light-red !important;
+  border-right: 1px solid $callisto-light-red !important;
+  border-top: 0 none !important;
+  border-bottom: 0 none !important;
+}
+
+.total-results {
+  color: black !important;
+}
+
+.back-and-new-links-show {
+  float: right;
+  clear: left;
+  padding-top: 6px;
+  a {
+    height: 30px;
+    width: 138px;
+    color: black;
+    background-color: $white;
+    font-family: Helvetica;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    border: 1px solid $ucla-darker-blue;
+    border-radius: 0px;
+  }
+  a:hover {
+    height: 30px;
+    width: 138px;
+    color: $callisto-beige !important;
+    background-color: $callisto-drk-red;
+    font-family: Helvetica;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    border: 1px solid $callisto-drk-red;
+    border-radius: 0px;
+    padding-bottom: 3px;
+  }
+}
+
+.back-and-new-container {
+  height: 46px;
+  border-bottom: 1px solid #dee2e6;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.previous-next {
+  padding-left: 15px;
+  padding-top: 6px;
+  color: black !important;
+}
+
+.previous {
+  color: black !important;
+}
+
+.next {
+  color: black !important;
+}
+
+.search-breadcrumbs {
+  margin-left: 10px;
+  margin-top: -9px;
+}
