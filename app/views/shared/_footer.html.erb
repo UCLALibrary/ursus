@@ -1,28 +1,5 @@
-<footer>
-  <div class='footer-wrapper'>
-    <div class="col1">
-      <%= link_to(image_tag('logo/ucla-library-logo.svg', class: 'logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank', rel: 'noopener') %>
-    </div>
-    <div class="col2">
-      <ul>
-        <li><%= link_to 'Copyright and Collections', '/copyrights_and_collections' %></li>
-        <li><%= link_to 'Privacy Policy', '/privacy_policy' %></li>
-        <li><%= link_to 'Contact Us', '/contact' %></li>
-      </ul>
-    </div>
-    <div class="col3">
-      <ul>
-        <li><%= link_to 'Visit Our Legacy Site', 'http://digital2.library.ucla.edu/', target: '_blank', rel: 'noopener' %></li>
-        <li><%= link_to 'Give Us Feedback', 'https://forms.gle/x2BV9dJMK241VsAJA', target: '_blank', rel: 'noopener' %></li>
-        
-        <!--<li>Migration Updates</li>-->
-      </ul>
-    </div>
-  </div>
-</footer>
-
-<div class='copyright'>
-  <div class='uc-regents'>
-    &#169; 2019 UC Regents. All rights reserved.
-  </div>
-</div>
+<% if Flipflop.sinai? %>
+  <%= render partial: 'shared/sinai_footer' %>
+<% else %>
+  <%= render partial: 'shared/ursus_footer' %>
+<% end %>

@@ -14,4 +14,8 @@
   </div>
 </div>
 
-<hr class='divider__blue'>
+<% if Flipflop.sinai? %>
+    <hr class='divider__red'>
+  <% else %>
+    <hr class='divider__blue'>
+<% end %>

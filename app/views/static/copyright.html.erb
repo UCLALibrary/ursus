@@ -15,7 +15,11 @@
     </div>
   </div>
 
-  <hr class='divider__blue'>
+<% if Flipflop.sinai? %>
+    <hr class='divider__red'>
+  <% else %>
+    <hr class='divider__blue'>
+  <% end %>
 
   <div class='row'>
     <div class='col-lg-4 static-page-subtitles'>
@@ -28,7 +32,11 @@
     </div>
   </div>
 
-  <hr class='divider__blue'>
+<% if Flipflop.sinai? %>
+    <hr class='divider__red'>
+  <% else %>
+    <hr class='divider__blue'>
+  <% end %>
 
   <div class='row'>
     <div class='col-lg-4 static-page-subtitles'>
@@ -43,5 +51,9 @@
     </div>
   </div>
 
-  <hr class='divider__blue'>
+<% if Flipflop.sinai? %>
+    <hr class='divider__red'>
+  <% else %>
+    <hr class='divider__blue'>
+  <% end %>
 </div>

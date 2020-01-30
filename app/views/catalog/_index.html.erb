@@ -1,3 +1,19 @@
+<% if Flipflop.sinai? %>
+<% doc_presenter = index_presenter(document) %>
+<div class="metadata-thumbnail-wrapper">
+<!-- default partial to display solr document fields in catalog index view -->
+  <dl class="document-metadata dl-invert row">
+    <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
+      <div class="document-thumbnail"><%= tn %></div>
+    <% end %>
+    <div class="document-metadata-title">
+    <% if counter = document_counter_with_offset(document_counter) %>
+      <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' '), counter: counter) %>
+    <% end %>
+    </div>
+  </dl>
+</div>
+<% else %> <!-- URSUS -->
 <% doc_presenter = index_presenter(document) %>
 <div class="metadata-thumbnail-wrapper">
 <!-- default partial to display solr document fields in catalog index view -->
@@ -19,8 +35,8 @@
     <% end %>  
   <% end %>
 </dl>
-
   <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
     <div class="document-thumbnail"><%= tn %></div>
   <% end %>
 </div>
+<% end %>

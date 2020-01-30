@@ -37,4 +37,26 @@ RSpec.describe IiifService do
       end
     end
   end
+
+  describe '#src' do
+    before do
+      allow(Flipflop).to receive(:use_manifest_store?).and_return(true)
+    end
+
+    let(:request) { instance_double('ActionDispatch::Request', base_url: 'http://test.url') }
+
+    context 'by default' do
+      it 'links to universal viewer' do
+        allow(Flipflop).to receive(:sinai?).and_return(false)
+        expect(service.src(request, solr_document)).to eq 'http://test.url/uv/uv.html#?manifest=https%3A%2F%2Fmanifest.store%2Fark%253A%252Fabc%252F123%2Fmanifest'
+      end
+    end
+
+    context 'when the sinai feature flag is set' do
+      it 'links to mirador' do
+        allow(Flipflop).to receive(:sinai?).and_return(true)
+        expect(service.src(request, solr_document)).to eq 'http://test.url/mirador.html#?manifest=https%3A%2F%2Fmanifest.store%2Fark%253A%252Fabc%252F123%2Fmanifest'
+      end
+    end
+  end
 end

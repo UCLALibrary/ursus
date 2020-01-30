@@ -104,9 +104,9 @@ RSpec.describe 'View a Work', type: :system, js: true do
 
   it 'loads UV on the page with the correct controls' do
     visit solr_document_path(id)
-    expect(page.html).to match(/universal-viewer-iframe/)
+    expect(page.html).to match(/media-viewer-iframe/)
 
-    within_frame(find('#universal-viewer-iframe')) do
+    within_frame(find('#media-viewer-iframe')) do
       # Don't show download
       expect(page).to have_selector('button.download', visible: false)
       # Show fullscreen
