@@ -10,11 +10,7 @@
   margin-right: 20px;
   float: right;
   width: 175px !important;
-  border-left: solid;
-  border-left: 1px solid $callisto-light-red !important;
-  border-right: 1px solid $callisto-light-red !important;
-  border-top: 0 none !important;
-  border-bottom: 0 none !important;
+  border: 1px solid $callisto-light-red !important;
 }
 
 .total-results {
