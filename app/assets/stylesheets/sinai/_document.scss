@@ -57,6 +57,7 @@
   .document-thumbnail img {
     width: 100px;
     height: 100px;
+    object-fit: none;
   }
 
   @media screen and (max-width: 766px) {
