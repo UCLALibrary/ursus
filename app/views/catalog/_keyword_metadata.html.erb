@@ -2,7 +2,11 @@
 <% keyword = Ursus::KeywordMetadataPresenter.new(document: doc_presenter.fields_to_render).keyword_terms %>
 
 <% if keyword.length > 0 %>
-    <hr>
+    <% if Flipflop.sinai? %>
+        <hr class='divider__red'>
+      <% else %>
+        <hr>
+    <% end %>
     <h5>Keywords</h5>
     <dl class='row document-metadata'>
       <% keyword.each do |field_name, field| -%>
