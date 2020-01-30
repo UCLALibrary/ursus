@@ -1,10 +1,8 @@
-@import 'ursus/colors';
-
 #documents {
   .document-title-heading {
     font-weight: 400;
     font-size: 1rem;
-    color: $ucla-darker-blue;
+    color: black;
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -24,12 +22,12 @@
   .document-metadata-title {
     margin-right: 0px;
     margin-left: 30px;
-    color: $black;
+    color: black;
     font-weight: 500;
     font-size: 1.2rem;
 
     a:link {
-      color: $black !important;
+      color: black !important;
     }
   }
 
@@ -39,7 +37,7 @@
 
     dt {
       font-weight: bold;
-      color: $ucla-darkest-blue;
+      color: black;
       font-size: 1rem;
     }
 
