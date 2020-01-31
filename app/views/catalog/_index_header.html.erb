@@ -1,4 +1,5 @@
 <%# header bar for doc items in index view -%>
+<% if not Flipflop.sinai? %>
 <header class='documentHeader row'>
   <%# main title container for doc partial view
       How many bootstrap columns need to be reserved
@@ -9,13 +10,12 @@
     <%= render_index_doc_actions document, wrapping_class: 'index-document-functions col-sm-3 col-lg-2' %>
   <% end %>
 
-<% if not Flipflop.sinai? %>
   <h3 class="index_title document-title-heading <%= document_actions.present? ? "col-sm-9 col-lg-10" : "col-md-8" %>">
     <% if counter = document_counter_with_offset(document_counter) %>
     <% end %>
     <%= link_to_document document, counter: counter %>
   </h3>
-<% end %>
 
   <%= document_actions %>
 </header>
+<% end %>

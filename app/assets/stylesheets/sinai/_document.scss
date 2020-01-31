@@ -15,15 +15,20 @@
   .document-metadata {
     font-weight: 500;
     margin-right: 0px;
-    flex: 0 0 100%;
     max-width: 100%;
+    flex-wrap: nowrap !important;
   }
 
   .document-metadata-title {
     margin-right: 0px;
     margin-left: 30px;
     font-size: 1rem;
+    font-weight: 400;
+    flex-direction: column;
+    clear: both;
     a {
+      font-size: 1rem !important;
+      font-weight: 400 !important;
       color: $gray-80 !important;
       &:hover {
         color: $callisto-drk-red !important;
@@ -37,7 +42,8 @@
 
   dl.document-metadata {
     padding-left: 0px;
-    margin-left: 1em;
+    margin-left: 1rem;
+    margin-top: 1rem;
 
     dt {
       font-weight: bold;

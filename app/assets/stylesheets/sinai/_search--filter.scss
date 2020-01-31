@@ -96,9 +96,13 @@
   }
 }
 
-search-filter-container
 .results_container {
   margin-bottom: 50px;
+
+  hr.divider__red {
+    border-top: 1px solid $callisto-light-red;
+    margin: 1rem 0 0 0 !important;
+  }
 }
 
 

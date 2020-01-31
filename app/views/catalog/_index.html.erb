@@ -7,11 +7,11 @@
         <div class="document-thumbnail"><%= tn %></div>
       <% end %>
 
-      <div class="document-metadata-title">
+      <span class="document-metadata-title">
         <% if counter = document_counter_with_offset(document_counter) %>
         <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' '), counter: counter) %>
       <% end %>
-      </div>
+      </span>
     </dl>
   </div>
 
