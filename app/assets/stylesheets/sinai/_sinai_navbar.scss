@@ -2,7 +2,6 @@
 
 .sinai-site-navbar {
   background-color: $white !important;
-  padding: 0.25rem 0 100 0 !important;
   font-family: Helvetica, sans-serif;
 
   .navbar-logo-block {
@@ -54,8 +53,10 @@
 
 @media (max-width: 991px) {
   .sinai-site-navbar {
+    padding: 0 !important;
     .navbar-logo-block {
       height: 45px;
+      padding: 2rem 1rem;
     }
 
     .navbar-toggler {
@@ -67,8 +68,12 @@
     }
 
     .navbar-nav.nav {
-      background-color: $white;
+      background-color: $callisto-beige;
       width: 100%;
+      padding: 1rem 1rem;
+      &:hover {
+        background-color: $callisto-drk-beige;
+      }
     }
 
     .navbar-collapse {
@@ -77,16 +82,22 @@
 
     .nav-item a {
       margin-right: 0;
-    }
-
-    .nav-item {
-      padding: 12px 15px;
-      border-bottom: 1px solid $callisto-light-red;
-    }
-
-    .nav-item:hover {
-      a {
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 0;
+        -webkit-transition: none;
+        transition: none;
+      }
+      &:hover {
         color: $callisto-drk-red !important;
+        text-decoration: underline;
+      }
+      &:hover::after {
+        right: 0%;
       }
     }
   }
@@ -106,6 +117,9 @@
 
 @media (max-width: 374px) {
   .sinai-site-navbar {
+    .navbar-logo-block {
+      padding: 0rem 1rem;
+    }
     .sinai-navbar-logo a {
       font-size: 0.9rem;
       font-weight: 600;
@@ -116,6 +130,9 @@
       justify-content: unset;
       align-items: flex-start;
       height: 50px;
+    }
+    .navbar-nav.nav {
+      padding: 0.85rem;
     }
   }
 }

@@ -21,6 +21,15 @@
     }
   }
 
+  .text-success,
+  .facet-values li .selected {
+    color: $callisto-drk-red !important;
+  }
+  .facet-limit-active .card-header {
+    background-color: $callisto-drk-red !important;
+    color: $white !important;
+  }
+
   .card-header.collapse-toggle[aria-expanded="true"] {
     background-color: $callisto-drk-red !important;
     color: $callisto-beige !important;

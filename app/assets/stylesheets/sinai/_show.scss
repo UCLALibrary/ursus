@@ -1,22 +1,22 @@
-.item-page-wrapper{
+.item-page-wrapper {
   margin-top: 100px;
 }
 .primary-metadata {
-  h5{
+  h5 {
     font-size: 24px;
   }
-  .document-metadata{
+  .document-metadata {
     padding: 1rem 0;
   }
   .item-label {
     font-weight: bold;
-        color: $gray-40;
-        font-size: 14px;
-        letter-spacing: 1.5px;
-        text-align: right;
-        text-transform: uppercase;
+    color: $gray-40;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-align: right;
+    text-transform: uppercase;
   }
-  
+
   .item-value {
     font-size: 18px;
   }
@@ -27,14 +27,13 @@
   font-weight: 600;
 }
 
-.secondary-metadata{
-  
-  hr{
-    border-top-color:$white;
+.secondary-metadata {
+  hr {
+    border-top-color: $white;
     margin-right: 30px;
     margin-left: -5px;
   }
-  .access-condition-metadata{
+  .access-condition-metadata {
     padding-bottom: 50px;
   }
 
@@ -48,18 +47,17 @@
     padding-bottom: 6px;
     padding-top: 3px;
   }
-  
+
   .item-value {
     font-size: 15px;
-    padding-right: 16px; 
+    padding-right: 16px;
   }
 }
-
 
 .item-title h1 {
   margin: 0 auto 10px auto;
   max-width: 900px;
-  font-size: 2rem;
+  font-size: 1.65rem;
 }
 
 dl {
@@ -76,38 +74,16 @@ h3 {
   color: black;
 }
 
-.sort-pagination, .pagination-search-widgets {
+.sort-pagination,
+.pagination-search-widgets {
   border-bottom: 0px !important;
 }
 
-@media screen and (max-width: 768px) {
-  .primary-metadata{
-  
-  .item-label {
-    text-align: left;
-    font-size: 13px;
-  }
-  .item-value {
-    font-size: 16px;
-  }
-  }
-  .secondary-metadata{
-    .item-label {
-      text-align: left;
-      font-size: 13px;
-    }
-    .item-value {
-      font-size: 16px;
-    }
-  }
-
-}
 @media screen and (max-width: 992px) {
-  .item-page-wrapper{
+  .item-page-wrapper {
     width: 100%;
   }
-  .primary-metadata{
-  
+  .primary-metadata {
     .item-label {
       text-align: left;
       font-size: 13px;
@@ -116,7 +92,7 @@ h3 {
       font-size: 16px;
     }
   }
-  .secondary-metadata{
+  .secondary-metadata {
     .item-label {
       text-align: left;
       font-size: 13px;
@@ -124,5 +100,29 @@ h3 {
     .item-value {
       font-size: 16px;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .primary-metadata {
+    .item-label {
+      text-align: left;
+      font-size: 13px;
+    }
+    .item-value {
+      font-size: 16px;
+    }
+  }
+  .secondary-metadata {
+    .item-label {
+      text-align: left;
+      font-size: 13px;
+    }
+    .item-value {
+      font-size: 16px;
+    }
+  }
+  .item-title h1 {
+    font-size: 1.35rem;
   }
 }
