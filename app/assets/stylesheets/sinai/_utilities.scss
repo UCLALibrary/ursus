@@ -1,5 +1,27 @@
 // Utilities
 hr.divider__red {
-    border-top: 1px solid $callisto-light-red;
-    margin: 40px 0px;
-  }
+  border-top: 1px solid $callisto-light-red;
+  margin: 40px 0px;
+}
+hr.divider__white {
+  border-top: 1px solid $white;
+  margin: 40px 0px;
+}
+
+// Link variables
+$a-tags: "a";
+$a-tags-hover: "a:active, a:hover";
+$a-tags-muted: "a:visited";
+
+#{$a-tags} {
+  color: $callisto-drk-red !important;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: $callisto-drk-red !important;
+  text-decoration: underline;
+}
+#{$a-tags-muted} {
+  color: $gray-60 !important;
+  text-decoration: underline !important;
+}
