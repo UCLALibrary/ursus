@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def sinai_authn_check
-    return if ENV['SINAI_ID_BYPASS'] # skip auth in development
+    ###return if ENV['SINAI_ID_BYPASS'] # skip auth in development
     return if !Flipflop.sinai? || [login_path, version_path].include?(request.path) || sinai_authenticated?
     if ucla_token?
       set_auth_cookies
@@ -92,6 +92,7 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_target
-      "/login?callback=#{request.original_url}"
+      cookies[:request_original_url] = request.original_url
+      "/login"
     end
 end
