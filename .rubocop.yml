@@ -41,6 +41,7 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Exclude:
     - app/helpers/blacklight/url_helper_behavior.rb
+    - app/helpers/blacklight/blacklight_helper_behavior.rb
 
 Metrics/LineLength:
   Exclude:
@@ -62,6 +63,7 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Exclude:
     - app/helpers/blacklight/url_helper_behavior.rb
+    - app/helpers/blacklight/blacklight_helper_behavior.rb
 
 Performance/RegexpMatch:
   Exclude:
@@ -116,6 +118,7 @@ Style/AndOr:
 Style/MethodDefParentheses:
   Exclude:
     - app/helpers/blacklight/url_helper_behavior.rb
+    - app/helpers/blacklight/blacklight_helper_behavior.rb
 
 Style/GuardClause:
   Exclude:
@@ -128,3 +131,12 @@ Style/IfInsideElse:
 Lint/UselessAssignment:
   Exclude:
      - app/controllers/application_controller.rb
+
+
+Metrics/ModuleLength:
+  Exclude:
+     - app/helpers/blacklight/blacklight_helper_behavior.rb
+
+Style/MethodDefParentheses:
+  Exclude:
+    - app/helpers/blacklight/blacklight_helper_behavior.rb
