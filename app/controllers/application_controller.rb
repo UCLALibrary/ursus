@@ -92,6 +92,7 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_target
-      "/login?callback=#{request.original_url}"
+      cookies[:request_original_url] = request.original_url
+      "/login"
     end
 end
