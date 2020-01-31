@@ -15,7 +15,7 @@
     <h2>SINAI MANUSCRIPTS DIGITAL LIBRARY</h2>
     <p>A Publication of St. Catherine's Monastery of the Sinai, Egypt</p>
     
-<%= button_to 'Access the Sinai Collection', ENV['SINAIID_URL'], params: {'key' => ENV['SINAIID_UCLA_KEY'], callback_url: "#{@requested_path}", token: @token}, method: :post, class:'sinai-registration-btn' %>
+<%= button_to 'Access the Sinai Collection', ENV['SINAIID_URL'], params: {'key' => ENV['SINAIID_UCLA_KEY'], callback_url: "#{@requested_path}", token: @token}, method: :post, class:'sinai-registration-btn wiggle' %>
   </div>
 
   <div class="text-block">
