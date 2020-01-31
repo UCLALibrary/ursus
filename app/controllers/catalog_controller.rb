@@ -132,7 +132,7 @@ class CatalogController < ApplicationController
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
     config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
-    config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim'
+    config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
 
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
@@ -153,7 +153,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'date_uploaded_tesim'
     config.add_show_field 'description_tesim', separator_options: BREAKS
     config.add_show_field 'dimensions_tesim'
-    config.add_show_field 'dlcs_collection_name_tesim'
+    config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
     config.add_show_field 'extent_tesim', separator_options: BREAKS
     config.add_show_field 'foliation_ssi'
     config.add_show_field 'format_tesim'
@@ -173,7 +173,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'longitude_tesim', label: 'Latitude'
     config.add_show_field 'lyricist_tesim', label: 'Lyricist'
     config.add_show_field 'medium_tesim'
-    config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim'
+    config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
     config.add_show_field 'named_subject_tesim', link_to_facet: 'named_subject_sim', separator_options: BREAKS
     config.add_show_field 'oclc_tesim_ssi', label: 'OCLC Number'
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
