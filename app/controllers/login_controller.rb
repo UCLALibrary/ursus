@@ -5,8 +5,8 @@ class LoginController < ApplicationController
   before_action :create_token
 
   def new
-    @requested_path = params[:callback]
     # save in order to allow later verification that the login page was accessed
+    @requested_path = cookies[:request_original_url]
     cookies[:requested_path] = @requested_path
   end
 
