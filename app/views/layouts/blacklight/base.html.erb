@@ -9,7 +9,7 @@
     <% if controller.controller_name == 'catalog' && controller.action_name == 'show' %>
       <meta name="Description" content=<%= render_page_title %>>
     <% else %>
-      <meta name="Description" content="The UCLA Library Digital Collections includes rare and unique digital materials developed by the UCLA Library to support education, research, service, and creative expression. This website is our new interface for discovery and engagement of these collections. See collections of historic photographs and manuscripts. More collections added weekly.">
+    <meta name="Description" content="The UCLA Library Digital Collections includes rare and unique digital materials developed by the UCLA Library to support education, research, service, and creative expression. This website is our new interface for discovery and engagement of these collections. See collections of historic photographs and manuscripts. More collections added weekly.">
     <% end %>
     <meta name="theme-color" content="#2774ae"/>
 
@@ -21,7 +21,12 @@
       })(window,document,'script','dataLayer','<%= ENV["GOOGLE_TAG_MGR_ID"] %>');</script>
     <% end %>
 
-    <title><%= render_page_title %></title>
+    <!--<title><%#= render_page_title %></title>-->
+    <% if Flipflop.sinai? %>
+      <title>Sinai Manuscripts Digital Library</title>
+    <% else %>
+      <title>UCLA Library Digital Collections</title>
+    <% end %>
 
     <%= opensearch_description_tag application_name, opensearch_catalog_url(format: 'xml') %>
     <%= favicon_link_tag %>
@@ -33,7 +38,7 @@
 
   <body class="<%= render_body_class %>">
     <% if ENV["GOOGLE_TAG_MGR_ID"] %>
-        <noscript id='analytics-noscript'><iframe src="https://www.googletagmanager.com/ns.html?id=<%= ENV["GOOGLE_TAG_MGR_ID"] %>"
+      <noscript id='analytics-noscript'><iframe src="https://www.googletagmanager.com/ns.html?id=<%= ENV["GOOGLE_TAG_MGR_ID"] %>"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <% end %>
 
@@ -50,10 +55,8 @@
         </div>
       </div>
 
-        <%= render partial: 'shared/footer' %>
-
+      <%= render partial: 'shared/footer' %>
       <%= render partial: 'shared/modal' %>
     </div>
   </body>
 </html>
-
