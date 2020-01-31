@@ -20,7 +20,6 @@
 <% end %>
 
 
-
 <h2 class='sr-only'><%= t('blacklight.search.search_results') %></h2>
 
 <%- if @response.empty? %>
@@ -31,6 +30,10 @@
   <%= render_document_index %>
 <%- end %>
 
-<div class='pagination-rectangle'><%= render 'results_pagination' %></div>
-<%= render 'old_collections' %>
+<div class='pagination-rectangle'>
+  <%= render 'results_pagination' %></div>
+
+  <% if !Flipflop.sinai? %>
+    <%= render 'old_collections' %>
+  <% end %>
 </div>

@@ -2,7 +2,11 @@
 <% physical_description = Ursus::PhysicalDescriptionMetadataPresenter.new(document: doc_presenter.fields_to_render).physical_description_terms %>
 
 <% if physical_description.length > 0 %>
-    <hr>
+    <% if Flipflop.sinai? %>
+        <hr class='divider__red'>
+      <% else %>
+        <hr>
+    <% end %>
     <h5>Physical Description</h5>
     <dl class='row document-metadata'>
       <% physical_description.each do |field_name, field| -%>

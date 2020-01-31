@@ -1,5 +1,9 @@
 <div class='secondary-metadata'>
   <%= render 'local_info_metadata', { document: document } %>
-  <hr>
+    <% if Flipflop.sinai? %>
+        <hr class='divider__red'>
+      <% else %>
+        <hr>
+    <% end %>
   <%= render 'access_condition_metadata', { document: document } %>
 </div>

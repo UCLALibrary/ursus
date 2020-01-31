@@ -2,7 +2,11 @@
 <% note = Ursus::NoteMetadataPresenter.new(document: doc_presenter.fields_to_render).note_terms %>
 
 <% if note.length > 0 %>
-    <hr>
+    <% if Flipflop.sinai? %>
+        <hr class='divider__red'>
+      <% else %>
+        <hr>
+    <% end %>
     <h5>Notes</h5>
     <dl class='row document-metadata'>
       <% note.each do |field_name, field| -%>

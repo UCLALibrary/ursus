@@ -47,7 +47,7 @@ class CatalogController < ApplicationController
       fq: '(((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !((visibility_ssi:restricted) OR (visibility_ssi:discovery) OR (visibility_ssi:sinai)))'
       ### we want to only return works where visibility_ssi == open (not restricted)
     }
-    config.default_solr_params[:fq] = '(((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !(visibility_ssi:restricted))' if Flipflop.sinai?
+    config.default_solr_params[:fq] = '((has_model_ssim:Work) AND !(visibility_ssi:restricted))' if Flipflop.sinai?
 
     # config.show.partials.insert(1, :collection_banner)
     config.show.partials.insert(2, :media_viewer)
@@ -84,13 +84,13 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     if Flipflop.sinai?
       config.add_facet_field 'genre_sim', limit: 5
-      config.add_facet_field 'place_of_origin_tesim', limit: 5, label: 'Place of origin'
+      config.add_facet_field 'place_of_origin_sim', limit: 5, label: 'Place of origin'
       config.add_facet_field 'year_isim', limit: 5, range: true
       config.add_facet_field 'human_readable_language_sim', limit: 5
-      # config.add_facet_field 'writing_system_tesim', limit:5
-      # config.add_facet_field 'script_tesim', limit:5
-      # config.add_facet_field 'features_tesim', limit:5
-      config.add_facet_field 'support_tesim', limit: 5, label: 'Support'
+      config.add_facet_field 'writing_system_sim', limit: 5, label: 'Writing system'
+      config.add_facet_field 'script_sim', limit: 5, label: 'Script'
+      config.add_facet_field 'features_sim', limit: 5, label: 'Features'
+      config.add_facet_field 'support_sim', limit: 5, label: 'Support'
     else
       config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
       # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5

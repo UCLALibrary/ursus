@@ -20,7 +20,7 @@
 
     &:hover {
       color: $callisto-drk-red !important;
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 
@@ -30,10 +30,24 @@
     font-size: 1em;
     letter-spacing: 0.05rem;
     margin-right: 2rem;
+    text-decoration: none;
+    position: relative;
 
+    &::after {
+      content: " ";
+      position: absolute;
+      bottom: -0.25rem;
+      left: 0;
+      right: 100%;
+      border-bottom: 0.125rem solid $callisto-drk-red;
+      -webkit-transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
+      transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
+    }
     &:hover {
       color: $callisto-drk-red !important;
-      text-decoration: underline;
+    }
+    &:hover::after {
+      right: 0%;
     }
   }
 }
@@ -93,7 +107,7 @@
 @media (max-width: 374px) {
   .sinai-site-navbar {
     .sinai-navbar-logo a {
-      font-size: .9rem;
+      font-size: 0.9rem;
       font-weight: 600;
       margin-top: 10px;
     }
