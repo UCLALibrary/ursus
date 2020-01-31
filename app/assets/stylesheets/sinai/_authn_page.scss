@@ -1,0 +1,138 @@
+@import "ursus/colors";
+
+.authn-navbar {
+  background-color: $white !important;
+  padding: 0.25rem 0 0.75rem 0 !important;
+  .navbar-logo {
+    width: 150px !important;
+  }
+}
+
+.authn-page {
+  margin: 0 auto;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+}
+
+.image-block {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1302838/sinai-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 600px;
+  height: 100%;
+}
+
+.overlay-block {
+  background-color: $callisto-drk-red;
+  color: white;
+  padding: 2rem 3.5rem;
+
+  p {
+    font-weight: 300;
+    line-height: 1.2;
+    padding: 1rem 0;
+  }
+
+  .sinai-registration-btn {
+    color: $white;
+    background: none;
+    border: 2px solid $white;
+    padding: 0.5rem 1.25rem;
+
+    &:hover {
+      color: $callisto-drk-red;
+      background: $white;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.text-block {
+  padding: 3rem 1rem;
+  p {
+    line-height: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .authn-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(300px, 400px) 1fr 1fr 5fr;
+    grid-template-rows: 100px 2fr 0.5fr 2fr;
+    padding-top: 0;
+    h2 {
+      font-size: 36px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .image-block {
+    grid-column: 1 / 5;
+    grid-row: 1 / 5;
+  }
+
+  .overlay-block {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .text-block {
+    grid-column: 1 / 5;
+    grid-row: 5 / 6;
+    padding-top: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 991px) {
+  .authn-page {
+    max-width: 1400px;
+    width: 100%;
+
+    h2 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  .image-block {
+    grid-column: 2 / 5;
+    grid-row: 1 / 5;
+  }
+
+  .overlay-block {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    p {
+      font-size: 22px;
+    }
+  }
+
+  .text-block {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    padding: 0;
+  }
+
+  // .overlay-block {
+  //   p {
+  //     font-size: 22px;
+  //   }
+  // }
+}
