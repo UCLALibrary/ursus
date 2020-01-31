@@ -9,7 +9,7 @@ module Ursus
     # @param [Hash] url_options to pass to #link_to_document
     # @return [String]
     def thumbnail_tag(image_options = {}, url_options = {})
-      return if document['visibility_ssi'] == 'discovery'
+      return if !Flipflop.sinai? && document['visibility_ssi'] == 'discovery'
 
       alt_title = Array.wrap(document["title_tesim"])[0]
       image_options[:alt] = alt_title
