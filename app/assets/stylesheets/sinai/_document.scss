@@ -2,7 +2,7 @@
   .document-title-heading {
     font-weight: 400;
     font-size: 1rem;
-    color: black;
+    color: $gray-80;
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -22,12 +22,16 @@
   .document-metadata-title {
     margin-right: 0px;
     margin-left: 30px;
-    color: black;
-    font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    a {
+      color: $gray-80 !important;
+      &:hover {
+        color: $callisto-drk-red !important;
+      }
+    }
 
     a:link {
-      color: black !important;
+      // color: black !important;
     }
   }
 
@@ -37,7 +41,7 @@
 
     dt {
       font-weight: bold;
-      color: black;
+      color: $gray-80;
       font-size: 1rem;
     }
 
