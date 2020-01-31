@@ -21,12 +21,7 @@
       })(window,document,'script','dataLayer','<%= ENV["GOOGLE_TAG_MGR_ID"] %>');</script>
     <% end %>
 
-    <!--<title><%#= render_page_title %></title>-->
-    <% if Flipflop.sinai? %>
-      <title>Sinai Manuscripts Digital Library</title>
-    <% else %>
-      <title>UCLA Library Digital Collections</title>
-    <% end %>
+    <title><%= render_page_title %></title>
 
     <%= opensearch_description_tag application_name, opensearch_catalog_url(format: 'xml') %>
     <%= favicon_link_tag %>
