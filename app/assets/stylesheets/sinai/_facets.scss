@@ -46,6 +46,21 @@
   .card-header.collapse-toggle::after {
     color: $callisto-beige;
   }
+  .card {
+    border-radius: 0;
+    border: 0;
+    .btn {
+      font-size: 1em;
+      background-color: $callisto-beige !important;
+      margin-left: 5px;
+    }
+    .facet-selected {
+      .remove-icon {
+        color: $callisto-drk-red;
+        vertical-align: middle;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 991px) {
