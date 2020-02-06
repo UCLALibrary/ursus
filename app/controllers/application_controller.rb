@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
   end
 
   def sinai_authn_check
-    return if ENV['SINAI_ID_BYPASS'] # skip auth in development
-    return if !Flipflop.sinai? || [login_path, version_path].include?(request.path) || sinai_authenticated?
+    return true if ENV['SINAI_ID_BYPASS'] # skip auth in development
+    return true if !Flipflop.sinai? || [login_path, version_path].include?(request.path) || sinai_authenticated?
     if ucla_token?
       set_auth_cookies
       redirect_to cookies[:requested_path]
