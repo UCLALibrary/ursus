@@ -1,3 +1,4 @@
+---
 sudo: true
 language: minimal
 services:
@@ -5,6 +6,10 @@ services:
 env:
   global:
     - DOCKER_COMPOSE_VERSION=1.23.2
+    - JENKINS_HOST=jenkins-devsupport.library.ucla.edu
+    - JENKINS_USER="${TRAVIS_JENKINS_USER}"
+    - JENKINS_API_CALLISTO="${TRAVIS_JENKINS_API_CALLISTO}"
+    - JENKINS_API_URSUS="${TRAVIS_JENKINS_API_URSUS}"
 before_install:
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -22,10 +27,34 @@ script:
 notifications:
   email: false
 after_success:
-- |
-  if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
-    curl "$JENKINS_DEPLOY_URL"
-  fi
-  if [[ $TRAVIS_TAG != "" ]]; then
-    curl "$JENKINS_TAG_DEPLOY_URL"
-  fi
+  - |
+    # A canary to allow verification that our firewall allows Travis in
+    curl https://api.ipify.org; echo
+    if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
+      BASE_URL="https://$JENKINS_USER@$JENKINS_HOST"
+      BASE_QUERY="buildWithParameters?GIT_BRANCH=$TRAVIS_BRANCH&cause=Travis+Build"
+
+      JOB=job/DeploySinaiManuscripts
+      HOST=sinaimanuscripts01.library.ucla.edu
+      API="$JENKINS_API_CALLISTO"
+      curl "$BASE_URL/$JOB/$BASE_QUERY&DEPLOY_HOST=$HOST&token=$API"
+
+      JOB=job/DeployUrsus
+      HOST=t-w-ursus01.library.ucla.edu
+      API="$JENKINS_API_URSUS"
+      curl "$BASE_URL/$JOB/$BASE_QUERY&DEPLOY_HOST=$HOST&token=$API"
+    fi
+    if [[ $TRAVIS_TAG != "" ]]; then
+      BASE_URL="https://$JENKINS_USER@$JENKINS_HOST"
+      BASE_QUERY="buildWithParameters?GIT_BRANCH=$TRAVIS_TAG&cause=Travis+Build+With+Tag"
+
+      JOB=job/DeploySinaiManuscripts
+      HOST=sinaimanuscripts01.library.ucla.edu
+      API="$JENKINS_API_CALLISTO"
+      curl "$BASE_URL/$JOB/$BASE_QUERY&DEPLOY_HOST=$HOST&token=$API"
+
+      JOB=job/DeployUrsus
+      HOST=t-w-ursus01.library.ucla.edu
+      API="$JENKINS_API_URSUS"
+      curl "$BASE_URL/$JOB/$BASE_QUERY&DEPLOY_HOST=$HOST&token=$API"
+    fi
