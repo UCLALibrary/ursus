@@ -67,6 +67,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-sidekiq', '~> 0.20.0'
   gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'xray-rails'
 end
