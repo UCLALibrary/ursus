@@ -13,7 +13,6 @@ RSpec.describe ApplicationController, type: :controller do
     allow(controller).to receive(:request).and_return(instance_double('ActionDispatch::Request', path: '/'))
     allow(controller).to receive(:set_auth_cookies)
     allow(controller).to receive(:sinai_authenticated?).and_return(false)
-    allow(controller).to receive(:ucla_token?).and_return(true)
     allow(controller).to receive(:version_path).and_return('/test_version')
     allow(ENV).to receive(:[]).and_call_original
     allow(ENV).to receive(:[]).with('SINAI_ID_BYPASS').and_return(nil)
@@ -50,6 +49,9 @@ RSpec.describe ApplicationController, type: :controller do
   end
 
   describe '#sinai_authn_check' do
+    before do
+     allow(controller).to receive(:ucla_token?).and_return(true)
+    end
     context 'if ucla token is set in URL parameters' do
       it 'calls set_auth_cookies' do
         controller.sinai_authn_check
@@ -118,4 +120,26 @@ RSpec.describe ApplicationController, type: :controller do
       end
     end
   end
+
+  describe "#ucla_token" do
+    context "querystring containing a param named token and, if so, was it previously written to the database" do
+      let(:request_fullpath) { double('request', path: '/some-path') }
+      before do
+        params = ActionController::Parameters.new(token: '12345')
+        allow(SinaiToken).to receive(:find_by)
+        allow(controller).to receive(:params).and_return(params)
+        allow(request).to receive(:fullpath).and_return('/some-path?token=')
+      end
+
+      it "has a token and is written to the database " do
+        controller.ucla_token?
+        expect(SinaiToken).to have_received(:find_by).with(sinai_token: params[:token] )
+        expect(controller.ucla_token?).to be true
+      end  
+
+    end
+    # context "# does the request have a querystring containing the character "?token=" and, if so, extract the token"
+    # context "is the extracted token in the database and did the user pass through the login page?" 
+
+  end  
 end

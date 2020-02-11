@@ -36,7 +36,9 @@ class ApplicationController < ActionController::Base
   end
 
   def ucla_token?
-    # does the request have a querystring containing a param named token and, if so, was it previously written to the database?
+    # does the request have a querystring containing a param named token and, 
+    # if so, was it previously written to the database?
+    byebug
     return true if params[:token].present? && SinaiToken.find_by(sinai_token: params[:token])
     # does the request have a querystring containing the character "?token=" and, if so, extract the token
     return false unless request.fullpath.include?("?token=")
