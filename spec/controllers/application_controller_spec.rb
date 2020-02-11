@@ -76,8 +76,8 @@ RSpec.describe ApplicationController, type: :controller do
 
     context 'if ENV[\'SINAI_ID_BYPASS\'] is true' do
       before do
-        allow(ENV).to receive(:[]).and_call_original
-        allow(ENV).to receive(:[]).with('SINAI_ID_BYPASS').and_return(true)
+        allow(ENV).to receive(:[]).and_call_original # default 
+        allow(ENV).to receive(:[]).with('SINAI_ID_BYPASS').and_return(true) # specific
       end
       it 'returns true sinai_authn_check' do
         expect(controller.sinai_authn_check).to be true
@@ -122,21 +122,65 @@ RSpec.describe ApplicationController, type: :controller do
   end
 
   describe "#ucla_token" do
-    context "querystring containing a param named token and, if so, was it previously written to the database" do
-      before do
-        params = ActionController::Parameters.new(toke: '12345')
-        allow(SinaiToken).to receive(:find_by).and_return(true)
-        allow(controller).to receive(:params).and_return(params)
-      end
+    let(:request_fullpath) { double('request', path: '/some-path', fullpath: '/catalog/ark:/21198/z1b0085j?topic=edication?token=408626bb-87a0-46cb-a592-8ece576a745f') }
+    let(:foo) { double("SinaiToken", sinai_token: "12345") }
 
-      it "has a token and is written to the database " do
-        controller.ucla_token?
-        expect(controller.ucla_token?).to be true
-      end  
-
+    before do
+      fullpath = 'http://www.example.com/?token=12345'
+      allow(request).to receive(:fullpath).and_return('/some-path?token=')
     end
-    # context "# does the request have a querystring containing the character "?token=" and, if so, extract the token"
-    # context "is the extracted token in the database and did the user pass through the login page?" 
 
-  end  
-end
+    context "the querystring contains a param named: 'token' and it is in the database" do
+        before do
+          params = ActionController::Parameters.new(token: '12345')
+          allow(controller).to receive(:params).and_return(params)
+          allow(SinaiToken).to receive(:find_by).and_return(nil) # default
+          allow(SinaiToken).to receive(:find_by).with(sinai_token: params[:token]).and_return(foo) # specific case
+        end
+      it "returns true" do
+        expect(controller.ucla_token?).to be true
+      end
+    end
+
+    context "token is included in the query string but didn't get parsed because of emel bug" do
+      before do
+        allow(controller).to receive(:request).and_return(request_fullpath)
+        params = ActionController::Parameters.new(silly: '12345')
+        allow(controller).to receive(:params).and_return(params)
+        allow(SinaiToken).to receive(:find_by).with(sinai_token: params[:token]).and_return(foo)
+      end
+      context "token is found in the database" do
+        before do
+          allow(SinaiToken).to receive(:find_by).with(sinai_token: '408626bb-87a0-46cb-a592-8ece576a745f').and_return(foo)
+        end
+        it "returns true" do
+          expect(controller.ucla_token?).to be true
+        end
+      end
+      context "token is NOT found in the database" do
+        before do
+          allow(SinaiToken).to receive(:find_by).with(sinai_token: '408626bb-87a0-46cb-a592-8ece576a745f').and_return(nil)
+        end
+        it "returns false" do
+          expect(controller.ucla_token?).to be false
+        end
+      end
+    end
+
+    context "token is not included" do
+      let(:request_no_token) { double('request', path: '/some-path', fullpath: '/catalog/ark:/21198/z1b0085j?topic=edication?lamb=408626bb-87a0-46cb-a592-8ece576a745f') }
+      before do
+        allow(controller).to receive(:request).and_return(request_no_token)
+        params = ActionController::Parameters.new(silly: '12345')
+        allow(controller).to receive(:params).and_return(params)
+        allow(SinaiToken).to receive(:find_by).with(sinai_token: params[:token]).and_return(foo)
+      end
+      it 'returns false' do
+        expect(controller.ucla_token?).to be false
+      end
+    end
+  end #describe ucla_token?
+
+  describe 'set_auth_cookies' do
+  end
+end #rspec
