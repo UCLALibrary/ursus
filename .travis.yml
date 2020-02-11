@@ -35,7 +35,7 @@ after_success:
       BASE_QUERY="buildWithParameters?GIT_BRANCH=$TRAVIS_BRANCH&cause=Travis+Build"
 
       JOB=job/DeploySinaiManuscripts
-      HOST=sinaimanuscripts01.library.ucla.edu
+      HOST=t-w-sinaimanuscripts01.library.ucla.edu
       API="$JENKINS_API_CALLISTO"
       curl "$BASE_URL/$JOB/$BASE_QUERY&DEPLOY_HOST=$HOST&token=$API"
 
@@ -49,12 +49,12 @@ after_success:
       BASE_QUERY="buildWithParameters?GIT_BRANCH=$TRAVIS_TAG&cause=Travis+Build+With+Tag"
 
       JOB=job/DeploySinaiManuscripts
-      HOST=sinaimanuscripts01.library.ucla.edu
+      HOST=s-w-sinaimanuscripts01.library.ucla.edu
       API="$JENKINS_API_CALLISTO"
       curl "$BASE_URL/$JOB/$BASE_QUERY&DEPLOY_HOST=$HOST&token=$API"
 
       JOB=job/DeployUrsus
-      HOST=t-w-ursus01.library.ucla.edu
+      HOST=s-w-ursus01.library.ucla.edu
       API="$JENKINS_API_URSUS"
       curl "$BASE_URL/$JOB/$BASE_QUERY&DEPLOY_HOST=$HOST&token=$API"
     fi
