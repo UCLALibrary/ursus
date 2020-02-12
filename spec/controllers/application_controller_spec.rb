@@ -182,5 +182,15 @@ RSpec.describe ApplicationController, type: :controller do
   end #describe ucla_token?
 
   describe 'set_auth_cookies' do
+    before do
+      allow(controller).to receive(:set_auth_cookies).and_call_original
+      allow(controller).to receive(:cookies).and_call_original
+    end
+    it 'creates two cookies' do
+      controller.set_auth_cookies
+      expect(controller.set_auth_cookies).to be nil
+      # TODO: validate the cookies: are they created? do they look right?
+      expect(response.cookies[:sinai_authenticated]).to be true
+    end
   end
 end #rspec
