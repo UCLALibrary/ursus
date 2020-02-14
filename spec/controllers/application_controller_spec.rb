@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require 'rails_helper'
+require 'openssl'
 
 RSpec.describe ApplicationController, type: :controller do
   let(:controller) { described_class.new }
@@ -182,15 +183,40 @@ RSpec.describe ApplicationController, type: :controller do
   end #describe ucla_token?
 
   describe 'set_auth_cookies' do
-    before do
-      allow(controller).to receive(:set_auth_cookies).and_call_original
-      allow(controller).to receive(:cookies).and_call_original
+    context 'creates the sinai_authenticated cookie' do
+      before do
+        allow(controller).to receive(:set_auth_cookies).and_call_original
+        allow(controller).to receive(:cookies)
+
+
+        allow(ENV).to receive(:[]).and_call_original
+        allow(ENV).to receive(:[]).with('CIPHER_KEY').and_return('Thispasswordisreallyhardtoguess?')
+        allow(ENV).to receive(:[]).with('DOMAIN').and_return('ucla.edu')
+      end
+      it 'exists' do
+        xvar=controller.set_auth_cookies
+        byebug
+        expect(response.cookies[:sinai_authenticated]).to eq true
+        ###expect(controller.set_auth_cookies[:value].length).to be(32)
+        ###expect(controller.set_auth_cookies[:expires]).to be_kind_of(Time)
+        ###expect(controller.set_auth_cookies[:domain]).to be('sinaimanuscripts.library.ucla.edu')
+      end
     end
-    it 'creates two cookies' do
-      controller.set_auth_cookies
-      expect(controller.set_auth_cookies).to be nil
-      # TODO: validate the cookies: are they created? do they look right?
-      expect(response.cookies[:sinai_authenticated]).to be true
+    context 'creates the initialization_vector cookie' do
+      let(:test_cipher_iv_string) {'3FFDAA4DCB59FB136316F3862CB0F563'}
+      before do
+        allow(controller).to receive(:set_auth_cookies).and_call_original
+        allow(controller).to receive(:cookies).and_return(initialization_vectorz: 'ivteststring')
+        allow(ENV).to receive(:[]).and_call_original
+        allow(ENV).to receive(:[]).with('CIPHER_KEY').and_return('Thispasswordisreallyhardtoguess?')
+        allow(ENV).to receive(:[]).with('DOMAIN').and_return('sinaimanuscripts.library.ucla.edu')
+      end
+      it 'exists' do
+        controller.set_auth_cookies
+        expect(controller.set_auth_cookies[:value].length).to be(32)
+        expect(controller.set_auth_cookies[:expires]).to be_kind_of(Time)
+        expect(controller.set_auth_cookies[:domain]).to be('sinaimanuscripts.library.ucla.edu')
+      end
     end
   end
 end #rspec
