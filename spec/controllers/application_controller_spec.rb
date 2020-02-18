@@ -184,39 +184,36 @@ RSpec.describe ApplicationController, type: :controller do
 
   describe 'set_auth_cookies' do
     context 'creates the sinai_authenticated cookie' do
+      let (:cookies) {{}}
       before do
-        allow(controller).to receive(:set_auth_cookies).and_call_original
-        allow(controller).to receive(:cookies)
-
-
+        allow(controller).to receive(:cookies).and_return(cookies)
+        allow(controller).to receive(:create_encrypted_string).and_return('mock_encrypted_string')
         allow(ENV).to receive(:[]).and_call_original
         allow(ENV).to receive(:[]).with('CIPHER_KEY').and_return('Thispasswordisreallyhardtoguess?')
         allow(ENV).to receive(:[]).with('DOMAIN').and_return('ucla.edu')
-      end
-      it 'exists' do
-        xvar=controller.set_auth_cookies
-        byebug
-        expect(response.cookies[:sinai_authenticated]).to eq true
-        ###expect(controller.set_auth_cookies[:value].length).to be(32)
-        ###expect(controller.set_auth_cookies[:expires]).to be_kind_of(Time)
-        ###expect(controller.set_auth_cookies[:domain]).to be('sinaimanuscripts.library.ucla.edu')
-      end
-    end
-    context 'creates the initialization_vector cookie' do
-      let(:test_cipher_iv_string) {'3FFDAA4DCB59FB136316F3862CB0F563'}
-      before do
         allow(controller).to receive(:set_auth_cookies).and_call_original
-        allow(controller).to receive(:cookies).and_return(initialization_vectorz: 'ivteststring')
-        allow(ENV).to receive(:[]).and_call_original
-        allow(ENV).to receive(:[]).with('CIPHER_KEY').and_return('Thispasswordisreallyhardtoguess?')
-        allow(ENV).to receive(:[]).with('DOMAIN').and_return('sinaimanuscripts.library.ucla.edu')
+        allow(controller).to receive(:cipher_iv).and_return('mock_cipher_iv')
       end
-      it 'exists' do
+
+      it 'sets the sinai_authenticated cookie value' do
         controller.set_auth_cookies
-        expect(controller.set_auth_cookies[:value].length).to be(32)
-        expect(controller.set_auth_cookies[:expires]).to be_kind_of(Time)
-        expect(controller.set_auth_cookies[:domain]).to be('sinaimanuscripts.library.ucla.edu')
+        expect(cookies[:sinai_authenticated][:value]).to eq('mock_encrypted_string'.unpack('H*')[0].upcase)
       end
-    end
+
+      it 'sets an expiration date for the sinai_authenticated cookie' do
+        controller.set_auth_cookies
+        expect(cookies[:sinai_authenticated][:expires]).to be_kind_of(Time)
+      end
+
+      it 'sets the initialization_vector cookie value' do
+        controller.set_auth_cookies
+        expect(cookies[:initialization_vector][:value]).to eq('mock_cipher_iv'.unpack('H*')[0].upcase)
+      end
+
+      it 'sets an expiration date for the initialization_vector cookie' do
+        controller.set_auth_cookies
+        expect(cookies[:initialization_vector][:expires]).to be_kind_of(Time)
+      end
+     end
   end
-end #rspec
+end
