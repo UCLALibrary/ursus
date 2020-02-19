@@ -1,4 +1,4 @@
 repository_tesim: 'Repository'
 local_identifier_ssm: 'Local identifier'
-oclc_tesim_ssi: 'OCLC Number'
+oclc_ssi: 'OCLC Number'
 ark_ssi: 'ARK'

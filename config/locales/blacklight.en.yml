@@ -93,7 +93,7 @@ en:
           named_subject_tesim: 'Names'
           normalized_date_sim: 'Date'
           normalized_date_tesim: 'Normalized Date'
-          oclc_tesim_ssi: 'OCLC Number'
+          oclc_ssi: 'OCLC Number'
           photographer_tesim: 'Photographer'
           place_of_origin_tesim: 'Place of Origin'
           publisher_tesim: 'Publisher'

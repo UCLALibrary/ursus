@@ -17,7 +17,7 @@ RSpec.describe Ursus::LocalInfoMetadataPresenter do
       end
 
       it 'returns the OCLC Number Key' do
-        expect(config['oclc_tesim_ssi'].to_s).to eq('OCLC Number')
+        expect(config['oclc_ssi'].to_s).to eq('OCLC Number')
       end
 
       it 'returns the ARK Key' do

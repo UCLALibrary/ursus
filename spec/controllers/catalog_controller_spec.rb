@@ -77,7 +77,7 @@ RSpec.describe CatalogController, type: :controller do
        "identifier_tesim", "illuminator_tesim", "illustrations_note_tesim",
        "keyword_tesim", "latitude_tesim", "location_tesim", "local_identifier_ssm",
        "longitude_tesim", "lyricist_tesim", "medium_tesim", "member_of_collections_ssim",
-       "named_subject_tesim", "oclc_tesim_ssi", "page_layout_ssim", "photographer_tesim",
+       "named_subject_tesim", "oclc_ssi", "page_layout_ssim", "photographer_tesim",
        "place_of_origin_tesim", "provenance_tesim", "publisher_tesim",
        "repository_tesim", "rights_country_tesim", "rights_holder_tesim",
        "scribe_tesim", "services_contact_ssm", "subject_tesim", "subject_topic_tesim",
