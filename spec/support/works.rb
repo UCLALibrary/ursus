@@ -37,7 +37,7 @@ FIRST_WORK = {
   architect_tesim: ['Alexander Butterfly'],
   # year_isim: ['1974'],
   place_of_origin_tesim: ['Dudley, MA'],
-  oclc_tesim_ssi: ['Powell Library'],
+  oclc_ssi: ['Powell Library'],
   format_tesim: ['Film Still'],
   support_tesim: ['Mom & Dad'],
   read_access_group_ssim: ["public"],
