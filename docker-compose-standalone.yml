@@ -14,7 +14,7 @@ services:
       DATABASE_HOST: db
       IIIF_URL: https://californica-test.library.ucla.edu/concern/works
       THUMBNAIL_BASE_URL: http://californica-test.library.ucla.edu
-      SOLR_URL: http://solr:8983/solr/calursus
+      SOLR_URL: http://solr:8983/solr/californica
       SOLR_TEST_URL: http://solr_test:8983/solr/calursus
     ports:
       - "127.0.0.1:3003:3000"
