@@ -13,12 +13,12 @@ gem 'rails', '~> 5.1.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sassc-rails'
-# Use Uglifier as compressor for JavaScript assets
 gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
+gem 'sassc-rails'
 gem 'sidekiq', '~>5.2.7'
 gem 'sprockets', '< 4'
+# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -77,6 +77,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'blacklight', '~> 7.0.1'
 gem 'blacklight-access_controls'
+gem 'blacklight_dynamic_sitemap', '~> 0.1.0'
 gem 'blacklight_range_limit', '~> 7.0.0'
 gem 'bootstrap', '~> 4.0'
 gem 'coveralls', require: false
