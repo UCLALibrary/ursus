@@ -39,6 +39,26 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       it 'returns the Illustrations note Key' do
         expect(config['illustrations_note_tesim'].to_s).to eq('Illustrations note')
       end
+
+      it 'returns the Inscription Key' do
+        expect(config['inscription_tesim'].to_s).to eq('Inscription')
+      end
+
+      it 'returns the Script Key' do
+        expect(config['script_tesim'].to_s).to eq('Script')
+      end
+
+      it 'returns the Writing and hands Key' do
+        expect(config['writing_and_hands_tesim'].to_s).to eq('Writing and hands')
+      end
+
+      it 'returns the Writing system Key' do
+        expect(config['writing_system_tesim'].to_s).to eq('Writing system')
+      end
+
+      it 'returns the Condition note Key' do
+        expect(config['condition_note_tesim'].to_s).to eq('Condition note')
+      end
     end
   end
 end

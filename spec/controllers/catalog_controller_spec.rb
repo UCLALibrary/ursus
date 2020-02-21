@@ -67,21 +67,22 @@ RSpec.describe CatalogController, type: :controller do
     let(:expected_show_fields) do
       ["architect_tesim", "alternative_title_tesim", "ark_ssi",
        "based_near_label_tesim", "binding_note_ssi", "caption_tesim",
-       "collation_ssi", "composer_tesim", "contents_note_tesim",
+       "collation_ssi", "composer_tesim", "condition_note_tesim", "contents_note_tesim",
        "contributor_tesim", "creator_tesim", "date_created_tesim",
        "date_modified_tesim", "date_uploaded_tesim", "description_tesim",
        "dimensions_tesim", "dlcs_collection_name_tesim", "extent_tesim", "features_tesim",
        "foliation_ssi", "format_tesim", "funding_note_tesim", "genre_tesim",
        "geographic_coordinates_ssim", "human_readable_resource_type_tesim",
        "human_readable_rights_statement_tesim", "human_readable_language_tesim",
-       "identifier_tesim", "illuminator_tesim", "illustrations_note_tesim",
+       "identifier_tesim", "illuminator_tesim", "illustrations_note_tesim", "inscription_tesim",
        "keyword_tesim", "latitude_tesim", "location_tesim", "local_identifier_ssm",
        "longitude_tesim", "lyricist_tesim", "medium_tesim", "member_of_collections_ssim",
        "named_subject_tesim", "oclc_ssi", "page_layout_ssim", "photographer_tesim",
        "place_of_origin_tesim", "provenance_tesim", "publisher_tesim",
        "repository_tesim", "rights_country_tesim", "rights_holder_tesim",
-       "scribe_tesim", "services_contact_ssm", "subject_tesim", "subject_topic_tesim",
-       "summary_tesim", "support_tesim", "title_tesim", "toc_tesim", "uniform_title_tesim"]
+       "scribe_tesim", "script_tesim", "services_contact_ssm", "subject_tesim", "subject_topic_tesim",
+       "summary_tesim", "support_tesim", "title_tesim", "toc_tesim", "uniform_title_tesim",
+       "writing_and_hands_tesim", "writing_system_tesim"]
     end
 
     it 'has exactly expected show fields' do
