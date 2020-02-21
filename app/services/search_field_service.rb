@@ -14,6 +14,7 @@ class SearchFieldService
     ::Solrizer.solr_name('contributor', :stored_searchable),
     ::Solrizer.solr_name('creator', :stored_searchable),
     ::Solrizer.solr_name('description', :stored_searchable),
+    'features_tesim',
     'foliation_ssi',
     ::Solrizer.solr_name('genre', :stored_searchable),
     ::Solrizer.solr_name('identifier', :stored_searchable),

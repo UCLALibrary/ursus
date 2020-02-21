@@ -70,7 +70,7 @@ RSpec.describe CatalogController, type: :controller do
        "collation_ssi", "composer_tesim", "contents_note_tesim",
        "contributor_tesim", "creator_tesim", "date_created_tesim",
        "date_modified_tesim", "date_uploaded_tesim", "description_tesim",
-       "dimensions_tesim", "dlcs_collection_name_tesim", "extent_tesim",
+       "dimensions_tesim", "dlcs_collection_name_tesim", "extent_tesim", "features_tesim",
        "foliation_ssi", "format_tesim", "funding_note_tesim", "genre_tesim",
        "geographic_coordinates_ssim", "human_readable_resource_type_tesim",
        "human_readable_rights_statement_tesim", "human_readable_language_tesim",

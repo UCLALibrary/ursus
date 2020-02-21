@@ -35,6 +35,10 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
       it 'returns the Latitude Key' do
         expect(config['latitude_tesim'].to_s).to eq('Latitude')
       end
+
+      it 'returns the Features Key' do
+        expect(config['features_sim'].to_s).to eq('Features')
+      end
     end
   end
 end
