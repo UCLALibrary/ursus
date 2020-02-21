@@ -140,6 +140,14 @@
     </lst>
   </requestHandler>
 
+  <updateProcessor class="solr.processor.SignatureUpdateProcessorFactory" name="add_hash_id">
+    <bool name="enabled">true</bool>
+    <str name="signatureField">hashed_id_ssi</str>
+    <bool name="overwriteDupes">false</bool>
+    <str name="fields">id</str>
+    <str name="signatureClass">solr.processor.Lookup3Signature</str>
+  </updateProcessor>
+
 <!-- Spell Check
 
         The spell check component can return a list of alternative spelling
