@@ -145,6 +145,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'caption_tesim'
     config.add_show_field 'collation_ssi'
     config.add_show_field 'composer_tesim', label: 'Composer'
+    config.add_show_field 'condition_note_tesim'
     config.add_show_field 'contents_note_tesim'
     config.add_show_field 'contributor_tesim'
     config.add_show_field 'creator_tesim'
@@ -155,6 +156,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'dimensions_tesim'
     config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
     config.add_show_field 'extent_tesim', separator_options: BREAKS
+    config.add_show_field 'features_tesim'
     config.add_show_field 'foliation_ssi'
     config.add_show_field 'format_tesim'
     config.add_show_field 'funding_note_tesim'
@@ -166,6 +168,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'identifier_tesim'
     config.add_show_field 'illuminator_tesim', label: 'Illuminator'
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note'
+    config.add_show_field 'inscription_tesim'
     config.add_show_field 'keyword_tesim'
     config.add_show_field 'latitude_tesim', label: 'Longitude'
     config.add_show_field 'location_tesim', link_to_facet: 'location_sim'
@@ -185,6 +188,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_country_tesim'
     config.add_show_field 'rights_holder_tesim'
     config.add_show_field 'scribe_tesim', label: 'Scribe'
+    config.add_show_field 'script_tesim'
     config.add_show_field 'services_contact_ssm', label: 'Rights services contact'
     config.add_show_field 'subject_tesim', link_to_facet: 'subject_sim', separator_options: BREAKS
     config.add_show_field 'subject_topic_tesim', label: 'Subject topic'
@@ -193,6 +197,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'title_tesim'
     config.add_show_field 'toc_tesim', label: 'Table of Contents'
     config.add_show_field 'uniform_title_tesim'
+    config.add_show_field 'writing_and_hands_tesim'
+    config.add_show_field 'writing_system_tesim'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

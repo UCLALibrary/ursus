@@ -17,6 +17,10 @@ Lint/RequireParentheses:
   Exclude:
     - app/helpers/blacklight_helper.rb
 
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Exclude:
+    - spec/services/search_field_service_spec.rb
+
 Metrics/AbcSize:
   Exclude:
     - app/helpers/blacklight/url_helper_behavior.rb
@@ -46,10 +50,12 @@ Metrics/CyclomaticComplexity:
 Metrics/LineLength:
   Exclude:
     - spec/tasks/ingest_spec.rb
+    - spec/services/search_field_service_spec.rb
     - app/importers/rights_statement_validator.rb
     - spec/features/import_and_show_work_spec.rb
     - app/importers/actor_record_importer.rb
     - app/controllers/catalog_controller.rb
+
 
 Metrics/MethodLength:
   Enabled: true
