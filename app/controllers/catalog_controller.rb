@@ -164,6 +164,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'geographic_coordinates_ssim'
     config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
     config.add_show_field 'human_readable_rights_statement_tesim'
+    config.add_show_field 'local_rights_statement_ssim'
     config.add_show_field 'human_readable_language_tesim', link_to_facet: 'human_readable_language_sim'
     config.add_show_field 'identifier_tesim'
     config.add_show_field 'illuminator_tesim', label: 'Illuminator'
