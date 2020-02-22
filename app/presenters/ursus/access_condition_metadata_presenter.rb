@@ -5,7 +5,11 @@ module Ursus
 
     def initialize(document:)
       @document = document
-      @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata/access_condition_metadata.yml')))
+      @config = if Flipflop.sinai?
+                  YAML.safe_load(File.open(Rails.root.join('config', 'metadata/access_condition_metadata_sinai.yml')))
+                else
+                  YAML.safe_load(File.open(Rails.root.join('config', 'metadata/access_condition_metadata.yml')))
+                end
     end
 
     def access_condition_terms
