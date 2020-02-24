@@ -71,6 +71,26 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       it 'returns the Composer Key' do
         expect(config['composer_tesim'].to_s).to eq('Composer')
       end
+
+      it 'returns the Author Key' do
+        expect(config['author_tesim'].to_s).to eq('Author')
+      end
+
+      it 'returns the Contents note Key' do
+        expect(config['contents_note_tesim'].to_s).to eq('Contents note')
+      end
+
+      it 'returns the Colophon Key' do
+        expect(config['colophon_tesim'].to_s).to eq('Colophon')
+      end
+
+      it 'returns the Incipit Key' do
+        expect(config['incipit _tesim'].to_s).to eq('Incipit')
+      end
+
+      it 'returns the Explicit Key' do
+        expect(config['explicit_tesim'].to_s).to eq('Explicit')
+      end
     end
   end
 end
