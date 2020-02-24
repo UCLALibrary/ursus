@@ -1,13 +1,13 @@
 <% if Flipflop.sinai? %><!-- SINAI -->
-  <% unless has_search_parameters? %>
+  <!--% unless has_search_parameters? % -->
     <%# if there are no input/search related params, display the "home" partial -%>
     <%= render 'shared/sitelinks_search_box' %>
-  <% else %>
+  <!--% else %-->
     <% content_for(:sidebar) do %>
       <%= render 'search_sidebar' %>
     <% end %>
     <%= render 'search_results' %>
-  <% end %>
+  <!--% end %-->
 
 <% else %><!-- URSUS -->
   <% content_for(:sidebar) do %>
