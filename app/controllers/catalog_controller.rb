@@ -91,6 +91,7 @@ class CatalogController < ApplicationController
       config.add_facet_field 'script_sim', limit: 5, label: 'Script'
       config.add_facet_field 'features_sim', limit: 5, label: 'Features'
       config.add_facet_field 'support_sim', limit: 5, label: 'Support'
+      config.add_facet_field 'author_tesim', limit: 5, label: 'Author'
     else
       config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
       # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
@@ -140,10 +141,12 @@ class CatalogController < ApplicationController
     config.add_show_field 'architect_tesim'
     config.add_show_field 'alternative_title_tesim', separator_options: BREAKS
     config.add_show_field 'ark_ssi', label: 'ARK'
+    config.add_show_field 'author_tesim'
     config.add_show_field 'based_near_label_tesim'
-    config.add_show_field 'binding_note_ssi', label: 'Binding note'
+    config.add_show_field 'binding_note_tesim', label: 'Binding note'
     config.add_show_field 'caption_tesim'
-    config.add_show_field 'collation_ssi'
+    config.add_show_field 'collation_tesim'
+    config.add_show_field 'colophon_tesim'
     config.add_show_field 'composer_tesim', label: 'Composer'
     config.add_show_field 'condition_note_tesim'
     config.add_show_field 'contents_note_tesim'
@@ -155,26 +158,28 @@ class CatalogController < ApplicationController
     config.add_show_field 'description_tesim', separator_options: BREAKS
     config.add_show_field 'dimensions_tesim'
     config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
+    config.add_show_field 'explicit_tesim'
     config.add_show_field 'extent_tesim', separator_options: BREAKS
     config.add_show_field 'features_tesim'
-    config.add_show_field 'foliation_ssi'
+    config.add_show_field 'foliation_tesim'
     config.add_show_field 'format_tesim'
     config.add_show_field 'funding_note_tesim'
     config.add_show_field 'genre_tesim', link_to_facet: 'genre_sim', separator_options: BREAKS
     config.add_show_field 'geographic_coordinates_ssim'
     config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
     config.add_show_field 'human_readable_rights_statement_tesim'
-    config.add_show_field 'local_rights_statement_ssim'
     config.add_show_field 'human_readable_language_tesim', link_to_facet: 'human_readable_language_sim'
     config.add_show_field 'identifier_tesim'
     config.add_show_field 'illuminator_tesim', label: 'Illuminator'
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note'
+    config.add_show_field 'incipit_tesim'
     config.add_show_field 'inscription_tesim'
     config.add_show_field 'keyword_tesim'
-    config.add_show_field 'latitude_tesim', label: 'Longitude'
+    config.add_show_field 'latitude_tesim', label: 'Latitude'
+    config.add_show_field 'local_rights_statement_ssim'
     config.add_show_field 'location_tesim', link_to_facet: 'location_sim'
     config.add_show_field 'local_identifier_ssm', label: 'Local identifier', separator_options: BREAKS
-    config.add_show_field 'longitude_tesim', label: 'Latitude'
+    config.add_show_field 'longitude_tesim', label: 'Longitude'
     config.add_show_field 'lyricist_tesim', label: 'Lyricist'
     config.add_show_field 'medium_tesim'
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?

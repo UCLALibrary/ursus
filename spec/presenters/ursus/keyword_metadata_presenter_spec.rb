@@ -37,7 +37,7 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
       end
 
       it 'returns the Features Key' do
-        expect(config['features_sim'].to_s).to eq('Features')
+        expect(config['features_tesim'].to_s).to eq('Features')
       end
     end
   end
