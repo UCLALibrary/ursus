@@ -50,6 +50,12 @@
   
   <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
 
+  <requestHandler name="/update" class="solr.UpdateRequestHandler" >
+    <lst name="defaults">
+      <str name="update.chain">add_hash_id</str>
+    </lst>
+  </requestHandler>
+
   <!-- config for the admin interface --> 
   <admin>
     <defaultQuery>*:*</defaultQuery>
@@ -140,13 +146,17 @@
     </lst>
   </requestHandler>
 
-  <updateProcessor class="solr.processor.SignatureUpdateProcessorFactory" name="add_hash_id">
-    <bool name="enabled">true</bool>
-    <str name="signatureField">hashed_id_ssi</str>
-    <bool name="overwriteDupes">false</bool>
-    <str name="fields">id</str>
-    <str name="signatureClass">solr.processor.Lookup3Signature</str>
-  </updateProcessor>
+  <updateRequestProcessorChain name="add_hash_id">
+    <processor class="solr.processor.SignatureUpdateProcessorFactory">
+      <bool name="enabled">true</bool>
+      <str name="signatureField">hashed_id_ssi</str>
+      <bool name="overwriteDupes">false</bool>
+      <str name="fields">id</str>
+      <str name="signatureClass">solr.processor.Lookup3Signature</str>
+    </processor>
+    <processor class="solr.LogUpdateProcessorFactory" />
+    <processor class="solr.RunUpdateProcessorFactory" />
+  </updateRequestProcessorChain>
 
 <!-- Spell Check
 
