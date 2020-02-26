@@ -254,6 +254,8 @@ class CatalogController < ApplicationController
     config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
     config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
     config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
+    config.add_sort_field 'title_alpha_numeric_sort asc', label: 'Title (A-Z0-9)'
+    config.add_sort_field 'title_alpha_numeric_sort desc', label: 'Title (Z-A9-0)'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
