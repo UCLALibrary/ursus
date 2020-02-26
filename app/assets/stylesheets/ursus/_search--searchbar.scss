@@ -16,29 +16,23 @@
   }
 }
 
-
 .search-form {
   width: 100%;
   max-width: 990px;
-
-
-
   .custom-select {
-    background: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' margin='0 auto' fill='%23800020' %3E%3Cpolygon points='0,0 25,0 12.5,25'/%3E%3C/svg%3E") no-repeat right 0.75rem center/8px 10px !important;
-    background-color: aqua;
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
+      no-repeat right 0.75rem center/8px 10px !important;
     padding: 0 !important;
+    padding-left: 1rem !important;
   }
 
   // Dropdown field
   #search_field {
-    background-color: aquamarine;
     color: $white;
     font-weight: 600;
-    padding-left: 1rem !important;
+    background-color: $ucla-blue !important;
   }
 }
-
-
 
 @media (max-width: 576px) {
   .site-searchbar {
