@@ -5,13 +5,20 @@
   font-family: Helvetica, sans-serif;
 
   .navbar-logo-block {
-    height: 50px;
+    height: 70px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+    flex-direction: column;
+  }
+
+  .sinai-subtitle {
+    padding: 0rem 1rem;
+    font-size: 1.125rem;
   }
 
   .sinai-navbar-logo a {
+    padding: 0rem 1rem;
     font-size: 1.5rem;
     font-weight: 600;
     color: $gray-80 !important;
@@ -60,7 +67,7 @@
     }
 
     .navbar-toggler {
-      border-color: transparent !important;
+      padding: 0rem 2rem 0rem 0rem;
     }
 
     .custom-toggler .navbar-toggler-icon {
@@ -105,6 +112,9 @@
 
 @media (max-width: 576px) {
   .sinai-site-navbar {
+    .sinai-subtitle {
+      font-size: 0.96rem;
+    }
     .sinai-navbar-logo a {
       font-size: 1.15rem;
       font-weight: 600;
@@ -112,24 +122,32 @@
     .navbar-logo {
       width: 250px !important;
     }
+    .navbar-logo-block {
+      padding: 0rem 1rem;
+      flex-direction: column;
+      justify-content: unset;
+      align-items: flex-start;
+      height: 80px;
+    }
+
   }
 }
 
 @media (max-width: 374px) {
   .sinai-site-navbar {
-    .navbar-logo-block {
-      padding: 0rem 1rem;
+    .sinai-subtitle {
+      font-size: 0.75rem;
     }
     .sinai-navbar-logo a {
       font-size: 0.9rem;
       font-weight: 600;
-      margin-top: 10px;
     }
     .navbar-logo-block {
+      padding: 0rem 1rem;
       flex-direction: column;
       justify-content: unset;
       align-items: flex-start;
-      height: 50px;
+      height: 70px;
     }
     .navbar-nav.nav {
       padding: 0.85rem;
