@@ -513,7 +513,7 @@
    <!-- format is used for facet, display, and choosing which partial to use for the show view, so it must be stored and indexed -->
    <field name="format" type="string" indexed="true" stored="true"/>
 
-  <field name="title_alpha_numeric_sort" type="alphaNumericSort" indexed="true" stored="true" multiValued="false"/>
+  <field name="title_alpha_numeric_ssort" type="alphaNumericSort" indexed="true" stored="false" multiValued="false"/>
   
 
 
@@ -590,7 +590,7 @@
         is added to the index.  It's used either to index the same field differently,
         or to add multiple fields to the same field for easier/faster searching.  -->
    <!-- Copy Fields -->
-   <copyField source="sort_title_ssort" dest="title_alpha_numeric_sort" />
+   <copyField source="sort_title_ssort" dest="title_alpha_numeric_ssort" />
    <!-- unstemmed fields -->
    <copyField source="title_t" dest="title_unstem_search"/>
    <copyField source="subtitle_t" dest="subtitle_unstem_search"/>

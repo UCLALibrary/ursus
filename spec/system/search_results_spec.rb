@@ -108,11 +108,11 @@ RSpec.describe 'Search results page', type: :system, js: false do
   end
 
   it 'has correct sorting behavior for title' do
-    visit '/catalog?q=&search_field=all_fields&sort=sort_title_ssort+asc' do
+    visit '/catalog?q=&search_field=all_fields&sort=title_alpha_numeric_ssort+asc' do
       expect(page).to have_content('1. Title One')
     end
 
-    visit '/catalog?q=&search_field=all_fields&sort=sort_title_ssort+desc' do
+    visit '/catalog?q=&search_field=all_fields&sort=title_alpha_numeric_ssort+desc' do
       expect(page).to have_content('1. Title Two')
     end
   end

@@ -160,7 +160,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
     config.add_show_field 'explicit_tesim', label: 'Explicit'
     config.add_show_field 'extent_tesim', separator_options: BREAKS
-    config.add_show_field 'features_tesim'
+    config.add_show_field 'features_tesim', label: 'Features'
     config.add_show_field 'foliation_tesim'
     config.add_show_field 'format_tesim'
     config.add_show_field 'funding_note_tesim'
@@ -250,12 +250,12 @@ class CatalogController < ApplicationController
     # except in the relevancy case).
     # label is key, solr field is value
     config.add_sort_field 'score desc', label: 'Relevance'
-    config.add_sort_field 'sort_title_ssort asc', label: 'Title (A-Z)'
-    config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
+    config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z0-9)'
+    config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A9-0)'
+    # config.add_sort_field 'sort_title_ssort asc', label: 'Title (A-Z)'
+    # config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
     config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
     config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
-    config.add_sort_field 'title_alpha_numeric_sort asc', label: 'Title (A-Z0-9)'
-    config.add_sort_field 'title_alpha_numeric_sort desc', label: 'Title (Z-A9-0)'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.

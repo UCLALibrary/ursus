@@ -7,13 +7,13 @@ git_source(:github) do |repo_name|
 end
 
 gem 'blacklight-gallery', github: 'projectblacklight/blacklight-gallery'
-gem 'dotenv-rails'
+gem 'dotenv-rails', '>= 2.7.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'rails', '~> 5.1.7'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sassc-rails'
+gem 'sassc-rails', '>= 2.1.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
@@ -42,13 +42,13 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'capybara-mechanize'
-  gem 'equivalent-xml'
-  gem 'factory_bot_rails'
+  gem 'capybara', '~> 2.18', '>= 2.18.0'
+  gem 'capybara-mechanize', '>= 1.11.0'
+  gem 'equivalent-xml', '>= 0.6.0'
+  gem 'factory_bot_rails', '>= 5.1.1'
   gem 'rspec-collection_matchers'
   gem 'rspec-its'
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 3.9', '>= 3.9.0'
   gem 'rubocop'
   gem 'selenium-webdriver', '>= 3.142.3'
   gem 'solr_wrapper', '>= 2.1.0'
@@ -58,7 +58,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '>= 3.7.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'capistrano'
   gem 'capistrano-bundler', '~> 1.3'
@@ -69,24 +69,24 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'xray-rails'
+  gem 'xray-rails', '>= 0.3.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'blacklight', '~> 7.0.1'
-gem 'blacklight-access_controls'
+gem 'blacklight-access_controls', '>= 6.0.0'
 gem 'blacklight_range_limit', '~> 7.0.0'
-gem 'bootstrap', '~> 4.0'
+gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'coveralls', require: false
 gem 'devise', '>= 4.7.1'
 gem 'devise-guests', '~> 0.7', '>= 0.7.0'
 gem 'flipflop'
-gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'httparty'
-gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-gem 'loofah', '>= 2.2.3'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'loofah', '>= 2.4.0'
 gem 'rsolr', '>= 1.0'
-gem 'solrizer'
+gem 'solrizer', '>= 4.1.0'
 gem 'whenever', require: false
