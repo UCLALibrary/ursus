@@ -3,12 +3,12 @@
 <ul class="pagination">
   <li class='page-item'>
     <%= link_to_previous_page @pagination, raw(t('views.pagination.previous')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'page-link', data: { blacklight_modal: "preserve" } do %>
-      <span class="disabled page-link" tabindex='-1' disabled aria-disabled="true"><%= raw(t('views.pagination.previous')) %></span>
+      <%= content_tag :span, raw(t('views.pagination.previous')), class: 'disabled btn btn-disabled' %>
     <% end %>
   </li>
   <li class='page-item' >
     <%= link_to_next_page @pagination, raw(t('views.pagination.next')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'page-link',  data: { blacklight_modal: "preserve" } do %>
-      <span class="disabled page-link" tabindex='-1' disabled aria-disabled="true"><%= raw(t('views.pagination.next')) %></span>
+      <%= content_tag :span, raw(t('views.pagination.next')), class: 'disabled btn btn-disabled' %>
     <% end %>
   </li>
 </div>
