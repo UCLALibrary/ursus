@@ -32,20 +32,8 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
         expect(config['funding_note_tesim'].to_s).to eq('Funding Note')
       end
 
-      context 'if the \'sinai\' feature flag is on' do
-        before do
-          allow(Flipflop).to receive(:sinai?).and_return(false)
-        end
-
-        let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/access_condition_metadata_sinai.yml'))) }
-
-        it 'returns the Local Rights Statement key' do
-          expect(config['local_rights_statement_ssim'].to_s).to eq('Local Rights statement')
-        end
-
-        it 'returns the Rights Contact Key' do
-          expect(config['services_contact_ssm'].to_s).to eq('Rights Services Contact')
-        end
+      it 'returns the Local Rights Statement key' do
+        expect(config['local_rights_statement_ssim'].to_s).to eq('Local Rights statement')
       end
     end
   end

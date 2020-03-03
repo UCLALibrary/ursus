@@ -91,7 +91,6 @@ class CatalogController < ApplicationController
       config.add_facet_field 'script_sim', limit: 5, label: 'Script'
       config.add_facet_field 'features_sim', limit: 5, label: 'Features'
       config.add_facet_field 'support_sim', limit: 5, label: 'Support'
-      config.add_facet_field 'author_tesim', limit: 5, label: 'Author'
     else
       config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
       # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
@@ -250,8 +249,10 @@ class CatalogController < ApplicationController
     # except in the relevancy case).
     # label is key, solr field is value
     config.add_sort_field 'score desc', label: 'Relevance'
-    config.add_sort_field 'sort_title_ssort asc', label: 'Title (A-Z)'
-    config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
+    config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z0-9)'
+    config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A9-0)'
+    # config.add_sort_field 'sort_title_ssort asc', label: 'Title (A-Z)'
+    # config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
     config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
     config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
 
