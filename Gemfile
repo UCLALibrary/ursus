@@ -17,7 +17,6 @@ gem 'sassc-rails', '>= 2.1.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
-gem 'sassc-rails'
 gem 'sidekiq', '~>5.2.7'
 gem 'sprockets', '< 4'
 # Use Uglifier as compressor for JavaScript assets
