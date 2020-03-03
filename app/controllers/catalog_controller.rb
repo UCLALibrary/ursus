@@ -140,7 +140,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'architect_tesim'
     config.add_show_field 'alternative_title_tesim', separator_options: BREAKS
     config.add_show_field 'ark_ssi', label: 'ARK'
-    config.add_show_field 'author_tesim'
+    config.add_show_field 'author_tesim', label: 'Author'
     config.add_show_field 'based_near_label_tesim'
     config.add_show_field 'binding_note_tesim', label: 'Binding note'
     config.add_show_field 'caption_tesim'
@@ -160,7 +160,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'explicit_tesim', label: 'Explicit'
     config.add_show_field 'extent_tesim', separator_options: BREAKS
     config.add_show_field 'features_tesim', label: 'Features'
-    config.add_show_field 'foliation_tesim'
+    config.add_show_field 'foliation_tesim', label: 'Foliation'
     config.add_show_field 'format_tesim'
     config.add_show_field 'funding_note_tesim'
     config.add_show_field 'genre_tesim', link_to_facet: 'genre_sim', separator_options: BREAKS
@@ -203,7 +203,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'toc_tesim', label: 'Table of Contents'
     config.add_show_field 'uniform_title_tesim'
     config.add_show_field 'writing_and_hands_tesim', label: 'Writing and hands'
-    config.add_show_field 'writing_system_tesim'
+    config.add_show_field 'writing_system_tesim', label: 'Writing system'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
