@@ -1,5 +1,5 @@
 footer {
-  padding: 20px 0 20px 20px;
+  padding: 20px;
   margin-top: 100px;
   background-color: $callisto-beige;
   max-width: 1440px;
@@ -13,35 +13,14 @@ footer {
       flex: 0 0 19%;
     }
 
-    .logo-wrapper:nth-child(1) {
-      img {
-        max-width: 60%;
-      }
-    }
     .logo-wrapper:nth-child(2) {
       mix-blend-mode: multiply;
-      img {
-        max-width: 40%;
-      }
-    }
-    .logo-wrapper:nth-child(3) {
-      img {
-        max-width: 35%;
-      }
-    }
-    .logo-wrapper:nth-child(4) {
-      img {
-        max-width: 50%;
-      }
-    }
-    .logo-wrapper:nth-child(5) {
-      img {
-        max-width: 85%;
-      }
     }
 
     .footer-logo {
-      height: auto;
+      height: 100px;
+      object-fit: contain;
+      object-position: center;
     }
   }
 }
@@ -134,23 +113,6 @@ footer {
         flex: 0 0 33%;
         display: flex;
         justify-content: center;
-      }
-
-      .logo-wrapper:nth-child(4),
-      .logo-wrapper:nth-child(5) {
-        margin-top: 1rem;
-      }
-
-      .logo-wrapper:nth-child(4) {
-        img {
-          max-width: 60%;
-        }
-      }
-
-      .logo-wrapper:nth-child(5) {
-        img {
-          max-width: 85%;
-        }
       }
     }
   }

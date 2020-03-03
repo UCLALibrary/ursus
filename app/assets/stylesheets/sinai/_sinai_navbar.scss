@@ -1,28 +1,21 @@
 @import "ursus/colors";
 
+nav.navbar:nth-of-type(1) {
+  padding: 1rem !important;
+}
+
 .sinai-site-navbar {
   background-color: $white !important;
   font-family: Helvetica, sans-serif;
 
-  .navbar-logo-block {
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    flex-direction: column;
-  }
-
-  .sinai-subtitle {
-    padding: 0rem 1rem;
-    font-size: 1.125rem;
+  .navbar-subtitle {
+    display: block;
   }
 
   .sinai-navbar-logo a {
-    padding: 0rem 1rem;
     font-size: 1.5rem;
     font-weight: 600;
     color: $gray-80 !important;
-    line-height: 29px;
 
     &:hover {
       color: $callisto-drk-red !important;
@@ -30,11 +23,14 @@
     }
   }
 
+  .nav-item {
+    padding-top: 0;
+  }
+
   .nav-item a {
     color: $gray-80 !important;
     font-weight: 400;
-    font-size: 1rem;
-    margin-right: 2rem;
+    font-size: 1.15rem;
     text-decoration: none;
     position: relative;
 
@@ -57,16 +53,20 @@
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
+  nav.navbar:nth-of-type(1) {
+    padding: 1rem 0 0 0 !important;
+  }
   .sinai-site-navbar {
-    padding: 0 !important;
+    display: flex;
+    align-items: start;
     .navbar-logo-block {
-      height: 45px;
-      padding: 2rem 1rem;
+      padding-left: 1rem;
+      padding-bottom: 1rem;
     }
 
     .navbar-toggler {
-      padding: 0rem 2rem 0rem 0rem;
+      border-color: transparent !important;
     }
 
     .custom-toggler .navbar-toggler-icon {
@@ -88,6 +88,7 @@
 
     .nav-item a {
       margin-right: 0;
+
       &::after {
         content: " ";
         position: absolute;
@@ -109,44 +110,33 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 540px) {
   .sinai-site-navbar {
-    .sinai-subtitle {
-      font-size: 0.96rem;
+    .navbar-logo-block {
+      flex: 0 0 83%;
     }
     .sinai-navbar-logo a {
       font-size: 1.15rem;
-      font-weight: 600;
     }
-    .navbar-logo {
-      width: 250px !important;
+    .navbar-subtitle {
+      font-size: 0.9rem;
     }
-    .navbar-logo-block {
-      padding: 0rem 1rem;
-      flex-direction: column;
-      justify-content: unset;
-      align-items: flex-start;
-      height: 80px;
+    .nav-item a {
+      font-size: 1rem;
     }
-
   }
 }
 
 @media (max-width: 374px) {
   .sinai-site-navbar {
-    .sinai-subtitle {
-      font-size: 0.75rem;
-    }
     .sinai-navbar-logo a {
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 1.05rem;
     }
-    .navbar-logo-block {
-      padding: 0rem 1rem;
-      flex-direction: column;
-      justify-content: unset;
-      align-items: flex-start;
-      height: 70px;
+    .navbar-subtitle {
+      font-size: 0.8rem;
+    }
+    .nav-item a {
+      font-size: 0.9rem;
     }
     .navbar-nav.nav {
       padding: 0.85rem;

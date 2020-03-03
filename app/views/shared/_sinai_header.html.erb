@@ -1,20 +1,18 @@
-<nav class='navbar navbar-expand-lg navbar-dark sinai-site-navbar' role='navigation'>
-  <div class='container-fluid flex-nowrap'>
-    <div class='row flex-nowrap'>
-      <div class='navbar-logo-block sinai-navbar-logo'>
-      <span class="sinai-title"><%= link_to "Sinai Manuscripts Digital Library", root_path %></span>
-        <span class="sinai-subtitle">A publication of St. Catherine's Monastery of the Sinai, Egypt</span>
-      </div>
+<nav class='navbar navbar-expand-md navbar-dark sinai-site-navbar' role='navigation'>
+
+<div class='navbar-logo-block sinai-navbar-logo'>
+      <%= link_to "Sinai Manuscripts Digital Library", root_path %>
+      <span class="navbar-subtitle">A publication of St. Catherine's Monastery of the Sinai, Egypt</span>
     </div>
-    <div class="row">
-      <button class='navbar-toggler custom-toggler' type='button' data-toggle='collapse' data-target='#user-util-collapse' aria-controls='user-util-collapse' aria-expanded='false' aria-label='Toggle navigation'>
+
+    <button class='navbar-toggler custom-toggler' type='button' data-toggle='collapse' data-target='#user-util-collapse' aria-controls='user-util-collapse' aria-expanded='false' aria-label='Toggle navigation'>
       <span class='navbar-toggler-icon'></span>
-      </button>
-    </div>
+    </button>
+
     <div class='collapse navbar-collapse' id='user-util-collapse'>
       <ul class='navbar-nav nav ml-auto'>
         <li class='nav-item'><a href='http://sinaipalimpsests.org/' target='_blank' rel="noopener" >Sinai Palimpsests Project</a></li>
       </ul>
     </div>
-  </div>
+
 </nav>
