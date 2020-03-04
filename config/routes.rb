@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   end
 
   mount Blacklight::Engine => '/'
+  mount BlacklightDynamicSitemap::Engine => '/'
+
   root to: "catalog#index"
   concern :exportable, Blacklight::Routes::Exportable.new
 
