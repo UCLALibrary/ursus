@@ -9,7 +9,7 @@ module Ursus
     end
 
     def local_info_terms
-      @document.select { |doc| @config.keys.include?(doc) }.sort_by { |_d| @config.keys }
+      @document.slice(*@config.keys)
     end
   end
 end
