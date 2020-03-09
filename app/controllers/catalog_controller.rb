@@ -159,7 +159,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
     config.add_show_field 'explicit_tesim', label: 'Explicit'
     config.add_show_field 'extent_tesim', separator_options: BREAKS
-    config.add_show_field 'features_tesim', label: 'Features'
+    config.add_show_field 'features_tesim', link_to_facet: 'features_sim',label: 'Features'
     config.add_show_field 'foliation_tesim', label: 'Foliation'
     config.add_show_field 'format_tesim'
     config.add_show_field 'funding_note_tesim'
