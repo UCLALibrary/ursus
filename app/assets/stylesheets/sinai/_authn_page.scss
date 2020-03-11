@@ -25,7 +25,7 @@
 }
 
 .image-block {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1302838/sinai-1.jpg);
+  background-image: image-url("sinai/sinai-1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 450px;
