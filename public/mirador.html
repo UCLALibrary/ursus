@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
   <div id="viewer"></div>
   <script type="text/javascript">
     $(function () {
@@ -29,10 +28,10 @@
         "id": "viewer",
         "layout": "1",
         "buildPath": "https://unpkg.com/mirador@2.6.0/dist/",
-        "data": [{
-          "manifestUri": manifestURL,
-          "location": "UCLA"
-        }],
+        "data": [
+          { "collectionUri": "https://iiif.library.ucla.edu/collections/ark%3A%2F21198%2Fz1bk2gmg"},
+          { "manifestUri": manifestURL, location: "UCLA Library"}
+        ],
         "windowObjects": [{
           loadedManifest: manifestURL,
           viewType: "ImageView",
