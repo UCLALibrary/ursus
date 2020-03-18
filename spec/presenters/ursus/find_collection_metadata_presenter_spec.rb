@@ -21,7 +21,7 @@ RSpec.describe Ursus::FindCollectionMetadataPresenter do
       end
 
       it 'returns the OPAC URL Key' do
-        expect(config['opac_url_ssi'].to_s).to eq('Opac url')
+        expect(config['opac_url_tesim'].to_s).to eq('Opac url')
       end
     end
   end
