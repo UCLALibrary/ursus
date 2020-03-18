@@ -33,6 +33,7 @@ class SearchFieldService
     ::Solrizer.solr_name('named_subject', :stored_searchable),
     ::Solrizer.solr_name('normalized_date', :stored_searchable),
     'page_layout_ssim',
+    ::Solrizer.solr_name('opac_url', :stored_sortable),
     ::Solrizer.solr_name('photographer', :stored_searchable),
     ::Solrizer.solr_name('place_of_origin', :stored_searchable),
     'provenance_tesim',
