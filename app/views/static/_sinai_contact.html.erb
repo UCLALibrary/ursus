@@ -4,46 +4,46 @@
     <div class='red-liner contact'></div>
   </div>
 
-  <h3 class='static-headers'>TO REQUEST PERMISSIONS</h3>
-  <p>Submit request to <span class='monastery'><strong>St. Catherine’s Monastery</strong></span> via <%= mail_to 'sinaipermissions@gmail.com' %></p>
-  <ul>
-    <li>To request <strong>permissions for reproducing images</strong> in print or electronic form</li>
-    <li>To request written <strong>approval for preparing editions</strong></li>
-  </ul>
-  <p>Reference <%= link_to 'manuscript shelfmark(s)', 'https://sinai.library.ucla.edu/user-guide/mss-shelfmarks', target: '_blank', rel: 'noopener' %> and folio number(s) in request</p>
-  <p>For information on crediting sources, see <%= link_to 'Terms of Use', 'https://sinai.library.ucla.edu/terms-of-use/please-read', target: '_blank', rel: 'noopener' %> and <%= link_to 'Citing Contributors', 'https://sinai.library.ucla.edu/terms-of-use/contributors', target: '_blank', rel: 'noopener' %></p>
+  <div class='row'>
+    <div class="col-12 col-md-6">
+      <h3 class='static-headers'>TO REQUEST PERMISSIONS</h3>
+      <p>Submit request to <span class='monastery'><strong>St. Catherine’s Monastery</strong></span> via <%= mail_to 'sinaipermissions@gmail.com' %></p>
+      <ul>
+        <li>To request permissions for reproducing images in print or electronic form</li>
+        <li>To request written approval for preparing editions</li>
+      </ul>
+      <p>Reference manuscript shelfmark(s) and folio number(s) in request.</p>
+      <p>For information on crediting sources, see <%= link_to 'Terms of Use', 'https://sinai.library.ucla.edu/terms-of-use/please-read', target: '_blank', rel: 'noopener' %>.</p>
+  </div>
+  <div class="col-12 col-md-6  contact-row-left">
+    <h3 class='static-headers'>ABOUT USER REGISTRATION OR LOGIN</h3>
+    <p>Email the <span class='monastery'><strong>Early Manuscripts Electronic Library</span></strong> at <%= mail_to 'sinai.id.emel@gmail.com' %></p>
+    <ul>
+      <li>To report difficulties or ask questions about registration or login</li>
+      <li>To delete your user account</li>
+    </ul>
+    <p>To review how your data is used and protected, see the <%= link_to 'Privacy Policy', 'https://sinai-id.org/static_pages/spp_privacy', target: '_blank', rel: 'noopener' %> associated with your user login, plus <%= link_to 'Terms of Use', 'https://sinai.library.ucla.edu/terms-of-use/please-read', target: '_blank', rel: 'noopener' %>.</p>
+   </div>
+  </div>
 
   <hr class='divider__red'>
 
-  <h3 class='static-headers'>ABOUT USER REGISTRATION OR LOGIN</h3>
-  <p>Email the <span class='monastery'><strong>Early Manuscripts Electronic Library</span></strong> at <%= mail_to 'sinai.id.emel@gmail.com' %></p>
-  <ul>
-    <li>To <strong>report difficulties or ask questions</strong> about registration or login</li>
-    <li>To <strong>delete your user account</strong></li>
-  </ul>
-  <p>To review how your data is used and protected, see the <%= link_to 'Privacy Policy', 'https://sinai-id.org/static_pages/spp_privacy', target: '_blank', rel: 'noopener' %> associated with your user login, plus <%= link_to 'Terms of Use', 'https://sinai.library.ucla.edu/terms-of-use/please-read', target: '_blank', rel: 'noopener' %></p>
-
-  <hr class='divider__red'>
-
-  <h3 class='static-headers'>ABOUT WEBSITE CONTENT</h3>
-  <p>Email the <span class='monastery'><strong>Early Manuscripts Electronic Library</strong></span> at <%= mail_to 'sinai.data.questions@gmail.com' %></p>
-
-  <hr class='divider__red'>
-
-  <h3 class='static-headers'>ABOUT WEBSITE FUNCTIONALITY</h3>
-  <p>Email the <span class='monastery'><strong>UCLA Digital Library Program</strong></span> at <%= mail_to 'dlp@library.ucla.edu' %></p>
-
-  <hr class='divider__red'>
-
-  <h3 class='static-headers'>TO SHARE PUBLICATIONS</h3>
-  <ul>
-    <li>To <strong>share an electronic copy</strong> of publications based on images from the Sinai Palimpsests Project</li>
-    <li>To <strong>share a print copy</strong>—where no electronic version is available—of publications based on images from the Sinai Palimpsests Project</li>
-  </ul>
-  <p>Email: <span class='monastery'><strong>St. Catherine’s Monastery</strong></span> at <%= mail_to 'sinaipermissions@gmail.com' %></p>
-  <p>Send mail to: 
-    <div class=' snail_mail'>
-      <span class='monastery'><strong>Saint Catherine’s Monastery of the Sinai</strong></span><br>26 Doryleou, Ampelokipi, Athens 11521, Greece
+  <div class='row'>
+    <div class="col-12 col-md-6  contact-row-left">
+    <h3 class='static-headers'>TO SHARE PUBLICATIONS</h3>
+    <ul>
+      <li>To share an electronic copy of publications based on images from the Sinai Manuscripts Digital Library</li>
+      <li>To share a print copy—where no electronic version is available—of publications based on images from the Sinai Manuscripts Digital Library</li>
+    </ul>
+    <p>Email: <span class='monastery'><strong>St. Catherine’s Monastery</strong></span> at <%= mail_to 'sinaipermissions@gmail.com' %></p>
+    <p>Send mail to: 
+      <div class=' snail_mail'>
+        <span class='monastery'><strong>Saint Catherine’s Monastery of the Sinai</strong></span><br>26 Doryleou, Ampelokipi, Athens 11521, Greece
+      </div>
+    </p>
+  </div>
+    <div class="col-12 col-md-6">
+      <h3 class='static-headers'>ABOUT WEBSITE FUNCTIONALITY</h3>
+      <p>Email the <span class='monastery'><strong>UCLA Digital Library Program</strong></span> at <%= mail_to 'dlp@library.ucla.edu' %></p>
     </div>
-  </p>
 </div>
