@@ -183,7 +183,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'medium_tesim'
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
     config.add_show_field 'named_subject_tesim', link_to_facet: 'named_subject_sim', separator_options: BREAKS
-    config.add_show_field 'opac_url_tesim', label: 'Opac url'
+    config.add_show_field 'opac_url_ssi', label: 'Opac url'
     config.add_show_field 'oclc_ssi', label: 'OCLC Number'
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
     config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim', separator_options: BREAKS
