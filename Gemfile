@@ -9,7 +9,7 @@ end
 gem 'blacklight-gallery', github: 'projectblacklight/blacklight-gallery'
 gem 'dotenv-rails', '>= 2.7.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.7'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.12', '>= 3.12.4'
 # Use SCSS for stylesheets
@@ -81,7 +81,7 @@ gem 'blacklight-access_controls', '>= 6.0.0'
 gem 'blacklight_dynamic_sitemap', '~> 0.1.0'
 gem 'blacklight_range_limit', '~> 7.0.0'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
-gem 'coveralls', require: false
+gem 'coveralls', '>= 0.8.23', require: false
 gem 'devise', '>= 4.7.1'
 gem 'devise-guests', '~> 0.7', '>= 0.7.0'
 gem 'flipflop'
