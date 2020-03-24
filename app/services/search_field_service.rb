@@ -25,7 +25,7 @@ class SearchFieldService
     'illuminator_tesim',
     'illustrations_note_tesim',
     'inscription_tesim',
-    'incipit _tesim',
+    'incipit_tesim',
     'local_identifier_ssm',
     ::Solrizer.solr_name('location', :stored_searchable),
     'lyricist_tesim',

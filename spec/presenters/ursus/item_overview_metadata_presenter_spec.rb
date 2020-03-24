@@ -85,7 +85,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       end
 
       it 'returns the Incipit Key' do
-        expect(config['incipit _tesim'].to_s).to eq('Incipit')
+        expect(config['incipit_tesim'].to_s).to eq('Incipit')
       end
 
       it 'returns the Explicit Key' do
