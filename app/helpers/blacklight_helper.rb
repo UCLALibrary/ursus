@@ -10,7 +10,7 @@ module BlacklightHelper
     license = @document[:license_tesim].first
     if license.match?(/creativecommons.org/)
       data = license_markup
-      data.html_safe # rubocop:disable Rails/OutputSafety
+      data.html_safe
     else
       license
     end
@@ -25,5 +25,12 @@ module BlacklightHelper
       href="http://creativecommons.org/licenses/by/4.0/">
       Creative Commons Attribution 4.0 International License
       </a>. )
+  end
+
+  def render_opac_link
+    opac_link = @document[:opac_url_ssi]
+    return unless opac_link
+    opac_link = "<dt class = 'item-label col-12 col-sm-4 item-label'>Opac url</dt><dd class = 'item-value col-12 col-sm-8 item-value'><a href = '" + opac_link + "'>" + opac_link + "</a></dd>"
+    opac_link.html_safe
   end
 end
