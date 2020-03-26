@@ -67,6 +67,10 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       it 'returns the Writing system Key' do
         expect(config['writing_system_tesim'].to_s).to eq 'Writing system'
       end
+
+      it 'returns the Opac url' do
+        expect(config['opac_url_tesim'].to_s).to eq 'Opac url'
+      end
     end
   end
 end
