@@ -8,12 +8,12 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
 
   context 'with a solr document containing overview metadata' do
     describe '#keyword_terms' do
-      it 'returns the Resource Type Key' do
-        expect(config['human_readable_resource_type_tesim'].to_s).to eq('Resource Type')
-      end
-
       it 'returns the Genre Key' do
         expect(config['genre_tesim'].to_s).to eq('Genre')
+      end
+
+      it 'returns the Features Key' do
+        expect(config['features_tesim'].to_s).to eq('Features')
       end
 
       it 'returns the Subject Key' do
@@ -24,7 +24,11 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
         expect(config['named_subject_tesim'].to_s).to eq('Named Subject')
       end
 
-      it 'returns the Location' do
+      it 'returns the Subject topic Key' do
+        expect(config['subject_topic_tesim'].to_s).to eq('Subject topic')
+      end
+
+      it 'returns the Location Key' do
         expect(config['location_tesim'].to_s).to eq('Location')
       end
 
@@ -36,8 +40,8 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
         expect(config['latitude_tesim'].to_s).to eq('Latitude')
       end
 
-      it 'returns the Features Key' do
-        expect(config['features_tesim'].to_s).to eq('Features')
+      it 'returns the Resource Type Key' do
+        expect(config['human_readable_resource_type_tesim'].to_s).to eq('Resource Type')
       end
     end
   end
