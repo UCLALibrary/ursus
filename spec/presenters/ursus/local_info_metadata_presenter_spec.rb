@@ -2,12 +2,22 @@
 require 'rails_helper'
 
 RSpec.describe Ursus::LocalInfoMetadataPresenter do
-  let(:id) { '123' }
-  let(:pres) { described_class.new(document: doc) }
+  let(:solr_doc) do
+    {
+      'ark_ssi' => 'test',
+      'title_tesim' => 'Test record',
+      'repository_tesim' => 'Test Repository',
+      'local_identifier_ssm' => '890_abc',
+      'oclc_ssi' => 'abc123_oclc',
+      'dlcs_collection_name_ssm' => 'Collection 1',
+      'resource_type_tesim' => 'still image'
+    }
+  end
+  let(:presenter_object) { described_class.new(document: solr_doc) }
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/local_info_metadata.yml'))) }
 
   context 'with a solr document containing local info metadata' do
-    describe '#local_info_terms' do
+    describe 'config' do
       it 'returns the Repository Key' do
         expect(config['repository_tesim'].to_s).to eq('Repository')
       end
@@ -22,6 +32,14 @@ RSpec.describe Ursus::LocalInfoMetadataPresenter do
 
       it 'returns the ARK Key' do
         expect(config['ark_ssi'].to_s).to eq('ARK')
+      end
+    end
+
+    describe "#local_info_terms" do
+      it "returns existing keys" do
+        expect(presenter_object.local_info_terms).to be_instance_of(Hash)
+        expect(presenter_object.local_info_terms.keys.length).to eq 4
+        expect(presenter_object.local_info_terms.include?('ark_ssi')).to be true
       end
     end
   end
