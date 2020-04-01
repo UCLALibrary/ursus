@@ -7,7 +7,7 @@ RSpec.describe Ursus::LocalInfoMetadataPresenter do
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/local_info_metadata.yml'))) }
 
   context 'with a solr document containing local info metadata' do
-    describe '#local_info_terms' do
+    describe 'config' do
       it 'returns the Repository Key' do
         expect(config['repository_tesim'].to_s).to eq('Repository')
       end
@@ -22,6 +22,10 @@ RSpec.describe Ursus::LocalInfoMetadataPresenter do
 
       it 'returns the ARK Key' do
         expect(config['ark_ssi'].to_s).to eq('ARK')
+      end
+
+      it 'Finding aid url' do
+        expect(config['finding_aid_url_ssm'].to_s).to eq('Finding aid url')
       end
     end
   end

@@ -16,6 +16,10 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
         expect(config['alternative_title_tesim'].to_s).to eq('Alternative Title')
       end
 
+      it 'returns the Creator Key' do
+        expect(config['creator_tesim'].to_s).to eq('Creator')
+      end
+
       it 'returns the Uniform Title Key' do
         expect(config['uniform_title_tesim'].to_s).to eq('Uniform title')
       end
@@ -80,16 +84,16 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
         expect(config['contents_note_tesim'].to_s).to eq('Contents note')
       end
 
-      it 'returns the Colophon Key' do
-        expect(config['colophon_tesim'].to_s).to eq('Colophon')
-      end
-
       it 'returns the Incipit Key' do
         expect(config['incipit_tesim'].to_s).to eq('Incipit')
       end
 
       it 'returns the Explicit Key' do
         expect(config['explicit_tesim'].to_s).to eq('Explicit')
+      end
+
+      it 'returns the Rubricator Key' do
+        expect(config['rubricator_tesim'].to_s).to eq('Rubricator')
       end
     end
   end

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# https://jira.library.ucla.edu/browse/URS-651
 
 require 'rails_helper'
 ENV['RAILS_HOST'] ||= 'ursus-test'
