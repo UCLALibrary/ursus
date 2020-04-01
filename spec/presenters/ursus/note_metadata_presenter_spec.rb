@@ -31,6 +31,10 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       it 'returns the Contents note Key' do
         expect(config['contents_note_tesim'].to_s).to eq('Contents note')
       end
+
+      it 'returns the Colophon Key' do
+        expect(config['colophon_tesim'].to_s).to eq('Colophon')
+      end
     end
   end
 end

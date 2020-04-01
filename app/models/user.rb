@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+# This is bookmarks. IOt is not currently being used.
+
 class User < ApplicationRecord
   # Connects this user object to Blacklights Bookmarks.
   include Blacklight::User

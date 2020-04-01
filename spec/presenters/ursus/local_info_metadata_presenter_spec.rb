@@ -33,6 +33,10 @@ RSpec.describe Ursus::LocalInfoMetadataPresenter do
       it 'returns the ARK Key' do
         expect(config['ark_ssi'].to_s).to eq('ARK')
       end
+
+      it 'Finding aid url' do
+        expect(config['finding_aid_url_ssm'].to_s).to eq('Finding aid url')
+      end
     end
 
     describe "#local_info_terms" do

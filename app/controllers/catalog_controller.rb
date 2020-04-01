@@ -150,7 +150,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'condition_note_tesim', label: 'Condition note'
     config.add_show_field 'contents_note_tesim', label: 'Contents note'
     config.add_show_field 'contributor_tesim'
-    config.add_show_field 'creator_tesim'
+    config.add_show_field 'creator_tesim', label: 'Creator'
     config.add_show_field 'date_created_tesim', separator_options: BREAKS
     config.add_show_field 'date_modified_tesim'
     config.add_show_field 'date_uploaded_tesim'
@@ -160,6 +160,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'explicit_tesim', label: 'Explicit'
     config.add_show_field 'extent_tesim', separator_options: BREAKS
     config.add_show_field 'features_tesim', link_to_facet: 'features_sim', label: 'Features'
+    config.add_show_field 'finding_aid_url_ssm', label: 'Finding aid url'
     config.add_show_field 'foliation_tesim', label: 'Foliation'
     config.add_show_field 'format_tesim'
     config.add_show_field 'funding_note_tesim'
@@ -193,6 +194,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'repository_tesim'
     config.add_show_field 'rights_country_tesim'
     config.add_show_field 'rights_holder_tesim'
+    config.add_show_field 'rubricator_tesim', label: 'Rubricator'
     config.add_show_field 'scribe_tesim', label: 'Scribe'
     config.add_show_field 'script_tesim', label: 'Script'
     config.add_show_field 'services_contact_ssm', label: 'Rights services contact'
