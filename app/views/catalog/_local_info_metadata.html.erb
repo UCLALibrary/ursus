@@ -2,8 +2,6 @@
 <% local_info = Ursus::LocalInfoMetadataPresenter.new(document: doc_presenter.fields_to_render).local_info_terms %>
 
 <% if local_info.length > 0 %>
-  <% doc_presenter = show_presenter(document) %>
-  <% local_info = Ursus::LocalInfoMetadataPresenter.new(document: doc_presenter.fields_to_render).local_info_terms %>
   <div class="local-info-metadata">
     <h4 class='item-heading'>Find This Item</h4>
     <dl class='row document-metadata'>
