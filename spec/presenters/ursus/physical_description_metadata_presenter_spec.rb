@@ -2,8 +2,31 @@
 require 'rails_helper'
 
 RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
-  let(:id) { '123' }
-  let(:pres) { described_class.new(document: doc) }
+  let(:solr_doc) do
+    {
+      'extent_tesim' => 'Extent',
+      'dimensions_tesim' => 'Dimensions',
+      'collation_tesim' => 'Collation',
+      'foliation_tesim' => 'Foliation',
+      'format_tesim' => 'Format',
+      'medium_tesim' => 'Medium',
+      'support_tesim' => 'Support',
+      'page_layout_ssim' => 'Page layout',
+      'writing_system_tesim' => 'Writing system',
+      'script_tesim' => 'Script',
+      'writing_and_hands_tesim' => 'Writing and hands',
+      'illustrations_note_tesim' => 'Illustrations note',
+      'condition_note_tesim' => 'Condition note',
+      'binding_note_tesim' => 'Binding note',
+      'inscription_tesim' => 'Inscription',
+      'opac_url_tesim' => 'Opac url'
+    }
+  end
+  let(:solr_doc_missing_items) do
+    { 'extent_tesim' => 'Extent' }
+  end
+  let(:presenter_object) { described_class.new(document: solr_doc) }
+  let(:presenter_object_missing_items) { described_class.new(document: solr_doc_missing_items) }
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/physical_description_metadata.yml'))) }
 
   context 'with a solr document containing overview metadata' do
@@ -70,6 +93,23 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
 
       it 'returns the Opac url' do
         expect(config['opac_url_tesim'].to_s).to eq 'Opac url'
+      end
+    end
+
+    describe "#physical_description terms" do
+      let(:all) { presenter_object.physical_description_terms.keys.length }
+      let(:missing) { presenter_object_missing_items.physical_description_terms.keys.length }
+      let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/physical_description_metadata.yml'))) }
+
+      it "returns existing keys" do
+        expect(presenter_object.physical_description_terms).to be_instance_of(Hash)
+        expect(all).to eq 16
+        expect(config.length).to eq all
+      end
+
+      it "is missing elements" do
+        expect(all - missing).to_not eq 0
+        expect(config.length - missing).to_not eq 0
       end
     end
   end

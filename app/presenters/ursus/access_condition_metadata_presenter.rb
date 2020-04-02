@@ -9,7 +9,7 @@ module Ursus
     end
 
     def access_condition_terms
-      @document.select { |doc| @config.keys.include?(doc) }.sort_by { |_d| @config.keys }
+      @document.slice(*@config.keys)
     end
   end
 end

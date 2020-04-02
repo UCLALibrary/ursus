@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 module Ursus
   class PhysicalDescriptionMetadataPresenter
-    attr_reader :document, :config
+    attr_reader :document
 
     def initialize(document:)
       @document = document
