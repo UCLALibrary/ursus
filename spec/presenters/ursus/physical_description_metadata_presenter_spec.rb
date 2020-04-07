@@ -97,13 +97,19 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
     end
 
     describe "#physical_description terms" do
+      let(:all) { presenter_object.physical_description_terms.keys.length }
+      let(:missing) { presenter_object_missing_items.physical_description_terms.keys.length }
+      let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/physical_description_metadata.yml'))) }
+
       it "returns existing keys" do
         expect(presenter_object.physical_description_terms).to be_instance_of(Hash)
-        expect(presenter_object.physical_description_terms.keys.length).to eq 16
+        expect(all).to eq 16
+        expect(config.length).to eq all
       end
 
-      it "does not return a physical_description term" do
-        expect(presenter_object_missing_items.physical_description_terms.keys.length).to eq 1
+      it "is missing elements" do
+        expect(all - missing).to_not eq 0
+        expect(config.length - missing).to_not eq 0
       end
     end
   end
