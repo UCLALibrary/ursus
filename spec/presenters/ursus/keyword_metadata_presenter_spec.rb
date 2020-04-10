@@ -2,8 +2,28 @@
 require 'rails_helper'
 
 RSpec.describe Ursus::KeywordMetadataPresenter do
-  let(:id) { '123' }
-  let(:pres) { described_class.new(document: doc) }
+  let(:solr_doc) do
+    {
+      'genre_tesim' => 'Genre',
+      'features_tesim' => 'Features',
+      'subject_tesim' => 'Subject',
+      'named_subject_tesim' => 'Named Subject',
+      'subject_topic_tesim' => 'Subject topic',
+      'location_tesim' => 'Location',
+      'longitude_tesim' => 'Longitude',
+      'latitude_tesim' => 'Latitude',
+      'human_readable_resource_type_tesim' => 'Resource Type'
+    }
+  end
+  let(:solr_doc_missing_items) do
+    {
+      'genre_tesim' => 'Genre',
+      'features_tesim' => 'Features',
+      'subject_tesim' => 'Subject'
+    }
+  end
+  let(:presenter_object) { described_class.new(document: solr_doc) }
+  let(:presenter_object_missing_items) { described_class.new(document: solr_doc_missing_items) }
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/keyword_metadata.yml'))) }
 
   context 'with a solr document containing overview metadata' do
@@ -42,6 +62,23 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
 
       it 'returns the Resource Type Key' do
         expect(config['human_readable_resource_type_tesim'].to_s).to eq('Resource Type')
+      end
+    end
+
+    describe "#keyword terms" do
+      let(:all) { presenter_object.keyword_terms.keys.length }
+      let(:missing) { presenter_object_missing_items.keyword_terms.keys.length }
+      let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/keyword_metadata.yml'))) }
+
+      it "returns existing keys" do
+        expect(presenter_object.keyword_terms).to be_instance_of(Hash)
+        expect(all).to eq 9
+        expect(config.length).to eq all
+      end
+
+      it "is missing elements" do
+        expect(all - missing).to_not eq 0
+        expect(config.length - missing).to_not eq 0
       end
     end
   end
