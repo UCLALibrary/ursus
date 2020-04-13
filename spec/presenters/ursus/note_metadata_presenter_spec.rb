@@ -2,8 +2,26 @@
 require 'rails_helper'
 
 RSpec.describe Ursus::NoteMetadataPresenter do
-  let(:id) { '123' }
-  let(:pres) { described_class.new(document: doc) }
+  let(:solr_doc) do
+    {
+      'caption_tesim' => 'Caption',
+      'summary_tesim' => 'Summary',
+      'description_tesim' => 'Description',
+      'provenance_tesim' => 'Provenance',
+      'toc_tesim' => 'Table of Contents',
+      'contents_note_tesim' => 'Contents note',
+      'colophon_tesim' => 'Colophon'
+    }
+  end
+  let(:solr_doc_missing_items) do
+    {
+      'caption_tesim' => 'Caption',
+      'summary_tesim' => 'Summary',
+      'description_tesim' => 'Description'
+    }
+  end
+  let(:presenter_object) { described_class.new(document: solr_doc) }
+  let(:presenter_object_missing_items) { described_class.new(document: solr_doc_missing_items) }
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/note_metadata.yml'))) }
 
   context 'with a solr document containing overview metadata' do
@@ -34,6 +52,22 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
       it 'returns the Colophon Key' do
         expect(config['colophon_tesim'].to_s).to eq('Colophon')
+      end
+    end
+
+    describe "#note terms" do
+      let(:all) { presenter_object.note_terms.keys.length }
+      let(:missing) { presenter_object_missing_items.note_terms.keys.length }
+
+      it "returns existing keys" do
+        expect(presenter_object.note_terms).to be_instance_of(Hash)
+        expect(all).to eq 7
+        expect(config.length).to eq all
+      end
+
+      it "is missing some elements" do
+        expect(all - missing).to_not eq 0
+        expect(config.length - missing).to_not eq 0
       end
     end
   end

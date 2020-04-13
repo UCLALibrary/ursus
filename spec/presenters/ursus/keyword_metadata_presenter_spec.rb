@@ -68,7 +68,6 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
     describe "#keyword terms" do
       let(:all) { presenter_object.keyword_terms.keys.length }
       let(:missing) { presenter_object_missing_items.keyword_terms.keys.length }
-      let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/keyword_metadata.yml'))) }
 
       it "returns existing keys" do
         expect(presenter_object.keyword_terms).to be_instance_of(Hash)
@@ -76,7 +75,7 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
         expect(config.length).to eq all
       end
 
-      it "is missing elements" do
+      it "is missing some elements" do
         expect(all - missing).to_not eq 0
         expect(config.length - missing).to_not eq 0
       end
