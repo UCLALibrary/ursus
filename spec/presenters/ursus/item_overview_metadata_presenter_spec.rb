@@ -2,8 +2,44 @@
 require 'rails_helper'
 
 RSpec.describe Ursus::ItemOverviewMetadataPresenter do
-  let(:id) { '123' }
-  let(:pres) { described_class.new(document: doc) }
+  let(:solr_doc) do
+    {
+      'title_tesim' => 'Title',
+      'alternative_title_tesim' => 'Alternative Title',
+      'uniform_title_tesim' => 'Uniform title',
+      'creator_tesim' => 'Creator',
+      'author_tesim' => 'Author',
+      'architect_tesim' => 'Architect',
+      'photographer_tesim' => 'Photographer',
+      'composer_tesim' => 'Composer',
+      'scribe_tesim' => 'Scribe',
+      'illuminator_tesim' => 'Illuminator',
+      'lyricist_tesim' => 'Lyricist',
+      'publisher_tesim' => 'Publisher',
+      'place_of_origin_tesim' => 'Place of Origin',
+      'year_isim' => 'Year',
+      'normalized_date_sim' => 'Date',
+      'date_created_tesim' => 'Date Created',
+      'human_readable_language_tesim' => 'Language',
+      'member_of_collections_ssim' => 'Collection',
+      'contents_note_tesim' => 'Contents note',
+      'incipit_tesim' => 'Incipit',
+      'explicit_tesim' => 'Explicit',
+      'rubricator_tesim' => 'Rubricator'
+    }
+  end
+  let(:solr_doc_missing_items) do
+    {
+      'date_created_tesim' => 'Date Created',
+      'human_readable_language_tesim' => 'Language',
+      'member_of_collections_ssim' => 'Collection',
+      'contents_note_tesim' => 'Contents note',
+      'incipit_tesim' => 'Incipit',
+      'explicit_tesim' => 'Explicit'
+    }
+  end
+  let(:presenter_object) { described_class.new(document: solr_doc) }
+  let(:presenter_object_missing_items) { described_class.new(document: solr_doc_missing_items) }
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/item_overview_metadata.yml'))) }
 
   context 'with a solr document containing overview metadata' do
@@ -94,6 +130,22 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
 
       it 'returns the Rubricator Key' do
         expect(config['rubricator_tesim'].to_s).to eq('Rubricator')
+      end
+    end
+
+    describe "#overview_terms terms" do
+      let(:all) { presenter_object.overview_terms.keys.length }
+      let(:missing) { presenter_object_missing_items.overview_terms.keys.length }
+
+      it "returns existing keys" do
+        expect(presenter_object.overview_terms).to be_instance_of(Hash)
+        expect(all).to eq 22
+        expect(config.length).to eq all
+      end
+
+      it "is missing elements" do
+        expect(all - missing).to_not eq 0
+        expect(config.length - missing).to_not eq 0
       end
     end
   end

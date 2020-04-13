@@ -30,7 +30,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/physical_description_metadata.yml'))) }
 
   context 'with a solr document containing overview metadata' do
-    describe '#terms' do
+    describe 'config' do
       it 'returns the Binding note Key' do
         expect(config['binding_note_tesim'].to_s).to eq 'Binding note'
       end
