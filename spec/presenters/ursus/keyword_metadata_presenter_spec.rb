@@ -27,7 +27,7 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/keyword_metadata.yml'))) }
 
   context 'with a solr document containing overview metadata' do
-    describe '#keyword_terms' do
+    describe 'config' do
       it 'returns the Genre Key' do
         expect(config['genre_tesim'].to_s).to eq('Genre')
       end

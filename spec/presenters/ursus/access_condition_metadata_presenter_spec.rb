@@ -25,7 +25,7 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/access_condition_metadata.yml'))) }
 
   context 'with a solr document containing overview metadata' do
-    describe '#access_condition_terms' do
+    describe 'config' do
       it 'returns the Rights statement Key' do
         expect(config['human_readable_rights_statement_tesim'].to_s).to eq('Rights statement')
       end

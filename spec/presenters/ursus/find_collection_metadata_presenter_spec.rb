@@ -7,7 +7,7 @@ RSpec.describe Ursus::FindCollectionMetadataPresenter do
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/find_collection_metadata.yml'))) }
 
   context 'with a solr document containing Find Collection info metadata' do
-    describe '#find_collection_terms' do
+    describe 'config' do
       it 'returns the Repository Key' do
         expect(config['repository_tesim'].to_s).to eq('Repository')
       end

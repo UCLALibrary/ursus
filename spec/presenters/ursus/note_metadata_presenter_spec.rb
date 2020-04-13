@@ -7,7 +7,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/note_metadata.yml'))) }
 
   context 'with a solr document containing overview metadata' do
-    describe '#note_terms' do
+    describe 'config' do
       it 'returns the Caption Key' do
         expect(config['caption_tesim'].to_s).to eq('Caption')
       end
