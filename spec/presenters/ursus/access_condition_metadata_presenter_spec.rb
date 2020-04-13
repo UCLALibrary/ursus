@@ -58,7 +58,6 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
     describe "#access_condition terms" do
       let(:all) { presenter_object.access_condition_terms.keys.length }
       let(:missing) { presenter_object_missing_items.access_condition_terms.keys.length }
-      let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/access_condition_metadata.yml'))) }
 
       it "returns existing keys" do
         expect(presenter_object.access_condition_terms).to be_instance_of(Hash)
@@ -66,7 +65,7 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
         expect(config.length).to eq all
       end
 
-      it "is missing elements" do
+      it "is missing some elements" do
         expect(all - missing).to_not eq 0
         expect(config.length - missing).to_not eq 0
       end

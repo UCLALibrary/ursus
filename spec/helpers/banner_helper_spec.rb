@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# https://github.com/UCLALibrary/ursus/blob/master/spec/helpers/banner_helper_spec.rb
 
 require 'rails_helper'
 

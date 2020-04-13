@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+# https://github.com/UCLALibrary/ursus/blob/master/spec/helpers/blacklight_helper_spec.rb
+
 require 'rails_helper'
 
 RSpec.describe BlacklightHelper, type: :helper do
