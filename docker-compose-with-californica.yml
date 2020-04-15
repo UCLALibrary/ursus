@@ -18,6 +18,7 @@ services:
       - "127.0.0.1:3003:3000"
     volumes:
       - .:/ursus
+      - node_modules:/ursus/node_modules
       - bundle_dir:/usr/local/bundle
       - ursus_tmp:/ursus/tmp
     working_dir: /ursus
@@ -25,6 +26,7 @@ services:
       - californica_default
 volumes:
   bundle_dir:
+  node_modules:
   ursus_tmp:
 networks:
   californica_default:

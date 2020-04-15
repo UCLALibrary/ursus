@@ -14,17 +14,21 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt-get update -qq
 RUN apt-get install mariadb-client build-essential libpq-dev yarn nodejs chromium-driver libatk-bridge2.0-0 libgtk-3.0 -y
 
+# Install JavaScript dependencies
+COPY yarn.lock /ursus/yarn.lock
+RUN yarn install
+
 # Install Ruby Gems
 RUN gem install bundler
 ENV BUNDLE_PATH /usr/local/bundle
-WORKDIR /californica
-COPY Gemfile /californica/Gemfile
-COPY Gemfile.lock /californica/Gemfile.lock
+WORKDIR /ursus
+COPY Gemfile /ursus/Gemfile
+COPY Gemfile.lock /ursus/Gemfile.lock
 RUN bundle install
 
 # Create a non-root user
 RUN useradd -ms /bin/bash  ursus
 
-# Add californica
+# Add ursus
 COPY / /ursus
 CMD ["sh", "/ursus/start-ursus.sh"]
