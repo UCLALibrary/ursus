@@ -80,7 +80,7 @@ RSpec.describe 'Search results page', type: :system, js: false do
     expect(page).to have_content 'Date Created: 1923'
   end
 
-  it 'visiting the home page and getting the correct search field options' do
+  it 'visits the home page and getting the correct search field options' do
     visit '/' do
       expect(page.html).to match(/<option value="all_fields">All Fields<\/option>/)
       expect(page.html).to match(/<option value="title">Title<\/option>/)
@@ -114,6 +114,15 @@ RSpec.describe 'Search results page', type: :system, js: false do
 
     visit '/catalog?q=&search_field=all_fields&sort=title_alpha_numeric_ssort+desc' do
       expect(page).to have_content('1. Title Two')
+    end
+  end
+
+  it 'displays a list of collections the record belongs to' do
+    visit '/catalog?q=work&search_field=all_fields' do
+      expect(page).to have_link('Hathaway Manuscripts', href: 'catalog/37sh8000zzaa-89112')
+      expect(page).to have_link('Allan (Maud) Papers. Collection 2038', href: 'catalog/ps4gn100zz-89112')
+      expect(page).to have_link('E.F. Raynes Plante Autograph Albums (1914-1918)', href: 'catalog/k13t1n-89112')
+      expect(page).to have_link('Photographic Collection', href: 'jdpmdc-89112')
     end
   end
 end

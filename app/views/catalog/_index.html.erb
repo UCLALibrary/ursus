@@ -27,9 +27,13 @@
             <%= render_index_field_label document, field: field_name %>
           </dt>
           <dd class="blacklight-<%= field_name.parameterize %> col-md-9">
-            <% document[:member_of_collections_ssim].each do | member | %>
-              <%= "- " %><%= link_to member, "/catalog/#{member}" %><br/>
-            <% end %>
+            <% if document[:member_of_collections_ssim].length > 1 %>
+              <% document[:member_of_collections_ssim].each_with_index do | member, index | %>
+                <%= link_to member, "/catalog/#{document[:member_of_collection_ids_ssim][index]}" %><br/>
+              <% end %>
+              <% else %>
+                <%= link_to  document[:member_of_collections_ssim][0], "/catalog/#{document[:member_of_collection_ids_ssim][0]}" %>
+              <% end %>
           </dd>
         <% end %>
 
