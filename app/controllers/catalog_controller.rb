@@ -204,7 +204,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'support_tesim', label: 'Support'
     config.add_show_field 'title_tesim'
     config.add_show_field 'toc_tesim', label: 'Table of Contents'
-    config.add_show_field 'uniform_title_tesim'
+    config.add_show_field 'uniform_title_tesim', separator_options: BREAKS
     config.add_show_field 'writing_and_hands_tesim', label: 'Writing and hands'
     config.add_show_field 'writing_system_tesim', label: 'Writing system'
 
