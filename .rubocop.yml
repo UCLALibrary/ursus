@@ -134,6 +134,7 @@ Style/GuardClause:
 Style/IfInsideElse:
   Exclude:
      - app/controllers/application_controller.rb
+     - app/services/iiif_service.rb
 
 Lint/UselessAssignment:
   Exclude:
