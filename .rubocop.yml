@@ -108,6 +108,11 @@ Rails/OutputSafety:
     - app/helpers/blacklight/url_helper_behavior.rb
     - app/helpers/blacklight_helper.rb
 
+Style/BlockComments:
+  Exclude:
+    - app/presenters/ursus/collection_block_presenter.rb
+    - spec/presenters/ursus/collection_block_presenter_spec.rb  
+
 Style/BlockDelimiters:
   Exclude:
     - spec/features/search_catalog_spec.rb
