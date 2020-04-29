@@ -8,6 +8,14 @@ GIT
       openseadragon (>= 0.2.0)
       rails (~> 5.1)
 
+GIT
+  remote: https://github.com/projectblacklight/blacklight_oai_provider.git
+  revision: 6f45e2d4a4cfc9eb46d61f97b5b12202641a3d03
+  specs:
+    blacklight_oai_provider (7.0.0)
+      blacklight (~> 7.0)
+      oai (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -156,6 +164,8 @@ GEM
       railties (>= 4.2.0)
     faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.14.0)
+      faraday (>= 0.7.4, < 1.0)
     ffi (1.12.2)
     flipflop (2.6.0)
       activesupport (>= 4.0)
@@ -228,6 +238,10 @@ GEM
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     ntlm-http (0.1.1)
+    oai (1.1.0)
+      builder (>= 3.1.0)
+      faraday
+      faraday_middleware
     openseadragon (0.5.0)
       rails (> 3.2.0)
     orm_adapter (0.5.0)
@@ -417,6 +431,7 @@ DEPENDENCIES
   blacklight-access_controls (>= 6.0.0)
   blacklight-gallery!
   blacklight_dynamic_sitemap (~> 0.1.0)
+  blacklight_oai_provider!
   blacklight_range_limit (~> 7.0.0)
   bootstrap (~> 4.4, >= 4.4.1)
   byebug
