@@ -1,0 +1,53 @@
+.sort-pagination,
+.pagination-search-widgets {
+  border-bottom: $pagination-border-width solid $pagination-border-color;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.pagination-search-widgets {
+  @extend .clearfix;
+  padding-top: 1px;
+  padding-bottom: $spacer;
+}
+
+.sort-pagination .dropdown-toggle {
+  cursor: pointer;
+}
+
+.no-js .sort-pagination {
+  & {
+    @extend .clearfix;
+  }
+  .dropdown-menu {
+    background: none;
+    box-shadow: none;
+    border: none;
+    position: relative;
+    display: block;
+    float: none;
+  }
+
+}
+
+.view-type {
+  display: inline-block;
+
+  .caption {
+    @extend .sr-only;
+  }
+}
+
+.search-input-group {
+  width: 80%;
+}
+
+@media (max-width: breakpoint-max(xs)) {
+  .search-input-group {
+    width: auto;
+  }
+}
+
+.modal_form {
+  margin-bottom: 0;
+}
