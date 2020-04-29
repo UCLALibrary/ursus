@@ -256,6 +256,8 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.1.7)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (0.0.3)
+      rails (>= 4.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -442,6 +444,7 @@ DEPENDENCIES
   pkg-config (~> 1.1)
   puma (~> 3.12, >= 3.12.4)
   rails (~> 5.1.7)
+  rails-controller-testing (~> 0.0.3)
   rollbar
   rsolr (>= 1.0)
   rspec-collection_matchers
