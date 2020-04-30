@@ -8,7 +8,7 @@ module Ursus
     def collection_selected?
       @response['responseHeader']['params']['fq'][1].match?(/member_of_collections/)
     end
-
+=begin
     def collection_name
       return unless @response['response']['docs'].first['member_of_collections_ssim']
       @response['response']['docs'].first['member_of_collections_ssim'][0]
@@ -22,7 +22,7 @@ module Ursus
       return 'No contact information recorded' unless collection_doc[:services_contact_ssm]
       collection_doc[:services_contact_ssm][0]
     end
-
+=end
     def collection_document
       @collection_document ||= begin
         return unless @response['response']['docs'].first['member_of_collections_ssim']
@@ -30,7 +30,7 @@ module Ursus
         SolrDocument.find(collection_id)
       end
     end
-
+=begin
     def collection_description
       description = Array.wrap(collection_document['description_tesim'])
       description[0]
@@ -50,5 +50,6 @@ module Ursus
       languages = Array.wrap(collection_document['human_readable_language_tesim']).to_sentence
       languages.empty? ? nil : languages
     end
+=end
   end
 end
