@@ -1,22 +1,15 @@
 <div class='collection-record-container'>
-<% if document[:summary_tesim] %>
-  <h2>About this Collection</h2>
-  <p> 
-    <%= document[:summary_tesim][0] %> 
-  </p>
-  <hr>
-<% end %>
+  <% if document[:summary_tesim] %>
+    <h2>About this Collection</h2>
+    <p> 
+      <%= document[:summary_tesim][0] %> 
+    </p>
+    <hr>
+  <% end %>
 
-<h2>Collection Overview</h2>
- <%= render 'catalog/collection/collection_overview',  document: document  %>
-<hr>
+  <%= render 'catalog/collection/collection_overview',  document: document  %>
+  <%= render 'catalog/collection/find_this_collection', document: document  %>
+  <%= render 'catalog/collection/service_contact', document: document  %>
 
-<h2>Find this Collection</h2>
-<%= render 'catalog/collection/find_this_collection', document: document  %>
-<hr>
-
-<h2>Contact</h2>
-<%= render 'catalog/collection/service_contact', document: document  %>
-<hr>
-<a href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=<%= document[:title_tesim][0] %>" class="btn btn-warning btn-lg browse-collection-btn" role="button">Browse items in this collection</a>
+  <a href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=<%= document[:title_tesim][0] %>" class="btn btn-warning btn-lg browse-collection-btn" role="button">Browse items in this collection</a>
 </div>
