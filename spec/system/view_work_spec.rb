@@ -63,6 +63,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
     expect(page).to have_content 'Powell Library'
     expect(page).to have_content 'Film Still'
     expect(page).to have_content 'Mom & Dad'
+    expect(page.html).to match(/<img src="http/)
   end
 
   context 'license' do
