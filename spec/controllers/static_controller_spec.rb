@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+#   gem 'rspec-collection_matchers'
+
 require 'rails_helper'
 
 RSpec.describe StaticController, type: :controller do

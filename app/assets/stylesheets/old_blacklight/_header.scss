@@ -1,0 +1,55 @@
+/*
+  Header bar at top (Bootstrap nav-bar)
+*/
+
+.topbar > .container {
+  @media (max-width: breakpoint-max(xs)) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.navbar-brand {  /* The main logo image for the Blacklight instance */
+  @if $logo-image {
+    background: transparent $logo-image no-repeat top left;
+  }
+
+  @if $logo_image {
+    // deprecated
+    background: transparent image_url($logo_image) no-repeat top left;
+  }
+
+  display: inline-block;
+  flex: 0 0 150px;
+  height: 50px;
+  margin-right:20px;
+  margin-top: -0.4rem;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 150px;
+}
+
+.navbar-search {
+  z-index: 1;
+
+  .search-field {
+    // This prevents the widget from being squished so the text overflows
+    min-width: 7em;
+  }
+
+  .search-query-form {
+    @extend .col-md-12;
+    @extend .col-lg-8;
+    padding-left: 0;
+  }
+
+  .submit-search-text {
+    // hide 'search' label at very small screens
+    @media screen and (max-width: breakpoint-max(xs)) {
+      @include sr-only();
+    }
+  }
+}

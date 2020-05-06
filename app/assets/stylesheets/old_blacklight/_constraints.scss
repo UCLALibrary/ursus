@@ -1,0 +1,44 @@
+.constraints-container {
+  @extend .mb-2;
+}
+
+.applied-filter {
+  .constraint-value {
+    cursor: default;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @media (max-width: breakpoint-max(xs)) {
+      max-width: breakpoint-max(xs) / 2;
+    }
+
+    @media (min-width: breakpoint-min(sm)) and (max-width: breakpoint-max(sm)) {
+      max-width: breakpoint-min(sm) / 2;
+    }
+
+    @media (min-width: breakpoint-min(md)) and (max-width: breakpoint-max(md)) {
+      max-width: breakpoint-min(md) / 2;
+    }
+
+    @media (min-width: breakpoint-min(lg)) {
+      max-width: breakpoint-min(lg) / 2;
+    }
+
+    &:hover, &:active {
+      background-color: theme-color("secondary");
+      border-color: theme-color("secondary");
+      box-shadow: none;
+    }
+  }
+
+  .filter-name:after {
+    color: $gray-500;
+    content: "❯";
+    font-size: 90%;
+    padding-left: $caret-width;
+  }
+
+  .remove:hover, .remove:active {
+    @extend .btn-danger;
+  }
+}

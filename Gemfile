@@ -48,7 +48,7 @@ group :development, :test do
   gem 'capybara-mechanize', '>= 1.11.0'
   gem 'equivalent-xml', '>= 0.6.0'
   gem 'factory_bot_rails', '>= 5.1.1'
-  gem 'rails-controller-testing', '~> 0.0.3'
+  gem 'rails-controller-testing', '>= 1.0.4'
   gem 'rspec-collection_matchers'
   gem 'rspec-its'
   gem 'rspec-rails', '~> 3.9', '>= 3.9.0'
@@ -78,7 +78,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'blacklight', '~> 7.0.1'
+gem 'blacklight', '~> 7.3.0'
 gem 'blacklight-access_controls', '>= 6.0.0'
 gem 'blacklight_dynamic_sitemap', '~> 0.1.0'
 gem 'blacklight_range_limit', '~> 7.0.0'
