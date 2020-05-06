@@ -1,5 +1,5 @@
 <div class='primary-metadata'>
-  <div class="sr-only">
+  <div hidden>
     <% document_json = JSON.parse @document.to_json.gsub(/'/, '_') %>
     <% tn = "<img src=\""+document_json['thumbnail_url_ss']+"\" alt=\"Image for search engines to index.\" \>" if !document_json['thumbnail_url_ss'].blank? %>
     <%= tn.html_safe if !document_json['thumbnail_url_ss'].blank?%>
