@@ -7,7 +7,7 @@
             "options": {
                 "downloadEnabled": false,
                 "fullscreenEnabled": true,
-                "shareEnabled": false
+                "shareEnabled": true
             }
         }
     }
