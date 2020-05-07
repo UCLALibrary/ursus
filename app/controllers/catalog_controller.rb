@@ -6,8 +6,6 @@ require 'solrizer'
 class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
-  include BlacklightOaiProvider::Controller
-
   include Blacklight::AccessControls::Catalog
 
   # Apply the blacklight-access_controls

@@ -7,7 +7,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'blacklight-gallery', github: 'projectblacklight/blacklight-gallery'
-gem 'blacklight_oai_provider', github: 'projectblacklight/blacklight_oai_provider'
 gem 'dotenv-rails', '>= 2.7.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.7'
