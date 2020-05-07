@@ -2,21 +2,19 @@
 Rails.application.routes.draw do
   get '/login', to: 'login#new', as: 'login'
   mount Flipflop::Engine => "/flipflop"
-  # static pages
   get '/about', to: 'static#about'
   get '/copyrights_and_collections', to: 'static#copyright'
   get '/privacy_policy', to: 'static#privacy'
   get '/contact', to: 'static#contact'
   get '/terms-of-use', to: 'static#terms-of-use'
   get '/migration_updates', to: 'static#migration_updates'
+  get '/static', to: 'static#static_pages'
   get '/version', to: 'static#version'
 
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   concern :searchable, Blacklight::Routes::Searchable.new
-  concern :oai_provider, BlacklightOaiProvider::Routes.new
-  resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
-    concerns :oai_provider
 
+  resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
     concerns :range_searchable
   end
