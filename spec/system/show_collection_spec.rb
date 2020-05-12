@@ -1,3 +1,4 @@
+
 # frozen_string_literal: true
 
 require 'rails_helper'
@@ -39,9 +40,24 @@ RSpec.describe 'View a Collection', type: :system, js: true do
     }
   end
 
+  let(:work_1_attributes) { WORK_A }
+
+  let(:work_2_attributes) { WORK_B }
+
+  let(:work_3_attributes) { WORK_C }
+
+  let(:work_4_attributes) { WORK_D }
+
+  let(:work_5_attributes) { WORK_E }
+
   before do
     solr = Blacklight.default_index.connection
     solr.add(collection_attributes)
+    solr.add(work_1_attributes)
+    solr.add(work_2_attributes)
+    solr.add(work_3_attributes)
+    solr.add(work_4_attributes)
+    solr.add(work_5_attributes)
     solr.commit
     # allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
     # allow_any_instance_of(IiifService).to receive(:src).and_return('/uv/uv.html#?manifest=/manifest.json')
@@ -57,6 +73,13 @@ RSpec.describe 'View a Collection', type: :system, js: true do
 
     expect(page).to have_content 'Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'
     expect(page).to have_content 'LOCAL IDENTIFIER  Collection 686'
+  end
+
+  it 'displays the schema.org values' do
+    visit solr_document_path(id)
+    expect(page.find('div[itemtype = "http://schema.org/Collection"]')['itemid']).to have_content '/catalog/m8f11000zz-89112'
+    expect(page.find('div > p[itemprop]')['itemprop']).to have_content 'abstract'
+    expect(page.find('div[itemprop]')['itemprop']).to have_content 'collectionSize'
   end
 
   it 'displays headings' do

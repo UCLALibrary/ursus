@@ -26,20 +26,6 @@
   <% end %>
 
   <% if controller.controller_name == 'catalog' && @document && @document[:has_model_ssim] && @document[:has_model_ssim][0] == 'Collection' %>
-
-    <!--<div style="display:none">
-      <%#= @pagination_collection.total_count %>
-    </div>
-    <div style="display:none">
-      <%#= @display_facet.items %>
-    </div>
-    <div style="display:none;">
-      <%#= @pagination_collection.items %>
-    </div>
-    <div style="display:none;">
-      <%#= @response_collection %>
-    </div> -->
-
     <div class="collection-masthead" style="background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),

@@ -1,10 +1,21 @@
 <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe %>
 <% content_for(:head) { render_link_rel_alternates } %>
-
-<div id='document' class="document <%= render_document_class %>" itemscope  itemtype="<%= @document.itemtype %>">
+<!--
+  <div id='document' class="document blacklight-work" itemscope  itemtype="http://schema.org/CreativeWork" itemid="https://digital.library.ucla.edu/catalog/5rsn2000zz-89112">
+  <link itemprop="isPartOf" itemscope itemtype="http://schema.org/Collection" itemid="https://digital.library.ucla.edu/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Los+Angeles+Daily+News+Negatives" />
+  
+</div>
+-->
+<div id='document' class="document <%= render_document_class %>">
+  
   <div id="doc_<%= @document.id.to_s.parameterize %>">
     <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
   </div>
+  <% if @document[:member_of_collections_ssim] && @document[:member_of_collection_ids_ssim] %>
+    <% @document[:member_of_collections_ssim].each_with_index do | member, index | %>
+      <link itemprop="isPartOf" itemscope itemtype="http://schema.org/Collection" itemid="<%=request.base_url+solr_document_path(@document[:member_of_collection_ids_ssim][index])%>" />
+    <% end %>
+  <% end %>
 </div>
 
 <% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
