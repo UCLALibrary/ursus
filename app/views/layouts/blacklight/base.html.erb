@@ -35,7 +35,7 @@
       <%= favicon_link_tag 'favicon.ico' %>
     <% end %>
 
-    <%= stylesheet_link_tag (Flipflop.sinai? ? "sinai": "application"), media: "all" %>
+    <%= stylesheet_link_tag (Flipflop.sinai? ? "sinai": "ursus"), media: "all" %>
     <%= javascript_include_tag "application", defer: Rails.env.development? ? false : true %>
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
