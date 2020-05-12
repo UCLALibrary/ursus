@@ -10,11 +10,14 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require old_blacklight
+ *= require legacy/old_blacklight
  *
  * Used by blacklight_range_limit
  *= require  'blacklight_range_limit'
  *= require font-awesome
  *
- *= require ursus
+ *= require legacy/ursus
+ *
+ *= require_tree ./base
+ *= require_tree ./theme_ursus
 */
