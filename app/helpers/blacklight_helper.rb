@@ -27,6 +27,18 @@ module BlacklightHelper
       </a>. )
   end
 
+  def schema_org_markup
+    if controller.controller_name == 'catalog' && @document && @document[:has_model_ssim]
+      schema_org_attributes = "itemscope itemid='#{request.base_url + solr_document_path(@document.id.to_s.parameterize)}'"
+      if @document[:has_model_ssim][0] == 'Collection'
+        schema_org_attributes += ' itemtype="http://schema.org/Collection"'
+      elsif @document[:has_model_ssim][0] == 'Work'
+        schema_org_attributes += ' itemtype="http://schema.org/CreativeWork"'
+      end
+      schema_org_attributes.html_safe
+    end
+  end
+
   def render_opac_link
     opac_link = @document[:opac_url_ssi]
     return unless opac_link

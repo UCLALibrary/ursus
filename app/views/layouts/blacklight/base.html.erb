@@ -47,16 +47,7 @@
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <% end %>
     
-    <div class="d-flex flex-column" style="min-height: 100vh"    
-    <% if controller.controller_name == 'catalog' && @document && @document[:has_model_ssim] %>
-    itemscope itemid="<%=request.base_url+solr_document_path(@document.id.to_s.parameterize)%>"
-      <% if @document[:has_model_ssim][0] == 'Collection'%>
-        itemtype="http://schema.org/Collection"
-      <% elsif @document[:has_model_ssim][0] == 'Work' %>
-        itemtype="http://schema.org/CreativeWork"
-      <% end %>
-    <% end %>
-    >
+    <div class="d-flex flex-column" style="min-height: 100vh" <%=schema_org_markup%>
       <%= render partial: 'shared/header_navbar' %>
       <%= render 'catalog/homepage_banner' %>
 
