@@ -117,3 +117,98 @@ FOURTH_WORK = {
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
   visibility_ssi: ['open']
 }.freeze
+
+WORK_A = {
+  id: 'id456a',
+  has_model_ssim: ['Work'],
+  title_tesim: ['Title Three'],
+  sort_title_ssort: 'Title Three',
+  title_alpha_numeric_ssort: 'The Title 100 of my Work',
+  identifier_tesim: ['ark 456'],
+  description_tesim: ['Description 3', 'Description 4', 'another desc'],
+  date_created_tesim: ["Date 1"],
+  sort_year_isi: 1929,
+  human_readable_resource_type_tesim: ['still image'],
+  photographer_tesim: ['Person 1'],
+  location_tesim: ['search_results_spec'], # to control what displays
+  member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
+  member_of_collection_ids_ssim: ['m8f11000zz-89112'],
+  thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
+  visibility_ssi: ['open']
+}.freeze
+
+WORK_B = {
+  id: 'id456b',
+  has_model_ssim: ['Work'],
+  title_tesim: ['Title Three'],
+  sort_title_ssort: 'Title Three',
+  title_alpha_numeric_ssort: 'The Title 100 of my Work',
+  identifier_tesim: ['ark 456'],
+  description_tesim: ['Description 3', 'Description 4', 'another desc'],
+  date_created_tesim: ["Date 1"],
+  sort_year_isi: 1929,
+  human_readable_resource_type_tesim: ['still image'],
+  photographer_tesim: ['Person 1'],
+  location_tesim: ['search_results_spec'], # to control what displays
+  member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
+  member_of_collection_ids_ssim: ['m8f11000zz-89112'],
+  thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
+  visibility_ssi: ['open']
+}.freeze
+
+WORK_C = {
+  id: 'id456c',
+  has_model_ssim: ['Work'],
+  title_tesim: ['Title Three'],
+  sort_title_ssort: 'Title Three',
+  title_alpha_numeric_ssort: 'The Title 100 of my Work',
+  identifier_tesim: ['ark 456'],
+  description_tesim: ['Description 3', 'Description 4', 'another desc'],
+  date_created_tesim: ["Date 1"],
+  sort_year_isi: 1929,
+  human_readable_resource_type_tesim: ['still image'],
+  photographer_tesim: ['Person 1'],
+  location_tesim: ['search_results_spec'], # to control what displays
+  member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
+  member_of_collection_ids_ssim: ['m8f11000zz-89112'],
+  thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
+  visibility_ssi: ['open']
+}.freeze
+
+WORK_D = {
+  id: 'id456d',
+  has_model_ssim: ['Work'],
+  title_tesim: ['Title Three'],
+  sort_title_ssort: 'Title Three',
+  title_alpha_numeric_ssort: 'The Title 100 of my Work',
+  identifier_tesim: ['ark 456'],
+  description_tesim: ['Description 3', 'Description 4', 'another desc'],
+  date_created_tesim: ["Date 1"],
+  sort_year_isi: 1929,
+  human_readable_resource_type_tesim: ['still image'],
+  photographer_tesim: ['Person 1'],
+  location_tesim: ['search_results_spec'], # to control what displays
+  member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
+  member_of_collection_ids_ssim: ['m8f11000zz-89112'],
+  thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
+  visibility_ssi: ['open']
+}.freeze
+
+WORK_E = {
+  id: 'id456e',
+  has_model_ssim: ['Work'],
+  title_tesim: ['Title Three'],
+  sort_title_ssort: 'Title Three',
+  title_alpha_numeric_ssort: 'The Title 100 of my Work',
+  identifier_tesim: ['ark 456'],
+  description_tesim: ['Description 3', 'Description 4', 'another desc'],
+  date_created_tesim: ["Date 1"],
+  sort_year_isi: 1929,
+  human_readable_resource_type_tesim: ['still image'],
+  photographer_tesim: ['Person 1'],
+  location_tesim: ['search_results_spec'], # to control what displays
+  member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
+  member_of_collection_ids_ssim: ['m8f11000zz-89112'],
+  thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
+  visibility_ssi: ['open']
+}.freeze
