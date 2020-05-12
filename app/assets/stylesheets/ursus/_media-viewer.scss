@@ -5,11 +5,16 @@
   //display: flex;
   //justify-content: center;
 }
+
 .media-viewer {
   margin-bottom: 25px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+#media-viewer-iframe {
+  width: 100%;
 }
 
 @media (max-width: 767px) {

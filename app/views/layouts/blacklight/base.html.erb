@@ -46,8 +46,7 @@
       <noscript id='analytics-noscript'><iframe src="https://www.googletagmanager.com/ns.html?id=<%= ENV["GOOGLE_TAG_MGR_ID"] %>"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <% end %>
-    
-    <div class="d-flex flex-column" style="min-height: 100vh" <%=schema_org_markup%>
+    <div class="d-flex flex-column" style="min-height: 100vh" <%=schema_org_markup%> >
       <%= render partial: 'shared/header_navbar' %>
       <%= render 'catalog/homepage_banner' %>
 

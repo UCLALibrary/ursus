@@ -30,8 +30,8 @@
       to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.4)
-      ),url(<%= image_path "ucla_powell_library.jpg" %>);">
-      <%= render 'collection_masthead_overlay', document: @document, collection_count: @collection_count%>
+      ),url(<%= image_path create_representative_image(@document) %>);">
+      <%= render 'collection_masthead_overlay', document: @document, collection_count: @collection_count %>
     </div>
   <% end %>
 <% end %>

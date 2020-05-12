@@ -3,7 +3,7 @@
 module HomePageHelper
   # Use the ark to find the record, and then return a link to that record.
   def link_to_featured_work(link_text, ark)
-    # Use ssim, not tesim, for an exact match
+    # Use ssim, not tesim,  an exact match
     query = "identifier_ssim:#{ark}"
 
     solr = Blacklight.default_index.connection
@@ -17,5 +17,13 @@ module HomePageHelper
 
   def blank_search_path
     search_catalog_path(search_field: 'all_fields', q: '')
+  end
+
+  def create_representative_image(document)
+    if document['masthead_parameters_ssi'] && document['representative_image_ssi']
+      document['representative_image_ssi'] + document['masthead_parameters_ssi']
+    else
+      "ucla_powell_library.jpg"
+    end
   end
 end
