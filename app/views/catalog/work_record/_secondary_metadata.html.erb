@@ -1,0 +1,9 @@
+<div class='secondary-metadata'>
+  <%= render 'catalog/work_record/local_info_metadata', { document: document } %>
+    <% if Flipflop.sinai? %>
+        <hr class='divider__red'>
+      <% else %>
+        <hr>
+    <% end %>
+  <%= render 'catalog/work_record/access_condition_metadata', { document: document } %>
+</div>
