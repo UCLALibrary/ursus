@@ -136,6 +136,7 @@ Style/MethodDefParentheses:
 Style/GuardClause:
   Exclude:
     - app/controllers/catalog_controller.rb
+    - app/helpers/blacklight_helper.rb
 
 Style/IfInsideElse:
   Exclude:
