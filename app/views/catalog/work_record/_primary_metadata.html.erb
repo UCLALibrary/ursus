@@ -4,8 +4,8 @@
     <% tn = "<img src=\""+document_json['thumbnail_url_ss']+"\" alt=\"This image for search engines to index.\" \>" if !document_json['thumbnail_url_ss'].blank? %>
     <%= tn.html_safe if !document_json['thumbnail_url_ss'].blank?%>
     </div>
-  <%= render 'item_overview_metadata', { document: document } %>
-  <%= render 'note_metadata', { document: document } %>
-  <%= render 'physical_description_metadata', { document: document } %>
-  <%= render 'keyword_metadata', { document: document } %>
+  <%= render 'catalog/work_record/item_overview_metadata', { document: document } %>
+  <%= render 'catalog/work_record/note_metadata', { document: document } %>
+  <%= render 'catalog/work_record/physical_description_metadata', { document: document } %>
+  <%= render 'catalog/work_record/keyword_metadata', { document: document } %>
 </div>
