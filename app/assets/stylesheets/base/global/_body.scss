@@ -1,0 +1,26 @@
+@import 'colors';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: $gray-80;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 1920px;
+  min-height: 100vh;
+  background-color: $white;
+  color: $gray-80;
+  font-family: "Helvetica", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
