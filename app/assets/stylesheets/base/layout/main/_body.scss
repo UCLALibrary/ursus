@@ -1,0 +1,24 @@
+@import 'bootstrap';
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: 6.25rem;
+}
+
+.container-full {
+  padding: 0 1rem;
+  @media (min-width: 768px){
+    padding: 0 1.5rem;
+  }
+  @media (min-width: 992px){
+    padding: 0 3.25rem;
+  }
+}
+
+.container-constrained { 
+  @extend .container;
+}
