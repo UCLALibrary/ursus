@@ -1,12 +1,15 @@
+@import "base/global/colors";
+@import "si-colors";
+
 .si-link {
-    color: $sinai-drk-red;
-  }
-  .si-link:hover {
-    color: $sinai-light-red;
-  }
-  .si-link--dark {
-    @extend a;
-  }
-  .si-link--dark:hover {
-    color: $sinai-drk-red;
-  }
+  color: $sinai-red;
+}
+.si-link:hover {
+  color: $sinai-red-light;
+}
+.si-link--dark {
+  color: $gray-80;
+}
+.si-link--dark:hover {
+  color: $sinai-red;
+}

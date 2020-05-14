@@ -1,6 +1,8 @@
+@import "ur-colors";
+
 .ur-link {
-    color: $ucla-darker-blue;
-  }
-  .ur-link:hover {
-    color: $ucla-blue;
-  }
+  color: $ucla-blue-darker;
+}
+.ur-link:hover {
+  color: $ucla-blue;
+}
