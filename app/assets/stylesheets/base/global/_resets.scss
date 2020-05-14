@@ -1,0 +1,22 @@
+html, 
+body, 
+div, 
+span,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
