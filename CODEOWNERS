@@ -1,0 +1,5 @@
+# These owners are the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# @tinuola will be requested for review when someone opens
+# a pull request. @tinuola reviews front-end pull requests.
+*       @tinuola
