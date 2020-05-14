@@ -1,0 +1,12 @@
+.si-link {
+    color: $sinai-drk-red;
+  }
+  .si-link:hover {
+    color: $sinai-light-red;
+  }
+  .si-link--dark {
+    @extend a;
+  }
+  .si-link--dark:hover {
+    color: $sinai-drk-red;
+  }
