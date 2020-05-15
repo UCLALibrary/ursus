@@ -8,6 +8,7 @@ services:
       - ./dotenv.sample
     environment:
       DATABASE_HOST: db
+      DATABASE_NAME: ursus
       DATABASE_USERNAME: californica
       DATABASE_PASSWORD: californica
       IIIF_URL: http://localhost:3000/concern/works
@@ -23,9 +24,35 @@ services:
     working_dir: /ursus
     networks:
       - californica_default
+
+  sinai:
+    image: uclalibrary/ursus
+    command: 'sh start-sinai.sh'
+    env_file:
+      - ./dotenv.sample
+    environment:
+      DATABASE_HOST: db
+      DATABASE_NAME: sinai
+      DATABASE_USERNAME: californica
+      DATABASE_PASSWORD: californica
+      IIIF_URL: http://localhost:3000/concern/works
+      THUMBNAIL_BASE_URL: http://localhost:3000
+      SOLR_URL: http://solr:8983/solr/californica
+      SOLR_TEST_URL: http://solr_test:8983/solr/californica
+    ports:
+      - "127.0.0.1:3004:3000"
+    volumes:
+      - .:/ursus
+      - sinai_bundle_dir:/usr/local/bundle
+      - sinai_tmp:/ursus/tmp
+    working_dir: /ursus
+    networks:
+      - californica_default
 volumes:
   bundle_dir:
   ursus_tmp:
+  sinai_bundle_dir:
+  sinai_tmp:
 networks:
   californica_default:
     external: true
