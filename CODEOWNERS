@@ -5,5 +5,5 @@
 # a front-end related pull request.  
 
 # Front-End Assets
-/apps/assets/              @tinuola
-/apps/views/               @tinuola
+/app/assets/              @tinuola
+/app/views/               @tinuola
