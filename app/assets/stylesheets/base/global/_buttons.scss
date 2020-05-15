@@ -1,0 +1,35 @@
+@import 'colors';
+@import 'bootstrap';
+
+.btn-base {
+  @extend .btn;
+  background-color: $gray-60;
+}
+
+.btn-base:hover {
+  background-color: $gray-40
+}
+
+.btn-base-lg {
+  @extend .btn-lg;
+}
+
+.btn-base-sm {
+  @extend .btn-sm;
+}
+
+.btn-base-link {
+  @extend .btn-link;
+  color: $gray-80;
+}
+
+.btn-base-outline {
+  color: $gray-80;
+  border-color: $gray-80;
+}
+
+.btn-base-outline:hover{
+  color: $white;
+  background-color: $gray-80;
+  border-color: $gray-80;
+}

@@ -1,0 +1,25 @@
+@import 'base/global/colors';
+@import 'si-colors';
+
+.btn-sinai--red {
+	background-color: $sinai-red;
+	border-color: $sinai-red;
+	color: $white;
+}
+
+.btn-sinai--red:hover {
+	border-color: $sinai-red;
+	opacity: 0.9;
+	color: $white;
+}
+
+.btn-outline-sinai--red {
+	border-color: $sinai-red;
+	color: $gray-80;
+}
+
+.btn-outline-sinai--red:hover {
+	background-color: $sinai-red;
+	border-color: $sinai-red;
+	color: $white;
+}
