@@ -9,14 +9,14 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] || 'ursus_development' %>
+  database: "<%= ENV['DATABASE_NAME'] ? ENV['DATABASE_NAME'] + '_development' : 'ursus_development' %>"
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] || 'ursus_test' %>
+  database: "<%= ENV['DATABASE_NAME'] ? ENV['DATABASE_NAME'] + '_test' : 'ursus_test' %>"
 
 production:
   <<: *default

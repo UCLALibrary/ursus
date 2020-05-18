@@ -1,0 +1,45 @@
+@import 'base/global/colors';
+@import 'ur-colors';
+
+.btn-ursus--blue {
+	background-color: $ucla-blue-darker;
+	border-color: $ucla-blue-darker;
+	color: $white;
+}
+
+.btn-ursus--blue:hover {
+	background-color: $ucla-blue-darkest;
+	border-color: $ucla-blue-darkest;
+	color: $white;
+}
+
+.btn-outline-ursus--blue {
+	color: $ucla-blue-darker;
+	border-color: $ucla-blue-darker;
+}
+
+.btn-outline-ursus--blue:hover {
+	background-color: $ucla-blue-darker;
+	border-color: $ucla-blue-darker;
+	color: $white;
+}
+
+.btn-ursus--gold {
+	background-color: $ucla-gold;
+	border-color: $ucla-gold;
+}
+
+.btn-ursus--gold:hover {
+	background-color: $ucla-gold-darker;
+	border-color: $ucla-gold-darker;
+}
+
+.btn-outline-ursus--gold {
+	color: $gray-80;
+	border-color: $ucla-gold-darker;
+}
+
+.btn-outline-ursus--gold:hover {
+	background-color: $ucla-gold-darker;
+	border-color: $ucla-gold-darker;
+}
