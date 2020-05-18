@@ -2,44 +2,44 @@
 @import 'ur-colors';
 
 .btn-ursus--blue {
-	background-color: $ucla-blue-darker;
-	border-color: $ucla-blue-darker;
-	color: $white;
+  background-color: $ucla-darker-blue;
+  border-color: $ucla-darker-blue;
+  color: $white;
 }
 
 .btn-ursus--blue:hover {
-	background-color: $ucla-blue-darkest;
-	border-color: $ucla-blue-darkest;
-	color: $white;
+  background-color: $ucla-darkest-blue;
+  border-color: $ucla-darkest-blue;
+  color: $white;
 }
 
 .btn-outline-ursus--blue {
-	color: $ucla-blue-darker;
-	border-color: $ucla-blue-darker;
+  color: $ucla-darker-blue;
+  border-color: $ucla-darker-blue;
 }
 
 .btn-outline-ursus--blue:hover {
-	background-color: $ucla-blue-darker;
-	border-color: $ucla-blue-darker;
-	color: $white;
+  background-color: $ucla-darker-blue;
+  border-color: $ucla-darker-blue;
+  color: $white;
 }
 
 .btn-ursus--gold {
-	background-color: $ucla-gold;
-	border-color: $ucla-gold;
+  background-color: $ucla-gold;
+  border-color: $ucla-gold;
 }
 
 .btn-ursus--gold:hover {
-	background-color: $ucla-gold-darker;
-	border-color: $ucla-gold-darker;
+  background-color: $ucla-darker-gold;
+  border-color: $ucla-darker-gold;
 }
 
 .btn-outline-ursus--gold {
-	color: $gray-80;
-	border-color: $ucla-gold-darker;
+  color: $gray-80;
+  border-color: $ucla-darker-gold;
 }
 
 .btn-outline-ursus--gold:hover {
-	background-color: $ucla-gold-darker;
-	border-color: $ucla-gold-darker;
+  background-color: $ucla-darker-gold;
+  border-color: $ucla-darker-gold;
 }
