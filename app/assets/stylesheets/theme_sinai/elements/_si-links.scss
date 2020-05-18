@@ -1,11 +1,11 @@
-@import "base/global/colors";
-@import "si-colors";
+@import 'base/global/colors';
+@import 'si-colors';
 
 .si-link {
   color: $sinai-red;
 }
 .si-link:hover {
-  color: $sinai-red-light;
+  color: $sinai-lighter-red;
 }
 .si-link--dark {
   color: $gray-80;
