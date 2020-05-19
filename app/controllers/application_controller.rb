@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :display_banner?, :sinai_authn_check
+  before_action :display_banner?, :sinai_authn_check, :add_legacy_views
+
+  def add_legacy_views
+    prepend_view_path "app/views_legacy"
+  end
 
   def display_banner?
     if banner_cookie?
