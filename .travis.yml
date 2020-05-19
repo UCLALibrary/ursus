@@ -21,6 +21,7 @@ script:
   - docker-compose -f docker-compose-standalone.yml run web bundle install
   - docker-compose -f docker-compose-standalone.yml run web yarn install
   - docker-compose -f docker-compose-standalone.yml run web bundle exec rubocop
+  - docker-compose -f docker-compose-standalone.yml run web yarn run lint
   - docker-compose -f docker-compose-standalone.yml run web bundle exec rake db:setup
   - docker-compose -f docker-compose-standalone.yml run web yarn run pa11y-ci --threshold 10
   - docker-compose -f docker-compose-standalone.yml run web bundle exec rspec

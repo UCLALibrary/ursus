@@ -2,15 +2,15 @@
 @import 'ur-colors';
 
 .btn-ursus--blue {
+  color: $white;
   background-color: $ucla-darker-blue;
   border-color: $ucla-darker-blue;
-  color: $white;
 }
 
 .btn-ursus--blue:hover {
+  color: $white;
   background-color: $ucla-darkest-blue;
   border-color: $ucla-darkest-blue;
-  color: $white;
 }
 
 .btn-outline-ursus--blue {
@@ -19,9 +19,9 @@
 }
 
 .btn-outline-ursus--blue:hover {
+  color: $white;
   background-color: $ucla-darker-blue;
   border-color: $ucla-darker-blue;
-  color: $white;
 }
 
 .btn-ursus--gold {
