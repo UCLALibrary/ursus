@@ -124,7 +124,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.overview_terms).to be_instance_of(Hash)
-        expect(all).to eq 22
+        expect(all).to eq 19
         expect(config.length).to eq all
       end
 
