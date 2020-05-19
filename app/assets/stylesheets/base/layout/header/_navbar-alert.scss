@@ -1,0 +1,37 @@
+@import 'base/global/colors';
+@import 'base/global/typography';
+
+.alert-bar {
+  background-color: $gray-10;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @media (max-width: 575px) {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.alert-bar__wrapper {
+  font-size: $text-14;
+  display: flex;
+  justify-content: space-between;
+}
+
+.alert-bar__text {
+  font-weight: 700;
+  flex-basis: 90%;
+  @media (max-width: 767px) {
+    flex-basis: 80%;
+  }
+}
+
+.alert-bar__close {
+  font-weight: 500;
+  &:hover {
+    text-decoration: underline;
+  }
+  .fa-close {
+    color: $gray-80;
+    padding-left: 0.5rem;
+  }
+}
