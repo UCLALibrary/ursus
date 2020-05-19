@@ -1,6 +1,7 @@
-html, 
-body, 
-div, 
+/* stylelint-disable selector-no-qualifying-type */
+html,
+body,
+div,
 span,
 h1,
 h2,
@@ -20,3 +21,4 @@ textarea,
 select {
   font: inherit;
 }
+/* stylelint-enable selector-no-qualifying-type */

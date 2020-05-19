@@ -8,7 +8,8 @@
 
 html {
   background-color: $gray-80;
-  /*scroll-behavior: smooth;*/
+
+  /* scroll-behavior: smooth; */
 }
 
 body {
@@ -16,9 +17,9 @@ body {
   min-width: 320px;
   max-width: 1920px;
   min-height: 100vh;
-  background-color: $white;
-  color: $gray-80;
-  font-family: "Helvetica", sans-serif;
   font-size: 16px;
+  font-family: 'Helvetica', sans-serif;
   font-weight: 400;
+  color: $gray-80;
+  background-color: $white;
 }

@@ -1,9 +1,9 @@
-@import "colors";
+@import 'colors';
 
-hr.divider {
+.divider {
   height: 0;
 }
 
-hr.divider--white {
+.divider--white {
   border-top: 1px solid $white;
 }

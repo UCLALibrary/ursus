@@ -2,24 +2,24 @@
 @import 'si-colors';
 
 .btn-sinai--red {
-	background-color: $sinai-red;
-	border-color: $sinai-red;
-	color: $white;
+  color: $white;
+  background-color: $sinai-red;
+  border-color: $sinai-red;
 }
 
 .btn-sinai--red:hover {
-	border-color: $sinai-red;
-	opacity: 0.9;
-	color: $white;
+  color: $white;
+  border-color: $sinai-red;
+  opacity: 0.9;
 }
 
 .btn-outline-sinai--red {
-	border-color: $sinai-red;
-	color: $gray-80;
+  color: $gray-80;
+  border-color: $sinai-red;
 }
 
 .btn-outline-sinai--red:hover {
-	background-color: $sinai-red;
-	border-color: $sinai-red;
-	color: $white;
+  color: $white;
+  background-color: $sinai-red;
+  border-color: $sinai-red;
 }
