@@ -1,7 +1,11 @@
 # These fields are in order of display
+
+# Titles
 title_tesim: 'Title'
 alternative_title_tesim: 'Alternative Title'
 uniform_title_tesim: 'Uniform title'
+
+# Relators
 creator_tesim: 'Creator'
 author_tesim: 'Author'
 architect_tesim: 'Architect'
@@ -9,16 +13,17 @@ photographer_tesim: 'Photographer'
 composer_tesim: 'Composer'
 scribe_tesim: 'Scribe'
 illuminator_tesim: 'Illuminator'
+rubricator_tesim: 'Rubricator'
 lyricist_tesim: 'Lyricist'
+
+# Publication info
 publisher_tesim: 'Publisher'
 place_of_origin_tesim: 'Place of Origin'
 year_isim: 'Year'
 normalized_date_sim: 'Date'
 date_created_tesim: 'Date Created'
+
+# Other
 human_readable_language_tesim: 'Language'
 member_of_collections_ssim: 'Collection'
-contents_note_tesim: 'Contents note'
-incipit_tesim: 'Incipit'
-explicit_tesim: 'Explicit'
-rubricator_tesim: 'Rubricator'
 # dlcs_collection_name_tesim: 'Collection (native)'
