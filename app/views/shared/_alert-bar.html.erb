@@ -1,0 +1,24 @@
+<script type="application/javascript">
+  function toggleFunction() {
+    document.getElementById('alertBar').style.display = 'none';
+  }
+</script>
+
+<nav
+  class="container-full alert-bar alert-bar--ursus"
+  style="display: <%= @beta_banner_display_option %>;"
+  id="alertBar"
+>
+  <div class="alert-bar__wrapper">
+    <span class="alert-bar__text"
+      >Welcome to Digital Collections (Beta)! This site is growing each week as
+      we migrate content from our
+      <a href="http://digital2.library.ucla.edu/" target="_blank" rel="noopener"
+        >Legacy Site</a
+      >.</span
+    >
+    <span class="alert-bar__close" onclick="toggleFunction()"
+      >Close<i class="fa fa-close"></i
+    ></span>
+  </div>
+</nav>
