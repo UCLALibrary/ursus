@@ -1,9 +1,7 @@
-@import "colors";
-
 .beta-bar {
-  background-color: #ffd100;
-  font-weight: 700;
   font-size: 0.875rem;
+  font-weight: 700;
+  background-color: #ffd100;
 
   .beta-bar-wrapper {
     display: flex;
@@ -11,7 +9,7 @@
   }
 
   .beta-text {
-    padding: 2px 0px 2px 20px;
+    padding: 2px 0 2px 20px;
     flex-basis: 90%;
   }
 
@@ -24,8 +22,8 @@
   }
 
   .fa-close {
-    color: $black;
     padding-left: 0.5rem;
+    color: $black;
   }
 }
 
