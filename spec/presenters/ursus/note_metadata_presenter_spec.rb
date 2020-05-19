@@ -10,7 +10,9 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       'provenance_tesim' => 'Provenance',
       'toc_tesim' => 'Table of Contents',
       'contents_note_tesim' => 'Contents note',
-      'colophon_tesim' => 'Colophon'
+      'colophon_tesim' => 'Colophon',
+      'incipit_tesim' => 'Incipit',
+      'explicit_tesim' => 'Explicit'
     }
   end
   let(:solr_doc_missing_items) do
@@ -52,6 +54,14 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
       it 'returns the Colophon Key' do
         expect(config['colophon_tesim'].to_s).to eq('Colophon')
+      end
+
+      it 'returns the Incipit Key' do
+        expect(config['incipit_tesim'].to_s).to eq('Incipit')
+      end
+
+      it 'returns the Explicit Key' do
+        expect(config['explicit_tesim'].to_s).to eq('Explicit')
       end
     end
 
