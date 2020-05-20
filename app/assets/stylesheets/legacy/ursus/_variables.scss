@@ -39,11 +39,11 @@ $a-tags: "a, a:active, a:hover, a:visited";
 $a-tags-hover: "a:active, a:hover";
 
 #{$a-tags} {
-  color: $ucla-darker-blue !important;
+  color: $ucla-darker-blue;
   text-decoration: none;
 }
 #{$a-tags-hover} {
-  color: $ucla-darker-blue !important;
+  color: $ucla-darker-blue;
 }
 
 // Utilities

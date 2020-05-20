@@ -25,6 +25,9 @@
       align-items: center;
       .caption {
         width: 100%;
+        a {
+          color: $ucla-darker-blue; // temporary fix
+        }
       }
     }
     .thumbnail img {
