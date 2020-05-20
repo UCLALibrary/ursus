@@ -1,0 +1,42 @@
+.site-navbar--ursus {
+  background-color: $ucla-blue;
+}
+
+.site-navbar__beta-logo {
+  position: relative;
+  top: 0.22rem;
+  left: 0.4rem;
+  font-size: $text-20;
+  font-weight: 600;
+  color: $ucla-gold;
+  letter-spacing: 0.05rem;
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 374px) {
+    top: 0;
+    left: 0;
+  }
+}
+
+.site-navbar__item-link--ursus {
+  &:hover {
+    color: $ucla-gold;
+  }
+}
+
+.site-navbar__item-link-feedback {
+  color: $ucla-gold;
+}
+
+@media (max-width: 991px) {
+  .site-navbar__wrapper--ursus .navbar-collapse {
+    background-color: $ucla-darker-blue;
+
+    .site-navbar__item--ursus {
+      &:hover {
+        background-color: $ucla-darkest-blue;
+      }
+    }
+  }
+}
