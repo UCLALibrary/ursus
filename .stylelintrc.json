@@ -4,10 +4,7 @@
     "stylelint-config-prettier",
     "stylelint-config-sass-guidelines"
   ],
-  "plugins": [
-    "stylelint-scss",
-    "stylelint-order"
-  ],
+  "plugins": ["stylelint-scss", "stylelint-order"],
   "rules": {
     "max-nesting-depth": null,
     "no-empty-source": null,
@@ -30,7 +27,7 @@
       "margin",
       "margin-top",
       "margin-right",
-      "margin-bogttom",
+      "margin-bottom",
       "margin-left",
       "padding",
       "padding-top",

@@ -10,8 +10,8 @@
   top: 0.22rem;
   left: 0.4rem;
   font-size: $text-20;
-  color: $ucla-gold;
   font-weight: 600;
+  color: $ucla-gold;
   letter-spacing: 0.05rem;
   @media (max-width: 576px) {
     font-size: 1rem;
@@ -36,7 +36,6 @@
 
 .site-navbar__item--ursus {
   @media (max-width: 991px) {
-
     &:hover {
       background-color: $ucla-darkest-blue;
     }
