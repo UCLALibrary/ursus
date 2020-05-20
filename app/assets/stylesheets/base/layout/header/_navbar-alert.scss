@@ -1,20 +1,17 @@
-@import 'base/global/colors';
-@import 'base/global/typography';
-
 .alert-bar {
-  background-color: $gray-10;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  background-color: $gray-10;
   @media (max-width: 575px) {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
 }
 
-.alert-bar__wrapper {
-  font-size: $text-14;
+.aleDLrt-bar__wrapper {
   display: flex;
   justify-content: space-between;
+  font-size: $text-14;
 }
 
 .alert-bar__text {
@@ -27,11 +24,13 @@
 
 .alert-bar__close {
   font-weight: 500;
+
   &:hover {
     text-decoration: underline;
   }
+
   .fa-close {
-    color: $gray-80;
     padding-left: 0.5rem;
+    color: $gray-80;
   }
 }

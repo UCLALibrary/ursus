@@ -88,6 +88,7 @@
       "transition"
     ],
     "property-no-vendor-prefix": null,
+    "selector-class-pattern": null,
     "selector-max-compound-selectors": null,
     "scss/at-extend-no-missing-placeholder": null,
     "scss/at-import-no-partial-leading-underscore": null,
