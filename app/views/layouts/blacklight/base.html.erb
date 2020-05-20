@@ -7,18 +7,18 @@
     <!-- Internet Explorer use the highest version available -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <% if controller.controller_name == 'catalog' && controller.action_name == 'show' %>
-      <meta name="Description" content=<%= render_page_title %>>
+      <meta name="Description" content="<%= render_page_title %>">
     <% else %>
       <% if Flipflop.sinai? %><!-- SINAI -->
         <meta name="Description" content="St. Catherine's Monastery of the Sinai, in partnership with the Early Manuscripts Electronic Library (EMEL) and the UCLA Library, welcomes you to the Sinai Manuscripts Digital Library. Widely recognized as the world’s oldest continually operating library, St. Catherine’s holdings represent an unparalleled resource to study the history and literature of the Eastern Mediterranean from late antiquity until early modernity.">
-      <% else%><!-- URSUS -->
+      <% else %><!-- URSUS -->
         <meta name="Description" content="The UCLA Library Digital Collections includes rare and unique digital materials developed by the UCLA Library to support education, research, service, and creative expression. This website is our new interface for discovery and engagement of these collections. See collections of historic photographs and manuscripts. More collections added weekly.">
       <% end %>
     <% end %>
     <meta name="theme-color" content="#2774ae"/>
 
     <% if ENV["GOOGLE_TAG_MGR_ID"] %>
-      <script type="text/javascript" id='analytics-script' >(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      <script type="text/javascript" id='analytics-script'>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -35,7 +35,7 @@
       <%= favicon_link_tag 'favicon.ico' %>
     <% end %>
 
-    <%= stylesheet_link_tag (Flipflop.sinai? ? "sinai": "ursus"), media: "all" %>
+    <%= stylesheet_link_tag (Flipflop.sinai? ? "sinai" : "ursus"), media: "all" %>
     <%= javascript_include_tag "application", defer: Rails.env.development? ? false : true %>
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
@@ -46,7 +46,7 @@
       <noscript id='analytics-noscript'><iframe src="https://www.googletagmanager.com/ns.html?id=<%= ENV["GOOGLE_TAG_MGR_ID"] %>"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <% end %>
-    <div class="site-container" <%=schema_org_markup%> >
+    <div class="site-container" <%= schema_org_markup %>>
       <%= render partial: 'shared/header_navbar' %>
       <%= render 'catalog/homepage_banner' %>
 

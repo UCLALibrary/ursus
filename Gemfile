@@ -47,6 +47,7 @@ group :development, :test do
   gem 'capybara', '~> 2.18', '>= 2.18.0'
   gem 'capybara-mechanize', '>= 1.11.0'
   gem 'equivalent-xml', '>= 0.6.0'
+  gem 'erb_lint'
   gem 'factory_bot_rails', '>= 5.1.1'
   gem 'rails-controller-testing', '>= 1.0.4'
   gem 'rspec-collection_matchers'
