@@ -1,2 +1,3 @@
 app/assets/stylesheets/legacy/**
 app/assets/stylesheets/blacklight_gallery.css.scss
+app/assets/stylesheets/base/utilities/old-css/**
