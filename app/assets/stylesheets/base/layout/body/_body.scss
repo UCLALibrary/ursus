@@ -15,6 +15,13 @@
   }
 }
 
+// this container allows the site dropdown menu to span full width
+@media (max-width: 991px) {
+  .container-full--zero-padding {
+    padding: 0;
+  }
+}
+
 .container-constrained {
   @extend .container;
 }

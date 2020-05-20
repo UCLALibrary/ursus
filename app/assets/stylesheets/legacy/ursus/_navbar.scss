@@ -1,6 +1,8 @@
+  /*
 @import "colors";
 
 .site-navbar {
+
   background-color: $ucla-blue !important;
   padding: 0.25rem 0 0 0 !important;
 
@@ -50,14 +52,17 @@
       text-decoration: underline;
     }
   }
+
 }
 
 @media (max-width: 991px) {
+/*
   .site-navbar {
     .navbar-logo-block {
       height: 45px;
       padding-left: 0.75rem;
     }
+
 
     .navbar-toggler {
       border-color: transparent !important;
@@ -68,9 +73,11 @@
       width: 100%;
     }
 
+
     .navbar-collapse {
       background: $ucla-darker-blue;
     }
+
 
     .nav-item a {
       margin-right: 0;
@@ -84,6 +91,7 @@
       border-bottom: 1px solid #c3d7ee;
     }
 
+
     .nav-item:hover {
       background-color: $ucla-darkest-blue;
       a {
@@ -91,7 +99,6 @@
       }
     }
   }
-}
 
 @media (max-width: 576px) {
   .site-navbar {
@@ -103,7 +110,7 @@
       font-size: 1rem;
     }
   }
-}
+
 
 @media (max-width: 374px) {
   .site-navbar {
@@ -119,3 +126,4 @@
     }
   }
 }
+*/
