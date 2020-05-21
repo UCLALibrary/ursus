@@ -2,7 +2,7 @@
 <% url = request.original_url %>
   <% unless url.include?('login') %>
 
-<%= form_tag search_action_url, method: :get, class: 'form-group mx-auto mb-0 search-form', role: 'search' do %>
+<%= form_tag search_action_url, method: :get, class: 'form-group mx-auto mb-0 site-searchbar__search-form', role: 'search' do %>
   <%= render_hash_as_hidden_fields(search_state.params_for_search.except(:q, :search_field, :qt, :page, :utf8)) %>
   <% if search_fields.length > 1 %>
     <label for="search_field" class="sr-only"><%= t('blacklight.search.form.search_field.label') %></label>
@@ -32,8 +32,7 @@
           <%= select_tag(:search_field,
                    options_for_select(search_fields, h(params[:search_field])),
                    title: t('blacklight.search.form.search_field.title'),
-                   id: "search_field",
-                   class: "custom-select rounded-0 border-0") %>
+                   class: "custom-select rounded-0 border-0 search_dropdown") %>
     <% end %>
 
   </div>

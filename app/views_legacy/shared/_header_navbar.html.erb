@@ -1,15 +1,14 @@
-<% if Flipflop.sinai? %>
-  <% url = request.original_url %>
-  <% unless url.include?('login') %>
+<% if Flipflop.sinai? %> 
+  <% url = request.original_url %> 
+  <% unless url.include?('login') %> 
     <%= render partial: 'shared/sinai_header' %>
-    <div class="navbar site-searchbar" role="search">
-  <%= render_search_bar %>
-</div>
-  <% end %>
-<% else %>
+      <div class="navbar site-searchbar" role="search">
+        <%= render_search_bar %>
+      </div>
+  <% end %> 
+<% else %> 
   <%= render partial: 'shared/ursus_header' %>
   <div class="navbar site-searchbar" role="search">
-  <%= render_search_bar %>
-</div>
+    <%= render_search_bar %>
+  </div>
 <% end %>
-
