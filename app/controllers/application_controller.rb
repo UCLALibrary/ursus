@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def add_legacy_views
     prepend_view_path "app/views_legacy"
+    prepend_view_path "app/views" # already there, but needs to be in front of views_legacy
   end
 
   def display_banner?

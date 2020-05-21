@@ -1,11 +1,10 @@
+<%# This file isn't part of css refactor and should go in app/views_legacy but we couldn't figure out how make _bookmarks_control.html.erb_spec.rb find it there. %>
 <%# Check for the string true not boolean because it can be configured with dotenv %>
 <% if Rails.application.config.user_account_ui_enabled == 'true' %>
   <% if current_or_guest_user %>
-    <%-
-    # Note these two forms are pretty similar but for different :methods, classes, and labels.
+    <%# Note these two forms are pretty similar but for different :methods, classes, and labels.
       # but it was simpler to leave them seperate instead of DRYing them, got confusing trying that.
-      # the data-doc-id attribute is used by our JS that converts to a checkbox/label.
-    -%>
+      # the data-doc-id attribute is used by our JS that converts to a checkbox/label.%>
     <% unless bookmarked? document %>
       <%= form_tag(bookmark_path(document),
                    method: :put,
