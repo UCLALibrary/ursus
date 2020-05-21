@@ -1,9 +1,9 @@
-<!-- This is bookmarks. IOt is not currently being used. -->
+<!-- This is bookmarks. It is not currently being used. It should go in app/views_legacy but we couldn't figure out how to find it there in spec/views/_user_util_links.html.erb_spec.rb -->
 
 <ul class="navbar-nav navbar-right nav">
   <%# This is the string 'true' or 'false' not the bool because it can be used with dotenv %>
   <% if Rails.application.config.user_account_ui_enabled == 'true' %>
-    <%= render_nav_actions do |config, action|%>
+    <%= render_nav_actions do |config, action| %>
       <li class="nav-item"><%= action %></li>
     <% end %>
 
