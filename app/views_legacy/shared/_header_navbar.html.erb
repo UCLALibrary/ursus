@@ -2,13 +2,13 @@
   <% url = request.original_url %> 
   <% unless url.include?('login') %> 
     <%= render partial: 'shared/sinai_header' %>
-      <div class="navbar site-searchbar" role="search">
-        <%= render_search_bar %>
-      </div>
+    <div class="container-full site-searchbar" role="search">
+      <%= render_search_bar %>
+    </div>
   <% end %> 
 <% else %> 
   <%= render partial: 'shared/ursus_header' %>
-  <div class="navbar site-searchbar" role="search">
+  <div class="container-full site-searchbar" role="search">
     <%= render_search_bar %>
   </div>
 <% end %>
