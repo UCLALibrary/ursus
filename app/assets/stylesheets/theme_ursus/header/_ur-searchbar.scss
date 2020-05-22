@@ -1,0 +1,12 @@
+.site-searchbar--ursus {
+  background-color: $ucla-darker-blue;
+}
+
+.site-searchbar__search-form--ursus {
+  background-color: $ucla-blue;
+}
+
+// Search bar search magnifying-glass icon
+.site-searchbar__search-icon--ursus svg g {
+  stroke: $ucla-darker-blue;
+}

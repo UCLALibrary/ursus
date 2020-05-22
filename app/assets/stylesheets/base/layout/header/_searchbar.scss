@@ -8,8 +8,6 @@
   ::placeholder {
     font-size: 0.875rem;
     opacity: 0.8;
-    //padding-top: 1px;
-    //padding-left: 1px;
   }
 }
 
@@ -27,29 +25,29 @@
 .site-searchbar__dropdown {
   color: $white;
   font-weight: 600;
+  border: 0;
 }
 
-//Not refactored due to bootstrap class , we did change the inheritance > symbol
-// .input-group {
-//   .form-control {
-//     &.search-q {
-//       flex-grow: 3;
-//     }
-//   }
-// }
-.site-searchbar__query-field {
-  flex-grow: 5;
+.input-group {
+  .site-searchbar__query-field {
+    flex-grow: 5;
+    border: 0;
+    @media (max-width: 600px) {
+        flex-grow: 2;
+    }
+  }
 }
-// Search bar search icon
-.input-group-append svg g {
-  stroke: $gray-80;
+
+// Search bar search magnifying-glass icon
+.site-searchbar__search-icon {
+  @extend .input-group-append;
+   svg g {
+    stroke: $gray-80;
+  }
 }
 
 @media (max-width: 400px) {
   .site-searchbar__search-icon {
     display: none;
-  }
-  .site-searchbar__query-field {
-    flex-grow: 2;
   }
 }
