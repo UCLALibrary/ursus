@@ -29,10 +29,12 @@
     <% if Flipflop.sinai? %>
          <!-- do nothing -->
     <% else %>
-          <%= select_tag(
-                    :search_field, options_for_select(search_fields, h(params[:search_field])),
-                  title: t('blacklight.search.form.search_field.title'),
-                class: "custom-select site-searchbar__dropdown")%>
+      <%= select_tag(
+            :search_field,
+            options_for_select(search_fields, h(params[:search_field])),
+            title: t('blacklight.search.form.search_field.title'),
+            class: "custom-select site-searchbar__dropdown"
+          ) %>
     <% end %>
 
   </div>
