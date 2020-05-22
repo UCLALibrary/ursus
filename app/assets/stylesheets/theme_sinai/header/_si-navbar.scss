@@ -63,6 +63,11 @@
   &:hover::after {
     right: 0%;
   }
+
+  &:visited {
+    color: $gray-80;
+  }
+
   @media (max-width: 991px) {
     &::after {
       position: absolute;
