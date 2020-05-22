@@ -7,3 +7,4 @@
 # Front-End Assets
 /app/assets/              @tinuola
 /app/views/               @tinuola
+/app/views_legacy/        @andrewbenedictwallace
