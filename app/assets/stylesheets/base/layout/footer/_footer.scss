@@ -1,7 +1,31 @@
 .site-footer {
   margin-top: 6.25rem;
-
   @media (max-width: 768px) {
     margin-top: 4.25rem;
+  }
+}
+
+.site-footer__logo {
+  width: 100%;
+}
+
+.site-footer__list {
+  list-style-type: none;
+}
+
+.site-footer__list-item {
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.75rem 0;
+  margin-left: 0;
+}
+
+.site-footer__link {
+  &:active,
+  &:visited {
+    color: $white;
+  }
+  &:hover {
+    color: $gray-80;
   }
 }

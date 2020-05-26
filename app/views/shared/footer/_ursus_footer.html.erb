@@ -1,28 +1,30 @@
 <footer class='site-footer'>
-  <div class='footer-wrapper'>
-    <div class="col1">
-      <%= link_to(image_tag('logo/ucla-library-logo.svg', class: 'logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank', rel: 'noopener') %>
+
+  <div class='container-full site-footer__primary site-footer__primary--ursus'>
+    <div class='site-footer__primary-wrapper--ursus'>
+      <div class="site-footer__block--ursus">
+        <%= link_to(image_tag('logo/ucla-library-logo.svg', class: 'site-footer__logo site-footer__logo--ursus', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/', target: '_blank', rel: 'noopener') %>
+      </div>
+      <div class="site-footer__block--ursus">
+        <ul class='site-footer__list'>
+          <li class='site-footer__list-item'><%= link_to 'Copyright and Collections', '/copyrights_and_collections', class: 'site-footer__link' %></li>
+          <li class='site-footer__list-item'><%= link_to 'Privacy Policy', '/privacy_policy', class: 'site-footer__link' %></li>
+          <li class='site-footer__list-item'><%= link_to 'Contact Us', '/contact', class: 'site-footer__link' %></li>
+        </ul>
+      </div>
+      <div class="site-footer__block--ursus">
+        <ul class='site-footer__list'>
+          <li class='site-footer__list-item'><%= link_to 'Visit Our Legacy Site', 'http://digital2.library.ucla.edu/', class: 'site-footer__link site-footer__link--ursus', target: '_blank', rel: 'noopener' %></li>
+          <li class='site-footer__list-item'><%= link_to 'Give Us Feedback', 'https://forms.gle/x2BV9dJMK241VsAJA', class: 'site-footer__link site-footer__link--ursus', target: '_blank', rel: 'noopener' %></li>
+        </ul>
+      </div>
     </div>
-    <div class="col2">
-      <ul>
-        <li><%= link_to 'Copyright and Collections', '/copyrights_and_collections' %></li>
-        <li><%= link_to 'Privacy Policy', '/privacy_policy' %></li>
-        <li><%= link_to 'Contact Us', '/contact' %></li>
-      </ul>
-    </div>
-    <div class="col3">
-      <ul>
-        <li><%= link_to 'Visit Our Legacy Site', 'http://digital2.library.ucla.edu/', target: '_blank', rel: 'noopener' %></li>
-        <li><%= link_to 'Give Us Feedback', 'https://forms.gle/x2BV9dJMK241VsAJA', target: '_blank', rel: 'noopener' %></li>
-        
-        <!--<li>Migration Updates</li>-->
-      </ul>
+  </div>
+
+  <div class='container-full site-footer__secondary site-footer__secondary--ursus'>
+    <div class='site-footer__secondary-text'>
+      &#169; 2020 UC Regents. All rights reserved.
     </div>
   </div>
 </footer>
 
-<div class='copyright'>
-  <div class='uc-regents'>
-    &#169; 2019 UC Regents. All rights reserved.
-  </div>
-</div>
