@@ -4,3 +4,26 @@ $text-24: 1.5rem;
 $text-20: 1.25rem;
 $text-18: 1.125rem;
 $text-14: 0.875rem;
+
+$font-bold: 600;
+$font-light: 300;
+
+.title-xl {
+  font-size: $text-50;
+}
+
+.title-lg {
+  font-size: $text-36;
+}
+
+.title-md {
+  font-size: $text-24;
+}
+
+.title-sm {
+  font-size: $text-18;
+}
+
+.title-xs {
+  font-size: $text-14;
+}
