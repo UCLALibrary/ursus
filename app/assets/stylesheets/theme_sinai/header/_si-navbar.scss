@@ -16,7 +16,7 @@
 
 .site-navbar__logo--sinai {
   font-size: $text-24;
-  font-weight: 600;
+  font-weight: $font-bold;
   color: $gray-80;
 
   &:hover {
@@ -41,7 +41,6 @@
 .site-navbar__item-link--sinai {
   position: relative;
   font-size: $text-18;
-  font-weight: 400;
   color: $gray-80;
 
   &::after {
