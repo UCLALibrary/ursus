@@ -1,5 +1,6 @@
-@import "colors";
+@import 'colors';
 
+/*
 html {
   background-color: #272c31;
 }
@@ -30,13 +31,14 @@ body {
     padding-right: 15px !important;
   }
 }
+*/
 
 //== Typography
-$font-family-sans-serif: "Helvetica", "Arial", sans-serif;
+$font-family-sans-serif: 'Helvetica', 'Arial', sans-serif;
 
 //== Linked text colors
-$a-tags: "a, a:active, a:hover, a:visited";
-$a-tags-hover: "a:active, a:hover";
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
 
 #{$a-tags} {
   color: $ucla-darker-blue;
