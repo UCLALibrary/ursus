@@ -8,8 +8,8 @@
 }
 
 .static-page__title {
-  font-weight: $font-bold;
   font-size: $text-36;
+  font-weight: $font-bold;
   @media (max-width: 768px) {
     font-size: calc(100% + 0.875rem);
   }
@@ -23,9 +23,9 @@
   font-size: $text-24;
   letter-spacing: 0.15rem;
   @media (max-width: 991px) {
+    margin-bottom: 1rem;
     font-size: $text-20;
     font-weight: $font-bold;
-    margin-bottom: 1rem;
   }
 }
 
