@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/copyrights_and_collections', to: 'static#copyright'
   get '/privacy_policy', to: 'static#privacy'
   get '/contact', to: 'static#contact'
-  get '/terms-of-use', to: 'static#terms-of-use'
+  get '/terms-of-use', to: 'static#terms_of_use'
   get '/migration_updates', to: 'static#migration_updates'
   get '/static', to: 'static#static_pages'
   get '/version', to: 'static#version'

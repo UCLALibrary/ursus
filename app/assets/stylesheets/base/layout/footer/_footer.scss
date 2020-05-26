@@ -14,18 +14,19 @@
 }
 
 .site-footer__list-item {
+  margin-left: 0;
+  padding: 0.75rem 0;
   font-weight: 600;
   letter-spacing: 1px;
-  padding: 0.75rem 0;
-  margin-left: 0;
 }
 
 .site-footer__link {
+  &:hover {
+    color: $gray-80;
+  }
+
   &:active,
   &:visited {
     color: $white;
-  }
-  &:hover {
-    color: $gray-80;
   }
 }

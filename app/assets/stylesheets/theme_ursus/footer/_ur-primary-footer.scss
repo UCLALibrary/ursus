@@ -19,6 +19,7 @@
     flex-basis: 25%;
     align-self: center;
   }
+
   &:nth-child(2) {
     flex-grow: 2;
     flex-shrink: 0;
@@ -27,6 +28,7 @@
       margin-top: 1.5rem;
     }
   }
+
   &:nth-child(3) {
     flex-grow: 8;
   }
