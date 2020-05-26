@@ -27,6 +27,10 @@
 
 .site-navbar__item-link-feedback {
   color: $ucla-gold;
+
+  &:visited {
+    color: $ucla-gold;
+  }
 }
 
 @media (max-width: 991px) {
