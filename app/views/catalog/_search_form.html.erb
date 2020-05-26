@@ -13,11 +13,11 @@
     <% if url.include?('member_of_collections_ssim') %>
       <% placeholder_text = t('blacklight.search.form.search.placeholder_collection') %>
       <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
-      <%= text_field_tag :q, params[:q], placeholder: "placeholder_text.to_s", class: "search-q q form-control site-searchbar__query-field", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
+      <%= text_field_tag :q, params[:q], placeholder: placeholder_text.to_s, class: "search-q q form-control site-searchbar__query-field", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
     <% else %>
       <% placeholder_text = t('blacklight.search.form.search.placeholder') %>
       <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
-      <%= text_field_tag :q, params[:q], placeholder: "placeholder_text.to_s", class: "search-q q form-control site-searchbar__query-field", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
+      <%= text_field_tag :q, params[:q], placeholder: placeholder_text.to_s, class: "search-q q form-control site-searchbar__query-field", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
     <% end %>
     <div class="input-group-append site-searchbar__search-icon site-searchbar__search-icon--ursus site-searchbar__search-icon--sinai">
       <button type="submit" class="btn btn-light border-0 search-btn" id="search">
