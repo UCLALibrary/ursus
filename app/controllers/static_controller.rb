@@ -13,4 +13,6 @@ class StaticController < ApplicationController
   def version; end
 
   def static_pages; end
+
+  def terms_of_use; end
 end
