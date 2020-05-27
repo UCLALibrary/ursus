@@ -52,7 +52,6 @@
 
       <main class="main-content-container container-constrained">
         <%= content_for(:container_header) %>
-        <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
         <div class="row">
           <%= content_for?(:content) ? yield(:content) : yield %>
         </div>
