@@ -50,14 +50,13 @@
       <%= render partial: 'shared/header/header_navbar' %>
       <%= render 'catalog/homepage_banner' %>
 
-      <!--<div class="container flex-grow-1">-->
-      <div class="container-fluid main-content-container flex-grow-1">
+      <main class="main-content-container container-constrained">
         <%= content_for(:container_header) %>
         <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
         <div class="row">
           <%= content_for?(:content) ? yield(:content) : yield %>
         </div>
-      </div>
+      </main>
 
       <%= render partial: 'shared/footer/footer' %>
       <%= render partial: 'shared/modal' %>
