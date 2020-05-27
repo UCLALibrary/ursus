@@ -34,15 +34,17 @@
   }
 }
 
-.site-footer__link {
+.site-footer__link--ursus {
   &:hover {
     color: $ucla-gold;
   }
 }
 
-.site-footer__link--ursus {
-  &:active,
-  &:visited {
+.site-footer__link--ursus-gold {
+  color: $ucla-gold;
+  &:visited,
+  &:hover,
+  &:active {
     color: $ucla-gold;
   }
 }
