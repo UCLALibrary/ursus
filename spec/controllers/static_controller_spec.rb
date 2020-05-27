@@ -5,25 +5,18 @@ require 'rails_helper'
 
 RSpec.describe StaticController, type: :controller do
   describe 'the static pages are successfully served' do
-    context 'GET #about' do
+    context 'GET #ursus_copyright' do
       it "returns http success" do
-        get :about
+        get :ursus_copyright
         expect(response).to have_http_status(:success)
-        expect(response).to render_template(:about)
+        expect(response).to render_template(:ursus_copyright)
       end
     end
-    context 'GET #copyright' do
+    context 'GET #ursus_privacy' do
       it "returns http success" do
-        get :copyright
+        get :ursus_privacy
         expect(response).to have_http_status(:success)
-        expect(response).to render_template(:copyright)
-      end
-    end
-    context 'GET #privacy' do
-      it "returns http success" do
-        get :privacy
-        expect(response).to have_http_status(:success)
-        expect(response).to render_template(:privacy)
+        expect(response).to render_template(:ursus_privacy)
       end
     end
     context 'GET #contact' do
@@ -31,13 +24,6 @@ RSpec.describe StaticController, type: :controller do
         get :contact
         expect(response).to have_http_status(:success)
         expect(response).to render_template(:contact)
-      end
-    end
-    context 'GET #migration_updates' do
-      it "returns http success" do
-        get :migration_updates
-        expect(response).to have_http_status(:success)
-        expect(response).to render_template(:migration_updates)
       end
     end
     context 'GET #version' do

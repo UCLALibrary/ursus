@@ -1,0 +1,33 @@
+<div class='content-container--static-page'>
+  <div class='static-page__title-row'>
+    <h1 class='static-page__title bordered-title bordered-title--sinai'>Terms of Use</h1>
+  </div>
+
+  <p class='static-page__text static-page__text--sinai'>St. Catherine’s Monastery of the Sinai, Egypt, is pleased to make images of manuscripts in its library accessible for online study. The Monastery asks that users accessing images of its manuscripts agree to the following terms and conditions:<a class='term_link' href='#terms'>*</a>
+  </p>
+
+  <h3 class='static-page__subtitle static-page__subtitle--sinai'>FOR RESEARCHERS</h3>
+    <p class='static-page__text static-page__text--sinai'>Researchers are invited to study the images online. Images may not be downloaded for publication or redistribution without the prior <%= link_to 'written permission of St. Catherine’s Monastery of the Sinai.', '/contact', class: 'si-link' %></p>
+    <p class='static-page__text static-page__text--sinai'>Researchers who access the images online are free to publish their findings and quote from the manuscripts in scholarly or other publications, whether electronic or in print. (Guidance on how to reference cited material.)</p>
+    <p class='static-page__text static-page__text--sinai'>However, any researcher planning to publish an edition (including a transcription, translation, or comprehensive scholarly analysis) of a manuscript or one of the texts it contains is asked to <%= link_to 'consult first with St. Catherine’s Monastery.', '/contact', class: 'si-link' %></p>
+
+  <hr class='divider divider--sinai'>
+
+  <h3 class='static-page__subtitle static-page__subtitle--sinai'>FOR PUBLICATIONS</h3>
+  <div class='terms-list'>
+    <p class='static-page__text static-page__text--sinai'>Inquiries to St. Catherine’s Monastery about permission to reproduce or publish an image or approval to publish an edition should be sent to: <%= mail_to 'sinaipermissions@gmail.com', 'sinaipermissions@gmail.com', class: ' si-link' %>.</p>
+    <p class='static-page__text static-page__text--sinai'>References in publications to the online images and descriptions of the manuscripts should be accompanied by the following credit line: “<%= mail_to 'sinaimanuscripts.library.ucla.edu', 'sinaimanuscripts.library.ucla.edu', class: 'si-link' %>, a publication of St. Catherine’s Monastery of the Sinai in collaboration with EMEL and UCLA.”</p>
+    <p class='static-page__text static-page__text--sinai'>St. Catherine’s Monastery may, at its discretion, require that an additional credit line or caption be added to published images, as part of its permission for publication.</p>
+    <p class='static-page__text static-page__text--sinai .si-link'>We request that electronic copies of publications based on images presented on this site be sent to the following email address: <%= mail_to 'sinaipermissions@gmail.com', 'sinaipermissions@gmail.com', class: 'si-link' %>. In the event that electronic copies of publications are not available, please send one printed copy to:</p>
+    <strong>
+      Saint Catherine’s Monastery of the Sinai<br>
+      26 Doryleou, Ampelokipi, Athens 11521, Greece
+    </strong>
+  </div>
+
+  <hr class='divider divider--sinai'>
+
+  <a name='terms'></a>
+  <p class='static-page__text static-page__text--sinai'>*The terms and conditions on this page rehearse the user agreement from <%= link_to 'Sinai-ID Registration', 'https://sinai.library.ucla.edu/terms-of-use/please-read', target: '_blank', rel: 'noopener', class: 'si-link' %>. Violation of these terms and conditions may result in the suspension of your user account and notification to the Monastery of the violation.</p>
+  <p class='static-page__text static-page__text--sinai'>Users are invited to review the <%= link_to 'Privacy Policy', 'https://sinai-id.org/static_pages/spp_privacy', target: '_blank', rel: 'noopener', class: 'si-link' %> associated with their login. Registration data is managed by the Early Manuscripts Electronic Library (EMEL). If you ever wish to delete your user account, email a request to <%= mail_to 'sinai.id.emel@gmail.com', 'sinai.id.emel@gmail.com', class: 'si-link' %>, and EMEL will remove your account data from its database.</p>
+</div>
