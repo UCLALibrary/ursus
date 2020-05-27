@@ -1,0 +1,30 @@
+.site-footer__secondary--sinai {
+  background-color: $sinai-red;
+}
+
+.site-footer__secondary-wrapper--sinai {
+  display: flex;
+  justify-content: center;
+}
+
+.site-footer__list-item--sinai {
+  display: inline;
+
+  &:nth-child(1)::after {
+    position: relative;
+    left: -15px;
+    font-weight: 300;
+    color: $sinai-beige;
+    content: '|';
+  }
+}
+
+.site-footer__link--sinai {
+  padding-right: 2.5rem;
+
+  &:visited,
+  &:hover,
+  &:active {
+    color: $sinai-beige;
+  }
+}

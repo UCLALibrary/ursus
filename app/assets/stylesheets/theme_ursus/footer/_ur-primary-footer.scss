@@ -1,0 +1,48 @@
+.site-footer__logo--ursus {
+  max-width: 12.5rem;
+}
+
+.site-footer__primary--ursus {
+  padding-top: 2.75rem;
+  background-color: $ucla-darker-blue;
+}
+
+.site-footer__primary-wrapper--ursus {
+  display: flex;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.site-footer__block--ursus {
+  &:nth-child(1) {
+    flex-basis: 25%;
+    align-self: center;
+  }
+
+  &:nth-child(2) {
+    flex-grow: 2;
+    flex-shrink: 0;
+    flex-basis: max-content;
+    @media (max-width: 768px) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &:nth-child(3) {
+    flex-grow: 8;
+  }
+}
+
+.site-footer__link {
+  &:hover {
+    color: $ucla-gold;
+  }
+}
+
+.site-footer__link--ursus {
+  &:active,
+  &:visited {
+    color: $ucla-gold;
+  }
+}
