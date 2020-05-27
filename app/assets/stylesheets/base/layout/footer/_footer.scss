@@ -22,12 +22,15 @@
 
 .site-footer__link {
   color: $white;
+
   &:visited {
     color: $white;
   }
+
   &:hover {
     color: $gray-80;
   }
+
   &:active {
     color: $white;
   }
