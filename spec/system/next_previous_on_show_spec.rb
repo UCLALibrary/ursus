@@ -16,7 +16,7 @@ RSpec.describe 'the result bar displays the correct links', :clean, type: :syste
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
   end
 
-  xit 'has expected fields on initial search page and show page' do
+  it 'has expected fields on initial search page and show page' do
     visit '/catalog?q=Person&search_field=all_fields'
     expect(page).to have_content '2 Catalog Results'
     expect(page).to have_content 'You searched for: Person'

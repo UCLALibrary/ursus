@@ -2,15 +2,17 @@
 Rails.application.routes.draw do
   concern :oai_provider, BlacklightOaiProvider::Routes.new
 
-  get '/login', to: 'login#new', as: 'login'
   mount Flipflop::Engine => "/flipflop"
-  get '/about', to: 'static#about'
-  get '/copyrights_and_collections', to: 'static#copyright'
-  get '/privacy_policy', to: 'static#privacy'
+
+  # Ursus static pages
+  get '/copyrights_and_collections', to: 'static#ursus_copyright'
+  get '/privacy_policy', to: 'static#ursus_privacy'
+
+  # Sinai static pages
+  get '/login', to: 'login#new', as: 'login'
+  get '/terms-of-use', to: 'static#sinai_terms_of_use'
+
   get '/contact', to: 'static#contact'
-  get '/terms-of-use', to: 'static#terms-of-use'
-  get '/migration_updates', to: 'static#migration_updates'
-  get '/static', to: 'static#static_pages'
   get '/version', to: 'static#version'
 
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
