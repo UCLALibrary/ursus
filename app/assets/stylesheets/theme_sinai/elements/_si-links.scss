@@ -1,5 +1,9 @@
 .si-link {
   color: $sinai-red;
+
+  &:visited {
+    color: $sinai-red;
+  }
 }
 
 .si-link:hover {
