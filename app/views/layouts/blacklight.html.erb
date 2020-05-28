@@ -1,5 +1,8 @@
+
 <% content_for(:content) do %>
+
   <% if content_for? :sidebar %>
+  <div class='row'>
     <section id="content" class="<%= main_content_classes %> order-last">
       <%= yield %>
     </section>
@@ -7,6 +10,7 @@
     <section id="sidebar" class="<%= sidebar_classes %> order-first">
       <%= content_for(:sidebar) %>
     </section>
+    </div>
   <% else %>
     <%= yield %>
   <% end %>

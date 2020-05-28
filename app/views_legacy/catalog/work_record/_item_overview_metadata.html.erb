@@ -2,15 +2,24 @@
 <% overview = Ursus::ItemOverviewMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
 
 <% if overview.length > 0 %>
-    <h5>Item Overview</h5>
-    <dl class='row document-metadata'>
+  <div class='metadata-block'>
+    <h4 class='metadata-block__title'>Item Overview</h4>
+    <div class='metadata-block__group'>
       <% overview.each do |field_name, field| -%>
-        <dt class="blacklight-<%= field_name.parameterize %> col-12 col-sm-4 item-label">
+        <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <%= (render_document_show_field_label document, field: field_name).tr(':','') %>
-          <dd class="blacklight-<%= field_name.parameterize %> col-12 col-sm-8 item-value">
+          <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
             <%= doc_presenter.field_value field %>
           </dd>
         </dt>
       <% end %>
-    </dl>
+    </div>
+    
+    <% if Flipflop.sinai? %>
+        <hr class='divider'>
+      <% else %>
+        <hr class='divider'>
+    <% end %>
+
+  </div>
 <% end %>

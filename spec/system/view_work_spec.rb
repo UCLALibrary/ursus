@@ -17,8 +17,8 @@ RSpec.describe 'View a Work', type: :system, js: true do
   it 'displays the metadata' do
     visit solr_document_path(id)
 
-    expect(page).to have_selector('.primary-metadata')
-    expect(page).to have_selector('.secondary-metadata')
+    expect(page).to have_selector('.item-page__primary-metadata')
+    expect(page).to have_selector('.item-page__secondary-metadata')
     expect(page).to have_content 'The Title of my Work'
     expect(page).to have_content 'DESCRIPTION Description 1'
     expect(page).to have_content 'Description 2'

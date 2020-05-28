@@ -42,14 +42,14 @@ module BlacklightHelper
   def render_opac_link
     opac_link = @document[:opac_url_ssi]
     return unless opac_link
-    opac_link = "<dt class = 'item-label col-12 col-sm-4 item-label'>Opac url</dt><dd class = 'item-value col-12 col-sm-8 item-value'><a href = '" + opac_link + "'>" + opac_link + "</a></dd>"
+    opac_link = "<dt class = 'metadata-block__label-key'>Opac url</dt><dd class = 'metadata-block__label-value'><a href = '" + opac_link + "'>" + opac_link + "</a></dd>"
     opac_link.html_safe
   end
 
   def render_iiif_manifest_link
     iiif_manifest = @document[:iiif_manifest_url_ssi]
     return unless iiif_manifest
-    iiif_manifest = "<dt class = 'item-label col-12 col-sm-4 item-label'>Manifest url</dt><dd class = 'item-value col-12 col-sm-8 item-value'><a href = '" + iiif_manifest + "'>" + iiif_manifest + "</a></dd>"
+    iiif_manifest = "<dt class = 'metadata-block__label-key'>Manifest url</dt><dd class = 'metadata-block__label-value'><a href = '" + iiif_manifest + "'>" + iiif_manifest + "</a></dd>"
     iiif_manifest.html_safe
   end
 end

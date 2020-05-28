@@ -1,3 +1,4 @@
+
 <% if Flipflop.sinai? %><!-- SINAI -->
   <!--% unless has_search_parameters? % -->
   <% if current_page?(root_path) %>
@@ -11,7 +12,8 @@
   <% end %>
 
 <% else %><!-- URSUS -->
-  <% content_for(:sidebar) do %>
+
+<% content_for(:sidebar) do %>
     <%= render 'search_sidebar' %>
   <% end %>
 
@@ -21,5 +23,6 @@
     <%= render 'shared/sitelinks_search_box' %>
   <% else %>
     <%= render 'search_results' %>
+
   <% end %>
 <% end %>

@@ -1,0 +1,50 @@
+.metadata-block {
+  margin-bottom: 1.5rem;
+}
+
+.metadata-block__title {
+  font-size: $text-24;
+  font-weight: $font-bold;
+  @media (max-width: 991px) {
+    font-size: $text-20;
+  }
+}
+
+.metadata-block__group {
+  @extend .row;
+
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.metadata-block__label-key,
+.metadata-block__label-value {
+  @extend .col-12;
+}
+
+.metadata-block__label-key {
+  @extend .col-sm-4;
+
+  font-size: $text-14;
+  font-weight: $font-bold;
+  text-align: right;
+  color: $gray-60;
+  letter-spacing: 1.5px;
+  line-height: 2;
+  text-transform: uppercase;
+  align-self: flex-start;
+  @media (max-width: 991px) {
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+}
+
+.metadata-block__label-value {
+  @extend .col-sm-8;
+
+  font-size: $text-18;
+  overflow-wrap: break-word;
+  @media (max-width: 767px) {
+    font-size: 1rem;
+  }
+}
