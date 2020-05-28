@@ -1,6 +1,3 @@
-.content-container--item-page {
-}
-
 .item-page__pagination-wrapper {
   display: flex;
   justify-content: space-between;
@@ -34,6 +31,7 @@
 
 .item-page__metadata-wrapper {
   @extend .row;
+  justify-content: space-between;
   margin-right: 0;
   margin-left: 0;
 }
@@ -45,7 +43,7 @@
 }
 
 .item-page__primary-metadata {
-  @extend .col-lg-7;
+  @extend .col-lg-6;
 }
 
 .item-page__secondary-metadata {

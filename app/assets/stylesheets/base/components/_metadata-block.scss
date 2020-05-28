@@ -1,6 +1,7 @@
 .metadata-block {
   margin-bottom: 1.5rem;
 }
+
 .metadata-block__title {
   font-size: $text-24;
   font-weight: $font-bold;
@@ -39,6 +40,7 @@
 .metadata-block__label-value {
   @extend .col-sm-8;
   font-size: $text-18;
+  overflow-wrap: break-word;
   @media (max-width: 767px) {
     font-size: 1rem;
   }

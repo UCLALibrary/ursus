@@ -4,7 +4,7 @@
 <% if local_info.length > 0 %>
   <div class="metadata-block">
     <h4 class='metadata-block__title'>Find This Item</h4>
-    <dl class='document-metadata metadata-block__group'>
+    <dl class='metadata-block__group'>
       <% local_info.each do |field_name, field| -%>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <%= (render_document_show_field_label document, field: field_name).tr(':','') %>

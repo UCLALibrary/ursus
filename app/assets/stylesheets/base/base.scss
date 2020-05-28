@@ -27,11 +27,7 @@
 @import 'components/results-block';
 @import 'components/pagination-block';
 @import 'components/viewer';
-@import 'components/metadata/metadata-block';
-@import 'components/metadata/item-record-block';
-@import 'components/metadata/key-value';
-// @import 'components/metadata/primary-metadata';
-// @import 'components/metadata/secondary-metadata';
+@import 'components/metadata-block';
 @import 'utilities/kaminari';
 @import 'utilities/date-slider';
 @import 'utilities/blacklight';
