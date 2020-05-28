@@ -1,6 +1,6 @@
 .btn-base {
   @extend .btn;
-
+  border-radius: 0;
   background-color: $gray-60;
 }
 

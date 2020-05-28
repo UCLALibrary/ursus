@@ -52,9 +52,7 @@
 
       <main class="main-content-container container-constrained">
         <%= content_for(:container_header) %>
-        <div class="row">
           <%= content_for?(:content) ? yield(:content) : yield %>
-        </div>
       </main>
 
       <%= render partial: 'shared/footer/footer' %>

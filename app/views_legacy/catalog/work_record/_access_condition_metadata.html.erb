@@ -2,18 +2,25 @@
 <% access_condition = Ursus::AccessConditionMetadataPresenter.new(document: doc_presenter.fields_to_render).access_condition_terms %>
 
 <% if access_condition.length > 0 %>
-  <div class='access-condition-metadata'>
-    <h4 class='item-heading'>Access Condition</h4>
-    <dl class='row document-metadata'>
+  <div class='metadata-block'>
+    <h4 class='metadata-block__title'>Access Condition</h4>
+    <dl class='document-metadata metadata-block__group'>
       <% access_condition.each do |field_name, field| -%>
-        <dt class="blacklight-<%= field_name.parameterize %> col-12 col-sm-4 item-label">
+        <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <%= (render_document_show_field_label document, field: field_name).tr(':','') %>
-          <dd class="blacklight-<%= field_name.parameterize %> col-12 col-sm-8 item-value">
+          <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
             <%= doc_presenter.field_value field %>
           </dd>
         </dt>
       <% end %>
       <%= render 'license' %>
     </dl>
+
+  <% if Flipflop.sinai? %>
+    <hr class='divider'>
+  <% else %>
+    <hr class='divider'>
+  <% end %>
+
   </div>
 <% end %>

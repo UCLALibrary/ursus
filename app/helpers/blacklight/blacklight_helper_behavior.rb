@@ -225,7 +225,7 @@ module Blacklight::BlacklightHelperBehavior
     tag = options.fetch(:tag, :h4)
     document ||= @document
 
-    content_tag(tag, presenter(document).heading, itemprop: "name")
+    content_tag(tag, presenter(document).heading, itemprop: "name", class:'item-page__title')
   end
 
   ##

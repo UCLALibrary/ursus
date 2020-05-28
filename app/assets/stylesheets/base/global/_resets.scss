@@ -8,9 +8,11 @@ h2,
 h3,
 h4,
 p,
-// ul[class],
-// ol[class],
-li {
+ul,
+ol,
+li,
+dl,
+dd {
   margin: 0;
   padding: 0;
 }

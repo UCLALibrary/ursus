@@ -1,10 +1,5 @@
-<!--<div class='container-fluid'> -->
-  <div class='row item-page-wrapper'>
-    <div class='col-md-12 col-lg-7'>
-      <%= render 'catalog/work_record/primary_metadata', { document: document } %>
-    </div>
-    <div class='col-md-12 col-lg-5'>
-      <%= render 'catalog/work_record/secondary_metadata', { document: document } %>
-    </div>
-  </div>
-<!--</div> -->
+<div class='item-page__metadata-wrapper'>
+  <%= render 'catalog/work_record/primary_metadata', { document: document } %>
+  <%= render 'catalog/work_record/secondary_metadata', { document: document } %>
+</div>
+

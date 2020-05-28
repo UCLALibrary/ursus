@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 .filter-box {
   display: flex;
@@ -24,7 +24,7 @@
 }
 
 #appliedParams {
-  padding-top: 15px !important;
+  // padding-top: 15px !important;
 
   .btn-group {
     margin-bottom: 0.35rem;
@@ -52,7 +52,7 @@
       }
     } */
     .remove:hover {
-      background-color: #B22222 !important;
+      background-color: #b22222 !important;
       margin-left: -1px !important;
     }
   }
@@ -63,7 +63,6 @@
   max-width: 100px !important;
   align-self: center;
   padding: 6px;
-
 }
 
 .search-startover {
@@ -80,7 +79,7 @@
     text-align: center;
     border: 1px solid $ucla-blue;
     border-radius: 0px;
-    padding: 6px ;
+    padding: 6px;
   }
   a:hover {
     height: 30px;
@@ -93,16 +92,14 @@
     text-align: center;
     border: 1px solid $ucla-darker-blue;
     border-radius: 0px;
-    padding: 6px ;
+    padding: 6px;
     text-decoration: none;
   }
 }
 
-search-filter-container
-.results_container {
+search-filter-container .results_container {
   margin-bottom: 50px;
 }
-
 
 @media screen and (max-width: 767px) {
   .startover-container {
