@@ -1,0 +1,38 @@
+.content-container--static-page {
+  @extend .col;
+}
+
+.static-page__title-row {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.static-page__title {
+  font-size: $text-36;
+  font-weight: $font-bold;
+  @media (max-width: 768px) {
+    font-size: calc(100% + 0.875rem);
+  }
+}
+
+.static-page__row {
+  padding: 1.5rem 0;
+}
+
+.static-page__subtitle {
+  font-size: $text-24;
+  letter-spacing: 0.15rem;
+  @media (max-width: 991px) {
+    margin-bottom: 1rem;
+    font-size: $text-20;
+    font-weight: $font-bold;
+  }
+}
+
+.static-page__text {
+  font-size: $text-18;
+  line-height: 2;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+}

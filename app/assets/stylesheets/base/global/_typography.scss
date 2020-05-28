@@ -27,3 +27,7 @@ $font-light: 300;
 .title-xs {
   font-size: $text-14;
 }
+
+.bordered-title {
+  border-bottom: 1rem solid $gray-80;
+}

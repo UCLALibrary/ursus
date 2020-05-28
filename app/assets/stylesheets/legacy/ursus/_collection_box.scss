@@ -45,27 +45,31 @@
   }
 
   .grid-one {
-    background-image: image-url("home-collection-grid/ladnn_collection.jpg");
+    background-image: image-url('home-collection-grid/ladnn_collection.jpg');
   }
 
   .grid-two {
-    background-image: image-url("home-collection-grid/bennett_collection.jpg");
+    background-image: image-url('home-collection-grid/bennett_collection.jpg');
   }
 
   .grid-three {
-    background-image: image-url("home-collection-grid/connell_collection.jpg");
+    background-image: image-url('home-collection-grid/connell_collection.jpg');
   }
 
   .grid-four {
-    background-image: image-url("home-collection-grid/california_postcards.jpg");
+    background-image: image-url(
+      'home-collection-grid/california_postcards.jpg'
+    );
   }
 
   .grid-five {
-    background-image: image-url("home-collection-grid/ethiopic_manuscripts.jpg");
+    background-image: image-url(
+      'home-collection-grid/ethiopic_manuscripts.jpg'
+    );
   }
 
   .grid-six {
-    background-image: image-url("home-collection-grid/arkatov_collection.jpg");
+    background-image: image-url('home-collection-grid/arkatov_collection.jpg');
   }
 
   .grid-title {
@@ -87,6 +91,9 @@
 
   .grid-btn {
     padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 8px !important;
+    padding-bottom: 0 !important;
   }
 
   .grid-btn .fa {

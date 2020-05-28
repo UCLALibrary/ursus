@@ -4,13 +4,14 @@
 
 .site-navbar__beta-logo {
   position: relative;
-  top: 0.22rem;
+  top: 0.4rem;
   left: 0.4rem;
   font-size: $text-20;
   font-weight: $font-bold;
   color: $ucla-gold;
   letter-spacing: 0.05rem;
   @media (max-width: 576px) {
+    top: 0.23rem;
     font-size: 1rem;
   }
   @media (max-width: 374px) {
