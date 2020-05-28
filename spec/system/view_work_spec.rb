@@ -115,7 +115,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
     visit solr_document_path(id)
     expect(page.html).to match(/media-viewer-iframe/)
 
-    within_frame(find('#media-viewer-iframe')) do
+    within_frame(find('.media-viewer-iframe')) do
       # Don't show download
       expect(page).to have_selector('button.download', visible: false)
       # Show fullscreen

@@ -1,13 +1,13 @@
 <% doc_presenter = show_presenter(document) %>
-<% physical_description = Ursus::PhysicalDescriptionMetadataPresenter.new(document: doc_presenter.fields_to_render).physical_description_terms %>
+<% note = Ursus::NoteMetadataPresenter.new(document: doc_presenter.fields_to_render).note_terms %>
 
-<% if physical_description.length > 0 %>
-  <div class='metadata-block'>
-    <h4 class='metadata-block__title'>Physical Description</h4>
+<% if note.length > 0 %>
+<div class='metadata-block'>
+    <h5 class='metadata-block__title'>Notes</h5>
     <dl class='metadata-block__group'>
-      <% physical_description.each do |field_name, field| -%>
+      <% note.each do |field_name, field| -%>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
-          <%= (render_document_show_field_label document, field: field_name).tr(':','') %>
+          <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
           <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
             <%= doc_presenter.field_value field %>
           </dd>

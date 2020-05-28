@@ -1,15 +1,15 @@
 <% if @document[:has_model_ssim][0] == 'Collection' %>
-  <%= render 'catalog/collection_record/collection_record', { document: @document } %>
+  <%= render 'catalog/collection_record/collection_record', document: @document %>
 <% else %>
   <% if current_search_session && controller.controller_name == 'catalog' && controller.action_name == 'show' %>
 
 <div class='content-container--item-page'>
 <%# PAGINATION %>
   <div id='appliedParams' class='item-page__pagination-wrapper'>
-    <div class= 'item-page__pagination-block'><%= render 'previous_next_doc' if @search_context %>
+    <div class='item-page__pagination-block'><%= render 'previous_next_doc' if @search_context %>
     </div>
 
-    <%= link_back_to_catalog label:'Back to Search Results', class: 'btn-base btn-base-sm' %>
+    <%= link_back_to_catalog label: 'Back to Search Results', class: 'btn-base btn-base-sm' %>
   </div>
 
   <hr class="divider">
@@ -25,4 +25,3 @@
   <%= render_document_main_content_partial %>
 </div>
 <% end %>
-
