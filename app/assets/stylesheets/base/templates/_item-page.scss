@@ -15,8 +15,8 @@
 }
 
 .item-page__title {
-  font-size: $text-36;
   margin-bottom: 0.5rem;
+  font-size: $text-36;
   @media (max-width: 767px) {
     font-size: calc(100% + 0.875rem);
   }
@@ -31,6 +31,7 @@
 
 .item-page__metadata-wrapper {
   @extend .row;
+
   justify-content: space-between;
   margin-right: 0;
   margin-left: 0;
@@ -39,6 +40,7 @@
 .item-page__primary-metadata,
 .item-page__secondary-metadata {
   @extend .col-md-12;
+
   padding-top: 1.5rem;
 }
 
@@ -48,5 +50,6 @@
 
 .item-page__secondary-metadata {
   @extend .col-lg-5;
+
   background-color: $gray-40;
 }
