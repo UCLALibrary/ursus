@@ -5,6 +5,8 @@ class StaticController < ApplicationController
   def contact; end
 
   # Ursus static pages
+  def ursus_about; end
+
   def ursus_copyright; end
 
   def ursus_privacy; end
