@@ -1,5 +1,13 @@
-<div class='item-page__secondary-metadata item-page__secondary-metadata--ursus'>
-  <%= render 'catalog/work_record/local_info_metadata', document: document %>
+<% if Flipflop.sinai? %>
+  <div class='item-page__secondary-metadata item-page__secondary-metadata--sinai'>
+    <%= render 'catalog/work_record/local_info_metadata', document: document %>
 
-  <%= render 'catalog/work_record/access_condition_metadata', document: document %>
-</div>
+    <%= render 'catalog/work_record/access_condition_metadata', document: document %>
+  </div>
+<% else %>
+  <div class='item-page__secondary-metadata item-page__secondary-metadata--ursus'>
+    <%= render 'catalog/work_record/local_info_metadata', document: document %>
+
+    <%= render 'catalog/work_record/access_condition_metadata', document: document %>
+  </div>
+<% end %>
