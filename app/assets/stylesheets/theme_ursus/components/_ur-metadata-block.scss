@@ -1,0 +1,17 @@
+.metadata-block__label-value--ursus {
+  a,
+  a:visited {
+    text-decoration: none;
+    color: $ucla-darker-blue;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $ucla-darker-blue;
+  }
+
+  a:active {
+    text-decoration: none;
+    color: $ucla-darker-blue;
+  }
+}

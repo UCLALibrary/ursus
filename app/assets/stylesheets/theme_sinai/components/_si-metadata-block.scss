@@ -1,0 +1,17 @@
+.metadata-block__label-value--sinai {
+  a,
+  a:visited {
+    text-decoration: none;
+    color: $sinai-red;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $sinai-red;
+  }
+
+  a:active {
+    text-decoration: none;
+    color: $sinai-red;
+  }
+}

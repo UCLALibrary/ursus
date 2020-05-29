@@ -2,31 +2,32 @@
 <% keyword = Ursus::KeywordMetadataPresenter.new(document: doc_presenter.fields_to_render).keyword_terms %>
 
 <% if keyword.length > 0 %>
-<div class='metadata-block'>
+  <div class='metadata-block'>
     <h4 class='metadata-block__title'>Keywords</h4>
     <dl class='metadata-block__group'>
       <% keyword.each do |field_name, field| -%>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
+          <!-- KEY -->
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
-          <% if field_name.include? "genre" %>
-          <dd itemprop="genre" class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
-            <%= doc_presenter.field_value field %>
-          </dd>
+          <!-- VALUE -->
+          <% if Flipflop.sinai? %>
+            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--sinai">
+              <%= doc_presenter.field_value field %>
+            </dd>
           <% else %>
-          <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
-            <%= doc_presenter.field_value field %>
-          </dd>
-        <% end %>
+            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
+              <%= doc_presenter.field_value field %>
+            </dd>
+          <% end %>
         </dt>
-
       <% end %>
     </dl>
 
-  <% if Flipflop.sinai? %>
-    <hr class='divider'>
-  <% else %>
-    <hr class='divider divider--ursus'>
-  <% end %>
+    <% if Flipflop.sinai? %>
+      <hr class='divider divider--sinai'>
+    <% else %>
+      <hr class='divider divider--ursus'>
+    <% end %>
 
   </div>
 <% end %>
