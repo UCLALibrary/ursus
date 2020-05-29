@@ -77,12 +77,13 @@ GEM
     bixby (1.0.0)
       rubocop (~> 0.50, <= 0.52.1)
       rubocop-rspec (~> 1.22, <= 1.22.2)
-    blacklight (7.3.0)
+    blacklight (7.0.1)
       deprecation
       globalid
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
-      rails (>= 5.1, < 7)
+      nokogiri (~> 1.6)
+      rails (~> 5.1)
     blacklight-access_controls (6.0.0)
       blacklight (> 6.0, < 8)
       cancancan (~> 1.8)
@@ -203,18 +204,18 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.3.0)
-    kaminari (1.2.0)
+    kaminari (1.2.1)
       activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.0)
-      kaminari-activerecord (= 1.2.0)
-      kaminari-core (= 1.2.0)
-    kaminari-actionview (1.2.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
       actionview
-      kaminari-core (= 1.2.0)
-    kaminari-activerecord (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
       activerecord
-      kaminari-core (= 1.2.0)
-    kaminari-core (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -445,7 +446,7 @@ PLATFORMS
 
 DEPENDENCIES
   bixby
-  blacklight (~> 7.3.0)
+  blacklight (~> 7.0.1)
   blacklight-access_controls (>= 6.0.0)
   blacklight-gallery!
   blacklight_dynamic_sitemap (~> 0.1.0)
