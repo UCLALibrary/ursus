@@ -8,6 +8,7 @@
   <div id='appliedParams' class='item-page__pagination-wrapper'>
     <div class='item-page__pagination-block'><%= render 'previous_next_doc' if @search_context %>
     </div>
+
     <% if Flipflop.sinai? %>
       <%= link_back_to_catalog label: 'Back to Search Results', class: 'btn-base btn-base-sm btn-outline-sinai--red' %>
     <% else %>
