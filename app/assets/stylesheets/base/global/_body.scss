@@ -8,15 +8,16 @@
 
 html {
   background-color: $gray-80;
-
-  /* scroll-behavior: smooth; */
+  height: 100%;
 }
 
 body {
   margin: 0 auto;
   min-width: 320px;
   max-width: 1920px;
-  min-height: 100vh;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
   font-size: 16px;
   font-family: 'Helvetica', sans-serif;
   font-weight: 400;
