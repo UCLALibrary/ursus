@@ -1,24 +1,25 @@
 <% doc_presenter = show_presenter(document) %>
-<% physical_description = Ursus::PhysicalDescriptionMetadataPresenter.new(document: doc_presenter.fields_to_render).physical_description_terms %>
+<% access_condition = Ursus::AccessConditionMetadataPresenter.new(document: doc_presenter.fields_to_render).access_condition_terms %>
 
-<% if physical_description.length > 0 %>
+<% if access_condition.length > 0 %>
   <div class='metadata-block'>
-    <h4 class='metadata-block__title'>Physical Description</h4>
+    <h4 class='metadata-block__title'>Access Condition</h4>
     <dl class='metadata-block__group'>
-      <% physical_description.each do |field_name, field| -%>
+      <% access_condition.each do |field_name, field| -%>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
-          <%= (render_document_show_field_label document, field: field_name).tr(':','') %>
+          <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
           <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
             <%= doc_presenter.field_value field %>
           </dd>
         </dt>
       <% end %>
+      <%= render 'license' %>
     </dl>
 
   <% if Flipflop.sinai? %>
     <hr class='divider'>
   <% else %>
-    <hr class='divider'>
+    <hr class='divider divider--white'>
   <% end %>
 
   </div>

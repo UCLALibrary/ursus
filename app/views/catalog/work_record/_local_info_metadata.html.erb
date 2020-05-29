@@ -7,7 +7,7 @@
     <dl class='metadata-block__group'>
       <% local_info.each do |field_name, field| -%>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
-          <%= (render_document_show_field_label document, field: field_name).tr(':','') %>
+          <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
           <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
             <%= doc_presenter.field_value field %>
           </dd>
@@ -20,7 +20,7 @@
   <% if Flipflop.sinai? %>
     <hr class='divider'>
   <% else %>
-    <hr class='divider'>
+    <hr class='divider divider--white'>
   <% end %>
 
   </div>

@@ -1,0 +1,11 @@
+<div class='item-page__primary-metadata'>
+  <div hidden>
+    <% document_json = JSON.parse @document.to_json.tr("'", '_') %>
+    <% tn = "<img src=\"" + document_json['thumbnail_url_ss'] + "\" alt=\"This image for search engines to index.\" \>" unless document_json['thumbnail_url_ss'].blank? %>
+    <%= tn.html_safe unless document_json['thumbnail_url_ss'].blank? %>
+    </div>
+  <%= render 'catalog/work_record/item_overview_metadata', document: document %>
+  <%= render 'catalog/work_record/note_metadata', document: document %>
+  <%= render 'catalog/work_record/physical_description_metadata', document: document %>
+  <%= render 'catalog/work_record/keyword_metadata', document: document %>
+</div>
