@@ -40,10 +40,3 @@
   background-color: $ucla-darker-gold;
   border-color: $ucla-darker-gold;
 }
-
-.btn-base {
-  @extend .btn;
-
-  background-color: $gray-60;
-  border-radius: 0;
-}
