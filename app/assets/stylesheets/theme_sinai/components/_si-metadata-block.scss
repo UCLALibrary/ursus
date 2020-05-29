@@ -1,8 +1,12 @@
 .metadata-block__label-value--sinai {
-  a,
-  a:visited {
+  a {
     text-decoration: none;
     color: $sinai-red;
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: $gray-60;
   }
 
   a:hover {
