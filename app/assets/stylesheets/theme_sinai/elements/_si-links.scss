@@ -17,3 +17,9 @@
 .si-link--dark:hover {
   color: $sinai-red;
 }
+.si-link--light,
+.si-link--light:visited,
+.si-link--light:hover,
+.si-link--light:active {
+  color: $white;
+}

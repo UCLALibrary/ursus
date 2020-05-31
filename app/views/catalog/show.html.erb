@@ -6,8 +6,8 @@
 <div class='content-container--item-page'>
 <%# PAGINATION %>
   <div id='appliedParams' class='item-page__pagination-wrapper'>
-    <div class='item-page__pagination-block'><%= render 'previous_next_doc' if @search_context %>
-    </div>
+  <%= render 'previous_next_doc' if @search_context %>
+
 
     <% if Flipflop.sinai? %>
       <%= link_back_to_catalog label: 'Back to Search Results', class: 'btn-base btn-base-sm btn-outline-sinai--red' %>
@@ -23,8 +23,8 @@
 
   <% elsif current_search_session %>
 
-    <div id='appliedParams' class='clearfix constraints-container'>
-      <%#= link_to t('blacklight.search.start_over'), start_over_path, class: 'btn catalog_startOverLink' %>
+    <div id='appliedParams' class='search-filter-wrapper'>
+      <%#= link_to t('blacklight.search.start_over'), start_over_path, class: 'btn-base btn-base-sm btn-ursus--blue ur-link--light' %>
       <%= link_back_to_catalog class: 'btn btn-outline-secondary' %>
     </div>
 

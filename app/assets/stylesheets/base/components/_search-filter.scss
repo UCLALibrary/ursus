@@ -1,0 +1,37 @@
+.search-filter-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.filter-group {
+  flex-basis: 85%;
+}
+
+.filter-group__heading {
+  padding-right: 0.5rem;
+}
+
+.filter-group__label {
+  background-color: $gray-60;
+  margin-bottom: 0.15rem;
+  &:hover {
+    background-color: $gray-60;
+  }
+}
+
+.filter-label-key:after {
+  color: $gray-80;
+  content: '❯';
+  font-size: 90%;
+}
+
+.filter-label-remove {
+  background-color: $gray-60;
+  margin-bottom: 0.15rem;
+  &:hover {
+    background-color: #b22222;
+  }
+}

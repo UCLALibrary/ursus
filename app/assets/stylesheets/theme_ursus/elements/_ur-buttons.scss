@@ -2,41 +2,51 @@
   color: $white;
   background-color: $ucla-darker-blue;
   border-color: $ucla-darker-blue;
-}
-
-.btn-ursus--blue:hover {
-  color: $white;
-  background-color: $ucla-darkest-blue;
-  border-color: $ucla-darkest-blue;
+  &:hover {
+    color: $white;
+    background-color: $ucla-darkest-blue;
+    border-color: $ucla-darkest-blue;
+  }
 }
 
 .btn-outline-ursus--blue {
   color: $ucla-darker-blue;
   border-color: $ucla-darker-blue;
+  &:hover {
+    color: $white;
+    background-color: $ucla-darker-blue;
+  }
 }
 
-.btn-outline-ursus--blue:hover {
-  color: $white;
-  background-color: $ucla-darker-blue;
-  border-color: $ucla-darker-blue;
+.btn-outline-ursus--light {
+  color: $ucla-darker-blue;
+  background-color: $white;
+  border-color: $gray-10;
+  &:hover {
+    color: $ucla-darker-blue;
+    background-color: $gray-10;
+  }
+}
+
+.btn-outline-ursus--light:not(:disabled):not(.disabled).active {
+  background-color: $gray-10;
+  border-color: $gray-10;
 }
 
 .btn-ursus--gold {
   background-color: $ucla-gold;
   border-color: $ucla-gold;
-}
-
-.btn-ursus--gold:hover {
-  background-color: $ucla-darker-gold;
-  border-color: $ucla-darker-gold;
+  &:hover {
+    background-color: $ucla-darker-gold;
+    border-color: $ucla-darker-gold;
+  }
 }
 
 .btn-outline-ursus--gold {
   color: $gray-80;
   border-color: $ucla-darker-gold;
-}
-
-.btn-outline-ursus--gold:hover {
-  background-color: $ucla-darker-gold;
-  border-color: $ucla-darker-gold;
+  &:hover {
+    color: $gray-80;
+    background-color: $ucla-darker-gold;
+  }
 }

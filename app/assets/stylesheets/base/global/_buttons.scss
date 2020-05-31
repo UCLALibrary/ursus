@@ -1,6 +1,5 @@
 .btn-base {
   @extend .btn;
-
   border-radius: 0;
 }
 
@@ -18,18 +17,28 @@
 
 .btn-base-link {
   @extend .btn-link;
-
   color: $gray-80;
 }
 
-.btn-base-outline {
+.btn-base--base {
+  background-color: $gray-60;
+}
+
+.btn-base-outline--dark {
   color: $gray-80;
   background-color: $white;
-  border-color: $gray-80;
+  border-color: $gray-60;
+  &:hover {
+    color: $white;
+    background-color: $gray-60;
+  }
 }
 
-.btn-base-outline:hover {
-  color: $white;
-  background-color: $gray-80;
-  border-color: $gray-80;
+.btn-base-outline--light {
+  color: $gray-80;
+  background-color: $white;
+  border-color: $gray-10;
+  &:hover {
+    background-color: $gray-10;
+  }
 }

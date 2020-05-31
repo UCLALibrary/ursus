@@ -1,21 +1,18 @@
-<div class='search-filter-container'>
-  <%= render 'catalog/constraints' %>
-</div>
+ <%= render 'catalog/constraints' %>
 
-<div class='results_container'>
+<div class='search-results-container'>
 <% url = request.original_url %>
 <% if url.include?('has_model_ssim') && url.include?('Collection') %>
-  <h4 class='catalog-results'><%= @response['response'].dig(:numFound) %> Collections <%= render_results_collection_tools wrapping_class: "search-widgets" %></h4>
+  <div class='search-count-wrapper'><h2 class='search-count__heading'><%= @response['response'].dig(:numFound) %> Collections</h2> <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %></div>
 <% else %>
-  <h4 class='catalog-results'><%= @response['response'].dig(:numFound) %> Catalog Results <%= render_results_collection_tools wrapping_class: "search-widgets" %></h4>
+  <div class='search-count-wrapper'><h2 class='search-count__heading'><%= @response['response'].dig(:numFound) %> Catalog Results</h2> <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %></div>
 <% end %>
+<hr class='divider'>
+
 <% if show_pagination? and @response.total_pages > 1 %>
   <div class='pagination-rectangle'> <%= render 'search_header' %> </div>
-<% if Flipflop.sinai? %>
-    <hr class='divider__red'>
-  <% else %>
-    <hr class='divider__blue'>
-  <% end %>
+
+  <hr class='divider'>
 
 <% end %>
 
