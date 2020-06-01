@@ -27,18 +27,15 @@
 }
 
 .btn-base-outline--dark {
-  color: $gray-80;
   background-color: $white;
   border-color: $gray-60;
 
   &:hover {
-    color: $white;
     background-color: $gray-60;
   }
 }
 
 .btn-base-outline--light {
-  color: $gray-80;
   background-color: $white;
   border-color: $gray-10;
 

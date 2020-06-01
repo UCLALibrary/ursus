@@ -1,0 +1,25 @@
+@mixin banner {
+  position: relative;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin banner-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 3.25rem;
+  padding: 1.25rem;
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.73);
+
+  @media (max-width: 991px) {
+    right: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    right: 0;
+    max-width: 100%;
+  }
+}
