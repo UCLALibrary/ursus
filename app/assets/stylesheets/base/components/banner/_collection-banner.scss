@@ -1,5 +1,6 @@
 .banner--collection-page {
   @include banner;
+
   height: 450px;
 }
 
@@ -8,8 +9,8 @@
 }
 
 .banner__title--collection {
-  color: $white;
   font-size: $text-36;
+  color: $white;
 
   @media (max-width: 767px) {
     font-size: calc(100% + 0.875rem);
@@ -22,8 +23,8 @@
 
 .banner__collection-detail {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-top: 1rem;
   @media (max-width: 575px) {
     display: block;
@@ -31,8 +32,8 @@
 }
 
 .banner__collection-count {
-  color: $ucla-gold;
   font-size: $text-20;
+  color: $ucla-gold;
   font-style: italic;
   @media (max-width: 767px) {
     margin-bottom: 0.5rem;
