@@ -56,3 +56,20 @@
     background-color: $ucla-gold;
   }
 }
+
+.btn-base--base--ursus {
+  color: $ucla-darkest-blue;
+  background-color: $white;
+  border-color: $ucla-darker-blue;
+
+  &:visited {
+    color: $ucla-darkest-blue;
+    background-color: $white;
+    border-color: $ucla-darker-blue;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $ucla-darker-blue;
+  }
+}

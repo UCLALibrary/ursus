@@ -20,3 +20,20 @@
   background-color: $sinai-red;
   border-color: $sinai-red;
 }
+
+.btn-base--base--sinai {
+  color: $sinai-red;
+  background-color: $white;
+  border-color: $sinai-red;
+
+  &:visited {
+    color: $sinai-red;
+    background-color: $white;
+    border-color: $sinai-red;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $sinai-red;
+  }
+}

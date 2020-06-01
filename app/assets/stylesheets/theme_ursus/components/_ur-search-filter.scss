@@ -1,1 +1,32 @@
+.filter-group__heading--ursus {
+  color: $ucla-darkest-blue;
+}
 
+.filter-group__label--ursus {
+  background-color: $ucla-lightest-blue;
+
+  &:hover {
+    background-color: $ucla-lightest-blue;
+  }
+}
+
+.filter-label-key--ursus {
+  color: $ucla-darkest-blue;
+}
+
+.filter-label-key--ursus::after {
+  color: $ucla-darkest-blue;
+  content: '❯';
+}
+
+.filter-label-value--ursus {
+  color: $ucla-darkest-blue;
+}
+
+.filter-label-remove--ursus {
+  background-color: $ucla-lightest-blue;
+
+  &:hover {
+    background-color: #b22222;
+  }
+}
