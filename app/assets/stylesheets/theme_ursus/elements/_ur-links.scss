@@ -1,7 +1,15 @@
-.ur-link {
+.ur-link,
+.ur-link:visited {
   color: $ucla-darker-blue;
 }
 
 .ur-link:hover {
   color: $ucla-blue;
+}
+
+.ur-link--light,
+.ur-link--light:visited,
+.ur-link--light:hover,
+.ur-link--light:active {
+  color: $white;
 }

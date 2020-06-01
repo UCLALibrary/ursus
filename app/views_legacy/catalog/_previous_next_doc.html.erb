@@ -1,9 +1,9 @@
 <% # Using the Bootstrap Pagination class  -%>
 <div class='item-page__pagination-widgets'>
   <% if @search_context[:prev] || @search_context[:next] %>
-    <div class='total-results'>
+    <!--<div class='total-results'>-->
       <%= item_page_entry_info %> results &nbsp;
       <%= link_to_previous_document @search_context[:prev] %> &nbsp; <%= link_to_next_document @search_context[:next] %>
-    </div>
+    <!--</div>-->
   <% end %>
 </div>
