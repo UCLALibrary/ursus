@@ -1,0 +1,33 @@
+<% doc_presenter = show_presenter(document) %>
+<% overview = Ursus::ItemOverviewMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
+
+<% if overview.length > 0 %>
+  <div class='metadata-block'>
+    <h4 class='metadata-block__title'>Item Overview</h4>
+    <dl class='metadata-block__group'>
+      <% overview.each do |field_name, field| -%>
+        <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
+          <!-- KEY -->
+          <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
+          <!-- VALUE -->
+          <% if Flipflop.sinai? %>
+            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--sinai">
+              <%= doc_presenter.field_value field %>
+            </dd>
+          <% else %>
+            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
+              <%= doc_presenter.field_value field %>
+            </dd>
+          <% end %>
+        </dt>
+      <% end %>
+    </dl>
+
+    <% if Flipflop.sinai? %>
+      <hr class='divider divider--sinai'>
+    <% else %>
+      <hr class='divider divider--ursus'>
+    <% end %>
+
+  </div>
+<% end %>

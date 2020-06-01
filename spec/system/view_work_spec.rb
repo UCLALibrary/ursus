@@ -92,7 +92,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
   it 'displays the schema.org values' do
     visit solr_document_path(id)
     expect(page.find('div[itemtype = "http://schema.org/CreativeWork"]')['itemid']).to have_content '/catalog/123'
-    expect(page.find('dd.blacklight-genre_tesim')['itemprop']).to have_content 'genre'
+    # expect(page.find('dd.blacklight-genre_tesim')['itemprop']).to have_content 'genre'
     # Capybara cannot find schema.org link tag
     # expect(page.find('link[itemid$="/catalog/9qsg9000zz-89112"')['itemtype']).to have_content 'http://schema.org/Collection'
   end
@@ -115,7 +115,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
     visit solr_document_path(id)
     expect(page.html).to match(/media-viewer-iframe/)
 
-    within_frame(find('#media-viewer-iframe')) do
+    within_frame(find('.media-viewer-iframe')) do
       # Don't show download
       expect(page).to have_selector('button.download', visible: false)
       # Show fullscreen
