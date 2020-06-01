@@ -1,8 +1,8 @@
-@import "variables";
+@import 'variables';
 
 .header-image-block {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
-    image-url("home-header/student-protesters_n4wr2000zz-89112.jpg");
+    image-url('home-header/student-protesters_n4wr2000zz-89112.jpg');
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,69 +53,6 @@
   }
 }
 
-.collection-masthead {
-  position: relative;
-  background-position: center center;
-  height: 400px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-bottom: 85px;
-}
-.collection-masthead-overlay {
-  max-width: 599px;
-  background-color: rgba(0, 0, 0, 0.73);
-  width: 100%;
-  padding: 20px 20px;
-  position: absolute;
-  bottom: 0;
-  right: 50px;
-
-  h1 {
-    color: #f6f1f1;
-    font-size: 2em;
-    line-height: 1em;
-    font-weight: 600;
-  }
-
-  .item-info {
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .collection-count {
-      color: $ucla-gold;
-      font-size: 20px;
-
-      font-weight: 500;
-      font-style: italic;
-    }
-
-    .btn-browse {
-        font-size: 17px;
-        color: $ucla-gold !important;
-        border: 2px solid $ucla-gold;
-        border-radius: 0;
-    }
-    .btn-browse:hover {
-      font-size: 17px;
-      color: black !important;
-      background-color: $ucla-gold;
-    }
-
-  }
-  span {
-    color: $ucla-lighter-blue;
-  }
-  p {
-    color: white;
-    font-family: Helvetica;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    line-height: 19px;
-    text-align: left !important;
-  }
-}
 @media (max-width: 1230px) {
   .header-image-caption {
     display: none;
@@ -164,42 +101,105 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  .collection-masthead {
-    height: 400px;
-  }
-  .collection-masthead-overlay {
-    right: 0;
-    max-width: 767px;
+// .collection-masthead {
+// position: relative;
+// background-position: center center;
+// height: 400px;
+// background-size: cover;
+// background-repeat: no-repeat;
+// margin-bottom: 85px;
+// }
+// .collection-masthead-overlay {
+// max-width: 599px;
+// background-color: rgba(0, 0, 0, 0.73);
+// width: 100%;
+// padding: 20px 20px;
+// position: absolute;
+// bottom: 0;
+// right: 50px;
 
-    h1 {
-      color: #f6f1f1;
-      font-size: 1.75rem;
-    }
+// h1 {
+//   color: #f6f1f1;
+//   font-size: 2em;
+//   line-height: 1em;
+//   font-weight: 600;
+// }
 
-    .item-info {
-      margin-top: 1rem;
-      .collection-count {
-        font-size: 16px;
-      }
-      .btn-browse {
-        font-size: 14px;
-      }
-    }
-  }
-}
+// .item-info {
+// margin-top: 1.5rem;
+// display: flex;
+// justify-content: space-between;
+// align-items: center;
 
-@media screen and (max-width: 576px) {
-  .collection-masthead {
-    height: 500px;
-  }
-  .collection-masthead-overlay {
-    .item-info {
-      display: block;
+// .collection-count {
+// color: $ucla-gold;
+// font-size: 20px;
+// font-weight: 500;
+// font-style: italic;
+// }
 
-      .collection-count {
-        margin-bottom: 0.5rem;
-      }
-    }
-  }
-}
+// .btn-browse {
+//   font-size: 17px;
+//   color: $ucla-gold !important;
+//   border: 2px solid $ucla-gold;
+//   border-radius: 0;
+// }
+// .btn-browse:hover {
+//   font-size: 17px;
+//   color: black !important;
+//   background-color: $ucla-gold;
+// }
+// }
+
+// span {
+//   color: $ucla-lighter-blue;
+// }
+// p {
+//   color: white;
+//   font-family: Helvetica;
+//   font-size: 16px;
+//   letter-spacing: 0.5px;
+//   line-height: 19px;
+//   text-align: left !important;
+// }
+// }
+
+// @media screen and (max-width: 767px) {
+// .collection-masthead {
+//   height: 400px;
+// }
+// .collection-masthead-overlay {
+// right: 0;
+// max-width: 767px;
+
+// h1 {
+//   color: #f6f1f1;
+//   font-size: 1.75rem;
+// }
+
+// .item-info {
+// margin-top: 1rem;
+// .collection-count {
+// font-size: 16px;
+// }
+// .btn-browse {
+// font-size: 14px;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 576px) {
+//   .collection-masthead {
+//     height: 500px;
+//   }
+//   .collection-masthead-overlay {
+//     .item-info {
+//       display: block;
+
+//       .collection-count {
+//         margin-bottom: 0.5rem;
+//       }
+//     }
+//   }
+// }

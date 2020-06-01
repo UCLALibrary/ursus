@@ -37,6 +37,7 @@
 }
 
 .btn-ursus--gold {
+  color: $gray-80;
   background-color: $ucla-gold;
   border-color: $ucla-gold;
 
@@ -48,10 +49,10 @@
 
 .btn-outline-ursus--gold {
   color: $gray-80;
-  border-color: $ucla-darker-gold;
+  border-color: $ucla-gold;
 
   &:hover {
     color: $gray-80;
-    background-color: $ucla-darker-gold;
+    background-color: $ucla-gold;
   }
 }

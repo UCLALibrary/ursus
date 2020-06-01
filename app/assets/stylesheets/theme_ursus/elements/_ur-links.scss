@@ -7,6 +7,15 @@
   color: $ucla-blue;
 }
 
+.ur-link--gold,
+.ur-link--gold:visited {
+  color: $ucla-gold;
+}
+
+.ur-link--gold:hover {
+  color: $gray-80;
+}
+
 .ur-link--light,
 .ur-link--light:visited,
 .ur-link--light:hover,
