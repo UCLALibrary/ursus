@@ -7,10 +7,10 @@
     options ||= {}
 %>
 
-<span class="btn-group applied-filter constraint <%= options[:classes].join(" ") if options[:classes] %>">
-  <span class="constraint-value btn btn-outline-secondary btn-disabled">
+<span class="btn-group <%= options[:classes].join(" ") if options[:classes] %>">
+  <span class="btn-base filter-group__label">
     <% unless label.blank? %>
-      <span class="filter-name">
+      <span class="filter-label-key">
          <% if label == "Has Model Ssim"%>
           Object Type
          <% else %>
@@ -19,7 +19,7 @@
         </span>
     <% end %>
     <% unless value.blank? %>
-      <%= content_tag :span, value, class: 'filter-value', title: strip_tags(value) %>
+      <%= content_tag :span, value, class: 'filter-label-value', title: strip_tags(value) %>
     <% end %>
   </span>
   <% unless options[:remove].blank? %>
@@ -33,7 +33,7 @@
     %>
 
     <%= link_to(content_tag(:span, '✖', class: 'remove-icon') + accessible_remove_label,
-			options[:remove], class: 'btn btn-outline-secondary remove'
+			options[:remove], class: 'btn-base filter-label-remove'
 		) %>
   <%- end -%>
 </span>

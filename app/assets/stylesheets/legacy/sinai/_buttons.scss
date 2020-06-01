@@ -1,4 +1,4 @@
-@import "legacy/ursus/colors";
+@import 'legacy/ursus/colors';
 
 .btn-primary {
   background-color: $ucla-blue !important;
@@ -11,114 +11,112 @@
   border-color: $ucla-darker-blue !important;
 }
 
-.btn-secondary {
-  background-color: $light-gray !important;
-  border-color: $callisto-light-red  !important;
-  color: $black !important;
-}
+// .btn-secondary {
+// background-color: $light-gray !important;
+// border-color: $callisto-light-red !important;
+// color: $black !important;
+// }
 
-input.btn-secondary[name="commit"] {
-  margin-left: 8px !important;
-  background-color: $ucla-blue !important;
-  color: $white !important;
-}
+// input.btn-secondary[name='commit'] {
+// margin-left: 8px !important;
+// background-color: $ucla-blue !important;
+// color: $white !important;
+// }
 
-.btn-outline-secondary {
-  border-color: $callisto-light-red  !important;
-  color: $gray-80 !important;
-  border-radius: 0 !important;
-}
+// .btn-outline-secondary {
+// border-color: $callisto-light-red !important;
+// color: $gray-80 !important;
+// border-radius: 0 !important;
+// }
 
-.btn-outline-secondary:hover {
-  background-color: $callisto-drk-red !important;
-  color: $callisto-beige  !important;
-  border-color: $callisto-light-red !important;
-}
+// .btn-outline-secondary:hover {
+// background-color: $callisto-drk-red !important;
+// color: $callisto-beige !important;
+// border-color: $callisto-light-red !important;
+// }
 
-.btn-outline-secondary:not(:disabled):not(.disabled).active {
-  color: $callisto-beige  !important;
-  background-color: $callisto-drk-red !important;
-  border-color: $callisto-drk-red !important;
-  .blacklight-icons {
-    fill: $callisto-beige  !important;
-  }
-  .blacklight-icons svg g {
-    stroke: $callisto-beige !important;
-  }
-}
+// .btn-outline-secondary:not(:disabled):not(.disabled).active {
+// color: $callisto-beige !important;
+// background-color: $callisto-drk-red !important;
+// border-color: $callisto-drk-red !important;
+// .blacklight-icons {
+// fill: $callisto-beige !important;
+// }
+// .blacklight-icons svg g {
+// stroke: $callisto-beige !important;
+//   }
+// }
 
-.per-page-dropdown.btn-group > .btn,
-.view-type-group.btn-group > .btn {
-  border-radius: 0rem !important;
-  color: $gray-80  !important;
-  .blacklight-icons svg g {
-    stroke: $gray-80 !important;
-  }
-  &:hover {
-    color: $callisto-beige !important;
-    .blacklight-icons svg g {
-      stroke: $callisto-beige !important;
-    }
-    .blacklight-icons {
-      fill: $callisto-beige  !important;
-    }
-  }
-}
+// .per-page-dropdown.btn-group > .btn,
+// .view-type-group.btn-group > .btn {
+// border-radius: 0rem !important;
+// color: $gray-80 !important;
+// .blacklight-icons svg g {
+// stroke: $gray-80 !important;
+// }
+// &:hover {
+// color: $callisto-beige !important;
+// .blacklight-icons svg g {
+// stroke: $callisto-beige !important;
+// }
+// .blacklight-icons {
+// fill: $callisto-beige !important;
+//     }
+//   }
+// }
 
-.disabled {
-  //background-color: aqua !important;
-  border-color: $callisto-light-red  !important;
-}
+// .disabled {
+//background-color: aqua !important;
+// border-color: $callisto-light-red !important;
+// }
 
-.show > .btn-outline-secondary.dropdown-toggle {
-  background-color: $light-gray !important;
-}
+// .show > .btn-outline-secondary.dropdown-toggle {
+// background-color: $light-gray !important;
+// }
 
-.btn-group.applied-filter:hover {
-  background-color: $light-gray !important;
-}
+// .btn-group.applied-filter:hover {
+// background-color: $light-gray !important;
+// }
 
-.btn.btn-outline-secondary:focus {
-  box-shadow: 0 0 0 0.1rem rgba(108, 117, 125, 0.5) !important;
-}
+// .btn.btn-outline-secondary:focus {
+//   box-shadow: 0 0 0 0.1rem rgba(108, 117, 125, 0.5) !important;
+// }
 
-.view-type-gallery {
-  margin-left: 5px !important;
-}
+// .view-type-gallery {
+//   margin-left: 5px !important;
+// }
 
-.applied-filter .remove:hover {
-  background-color: #dc3545 !important;
-  border-color: #dc3545 !important;
-  color: $white !important;
-}
-.applied-filter .filter-name:after {
-  color: $ucla-darker-blue !important;
-}
-
-
+// .applied-filter .remove:hover {
+// background-color: #dc3545 !important;
+// border-color: #dc3545 !important;
+// color: $white !important;
+// }
+// .applied-filter .filter-name:after {
+// color: $ucla-darker-blue !important;
+// }
 
 .facet-limit {
   margin-bottom: 0.2rem !important;
 }
 
-a.catalog_startOverLink,
-a.catalog_startOverLink:active,
-a.catalog_startOverLink:focus,
-a.catalog_startOverLink:visited {
-  color: $gray-80 !important;
-  font-weight: 600 !important;
-}
+// a.catalog_startOverLink,
+// a.catalog_startOverLink:active,
+// a.catalog_startOverLink:focus,
+// a.catalog_startOverLink:visited {
+// color: $gray-80 !important;
+// font-weight: 600 !important;
+// }
 
 // a.catalog_startOverLink:visited {
 //   color: $white !important;
 // }
 
-a.catalog_startOverLink:focus {
-  box-shadow: 0 0 0 0.1rem rgba(38, 143, 255, 0.5) !important;
-}
+// a.catalog_startOverLink:focus {
+// box-shadow: 0 0 0 0.1rem rgba(38, 143, 255, 0.5) !important;
+// }
 
-@media screen and (max-width: 767px) {
-  .view-name {
-    display: none;
-  }
-}
+// @media screen and (max-width: 767px) {
+//   .view-name {
+// display: none;
+//   }
+// }

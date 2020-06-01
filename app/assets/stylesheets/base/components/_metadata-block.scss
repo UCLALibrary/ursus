@@ -43,7 +43,7 @@
   @extend .col-sm-8;
 
   font-size: $text-18;
-  overflow-wrap: break-word;
+  word-break: break-word;
   @media (max-width: 767px) {
     font-size: 1rem;
   }
