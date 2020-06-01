@@ -1,5 +1,6 @@
 .btn-base {
   @extend .btn;
+
   border-radius: 0;
 }
 
@@ -17,6 +18,7 @@
 
 .btn-base-link {
   @extend .btn-link;
+
   color: $gray-80;
 }
 
@@ -28,6 +30,7 @@
   color: $gray-80;
   background-color: $white;
   border-color: $gray-60;
+
   &:hover {
     color: $white;
     background-color: $gray-60;
@@ -38,6 +41,7 @@
   color: $gray-80;
   background-color: $white;
   border-color: $gray-10;
+
   &:hover {
     background-color: $gray-10;
   }

@@ -1,9 +1,9 @@
 .search-filter-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-between;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .filter-group {
@@ -15,22 +15,24 @@
 }
 
 .filter-group__label {
-  background-color: $gray-60;
   margin-bottom: 0.15rem;
+  background-color: $gray-60;
+
   &:hover {
     background-color: $gray-60;
   }
 }
 
-.filter-label-key:after {
+.filter-label-key::after {
+  font-size: 90%;
   color: $gray-80;
   content: '❯';
-  font-size: 90%;
 }
 
 .filter-label-remove {
-  background-color: $gray-60;
   margin-bottom: 0.15rem;
+  background-color: $gray-60;
+
   &:hover {
     background-color: #b22222;
   }
