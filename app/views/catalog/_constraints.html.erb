@@ -1,0 +1,28 @@
+<!-- SINAI -->
+<% if Flipflop.sinai? %>
+  <% if query_has_constraints? %>
+    <div id='appliedParams' class='search-filter-wrapper'>
+      <h2 class='sr-only'><%= t('blacklight.search.search_constraints_header') %></h2>
+      <div class='filter-group'>
+        <span class='filter-group__heading'>You searched for: </span>
+        <%= render_constraints(params) %>
+      </div>
+      <%= render 'catalog/startover' %>
+    </div>
+  <% end %>
+  <hr class='divider divider--sinai'>
+
+<!-- URSUS -->
+<% else %>
+  <% if query_has_constraints? %>
+    <div id='appliedParams' class='search-filter-wrapper'>
+      <h2 class='sr-only'><%= t('blacklight.search.search_constraints_header') %></h2>
+      <div class='filter-group'>
+        <span class='filter-group__heading filter-group__heading--ursus'>You searched for: </span>
+        <%= render_constraints(params) %>
+      </div>
+      <%= render 'catalog/startover' %>
+    </div>
+  <% end %>
+  <hr class='divider divider--ursus'>
+<% end %>

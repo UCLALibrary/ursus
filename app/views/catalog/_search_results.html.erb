@@ -1,4 +1,4 @@
-<% @page_title = t('blacklight.search.page_title.title', :constraints => render_search_to_page_title(params), :application_name => application_name) %>
+<% @page_title = t('blacklight.search.page_title.title', constraints: render_search_to_page_title(params), application_name: application_name) %>
 
 <% content_for(:head) do -%>
   <%= render_opensearch_response_metadata %>
@@ -11,11 +11,6 @@
 <% content_for(:container_header) do -%>
   <h1 class='sr-only top-content-title'><%= t('blacklight.search.header') %></h1>
   <% url = request.original_url %>
-  <% if url.include?('has_model_ssim') && url.include?('Collection') %>
-  <!--<div class='space'></div>-->
-  <% else %>
-  <!--<div class='space'></div>-->
-  <% end %>
 <% end %>
 
 <% collection_block_presenter = Ursus::CollectionBlockPresenter.new(response: @response) %>
@@ -56,4 +51,4 @@
   <% else %>
     No Results found.
   <% end %>
-<% end  %>
+<% end %>

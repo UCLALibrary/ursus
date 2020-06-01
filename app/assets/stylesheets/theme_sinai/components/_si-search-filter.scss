@@ -1,0 +1,35 @@
+.filter-group__label--sinai {
+  background-color: $sinai-red;
+
+  &:hover {
+    background-color: $sinai-red;
+  }
+}
+
+.filter-label-key--sinai {
+  color: $white;
+}
+
+.filter-label-key--sinai::after {
+  color: $white;
+  content: '❯';
+}
+
+.filter-label-value--sinai {
+  color: $white;
+}
+
+.filter-label-remove--sinai {
+  color: $white;
+  background-color: $sinai-red;
+
+  &:visited {
+    color: $white;
+    background-color: $sinai-red;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: #b22222;
+  }
+}
