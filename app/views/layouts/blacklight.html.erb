@@ -2,7 +2,7 @@
 <% content_for(:content) do %>
 
   <% if content_for? :sidebar %>
-  <div class='row'>
+  <div class='content-container--index-page'>
     <section id="content" class="<%= main_content_classes %> order-last">
       <%= yield %>
     </section>

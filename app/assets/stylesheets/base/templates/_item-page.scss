@@ -1,15 +1,16 @@
 .item-page__pagination-wrapper {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding-bottom: 2rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 450px) {
     display: block;
   }
 }
 
-.item-page__pagination-block {
-  @media (max-width: 600px) {
+.item-page__pagination-widgets {
+  @media (max-width: 450px) {
     margin-bottom: 1rem;
   }
 }

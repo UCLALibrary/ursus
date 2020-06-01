@@ -1,9 +1,10 @@
-@import "legacy/ursus/colors";
+@import 'legacy/ursus/colors';
 
 .pagination-rectangle {
   background-color: $callisto-beige;
   margin-top: 1em;
   padding: 1em 0.5em;
+  margin-bottom: 1rem;
 }
 
 .page-item .page-link {

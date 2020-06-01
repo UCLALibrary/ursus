@@ -15,9 +15,9 @@
   }
 }
 
-// this container allows the site dropdown menu to span full width
+// This container allows the site navbar dropdown menu to span full width without a break in background color.
 @media (max-width: 991px) {
-  .container-full-navbar {
+  .container-full--navbar {
     padding: 0;
   }
 }
@@ -28,7 +28,10 @@
 
 .main-content-container {
   margin-top: 6.25rem;
+  margin-bottom: 6.25rem;
+
   @media (max-width: 768px) {
     margin-top: 4.25rem;
+    margin-bottom: 4.25rem;
   }
 }
