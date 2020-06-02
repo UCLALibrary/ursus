@@ -10,7 +10,7 @@
 <hr class='divider'>
 
 <% if show_pagination? and @response.total_pages > 1 %>
-  <div class='pagination-rectangle'> <%= render 'search_header' %> </div>
+  <div class='pagination-block'> <%= render 'search_header' %> </div>
 
   <hr class='divider'>
 
@@ -27,7 +27,7 @@
   <%= render_document_index %>
 <%- end %>
 
-<div class='pagination-rectangle'>
+<div class='pagination-block'>
   <%= render 'results_pagination' %></div>
 
   <% if !Flipflop.sinai? %>

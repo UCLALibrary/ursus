@@ -7,11 +7,11 @@
     remote:        data-remote
 -%>
 <% if current_page.last? %>
-    <li class="page-item disabled">
-      <%= link_to raw(t 'views.pagination.next'), '#', :rel => 'next', :onclick=>'return false;', class: 'page-link', aria: { label: t('views.pagination.aria.go_to_next_page') } %>
+    <li class="pagination__page-item disabled">
+      <%= link_to raw(t 'views.pagination.next'), '#', :rel => 'next', :onclick=>'return false;', class: 'pagination__page-link', aria: { label: t('views.pagination.aria.go_to_next_page') } %>
     </li>
 <% else %>
-    <li class="page-item">
-      <%= link_to raw(t 'views.pagination.next'), url, :rel => 'next', :remote => remote, class: 'page-link', aria: { label: t('views.pagination.aria.go_to_next_page') } %>
+    <li class="pagination__page-item">
+      <%= link_to raw(t 'views.pagination.next'), url, :rel => 'next', :remote => remote, class: 'pagination__page-link', aria: { label: t('views.pagination.aria.go_to_next_page') } %>
     </li>
 <% end %>
