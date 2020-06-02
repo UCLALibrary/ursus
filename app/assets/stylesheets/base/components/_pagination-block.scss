@@ -1,0 +1,36 @@
+.pagination-block {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: $gray-10;
+  border: 0;
+}
+
+.pagination__list-wrapper {
+  @extend .pagination;
+
+  margin-bottom: 0;
+  border-radius: 0;
+  flex-wrap: wrap;
+}
+
+.pagination__page-item {
+  @extend .page-item;
+}
+
+.pagination__page-link {
+  @extend .page-link;
+
+  color: $gray-80;
+
+  &:visited,
+  &:hover {
+    color: $gray-40;
+  }
+}
+
+.pagination__page-item.active .pagination__page-link {
+  color: $white;
+  background-color: $gray-60;
+  border-color: $gray-60;
+}
