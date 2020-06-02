@@ -6,12 +6,11 @@
     remote:        data-remote
     paginator:     the paginator that renders the pagination tags inside
 
-   Paginator now using the Bootstrap paginator class
--%>
+   Paginator now using the Bootstrap paginator class -%>
 <%= paginator.render do -%>
   <ul class="pagination__list-wrapper">
     <%= prev_page_tag %>
-    <%= next_page_tag  %>
+    <%= next_page_tag %>
     <% each_relevant_page do |page| -%>
       <% if page.left_outer? || page.right_outer? || page.inside_window? -%>
         <%= page_tag page %>

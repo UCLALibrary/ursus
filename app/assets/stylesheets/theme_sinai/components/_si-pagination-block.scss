@@ -1,0 +1,24 @@
+.pagination-block--siani {
+  background-color: $sinai-beige;
+}
+
+.pagination__page-link--sinai {
+  color: $gray-80;
+  background-color: $white;
+
+  &:visited {
+    color: $gray-80;
+    background-color: $white;
+  }
+
+  &:hover {
+    color: $gray-80;
+    background-color: $sinai-dark-beige;
+  }
+}
+
+.pagination__page-item--sinai.active .pagination__page-link--sinai {
+  color: $white;
+  background-color: $sinai-red;
+  border-color: $sinai-red;
+}

@@ -9,13 +9,24 @@
 <% end %>
 <hr class='divider'>
 
-<% if show_pagination? and @response.total_pages > 1 %>
-  <div class='pagination-block'> <%= render 'search_header' %> </div>
+<!-- SINAI -->
+  <% if Flipflop.sinai? %>
+  <% if show_pagination? and @response.total_pages > 1 %>
+    <div class='pagination-block pagination-block--siani'>
+      <%= render 'search_header' %>
+    </div>
+    <hr class='divider'>
+  <% end %>
 
-  <hr class='divider'>
-
+<!-- URSUS -->
+<% else %>
+  <% if show_pagination? and @response.total_pages > 1 %>
+    <div class='pagination-block'>
+      <%= render 'search_header' %>
+    </div>
+    <hr class='divider'>
+  <% end %>
 <% end %>
-
 
 <h2 class='sr-only'><%= t('blacklight.search.search_results') %></h2>
 
