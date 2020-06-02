@@ -1,0 +1,16 @@
+.pagination__page-link--ursus {
+  @extend .page-link;
+
+  color: $gray-80;
+
+  &:visited,
+  &:hover {
+    color: $gray-40;
+  }
+}
+
+.pagination__page-item.active .pagination__page-link--ursus {
+  color: $white;
+  background-color: $gray-60;
+  border-color: $gray-60;
+}
