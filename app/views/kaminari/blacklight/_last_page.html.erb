@@ -4,8 +4,17 @@
     current_page:  a page object for the currently displayed page
     num_pages:     total number of pages
     per_page:      number of items to fetch per page
-    remote:        data-remote
--%>
-<li class="pagination__page-item <%= 'disabled' if current_page.last? %>">
-  <%= link_to_unless current_page.last?, raw(t 'views.pagination.last'), url, :remote => remote, class: 'pagination__page-link', aria: { label: t('views.pagination.aria.go_to_last_page') } %>
-</li>
+    remote:        data-remote -%>
+
+<!-- SINAI -->
+<% if Flipflop.sinai? %>
+  <li class="pagination__page-item pagination__page-item--sinai <%= 'disabled' if current_page.last? %>">
+    <%= link_to_unless current_page.last?, raw(t('views.pagination.last')), url, remote: remote, class: 'pagination__page-link pagination__page-link--sinai', aria: { label: t('views.pagination.aria.go_to_last_page') } %>
+  </li>
+
+<!-- URSUS -->
+<% else %>
+  <li class="pagination__page-item pagination__page-item--ursus <%= 'disabled' if current_page.last? %>">
+    <%= link_to_unless current_page.last?, raw(t('views.pagination.last')), url, remote: remote, class: 'pagination__page-link pagination__page-link--ursus', aria: { label: t('views.pagination.aria.go_to_last_page') } %>
+  </li>
+<% end %>
