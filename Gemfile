@@ -56,6 +56,10 @@ group :development, :test do
   gem 'rubocop'
   gem 'selenium-webdriver', '>= 3.142.3'
   gem 'solr_wrapper', '>= 2.1.0'
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'spring-commands-rubocop'
+  gem 'spring-watcher-listen'
   gem 'webmock'
 end
 
@@ -70,9 +74,6 @@ group :development do
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-sidekiq', '~> 0.20.0'
-  gem 'spring'
-  gem 'spring-commands-rspec'
-  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'xray-rails', '>= 0.3.2'
 end
 

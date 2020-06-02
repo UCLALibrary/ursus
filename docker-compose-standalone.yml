@@ -7,21 +7,56 @@ services:
     depends_on:
       - db
       - solr
-      - dockerhost
     env_file:
-      - ./dotenv.sample
-    environment:
-      DATABASE_HOST: db
-      IIIF_URL: https://californica-test.library.ucla.edu/concern/works
-      THUMBNAIL_BASE_URL: http://californica-test.library.ucla.edu
-      SOLR_URL: http://solr:8983/solr/californica
-      SOLR_TEST_URL: http://solr_test:8983/solr/californica
+      - ./default.env
+      - ./docker.env
     ports:
       - "127.0.0.1:3003:3000"
     volumes:
       - .:/ursus
-      - bundle_dir:/usr/local/bundle
+      - ursus_bundle_dir:/usr/local/bundle
+      - ursus_node_modules:/ursus/node_modules
+      - ursus_public_uv:/ursus/public/uv
+      - ursus_tmp:/ursus/tmp
     working_dir: /ursus
+  
+  sinai:
+    image: uclalibrary/ursus
+    command: 'sh start-sinai.sh'
+    depends_on:
+      - db
+      - solr
+    env_file:
+      - ./default.env
+      - ./docker.env
+    environment:
+      DATABASE_NAME: sinai
+      SOLR_URL: http://solr:8983/solr/sinai
+      SOLR_TEST_URL: http://solr_test:8983/slumes:
+      - .:/ursus
+      - ursus_bundle_dir:/usr/local/bundle
+      - ursus_node_modules:/ursus/node_modules
+      - ursus_public_uv:/ursus/public/uv
+      - ur
+    depends_on:
+      - db
+      - sinai
+      - solr_test
+      - web
+    env_file:
+      - ./default.env
+      - ./docker.env
+    environment:
+      SOLR_TEST_URL: http://solr_test:8983/solr/ursus
+    volumes:
+      - .:/ursus
+      - ci_bundle_dir:/usr/local/bundle
+      - ci_node_modules:/ursus/node_modules
+      - ci_public_uv:/ursus/public/uv
+      - ci_tmp:/ursus/tmp
+    working_dir: /ursus
+
+
   db:
     image: mysql:5.6
     volumes:
@@ -37,14 +72,25 @@ services:
     ports:
       - "127.0.0.1:8983:8983"
 
-  solr_test:
-    image: uclalibrary/solr-ursus
-    ports:
+  solr_test:lumes:
+      - .:/ursus
+      - ursus_bundle_dir:/usr/local/bundle
+      - ursus_node_modules:/ursus/node_modules
+      - ursus_public_uv:/ursus/public/uv
+      - ur
       - "127.0.0.1:8985:8983"
-  dockerhost:
-    image: qoomon/docker-host
-    cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
-    restart: on-failure
+
 volumes:
-  bundle_dir:
+  ci_bundle_dir:
+  ci_node_modules:
+  ci_public_uv:
+  ci_tmp:
   mysql_data:
+  sinai_bundle_dir:
+  sinai_node_modules:
+  sinai_public_uv:
+  sinai_tmp:
+  ursus_bundle_dir:
+  ursus_node_modules:
+  ursus_public_uv:
+  ursus_tmp:

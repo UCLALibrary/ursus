@@ -17,14 +17,20 @@ RUN apt-get install mariadb-client build-essential libpq-dev yarn nodejs chromiu
 # Install Ruby Gems
 RUN gem install bundler
 ENV BUNDLE_PATH /usr/local/bundle
-WORKDIR /californica
-COPY Gemfile /californica/Gemfile
-COPY Gemfile.lock /californica/Gemfile.lock
+WORKDIR /ursus
+COPY Gemfile /ursus/Gemfile
+COPY Gemfile.lock /ursus/Gemfile.lock
 RUN bundle install
+
+# Install Node Packages
+COPY package.json /ursus/package.json
+COPY yarn.lock /ursus/yarn.lock
+RUN mkdir -p /ursus/public/uv
+RUN yarn install
 
 # Create a non-root user
 RUN useradd -ms /bin/bash  ursus
 
-# Add californica
+# Add ursus
 COPY / /ursus
 CMD ["sh", "/ursus/start-ursus.sh"]
