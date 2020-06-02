@@ -1,145 +1,145 @@
-@import 'legacy/ursus/colors';
+// @import 'legacy/ursus/colors';
 
-nav.navbar:nth-of-type(1) {
-  padding: 1rem !important;
-}
+// nav.navbar:nth-of-type(1) {
+//   padding: 1rem !important;
+// }
 
-.sinai-site-navbar {
-  background-color: $white !important;
-  font-family: Helvetica, sans-serif;
+// .sinai-site-navbar {
+//   background-color: $white !important;
+//   font-family: Helvetica, sans-serif;
 
-  .navbar-subtitle {
-    display: block;
-  }
+//   .navbar-subtitle {
+//     display: block;
+//   }
 
-  .sinai-navbar-logo a {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: $gray-80 !important;
+//   .sinai-navbar-logo a {
+//     font-size: 1.5rem;
+//     font-weight: 600;
+//     color: $gray-80 !important;
 
-    &:hover {
-      color: $callisto-drk-red !important;
-      text-decoration: none;
-    }
-  }
+//     &:hover {
+//       color: $callisto-drk-red !important;
+//       text-decoration: none;
+//     }
+//   }
 
-  .nav-item {
-    padding-top: 0;
-  }
+//   .nav-item {
+//     padding-top: 0;
+//   }
 
-  .nav-item a {
-    color: $gray-80 !important;
-    font-weight: 400;
-    font-size: 1.15rem;
-    text-decoration: none;
-    position: relative;
+//   .nav-item a {
+//     color: $gray-80 !important;
+//     font-weight: 400;
+//     font-size: 1.15rem;
+//     text-decoration: none;
+//     position: relative;
 
-    &::after {
-      content: ' ';
-      position: absolute;
-      bottom: -0.25rem;
-      left: 0;
-      right: 100%;
-      border-bottom: 0.125rem solid $callisto-drk-red;
-      -webkit-transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
-      transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
-    }
-    &:hover {
-      color: $callisto-drk-red !important;
-    }
-    &:hover::after {
-      right: 0%;
-    }
-  }
-}
+//     &::after {
+//       content: ' ';
+//       position: absolute;
+//       bottom: -0.25rem;
+//       left: 0;
+//       right: 100%;
+//       border-bottom: 0.125rem solid $callisto-drk-red;
+//       -webkit-transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
+//       transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
+//     }
+//     &:hover {
+//       color: $callisto-drk-red !important;
+//     }
+//     &:hover::after {
+//       right: 0%;
+//     }
+//   }
+// }
 
-@media (max-width: 767px) {
-  nav.navbar:nth-of-type(1) {
-    padding: 1rem 0 0 0 !important;
-  }
-  .sinai-site-navbar {
-    display: flex;
-    align-items: start;
-    .navbar-logo-block {
-      padding-left: 1rem;
-      padding-bottom: 1rem;
-    }
+// @media (max-width: 767px) {
+//   nav.navbar:nth-of-type(1) {
+//     padding: 1rem 0 0 0 !important;
+//   }
+//   .sinai-site-navbar {
+//     display: flex;
+//     align-items: start;
+//     .navbar-logo-block {
+//       padding-left: 1rem;
+//       padding-bottom: 1rem;
+//     }
 
-    .navbar-toggler {
-      border-color: transparent !important;
-    }
+//     .navbar-toggler {
+//       border-color: transparent !important;
+//     }
 
-    .custom-toggler .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128, 0, 32, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-    }
+//     .custom-toggler .navbar-toggler-icon {
+//       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128, 0, 32, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+//     }
 
-    .navbar-nav.nav {
-      background-color: $callisto-beige;
-      width: 100%;
-      padding: 1rem 1rem;
-      &:hover {
-        background-color: $callisto-drk-beige;
-      }
-    }
+//     .navbar-nav.nav {
+//       background-color: $callisto-beige;
+//       width: 100%;
+//       padding: 1rem 1rem;
+//       &:hover {
+//         background-color: $callisto-drk-beige;
+//       }
+//     }
 
-    .navbar-collapse {
-      background: $white;
-    }
+//     .navbar-collapse {
+//       background: $white;
+//     }
 
-    .nav-item a {
-      margin-right: 0;
+//     .nav-item a {
+//       margin-right: 0;
 
-      &::after {
-        content: ' ';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        border-bottom: 0;
-        -webkit-transition: none;
-        transition: none;
-      }
-      &:hover {
-        color: $callisto-drk-red !important;
-        text-decoration: underline;
-      }
-      &:hover::after {
-        right: 0%;
-      }
-    }
-  }
-}
+//       &::after {
+//         content: ' ';
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         right: 0;
+//         border-bottom: 0;
+//         -webkit-transition: none;
+//         transition: none;
+//       }
+//       &:hover {
+//         color: $callisto-drk-red !important;
+//         text-decoration: underline;
+//       }
+//       &:hover::after {
+//         right: 0%;
+//       }
+//     }
+//   }
+// }
 
-@media (max-width: 540px) {
-  .sinai-site-navbar {
-    .navbar-logo-block {
-      flex: 0 0 83%;
-    }
-    .sinai-navbar-logo a {
-      font-size: 1.15rem;
-    }
-    .navbar-subtitle {
-      font-size: 0.9rem;
-    }
-    .nav-item a {
-      font-size: 1rem;
-    }
-  }
-}
+// @media (max-width: 540px) {
+//   .sinai-site-navbar {
+//     .navbar-logo-block {
+//       flex: 0 0 83%;
+//     }
+//     .sinai-navbar-logo a {
+//       font-size: 1.15rem;
+//     }
+//     .navbar-subtitle {
+//       font-size: 0.9rem;
+//     }
+//     .nav-item a {
+//       font-size: 1rem;
+//     }
+//   }
+// }
 
-@media (max-width: 374px) {
-  .sinai-site-navbar {
-    .sinai-navbar-logo a {
-      font-size: 1.05rem;
-    }
-    .navbar-subtitle {
-      font-size: 0.8rem;
-    }
-    .nav-item a {
-      font-size: 0.9rem;
-    }
-    .navbar-nav.nav {
-      padding: 0.85rem;
-    }
-  }
-}
+// @media (max-width: 374px) {
+//   .sinai-site-navbar {
+//     .sinai-navbar-logo a {
+//       font-size: 1.05rem;
+//     }
+//     .navbar-subtitle {
+//       font-size: 0.8rem;
+//     }
+//     .nav-item a {
+//       font-size: 0.9rem;
+//     }
+//     .navbar-nav.nav {
+//       padding: 0.85rem;
+//     }
+//   }
+// }
