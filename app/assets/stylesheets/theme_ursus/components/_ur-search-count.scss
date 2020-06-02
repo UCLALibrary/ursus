@@ -1,15 +1,10 @@
 .dropdown-item--ursus {
   color: $ucla-darker-blue;
 }
-.list-icons--ursus {
-  .blacklight-icons svg g {
-    stroke: pink;
-  }
-}
 
-.gallery-icons--ursus {
+.search-widget__view-type-group--ursus {
+  .blacklight-icons svg g,
   .blacklight-icons svg path {
-    stroke: yellow;
-    fill: blue;
+    stroke: $ucla-darker-blue;
   }
 }

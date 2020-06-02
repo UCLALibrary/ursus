@@ -19,4 +19,20 @@
   color: $white;
   background-color: $sinai-red;
   border-color: $sinai-red;
+
+  .blacklight-icons svg g,
+  .blacklight-icons svg path {
+    stroke: $white;
+  }
+}
+
+.btn-outline-sinai--red:not(:disabled):not(.disabled).active {
+  color: $white;
+  background-color: $sinai-red;
+  border-color: $sinai-red;
+
+  .blacklight-icons svg g,
+  .blacklight-icons svg path {
+    stroke: $white;
+  }
 }
