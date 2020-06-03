@@ -24,7 +24,6 @@ script:
   - docker-compose -f docker-compose-standalone.yml run web bundle exec erblint --lint-all
   - docker-compose -f docker-compose-standalone.yml run web yarn run lint
   - docker-compose -f docker-compose-standalone.yml run web bundle exec rake db:setup
-  - docker-compose -f docker-compose-standalone.yml run web yarn run pa11y-ci --threshold 10
   - docker-compose -f docker-compose-standalone.yml run web bundle exec rspec
 notifications:
   email: false
