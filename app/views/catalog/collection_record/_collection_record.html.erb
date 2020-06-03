@@ -1,10 +1,10 @@
-<div class='collection-record-container'>
+<div class='content-container--collection-page'>
   <% if document[:summary_tesim] %>
-    <h2>About this Collection</h2>
-    <p itemprop="abstract"> 
+    <h2 class='collection-page__subtitle'>About this Collection</h2>
+    <p itemprop="abstract" class='collection-page__text'> 
       <%= document[:summary_tesim][0] %> 
     </p>
-    <hr>
+    <hr class='collection-page__divider'>
   <% end %>
 
   <%= render 'catalog/collection_record/collection_overview_metadata',  document: document  %>
@@ -14,5 +14,5 @@
   <%= render 'catalog/collection_record/physical_description_metadata', { document: document } %>
   <%= render 'catalog/collection_record/keyword_metadata', { document: document } %>
 
-  <a href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=<%= document[:title_tesim][0] %>" class="btn btn-warning btn-lg browse-collection-btn" role="button">Browse items in this collection</a>
+  <a href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=<%= document[:title_tesim][0] %>" class="btn-base btn-base-lg btn-ursus--gold" role="button">Browse items in this collection</a>
 </div>
