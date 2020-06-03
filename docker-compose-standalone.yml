@@ -9,18 +9,21 @@ services:
       - solr
       - dockerhost
     env_file:
-      - ./dotenv.sample
+      - ./default.env
+      - ./docker.env
     environment:
-      DATABASE_HOST: db
-      IIIF_URL: https://californica-test.library.ucla.edu/concern/works
-      THUMBNAIL_BASE_URL: http://californica-test.library.ucla.edu
-      SOLR_URL: http://solr:8983/solr/californica
-      SOLR_TEST_URL: http://solr_test:8983/solr/californica
+      SOLR_URL: http://solr:8983/solr/ursus
+      SOLR_TEST_URL: http://solr_test:8983/solr/ursus
+      DATABASE_USERNAME: ursus
+      DATABASE_PASSWORD: ursus
     ports:
       - "127.0.0.1:3003:3000"
     volumes:
       - .:/ursus
-      - bundle_dir:/usr/local/bundle
+      - ursus_bundle_dir:/usr/local/bundle
+      - ursus_node_modules:/ursus/node_modules
+      - ursus_public_uv:/ursus/public/uv
+      - ursus_tmp:/ursus/tmp
     working_dir: /ursus
   db:
     image: mysql:5.6
@@ -46,5 +49,8 @@ services:
     cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
     restart: on-failure
 volumes:
-  bundle_dir:
   mysql_data:
+  ursus_bundle_dir:
+  ursus_node_modules:
+  ursus_public_uv:
+  ursus_tmp:
