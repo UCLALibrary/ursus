@@ -7,10 +7,10 @@
     <% contacts.each do |field_name, field| %>
       <div class='row metadata-block__group'>
         <div class="blacklight-<%= field_name.parameterize %> col-12 col-sm-4 metadata-block__label-key metadata-block__label-key--collection">
-          <%= (render_document_show_field_label document, field: field_name).tr(':','') %> 
+          <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
         </div>
         <div class="blacklight-<%= field_name.parameterize %> col-12 col-sm-8 metadata-block__label-value metadata-block__label-value--ursus">
-          <%= doc_presenter.field_value field %> 
+          <%= doc_presenter.field_value field %>
         </div>
       </div>
     <% end %>
