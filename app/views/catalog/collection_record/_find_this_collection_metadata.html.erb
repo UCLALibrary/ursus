@@ -5,7 +5,7 @@
   <div class='metadata-block'>
     <h2 class='metadata-block__title'>Find this Collection</h2>
     <% find_collection.each do |field_name, field| -%>
-      <div class='row metadata-block__group--collection'>
+      <div class='row metadata-block__group'>
         <div class="blacklight-<%= field_name.parameterize %> col-12   col-sm-4 metadata-block__label-key">
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
         </div>
@@ -14,6 +14,6 @@
         </div>
       </div>
     <% end %>
-    <hr class='collection-page__divider'>
-  </div>
+    <hr class='divider divider--ursus'>
+    </div>
 <% end %>

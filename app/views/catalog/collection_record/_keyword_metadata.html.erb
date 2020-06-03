@@ -3,7 +3,7 @@
 
 <% if keyword.length > 0 %>
   <div class='metadata-block'>
-  <h2 class='metadata-block__title'>Keywords</h2>
+    <h2 class='metadata-block__title'>Keywords</h2>
     <% keyword.each do |field_name, field| %>
       <div class='row metadata-block__group'>
         <div class="blacklight-<%= field_name.parameterize %> col-12   col-sm-4 metadata-block__label-key">
@@ -14,6 +14,6 @@
         </div>
       </div>
     <% end %>
-    <hr class='collection-page__divider'>
-    </div>
+    <hr class='divider divider--ursus'>
+  </div>
   <% end %>

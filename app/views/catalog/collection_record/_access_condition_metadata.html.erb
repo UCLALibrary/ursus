@@ -6,7 +6,7 @@
     <h2 class='collection-page__subtitle'>Access Condition</h2>
     <% contacts.each do |field_name, field| %>
       <div class='row metadata-block__group'>
-        <div class="blacklight-<%= field_name.parameterize %> col-12 col-sm-4 metadata-block__label-key metadata-block__label-key--collection">
+        <div class="blacklight-<%= field_name.parameterize %> col-12 col-sm-4 metadata-block__label-key">
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
         </div>
         <div class="blacklight-<%= field_name.parameterize %> col-12 col-sm-8 metadata-block__label-value metadata-block__label-value--ursus">
@@ -14,6 +14,6 @@
         </div>
       </div>
     <% end %>
-    <hr class='collection-page__divider'>
+    <hr class='divider divider--ursus'>
   </div>
 <% end %>

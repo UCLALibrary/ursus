@@ -2,6 +2,7 @@
 <% overview = Ursus::CollectionOverviewMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
 
 <% if overview.length > 0 %>
+<div class='metadata-block'>
   <h2 class='collection-page__subtitle'>Collection Overview</h2>
   <% overview.each do |field_name, field| %>
     <div class='row metadata-block__group'>
@@ -13,5 +14,6 @@
       </div>
     </div>
   <% end %>
-  <hr class='collection-page__divider'>
+  <hr class='divider divider--ursus'>
+</div>
 <% end %>
