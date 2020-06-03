@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 bundle check || bundle install
 
 find . -name *.pid -delete
