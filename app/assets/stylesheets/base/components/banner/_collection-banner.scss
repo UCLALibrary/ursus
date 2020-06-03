@@ -1,7 +1,10 @@
 .banner--collection-page {
   @include banner;
 
-  height: 450px;
+  height: 400px;
+  @media (max-width: 576px) {
+    height: 450px;
+  }
 }
 
 .banner__overlay--collection {
