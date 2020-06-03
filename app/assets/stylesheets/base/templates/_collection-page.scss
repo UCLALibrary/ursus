@@ -12,7 +12,7 @@
 
 .collection-page__text {
   font-size: $text-18;
-  @media (max-width: 600px) {
+  @media (max-width: 991px) {
     font-size: 1rem;
   }
 }
@@ -34,4 +34,8 @@
 
   padding-top: unset;
   padding-bottom: unset;
+}
+
+.metadata-block__label-key--collection {
+  text-transform: uppercase;
 }
