@@ -7,7 +7,6 @@ services:
     depends_on:
       - db
       - solr
-      - dockerhost
     env_file:
       - ./default.env
       - ./docker.env
@@ -25,6 +24,7 @@ services:
       - ursus_public_uv:/ursus/public/uv
       - ursus_tmp:/ursus/tmp
     working_dir: /ursus
+
   db:
     image: mysql:5.6
     volumes:
@@ -44,10 +44,8 @@ services:
     image: uclalibrary/solr-ursus
     ports:
       - "127.0.0.1:8985:8983"
-  dockerhost:
-    image: qoomon/docker-host
-    cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
-    restart: on-failure
+
+
 volumes:
   mysql_data:
   ursus_bundle_dir:
