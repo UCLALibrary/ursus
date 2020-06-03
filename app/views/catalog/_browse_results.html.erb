@@ -1,0 +1,29 @@
+ <%= render 'catalog/constraints' %>
+
+<div class='search-results-container'>
+  <% url = request.original_url %>
+  <% if url.include?('has_model_ssim') && url.include?('Collection') %>
+    <div class='search-count-wrapper'><h2 class='search-count__heading'><%= @response['response'].dig(:numFound) %> Collections</h2> <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %></div>
+  <% else %>
+    <div class='search-count-wrapper'><h2 class='search-count__heading'><%= @response['response'].dig(:numFound) %> Catalog Results</h2> <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %></div>
+  <% end %>
+  <hr class='divider'>
+
+  <%= render 'results_pagination' %>
+
+  <h2 class='sr-only'><%= t('blacklight.search.search_results') %></h2>
+
+  <%- if @response.empty? %>
+    <%= render 'zero_results' %>
+  <%- elsif render_grouped_response? %>
+    <%= render_grouped_document_index %>
+  <%- else %>
+    <%= render_document_index %>
+  <%- end %>
+
+  <%= render 'results_pagination' %>
+
+  <% if !Flipflop.sinai? %>
+    <%= render 'old_collections' %>
+  <% end %>
+</div>
