@@ -1,6 +1,27 @@
 .item-page__secondary-metadata--ursus {
-
   @extend .col-lg-5;
 
   background-color: $ucla-lightest-blue;
+}
+
+.item-page__pagination-widgets--ursus {
+  .previous {
+    color: $ucla-darker-blue;
+
+    &:hover {
+      color: $ucla-blue;
+    }
+
+    &:not(a) {
+      color: $gray-60;
+    }
+  }
+
+  .next {
+    color: $ucla-darker-blue;
+
+    &:hover {
+      color: $ucla-blue;
+    }
+  }
 }

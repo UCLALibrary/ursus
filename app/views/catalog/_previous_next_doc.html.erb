@@ -1,0 +1,21 @@
+<!-- Uses the Bootstrap Pagination class -->
+<!-- SINAI -->
+<% if Flipflop.sinai? %>
+  <div class='item-page__pagination-widgets item-page__pagination-widgets--sinai'>
+    <% if @search_context[:prev] || @search_context[:next] %>
+      <%= item_page_entry_info %> results &nbsp;
+      <%= link_to_previous_document @search_context[:prev] %> &nbsp; <%= link_to_next_document @search_context[:next] %>
+    <% end %>
+  </div>
+
+<!-- URSUS -->
+
+<% else %>
+  <%# -%>
+  <div class='item-page__pagination-widgets item-page__pagination-widgets--ursus'>
+    <% if @search_context[:prev] || @search_context[:next] %>
+      <%= item_page_entry_info %> results &nbsp;
+      <%= link_to_previous_document @search_context[:prev] %> &nbsp; <%= link_to_next_document @search_context[:next] %>
+    <% end %>
+  </div>
+<% end %>
