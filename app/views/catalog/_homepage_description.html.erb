@@ -1,5 +1,10 @@
-<%= render :partial=>'home_text' %>
+<!-- SINAI -->
+<% if Flipflop.sinai? %>
+<!-- nothing -->
 
+<!-- SINAI -->
+<% else %>
+  <% if current_page?(root_path) %>
     <div class="container">
       <div class="row pt-4 pt-sm-5">
         <div class="col-12 home-page-lead">
@@ -8,3 +13,5 @@
         </div>
       </div>
     </div>
+  <% end %>
+<% end %>
