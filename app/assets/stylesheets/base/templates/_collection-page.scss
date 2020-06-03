@@ -1,0 +1,37 @@
+.content-container--collection-page {
+  @extend .col;
+}
+
+.collection-page__subtitle {
+  font-size: $text-24;
+  font-weight: $font-bold;
+  @media (max-width: 991px) {
+    font-size: $text-20;
+  }
+}
+
+.collection-page__text {
+  font-size: $text-18;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+}
+
+.collection-page__divider {
+  border-top: 1px solid $ucla-lighter-blue;
+  margin: 40px -15px;
+}
+
+.collection-page__metadata-wrapper {
+  @extend .row;
+  justify-content: space-between;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.metadata-block__group--collection {
+  @extend .row;
+
+  padding-top: unset;
+  padding-bottom: unset;
+}
