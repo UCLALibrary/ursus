@@ -1,5 +1,12 @@
 <% if @document[:has_model_ssim][0] == 'Collection' %>
-  <%= render 'catalog/collection_record/collection_record', document: @document %>
+<%
+@page_title = if Flipflop.sinai?
+                t('blacklight.search.show.title', document_title: document_show_html_title, application_name: sinai_application_name).html_safe
+              else
+                t('blacklight.search.show.title', document_title: document_show_html_title, application_name: application_name).html_safe
+              end
+%>
+ <%= render 'catalog/collection_record/collection_record', document: @document %>
 <% else %>
   <% if current_search_session && controller.controller_name == 'catalog' && controller.action_name == 'show' %>
 
