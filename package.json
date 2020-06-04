@@ -2,7 +2,7 @@
   "name": "ursus",
   "private": true,
   "dependencies": {
-    "universalviewer": "^3.0.16"
+    "universalviewer": "3.0.16"
   },
   "scripts": {
     "lint": "stylelint app/assets/stylesheets/** --syntax scss",
@@ -13,9 +13,8 @@
     "uv-config": "shx cp ./config/uv/uv.html ./public/uv/uv.html & shx cp ./config/uv/uv-config.json ./public/uv/"
   },
   "devDependencies": {
-    "pa11y-ci": "^2.2.0",
     "shx": "^0.3.2",
-    "stylelint": "^12.0.1",
+    "stylelint": "12.0.1",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-sass-guidelines": "^6.2.0",
     "stylelint-config-standard": "^20.0.0",
