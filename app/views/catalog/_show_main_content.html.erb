@@ -1,4 +1,10 @@
-<% @page_title = t('blacklight.search.show.title', document_title: document_show_html_title, application_name: application_name).html_safe %>
+<%
+@page_title = if Flipflop.sinai?
+                t('blacklight.search.show.title', document_title: document_show_html_title, application_name: sinai_application_name).html_safe
+              else
+                t('blacklight.search.show.title', document_title: document_show_html_title, application_name: application_name).html_safe
+              end
+%>
 <% content_for(:head) { render_link_rel_alternates } %>
 <!--
   <div id='document' class="document blacklight-work" itemscope  itemtype="http://schema.org/CreativeWork" itemid="https://digital.library.ucla.edu/catalog/5rsn2000zz-89112">

@@ -35,11 +35,19 @@ module Blacklight::BlacklightHelperBehavior
   #
   # @return [String]
   def render_page_title
+    remove_ssi_string
     if Flipflop.sinai?
       (content_for(:page_title) if content_for?(:page_title)) || @page_title || sinai_application_name
     else
       (content_for(:page_title) if content_for?(:page_title)) || @page_title || application_name
     end
+  end
+
+  ##
+  # Subsitutes *ssi string
+  #
+  def remove_ssi_string
+    @page_title = @page_title.sub('Has Model Ssim: Collection', 'Browse All Collections') if @page_title&.include?('Has Model Ssim:')
   end
 
   ##
