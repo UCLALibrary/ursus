@@ -1,3 +1,16 @@
 .content-container--index-page {
   @extend .row;
 }
+
+.no-results-block {
+  margin-top: 1rem;
+}
+
+.no-results__heading {
+  font-size: $text-36;
+}
+
+.no-results__list {
+  list-style-position: inside;
+  margin-left: 1rem;
+}
