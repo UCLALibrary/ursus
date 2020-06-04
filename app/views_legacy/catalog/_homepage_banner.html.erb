@@ -1,0 +1,37 @@
+ <% if Flipflop.sinai? %><!-- SINAI -->
+  <% if current_page?(root_path) %>
+    <%= render 'homepage_sinai' %>
+  <% end %>
+
+<% else%><!-- URSUS -->
+
+  <% if current_page?(root_path) %>
+
+    <div class='header-image-block jumbotron jumbotron-fluid mb-0'>
+      <%= render 'homepage_banner_overlay' %>
+      <span class="header-image-caption">
+      <a href="catalog/n4wr2000zz-89112">UCLA students with signs, one reading "Money for Minds not Bombs" during Veteran's Day teach-in on nuclear weapons in Los Angeles, Calif., 1981</a>
+     </span>
+    </div>
+
+    <div class="container">
+      <div class="row pt-4 pt-sm-5">
+        <div class="col-12 home-page-lead">
+          <p class="mb-0">The UCLA Library Digital Collections includes rare and unique digital materials developed by the UCLA Library to support education, research, service, and creative expression. This website is our new interface for discovery and engagement of these collections.</p>
+          <hr class="divider__blue">
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+  <% if controller.controller_name == 'catalog' && @document && @document[:has_model_ssim] && @document[:has_model_ssim][0] == 'Collection' %>
+    <div class="banner--collection-page" style="background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.4)
+      ),url(<%= image_path create_representative_image(@document) %>);">
+      <%= render 'collection_masthead_overlay', document: @document, collection_count: @collection_count %>
+    </div>
+  <% end %>
+<% end %>
