@@ -1,0 +1,28 @@
+.content-container--collection-page {
+  @extend .col;
+}
+
+.collection-page__subtitle {
+  font-size: $text-24;
+  font-weight: $font-bold;
+  @media (max-width: 991px) {
+    font-size: $text-20;
+  }
+}
+
+.collection-page__text {
+  @extend .col-12;
+
+  font-size: $text-18;
+  @media (max-width: 991px) {
+    font-size: 1rem;
+  }
+}
+
+.collection-page__metadata-wrapper {
+  @extend .row;
+
+  justify-content: space-between;
+  margin-right: 0;
+  margin-left: 0;
+}
