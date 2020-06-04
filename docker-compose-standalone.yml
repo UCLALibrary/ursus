@@ -38,6 +38,8 @@ services:
       DATABASE_NAME: sinai
       SOLR_URL: http://solr:8983/solr/sinai
       SOLR_TEST_URL: http://solr_test:8983/solr/sinai
+      DATABASE_USERNAME: ursus
+      DATABASE_PASSWORD: ursus
     ports:
       - "127.0.0.1:3004:3000"
     volumes:
