@@ -1,12 +1,12 @@
-.navbar + .container {
-  @extend .py-2;
-}
+// .navbar + .container {
+//   @extend .py-2;
+// }
 
 .card-header.collapse-toggle {
   margin-bottom: 0;
 
   &::after {
-    content: "❯";
+    content: '❯';
     float: right;
     transform: rotate(90deg);
   }
@@ -20,7 +20,6 @@
     }
   }
 }
-
 
 .page-link {
   white-space: nowrap;

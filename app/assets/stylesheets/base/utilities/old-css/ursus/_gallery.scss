@@ -1,0 +1,120 @@
+// @import 'colors';
+
+// #documents.row.gallery {
+//   .gallery-box {
+//     outline: 1px solid $light-gray;
+//     padding: 5px;
+//     height: 200px;
+//   }
+
+//   .gallery-text {
+//     margin: 15px;
+//   }
+
+//   .document-metadata dt {
+//     font-weight: normal;
+//     color: #808080;
+//   }
+
+//   .document {
+//     .thumbnail {
+//       outline: 1px solid $light-gray;
+//       margin: 5px;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       .caption {
+//         width: 100%;
+//         a {
+//           color: $ucla-darker-blue; // temporary fix
+//         }
+//       }
+//     }
+//     .thumbnail img {
+//       align: center;
+//       margin: 15px;
+//     }
+//     .document-counter {
+//       color: $ucla-blue;
+//       padding-left: 1em;
+//       margin-bottom: 1.5em;
+//       margin-right: 0.5em;
+//       a {
+//         text-align: center;
+//       }
+//     }
+//   }
+//   @media screen and (max-width: 1199px) {
+//     #documents.row.gallery {
+//       .gallery-box {
+//         outline: 1px solid $light-gray;
+//         padding: 5px;
+//         height: 200px;
+//       }
+//       .gallery-text {
+//         margin: 10px;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 1199px) {
+//   #documents.row.gallery {
+//     .gallery-box {
+//       outline: 1px solid $light-gray;
+//       padding: 5px;
+//       height: 200px;
+//     }
+//     .gallery-text {
+//       margin: 10px;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 450px) {
+//   #documents.row.gallery {
+//     .gallery-box {
+//       outline: 1px solid $light-gray;
+//       padding: 5px;
+//       height: 200px;
+//     }
+//     .gallery-text {
+//       margin: 10px;
+//     }
+//     .document {
+//       .thumbnail {
+//         align: center;
+//         outline: 1px solid $light-gray;
+//         margin: 5px;
+//         align: center;
+//       }
+//       .thumbnail img {
+//         align: center;
+//         margin: 15px;
+//         width: 80%;
+//       }
+//       .document-counter {
+//         color: $ucla-blue;
+//         padding-left: 1em;
+//         margin-bottom: 1.5em;
+//         margin-right: 0.5em;
+//       }
+//     }
+//   }
+// }
+
+// .extra-result-see-more {
+//   display: none;
+
+//   @media (min-width: 960px) {
+//     display: block;
+//   }
+
+//    a {
+//     border: 1px solid #ddd;
+//     padding: 20px;
+//     font-size: 18px;
+//     display: block;
+//     margin-top: 60px;
+//   }
+// }

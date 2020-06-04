@@ -1,0 +1,16 @@
+.document__gallery-item-text-wrapper--ursus {
+  a,
+  a:visited {
+    color: $ucla-darker-blue;
+  }
+
+  a:hover {
+    color: $ucla-blue;
+  }
+}
+
+.document__gallery-more-results--ursus {
+  a {
+    @extend .btn-outline-ursus--blue;
+  }
+}

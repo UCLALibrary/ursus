@@ -2,7 +2,7 @@
   <% doc_presenter = index_presenter(document) %>
   <div class="metadata-thumbnail-wrapper">
     <!-- default partial to display solr document fields in catalog index view -->
-    <dl class="document-metadata dl-invert row">
+    <dl class="document-metadata row">
       <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
         <div class="document-thumbnail"><%= tn %></div>
       <% end %>
@@ -17,16 +17,16 @@
 
 <% else %><!-- URSUS -->
   <% doc_presenter = index_presenter(document) %>
-  <div class="metadata-thumbnail-wrapper">
+  <div class="document__list-item-wrapper metadata-thumbnail-wrapper">
     <!-- default partial to display solr document fields in catalog index view -->
-    <dl class="document-metadata dl-invert row">
+    <dl class="document-metadata document__list-metadata-group">
       <% doc_presenter.fields_to_render.each do | field_name, field | %>
       <% if field_name == "member_of_collections_ssim" %>
         <% if document[:member_of_collections_ssim] && document[:member_of_collection_ids_ssim] %>
-          <dt class="blacklight-<%= field_name.parameterize %> col-md-3">
+          <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-<%= field_name.parameterize %>">
             <%= render_index_field_label document, field: field_name %>
           </dt>
-          <dd class="blacklight-<%= field_name.parameterize %> col-md-9">
+          <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-<%= field_name.parameterize %>">
             <% if document[:member_of_collections_ssim].length > 1 %>
               <% document[:member_of_collections_ssim].each_with_index do | member, index | %>
                 <%= link_to member, "/catalog/#{document[:member_of_collection_ids_ssim][index]}" %><br/>
@@ -38,21 +38,21 @@
         <% end %>
 
         <% else %>
-          <dt class="blacklight-<%= field_name.parameterize %> col-md-3">
+          <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-<%= field_name.parameterize %>">
             <%= render_index_field_label document, field: field_name %>
           </dt>
-          <dd class="blacklight-<%= field_name.parameterize %> col-md-9">
+          <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-<%= field_name.parameterize %>">
             <%= doc_presenter.field_value field %>
           </dd>
           <% if field_name == "Description" %>
-            <dt class="blacklight-<%= field_name.parameterize %> col-md-3"></dt>
-            <dd class="blacklight-<%= field_name.parameterize %> col-md-9">&nbsp;&nbsp;&nbsp;</dd>
+            <dt class="document__list-metadata-key blacklight-<%= field_name.parameterize %>"></dt>
+            <dd class="document__list-metadata-value blacklight-<%= field_name.parameterize %>">&nbsp;&nbsp;&nbsp;</dd>
           <% end %>
         <% end %>
       <% end %>
     </dl>
     <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-      <div class="document-thumbnail"><%= tn %></div>
+      <div class="document__gallery-thumbnail document-thumbnail"><%= tn %></div>
     <% end %>
   </div>
 <% end %>
