@@ -1,0 +1,16 @@
+ <% if Flipflop.sinai? %><!-- SINAI -->
+  <% if current_page?(root_path) %>
+    <%= render 'homepage_sinai' %>
+  <% end %>
+
+<% else %><!-- URSUS -->
+  <% if controller.controller_name == 'catalog' && @document && @document[:has_model_ssim] && @document[:has_model_ssim][0] == 'Collection' %>
+    <div class="banner--collection-page" style="background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.4)
+      ),url(<%= image_path create_representative_image(@document) %>);">
+      <%= render 'collection_masthead_overlay', document: @document, collection_count: @collection_count %>
+    </div>
+  <% end %>
+<% end %>
