@@ -19,7 +19,7 @@ script:
   - docker-compose -f docker-compose-standalone.yml up -d
   - docker-compose -f docker-compose-standalone.yml run web gem install bundler
   - docker-compose -f docker-compose-standalone.yml run web bundle install
-  - docker-compose -f docker-compose-standalone.yml run web yarn install
+  - docker-compose -f docker-compose-standalone.yml run web yarn install --frozen-lockfile
   - docker-compose -f docker-compose-standalone.yml run web bundle exec rubocop
   - docker-compose -f docker-compose-standalone.yml run web bundle exec erblint --lint-all
   - docker-compose -f docker-compose-standalone.yml run web yarn run lint
