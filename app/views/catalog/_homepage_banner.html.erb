@@ -3,7 +3,7 @@
     <%= render 'homepage_sinai' %>
   <% end %>
 
-<% else%><!-- URSUS -->
+<% else %><!-- URSUS -->
 
   <% if current_page?(root_path) %>
 
@@ -14,15 +14,6 @@
      </span>
     </div>
 
-    <div class="container">
-      <div class="row pt-4 pt-sm-5">
-        <div class="col-12 home-page-lead">
-          <p class="mb-0">The UCLA Library Digital Collections includes rare and unique digital materials developed by the UCLA Library to support education, research, service, and creative expression. This website is our new interface for discovery and engagement of these collections.</p>
-          <hr class="divider__blue">
-        </div>
-      </div>
-    </div>
-
   <% end %>
 
   <% if controller.controller_name == 'catalog' && @document && @document[:has_model_ssim] && @document[:has_model_ssim][0] == 'Collection' %>
@@ -31,7 +22,7 @@
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.4)
       ),url(<%= image_path create_representative_image(@document) %>);">
-      <%= render 'collection_masthead_overlay', document: @document, collection_count: @collection_count %>
+      <%= render 'catalog/collection_record/collection_masthead_overlay', document: @document, collection_count: @collection_count %>
     </div>
   <% end %>
 <% end %>
