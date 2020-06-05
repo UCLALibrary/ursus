@@ -3,10 +3,9 @@
 <header class='document__list-header'>
   <%# main title container for doc partial view
       How many bootstrap columns need to be reserved
-      for bookmarks control depends on size.
-  -%>
+      for bookmarks control depends on size. -%>
   <% document_actions = capture do %>
-    <% # bookmark functions for items/docs -%>
+    <%# bookmark functions for items/docs -%>
     <%= render_index_doc_actions document, wrapping_class: 'index-document-functions' %>
   <% end %>
 

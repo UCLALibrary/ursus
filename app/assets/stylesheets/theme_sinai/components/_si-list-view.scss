@@ -1,0 +1,21 @@
+.document__list-item--sinai {
+  border-color: $sinai-red;
+}
+
+.document__list-title--sinai {
+  margin-right: 0;
+  margin-left: 30px;
+
+  a:hover {
+    color: $sinai-red;
+  }
+}
+
+.document__list-item-wrapper--sinai {
+  justify-content: flex-start;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  @media (max-width: 767.98px) {
+    flex-direction: unset;
+  }
+}

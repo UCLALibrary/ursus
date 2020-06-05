@@ -1,24 +1,24 @@
 <!-- Results Page -->
 <% if Flipflop.sinai? %><!-- SINAI -->
   <% doc_presenter = index_presenter(document) %>
-  <div class="metadata-thumbnail-wrapper">
+  <div class="document__list-item-wrapper document__list-item-wrapper--sinai">
     <!-- default partial to display solr document fields in catalog index view -->
-    <dl class="document-metadata row">
+
       <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-        <div class="document-thumbnail"><%= tn %></div>
+        <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai"><%= tn %></div>
       <% end %>
 
-      <span class="document-metadata-title">
+      <span class="document__list-title document__list-title--sinai">
         <% if counter = document_counter_with_offset(document_counter) %>
         <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' '), counter: counter) %>
       <% end %>
       </span>
-    </dl>
+
   </div>
 
 <% else %><!-- URSUS -->
   <% doc_presenter = index_presenter(document) %>
-  <div class="document__list-item-wrapper metadata-thumbnail-wrapper">
+  <div class="document__list-item-wrapper">
     <!-- default partial to display solr document fields in catalog index view -->
     <dl class="document-metadata document__list-metadata-group">
       <% doc_presenter.fields_to_render.each do | field_name, field | %>
@@ -53,7 +53,7 @@
       <% end %>
     </dl>
     <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-      <div class="document__gallery-thumbnail document-thumbnail"><%= tn %></div>
+      <div class="document__gallery-thumbnail"><%= tn %></div>
     <% end %>
   </div>
 <% end %>
