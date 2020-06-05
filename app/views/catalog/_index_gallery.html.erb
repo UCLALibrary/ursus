@@ -1,0 +1,33 @@
+<% if Flipflop.sinai? %>
+  <div class="document document__gallery-item">
+    <div class="document__gallery-item-wrapper">
+      <%= render_thumbnail_tag(document, {}, counter: document_counter_with_offset(document_counter)) %>
+      <div class="caption document__gallery-item-text-wrapper document__gallery-item-text-wrapper--sinai">
+        <%= render_document_partials document, blacklight_config.view_config(:gallery).partials, document_counter: document_counter %>
+      </div>
+    </div>
+  </div>
+
+  <% if document_counter + 1 == current_per_page and @response.total != current_per_page %>
+    <div class='document document__gallery-item document__gallery-more-results document__gallery-more-results--sinai'>
+      <% current_next_page = @response.next_page.to_s %>
+      <%= link_to "See More Results", url_for(request.parameters.merge(only_path: false, page: current_next_page)) %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="document document__gallery-item">
+    <div class="document__gallery-item-wrapper">
+      <%= render_thumbnail_tag(document, {}, counter: document_counter_with_offset(document_counter)) %>
+      <div class="caption document__gallery-item-text-wrapper document__gallery-item-text-wrapper--ursus">
+        <%= render_document_partials document, blacklight_config.view_config(:gallery).partials, document_counter: document_counter %>
+      </div>
+    </div>
+  </div>
+
+  <% if document_counter + 1 == current_per_page and @response.total != current_per_page %>
+    <div class='document document__gallery-item document__gallery-more-results document__gallery-more-results--ursus'>
+      <% current_next_page = @response.next_page.to_s %>
+      <%= link_to "See More Results", url_for(request.parameters.merge(only_path: false, page: current_next_page)) %>
+    </div>
+  <% end %>
+<% end %>
