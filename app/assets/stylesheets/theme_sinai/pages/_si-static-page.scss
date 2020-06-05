@@ -1,6 +1,5 @@
 .static-page__subtitle--sinai {
   margin-bottom: 1.25rem;
-  font-weight: $font-bold;
 }
 
 .static-page__text--sinai {
@@ -12,12 +11,16 @@
   margin-bottom: 1rem;
   padding-left: 24px;
   font-size: $text-18;
+
   @media (max-width: 767px) {
-    font-size: 1rem;
+    font-size: $text-16;
   }
 }
 
 .static-page__block--sinai {
+  @extend .col-12;
+  @extend .col-md-6;
+
   @media (max-width: 767px) {
     &:nth-child(even) {
       margin-top: 1.5rem;

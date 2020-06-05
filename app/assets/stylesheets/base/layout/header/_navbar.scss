@@ -1,19 +1,17 @@
-@import 'base/global/colors';
-@import 'base/global/typography';
-
 .site-navbar {
   background-color: $gray-40;
 }
 
 .site-navbar__wrapper {
   padding: 0.75rem 0;
+
   @media (max-width: 991px) {
     padding-bottom: 0;
   }
 }
 
-@media (max-width: 991px) {
-  .site-navbar__wrapper .navbar-collapse {
+.site-navbar__wrapper .navbar-collapse {
+  @media (max-width: 991px) {
     background-color: $gray-60;
   }
 }
@@ -22,13 +20,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   @media (max-width: 991px) {
-    padding-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     padding-left: 1.5rem;
   }
-  @media (max-width: 768px) {
+
+  @media (max-width: 767px) {
     padding-left: 1rem;
   }
+
   @media (max-width: 374px) {
     flex-direction: column;
     align-items: flex-start;
@@ -38,7 +39,8 @@
 
 .site-navbar__logo {
   width: 350px;
-  @media (max-width: 576px) {
+
+  @media (max-width: 575px) {
     width: 250px;
   }
 }
@@ -52,6 +54,7 @@
   &:last-child {
     margin-right: 0;
   }
+
   @media (max-width: 991px) {
     margin-right: 0;
     padding: 0.75rem 1.5rem;
@@ -62,7 +65,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -86,8 +89,8 @@
   border-color: transparent;
 }
 
-@media (max-width: 991px) {
-  .navbar-collapse {
+.navbar-collapse {
+  @media (max-width: 991px) {
     background: $gray-60;
   }
 }

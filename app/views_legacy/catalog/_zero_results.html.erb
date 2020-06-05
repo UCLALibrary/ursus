@@ -1,6 +1,6 @@
 <div id="documents" class="no-results-block">
   <h2 class='no-results__heading'><%= t 'blacklight.search.zero_results.title' %></h2>
-  <p><%= t 'blacklight.search.zero_results.use_fewer_keywords' %></p>
+  <p class='no-results__text'><%= t 'blacklight.search.zero_results.use_fewer_keywords' %></p>
   <ul class='no-results__list'>
     <%- if params[:q] and params[:search_field] and params[:search_field] != blacklight_config.default_search_field.try(:key) -%>
       <li><%= t 'blacklight.search.zero_results.search_fields', :search_fields => search_field_label(params) %> -

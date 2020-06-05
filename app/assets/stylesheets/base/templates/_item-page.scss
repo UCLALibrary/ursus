@@ -17,10 +17,12 @@
 
 .item-page__title {
   margin-bottom: 0.5rem;
-  font-size: $text-36;
+  font-size: $text-28;
+
   @media (max-width: 767px) {
     font-size: calc(100% + 0.875rem);
   }
+
   @media (max-width: 567px) {
     font-size: $text-24;
   }
@@ -52,5 +54,6 @@
 .item-page__secondary-metadata {
   @extend .col-lg-5;
 
+  align-self: baseline;
   background-color: $gray-40;
 }
