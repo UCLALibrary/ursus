@@ -1,6 +1,5 @@
- <%= render 'catalog/constraints' %>
-
 <div class='search-results-container col-md-12 col-lg-9'>
+ <%= render 'catalog/constraints' %>
   <% url = request.original_url %>
   <% if url.include?('has_model_ssim') && url.include?('Collection') %>
     <div class='search-count-wrapper'><h2 class='search-count__heading'><%= @response['response'].dig(:numFound) %> Collections</h2> <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %></div>
