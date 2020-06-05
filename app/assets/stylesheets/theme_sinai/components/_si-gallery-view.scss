@@ -19,3 +19,9 @@
     color: $sinai-red;
   }
 }
+
+.document__gallery-more-results--sinai {
+  a {
+    @extend .btn-outline-sinai--red;
+  }
+}
