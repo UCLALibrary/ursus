@@ -1,4 +1,4 @@
-<!-- This pagination does not use the kaminari gem, 
+<!-- This pagination does not use the kaminari gem,
      it is implementing the previous/next here and using bootstrap for styling. -->
 <ul class="pagination">
   <li class='page-item'>
@@ -6,8 +6,8 @@
       <%= content_tag :span, raw(t('views.pagination.previous')), class: 'disabled btn btn-disabled' %>
     <% end %>
   </li>
-  <li class='page-item' >
-    <%= link_to_next_page @pagination, raw(t('views.pagination.next')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'page-link',  data: { blacklight_modal: "preserve" } do %>
+  <li class='page-item'>
+    <%= link_to_next_page @pagination, raw(t('views.pagination.next')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'page-link', data: { blacklight_modal: "preserve" } do %>
       <%= content_tag :span, raw(t('views.pagination.next')), class: 'disabled btn btn-disabled' %>
     <% end %>
   </li>

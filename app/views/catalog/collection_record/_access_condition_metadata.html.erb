@@ -1,11 +1,11 @@
 <% doc_presenter = show_presenter(document) %>
-<% overview = Ursus::CollectionOverviewMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
+<% access_condition = Ursus::AccessConditionMetadataPresenter.new(document: doc_presenter.fields_to_render).access_condition_terms %>
 
-<% if overview.length > 0 %>
+<% if access_condition.length > 0 %>
   <div class='metadata-block'>
-    <h2 class='metadata-block__title'>Collection Overview</h2>
-    <% overview.each do |field_name, field| %>
-      <div class='metadata-block__group'>
+    <h2 class='metadata-block__title'>Access Condition</h2>
+    <% access_condition.each do |field_name, field| %>
+      <div class='metadata-block__group--collection-pg'>
         <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
         </div>

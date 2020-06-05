@@ -5,7 +5,7 @@
   <div class='metadata-block'>
     <h2 class='metadata-block__title'>Physical Description</h2>
     <% physical_description.each do |field_name, field| %>
-      <div class='metadata-block__group'>
+      <div class='metadata-block__group--collection-pg'>
         <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
         </div>

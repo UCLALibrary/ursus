@@ -20,7 +20,7 @@ RSpec.describe 'viewing the home page', :clean, type: :system, js: false do
 
   it 'has an feedback link' do
     visit('/')
-    expect(page).to have_link 'Give us feedback'
+    expect(page).to have_link 'Give Us Feedback'
   end
 
   it 'has a copyright & collections link' do
@@ -41,11 +41,6 @@ RSpec.describe 'viewing the home page', :clean, type: :system, js: false do
   it 'has a link to the legacy site' do
     visit('/')
     expect(page).to have_link 'Visit Our Legacy Site'
-  end
-
-  it 'has a feedback link' do
-    visit('/')
-    expect(page).to have_link 'Give Us Feedback'
   end
 
   it 'doesn\'t have Google Analytics when it shouldn\'t' do

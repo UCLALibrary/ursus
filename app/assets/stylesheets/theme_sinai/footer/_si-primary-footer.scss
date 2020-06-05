@@ -5,10 +5,13 @@
 .site-footer__primary-wrapper--sinai {
   display: flex;
   align-items: center;
-  @media (max-width: 992px) {
+  justify-content: end;
+
+  @media (max-width: 991px) {
     flex-wrap: wrap;
   }
-  @media (max-width: 768px) {
+
+  @media (max-width: 767px) {
     justify-content: center;
   }
 }
@@ -17,7 +20,8 @@
   display: flex;
   justify-content: center;
   flex: 0 0 19%;
-  @media (max-width: 768px) {
+
+  @media (max-width: 767px) {
     flex: 0 0 33%;
     display: flex;
     justify-content: center;
