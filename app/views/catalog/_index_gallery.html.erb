@@ -1,6 +1,6 @@
 <% if Flipflop.sinai? %>
   <div class="document document__gallery-item">
-    <div class="thumbnail document__gallery-item-wrapper">
+    <div class="document__gallery-item-wrapper">
       <%= render_thumbnail_tag(document, {}, counter: document_counter_with_offset(document_counter)) %>
       <div class="caption document__gallery-item-text-wrapper document__gallery-item-text-wrapper--sinai">
         <%= render_document_partials document, blacklight_config.view_config(:gallery).partials, document_counter: document_counter %>
@@ -16,7 +16,7 @@
   <% end %>
 <% else %>
   <div class="document document__gallery-item">
-    <div class="thumbnail document__gallery-item-wrapper">
+    <div class="document__gallery-item-wrapper">
       <%= render_thumbnail_tag(document, {}, counter: document_counter_with_offset(document_counter)) %>
       <div class="caption document__gallery-item-text-wrapper document__gallery-item-text-wrapper--ursus">
         <%= render_document_partials document, blacklight_config.view_config(:gallery).partials, document_counter: document_counter %>
