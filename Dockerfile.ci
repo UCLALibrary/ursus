@@ -1,0 +1,16 @@
+FROM uclalibrary/ursus
+
+WORKDIR /ursus
+
+# Install Ruby Gems
+COPY Gemfile /ursus/Gemfile
+COPY Gemfile.lock /ursus/Gemfile.lock
+RUN bundle install
+
+# Install node packages
+COPY package.json /ursus/package.json
+COPY yarn.lock /ursus/yarn.lock
+RUN yarn install --frozen-lockfile
+
+# Add ursus
+COPY / /ursus

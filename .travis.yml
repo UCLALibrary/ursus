@@ -5,26 +5,14 @@ services:
   - docker
 env:
   global:
-    - DOCKER_COMPOSE_VERSION=1.23.2
+    - COMPOSE_FILE=docker-compose-ci.yml
     - JENKINS_HOST=jenkins-devsupport.library.ucla.edu
     - JENKINS_USER="${TRAVIS_JENKINS_USER}"
     - JENKINS_API_CALLISTO="${TRAVIS_JENKINS_API_CALLISTO}"
     - JENKINS_API_URSUS="${TRAVIS_JENKINS_API_URSUS}"
-before_install:
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
 script:
-  - docker-compose -f docker-compose-standalone.yml up -d
-  - docker-compose -f docker-compose-standalone.yml run web gem install bundler
-  - docker-compose -f docker-compose-standalone.yml run web bundle install
-  - docker-compose -f docker-compose-standalone.yml run web yarn install --frozen-lockfile
-  - docker-compose -f docker-compose-standalone.yml run web bundle exec rubocop
-  - docker-compose -f docker-compose-standalone.yml run web bundle exec erblint --lint-all
-  - docker-compose -f docker-compose-standalone.yml run web yarn run lint
-  - docker-compose -f docker-compose-standalone.yml run web bundle exec rake db:setup
-  - docker-compose -f docker-compose-standalone.yml run web bundle exec rspec
+  - docker-compose up --detach --build
+  - docker-compose run web sh start-ci.sh
 notifications:
   email: false
 after_success:
