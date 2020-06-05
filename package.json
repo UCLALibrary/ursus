@@ -2,7 +2,6 @@
   "name": "ursus",
   "private": true,
   "dependencies": {
-    "lint": "^0.7.0",
     "universalviewer": "3.0.16"
   },
   "scripts": {
