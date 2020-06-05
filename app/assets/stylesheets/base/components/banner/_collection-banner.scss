@@ -2,7 +2,8 @@
   @include banner;
 
   height: 400px;
-  @media (max-width: 576px) {
+
+  @media (max-width: 575px) {
     height: 450px;
   }
 }
@@ -29,6 +30,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 1rem;
+
   @media (max-width: 575px) {
     display: block;
   }
@@ -38,11 +40,12 @@
   font-size: $text-20;
   color: $ucla-gold;
   font-style: italic;
+
   @media (max-width: 767px) {
     margin-bottom: 0.5rem;
   }
 }
 
 .banner__overlay-btn-text {
-  font-size: 1rem;
+  font-size: $text-16;
 }

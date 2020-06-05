@@ -1,1 +1,8 @@
-// Styling for Ursus themed static pages
+.static-page__list--ursus {
+  padding-left: 24px;
+  font-size: $text-18;
+
+  @media (max-width: 991px) {
+    font-size: $text-16;
+  }
+}

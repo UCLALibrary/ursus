@@ -13,7 +13,7 @@
 }
 
 .document__list-title {
-  font-size: 1rem;
+  font-size: $text-16;
 
   a,
   a:visited {
@@ -28,7 +28,8 @@
 .document__list-item-wrapper {
   display: flex;
   justify-content: space-between;
-  @media (max-width: 767.98px) {
+
+  @media (max-width: 767px) {
     flex-direction: column-reverse;
   }
 }
@@ -53,11 +54,13 @@
   &:last-of-type {
     margin-bottom: 0;
   }
+
   @media (min-width: 768px) {
     flex: 0 0 25%;
     max-width: 25%;
   }
-  @media (max-width: 767.98px) {
+
+  @media (max-width: 767px) {
     margin-bottom: 0;
     text-align: left;
   }
@@ -81,10 +84,12 @@
   a:hover {
     color: $gray-60;
   }
-  @media (max-width: 767.98px) {
+
+  @media (max-width: 767px) {
     margin-bottom: 0.5rem;
     padding-left: 15px;
   }
+
   @media (min-width: 768px) {
     flex: 0 0 70%;
     max-width: 70%;

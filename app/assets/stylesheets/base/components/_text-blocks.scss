@@ -1,0 +1,28 @@
+// Text block for digital2 reference on search index page
+
+.old-digital-block {
+  margin-top: 1rem;
+
+  a {
+    font-weight: $font-bold;
+  }
+}
+
+// Text block for zero search results
+
+.no-results-block {
+  margin-top: 1rem;
+}
+
+.no-results__heading {
+  font-size: $text-36;
+}
+
+.no-results__text {
+  margin-top: 0.75rem;
+}
+
+.no-results__list {
+  list-style-position: inside;
+  margin-left: 1rem;
+}
