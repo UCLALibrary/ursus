@@ -6,9 +6,11 @@
   align-items: unset;
   justify-content: unset;
   flex-direction: column;
+
   @media (max-width: 500px) {
     flex-basis: 83%;
   }
+
   @media (max-width: 330px) {
     flex-basis: 80%;
   }
@@ -23,16 +25,19 @@
     text-decoration: none;
     color: $sinai-red;
   }
+
   @media (max-width: 540px) {
     font-size: $text-18;
   }
+
   @media (max-width: 374px) {
-    font-size: 1rem;
+    font-size: $text-16;
   }
 }
 
 .site-navbar__logo-subtitle--sinai {
   display: block;
+
   @media (max-width: 540px) {
     font-size: $text-14;
   }
@@ -40,6 +45,7 @@
 
 .site-navbar__item--sinai {
   font-weight: inherit;
+
   @media (max-width: 991px) {
     &:hover {
       background-color: $sinai-dark-beige;
@@ -99,12 +105,14 @@
   }
 }
 
-@media (max-width: 991px) {
-  .custom-toggler .navbar-toggler-icon {
+.custom-toggler .navbar-toggler-icon {
+  @media (max-width: 991px) {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128, 0, 32, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
+}
 
-  .site-navbar__wrapper--sinai .navbar-collapse {
+.site-navbar__wrapper--sinai .navbar-collapse {
+  @media (max-width: 991px) {
     background-color: $sinai-beige;
   }
 }

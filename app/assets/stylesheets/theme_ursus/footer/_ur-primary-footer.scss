@@ -9,28 +9,23 @@
 
 .site-footer__primary-wrapper--ursus {
   display: flex;
-  @media (max-width: 768px) {
+  justify-content: space-between;
+  max-width: 80%;
+
+  @media (max-width: 850px) {
     display: block;
   }
 }
 
 .site-footer__block--ursus {
   &:nth-child(1) {
-    flex-basis: 25%;
     align-self: center;
   }
 
   &:nth-child(2) {
-    flex-grow: 2;
-    flex-shrink: 0;
-    flex-basis: max-content;
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       margin-top: 1.5rem;
     }
-  }
-
-  &:nth-child(3) {
-    flex-grow: 8;
   }
 }
 

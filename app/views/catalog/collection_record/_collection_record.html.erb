@@ -1,7 +1,15 @@
 <div class='content-container--collection-page'>
   <% if document[:summary_tesim] %>
-    <%= render 'catalog/collection_record/about_collection_metadata', document: document %>
-  <% end %>
+  <div class='metadata-block'>
+  <h2 class='metadata-block__title'>About this Collection</h2>
+  <div class='metadata-block__group--collection-pg'>
+    <p itemprop="abstract" class='collection-page__text'>
+      <%= document[:summary_tesim][0] %>
+    </p>
+  </div>
+    <hr class='divider divider--ursus'>
+    </div>
+    <% end %>
 
   <%= render 'catalog/collection_record/collection_overview_metadata', document: document %>
   <%= render 'catalog/collection_record/find_this_collection_metadata', document: document %>

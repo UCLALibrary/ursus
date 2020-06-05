@@ -4,7 +4,7 @@
 
 .metadata-block__title {
   font-size: $text-24;
-  font-weight: $font-bold;
+
   @media (max-width: 991px) {
     font-size: $text-20;
   }
@@ -17,6 +17,26 @@
   padding-bottom: 1.5rem;
 }
 
+.metadata-block__group--collection-pg {
+  @extend .row;
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  &:first-of-type {
+    padding-bottom: 0;
+  }
+
+  &:last-of-type:not(:only-of-type) {
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  &:last-of-type {
+    padding-bottom: 1.5rem;
+  }
+}
+
 .metadata-block__label-key,
 .metadata-block__label-value {
   @extend .col-12;
@@ -25,17 +45,20 @@
 .metadata-block__label-key {
   @extend .col-sm-4;
 
+  margin-top: 3px;
   font-size: $text-14;
   font-weight: $font-bold;
   text-align: right;
   color: $gray-60;
   letter-spacing: 1.5px;
-  line-height: 2;
   text-transform: uppercase;
-  align-self: flex-start;
+
   @media (max-width: 991px) {
-    margin-top: 0.5rem;
     text-align: left;
+  }
+
+  @media (max-width: 576px) {
+    margin-top: 0.5rem;
   }
 }
 
@@ -44,7 +67,8 @@
 
   font-size: $text-18;
   word-break: break-word;
+
   @media (max-width: 767px) {
-    font-size: 1rem;
+    font-size: $text-16;
   }
 }

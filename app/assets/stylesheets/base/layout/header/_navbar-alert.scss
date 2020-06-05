@@ -2,6 +2,7 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: $gray-10;
+
   @media (max-width: 575px) {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -17,6 +18,7 @@
 .alert-bar__text {
   font-weight: 700;
   flex-basis: 90%;
+
   @media (max-width: 767px) {
     flex-basis: 80%;
   }
@@ -30,6 +32,7 @@
   }
 
   .fa-close {
+    margin-right: 0;
     padding-left: 0.5rem;
     color: $gray-80;
   }
