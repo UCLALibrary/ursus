@@ -1,0 +1,29 @@
+<!-- SINAI -->
+<% if Flipflop.sinai? %>
+  <!--% unless has_search_parameters? % -->
+  <% if current_page?(root_path) %>
+    <%# if there are no input/search related params,
+              display the "sitelinks_search_box" partial -%>
+    <%= render 'shared/sitelinks_search_box' %>
+
+  <% else %>
+    <div class='content-container--index-page'>
+      <%= render 'facets' %>
+      <%= render 'search_results' %>
+    </div>
+  <% end %>
+
+<!-- URSUS -->
+<% else %>
+  <% unless has_search_parameters? %>
+    <%# if there are no input/search related params,
+              display the "home" partial -%>
+    <%= render 'home' %>
+
+  <% else %>
+    <div class='content-container--index-page'>
+      <%= render 'facets' %>
+      <%= render 'search_results' %>
+    </div>
+  <% end %>
+<% end %>
