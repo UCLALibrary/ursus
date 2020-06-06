@@ -1,12 +1,17 @@
 .content-container--home-page {
   @extend .row;
+
+  padding-bottom: 4rem;
 }
 
 .home-page__subtitle {
-  font-size: $text-24;
+  @extend .col-12;
+
+  font-size: $text-36;
   font-weight: $font-bold;
-  @media (max-width: 991px) {
-    font-size: $text-20;
+
+  @media (max-width: 767px) {
+    font-size: $text-28;
   }
 }
 
@@ -14,15 +19,16 @@
   @extend .col-12;
 
   font-size: $text-18;
+
   @media (max-width: 991px) {
-    font-size: 1rem;
+    font-size: $text-16;
   }
 }
 
-.home-page__metadata-wrapper {
-  @extend .row;
+.home-page-grid {
+  @extend .col;
+}
 
-  justify-content: space-between;
-  margin-right: 0;
-  margin-left: 0;
+.home-page-grid__row {
+  @extend .row;
 }
