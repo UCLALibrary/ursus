@@ -1,4 +1,6 @@
 .lede__row {
+  @extend .col-12;
+
   margin-bottom: 2rem;
 }
 
@@ -6,4 +8,8 @@
   padding-bottom: 2rem;
   font-size: $text-24;
   font-weight: $font-light;
+
+  @media (max-width: 767px) {
+    font-size: $text-20;
+  }
 }
