@@ -2,9 +2,19 @@
  <%= render 'catalog/constraints' %>
   <% url = request.original_url %>
   <% if url.include?('has_model_ssim') && url.include?('Collection') %>
-    <div class='search-count-wrapper'><h2 class='search-count__heading'><%= @response['response'].dig(:numFound) %> Collections</h2> <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %></div>
+    <div class='search-count-wrapper'>
+      <h2 class='search-count__heading'>
+        <%= @response['response'].dig(:numFound) %> Collections
+      </h2>
+      <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %>
+    </div>
   <% else %>
-    <div class='search-count-wrapper'><h2 class='search-count__heading'><%= @response['response'].dig(:numFound) %> Catalog Results</h2> <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %></div>
+    <div class='search-count-wrapper'>
+      <h2 class='search-count__heading'>
+        <%= @response['response'].dig(:numFound) %> Catalog Results
+      </h2>
+      <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %>
+    </div>
   <% end %>
   <hr class='divider'>
 
@@ -12,13 +22,13 @@
 
   <h2 class='sr-only'><%= t('blacklight.search.search_results') %></h2>
 
-  <%- if @response.empty? %>
+  <% if @response.empty? %>
     <%= render 'zero_results' %>
-  <%- elsif render_grouped_response? %>
+  <% elsif render_grouped_response? %>
     <%= render_grouped_document_index %>
-  <%- else %>
+  <% else %>
     <%= render_document_index %>
-  <%- end %>
+  <% end %>
 
   <%= render 'results_pagination' %>
 
