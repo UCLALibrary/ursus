@@ -10,6 +10,8 @@
 .env.production
 
 spec/examples.txt
+cypress/screenshots
+cypress/videos
 
 # Ignore bundler config.
 /.bundle
