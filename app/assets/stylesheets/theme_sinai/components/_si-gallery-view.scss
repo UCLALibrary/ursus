@@ -1,16 +1,8 @@
 .document__gallery-thumbnail--sinai {
-  float: right;
-  margin-bottom: 10px;
-  padding-left: 0;
-
   img {
     width: 100px;
     height: 100px;
     object-fit: none;
-  }
-  @media (max-width: 766px) {
-    padding-bottom: 1rem;
-    text-align: center;
   }
 }
 

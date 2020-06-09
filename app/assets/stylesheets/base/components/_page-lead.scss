@@ -1,15 +1,17 @@
-.lede__row {
-  @extend .col-12;
-
+.lead__row {
   margin-bottom: 2rem;
 }
 
-.lede__text--homepage {
+.lead__text--homepage {
   padding-bottom: 2rem;
   font-size: $text-24;
   font-weight: $font-light;
 
   @media (max-width: 767px) {
     font-size: $text-20;
+  }
+
+  @media (max-width: 575px) {
+    font-size: $text-18;
   }
 }

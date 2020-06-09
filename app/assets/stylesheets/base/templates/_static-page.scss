@@ -1,6 +1,5 @@
-.content-container--static-page {
-  @extend .col;
-}
+// .content-container--static-page {
+// }
 
 .static-page__title-row {
   display: inline-block;
@@ -17,18 +16,15 @@
 }
 
 .static-page__row {
-  @extend .row;
-
   padding: 1.5rem 0;
 }
 
 .static-page__subtitle {
-  font-size: $text-24;
+  font-size: $text-20;
   letter-spacing: 0.15rem;
 
   @media (max-width: 991px) {
     margin-bottom: 1rem;
-    font-size: $text-20;
   }
 }
 
@@ -40,4 +36,9 @@
   @media (max-width: 991px) {
     font-size: $text-16;
   }
+}
+
+.static-page__list {
+  padding-left: 24px;
+  font-size: $text-18;
 }
