@@ -11,7 +11,10 @@ env:
     - JENKINS_API_CALLISTO="${TRAVIS_JENKINS_API_CALLISTO}"
     - JENKINS_API_URSUS="${TRAVIS_JENKINS_API_URSUS}"
 script:
-  - docker-compose up --detach --build
+  - docker-compose up --detach db
+  - docker-compose run web bundle exec rails db:setup
+  - docker-compose run sinai bundle exec rails db:setup
+  - docker-compose up --detach
   - docker-compose run web sh start-ci.sh
 notifications:
   email: false
