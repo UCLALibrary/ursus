@@ -1,0 +1,109 @@
+.collection-grid {
+  @extend .col-md-12;
+  @extend .col-lg-9;
+}
+
+.collection-grid__title {
+  margin-bottom: 1.5rem;
+  font-size: $text-36;
+  font-weight: $font-bold;
+  color: $ucla-darker-blue;
+
+  @media (max-width: 991px) {
+    font-size: calc(100% + 0.875rem);
+  }
+
+  @media (max-width: 767px) {
+    font-size: $text-24;
+  }
+}
+
+.collection-grid__wrapper {
+  @extend .row;
+
+  margin-bottom: 5rem;
+
+  @media (max-width: 767px) {
+    margin-bottom: 3rem;
+  }
+}
+
+.collection-grid__item-wrapper {
+  @extend .col-sm-6;
+  @extend .col-xl-4;
+
+  margin-bottom: 2rem;
+  text-decoration: none;
+  transition: all 300ms ease-in-out 0s;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+
+  &:hover {
+    text-decoration: none;
+    color: $gray-80;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  &:active,
+  &:visited {
+    text-decoration: none;
+    color: $gray-80;
+  }
+}
+
+.collection-grid__item-image {
+  height: 375px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.grid-item-one {
+  background-image: image-url('home-collection-grid/ladnn_collection.jpg');
+}
+
+.grid-item-two {
+  background-image: image-url('home-collection-grid/bennett_collection.jpg');
+}
+
+.grid-item-three {
+  background-image: image-url('home-collection-grid/connell_collection.jpg');
+}
+
+.grid-item-four {
+  background-image: image-url('home-collection-grid/california_postcards.jpg');
+}
+
+.grid-item-five {
+  background-image: image-url('home-collection-grid/ethiopic_manuscripts.jpg');
+}
+
+.grid-item-six {
+  background-image: image-url('home-collection-grid/arkatov_collection.jpg');
+}
+
+.collection-grid__item-title {
+  padding-top: 1.25rem;
+  font-size: $text-20;
+  font-weight: $font-bold;
+}
+
+.collection-grid__item-liner {
+  border-top: 3px solid $ucla-gold;
+  margin: 0.5rem 0 2rem;
+  width: 100px;
+}
+
+.collection-grid__item-link {
+  padding: 0.5rem 0 0;
+  font-size: calc(100% - 0.25rem);
+  font-weight: $font-bold;
+  color: $ucla-blue;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
