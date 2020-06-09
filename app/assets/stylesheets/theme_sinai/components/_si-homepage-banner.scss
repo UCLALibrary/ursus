@@ -1,0 +1,8 @@
+.banner__homepage--sinai {
+  @include banner;
+
+  height: 400px;
+  max-height: 400px;
+  background-position: center center;
+  background-image: image-url('sinai/inner-homepage-masthead-syr0127_0009_f_004r.jpg');
+}
