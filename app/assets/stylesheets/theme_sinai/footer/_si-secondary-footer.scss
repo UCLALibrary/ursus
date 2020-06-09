@@ -12,6 +12,7 @@
 
   &:nth-child(1)::after {
     position: relative;
+    top: -3px;
     left: -15px;
     font-weight: 300;
     color: $sinai-beige;
