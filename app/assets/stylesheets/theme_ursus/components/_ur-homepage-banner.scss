@@ -1,0 +1,51 @@
+.banner__homepage--ursus {
+  @include banner;
+
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+    image-url('home-header/student-protesters_n4wr2000zz-89112.jpg');
+  height: 500px;
+  max-height: 550px;
+}
+
+.banner__overlay--ursus {
+  @include banner-overlay;
+
+  max-width: max-content;
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
+}
+
+.banner__title--ursus-home {
+  font-size: $text-50;
+  font-weight: bold;
+  color: $white;
+  // line-height: 50px;
+  @media (max-width: 767px) {
+    font-size: $text-36;
+  }
+}
+
+.banner__caption--ursus {
+  position: absolute;
+  bottom: 5px;
+  left: 50px;
+  width: 100%;
+  max-width: 550px;
+  font-size: $text-14;
+  color: $white;
+  font-style: italic;
+  line-height: 14px;
+
+  a,
+  a:active,
+  a:hover,
+  a:visited {
+    color: $white;
+  }
+
+  @media (max-width: 1280px) {
+    display: none;
+  }
+}
