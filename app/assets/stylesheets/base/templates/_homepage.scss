@@ -1,9 +1,9 @@
-.content-container--home-page {
+.content-container--homepage {
   padding-bottom: 4rem;
 }
 
-.home-page__subtitle {
-  @extend .col-12;
+.homepage__subtitle {
+  // @extend .col-12;
 
   font-size: $text-36;
   font-weight: $font-bold;
@@ -13,7 +13,7 @@
   }
 }
 
-.home-page__text {
+.homepage__text {
   @extend .col-12;
 
   font-size: $text-18;
@@ -23,10 +23,10 @@
   }
 }
 
-.home-page-grid {
-  @extend .col;
+.homepage-grid {
+  @extend .col-12;
 }
 
-.home-page-grid__row {
+.homepage-grid__row {
   @extend .row;
 }

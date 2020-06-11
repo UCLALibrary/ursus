@@ -1,7 +1,16 @@
-.static-page__list--ursus {
-  padding-left: 24px;
-  font-size: $text-18;
+.static-page__row--ursus {
+  @extend .row;
+}
 
+.static-page__subtitle--ursus {
+  @extend .col-lg-4;
+}
+
+.static-page__text--ursus {
+  @extend .col-lg-8;
+}
+
+.static-page__list--ursus {
   @media (max-width: 991px) {
     font-size: $text-16;
   }

@@ -4,12 +4,6 @@
   border-color: $sinai-red;
 }
 
-.btn-sinai--red:hover {
-  color: $white;
-  border-color: $sinai-red;
-  opacity: 0.9;
-}
-
 .btn-outline-sinai--red {
   color: $gray-80;
   border-color: $sinai-red;
@@ -23,6 +17,16 @@
   .blacklight-icons svg g,
   .blacklight-icons svg path {
     stroke: $white;
+  }
+}
+
+.btn-outline-sinai--white {
+  color: $white;
+  border-color: $white;
+
+  &:hover {
+    color: $white;
+    background-color: transparent;
   }
 }
 

@@ -1,0 +1,129 @@
+// @import "legacy/ursus/colors";
+// @import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,600&display=swap");
+
+// .static-container {
+//   max-width: 1140px;
+//   padding: 0px 50px;
+//   margin-top: 50px;
+//   p {
+//     font-size: 1.125rem;
+//     font-weight: 300;
+//     line-height: 1.688rem;
+//     font-family: Helvetica;
+//     padding: 0px;
+//     margin-bottom: 16px;
+//   }
+//   a:link {
+//     color: $callisto-drk-red !important;
+//     text-decoration: underline;
+//   }
+//   a:hover {
+//     color: black;
+//     font-weight: 500;
+//   }
+//   a:active {
+//     color: $callisto-drk-red !important;
+//     text-decoration: underline;
+//   }
+//   a:visited {
+//     color: $callisto-drk-red!important;
+//     text-decoration: underline;
+//   }
+//   ul {
+//     padding-left: 25px;
+//     font-size: 1.125rem;
+//     font-weight: 300;
+//     line-height: 1.688rem;
+//     font-family: Helvetica;
+//   }
+
+//   .static-page-title {
+//     display: inline-block;
+//     margin-bottom: 50px;
+//     h2 {
+//       font-family: "Didot", serif;
+//       letter-spacing: 1px;
+//       font-size: 36px;
+//       font-weight: 700;
+//       border-bottom: 10px solid $callisto-drk-red;
+//     }
+//   }
+
+//   h3{
+//     margin: 20px 0px;
+//     color: #4A4A4A;
+//     font-family: Helvetica;
+//     font-size: 24px;
+//     font-weight: bold;
+//     letter-spacing: 0.5px;
+//     line-height: 30px;
+//   }
+
+//   .snail_mail {
+//     height: 54px;
+//     color: #4A4A4A;
+//     font-family: Helvetica;
+//     font-size: 18px;
+//     font-weight: bold;
+//     line-height: 27px;
+//   }
+
+//   .term_link {
+//     a:link {
+//       color: green !important;
+//       text-decoration: none;
+//     }
+//     a:hover {
+//       color: black;
+//       font-weight: 500;
+//     }
+//     a:active {
+//       color: green !important;
+//       text-decoration: none;
+//     }
+//     a:visited {
+//       color: green !important;
+//       text-decoration: none;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 960px) {
+//   .static-container {
+//     padding: 0px 10px;
+//   }
+
+//   .static-page-subtitles {
+//     color: $ucla-blue;
+//     font-size: 18px;
+//     line-height: 27px;
+//     margin-bottom: 20px;
+//   }
+
+//   .static-page-text {
+//     font-size: 16px;
+//     line-height: 32px;
+//     padding: 0px 0px 0px 0px;
+//   }
+// }
+
+// .container {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+// .fluidWidthDownToAPoint {
+//   flex-grow: 999999; // a relatively big number: needed for OTHER column to be fixed width // if it's too big IE fails to compute
+//   flex-shrink: 1;
+//   flex-basis: 400px; //effectively it's min-width
+// }
+// .fixedUnlessOnOwnRow {
+//   flex-grow: 1; // a relatively small number: needed for THIS column to be fixed width. Not "0" so it will also fill to expand a row if it is on it's own in the row.
+//   flex-shrink: 1;
+//   flex-basis: 300px; //effectively it's min-width
+// }
+
+// ///////////////// stylings /////////////////////////
+
+// .fluidWidthDownToAPoint {
+//   $color: #00ffb4;
+// }

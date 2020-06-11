@@ -4,7 +4,7 @@
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
     image-url('home-header/student-protesters_n4wr2000zz-89112.jpg');
   height: 500px;
-  max-height: 550px;
+  max-height: 500px;
 }
 
 .banner__overlay--ursus {
@@ -21,9 +21,21 @@
   font-size: $text-50;
   font-weight: bold;
   color: $white;
-  // line-height: 50px;
+
   @media (max-width: 767px) {
+    font-size: calc(100% + 1.75rem);
+  }
+
+  @media (max-width: 575px) {
     font-size: $text-36;
+  }
+
+  @media (max-width: 375px) {
+    font-size: $text-28;
+  }
+
+  @media (max-width: 320px) {
+    font-size: $text-24;
   }
 }
 
@@ -36,7 +48,7 @@
   font-size: $text-14;
   color: $white;
   font-style: italic;
-  line-height: 14px;
+  line-height: $text-14;
 
   a,
   a:active,
