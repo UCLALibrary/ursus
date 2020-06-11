@@ -1,4 +1,4 @@
-@import "legacy/ursus/colors";
+@import 'legacy/ursus/colors';
 
 #facets {
   a {
@@ -19,7 +19,7 @@
   .range_limit .slider-handle {
     background-color: $callisto-drk-red !important;
     background-image: none;
-}
+  }
 
   .facets-heading {
     color: $gray-80 !important;
@@ -40,7 +40,7 @@
     color: $white !important;
   }
 
-  .card-header.collapse-toggle[aria-expanded="true"] {
+  .card-header.collapse-toggle[aria-expanded='true'] {
     background-color: $callisto-drk-red !important;
     color: $callisto-beige !important;
 
@@ -76,7 +76,6 @@
 
 @media screen and (max-width: 991px) {
   #facets {
-
     .navbar {
       background-color: $callisto-drk-red !important;
 

@@ -1,0 +1,19 @@
+<nav class='site-navbar--si-auth' role='navigation'>
+      <%= link_to(image_tag('sinai/logo-uclalib-blk.svg', class: 'si-auth__navbar-logo', alt: 'UCLA Library Logo'), 'https://www.library.ucla.edu/') %>
+</nav>
+
+<main class="si-auth-page">
+  <div class="si-auth__image-wrapper"></div>
+
+  <div class="si-auth-page__overlay">
+    <h2 class='si-auth-page__title'>SINAI MANUSCRIPTS DIGITAL&nbsp;LIBRARY</h2>
+    <p class='si-auth-page__sub-title'>A Publication of St. Catherine's Monastery of the Sinai, Egypt</p>
+
+    <% requested_path_url = #{@requested_path} %>
+    <%= button_to 'Access the Sinai Collection', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: requested_path_url, token: @token }, method: :post, class: 'si-auth-page__btn wiggle' %>
+  </div>
+
+  <div class="si-auth-page__lede">
+    <p>Explore the Arabic and Syriac manuscripts of St. Catherine’s Monastery of the Sinai. Widely recognized as the world’s oldest continually operating library, St. Catherine’s holdings represent an unparalleled resource to study the history and literature of the Eastern Mediterranean from late antiquity until early modernity.</p>
+  </div>
+</main>

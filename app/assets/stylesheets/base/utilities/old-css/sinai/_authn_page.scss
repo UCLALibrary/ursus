@@ -1,0 +1,138 @@
+//@import 'legacy/ursus/colors';
+
+//.authn-navbar {
+//  background-color: $white !important;
+//  padding: 0.25rem 0 0.75rem 0 //!important;
+//
+//  //  .navbar-logo {
+//  //    width: 150px !important;
+//  //  }
+//}
+
+//.authn-page {
+//  margin: 0 auto;
+//
+//  h2 {
+//    font-size: 2rem;
+//    font-weight: 600;
+//    line-height: 1.25;
+//  }
+//
+//  p {
+//    font-size: 1rem;
+//    font-weight: 300;
+//    line-height: 1.5;
+//  }
+//}
+
+//.image-block {
+//  background-image: image-url('sinai///sinai-1.jpg');
+//  background-size: cover;
+//  background-repeat: no-repeat;
+//  min-height: 450px;
+//  height: 100%;
+//}
+
+//.overlay-block {
+//  background-color: $callisto-drk-red;
+//  color: white;
+//  padding: 2rem 1.25rem;
+//
+//p {
+//  font-size: 1.15rem;
+//  font-weight: 300;
+//  line-height: 1.2;
+//  padding: 1rem 0;
+//}
+
+//.sinai-registration-btn {
+//  color: $white;
+//  background: none;
+//  border: 2px solid $white;
+//  font-size: 0.875rem;
+//  padding: 0.5rem 1.25rem;
+//}
+//}
+
+//@keyframes wiggle {
+//  20% {
+//    transform: translateX(4px);
+//  }
+//  40% {
+//    transform: translateX(-4px);
+//  }
+//  60% {
+//    transform: translateX(2px);
+//  }
+//  80% {
+//    transform: translateX(-1px);
+//  }
+//  100% {
+//    transform: translateX(0);
+//  }
+//}
+
+//.wiggle:hover {
+//  animation: wiggle 1s ease;
+//  animation-iteration-count: 2;
+//}
+
+//.text-block {
+//  padding: 1.75rem 1.25rem 0 1.25rem;
+//  p {
+//    line-height: 2;
+//  }
+//}
+
+//@media (min-width: 768px) {
+//  .image-block {
+//    min-height: 700px;
+//  }
+//}
+
+//@media (min-width: 991px) {
+//  .authn-page {
+//    max-width: 1400px;
+//    display: grid;
+//    grid-template-columns: minmax(200px, //300px) 1fr 1fr 1fr 6fr;
+//    grid-template-rows: 100px 1fr 0.5fr //1fr auto;
+//    padding-top: 0;
+//    h2 {
+//      font-size: 2.25rem;
+//    }
+//    p {
+//      font-size: 20px;
+//    }
+//  }
+
+//  .image-block {
+//    grid-column: 3 / 6;
+//    grid-row: 1 / 5;
+//  }
+
+//.overlay-block {
+//  grid-column: 1 / 4;
+//  grid-row: 2 / 3;
+//  max-height: 325px;
+//  padding-bottom: 2.5rem;
+//  padding-left: 2rem;
+//    p {
+//      font-size: 22px;
+//      padding-right: 2rem;
+//    }
+//}
+
+//  .text-block {
+//    grid-column: 1 / 3;
+//    grid-row: 3 / 5;
+//    padding: 2rem 1.25rem;
+//  }
+//}
+
+//@media (min-width: 1199px) {
+//  .authn-page {
+//    h2 {
+//      font-size: 2.5rem;
+//    }
+//  }
+//}
