@@ -18,5 +18,5 @@
 
 <!-- Collection page banner -->
 <% if controller.controller_name == 'catalog' && @document && @document[:has_model_ssim] && @document[:has_model_ssim][0] == 'Collection' %>
-  <%= render 'catalog/collection_banner--ursus' %>
+  <%= render 'catalog/banners/collection_banner--ursus' %>
 <% end %>

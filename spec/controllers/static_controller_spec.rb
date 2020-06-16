@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-#   gem 'rspec-collection_matchers'
+# gem 'rspec-collection_matchers'
 
 require 'rails_helper'
 
