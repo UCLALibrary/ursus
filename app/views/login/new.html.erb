@@ -10,7 +10,7 @@
     <p class='si-auth-page__sub-title'>A Publication of St. Catherine's Monastery of the Sinai, Egypt</p>
 
     <% requested_path_url = #{@requested_path} %>
-    <%= button_to 'Access the Sinai Collection', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: requested_path_url, token: @token }, method: :post, class: 'btn-base btn-outline-sinai--white si-auth-page__btn wiggle' %>
+    <%= button_to 'Access the Sinai Collection', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: @requested_path.to_s, token: @token }, method: :post, class: 'btn-base btn-outline-sinai--white si-auth-page__btn wiggle' %>
   </div>
 
   <div class="si-auth-page__lede">
