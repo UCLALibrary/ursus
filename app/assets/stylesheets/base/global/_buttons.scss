@@ -2,10 +2,10 @@
   @extend .btn;
 
   border-radius: 0;
-}
 
-.btn-base:hover {
-  background-color: $gray-40;
+  &:hover {
+    background-color: $gray-40;
+  }
 }
 
 .btn-base-lg {

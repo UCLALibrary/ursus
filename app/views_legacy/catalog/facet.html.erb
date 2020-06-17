@@ -4,7 +4,7 @@
 
 <!-- Facet name & number of Results -->
 <div class='modal-header'>
-  <h1 class='modal-title'><%= facet_field_label(@facet.key) %> <small class='modal_result_count'>( <%= @response['response'].dig(:numFound) %> Results )</small></h1>
+  <h1 class='modal-title'><%= facet_field_label(@facet.key) %> <span class='modal_result_count'>( <%= @response['response'].dig(:numFound) %> Results )</span></h1>
 
   <button type='button' class='blacklight-modal-close close' data-dismiss='modal' aria-label="<%= t('blacklight.modal.close') %>">
     <span aria-hidden="true">&times;</span>
@@ -12,13 +12,13 @@
 </div>
 
 <!-- A-Z Sort & Numerical Sort-->
-<div class="sort-options btn-group float-md-right a-z-num-sort">
+<div class="sort-options-wrapper">
   <% if @pagination.sort == 'index' -%>
-    <span class="active az btn btn-outline-secondary"><%= t('blacklight.search.facets.sort.index') %></span>
-    <%= link_to(t('blacklight.search.facets.sort.count'), @pagination.params_for_resort_url('count', search_state.to_h), class: "sort_change numeric btn btn-outline-secondary", data: { blacklight_modal: "preserve" }) %>
+    <span class="active az btn-base btn-base-outline--dark modal-btn"><%= t('blacklight.search.facets.sort.index') %></span>
+    <%= link_to(t('blacklight.search.facets.sort.count'), @pagination.params_for_resort_url('count', search_state.to_h), class: "sort_change numeric btn-base btn-base-outline--dark modal-btn", data: { blacklight_modal: "preserve" }) %>
   <% elsif @pagination.sort == 'count' -%>
-    <%=  link_to(t('blacklight.search.facets.sort.index'), @pagination.params_for_resort_url('index', search_state.to_h), class: "sort_change az btn btn-outline-secondary",  data: { blacklight_modal: "preserve" }) %>
-    <span class="active numeric btn btn-outline-secondary"><%= t('blacklight.search.facets.sort.count') %></span>
+    <%=  link_to(t('blacklight.search.facets.sort.index'), @pagination.params_for_resort_url('index', search_state.to_h), class: "sort_change az btn-base btn-base-outline--dark modal-btn",  data: { blacklight_modal: "preserve" }) %>
+    <span class="active numeric btn-base btn-base-outline--dark modal-btn"><%= t('blacklight.search.facets.sort.count') %></span>
   <% end -%>
 </div>
 
