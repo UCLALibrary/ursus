@@ -1,0 +1,94 @@
+// @import 'legacy/ursus/colors';
+
+// #facets {
+//   a {
+//     color: $callisto-drk-red !important;
+//   }
+
+//   .facet-content {
+//     border-left: 1px solid $gray-10;
+//     border-right: 1px solid $gray-10;
+//     border-bottom: 1px solid $gray-10;
+//   }
+
+//   // date-range slider
+//   .slider_js .slider-selection {
+//     background: $callisto-drk-beige;
+//   }
+
+//   .range_limit .slider-handle {
+//     background-color: $callisto-drk-red !important;
+//     background-image: none;
+//   }
+
+//   .facets-heading {
+//     color: $gray-80 !important;
+//   }
+
+//   .card-header.collapsed {
+//     a {
+//       color: $gray-80 !important;
+//     }
+//   }
+
+//   .text-success,
+//   .facet-values li .selected {
+//     color: $callisto-drk-red !important;
+//   }
+//   .facet-limit-active .card-header {
+//     background-color: $callisto-drk-red !important;
+//     color: $white !important;
+//   }
+
+//   .card-header.collapse-toggle[aria-expanded='true'] {
+//     background-color: $callisto-drk-red !important;
+//     color: $callisto-beige !important;
+
+//     a {
+//       color: $callisto-beige !important;
+//     }
+//   }
+
+//   .card-header.collapse-toggle.collapsed::after {
+//     color: $gray-80;
+//   }
+
+//   .card-header.collapse-toggle::after {
+//     color: $callisto-beige;
+//   }
+//   .card {
+//     border-radius: 0;
+//     border: 0;
+//     .btn {
+//       font-size: 1em;
+//       color: $callisto-drk-red !important;
+//       background-color: $callisto-beige !important;
+//       margin-left: 5px;
+//     }
+//     .facet-selected {
+//       .remove-icon {
+//         color: $callisto-drk-red;
+//         vertical-align: middle;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 991px) {
+//   #facets {
+//     .navbar {
+//       background-color: $callisto-drk-red !important;
+
+//       .facets-heading {
+//         color: $callisto-beige !important;
+//       }
+//     }
+
+//     .navbar-toggler {
+//       .svg-icon path {
+//         stroke: $callisto-beige !important;
+//         fill: $callisto-beige !important;
+//       }
+//     }
+//   }
+// }

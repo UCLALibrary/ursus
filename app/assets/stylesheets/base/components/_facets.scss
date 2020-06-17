@@ -1,0 +1,242 @@
+.facets-container {
+  @extend .col-md-12;
+  @extend .col-lg-3;
+
+  @media (max-width: 991px) {
+    margin-bottom: 1rem;
+  }
+}
+
+.facets__navbar {
+  padding-top: 0.25rem;
+
+  @media (max-width: 1199px) {
+    padding-top: 0;
+  }
+
+  @media (max-width: 991px) {
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-right: 0.45rem;
+    padding-bottom: 0.5rem;
+    background-color: $gray-10;
+
+    .navbar-toggler {
+      padding-right: 0;
+      padding-left: 0;
+      border-color: transparent;
+    }
+  }
+}
+
+.facets__navbar-heading {
+  font-size: $text-24;
+  color: $gray-80;
+
+  @media (max-width: 991px) {
+    color: $gray-80;
+  }
+}
+
+// Facets Navbar Icon
+.facets-toggleable-md .navbar-toggler {
+  display: none;
+}
+
+.facets-toggleable-md .facets-collapse {
+  display: block;
+  width: 100%;
+}
+
+// Displays Facets Navbar Icon
+// Toggles Facets Visibility
+@media (max-width: 991px) {
+  .facets-toggleable-md .navbar-toggler {
+    display: block;
+  }
+
+  .facets-toggleable-md .facets-collapse {
+    display: block;
+  }
+
+  .collapse:not(.show) {
+    display: none;
+  }
+
+  .facets__svg-icon {
+    width: 1.5em;
+    height: 1.5em;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transition: -webkit-transform 0.25s ease;
+    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+    stroke: $gray-80;
+    stroke-width: 0.05rem;
+
+    path {
+      fill: $gray-80;
+    }
+  }
+
+  .navbar-toggler.navbar-toggler-right[aria-expanded='true'] {
+    .facets__svg-icon {
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+      transition: -webkit-transform 0.25s ease;
+      transition: transform 0.25s ease;
+      transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+    }
+  }
+}
+
+// Individual Facet Sections
+.facet-field {
+  @extend .card;
+
+  margin-bottom: 0.2rem;
+  background-color: $white;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid $gray-10;
+}
+
+.facet-field__heading {
+  @extend .card-header;
+
+  margin-bottom: 0.5rem;
+  font-size: $text-16;
+  background-color: inherit;
+  border-radius: 0;
+  border-bottom: 0;
+  line-height: 1.2;
+
+  a,
+  a:active,
+  a:visited {
+    color: $gray-80;
+  }
+
+  a:hover {
+    color: $gray-60;
+  }
+
+  &.collapse-toggle[aria-expanded='true'] {
+    background-color: $gray-40;
+    border: 1px solid $gray-10;
+    border-radius: 0;
+  }
+}
+
+// Adds darker background to facet field heading when selected
+.facet-limit-active {
+  .facet-field__heading {
+    background-color: $gray-60;
+
+    a,
+    a:active,
+    a:visited,
+    a:hover {
+      color: $white;
+    }
+
+    &.collapse-toggle[aria-expanded='true'] {
+      background-color: $gray-60;
+    }
+
+    &.collapse-toggle.collapsed::after,
+    &.collapse-toggle::after {
+      color: $white;
+    }
+  }
+}
+
+.facet-field__heading.collapse-toggle.collapsed::after {
+  color: $gray-80;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.facet-field__heading.collapse-toggle::after {
+  color: $gray-80;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.facet-field__body {
+  @extend .card-body;
+
+  border-left: 1px solid $gray-10;
+  border-right: 1px solid $gray-10;
+
+  .btn {
+    background-color: $gray-40;
+  }
+
+  .btn[aria-expanded='true'] {
+    text-decoration: none;
+  }
+}
+
+// Blacklight Code
+.facet-values {
+  display: table;
+  margin-bottom: 0;
+  width: 100%;
+  table-layout: fixed;
+
+  li {
+    display: table-row;
+  }
+}
+
+.facet-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+  text-indent: 0;
+  overflow-wrap: initial;
+
+  a,
+  a:active,
+  a:visited {
+    color: $gray-80;
+  }
+}
+
+.more_facets {
+  a,
+  a:active,
+  a:visited {
+    color: $gray-80;
+  }
+}
+
+.facet-selected {
+  a:hover {
+    text-decoration: none;
+  }
+
+  .remove-icon {
+    padding-left: 0.5rem;
+    color: $white;
+
+    &:hover {
+      color: #f00;
+    }
+  }
+}
+
+.facet-count {
+  display: table-cell;
+  width: 3rem;
+  text-align: right;
+  vertical-align: top;
+}
