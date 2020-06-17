@@ -1,0 +1,56 @@
+.modal-content {
+  padding: 1.25rem;
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: $text-28;
+  font-weight: $font-light;
+}
+
+.modal_result_count {
+  padding-left: 0.5rem;
+}
+
+.sort-options-wrapper {
+  @extend .btn-group;
+
+  padding-bottom: 1.25rem;
+}
+
+// Controls background of A-Z & Numerical sort buttons when active
+.active.modal-btn {
+  color: $white;
+  background-color: $gray-60;
+}
+
+.modal-pagination {
+  @extend .pagination;
+}
+
+.modal-pagination__page-item {
+  @extend .page-item;
+}
+
+.modal-pagination__page-link {
+  @extend .page-link;
+
+  color: $gray-80;
+  background-color: $white;
+  border: 1px solid $gray-60;
+
+  &:hover {
+    color: $white;
+    background-color: $gray-60;
+  }
+}

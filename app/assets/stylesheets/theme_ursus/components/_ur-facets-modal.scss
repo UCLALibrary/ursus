@@ -1,0 +1,15 @@
+// Controls background of A-Z & Numerical sort buttons when active
+.active.modal-btn--ursus {
+  background-color: $ucla-darker-blue;
+}
+
+.modal-pagination__page-link--ursus {
+  color: $ucla-darker-blue;
+  background-color: $white;
+  border: 1px solid $ucla-darker-blue;
+
+  &:hover {
+    color: $white;
+    background-color: $ucla-darker-blue;
+  }
+}
