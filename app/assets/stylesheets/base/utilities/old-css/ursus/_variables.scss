@@ -1,4 +1,4 @@
-@import 'colors';
+// @import 'colors';
 
 /*
 html {
@@ -34,26 +34,22 @@ body {
 */
 
 //== Typography
-$font-family-sans-serif: 'Helvetica', 'Arial', sans-serif;
+// $font-family-sans-serif: 'Helvetica', 'Arial', sans-serif;
 
 //== Linked text colors
-$a-tags: 'a, a:active, a:hover, a:visited';
-$a-tags-hover: 'a:active, a:hover';
+// $a-tags: 'a, a:active, a:hover, a:visited';
+// $a-tags-hover: 'a:active, a:hover';
 
-#{$a-tags} {
-  color: $ucla-darker-blue;
-  text-decoration: none;
-}
-#{$a-tags-hover} {
-  color: $ucla-darker-blue;
-}
+// #{$a-tags} {
+//   color: $ucla-darker-blue;
+//   text-decoration: none;
+// }
+// #{$a-tags-hover} {
+//   color: $ucla-darker-blue;
+// }
 
 // Utilities
-hr.divider__blue {
-  border-top: 1px solid $ucla-lighter-blue;
-  margin: 40px 0px;
-}
-
-.a-z-num-sort {
-  padding-bottom: 20px;
-}
+// hr.divider__blue {
+//   border-top: 1px solid $ucla-lighter-blue;
+//   margin: 40px 0px;
+// }

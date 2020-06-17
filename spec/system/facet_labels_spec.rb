@@ -29,7 +29,7 @@ RSpec.describe 'The facet sidebar', :clean, type: :system do
 
     it 'displays expected facet labels' do
       visit('/catalog')
-      facet_headings = page.all(:css, 'h3.facet-field-heading/a').to_a.map(&:text)
+      facet_headings = page.all(:css, 'h3.facet-field__heading/a').to_a.map(&:text)
       expect(facet_headings).to contain_exactly(
         'Subject',
         'Resource Type',
