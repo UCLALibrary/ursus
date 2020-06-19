@@ -20,10 +20,11 @@
 .site-footer__block--ursus {
   &:nth-child(1) {
     align-self: center;
+    width: 12.5rem;
   }
 
   &:nth-child(2) {
-    @media (max-width: 767px) {
+    @media (max-width: 850px) {
       margin-top: 1.5rem;
     }
   }
