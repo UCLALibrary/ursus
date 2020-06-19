@@ -1,8 +1,8 @@
 <div class="container-full container-full--navbar site-navbar site-navbar--canon">
 
-<nav class="navbar navbar-expand-lg">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar--canon">
+  <button class="navbar-toggler navbar-toggler--canon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon navbar-toggler-icon--canon"></span>
   </button>
   <div class="collapse navbar-collapse navbar-collapse--cannon" id="navbarNav">
     <ul class="navbar-nav navbar-nav--canon">
@@ -26,8 +26,24 @@
 </nav>
 </div>
 
-<!--<script>
-var activeTab;
+<script>
+Blacklight.onLoad(function() {
+  $(".navbar-toggler--canon").click(function(){
+    $('.navbar-collapse--cannon').on('show.bs.collapse', function(){
+      //alert('The collapsible content is now fully shown.');
+      $('.site-navbar--canon').css( "border-bottom", "unset" );
+    });
+    $('.navbar-collapse--cannon').on('hide.bs.collapse', function(){
+      //alert('The collapsible content is about to be hidden.');
+      $('.site-navbar--canon').css( "border-bottom", "1px solid $ucla-lightest-blue" );
+    });
+    $('.navbar-collapse--cannon').on('hiden.bs.collapse', function(){
+      //alert('The collapsible content is now hidden.');
+      $('.site-navbar--canon').css( "border-bottom", "1px solid $ucla-lightest-blue" );
+    });
+  });
+});
+/* var activeTab;
 var navBarLinks = document
   .querySelector(".navbar-nav--canon")
   .querySelectorAll("li");
@@ -37,5 +53,5 @@ navBarLinks.forEach(option => {
     activeTab = option;
     activeTab.classList.add("site-navbar__item-link-active--canon");
   });
-});
-</script> -->
+}); */
+</script>

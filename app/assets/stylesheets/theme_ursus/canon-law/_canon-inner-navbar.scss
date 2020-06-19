@@ -35,15 +35,23 @@ In responsive mode, background of link items should change on hover to ucla ligh
     flex-direction: column;
   }
 }
+@media (max-width: 991px) {
+  .navbar--canon {
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  .navbar-toggler-icon--canon {
+    //rgba(0,59,92, 1) ucla-darkest-blue
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,85,135, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+}
 
 .navbar-collapse--canon {
   justify-content: space-evenly;
 }
 
 .site-navbar__item--canon {
-  //li
-  //@extend .nav-item;
-
   margin-right: 2rem;
 
   &:last-child {
@@ -53,16 +61,23 @@ In responsive mode, background of link items should change on hover to ucla ligh
   @media (max-width: 991px) {
     margin-right: 0;
     padding: 0.75rem 1.5rem;
-    border-bottom: 1px solid $white;
+    background-color: $white;
+    border-bottom: 1px solid $ucla-darker-blue;
 
     &:hover {
-      background-color: $gray-80;
+      background-color: $ucla-lightest-blue;
     }
   }
 
   @media (max-width: 767px) {
     padding-right: 1rem;
     padding-left: 1rem;
+  }
+}
+
+.site-navbar__item--canon:first-child {
+  @media (max-width: 991px) {
+    border-top: 1px solid $ucla-lightest-blue;
   }
 }
 
@@ -74,6 +89,10 @@ In responsive mode, background of link items should change on hover to ucla ligh
   //padding-right: 0;
   &:visited {
     color: $ucla-darker-blue;
+  }
+
+  @media (max-width: 991px) {
+    border-bottom: unset;
   }
 }
 
