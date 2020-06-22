@@ -5,7 +5,7 @@ class IiifService
     if Flipflop.sinai?
       "#{request&.base_url}/mirador.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
     else
-      if request.query_parameters.include?('cv') && document[:member_ids_ssim].size >= request.query_parameters['cv'].to_i
+      if request.query_parameters.include?('cv')
         "#{request&.base_url}/uv/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
       else
         "#{request&.base_url}/uv/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
