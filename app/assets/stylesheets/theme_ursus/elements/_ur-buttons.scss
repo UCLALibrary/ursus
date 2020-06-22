@@ -73,3 +73,27 @@
     background-color: $ucla-darker-blue;
   }
 }
+
+.btn-base--base--ursus-scroll {
+  color: $ucla-darkest-blue;
+  background-color: $white;
+  border-color: $ucla-darker-blue;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  z-index: 1;
+  bottom: 2%;
+  right: 2%;
+  display: none;
+
+  &:visited {
+    color: $ucla-darkest-blue;
+    background-color: $white;
+    border-color: $ucla-darker-blue;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $ucla-darker-blue;
+  }
+}
