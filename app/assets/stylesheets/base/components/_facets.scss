@@ -190,6 +190,7 @@
   margin-bottom: 0;
   width: 100%;
   table-layout: fixed;
+  color: $ucla-darker-blue;
 
   li {
     display: table-row;
@@ -239,4 +240,5 @@
   width: 3rem;
   text-align: right;
   vertical-align: top;
+  color: $gray-80;
 }
