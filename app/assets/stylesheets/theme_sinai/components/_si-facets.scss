@@ -1,0 +1,93 @@
+.facets__navbar--sinai {
+  @media (max-width: 991px) {
+    background-color: $sinai-red;
+  }
+}
+
+.facets__navbar-heading--sinai {
+  color: $white;
+}
+
+@media (max-width: 991px) {
+  .facets__svg-icon--sinai {
+    stroke: $white;
+    stroke-width: 0.05rem;
+
+    path {
+      fill: $white;
+    }
+  }
+}
+
+.facet-field__heading--sinai {
+  a,
+  a:active,
+  a:visited {
+    color: $sinai-red;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $sinai-red;
+  }
+
+  &.collapse-toggle[aria-expanded='true'] {
+    color: $white;
+    background-color: $sinai-red;
+    border: 1px solid $sinai-red;
+    border-radius: 0;
+  }
+}
+
+.facet-field__heading--sinai .collapse-toggle[aria-expanded='true'] .facet-field {
+  background-color: $sinai-red;
+  border: 1px solid $sinai-red;
+  border-radius: 0;
+
+  h3 {
+    color: $white;
+  }
+}
+
+
+.facet-limit-active {
+  .facet-field__heading--sinai {
+    color: $white;
+    background-color: $sinai-red;
+
+    &.collapse-toggle[aria-expanded='true'] {
+      background-color: $sinai-red;
+    }
+  }
+}
+
+.facet-field__heading--sinai.collapse-toggle::after {
+  color: $white;
+}
+
+.facet-field__body--sinai {
+  .btn {
+    color: $sinai-red;
+    background-color: $sinai-beige;
+  }
+
+  .remove-icon {
+    color: $sinai-red;
+  }
+}
+
+.facet-label--sinai {
+  a,
+  a:active,
+  a:visited {
+    color: $sinai-red;
+  }
+}
+
+.more_facets--sinai {
+  a,
+  a:active,
+  a:visited {
+    color: $ucla-darker-blue;
+  }
+}
