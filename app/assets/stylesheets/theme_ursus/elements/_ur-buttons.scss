@@ -75,8 +75,8 @@
 }
 
 .btn-base--base--ursus-scroll {
-  color: $ucla-darkest-blue;
-  background-color: $white;
+  color: $white;
+  background-color: $ucla-darker-blue;
   border-color: $ucla-darker-blue;
   width: 30px;
   height: 30px;
@@ -87,13 +87,13 @@
   display: none;
 
   &:visited {
-    color: $ucla-darkest-blue;
-    background-color: $white;
+    color: $white;
+    background-color: $ucla-darker-blue;
     border-color: $ucla-darker-blue;
   }
 
   &:hover {
     color: $white;
-    background-color: $ucla-darker-blue;
+    background-color: $ucla-darkest-blue;
   }
 }
