@@ -5,7 +5,9 @@
 }
 
 .facets__navbar-heading--sinai {
-  color: $white;
+  @media (max-width: 991px) {
+    color: $white;
+  }
 }
 
 @media (max-width: 991px) {
@@ -32,10 +34,16 @@
   }
 
   &.collapse-toggle[aria-expanded='true'] {
-    color: $white;
     background-color: $sinai-red;
     border: 1px solid $sinai-red;
     border-radius: 0;
+
+    a,
+    a:active,
+    a:visited,
+    a:hover {
+      color: $white;
+    }
   }
 }
 
@@ -48,7 +56,6 @@
     color: $white;
   }
 }
-
 
 .facet-limit-active {
   .facet-field__heading--sinai {
@@ -88,6 +95,6 @@
   a,
   a:active,
   a:visited {
-    color: $ucla-darker-blue;
+    color: $sinai-red;
   }
 }
