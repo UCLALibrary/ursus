@@ -19,29 +19,6 @@
   <% url = request.original_url %>
 <% end %>
 
-<!-- temporary href to evaluate scroll to top -->
-<a href="#" class="fa fa-chevron-up btn-base btn-base-sm btn-base--base btn-base--base--ursus-scroll"></a>
-<script type="text/javascript">
-  $(window).scroll(function () {
-    if ($(this).scrollTop() < 100) {
-      $('.btn-base--base--ursus-scroll').fadeOut();
-    } else {
-      $('.btn-base--base--ursus-scroll').fadeIn();
-    }
-  });
-
-  //Click event to scroll to top
-  $('.btn-base--base--ursus-scroll').click(function () {
-    $('html, body').animate(
-      {
-        scrollTop: 0,
-      },
-      800
-    );
-    return false;
-  });
-</script>
-
 <% collection_block_presenter = Ursus::CollectionBlockPresenter.new(response: @response) %>
 <% unless collection_block_presenter.collection_selected? %>
   <%= render 'browse_results' %>
