@@ -75,16 +75,16 @@
 }
 
 .btn-base--base--ursus-scroll {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  display: none;
+  width: 30px;
+  height: 30px;
   color: $white;
   background-color: $ucla-darker-blue;
   border-color: $ucla-darker-blue;
-  width: 30px;
-  position: fixed;
-  height: 30px;
-  bottom: 2%;
   z-index: 1;
-  right: 2%;
-  display: none;
 
   &:visited {
     color: $white;
