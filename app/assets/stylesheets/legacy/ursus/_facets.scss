@@ -1,3 +1,16 @@
+#facet-year_isim > div > div > ul {
+  display: none;
+}
+
+.slider_js .slider-selection {
+  background: #c3d7ee;
+}
+
+.range_limit input.range_begin,
+.range_limit input.range_end {
+  width: 4em;
+}
+
 // #facets {
 // .navbar {
 //   padding-top: 0.5rem;
@@ -6,14 +19,6 @@
 //   line-height: 1 !important;
 //   color: $ucla-darker-blue !important;
 // }
-
-#facet-year_isim > div > div > ul {
-  display: none;
-}
-
-.slider_js .slider-selection {
-  background: #c3d7ee;
-}
 
 // .text-success,
 // .facet-values li .selected {
@@ -51,10 +56,6 @@
 //   color: $ucla-darker-blue;
 // }
 
-.range_limit input.range_begin,
-.range_limit input.range_end {
-  width: 4em;
-}
 
 // .card-header.collapse-toggle[aria-expanded='true'] {
 //   background-color: #c3d7ee;

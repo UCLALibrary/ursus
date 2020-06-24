@@ -1,2 +1,5 @@
-<dt class="metadata-block__label-key">License</dt>
-<dd class="metadata-block__label-value"><%= render_license %></dd>
+<% if @document[:license_tesim] %>
+ <dt class="metadata-block__label-key">License</dt>
+
+  <dd class="metadata-block__label-value"><%= render_license %></dd>
+<% end %>
