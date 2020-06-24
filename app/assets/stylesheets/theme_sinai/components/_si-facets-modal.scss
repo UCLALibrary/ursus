@@ -1,0 +1,36 @@
+.facet-values--sinai {
+  color: $sinai-red;
+}
+
+.facet-label {
+  a,
+  a:active,
+  a:visited {
+    color: $sinai-red;
+  }
+}
+
+// Controls background of A-Z & Numerical sort buttons when active
+.modal-btn--sinai {
+  color: $sinai-red;
+  border-color: $gray-10;
+
+  &:hover {
+    color: $white;
+    background-color: $sinai-lighter-red;
+  }
+}
+
+.active.modal-btn--sinai {
+  color: $white;
+  background-color: $sinai-red;
+}
+
+// Prev | Next
+.modal-pagination__page-item--sinai {
+  @extend .page-item;
+
+  &:hover {
+    background-color: $sinai-red;
+  }
+}

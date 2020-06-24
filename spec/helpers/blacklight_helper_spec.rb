@@ -29,8 +29,8 @@ RSpec.describe BlacklightHelper, type: :helper do
           'id' => '8'
         )
       end
-      it 'returns a default value' do
-        expect(render_license).to match(/No license recorded/)
+      it 'does not render a licence' do
+        expect(render_license).to be ''
       end
     end
     context 'a different value' do

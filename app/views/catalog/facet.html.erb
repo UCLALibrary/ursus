@@ -1,0 +1,90 @@
+<!-- # individual facet -->
+
+<!-- SINAI -->
+<% if Flipflop.sinai? %>
+  <div class='facet-pagination top'>
+    <%= render partial: 'facet_pagination' %>
+  </div>
+
+  <!-- Facet name & number of Results -->
+  <div class='modal-header'>
+    <h1 class='modal-title'><%= facet_field_label(@facet.key) %> <span class='modal_result_count'>( <%= @response['response'].dig(:numFound) %> Results )</span></h1>
+
+    <button type='button' class='blacklight-modal-close close' data-dismiss='modal' aria-label="<%= t('blacklight.modal.close') %>">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!-- A-Z Sort & Numerical Sort-->
+  <div class="sort-options-wrapper">
+    <% if @pagination.sort == 'index' -%>
+      <span class="active az btn-base btn-base-outline--dark modal-btn modal-btn--sinai"><%= t('blacklight.search.facets.sort.index') %></span>
+      <%= link_to(t('blacklight.search.facets.sort.count'), @pagination.params_for_resort_url('count', search_state.to_h), class: "sort_change numeric btn-base btn-base-outline--dark modal-btn modal-btn--sinai", data: { blacklight_modal: "preserve" }) %>
+    <% elsif @pagination.sort == 'count' -%>
+      <%= link_to(t('blacklight.search.facets.sort.index'), @pagination.params_for_resort_url('index', search_state.to_h), class: "sort_change az btn-base btn-base-outline--dark modal-btn modal-btn--sinai", data: { blacklight_modal: "preserve" }) %>
+      <span class="active numeric btn-base btn-base-outline--dark modal-btn modal-btn--sinai"><%= t('blacklight.search.facets.sort.count') %></span>
+    <% end -%>
+  </div>
+
+  <!-- The Results
+      (calls the method render_facet_limit
+        from blacklight_701/app/helpers/blacklight/facets_helper_behavior.rb)
+  -->
+  <div class='modal-body'>
+    <%= render partial: 'facet_index_navigation' if @facet.index_range && @display_facet.index? %>
+    <div class="facet-extended-list">
+    <%= render_facet_limit(@display_facet, layout: false) %>
+    </div>
+  </div>
+
+  <!-- Pagination (calls the _facet_pagination partial.html.erb) -->
+  <div class='modal-footer'>
+    <div class='facet-pagination bottom'>
+      <%= render partial: 'facet_pagination' %>
+    </div>
+  </div>
+
+<!-- URSUS -->
+<% else %>
+  <div class='facet-pagination top'>
+    <%= render partial: 'facet_pagination' %>
+  </div>
+
+  <!-- Facet name & number of Results -->
+  <div class='modal-header'>
+    <h1 class='modal-title'><%= facet_field_label(@facet.key) %> <span class='modal_result_count'>( <%= @response['response'].dig(:numFound) %> Results )</span></h1>
+
+    <button type='button' class='blacklight-modal-close close' data-dismiss='modal' aria-label="<%= t('blacklight.modal.close') %>">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!-- A-Z Sort & Numerical Sort-->
+  <div class="sort-options-wrapper">
+    <% if @pagination.sort == 'index' -%>
+      <span class="active az btn-base btn-base-outline--dark modal-btn--ursus"><%= t('blacklight.search.facets.sort.index') %></span>
+      <%= link_to(t('blacklight.search.facets.sort.count'), @pagination.params_for_resort_url('count', search_state.to_h), class: "sort_change numeric btn-base btn-base-outline--dark modal-btn modal-btn--ursus", data: { blacklight_modal: "preserve" }) %>
+    <% elsif @pagination.sort == 'count' -%>
+      <%= link_to(t('blacklight.search.facets.sort.index'), @pagination.params_for_resort_url('index', search_state.to_h), class: "sort_change az btn-base btn-base-outline--dark modal-btn modal-btn--ursus", data: { blacklight_modal: "preserve" }) %>
+      <span class="active numeric btn-base btn-base-outline--dark modal-btn modal-btn--ursus"><%= t('blacklight.search.facets.sort.count') %></span>
+    <% end -%>
+  </div>
+
+  <!-- The Results
+      (calls the method render_facet_limit
+        from blacklight_701/app/helpers/blacklight/facets_helper_behavior.rb)
+  -->
+  <div class='modal-body'>
+    <%= render partial: 'facet_index_navigation' if @facet.index_range && @display_facet.index? %>
+    <div class="facet-extended-list">
+    <%= render_facet_limit(@display_facet, layout: false) %>
+    </div>
+  </div>
+
+  <!-- Pagination (calls the _facet_pagination partial.html.erb) -->
+  <div class='modal-footer'>
+    <div class='facet-pagination bottom'>
+      <%= render partial: 'facet_pagination' %>
+    </div>
+  </div>
+<% end %>
