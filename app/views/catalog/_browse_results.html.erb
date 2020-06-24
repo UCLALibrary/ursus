@@ -1,6 +1,5 @@
 <div class='search-results-container'>
 
-<!-- temporary to evaluate scroll to top -->
 <!-- place this anchor at the spot you want to scroll to -->
 <a id="scrollHere"></a>
 
@@ -9,7 +8,8 @@
 
 <script type="text/javascript">
   $(window).scroll(function () {
-    <!-- fade in the button when scrolling past the anchor -->
+
+  <!-- fade in the button when scrolling past the anchor -->
     if ($(this).scrollTop() < $('#scrollHere').offset().top) {
       $('.btn-base--base--ursus-scroll').fadeOut();
     } else {
@@ -21,7 +21,6 @@
   $('.btn-base--base--ursus-scroll').click(function () {
     var $container = $("html,body");
 
-    <!-- scroll to either ID -->
     <!-- scroll to ID method (scrolls to the anchor that you placed, leaves a nice bit of space at the top) -->
     $container.animate({scrollTop: $('#scrollHere').offset().top, scrollLeft: 100},800);
 
