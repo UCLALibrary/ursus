@@ -1,37 +1,13 @@
-// .site-navbar--canon {
-//   margin-top: 25px;
-//   margin-bottom: 32px;
-//   font-size: $text-20;
-//   font-weight: bold;
-//   background-color: $white;
-//   flex-direction: row;
-//   list-style-type: none;
-// }
-
-/*
-Specs (Use the new variables when applicable)
-Set font-size for nav links to 20px, 
-reduce to 18px at max-width of 767px, 
-to 16px at max-width of 575px
-Default link color is gray-60, active color is ucla-darker-blue with text-underline
-When navbar is responsive, text "Canon Law Menu" should appear next to collapsed menu icon
-In responsive mode, background of link items should change on hover to ucla lightest blue.
-*/
+.banner--collection-page--canon {
+  background-image: asset-url('canon-law-banner_21198-zz0014rx9x-2.jpg');
+}
 
 .site-navbar--canon {
   padding-bottom: 5px;
   background-color: $white;
   border-bottom: 1px solid $ucla-lightest-blue;
 
-  @media (max-width: 991px) {
-    font-size: $text-18;
-  }
   @media (max-width: 767px) {
-    font-size: $text-18;
-    flex-direction: column;
-  }
-  @media (max-width: 575px) {
-    font-size: $text-16;
     flex-direction: column;
   }
 }
@@ -97,7 +73,6 @@ In responsive mode, background of link items should change on hover to ucla ligh
 }
 
 .site-navbar__item-link--canon {
-  font-size: $text-20;
   font-weight: $font-bold;
   //@extend .nav-link;
 
@@ -111,53 +86,5 @@ In responsive mode, background of link items should change on hover to ucla ligh
 
   &:hover {
     text-decoration: text-underline;
-  }
-
-  @media (max-width: 991px) {
-    font-size: $text-18;
-  }
-
-  @media (max-width: 767px) {
-    font-size: $text-18;
-  }
-
-  @media (max-width: 575px) {
-    font-size: $text-16;
-  }
-}
-
-.banner--collection-page--canon {
-  background-image: asset-url('canon-law-banner_21198-zz0014rx9x-2.jpg');
-}
-
-.canon-law-center {
-  text-align: center;
-}
-
-.canon-law__title {
-  font-size: $text-24;
-  font-weight: bold;
-  line-height: 29px;
-}
-
-.canon-law__text {
-  font-size: $text-18;
-  line-height: 30px;
-
-  @media (max-width: 767px) {
-    font-size: $text-16;
-  }
-}
-
-.canon-law__subtitle {
-  padding-right: 25px;
-  font-size: $text-14;
-  text-align: right;
-  letter-spacing: 0.15rem;
-  text-transform: uppercase;
-
-  @media (max-width: 991px) {
-    margin-bottom: 1rem;
-    font-size: $text-14;
   }
 }
