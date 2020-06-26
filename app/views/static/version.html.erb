@@ -1,5 +1,13 @@
 <div>
-  <h4>Version <span title="<%= GIT_SHA %>"><%= BRANCH %> updated <%= LAST_DEPLOYED %></span></span></h4>
+  <h4>
+    Version <span title="<%= GIT_SHA %>"><%= BRANCH %> updated <%= LAST_DEPLOYED %></span>
+  </h4>
 </div>
 
-<%= button_to 'Collections Index Page', '/catalog?f%5Bhas_model_ssim%5D%5B%5D=Collection&view=list' %>
+<br>
+
+<%= link_to 'Collections Index Page', '/catalog?f%5Bhas_model_ssim%5D%5B%5D=Collection&view=list', class: "btn-base btn-base-lg btn-ursus--gold" %>
+
+<br><br>
+
+<%= link_to 'Canon Law Page', canonlaw_path, class: "btn-base btn-base-lg btn-ursus--gold" %>
