@@ -62,3 +62,34 @@
   padding: 0.2rem;
   background-color: $ucla-lightest-blue;
 }
+
+.canon-scroll-btn {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  display: none;
+  padding: 1rem;
+  color: $white;
+  background-color: $ucla-darker-blue;
+  border-color: $ucla-darker-blue;
+  z-index: 1;
+
+  &:hover,
+  &:visited {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &:hover {
+    background-color: $ucla-darkest-blue;
+  }
+
+  &::before {
+    position: relative;
+    top: -1px;
+  }
+
+  @media (max-width: 575px) {
+    padding: 0.5rem;
+  }
+}

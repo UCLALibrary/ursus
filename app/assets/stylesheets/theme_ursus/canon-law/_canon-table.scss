@@ -1,20 +1,9 @@
-.canon-table,
-.canon-table__sample {
-  @extend .table;
-  @extend .table-bordered;
-  @extend .table-striped;
-
+.canon-table--style {
   width: 100%;
   font-size: $text-14;
+  color: $gray-80;
   @media (max-width: 575px) {
     font-size: 12px;
-  }
-
-  tbody,
-  th,
-  tr,
-  td {
-    border: 1px solid $ucla-lightest-blue;
   }
 
   th,
@@ -27,6 +16,31 @@
   a:hover,
   a:visited {
     color: $ucla-darker-blue;
+  }
+}
+
+.canon-table,
+.canon-table__sample {
+  @extend .table;
+  @extend .table-bordered;
+  @extend .table-striped;
+  @extend .canon-table--style;
+
+  tbody,
+  th,
+  tr,
+  td {
+    border: 1px solid $ucla-lightest-blue;
+  }
+}
+
+.canon-table--no-border {
+  @extend .table;
+  @extend .canon-table--style;
+
+  th,
+  td {
+    border-top: transparent;
   }
 }
 
