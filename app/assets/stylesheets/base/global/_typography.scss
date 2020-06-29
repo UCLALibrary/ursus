@@ -14,6 +14,14 @@ $font-light: 300;
   text-align: center;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.strong {
+  font-weight: bold;
+}
+
 .bordered-title {
   border-bottom: 1rem solid $gray-80;
 }

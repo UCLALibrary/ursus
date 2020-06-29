@@ -1,5 +1,11 @@
 <div class='content-container--collection-page'>
-  <div class='static-page__title-row'>
-    <h2 class='static-page__title canon-law__title'>Table of Contents</h2>
+  <div class='canon-law__inner-container'>
+    <!-- # Scroll-to-top functionality -->
+    <%= render 'canon_law/canon-scroll' %>
+    <div class='static-page__title-row static-page__title-row--canon'>
+      <h2 class='static-page__title canon-law__title center'>Table of Contents</h2>
+    </div>
+    <!--# Toc -->
+   <%= render 'canon_law/canon-toc' %>
   </div>
 </div>
