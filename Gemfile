@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'blacklight-gallery', github: 'projectblacklight/blacklight-gallery'
+gem 'blacklight-gallery', '~> 1.7.0'
 gem 'blacklight_oai_provider', github: 'projectblacklight/blacklight_oai_provider'
 gem 'dotenv-rails', '>= 2.7.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -18,8 +18,8 @@ gem 'sassc-rails', '>= 2.1.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
-gem 'sidekiq', '~>5.2.7'
-gem 'sprockets', '< 4'
+gem 'sidekiq', '~> 5.2.7'
+gem 'sprockets', '>= 3.7.2', '< 4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -40,7 +40,7 @@ gem 'turbolinks', '~> 5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'bixby'
+  gem 'bixby', '~> 1.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Adds support for Capybara system testing and selenium driver
@@ -90,7 +90,7 @@ gem 'devise-guests', '~> 0.7', '>= 0.7.0'
 gem 'flipflop'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'httparty'
-gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
 gem 'loofah', '>= 2.4.0'
 gem 'rsolr', '>= 1.0'
 gem 'solrizer', '>= 4.1.0'
