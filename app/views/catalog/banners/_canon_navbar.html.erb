@@ -1,0 +1,30 @@
+<div class="container-full container-full--navbar site-navbar site-navbar--canon">
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar__wrapper site-navbar__wrapper--canon">
+    <button class="navbar-toggler navbar-toggler-icon--canon" type="button" data-toggle="collapse" data-target="#navbarNavCanon" aria-controls='navbarNav' aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class='collapse navbar-collapse' id='navbarNavCanon'>
+    <ul class='navbar-nav--canon'>
+      <li class='site-navbar__item site-navbar__item--canon'>
+        <%= link_to 'About Canon Law', canonlaw_path, class: 'site-navbar__item-link site-navbar__item-link--canon' %>
+      </li>
+      <li class='site-navbar__item site-navbar__item--canon'>
+        <%= link_to 'Introduction', canonlaw_introduction_path, class: 'site-navbar__item-link site-navbar__item-link--canon' %>
+      </li>
+      <li class='site-navbar__item site-navbar__item--canon'>
+        <%= link_to 'Table of Contents', canonlaw_table_of_contents_path, class: 'site-navbar__item-link site-navbar__item-link--canon' %>
+      </li>
+      <li class='site-navbar__item site-navbar__item--canon'>
+        <%= link_to 'Materiae Singulares', canonlaw_materiae_singulares_path, class: 'site-navbar__item-link site-navbar__item-link--canon' %>
+      </li>
+      <li class='site-navbar__item site-navbar__item--canon'>
+        <%= link_to 'Margarita Decretalium', canonlaw_margarita_decretalium_path, class: 'site-navbar__item-link site-navbar__item-link--canon' %>
+      </li>
+    </div>
+  </nav>
+</div>
+
+<!-- https://stackoverflow.com/questions/24514717/bootstrap-navbar-active-state-not-working -->
+<script type="text/javascript">
+$('a[href$="' + location.pathname + '"]').addClass('active');
+</script>

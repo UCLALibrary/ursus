@@ -1,0 +1,95 @@
+.banner--collection-page--canon {
+  background-image: asset-url('canon-law-banner_21198-zz0014rx9x-2.jpg');
+}
+
+.site-navbar__wrapper--canon {
+  @media (max-width: 991px) {
+    justify-content: flex-end;
+    padding-top: 0.25rem;
+  }
+}
+
+.site-navbar--canon {
+  background: $white;
+  border-bottom: 1px solid $ucla-lightest-blue;
+}
+
+.navbar-nav--canon {
+  @extend .navbar-nav;
+  @extend .nav;
+
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+}
+
+.site-navbar__item--canon {
+  font-size: $text-16;
+
+  @media (max-width: 991px) {
+    background-color: $white;
+    border-bottom: 1px solid $ucla-darkest-blue;
+
+    &:first-of-type {
+      border-top: 1px solid $ucla-lightest-blue;
+    }
+
+    &:hover {
+      background-color: $ucla-lightest-blue;
+
+      a {
+        color: $ucla-darker-blue;
+      }
+    }
+  }
+}
+
+.site-navbar__item-link--canon {
+  color: $gray-60;
+
+  &:active,
+  &:visited {
+    color: $gray-60;
+  }
+
+  &:hover {
+    padding-bottom: 0.15rem;
+    text-decoration: none;
+    color: $ucla-darker-blue;
+    border-bottom: 3px solid $ucla-darker-blue;
+  }
+
+  @media (max-width: 991px) {
+    &:hover {
+      padding-bottom: 0;
+      border-bottom: transparent;
+    }
+  }
+}
+
+.active {
+  padding-bottom: 0.15rem;
+  border-bottom: 3px solid $ucla-darker-blue;
+
+  &:active,
+  &:visited,
+  &:hover {
+    text-decoration: none;
+    color: $ucla-darker-blue;
+  }
+
+  @media (max-width: 991px) {
+    padding-bottom: 0;
+    border-bottom: transparent;
+  }
+}
+
+.navbar-toggler-icon--canon .navbar-toggler-icon {
+  @media (max-width: 991px) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 85, 135, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+}

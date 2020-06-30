@@ -1,2 +1,4 @@
+Sitemap: https://digital.library.ucla.edu/sitemap.xml
+
 User-agent: *
 Disallow:

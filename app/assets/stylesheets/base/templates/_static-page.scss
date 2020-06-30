@@ -5,6 +5,10 @@
 .static-page__title-row {
   display: inline-block;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
 }
 
 .static-page__title {

@@ -13,6 +13,13 @@ Rails.application.routes.draw do
   get '/login', to: 'login#new', as: 'login'
   get '/terms-of-use', to: 'static#sinai_terms_of_use'
 
+  # Canon Law
+  get '/canonlaw', to: 'canon_law#index'
+  get '/canonlaw/introduction', to: 'canon_law#introduction'
+  get '/canonlaw/table_of_contents', to: 'canon_law#table_of_contents'
+  get '/canonlaw/margarita_decretalium', to: 'canon_law#margarita'
+  get '/canonlaw/materiae_singulares', to: 'canon_law#materiae'
+
   get '/contact', to: 'static#contact'
   get '/version', to: 'static#version'
 

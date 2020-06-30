@@ -1,0 +1,95 @@
+.canon-law__inner-container {
+  margin: 0 auto;
+  width: 75%;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.static-page__title-row--canon {
+  display: block;
+  margin-bottom: 1;
+}
+
+.canon-law__title {
+  font-size: $text-28;
+
+  @media (max-width: 991px) {
+    font-size: $text-24;
+  }
+}
+
+.canon-law__subtitle {
+  font-size: $text-24;
+}
+
+.static-page__text-heading--canon,
+.static-page__text--canon {
+  line-height: 1.5;
+}
+
+.static-page__text-heading--canon {
+  margin-bottom: 1.5rem;
+}
+
+.static-page__text--canon {
+  font-size: $text-16;
+}
+
+.static-page__list--canon {
+  margin-top: 0.5rem;
+
+  ul {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 991px) {
+    font-size: $text-16;
+
+    ul {
+      font-size: inherit;
+    }
+  }
+}
+
+.canon-byline-row {
+  text-align: right;
+}
+
+.canon-byline-label {
+  display: inline;
+  padding: 0.2rem;
+  background-color: $ucla-lightest-blue;
+}
+
+.canon-scroll-btn {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  display: none;
+  padding: 1rem;
+  color: $white;
+  background-color: $ucla-darker-blue;
+  border-color: $ucla-darker-blue;
+  z-index: 1;
+
+  &:hover,
+  &:visited {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &:hover {
+    background-color: $ucla-darkest-blue;
+  }
+
+  &::before {
+    position: relative;
+    top: -1px;
+  }
+
+  @media (max-width: 575px) {
+    padding: 0.5rem;
+  }
+}

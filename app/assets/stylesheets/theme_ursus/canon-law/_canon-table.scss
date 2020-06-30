@@ -1,0 +1,111 @@
+.canon-table--style {
+  width: 100%;
+  font-size: $text-14;
+  color: $gray-80;
+  @media (max-width: 575px) {
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    padding: 0.25rem 0.5rem;
+  }
+
+  a,
+  a:active,
+  a:hover,
+  a:visited {
+    color: $ucla-darker-blue;
+  }
+}
+
+.canon-table,
+.canon-table__sample {
+  @extend .table;
+  @extend .table-bordered;
+  @extend .table-striped;
+  @extend .canon-table--style;
+
+  tbody,
+  th,
+  tr,
+  td {
+    border: 1px solid $ucla-lightest-blue;
+  }
+}
+
+.canon-table--no-border {
+  @extend .table;
+  @extend .canon-table--style;
+
+  th,
+  td {
+    border-top: transparent;
+  }
+}
+
+.canon-table-responsive {
+  @extend .table-responsive-md;
+}
+
+.canon-table__thead {
+  color: $white;
+  background-color: $ucla-darker-blue;
+  border-color: $ucla-lightest-blue;
+}
+
+.canon-table__pagination {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+
+.canon-table__anchor {
+  font-size: $text-14;
+  font-weight: $font-bold;
+
+  a,
+  a:active,
+  a:hover {
+    color: $ucla-darker-blue;
+  }
+
+  a:visited {
+    color: $gray-60;
+  }
+}
+
+.canon-table__anchor::after {
+  position: relative;
+  margin-right: 0.25rem;
+  margin-left: 0.5rem;
+  font-size: 0.9em;
+  font-weight: $font-bold;
+  color: $ucla-darker-blue;
+  content: '/';
+}
+
+.canon-table-section {
+  margin: 0 auto;
+  width: 85%;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+  @media (max-width: 500px) {
+    width: 300px;
+  }
+  @media (max-width: 320px) {
+    width: 250px;
+  }
+}
+
+.canon-table-section__heading {
+  margin: 0 auto;
+  padding: 0.15rem 0.5rem;
+  font-size: 1.25rem;
+  text-align: center;
+  color: $white;
+  background-color: #005587;
+  border-radius: 0.1rem;
+}
