@@ -238,8 +238,7 @@ module Blacklight::BlacklightHelperBehavior
 
   ##
   # Render the document's title in the embedded thumbnail alt tag
-    def render_document_alttag(*args)
-    options = args.extract_options!
+  def render_document_alttag(*args)
     document = args.first
     document ||= @document
     presenter(document).heading
