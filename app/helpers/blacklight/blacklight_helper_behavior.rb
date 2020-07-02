@@ -237,6 +237,14 @@ module Blacklight::BlacklightHelperBehavior
   end
 
   ##
+  # Render the document's title in the embedded thumbnail alt tag
+  def render_document_alttag(*args)
+    document = args.first
+    document ||= @document
+    presenter(document).heading
+  end
+
+  ##
   # Get the current "view type" (and ensure it is a valid type)
   #
   # @param [Hash] query_params the query parameters to check
