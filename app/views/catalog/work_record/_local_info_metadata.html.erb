@@ -22,14 +22,19 @@
         </dt>
       <% end %>
       <%= render_opac_link %>
-      <%= render_iiif_manifest_link %>
+
+      <!-- iiif drag and drop logo -->
+      <dt class='metadata-block__label-key'>Manifest url</dt>
+      <dd class='metadata-block__label-value'>
+        <a href="<%= iiif_manifest_link %>" target="_blank"><%= image_tag('iiif-logo.png', alt: 'IIIF Manifest') %></a>
+      </dd>
+
     </dl>
-
-  <% if Flipflop.sinai? %>
-    <hr class='divider divider--sinai'>
-  <% else %>
-    <hr class='divider divider--white'>
-  <% end %>
-
+    <hr>
+    <% if Flipflop.sinai? %>
+      <hr class='divider divider--sinai'>
+    <% else %>
+      <hr class='divider divider--white'>
+    <% end %>
   </div>
 <% end %>
