@@ -20,3 +20,13 @@
     </div>
   </div>
 <% end %>
+
+<!-- Remove page jump on browse facet label click -->
+<script type="text/javascript">
+  document.body.addEventListener('click', function (event) {
+    // only respond when facet link is clicked - filter out clicks on any other elements
+    if (event.target.nodeName == 'A' && event.target.getAttribute('href').includes('#facet-')) {
+      event.preventDefault();
+    }
+  });
+</script>
