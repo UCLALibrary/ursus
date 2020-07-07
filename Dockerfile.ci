@@ -3,7 +3,8 @@ FROM uclalibrary/ursus
 WORKDIR /ursus
 
 # New apt packages - these can be removed once they're incorporated into the base uclalibrary/ursus image on dockerhub
-RUN apt-get install -y --allow-downgrades nodejs=8.17.0-1nodesource1
+RUN apt-get install -y nodejs=10.21.0~dfsg-1~deb10u1
+
 EXPOSE 3000
 
 # Install Ruby Gems

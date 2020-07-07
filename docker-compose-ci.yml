@@ -47,6 +47,12 @@ services:
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+  
+  e2e:
+    build: ./e2e
+    env_file:
+      - ./default.env
+      - ./docker.env
 
   solr:
     image: uclalibrary/solr-ursus
