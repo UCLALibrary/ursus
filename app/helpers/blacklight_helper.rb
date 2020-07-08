@@ -51,7 +51,7 @@ module BlacklightHelper
     return unless iiif_manifest
     ucla_iiif = "https://digital.library.ucla.edu/uv/uv.html#?manifest="
     manifest = CGI.escape(iiif_manifest)
-    iiif_manifest = ucla_iiif + manifest
+    iiif_manifest = manifest
     iiif_manifest.to_s
   end
 end
