@@ -26,9 +26,8 @@
       <!-- iiif drag and drop logo -->
       <dt class='metadata-block__label-key'>Manifest url</dt>
       <dd class='metadata-block__label-value'>
-        <a href="<%= iiif_manifest_link %>" target="_blank"><%= image_tag('iiif-logo.png', alt: 'IIIF Manifest') %></a>
+        <a href="<%= @document[:iiif_manifest_url_ssi] %>" target="_blank"><%= image_tag('iiif-logo.png', alt: 'IIIF Manifest') %></a>
       </dd>
-
     </dl>
     <hr>
     <% if Flipflop.sinai? %>
