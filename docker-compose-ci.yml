@@ -53,6 +53,9 @@ services:
     env_file:
       - ./default.env
       - ./docker.env
+    environment: 
+      PERCY_TOKEN: $PERCY_TOKEN
+      TRAVIS_BRANCH: $TRAVIS_BRANCH
 
   solr:
     image: uclalibrary/solr-ursus
