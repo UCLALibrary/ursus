@@ -1,0 +1,16 @@
+{
+  "name": "ursus-e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "sh ./start-e2e.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@percy/cypress": "^2.3.1",
+    "cypress": "^4.9.0"
+  },
+  "dependencies": {}
+}

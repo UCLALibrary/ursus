@@ -6,16 +6,11 @@ RUN apt-get update -qq
 # Add https support to apt to download yarn & newer node
 RUN apt-get install -y  apt-transport-https
 
-# Add node and yarn repos and install them along
-# along with other rails deps
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+# Add yarn repo and install along with other rails deps
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update -qq
-RUN apt-get install mariadb-client build-essential libpq-dev yarn nodejs=8.17.0-1nodesource1 chromium-driver libatk-bridge2.0-0 libgtk-3.0 -y
-
-# Cypress dependencies - won't want these in prod
-RUN apt-get install -y libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+RUN apt-get install mariadb-client build-essential libpq-dev yarn nodejs chromium-driver libatk-bridge2.0-0 libgtk-3.0 -y
 
 WORKDIR /ursus
 
