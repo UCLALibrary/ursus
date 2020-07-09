@@ -45,13 +45,4 @@ module BlacklightHelper
     opac_link = "<dt class = 'metadata-block__label-key'>Opac url</dt><dd class = 'metadata-block__label-value'><a href = '" + opac_link + "'>" + opac_link + "</a></dd>"
     opac_link.html_safe
   end
-
-  def iiif_manifest_link
-    iiif_manifest = @document[:iiif_manifest_url_ssi]
-    return unless iiif_manifest
-    ucla_iiif = "https://digital.library.ucla.edu/uv/uv.html#?manifest="
-    manifest = CGI.escape(iiif_manifest)
-    iiif_manifest = ucla_iiif + manifest
-    iiif_manifest.to_s
-  end
 end
