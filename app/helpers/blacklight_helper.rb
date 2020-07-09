@@ -46,12 +46,17 @@ module BlacklightHelper
     opac_link.html_safe
   end
 
-  def iiif_manifest_link
-    iiif_manifest = @document[:iiif_manifest_url_ssi]
-    return unless iiif_manifest
-    ucla_iiif = "https://digital.library.ucla.edu/uv/uv.html#?manifest="
-    manifest = CGI.escape(iiif_manifest)
-    iiif_manifest = ucla_iiif + manifest
-    iiif_manifest.to_s
+  def render_table_of_contents_key
+    unless @document[:toc_tesim].nil? || @document[:toc_tesim].empty?
+      'Table of contents'
+    end
+  end
+
+  def render_table_of_contents_value
+    unless @document[:toc_tesim].nil? || @document[:toc_tesim].empty?
+      table_contents = @document[:toc_tesim]
+      return unless table_contents
+      table_contents[0]
+    end
   end
 end
