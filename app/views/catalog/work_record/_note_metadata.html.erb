@@ -17,6 +17,12 @@
           <% else %>
             <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
               <%= doc_presenter.field_value field %>
+
+              <% table_of_contents = @document[:toc_tesim] %>
+              <%= raw table_of_contents %>
+            </dd>
+            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
+
             </dd>
           <% end %>
         </dt>
