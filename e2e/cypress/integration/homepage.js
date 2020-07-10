@@ -2,7 +2,7 @@
 
 describe('Ursus Homepage', () => {
   it('Visits the Homepage', () => {
-    cy.visit('/');
+    cy.visit('https://digital.library.ucla.edu');
     cy.percySnapshot();
   });
   it('Visits the Homepageand clicks through to Los Angeles Daily News Negatives', () => {
