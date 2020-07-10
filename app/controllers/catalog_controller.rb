@@ -259,8 +259,10 @@ class CatalogController < ApplicationController
     config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
     # config.add_sort_field 'sort_title_ssort asc', label: 'Title (A-Z)'
     # config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
-    config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
-    config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
+    # config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
+    # config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
+    config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
+    config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
