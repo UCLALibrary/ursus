@@ -130,7 +130,7 @@ class CatalogController < ApplicationController
     #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
     config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
-    config.add_index_field 'sort_year_isi', label: 'Date Created'
+    config.add_index_field 'date_created_tesim', label: 'Date Created'
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
     config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
@@ -259,10 +259,13 @@ class CatalogController < ApplicationController
     config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
     # config.add_sort_field 'sort_title_ssort asc', label: 'Title (A-Z)'
     # config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
-    # config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
-    # config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
-    config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
-    config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
+    if Flipflop.sinai?
+      config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
+      config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
+    else
+      config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
+      config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
+    end
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
