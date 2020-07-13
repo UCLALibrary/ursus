@@ -8,7 +8,6 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       'summary_tesim' => 'Summary',
       'description_tesim' => 'Description',
       'provenance_tesim' => 'Provenance',
-      'toc_tesim' => 'Table of Contents',
       'contents_note_tesim' => 'Contents note',
       'colophon_tesim' => 'Colophon',
       'incipit_tesim' => 'Incipit',
@@ -44,10 +43,6 @@ RSpec.describe Ursus::NoteMetadataPresenter do
         expect(config['provenance_tesim'].to_s).to eq('Provenance')
       end
 
-      it 'returns the Table of Contents Key' do
-        expect(config['toc_tesim'].to_s).to eq('Table of Contents')
-      end
-
       it 'returns the Contents note Key' do
         expect(config['contents_note_tesim'].to_s).to eq('Contents note')
       end
@@ -71,7 +66,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.note_terms).to be_instance_of(Hash)
-        expect(all).to eq 9
+        expect(all).to eq 8
         expect(config.length).to eq all
       end
 

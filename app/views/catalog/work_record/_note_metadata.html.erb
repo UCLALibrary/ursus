@@ -5,22 +5,32 @@
 <div class='metadata-block'>
     <h5 class='metadata-block__title'>Notes</h5>
     <dl class='metadata-block__group'>
+      <!-- LOOP START -->
       <% note.each do |field_name, field| -%>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <!-- KEY -->
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
-          <!-- VALUE -->
-          <% if Flipflop.sinai? %>
-            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--sinai">
-              <%= doc_presenter.field_value field %>
-            </dd>
-          <% else %>
-            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
-              <%= doc_presenter.field_value field %>
-            </dd>
-          <% end %>
+
+        <!-- VALUE -->
+        <!-- SINAI -->
+        <% if Flipflop.sinai? %>
+          <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--sinai">
+            <%= doc_presenter.field_value field %>
+          </dd>
+
+        <!-- URSUS -->
+        <% else %>
+          <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
+            <%= raw doc_presenter.field_value field %>
+          </dd>
         </dt>
+        <% end %>
       <% end %>
+    <!-- LOOP END -->
+      <dt class='metadata-block__label-key'><%= render_table_of_contents_key %></dt>
+      <dd class='metadata-block__label-value'>
+        <%= raw render_table_of_contents_value %>
+      </dd>
     </dl>
 
   <% if Flipflop.sinai? %>

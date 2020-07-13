@@ -45,4 +45,18 @@ module BlacklightHelper
     opac_link = "<dt class = 'metadata-block__label-key'>Opac url</dt><dd class = 'metadata-block__label-value'><a href = '" + opac_link + "'>" + opac_link + "</a></dd>"
     opac_link.html_safe
   end
+
+  def render_table_of_contents_key
+    unless @document[:toc_tesim].nil? || @document[:toc_tesim].empty?
+      'Table of contents'
+    end
+  end
+
+  def render_table_of_contents_value
+    unless @document[:toc_tesim].nil? || @document[:toc_tesim].empty?
+      table_contents = @document[:toc_tesim]
+      return unless table_contents
+      table_contents[0]
+    end
+  end
 end
