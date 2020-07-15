@@ -62,7 +62,7 @@ services:
       TRAVIS_PULL_REQUEST: $TRAVIS_PULL_REQUEST
 
   solr:
-    image: uclalibrary/solr-ursus
+    image: uclalibrary/solr-ursus:2020-07-15
 
   solr_test:
-    image: uclalibrary/solr-ursus
+    image: uclalibrary/solr-ursus:2020-07-15
