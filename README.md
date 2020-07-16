@@ -35,14 +35,26 @@ cd ursus
 Set up the databases:
 ```
 docker-compose run web bundle exec rails db:setup
+docker-compose run sinai bundle exec rails db:setup
 ```
 
-Bring up the development environment:
+Bring up the development environment. Do this _after_ setting up the databases - the startup scripts require the database to be ready so that they can set feature flags e.g. for the sinai UI mode.
 ```
 docker-compose up
 ```
 
 Ursus should now be running with its regular look on [port 3003](http://localhost:3003), and on [port 3004](http://localhost:3004) with the [Sinai Manuscripts Digital Library](https://sinaimanuscripts.library.ucla.edu/) UI enabled.
+
+### Running in standalone mode
+
+The file `docker-compose-standalone.yml` includes a setup with a clone of the ursus-stage and sinai-stage solr indexes, so you do not need to run californica and manually ingest material (in fact, californica should #not# be running to avoid port conflicts.)
+
+You can select this setup in one of three ways:
+- Delete the file `docker-compose.yml`, which by default is a symlink to `docker-compose-with-californica.yml`. Then run `ln -s docker-compose-standalone.yml docker-compose.yml` to create a new symlink.
+- Set the environment variable `COMPOSE_FILE=docker-compose-standalone.yml`. You can do this in each terminal you open or add it to an `ursus/.env` file (you can start one with  `cp default.env ursus.env`.)
+- Every time you run `docker-compose`, add the flag `-f docker-compose-standalone.yml` _before_ any subcommands (e.g. `docker-compose -f docker-compose-standalone.yml run web bash`.)
+
+Otherwise, the setup process is the same.
 
 ### Running linters and unit tests
 
