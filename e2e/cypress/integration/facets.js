@@ -11,6 +11,7 @@ describe('Ursus Homepage', () => {
     cy.get('a[href*="Academy"]').click({ force: true });
     cy.get('.filter-label-key').contains('Subject');
     cy.get('.filter-label-value').contains('Academy Awards (Motion pictures)');
+    cy.percySnapshot();
   });
   it('Visits the Homepage, opens on the Resource Type facet, clicks on Cartographic, opens on the Language facet, clicks on English and verifies page load', () => {
     cy.visit('https://digital.library.ucla.edu');
@@ -85,6 +86,7 @@ describe('Ursus Homepage', () => {
     cy.get(
       '.filter-named_subject_sim > .filter-group__label > .filter-label-value'
     ).contains('Tournament of Roses');
+    cy.percySnapshot();
   });
   it('Visits the Homepage, opens on the Dates facet, enters a Starting Date, enters an ending date and verifies page load', () => {
     cy.visit('https://digital.library.ucla.edu');
@@ -110,6 +112,7 @@ describe('Ursus Homepage', () => {
     cy.get('a[href*="Ethiopic"]').click({ force: true });
     cy.get('.filter-label-key').contains('Collection');
     cy.get('.filter-label-value').contains('Ethiopic Manuscripts');
+    cy.percySnapshot();
   });
   it('Visits the Homepage, clicks on the Genre facet, clicks on more, clicks on next, clicks Architectural drawings and verifies the page load', () => {
     cy.visit('https://digital.library.ucla.edu');
@@ -121,6 +124,7 @@ describe('Ursus Homepage', () => {
     cy.get('a[href*="Architectural+drawings"]').click({ force: true });
     cy.get('.filter-label-key').contains('Genre');
     cy.get('.filter-label-value').contains('Architectural drawings');
+    cy.percySnapshot();
   });
   it('Visits the Homepage, clicks on the Subject facet, clicks Landmarks and verifies the page load', () => {
     cy.visit('https://digital.library.ucla.edu');
@@ -132,5 +136,6 @@ describe('Ursus Homepage', () => {
     cy.get('a[href*="Landmarks"]').click({ force: true });
     cy.get('.filter-label-key').contains('Subject');
     cy.get('.filter-label-value').contains('Landmarks');
+    cy.percySnapshot();
   });
 });
