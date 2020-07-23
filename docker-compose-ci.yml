@@ -19,6 +19,8 @@ services:
       RAILS_HOST: web
     expose:
       - 3000
+    ports:
+      - 3003:3000
   
   sinai:
     build:
@@ -40,6 +42,8 @@ services:
       RAILS_HOST: sinai
     expose:
       - 3000
+    ports:
+      - 3004:3000
 
   db:
     image: mysql:5.6
@@ -48,50 +52,6 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
   
-  e2e:
-    build: ./e2e
-    env_file:
-      - ./default.env
-      - ./docker.env
-    environment:
-      - CI
-      - CONTINUOUS_INTEGRATION
-      - DEBIAN_FRONTEND
-      - HAS_JOSH_K_SEAL_OF_APPROVAL
-      - PERCY_TOKEN
-      - TRAVIS
-      - TRAVIS_ALLOW_FAILURE
-      - TRAVIS_APP_HOST
-      - TRAVIS_BRANCH
-      - TRAVIS_BUILD_DIR
-      - TRAVIS_BUILD_ID
-      - TRAVIS_BUILD_NUMBER
-      - TRAVIS_BUILD_STAGE_NAME
-      - TRAVIS_BUILD_WEB_URL
-      - TRAVIS_COMMIT
-      - TRAVIS_COMMIT_MESSAGE
-      - TRAVIS_COMMIT_RANGE
-      - TRAVIS_COMPILER
-      - TRAVIS_CPU_ARCH
-      - TRAVIS_DEBUG_MODE
-      - TRAVIS_DIST
-      - TRAVIS_EVENT_TYPE
-      - TRAVIS_JOB_ID
-      - TRAVIS_JOB_NAME
-      - TRAVIS_JOB_NUMBER
-      - TRAVIS_JOB_WEB_URL
-      - TRAVIS_OS_NAME
-      - TRAVIS_OSX_IMAGE
-      - TRAVIS_PULL_REQUEST
-      - TRAVIS_PULL_REQUEST_BRANCH
-      - TRAVIS_PULL_REQUEST_SHA
-      - TRAVIS_PULL_REQUEST_SLUG
-      - TRAVIS_REPO_SLUG
-      - TRAVIS_SECURE_ENV_VARS
-      - TRAVIS_SUDO
-      - TRAVIS_TAG
-      - TRAVIS_TEST_RESULT
-
   solr:
     image: uclalibrary/solr-ursus:2020-07-22
 
