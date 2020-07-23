@@ -19,6 +19,8 @@ services:
       RAILS_HOST: web
     expose:
       - 3000
+    ports:
+      - 3003:3000
   
   sinai:
     build:
@@ -40,6 +42,8 @@ services:
       RAILS_HOST: sinai
     expose:
       - 3000
+    ports:
+      - 3004:3000
 
   db:
     image: mysql:5.6
@@ -48,21 +52,8 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
   
-  e2e:
-    build: ./e2e
-    env_file:
-      - ./default.env
-      - ./docker.env
-    environment:
-      PERCY_BRANCH: $TRAVIS_PULL_REQUEST_BRANCH
-      PERCY_COMMIT: $TRAVIS_COMMIT
-      PERCY_PULL_REQUEST: $TRAVIS_PULL_REQUEST
-      PERCY_TOKEN: $PERCY_TOKEN
-      TRAVIS_BRANCH: $TRAVIS_BRANCH
-      TRAVIS_PULL_REQUEST: $TRAVIS_PULL_REQUEST
-
   solr:
-    image: uclalibrary/solr-ursus:2020-07-15
+    image: uclalibrary/solr-ursus:2020-07-22
 
   solr_test:
-    image: uclalibrary/solr-ursus:2020-07-15
+    image: uclalibrary/solr-ursus:2020-07-22
