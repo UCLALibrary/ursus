@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   # Ursus static pages
   get '/copyrights_and_collections', to: 'static#ursus_copyright'
   get '/privacy_policy', to: 'static#ursus_privacy'
-  get '/about', to: 'static#ursus_about'
+  get '/ursus_about', to: 'static#ursus_about'
 
   # Sinai static pages
   get '/login', to: 'login#new', as: 'login'
   get '/terms-of-use', to: 'static#sinai_terms_of_use'
+  get '/sinai_about', to: 'static#sinai_about'
+  get '/manuscript_descriptions', to: 'static#sinai_manuscript_descriptions'
 
   # Canon Law
   get '/canonlaw', to: 'canon_law#index'

@@ -10,7 +10,8 @@
 .site-footer__list-item--sinai {
   display: inline;
 
-  &:nth-child(1)::after {
+  &:nth-child(1)::after,
+  &:nth-child(2)::after {
     position: relative;
     top: -3px;
     left: -15px;
