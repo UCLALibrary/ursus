@@ -13,4 +13,8 @@ class StaticController < ApplicationController
 
   # Sinai static pages
   def sinai_terms_of_use; end
+
+  def sinai_about; end
+
+  def sinai_manuscript_descriptions; end
 end
