@@ -1,3 +1,5 @@
 .facets-grid-wrapper {
   @extend .row;
+
+  justify-content: space-between;
 }
