@@ -1,8 +1,10 @@
 <% doc_presenter = show_presenter(document) %>
 <% note = Ursus::NoteMetadataPresenter.new(document: doc_presenter.fields_to_render).note_terms %>
+<% toc_key = render_table_of_contents_key %>
+<% toc_value = render_table_of_contents_value %>
 
-<% if note.length > 0 %>
-<div class='metadata-block'>
+<% if note.length > 0 || toc_value %>
+  <div class='metadata-block'>
     <h5 class='metadata-block__title'>Notes</h5>
     <dl class='metadata-block__group'>
       <!-- LOOP START -->
@@ -11,26 +13,26 @@
           <!-- KEY -->
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
 
-        <!-- VALUE -->
-        <!-- SINAI -->
-        <% if Flipflop.sinai? %>
-          <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--sinai">
-            <%= doc_presenter.field_value field %>
-          </dd>
+          <!-- VALUE -->
+          <!-- SINAI -->
+          <% if Flipflop.sinai? %>
+            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--sinai">
+              <%= doc_presenter.field_value field %>
+            </dd>
 
-        <!-- URSUS -->
-        <% else %>
-          <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
-            <%= raw doc_presenter.field_value field %>
-          </dd>
+          <!-- URSUS -->
+          <% else %>
+            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
+              <%= raw doc_presenter.field_value field %>
+            </dd>
+          <% end %>
         </dt>
-        <% end %>
+      <!-- LOOP END -->
       <% end %>
-    <!-- LOOP END -->
-      <dt class='metadata-block__label-key'><%= render_table_of_contents_key %></dt>
-      <dd class='metadata-block__label-value'>
-        <%= raw render_table_of_contents_value %>
-      </dd>
+
+      <!-- TABLE OF CONTENTS -->
+      <dt class='metadata-block__label-key'><%= toc_key %></dt>
+      <dd class='metadata-block__label-value'><%= raw toc_value %></dd>
     </dl>
 
   <% if Flipflop.sinai? %>
