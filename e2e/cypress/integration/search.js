@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 beforeEach(() => {
-  cy.visit('https://digital.library.ucla.edu/');
+  cy.visit('/');
 });
 describe('Search', () => {
   it('Search Blank', () => {
@@ -8,12 +8,14 @@ describe('Search', () => {
     cy.contains('span', 'You searched for:').should('not.exist');
     cy.percySnapshot();
   });
+
   it('Search Not Found', () => {
     cy.get('[id=q]').type('unicorn');
     cy.get('[id=search]').click();
     cy.contains('h2', '0 Catalog Results').should('exist');
     cy.percySnapshot();
   });
+
   it('Search Title Found', () => {
     cy.get('[id=q]').type('postcards');
     cy.get('select').select('Title').should('have.value', 'title_tesim');
@@ -21,6 +23,7 @@ describe('Search', () => {
     cy.get('.search-count__heading').contains('Catalog Results');
     cy.percySnapshot();
   });
+
   it('Search Subject Found', () => {
     cy.get('[id=q]').type('engineer');
     cy.get('select').select('Subject').should('have.value', 'subject_tesim');
@@ -28,6 +31,7 @@ describe('Search', () => {
     cy.get('.search-count__heading').contains('Catalog Results');
     cy.percySnapshot();
   });
+
   it('Metadata Text', () => {
     cy.get('[id=q]').type('text');
     cy.get('[id=search]').click();
@@ -39,6 +43,7 @@ describe('Search', () => {
     cy.get('[title=text]').contains('text');
     cy.percySnapshot();
   });
+
   it('Metadata Still Image', () => {
     cy.get('[id=q]').type('still image');
     cy.get('[id=search]').click();
@@ -50,6 +55,7 @@ describe('Search', () => {
     cy.contains('span', 'still image');
     cy.percySnapshot();
   });
+
   it('Metadata Artistic Photo', () => {
     cy.get('[id=q]').type('artistic photo');
     cy.get('[id=search]').click();
