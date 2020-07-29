@@ -33,8 +33,9 @@ describe('Search', () => {
   });
 
   it('Metadata Text', () => {
-    cy.get('[id=q]').type('text');
-    cy.get('[id=search]').click();
+    cy.contains('a', 'Resource Type').click();
+    cy.contains('a', 'text').click({ force: true });
+    cy.get('[title="text"]');
     cy.get(
       '.document-position-0 > .document__list-header > .document__list-title > a'
     ).click({ force: true });
@@ -57,14 +58,15 @@ describe('Search', () => {
   });
 
   it('Metadata Artistic Photo', () => {
-    cy.get('[id=q]').type('artistic photo');
+    cy.get('[id=q]').type('photographer');
     cy.get('[id=search]').click();
     cy.get(
       '.document-position-0 > .document__list-header > .document__list-title > a'
     ).click({ force: true });
-    cy.contains('a', 'Artistic Photo').click();
+    cy.get(
+      '.blacklight-photographer_tesim.metadata-block__label-value > a'
+    ).click();
     cy.contains('span', 'Photographer Sim');
-    cy.contains('span', 'Artistic Photo');
     cy.percySnapshot();
   });
 });
