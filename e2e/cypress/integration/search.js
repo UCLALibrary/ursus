@@ -10,7 +10,7 @@ describe('Search', () => {
   });
 
   it('Search Not Found', () => {
-    cy.get('[id=q]').type('unicorn');
+    cy.get('[id=q]').type('unicornasdasd');
     cy.get('[id=search]').click();
     cy.contains('h2', '0 Catalog Results').should('exist');
     cy.percySnapshot();
@@ -64,7 +64,7 @@ describe('Search', () => {
       '.document-position-0 > .document__list-header > .document__list-title > a'
     ).click({ force: true });
     cy.get(
-      '.blacklight-photographer_tesim.metadata-block__label-value > a'
+      '.blacklight-photographer_tesim.metadata-block__label-value.metadata-block__label-value--ursus > a'
     ).click();
     cy.contains('span', 'Photographer Sim');
     cy.percySnapshot();
