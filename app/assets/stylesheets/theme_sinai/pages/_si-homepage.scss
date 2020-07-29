@@ -40,9 +40,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   transition: transform 0.7s;
-  background-image: image-url(
-    'sinai/inner-hmpg-grid-lg-arb0151_0059_f_029r.jpg'
-  );
+  background-image: image-url('sinai/inner-hmpg-grid-lg-arb0151_0059_f_029r.jpg');
 
   &:hover {
     transform: scale(1.01);

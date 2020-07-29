@@ -83,3 +83,4 @@ public/uv
 app/assets/images/.DS_Store
 app/assets/.DS_Store
 
+e2e/cypress/fixtures/example.json

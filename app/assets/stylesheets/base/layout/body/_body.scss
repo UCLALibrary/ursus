@@ -22,8 +22,21 @@
   }
 }
 
+// Mimics Bootstrap .container class; breakpoints modified to decrease negative space for site body content (excludes header, footer)
 .container-constrained {
-  @extend .container;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+
+  @media (min-width: 599px) {
+    max-width: calc(100vw - 100px);
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1760px;
+  }
 }
 
 .main-content-container {

@@ -1,10 +1,25 @@
 .content-container--index-page {
   @extend .row;
 
+  justify-content: space-between;
   padding-bottom: 4rem;
 }
 
 .search-results-container {
-  @extend .col-md-12;
-  @extend .col-lg-9;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  max-width: 100%;
+  flex: 0 0 100%;
+
+  @media (min-width: 992px) {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 70%;
+    flex: 0 0 70%;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 75%;
+    flex: 0 0 75%;
+  }
 }
