@@ -1,25 +1,16 @@
 describe('Prev/next Pagination', () => {
-  beforeEach(() => {
+  it('Pages proper on empty search and checks for Prev link is disabled', () => {
     /* steps: 
     1. go to home page
     2. do empty search 
-    */
-    cy.visit('/');
-    cy.get('#search').click();
-    cy.contains('Catalog Results');
-    cy.get('[aria-current="true"]').contains('1');
-  });
-
-  it('Pages proper on empty search and checks for prev link is disabled', () => {
-    /* steps: 
-   
     3. check if prev is disabled
-    
     */
     /*<li class="pagination__page-item pagination__page-item--ursus disabled">
         <a rel="prev" onclick="return false;" class="pagination__page-link pagination__page-link--ursus" aria-label="Go to previous page" href="#">‹ Prev</a>
       </li>
       */
+    cy.visit('/catalog?utf8=%E2%9C%93&q=&search_field=all_fields');
+    cy.get('[aria-current="true"]').contains('1');
     cy.get('[aria-label="Go to previous page"]')
       .parent('.disabled')
       .should('have.length', 2)
@@ -30,14 +21,25 @@ describe('Prev/next Pagination', () => {
       });
   });
 
-  it('On Empty search, On Next Page prev link is enabled ', () => {
+  it('Go To Next Page of the search results, check Prev link is enabled ', () => {
     /*
 
     4. click on next 
     5. check if prev is enabled
     
     */
-    cy.get('[aria-label="Go to next page"]')
+    /*
+      <li class="pagination__page-item pagination__page-item--ursus">
+        <a rel="next" class="pagination__page-link pagination__page-link--ursus" aria-label="Go to next page" href="/catalog?page=2&amp;q=&amp;search_field=all_fields">Next ›</a>
+      </li>
+      */
+    cy.visit('/catalog?page=2&q=&search_field=all_fields');
+    cy.get('[aria-current="true"]').should('have.length', 2).contains('2');
+    cy.get('[aria-label="Go to previous page"]')
+      .parent()
+      .should('not.have.class', 'disabled');
+    // The Following solution is if the user is on home page.
+    /*cy.get('[aria-label="Go to next page"]')
       .eq(0)
       .then(function ($a) {
         // extract the fully qualified href property
@@ -56,12 +58,14 @@ describe('Prev/next Pagination', () => {
             '<span class="pagination__page-link pagination__page-link--ursus" aria-label="Current Page, Page 2" aria-current="true">2</span>'
           );
       });
+*/
   });
 
-  it('On Empty search, when on last page, next page link is disabled', () => {
+  it('On Empty search, When on Last page, Next page link is disabled', () => {
     /*
     6. when on the last page, then next is disabled
     */
+    cy.visit('/catalog?utf8=%E2%9C%93&q=&search_field=all_fields');
     cy.get('ul.pagination__list-wrapper')
       .eq(0)
       .find('li')
@@ -93,7 +97,7 @@ describe('Prev/next Pagination', () => {
       });
 
     //Following code not working due to cypress not waiting longer.
-    //.click();
+    //cy.get('ul.pagination__list-wrapper').eq(0).find('li').last().find('a').click();
     /*cy.get('[aria-label="Go to next page"]')
       .parent('.disabled')
       .should('have.length', 2);*/
