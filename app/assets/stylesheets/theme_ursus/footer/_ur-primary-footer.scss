@@ -8,12 +8,16 @@
 }
 
 .site-footer__primary-wrapper--ursus {
-  display: flex;
-  justify-content: space-between;
-  max-width: 80%;
+  display: block;
 
-  @media (max-width: 850px) {
-    display: block;
+  @media (min-width: 851px) {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80%;
+  }
+
+  @media (min-width: 1441px) {
+    max-width: 1068px;
   }
 }
 
