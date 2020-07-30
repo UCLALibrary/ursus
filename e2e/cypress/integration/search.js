@@ -63,13 +63,6 @@ describe('Search', () => {
     cy.get(
       '.document-position-0 > .document__list-header > .document__list-title > a'
     ).click({ force: true });
-
     cy.get('.blacklight-photographer_tesim.metadata-block__label-key');
-
-    ///cy.get(
-    ///'.blacklight-photographer_tesim.metadata-block__label-value.metadata-block__label-value--ursus'
-    ///)
-    ///.children()
-    ///.click();
   });
 });
