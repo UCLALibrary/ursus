@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 beforeEach(() => {
-  cy.visit('https://ursus-dev.library.ucla.edu');
+  cy.visit('/');
 });
 describe('Search', () => {
   it('Search Blank', () => {
