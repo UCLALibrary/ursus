@@ -64,9 +64,9 @@ describe('Search', () => {
       '.document-position-0 > .document__list-header > .document__list-title > a'
     ).click({ force: true });
     cy.get(
-      '.blacklight-photographer_tesim.metadata-block__label-value.metadata-block__label-value--ursus > a'
-    ).click();
-    cy.contains('span', 'Photographer Sim');
-    cy.percySnapshot();
+      '.blacklight-photographer_tesim.metadata-block__label-value.metadata-block__label-value--ursus'
+    )
+      .children()
+      .click();
   });
 });
