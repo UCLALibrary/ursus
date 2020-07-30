@@ -2,6 +2,10 @@
   margin-bottom: 1.5rem;
 }
 
+.metadata-block-list {
+  margin-bottom: 0;
+}
+
 .metadata-block__title {
   font-size: $text-24;
 
@@ -15,6 +19,10 @@
 
   padding-top: 1rem;
   padding-bottom: 1.5rem;
+}
+
+.metadata-block__group-list {
+  padding-bottom: 0;
 }
 
 .metadata-block__group--collection-pg {

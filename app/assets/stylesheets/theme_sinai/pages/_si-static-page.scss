@@ -12,6 +12,10 @@
   margin-bottom: 1.25rem;
 }
 
+.static-page__subtitle--sinai-about {
+  @extend .col-lg-4;
+}
+
 .static-page__text--sinai {
   line-height: 1.5;
   margin-bottom: 1rem;
@@ -33,5 +37,37 @@
     &:nth-child(even) {
       margin-top: 1.5rem;
     }
+  }
+}
+
+.grid__img-wrapper--sinai-caption {
+  font-style: italic;
+}
+
+.grid__img-wrapper--sinai-about1 {
+  height: 580px;
+  max-height: 580px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.7s;
+  background-image: image-url('sinai/IMG_0188.jpg');
+
+  &:hover {
+    transform: scale(1.01);
+  }
+}
+
+.grid__img-wrapper--sinai-about2 {
+  height: 580px;
+  max-height: 580px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.7s;
+  background-image: image-url('sinai/Imaging-Room-1911.jpg');
+
+  &:hover {
+    transform: scale(1.01);
   }
 }
