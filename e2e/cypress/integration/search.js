@@ -63,7 +63,7 @@ describe('Search', () => {
     cy.get(
       '.document-position-0 > .document__list-header > .document__list-title > a'
     ).click({ force: true });
-    cy.contains('dt', 'Photographer');
+    cy.contains('dt', 'Photographer').wait(5000);
     cy.get('a[href*="photographer_sim"]').click();
     cy.contains('span', 'Photographer Sim');
     cy.percySnapshot();
