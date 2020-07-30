@@ -65,9 +65,7 @@ describe('Search', () => {
     ///// cy.get() will run AFTER cy.wait() finishescy.
     ///post('li.todo').should('have.length', 0);
     ///
-    cy.visit(
-      'https://ursus-dev.library.ucla.edu/catalog?utf8=%E2%9C%93&q=photographer&search_field=all_fields'
-    );
+    cy.visit('/catalog?utf8=%E2%9C%93&q=photographer&search_field=all_fields');
     ///    cy.get('[id=q]').type('photographer');
     ///    cy.get('[id=search]').click();
     ///    cy.get(
