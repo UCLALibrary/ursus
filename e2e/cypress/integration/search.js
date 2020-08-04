@@ -52,9 +52,9 @@ describe('Search', () => {
     cy.percySnapshot();
   });
   it('Metadata Artistic Photo', () => {
-    cy.visit('/catalog?utf8=%E2%9C%93&q=photographer&search_field=all_fields');
+    cy.visit('/catalog?utf8=%E2%9C%93&q=Artistic+Photo&search_field=all_fields');
     cy.get('a[href*="photographer_sim"]').eq(0).click();
-    cy.contains('span', 'Photographer Sim');
+    cy.contains('span', 'Photographer');
     cy.percySnapshot();
   });
 });
