@@ -1,11 +1,30 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :display_banner?, :sinai_authn_check, :add_legacy_views
+  before_action :display_banner?, :sinai_authn_check, :add_legacy_views, :cors_preflight_check
+  after_action :cors_set_access_control_headers
 
   def add_legacy_views
     prepend_view_path "app/views_legacy"
     prepend_view_path "app/views" # already there, but needs to be in front of views_legacy
+  end
+
+  def cors_set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    headers['Access-Control-Request-Method'] = '*'
+    headers['Access-Control-Allow-Headers'] = '*'
+    headers['Access-Control-Max-Age'] = "1728000"
+  end
+
+  def cors_preflight_check
+    return unless request.method == :options
+
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    headers['Access-Control-Allow-Headers'] = '*'
+    headers['Access-Control-Max-Age'] = '1728000'
+    render text: '', content_type: 'text/plain'
   end
 
   def display_banner?
