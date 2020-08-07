@@ -17,7 +17,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       'writing_and_hands_tesim' => 'Writing and hands',
       'illustrations_note_tesim' => 'Illustrations note',
       'condition_note_tesim' => 'Condition note',
-      'binding_note_tesim' => 'Binding note',
+      'binding_note_ssi' => 'Binding note',
       'inscription_tesim' => 'Inscription',
       'opac_url_tesim' => 'Opac url'
     }
@@ -32,7 +32,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
   context 'with a solr document containing overview metadata' do
     describe 'config' do
       it 'returns the Binding note Key' do
-        expect(config['binding_note_tesim'].to_s).to eq 'Binding note'
+        expect(config['binding_note_ssi'].to_s).to eq 'Binding note'
       end
 
       it 'returns the Collation Key' do
