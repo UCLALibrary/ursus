@@ -15,6 +15,11 @@ scribe_tesim: 'Scribe'
 illuminator_tesim: 'Illuminator'
 rubricator_tesim: 'Rubricator'
 lyricist_tesim: 'Lyricist'
+illustrator_tesim: 'Illustrator'
+calligrapher_tesim: 'Calligrapher'
+editor_tesim: 'Editor'
+engraver_tesim: 'Engraver'
+printmaker_tesim: 'Printmaker'
 
 # Publication info
 publisher_tesim: 'Publisher'

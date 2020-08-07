@@ -22,7 +22,12 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'date_created_tesim' => 'Date Created',
       'human_readable_language_tesim' => 'Language',
       'member_of_collections_ssim' => 'Collection',
-      'rubricator_tesim' => 'Rubricator'
+      'rubricator_tesim' => 'Rubricator',
+      'calligrapher_tesim' => 'Calligrapher',
+      'editor_tesim' => 'Editor',
+      'engraver_tesim' => 'Engraver',
+      'illustrator_tesim' => 'Illustrator',
+      'printmaker_tesim' => 'Printmaker'
     }
   end
   let(:solr_doc_missing_items) do
@@ -116,6 +121,26 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       it 'returns the Rubricator Key' do
         expect(config['rubricator_tesim'].to_s).to eq('Rubricator')
       end
+
+      it 'returns the Calligrapher Key' do
+        expect(config['calligrapher_tesim'].to_s).to eq('Calligrapher')
+      end
+
+      it 'returns the Editor Key' do
+        expect(config['editor_tesim'].to_s).to eq('Editor')
+      end
+
+      it 'returns the Engraver Key' do
+        expect(config['engraver_tesim'].to_s).to eq('Engraver')
+      end
+
+      it 'returns the Illustrator Key' do
+        expect(config['illustrator_tesim'].to_s).to eq('Illustrator')
+      end
+
+      it 'returns the Printmaker Key' do
+        expect(config['printmaker_tesim'].to_s).to eq('Printmaker')
+      end
     end
 
     describe "#overview_terms terms" do
@@ -124,7 +149,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.overview_terms).to be_instance_of(Hash)
-        expect(all).to eq 19
+        expect(all).to eq 24
         expect(config.length).to eq all
       end
 

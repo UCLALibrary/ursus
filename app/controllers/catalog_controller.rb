@@ -144,7 +144,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'ark_ssi', label: 'ARK'
     config.add_show_field 'author_tesim', label: 'Author'
     config.add_show_field 'based_near_label_tesim'
-    config.add_show_field 'binding_note_tesim', label: 'Binding note'
+    config.add_show_field 'binding_note_ssi', label: 'Binding note'
+    config.add_show_field 'calligrapher_tesim', label: 'Calligrapher'
     config.add_show_field 'caption_tesim'
     config.add_show_field 'collation_tesim'
     config.add_show_field 'colophon_tesim', label: 'Colophon'
@@ -159,6 +160,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'description_tesim', separator_options: BREAKS
     config.add_show_field 'dimensions_tesim'
     config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
+    config.add_show_field 'editor_tesim', label: 'Editor'
+    config.add_show_field 'engraver_tesim', label: 'Engraver'
     config.add_show_field 'explicit_tesim', label: 'Explicit'
     config.add_show_field 'extent_tesim', separator_options: BREAKS
     config.add_show_field 'features_tesim', link_to_facet: 'features_sim', label: 'Features'
@@ -175,6 +178,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'iiif_manifest_url_ssi', label: 'Manifest url'
     config.add_show_field 'illuminator_tesim', label: 'Illuminator'
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note'
+    config.add_show_field 'illustrator_tesim', label: 'Illustrator'
     config.add_show_field 'incipit_tesim', label: 'Incipit'
     config.add_show_field 'inscription_tesim', label: 'Inscription'
     config.add_show_field 'keyword_tesim'
@@ -187,11 +191,13 @@ class CatalogController < ApplicationController
     config.add_show_field 'medium_tesim'
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
     config.add_show_field 'named_subject_tesim', link_to_facet: 'named_subject_sim', separator_options: BREAKS
+    config.add_show_field 'note_tesim', label: 'Note'
     config.add_show_field 'opac_url_ssi', label: 'Opac url'
     config.add_show_field 'oclc_ssi', label: 'OCLC Number'
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
     config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim', separator_options: BREAKS
     config.add_show_field 'place_of_origin_tesim', separator_options: BREAKS
+    config.add_show_field 'printmaker_tesim', label: 'Printmaker'
     config.add_show_field 'provenance_tesim', label: 'Provenance'
     config.add_show_field 'publisher_tesim'
     config.add_show_field 'repository_tesim'
