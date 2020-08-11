@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 require 'rails_helper'
 
@@ -23,9 +22,9 @@ RSpec.describe 'The subject field of the item display view', :clean, type: :syst
 
     page.within('dd.blacklight-subject_tesim') do
       expect(all(:css, 'br').length).to eq 2
-      expect(page).to have_link('subject1', href: '/catalog?f%5Bsubject_sim%5D%5B%5D=subject1')
-      expect(page).to have_link('subject2', href: '/catalog?f%5Bsubject_sim%5D%5B%5D=subject2')
-      expect(page).to have_link('subject3', href: '/catalog?f%5Bsubject_sim%5D%5B%5D=subject3')
+      expect(page).to have_link('subject1', href: '/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=subject1')
+      expect(page).to have_link('subject2', href: '/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=subject2')
+      expect(page).to have_link('subject3', href: '/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=subject3')
     end
   end
 end

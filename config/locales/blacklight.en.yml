@@ -47,7 +47,7 @@ en:
           rights_country: 'Rights (country of creation)'
           rights_holder_tesim: 'Rights Holder'
           subject_sim: 'Subject'
-          subject_tesim: 'Subjects'
+          subject_tesim: 'Subject'
           title_tesim: 'Title'
           year_isim: 'Date'
         index:
@@ -68,7 +68,7 @@ en:
           rights_country_tesim: 'Rights Country'
           rights_holder_tesim: 'Rights Holder'
           human_readable_rights_statement_tesim: 'Copyright Status'
-          subject_tesim: 'Subjects'
+          subject_tesim: 'Subject'
           title_tesim: 'Title'
         show:
           alternative_title_tesim: 'Alternative title'
@@ -110,7 +110,7 @@ en:
           rights_country_tesim: 'Rights Country'
           rights_holder_tesim: 'Rights Holder'
           human_readable_rights_statement_tesim: 'Copyright Status'
-          subject_tesim: 'Subjects'
+          subject_tesim: 'Subject'
           support_tesim: 'Support'
           title_tesim: 'Title'
           uniform_title_tesim: 'Uniform title'

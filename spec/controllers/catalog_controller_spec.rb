@@ -16,7 +16,7 @@ RSpec.describe CatalogController, type: :controller do
       end
 
       let(:expected_facets) do
-        ['subject',
+        ['combined_subject',
          'human_readable_resource_type',
          'genre',
          'named_subject',
@@ -82,7 +82,7 @@ RSpec.describe CatalogController, type: :controller do
        "named_subject_tesim", "note_tesim", "oclc_ssi", "opac_url_ssi", "page_layout_ssim", "photographer_tesim",
        "place_of_origin_tesim", "printmaker_tesim", "provenance_tesim", "publisher_tesim",
        "repository_tesim", "rights_country_tesim", "rights_holder_tesim", "rubricator_tesim",
-       "scribe_tesim", "script_tesim", "services_contact_ssm", "subject_tesim", "subject_topic_tesim",
+       "scribe_tesim", "script_tesim", "services_contact_ssm", "subject_tesim", "subject_geographic_tesim", "subject_temporal_tesim", "subject_topic_tesim",
        "summary_tesim", "support_tesim", "title_tesim", "toc_tesim", "uniform_title_tesim",
        "writing_and_hands_tesim", "writing_system_tesim"]
     end

@@ -7,8 +7,10 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
       'genre_tesim' => 'Genre',
       'features_tesim' => 'Features',
       'subject_tesim' => 'Subject',
-      'named_subject_tesim' => 'Named Subject',
+      'subject_geographic_tesim' => 'Geographic Subject',
+      'subject_temporal_tesim' => 'Temporal Subject',
       'subject_topic_tesim' => 'Subject topic',
+      'named_subject_tesim' => 'Named Subject',
       'location_tesim' => 'Location',
       'longitude_tesim' => 'Longitude',
       'latitude_tesim' => 'Latitude',
@@ -71,7 +73,7 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.keyword_terms).to be_instance_of(Hash)
-        expect(all).to eq 9
+        expect(all).to eq 11
         expect(config.length).to eq all
       end
 

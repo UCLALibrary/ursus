@@ -94,7 +94,7 @@ class CatalogController < ApplicationController
       config.add_facet_field 'features_sim', limit: 7, label: 'Features'
       config.add_facet_field 'support_sim', limit: 7, label: 'Support'
     else
-      config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
+      config.add_facet_field 'combined_subject_ssim', limit: 5, label: 'Subject'
       # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
       config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
       config.add_facet_field 'genre_sim', limit: 5
@@ -190,8 +190,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'lyricist_tesim', label: 'Lyricist', link_to_facet: 'lyricist_sim', separator_options: BREAKS
     config.add_show_field 'medium_tesim', separator_options: BREAKS
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
-    config.add_show_field 'named_subject_tesim', link_to_facet: 'named_subject_sim', separator_options: BREAKS
-    config.add_show_field 'note_tesim', label: 'Note', separator_options: BREAKS
+    config.add_show_field 'named_subject_tesim', link_to_facet: 'combined_subject_ssim', separator_options: BREAKS
+    config.add_show_field 'note_tesim', label: 'Note'
     config.add_show_field 'opac_url_ssi', label: 'Opac url'
     config.add_show_field 'oclc_ssi', label: 'OCLC Number'
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
@@ -207,8 +207,10 @@ class CatalogController < ApplicationController
     config.add_show_field 'scribe_tesim', label: 'Scribe', link_to_facet: 'scribe_sim', separator_options: BREAKS
     config.add_show_field 'script_tesim', label: 'Script', separator_options: BREAKS
     config.add_show_field 'services_contact_ssm', label: 'Rights services contact'
-    config.add_show_field 'subject_tesim', link_to_facet: 'subject_sim', separator_options: BREAKS
-    config.add_show_field 'subject_topic_tesim', label: 'Subject topic', separator_options: BREAKS
+    config.add_show_field 'subject_tesim', link_to_facet: 'combined_subject_ssim', separator_options: BREAKS
+    config.add_show_field 'subject_geographic_tesim', link_to_facet: 'combined_subject_ssim', label: 'Geographic Subject'
+    config.add_show_field 'subject_temporal_tesim', link_to_facet: 'combined_subject_ssim', label: 'Temporal Subject'
+    config.add_show_field 'subject_topic_tesim', label: 'Subject topic', link_to_facet: 'combined_subject_ssim', separator_options: BREAKS
     config.add_show_field 'summary_tesim', label: 'Summary', separator_options: BREAKS
     config.add_show_field 'support_tesim', label: 'Support', separator_options: BREAKS
     config.add_show_field 'title_tesim', separator_options: BREAKS
