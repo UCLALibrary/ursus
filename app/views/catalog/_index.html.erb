@@ -9,7 +9,7 @@
 
       <span class="document__list-title document__list-title--sinai">
         <% if counter = document_counter_with_offset(document_counter) %>
-        <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' ', :escape => false), counter: counter) %>
+        <%= link_to_document(document, counter: counter) %>
       <% end %>
       </span>
   </div>
