@@ -1,19 +1,19 @@
 describe('Work show pages', () => {
-  it('Fowler', () => {
-    cy.visit('/catalog/25g0j200zz-89112');
-    cy.contains('h1', 'fowler_a243_0009');
+  it('Sinai Syriac 127', () => {
+    cy.visit('https://sinaimanuscripts.library.ucla.edu/catalog/ark:%2F21198%2Fz1bg3sbz');
+    cy.contains('h1', "Sinai Syriac 127. Services : manuscript, 1294. St. Catherine's Monastery, Sinai, Egypt");
     cy.percySnapshot();
   });
 
-  it('Ṣālot ba᾽eneta Mā᾽esaromu la- Agān᾽ent', () => {
-    cy.visit('/catalog/pnczp100zz-89112');
-    cy.contains('h1', 'Ms. 51 Ṣālot ba᾽eneta Mā᾽esaromu la- Agān᾽ent');
+  it('Sinai Arabic 42', () => {
+    cy.visit('https://sinaimanuscripts.library.ucla.edu/catalog/ark:%2F21198%2Fz1p85g7p');
+    cy.contains('h1', "Sinai Arabic 42. Psalter and Odes : manuscript, 1790. St. Catherine's Monastery, Sinai, Egypt");
     cy.percySnapshot();
   });
 
-  it('John Binan and officers at the homicide crime scene of Louise Appier, Los Angeles, 1935', () => {
-    cy.visit('/catalog/c8f45200zz-89112');
-    cy.contains('h1', 'John Binan and officers at the homicide crime scene of Louise Appier, Los Angeles, 1935');
+  it('Sinai Arabic 578', () => {
+    cy.visit('https://sinaimanuscripts.library.ucla.edu/catalog/ark:%2F21198%2Fz1fv04nq');
+    cy.contains('h1', "Sinai Arabic 578. The diseases of the eye and their treatment by ‘Alī ibn Īsā : manuscript, [11th c.]. St. Catherine's Monastery, Sinai, Egypt");
     cy.percySnapshot();
   });
 });

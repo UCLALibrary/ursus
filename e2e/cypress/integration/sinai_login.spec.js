@@ -11,6 +11,6 @@ describe('Sinai Homepage', () => {
 
   it('Logs in', () => {
     cy.get('.btn-base', 'Access the Sinai Collection').click({ force: true });
-    cy.contains('a[href="https://sinai-id.org/users/sign_in'');
+    cy.contains('a[href="https://sinai-id.org/users/sign_in');
   });
 });
