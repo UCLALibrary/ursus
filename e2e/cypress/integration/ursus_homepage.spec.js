@@ -7,8 +7,7 @@ describe('Ursus Homepage', () => {
     cy.percySnapshot();
   });
 
-// Navbar
-/*
+// Navbar  & Static pages
   it('UCLA Library Digital Collections Logo', () => {
     cy.get('img').then(($el) => {
       Cypress.dom.isVisible($el) // true
@@ -22,7 +21,9 @@ describe('Ursus Homepage', () => {
   it('About', () => {
     cy.contains('a', 'About').click({ force: true });
     cy.url().should('include', '/ursus_about');
+    cy.visit('/ursus_about');
     cy.contains('h1', 'About Us');
+    cy.get('.static-page__title');
     cy.percySnapshot();
   });
 
@@ -30,12 +31,13 @@ describe('Ursus Homepage', () => {
     cy.get(":nth-child(2) > .site-navbar__item-link").should('have.prop', 'href', 'https://forms.gle/x2BV9dJMK241VsAJA')
   });
 
-// Footer / Static pages
-
-  it('Copyright and Collections', () => {
+// Footer Links & Static pages
+  it('Copyrights and Collections', () => {
     cy.visit('/');
-    cy.contains('a', 'Copyright and Collection').click({ force: true });
+    cy.contains('a', 'Copyrights and Collection').click({ force: true });
     cy.url().should('include', '/copyrights_and_collections');
+    cy.visit('/copyrights_and_collections');
+    cy.contains('h1', 'Copyrights and Collections');
     cy.percySnapshot();
   });
 
@@ -43,21 +45,21 @@ describe('Ursus Homepage', () => {
     cy.visit('/');
     cy.contains('a', 'Privacy Policy').click({ force: true });
     cy.url().should('include', '/privacy_policy');
+    cy.visit('/privacy_policy');
+    cy.contains('h1', 'Privacy');
     cy.percySnapshot();
   });
 
   it('Contact', () => {
     cy.visit('/');
-    cy.get(':nth-child(3) > .site-footer__link').click({ force: true });
+    cy.contains('a', 'Contact Us').click({ force: true });
     cy.url().should('include', '/contact');
+    cy.visit('/contact');
     cy.contains('h1', 'Contact');
     cy.percySnapshot();
   });
-*/
+
   it('UCLA Library Logo', () => {
-    //find the selector
-    //does it have logo 
-    //does it have the right url
     cy.get('.site-footer__logo');
     cy.get('[alt="UCLA Library Logo"]').should('be.visible')
     .parent().should("have.attr", 'href', "https://www.library.ucla.edu/");
