@@ -139,8 +139,8 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
     # ::Solrizer.solr_name('funding_note', :stored_searchable) == 'funding_note_tesim'
-    config.add_show_field 'architect_tesim', link_to_facet: 'architect_sim', separator_options: BREAKS
     config.add_show_field 'alternative_title_tesim', separator_options: BREAKS
+    config.add_show_field 'architect_tesim', link_to_facet: 'architect_sim', separator_options: BREAKS
     config.add_show_field 'ark_ssi', label: 'ARK'
     config.add_show_field 'author_tesim', label: 'Author', link_to_facet: 'author_sim', separator_options: BREAKS
     config.add_show_field 'based_near_label_tesim', separator_options: BREAKS
