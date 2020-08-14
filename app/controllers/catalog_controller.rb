@@ -139,17 +139,17 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
     # ::Solrizer.solr_name('funding_note', :stored_searchable) == 'funding_note_tesim'
-    config.add_show_field 'architect_tesim', link_to_facet: 'architect_tesim', separator_options: BREAKS
+    config.add_show_field 'architect_tesim', link_to_facet: 'architect_sim', separator_options: BREAKS
     config.add_show_field 'alternative_title_tesim', separator_options: BREAKS
     config.add_show_field 'ark_ssi', label: 'ARK'
-    config.add_show_field 'author_tesim', label: 'Author', link_to_facet: 'author_tesim', separator_options: BREAKS
+    config.add_show_field 'author_tesim', label: 'Author', link_to_facet: 'author_sim', separator_options: BREAKS
     config.add_show_field 'based_near_label_tesim', separator_options: BREAKS
     config.add_show_field 'binding_note_ssi', label: 'Binding note'
-    config.add_show_field 'calligrapher_tesim', label: 'Calligrapher', link_to_facet: 'calligrapher_tesim', separator_options: BREAKS
+    config.add_show_field 'calligrapher_tesim', label: 'Calligrapher', link_to_facet: 'calligrapher_sim', separator_options: BREAKS
     config.add_show_field 'caption_tesim', separator_options: BREAKS
     config.add_show_field 'collation_tesim', separator_options: BREAKS
     config.add_show_field 'colophon_tesim', label: 'Colophon', separator_options: BREAKS
-    config.add_show_field 'composer_tesim', label: 'Composer', link_to_facet: 'composer_tesim', separator_options: BREAKS
+    config.add_show_field 'composer_tesim', label: 'Composer', link_to_facet: 'composer_sim', separator_options: BREAKS
     config.add_show_field 'condition_note_tesim', label: 'Condition note', separator_options: BREAKS
     config.add_show_field 'contents_note_tesim', label: 'Contents note', separator_options: BREAKS
     config.add_show_field 'contributor_tesim', separator_options: BREAKS
@@ -160,8 +160,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'description_tesim', separator_options: BREAKS
     config.add_show_field 'dimensions_tesim', separator_options: BREAKS
     config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
-    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_tesim', separator_options: BREAKS
-    config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_tesim', separator_options: BREAKS
+    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_sim', separator_options: BREAKS
+    config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim', separator_options: BREAKS
     config.add_show_field 'explicit_tesim', label: 'Explicit', separator_options: BREAKS
     config.add_show_field 'extent_tesim', separator_options: BREAKS
     config.add_show_field 'features_tesim', link_to_facet: 'features_sim', label: 'Features', separator_options: BREAKS
@@ -176,9 +176,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'human_readable_language_tesim', link_to_facet: 'human_readable_language_sim', separator_options: BREAKS
     config.add_show_field 'identifier_tesim', separator_options: BREAKS
     config.add_show_field 'iiif_manifest_url_ssi', label: 'Manifest url'
-    config.add_show_field 'illuminator_tesim', label: 'Illuminator', link_to_facet: 'illuminator_tesim', separator_options: BREAKS
+    config.add_show_field 'illuminator_tesim', label: 'Illuminator', link_to_facet: 'illuminator_sim', separator_options: BREAKS
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note', separator_options: BREAKS
-    config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'illustrator_tesim', separator_options: BREAKS
+    config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'illustrator_sim', separator_options: BREAKS
     config.add_show_field 'incipit_tesim', label: 'Incipit', separator_options: BREAKS
     config.add_show_field 'inscription_tesim', label: 'Inscription', separator_options: BREAKS
     config.add_show_field 'keyword_tesim', separator_options: BREAKS
@@ -187,7 +187,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'location_tesim', link_to_facet: 'location_sim', separator_options: BREAKS
     config.add_show_field 'local_identifier_ssm', label: 'Local identifier', separator_options: BREAKS
     config.add_show_field 'longitude_tesim', label: 'Longitude', separator_options: BREAKS
-    config.add_show_field 'lyricist_tesim', label: 'Lyricist', link_to_facet: 'lyricist_tesim', separator_options: BREAKS
+    config.add_show_field 'lyricist_tesim', label: 'Lyricist', link_to_facet: 'lyricist_sim', separator_options: BREAKS
     config.add_show_field 'medium_tesim', separator_options: BREAKS
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
     config.add_show_field 'named_subject_tesim', link_to_facet: 'named_subject_sim', separator_options: BREAKS
@@ -197,14 +197,14 @@ class CatalogController < ApplicationController
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
     config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim', separator_options: BREAKS
     config.add_show_field 'place_of_origin_tesim', separator_options: BREAKS
-    config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_tesim', separator_options: BREAKS
+    config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_sim', separator_options: BREAKS
     config.add_show_field 'provenance_tesim', label: 'Provenance', separator_options: BREAKS
     config.add_show_field 'publisher_tesim', separator_options: BREAKS
     config.add_show_field 'repository_tesim', separator_options: BREAKS
     config.add_show_field 'rights_country_tesim', separator_options: BREAKS
     config.add_show_field 'rights_holder_tesim', separator_options: BREAKS
-    config.add_show_field 'rubricator_tesim', label: 'Rubricator', link_to_facet: 'rubricator_tesim', separator_options: BREAKS
-    config.add_show_field 'scribe_tesim', label: 'Scribe', link_to_facet: 'scribe_tesim', separator_options: BREAKS
+    config.add_show_field 'rubricator_tesim', label: 'Rubricator', link_to_facet: 'rubricator_sim', separator_options: BREAKS
+    config.add_show_field 'scribe_tesim', label: 'Scribe', link_to_facet: 'scribe_sim', separator_options: BREAKS
     config.add_show_field 'script_tesim', label: 'Script', separator_options: BREAKS
     config.add_show_field 'services_contact_ssm', label: 'Rights services contact'
     config.add_show_field 'subject_tesim', link_to_facet: 'subject_sim', separator_options: BREAKS
