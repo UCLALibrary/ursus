@@ -5,15 +5,17 @@ Rails.application.routes.draw do
   mount Flipflop::Engine => "/flipflop"
 
   # Ursus static pages
+  get '/ursus_about', to: 'static#ursus_about'
+  get '/ursus_contact', to: 'static#ursus_contact'
   get '/copyrights_and_collections', to: 'static#ursus_copyright'
   get '/privacy_policy', to: 'static#ursus_privacy'
-  get '/ursus_about', to: 'static#ursus_about'
 
   # Sinai static pages
   get '/login', to: 'login#new', as: 'login'
-  get '/terms-of-use', to: 'static#sinai_terms_of_use'
   get '/sinai_about', to: 'static#sinai_about'
+  get '/sinai_contact', to: 'static#sinai_contact'
   get '/manuscript_descriptions', to: 'static#sinai_manuscript_descriptions'
+  get '/terms-of-use', to: 'static#sinai_terms_of_use'
 
   # Canon Law
   get '/canonlaw', to: 'canon_law#index'
@@ -22,7 +24,6 @@ Rails.application.routes.draw do
   get '/canonlaw/margarita_decretalium', to: 'canon_law#margarita'
   get '/canonlaw/materiae_singulares', to: 'canon_law#materiae'
 
-  get '/contact', to: 'static#contact'
   get '/version', to: 'static#version'
 
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
