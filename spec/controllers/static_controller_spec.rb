@@ -12,6 +12,7 @@ RSpec.describe StaticController, type: :controller do
         expect(response).to render_template(:ursus_copyright)
       end
     end
+
     context 'GET #ursus_privacy' do
       it "returns http success" do
         get :ursus_privacy
@@ -19,13 +20,15 @@ RSpec.describe StaticController, type: :controller do
         expect(response).to render_template(:ursus_privacy)
       end
     end
-    context 'GET #contact' do
+
+    context 'GET #ursus_contact' do
       it "returns http success" do
-        get :contact
+        get :ursus_contact
         expect(response).to have_http_status(:success)
-        expect(response).to render_template(:contact)
+        expect(response).to render_template(:ursus_contact)
       end
     end
+
     context 'GET #version' do
       it "returns http success" do
         get :version
