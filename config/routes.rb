@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # Ursus static pages
   get '/ursus_about', to: 'static#ursus_about'
   get '/ursus_contact', to: 'static#ursus_contact'
-  get '/copyrights_and_collections', to: 'static#ursus_copyright'
+  get '/copyright_and_collections', to: 'static#ursus_copyright'
   get '/privacy_policy', to: 'static#ursus_privacy'
 
   # Sinai static pages
