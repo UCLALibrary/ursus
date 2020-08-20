@@ -6,8 +6,12 @@ class LoginController < ApplicationController
 
   def new
     # save in order to allow later verification that the login page was accessed
-    @requested_path = cookies[:request_original_url]
-    cookies[:requested_path] = @requested_path
+    if !Flipflop.sinai?
+      head :forbidden
+    else
+      @requested_path = cookies[:request_original_url]
+      cookies[:requested_path] = @requested_path
+    end
   end
 
   def create_token

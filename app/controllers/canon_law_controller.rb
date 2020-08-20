@@ -1,13 +1,23 @@
 # frozen_string_literal: true
 
 class CanonLawController < ApplicationController
-  def index; end
+  def index
+    head :forbidden if Flipflop.sinai?
+  end
 
-  def introduction; end
+  def introduction
+    head :forbidden if Flipflop.sinai?
+  end
 
-  def table_of_contents; end
+  def table_of_contents
+    head :forbidden if Flipflop.sinai?
+  end
 
-  def margarita; end
+  def margarita
+    head :forbidden if Flipflop.sinai?
+  end
 
-  def materiae; end
+  def materiae
+    head :forbidden if Flipflop.sinai?
+  end
 end
