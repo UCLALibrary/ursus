@@ -139,6 +139,10 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
     # ::Solrizer.solr_name('funding_note', :stored_searchable) == 'funding_note_tesim'
+    # To create a link on the item/show page of Ursus that links to a search for all fields of this name add below:
+    # link_to_facet: 'fieldname_sim' (refer to editor on line 167)
+    # and in Californica add :facetable to its predicate in app/models/ucla_metadata.rb
+
     config.add_show_field 'alternative_title_tesim', separator_options: BREAKS
     config.add_show_field 'architect_tesim', link_to_facet: 'architect_sim', separator_options: BREAKS
     config.add_show_field 'ark_ssi', label: 'ARK'
