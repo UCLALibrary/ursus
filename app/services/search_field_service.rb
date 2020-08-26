@@ -13,7 +13,7 @@ class SearchFieldService
     'collation_tesim',
     'colophon_tesim',
     'composer_tesim',
-    'condition_note_tesim',
+    'condition_note_ssi',
     'contents_note_tesim',
     'contributor_tesim',
     'creator_tesim',

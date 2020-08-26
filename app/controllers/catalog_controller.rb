@@ -82,8 +82,12 @@ class CatalogController < ApplicationController
     # config.index.display_type_field = 'format'
     # config.index.thumbnail_field = 'thumbnail_path_ss'
 
+    # ------------------------------------------------------
+    # FACETS
     # solr fields that will be treated as facets by the blacklight application
-    #   The ordering of the field names is the order of the display
+    # The ordering of the field names is the order of the display
+
+    # SINAI
     if Flipflop.sinai?
       config.add_facet_field 'genre_sim', limit: 7
       config.add_facet_field 'place_of_origin_sim', limit: 7, label: 'Place of origin'
@@ -93,9 +97,11 @@ class CatalogController < ApplicationController
       config.add_facet_field 'script_sim', limit: 7, label: 'Script'
       config.add_facet_field 'features_sim', limit: 7, label: 'Features'
       config.add_facet_field 'support_sim', limit: 7, label: 'Support'
+
+      # URSUS
     else
       config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
-      # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5
+      # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5 same as : config.add_facet_field 'resource_type_sim', limit: 5
       config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
       config.add_facet_field 'genre_sim', limit: 5
       config.add_facet_field 'named_subject_sim', limit: 5
@@ -104,18 +110,6 @@ class CatalogController < ApplicationController
       config.add_facet_field 'human_readable_language_sim', limit: 5
       config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
     end
-
-    # config.add_facet_field ::Solrizer.solr_name('human_readable_type', :facetable), label: 'Type', limit: 5
-    # config.add_facet_field ::Solrizer.solr_name('creator', :facetable), limit: 5
-    # config.add_facet_field ::Solrizer.solr_name('contributor', :facetable), label: 'Contributor', limit: 5
-    # config.add_facet_field ::Solrizer.solr_name('keyword', :facetable), limit: 5
-    # config.add_facet_field ::Solrizer.solr_name('based_near_label', :facetable), limit: 5
-    # config.add_facet_field ::Solrizer.solr_name('publisher', :facetable), limit: 5
-    # config.add_facet_field ::Solrizer.solr_name('file_format', :facetable), limit: 5
-    # config.add_facet_field ::Solrizer.solr_name('member_of_collection_ids', :symbol), limit: 5, label: 'Collections', helper_method: :collection_title_by_id
-    # config.add_facet_field ::Solrizer.solr_name('repository', :facetable), limit: 5
-    # config.add_facet_field ::Solrizer.solr_name('rights_country', :facetable), limit: 5
-    # config.add_facet_field ::Solrizer.solr_name('extent', :facetable), limit: 5
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
@@ -126,6 +120,8 @@ class CatalogController < ApplicationController
     # handler defaults, or have no facets.
     config.add_facet_fields_to_solr_request!
 
+    # ------------------------------------------------------
+    # INDEX / SEARCH RESULTS
     # solr fields to be displayed in the index search results / list view
     #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
@@ -135,6 +131,9 @@ class CatalogController < ApplicationController
     config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
     config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
     config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+
+    # ------------------------------------------------------
+    # SHOW PAGE / ITEM PAGE / Individual Work (Universal Viewer Page)
 
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
@@ -154,10 +153,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'collation_tesim', separator_options: BREAKS
     config.add_show_field 'colophon_tesim', label: 'Colophon', separator_options: BREAKS
     config.add_show_field 'composer_tesim', label: 'Composer', link_to_facet: 'composer_sim', separator_options: BREAKS
-    config.add_show_field 'condition_note_tesim', label: 'Condition note', separator_options: BREAKS
+    config.add_show_field 'condition_note_ssi', label: 'Condition note', separator_options: BREAKS
     config.add_show_field 'contents_note_tesim', label: 'Contents note', separator_options: BREAKS
     config.add_show_field 'contributor_tesim', separator_options: BREAKS
-    config.add_show_field 'creator_tesim', label: 'Creator', separator_options: BREAKS
+    config.add_show_field 'commentator_tesim', link_to_facet: 'commentator_sim', label: 'Commentator', separator_options: BREAKS
+    config.add_show_field 'creator_tesim', link_to_facet: 'creator_sim', label: 'Creator', separator_options: BREAKS
     config.add_show_field 'date_created_tesim', separator_options: BREAKS
     config.add_show_field 'date_modified_tesim', separator_options: BREAKS
     config.add_show_field 'date_uploaded_tesim', separator_options: BREAKS
@@ -215,9 +215,10 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_topic_tesim', label: 'Subject topic', separator_options: BREAKS
     config.add_show_field 'summary_tesim', label: 'Summary', separator_options: BREAKS
     config.add_show_field 'support_tesim', label: 'Support', separator_options: BREAKS
+    config.add_show_field 'translator_tesim', link_to_facet: 'translator_sim', label: 'Translator', separator_options: BREAKS
     config.add_show_field 'title_tesim', separator_options: BREAKS
     config.add_show_field 'toc_tesim', label: 'Table of Contents', separator_options: BREAKS
-    config.add_show_field 'uniform_title_tesim', separator_options: BREAKS
+    config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'translator_sim', separator_options: BREAKS
     config.add_show_field 'writing_and_hands_tesim', label: 'Writing and hands', separator_options: BREAKS
     config.add_show_field 'writing_system_tesim', label: 'Writing system', separator_options: BREAKS
 
