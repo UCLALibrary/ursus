@@ -10,12 +10,15 @@
     </button>
 
     <div class='collapse navbar-collapse' id='user-util-collapse'>
-      <ul class='navbar-nav nav ml-auto'>
-        <li class='site-navbar__item site-navbar__item--sinai'>
-          <a class='site-navbar__item-link site-navbar__item-link--sinai' href='/sinai_about'>About</a>
-        </li>
-        <li class='site-navbar__item site-navbar__item--sinai'>
-          <a class='site-navbar__item-link site-navbar__item-link--sinai' href='/manuscript_descriptions'>Manuscript Descriptions</a>
+      <ul class='navbar-nav ml-auto'>
+        <li class='site-navbar__item site-navbar__item--sinai dropdown'>
+          <a class='site-navbar__item-link site-navbar__item-link--sinai dropdown-toggle' href='#' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About the Project</a>
+          <div class='dropdown-menu dropdown-menu-right dropdown-menu--sinai' aria-labelledby='navbarDropdown'>
+          <a class='dropdown-item dropdown-item--sinai' href='/sinai_about'>About</a>
+          <a class='dropdown-item dropdown-item--sinai' href='/manuscript_descriptions'>Manuscript Descriptions</a>
+          <a class='dropdown-item dropdown-item--sinai' href='/terms-of-use'>Terms of Use</a>
+          <a class='dropdown-item dropdown-item--sinai' href='/sinai_contact'>Contact Us</a>
+        </div>
         </li>
       </ul>
     </div>
