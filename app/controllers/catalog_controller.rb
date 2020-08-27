@@ -218,7 +218,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'translator_tesim', link_to_facet: 'translator_sim', label: 'Translator', separator_options: BREAKS
     config.add_show_field 'title_tesim', separator_options: BREAKS
     config.add_show_field 'toc_tesim', label: 'Table of Contents', separator_options: BREAKS
-    config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'translator_sim', separator_options: BREAKS
+    config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'uniform_title_sim', separator_options: BREAKS
     config.add_show_field 'writing_and_hands_tesim', label: 'Writing and hands', separator_options: BREAKS
     config.add_show_field 'writing_system_tesim', label: 'Writing system', separator_options: BREAKS
 
