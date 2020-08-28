@@ -16,7 +16,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       'script_tesim' => 'Script',
       'writing_and_hands_tesim' => 'Writing and hands',
       'illustrations_note_tesim' => 'Illustrations note',
-      'condition_note_tesim' => 'Condition note',
+      'condition_note_ssi' => 'Condition note',
       'binding_note_ssi' => 'Binding note',
       'inscription_tesim' => 'Inscription',
       'opac_url_tesim' => 'Opac url'
@@ -40,7 +40,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       end
 
       it 'returns the Condition note Key' do
-        expect(config['condition_note_tesim'].to_s).to eq 'Condition note'
+        expect(config['condition_note_ssi'].to_s).to eq 'Condition note'
       end
 
       it 'returns the Dimensions Key' do
