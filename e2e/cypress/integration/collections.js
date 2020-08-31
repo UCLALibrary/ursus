@@ -1,5 +1,4 @@
-// This block will be uncommented when Solr image data is updated to support forward ark in travis build
-/*describe('Collection pages', () => {
+describe('Collection pages', () => {
   it('Los Angeles Daily News Negatives', () => {
     cy.visit('/');
     cy.contains('h3', 'Los Angeles Daily News Negatives').click();
@@ -36,4 +35,4 @@
     cy.contains('.metadata-block__title', 'Collection Overview')
     cy.percySnapshot();
   });
-});*/
+});
