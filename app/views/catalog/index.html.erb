@@ -27,4 +27,18 @@
       <%= render 'search_results' %>
     </div>
   <% end %>
+
+  <!-- if URL contains catalog with a sort option, remove sort option (illegal combination) -->
+  <!-- else if URL (contians an empty query OR empty square brackets) AND contains a sort term AND does not contain the Start Over string -->
+  <!--   add Title Sort string to URL -->
+  <!--   got to page -->
+  <script type="text/javascript">
+    var urlFacet = window.location.search;
+    if ( urlFacet.indexOf("catalog?sort=" ) !== -1){
+      window.history.replaceState('page2', 'Title', '/catalog');
+    } else if (( (urlFacet.indexOf("&q=&") !== -1) || (urlFacet.indexOf("%5B%5D=") !== -1) ) && (urlFacet.indexOf("&sort=") == -1) && (urlFacet != "?utf8=%E2%9C%93&q=&search_field=all_fields") ) {
+        var titleSortUrl = urlFacet+"&sort=title_alpha_numeric_ssort+asc";
+        window.location = titleSortUrl;
+    }
+  </script>
 <% end %>
