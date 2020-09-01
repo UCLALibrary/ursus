@@ -29,7 +29,11 @@
   <% end %>
 
   <!-- if URL contains catalog with a sort option, remove sort option (illegal combination) -->
+<<<<<<< HEAD
   <!-- else if URL (contians an empty query OR empty square brackets) AND ((contains "members of collections") OR (contains a sort term AND does not contain the Start Over string)) -->
+=======
+  <!-- else if URL (contians an empty query OR empty square brackets) AND contains a sort term AND does not contain the Start Over string -->
+>>>>>>> 4ed3cad61fbdfe0125d603c9d2620684b98e22d8
   <!--   add Title Sort string to URL -->
   <!--   got to page -->
   <script type="text/javascript">
@@ -37,7 +41,11 @@
     console.log(urlFacet);
     if ( urlFacet.indexOf("catalog?sort=" ) !== -1){
       window.history.replaceState('page2', 'Title', '/catalog');
+<<<<<<< HEAD
     } else if ( ((urlFacet.indexOf("&q=&") !== -1) || (urlFacet.indexOf("%5B%5D=") !== -1)) && ((urlFacet.indexOf("[member_of_collections_") !== -1) || ((urlFacet.indexOf("&sort=") == -1) && (urlFacet != "?utf8=%E2%9C%93&q=&search_field=all_fields"))) ) {
+=======
+    } else if ( ((urlFacet.indexOf("&q=&") !== -1) || (urlFacet.indexOf("%5B%5D=") !== -1)) && (    (urlFacet.indexOf("[member_of_collections_") !== -1)     || ((urlFacet.indexOf("&sort=") == -1) && (urlFacet != "?utf8=%E2%9C%93&q=&search_field=all_fields"))) ) {
+>>>>>>> 4ed3cad61fbdfe0125d603c9d2620684b98e22d8
         var titleSortUrl = urlFacet+"&sort=title_alpha_numeric_ssort+asc";
         window.location = titleSortUrl;
     }
