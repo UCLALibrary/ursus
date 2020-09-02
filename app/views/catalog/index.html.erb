@@ -28,10 +28,7 @@
     </div>
   <% end %>
 
-  <!-- if URL contains catalog with a sort option, remove sort option (illegal combination) -->
-  <!-- else if URL (contians an empty query OR empty square brackets) AND ((contains "members of collections") OR (contains a sort term AND does not contain the Start Over string)) -->
-  <!--   add Title Sort string to URL -->
-  <!--   got to page -->
+  <!-- add Title Sort -->
   <script type="text/javascript">
     var urlFacet = window.location.search;
     if ( urlFacet.indexOf("catalog?sort=" ) !== -1){
