@@ -1,18 +1,17 @@
 describe('Sinai Homepage', () => {
-  beforeEach(() => {
-    cy.visit(Cypress.env('SINAI_BASE_URL'));
-  });
-
   it('Visit the Homepage', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.percySnapshot();
   });
 
   it('Sinai Manuscripts Digital Library Logo', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.get('.site-navbar__logo--sinai');
   });
 
 // Navbar Links
   it('About Link', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.contains('a', 'About the Project');
     cy.get('#navbarDropdown').click({ force: true });
     cy.get('[href="/sinai_about"]').click({ force: true });
@@ -20,6 +19,7 @@ describe('Sinai Homepage', () => {
   });
 
   it('Manuscript Descriptions Link', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.contains('a', 'About the Project');
     cy.get('#navbarDropdown').click({ force: true });
     cy.contains('a', 'Manuscript Descriptions').click({ force: true });
@@ -27,6 +27,7 @@ describe('Sinai Homepage', () => {
   });
 
   it('Terms of Use Link', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.contains('a', 'About the Project');
     cy.get('#navbarDropdown').click({ force: true });
     cy.contains('a', 'Terms of Use').click({ force: true });
@@ -34,6 +35,7 @@ describe('Sinai Homepage', () => {
   });
 
   it('Contact Us Link', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.contains('a', 'About the Project');
     cy.get('#navbarDropdown').click({ force: true });
     cy.contains('a', 'Contact Us').click({ force: true });
@@ -68,27 +70,33 @@ describe('Sinai Homepage', () => {
 
   // Footer Primary - Logos
   it('St Catherine Monastery Logo', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.get('[alt="St Catherine Monastery logo"]').should('be.visible');
   });
 
   it('UCLA Library Logo', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.get('[alt="UCLA Library logo"]').should('be.visible');
   });
 
   it('EMEL Logo', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.get('[alt="EMEL logo"]').should('be.visible');
   });
 
   it('Ahmanson Foundation Logo', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.get('[alt="Ahmanson Foundation logo"]').should('be.visible');
   });
 
   it('Arcadia Logo', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.get('[alt="Arcadia logo"]').should('be.visible');
   });
 
 // Footer Secondary - Sinai Palimpsests Project Link
   it('Sinai Palimpsests Project', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.contains('a[href="http://sinaipalimpsests.org/"]', 'Sinai Palimpsests Project');
   });
 });
