@@ -1,4 +1,4 @@
-describe('Work show pages', () => {
+describe('Sinai Work show pages', () => {
   it('Sinai Syriac 2A', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL') + '/catalog/' + encodeURIComponent('ark:/21198/z1x07bdf'));
     cy.contains('h1', 'Sinai Syriac 2A. Four Gospels');
