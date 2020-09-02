@@ -3,7 +3,7 @@ beforeEach(() => {
   cy.visit(Cypress.env('SINAI_BASE_URL'));
 });
 
-describe('Search', () => {
+describe('Sinai Search', () => {
   it('Search Blank', () => {
     cy.get('[id=search]').click();
     cy.contains('span', 'You searched for:').should('not.exist');
