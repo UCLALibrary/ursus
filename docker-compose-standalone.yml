@@ -38,6 +38,7 @@ services:
       DATABASE_NAME: sinai
       SOLR_URL: http://solr:8983/solr/sinai
       SOLR_TEST_URL: http://solr_test:8983/solr/sinai
+      FEED_URSUS_SOLR: http://127.0.0.1:6983/solr/californica
       DATABASE_USERNAME: ursus
       DATABASE_PASSWORD: ursus
     ports:

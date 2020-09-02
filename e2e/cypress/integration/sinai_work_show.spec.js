@@ -1,19 +1,20 @@
 describe('Work show pages', () => {
-  it('Sinai Syriac 127', () => {
-    cy.visit('https://sinaimanuscripts.library.ucla.edu/catalog/ark:%2F21198%2Fz1bg3sbz');
-    cy.contains('h1', "Sinai Syriac 127. Services : manuscript, 1294. St. Catherine's Monastery, Sinai, Egypt");
+  it('Sinai Syriac 2A', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL') + '/catalog/ark:/21198/z1x07bdf');
+    cy.contains('h1', 'Sinai Syriac 2A. Four Gospels');
     cy.percySnapshot();
   });
 
-  it('Sinai Arabic 42', () => {
-    cy.visit('https://sinaimanuscripts.library.ucla.edu/catalog/ark:%2F21198%2Fz1p85g7p');
-    cy.contains('h1', "Sinai Arabic 42. Psalter and Odes : manuscript, 1790. St. Catherine's Monastery, Sinai, Egypt");
+  it('MSinai Syriac 45', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL') + '/catalog/ark:/21198/z1zs40v7');
+    cy.contains('h1', 'MSinai Syriac 45');
+    cy.get('.item-page__title')
     cy.percySnapshot();
   });
 
-  it('Sinai Arabic 578', () => {
-    cy.visit('https://sinaimanuscripts.library.ucla.edu/catalog/ark:%2F21198%2Fz1fv04nq');
-    cy.contains('h1', "Sinai Arabic 578. The diseases of the eye and their treatment by ‘Alī ibn Īsā : manuscript, [11th c.]. St. Catherine's Monastery, Sinai, Egypt");
+  it('Sinai Syriac 70', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL') + '/catalog/ark:/21198/z1s76kq5');
+    cy.contains('h1', 'Sinai Syriac 70');
     cy.percySnapshot();
   });
 });

@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 beforeEach(() => {
-  cy.visit('/');
+  cy.visit(Cypress.env('SINAI_BASE_URL'));
 });
 
 describe('Search', () => {
