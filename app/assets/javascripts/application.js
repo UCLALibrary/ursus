@@ -16,7 +16,7 @@
 //= require tether
 // Required by Blacklight
 //= require jquery3
-//= require jquery_ujs
+//= require rails-ujs
 //= require popper
 //= require bootstrap
 //= require blacklight/blacklight

@@ -102,4 +102,51 @@ describe('Prev/next Pagination', () => {
       .parent('.disabled')
       .should('have.length', 2);*/
   });
+
+  it('Prev/next in search results', () => {
+    /* steps: 
+    1. go to empty search 
+    2. remember third item title
+    3. click on first item, then click 'next' to 2nd and 3rd, 'prev' back to second
+    4. at each stop, assert:
+        - pagination control says '1/2/3 of ...'
+        - title isn't equal to remembered 3rd title, except when it should be
+        - 'Next'/'Prev' links are <a> tags, execpt on 1st item where 'Next' is a (inactive) span
+    */
+    cy.visit('/catalog?utf8=%E2%9C%93&q=&search_field=all_fields');
+    cy.get('h3.document__list-title').eq(2).then(($title) => {
+      let third_title = $title.text().replace(/^\s+/, '').replace(/\s+$/, '');
+
+      cy.get('h3.document__list-title').eq(0).find('a').click();
+      cy.get('.item-page__pagination-widgets').should('contain', '1 of')
+      // Next/Prev links are <span> when disabled, <a> when active
+      cy.get('.item-page__pagination-widgets').contains('span', 'Prev').should('exist')
+      cy.get('.item-page__pagination-widgets').contains('a', 'Prev').should('not.exist')
+      cy.get('.item-page__pagination-widgets').contains('span', 'Next').should('not.exist')
+      cy.get('.item-page__pagination-widgets').contains('a', 'Next').should('exist')
+      cy.get('.item-page__title').should('not.contain', third_title);
+
+      cy.get('.item-page__pagination-widgets').contains('a', 'Next').click();
+      cy.get('.item-page__pagination-widgets').should('contain', '2 of')
+      // Next/Prev links are <span> when disabled, <a> when active
+      cy.get('.item-page__pagination-widgets').contains('span', 'Prev').should('not.exist')
+      cy.get('.item-page__pagination-widgets').contains('a', 'Prev').should('exist')
+      cy.get('.item-page__pagination-widgets').contains('span', 'Next').should('not.exist')
+      cy.get('.item-page__pagination-widgets').contains('a', 'Next').should('exist')
+      cy.get('.item-page__title').should('not.contain', third_title);
+
+      cy.get('.item-page__pagination-widgets').contains('a', 'Next').click();
+      cy.get('.item-page__pagination-widgets').should('contain', '3 of')
+      // Next/Prev links are <span> when disabled, <a> when active
+      cy.get('.item-page__pagination-widgets').contains('span', 'Prev').should('not.exist')
+      cy.get('.item-page__pagination-widgets').contains('a', 'Prev').should('exist')
+      cy.get('.item-page__pagination-widgets').contains('span', 'Next').should('not.exist')
+      cy.get('.item-page__pagination-widgets').contains('a', 'Next').should('exist')
+      cy.get('.item-page__title').should('contain', third_title);
+
+      cy.get('.item-page__pagination-widgets').contains('a', 'Prev').click();
+      cy.get('.item-page__pagination-widgets').should('contain', '2 of')
+      cy.get('.item-page__title').should('not.contain', third_title);
+    })
+  });
 });

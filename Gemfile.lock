@@ -67,12 +67,12 @@ GEM
     bixby (1.0.0)
       rubocop (~> 0.50, <= 0.52.1)
       rubocop-rspec (~> 1.22, <= 1.22.2)
-    blacklight (7.1.0)
+    blacklight (7.3.0)
       deprecation
       globalid
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
-      rails (~> 5.1)
+      rails (>= 5.1, < 7)
     blacklight-access_controls (6.0.0)
       blacklight (> 6.0, < 8)
       cancancan (~> 1.8)
@@ -214,7 +214,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    loofah (2.6.0)
+    loofah (2.7.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -234,7 +234,7 @@ GEM
     mime-types-data (3.2019.1009)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.14.1)
+    minitest (5.14.2)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     mysql2 (0.5.3)
@@ -440,7 +440,7 @@ PLATFORMS
 
 DEPENDENCIES
   bixby (~> 1.0)
-  blacklight (~> 7.1.0)
+  blacklight (~> 7.3.0)
   blacklight-access_controls (>= 6.0.0)
   blacklight-gallery (~> 1.7.0)
   blacklight_dynamic_sitemap (~> 0.1.0)
