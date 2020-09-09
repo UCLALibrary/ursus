@@ -1,5 +1,5 @@
 describe('Sinai Homepage', () => {
-  it('Visit the Homepage', () => {
+  it('Visit the Sinai Homepage', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.percySnapshot();
   });
