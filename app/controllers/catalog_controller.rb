@@ -54,6 +54,9 @@ class CatalogController < ApplicationController
     # config.show.partials.insert(1, :collection_banner)
     config.show.partials.insert(2, :media_viewer)
 
+    # ------------------------------------------------------
+    # INDEX PAGE
+    # solr field configuration for document/show views
     # solr field configuration for document/show views
     config.index.title_field = 'title_tesim'
     config.index.display_type_field = 'has_model_ssim'
@@ -98,7 +101,7 @@ class CatalogController < ApplicationController
       config.add_facet_field 'features_sim', limit: 7, label: 'Features'
       config.add_facet_field 'support_sim', limit: 7, label: 'Support'
 
-      # URSUS
+    # URSUS
     else
       config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
       # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5 same as : config.add_facet_field 'resource_type_sim', limit: 5
@@ -115,15 +118,17 @@ class CatalogController < ApplicationController
     # It's used to give a label to the filter that comes from the user profile
     config.add_facet_field 'generic_type_sim', if: false
 
-    # Have BL send all facet field names to Solr, which has been the default
-    # previously. Simply remove these lines if you'd rather use Solr request
-    # handler defaults, or have no facets.
+    # Have BL send all facet field names to Solr,
+    # which has been the default previously.
+    # Remove these lines if
+    # -- you'd rather use Solr request handler defaults,
+    # -- or have no facets.
     config.add_facet_fields_to_solr_request!
 
     # ------------------------------------------------------
-    # INDEX / SEARCH RESULTS
+    # INDEX PAGE / SEARCH RESULTS
     # solr fields to be displayed in the index search results / list view
-    #   The   config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
+    # The config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
     config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
     config.add_index_field 'date_created_tesim', label: 'Date Created'
@@ -139,105 +144,148 @@ class CatalogController < ApplicationController
     # The ordering of the field names is the order of the display
     # ::Solrizer.solr_name('funding_note', :stored_searchable) == 'funding_note_tesim'
     # To create a link on the item/show page of Ursus that links to a search for all fields of this name add below:
-    # link_to_facet: 'fieldname_sim' (refer to editor on line 167)
+    # link_to_facet: 'fieldname_sim' (refer to editor on line 162)
     # and in Californica add :facetable to its predicate in app/models/ucla_metadata.rb
+    # https://docs.google.com/spreadsheets/d/1Ult1ZpMuyKd92lZ5ODmBA6c7hO1pZGjXHTzN0_BOjeA/edit#gid=0
 
-    config.add_show_field 'alternative_title_tesim', separator_options: BREAKS
-    config.add_show_field 'architect_tesim', link_to_facet: 'architect_sim', separator_options: BREAKS
-    config.add_show_field 'ark_ssi', label: 'ARK'
+    # PRIMARY
+    # Item Overview
+    config.add_show_field 'title_tesim', label: 'Title', separator_options: BREAKS
+    config.add_show_field 'alternative_title_tesim', label: 'Alternative title',  separator_options: BREAKS
+    config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'uniform_title_sim', separator_options: BREAKS
+    config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim', separator_options: BREAKS
+    config.add_show_field 'architect_tesim', label: 'Architect', link_to_facet: 'architect_sim', separator_options: BREAKS
     config.add_show_field 'author_tesim', label: 'Author', link_to_facet: 'author_sim', separator_options: BREAKS
-    config.add_show_field 'based_near_label_tesim', separator_options: BREAKS
-    config.add_show_field 'binding_note_ssi', label: 'Binding note'
-    config.add_show_field 'calligrapher_tesim', label: 'Calligrapher', link_to_facet: 'calligrapher_sim', separator_options: BREAKS
-    config.add_show_field 'caption_tesim', separator_options: BREAKS
-    config.add_show_field 'collation_tesim', separator_options: BREAKS
-    config.add_show_field 'colophon_tesim', label: 'Colophon', separator_options: BREAKS
-    config.add_show_field 'composer_tesim', label: 'Composer', link_to_facet: 'composer_sim', separator_options: BREAKS
-    config.add_show_field 'condition_note_ssi', label: 'Condition note', separator_options: BREAKS
-    config.add_show_field 'contents_note_tesim', label: 'Contents note', separator_options: BREAKS
-    config.add_show_field 'contributor_tesim', separator_options: BREAKS
-    config.add_show_field 'commentator_tesim', link_to_facet: 'commentator_sim', label: 'Commentator', separator_options: BREAKS
-    config.add_show_field 'creator_tesim', link_to_facet: 'creator_sim', label: 'Creator', separator_options: BREAKS
-    config.add_show_field 'date_created_tesim', separator_options: BREAKS
-    config.add_show_field 'date_modified_tesim', separator_options: BREAKS
-    config.add_show_field 'date_uploaded_tesim', separator_options: BREAKS
-    config.add_show_field 'description_tesim', separator_options: BREAKS
-    config.add_show_field 'dimensions_tesim', separator_options: BREAKS
-    config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
-    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_sim', separator_options: BREAKS
-    config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim', separator_options: BREAKS
-    config.add_show_field 'explicit_tesim', label: 'Explicit', separator_options: BREAKS
-    config.add_show_field 'extent_tesim', separator_options: BREAKS
-    config.add_show_field 'features_tesim', link_to_facet: 'features_sim', label: 'Features', separator_options: BREAKS
-    config.add_show_field 'finding_aid_url_ssm', label: 'Finding aid url'
-    config.add_show_field 'foliation_tesim', label: 'Foliation', separator_options: BREAKS
-    config.add_show_field 'format_tesim', separator_options: BREAKS
-    config.add_show_field 'funding_note_tesim', separator_options: BREAKS
-    config.add_show_field 'genre_tesim', link_to_facet: 'genre_sim', separator_options: BREAKS
-    config.add_show_field 'geographic_coordinates_ssim'
-    config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
-    config.add_show_field 'human_readable_rights_statement_tesim', separator_options: BREAKS
-    config.add_show_field 'human_readable_language_tesim', link_to_facet: 'human_readable_language_sim', separator_options: BREAKS
-    config.add_show_field 'identifier_tesim', separator_options: BREAKS
-    config.add_show_field 'iiif_manifest_url_ssi', label: 'Manifest url'
     config.add_show_field 'illuminator_tesim', label: 'Illuminator', link_to_facet: 'illuminator_sim', separator_options: BREAKS
-    config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note', separator_options: BREAKS
+    config.add_show_field 'scribe_tesim', label: 'Scribe', link_to_facet: 'scribe_sim', separator_options: BREAKS
+    config.add_show_field 'rubricator_tesim', label: 'Rubricator', link_to_facet: 'rubricator_sim', separator_options: BREAKS
+    config.add_show_field 'commentator_tesim', label: 'Commentator', link_to_facet: 'commentator_sim', separator_options: BREAKS
+    config.add_show_field 'translator_tesim', label: 'Translator', link_to_facet: 'translator_sim', separator_options: BREAKS
+    config.add_show_field 'lyricist_tesim', label: 'Lyricist', link_to_facet: 'lyricist_sim', separator_options: BREAKS
+    config.add_show_field 'composer_tesim', label: 'Composer', link_to_facet: 'composer_sim', separator_options: BREAKS
     config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'illustrator_sim', separator_options: BREAKS
+    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_sim', separator_options: BREAKS
+    config.add_show_field 'calligrapher_tesim', label: 'Calligrapher', link_to_facet: 'calligrapher_sim', separator_options: BREAKS
+    config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim', separator_options: BREAKS
+    config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_sim', separator_options: BREAKS
+    config.add_show_field 'date_created_tesim', label: 'Date created', separator_options: BREAKS
+    # 'Normalized date' if dateCreateD == nil
+    # 'Year'
+    config.add_show_field 'place_of_origin_tesim', label: 'Place of origin', separator_options: BREAKS
+    config.add_show_field 'publisher_tesim', label: 'Publisher', separator_options: BREAKS
+    config.add_show_field 'human_readable_language_tesim', label: 'Language', link_to_facet: 'human_readable_language_sim', separator_options: BREAKS
+    config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+
+    # IF SINAI ?
+    config.add_show_field 'explicit_tesim', label: 'Explicit', separator_options: BREAKS
+    config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim', separator_options: BREAKS
     config.add_show_field 'incipit_tesim', label: 'Incipit', separator_options: BREAKS
     config.add_show_field 'inscription_tesim', label: 'Inscription', separator_options: BREAKS
-    config.add_show_field 'keyword_tesim', separator_options: BREAKS
-    config.add_show_field 'latitude_tesim', label: 'Latitude', separator_options: BREAKS
-    config.add_show_field 'local_rights_statement_ssim', label: 'Local Rights statement'
-    config.add_show_field 'location_tesim', link_to_facet: 'location_sim', separator_options: BREAKS
-    config.add_show_field 'local_identifier_ssm', label: 'Local identifier', separator_options: BREAKS
-    config.add_show_field 'longitude_tesim', label: 'Longitude', separator_options: BREAKS
-    config.add_show_field 'lyricist_tesim', label: 'Lyricist', link_to_facet: 'lyricist_sim', separator_options: BREAKS
-    config.add_show_field 'medium_tesim', separator_options: BREAKS
-    config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
-    config.add_show_field 'named_subject_tesim', link_to_facet: 'named_subject_sim', separator_options: BREAKS
-    config.add_show_field 'note_tesim', label: 'Note', separator_options: BREAKS
-    config.add_show_field 'opac_url_ssi', label: 'Opac url'
-    config.add_show_field 'oclc_ssi', label: 'OCLC Number'
-    config.add_show_field 'page_layout_ssim', label: 'Page layout'
-    config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim', separator_options: BREAKS
-    config.add_show_field 'place_of_origin_tesim', separator_options: BREAKS
-    config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_sim', separator_options: BREAKS
-    config.add_show_field 'provenance_tesim', label: 'Provenance', separator_options: BREAKS
-    config.add_show_field 'publisher_tesim', separator_options: BREAKS
-    config.add_show_field 'repository_tesim', separator_options: BREAKS
-    config.add_show_field 'rights_country_tesim', separator_options: BREAKS
-    config.add_show_field 'rights_holder_tesim', separator_options: BREAKS
-    config.add_show_field 'rubricator_tesim', label: 'Rubricator', link_to_facet: 'rubricator_sim', separator_options: BREAKS
-    config.add_show_field 'scribe_tesim', label: 'Scribe', link_to_facet: 'scribe_sim', separator_options: BREAKS
     config.add_show_field 'script_tesim', label: 'Script', separator_options: BREAKS
-    config.add_show_field 'services_contact_ssm', label: 'Rights services contact'
-    config.add_show_field 'subject_tesim', link_to_facet: 'subject_sim', separator_options: BREAKS
-    config.add_show_field 'subject_topic_tesim', label: 'Subject topic', separator_options: BREAKS
-    config.add_show_field 'summary_tesim', label: 'Summary', separator_options: BREAKS
-    config.add_show_field 'support_tesim', label: 'Support', separator_options: BREAKS
-    config.add_show_field 'translator_tesim', link_to_facet: 'translator_sim', label: 'Translator', separator_options: BREAKS
-    config.add_show_field 'title_tesim', separator_options: BREAKS
-    config.add_show_field 'toc_tesim', label: 'Table of Contents', separator_options: BREAKS
-    config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'uniform_title_sim', separator_options: BREAKS
     config.add_show_field 'writing_and_hands_tesim', label: 'Writing and hands', separator_options: BREAKS
     config.add_show_field 'writing_system_tesim', label: 'Writing system', separator_options: BREAKS
 
+    # Notes
+    config.add_show_field 'summary_tesim', label: 'Summary', separator_options: BREAKS
+    config.add_show_field 'description_tesim', label: 'Description', separator_options: BREAKS
+    config.add_show_field 'caption_tesim', label: 'Caption', separator_options: BREAKS
+    config.add_show_field 'toc_tesim', label: 'Table of Contents', separator_options: BREAKS
+    config.add_show_field 'contents_note_tesim', label: 'Contents note', separator_options: BREAKS
+    config.add_show_field 'provenance_tesim', label: 'Provenance', separator_options: BREAKS
+    config.add_show_field 'colophon_tesim', label: 'Colophon', separator_options: BREAKS
+    config.add_show_field 'note_tesim', label: 'Note', separator_options: BREAKS
+
+    # Physical description
+    config.add_show_field 'format_tesim', label: 'Format', separator_options: BREAKS
+    # 'Book format'
+    config.add_show_field 'medium_tesim', label: 'Medium', separator_options: BREAKS
+    config.add_show_field 'support_tesim', label: 'Support', separator_options: BREAKS
+    config.add_show_field 'extent_tesim', label: 'Extent', separator_options: BREAKS
+    config.add_show_field 'dimensions_tesim', label: 'Dimensions', separator_options: BREAKS
+    config.add_show_field 'page_layout_ssim', label: 'Page layout'
+    config.add_show_field 'binding_note_ssi', label: 'Binding note'
+    config.add_show_field 'condition_note_ssi', label: 'Condition note', separator_options: BREAKS
+    config.add_show_field 'collation_tesim', label: 'Collation', separator_options: BREAKS
+    config.add_show_field 'foliation_tesim', label: 'Foliation', separator_options: BREAKS
+    config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note', separator_options: BREAKS
+
+    # Keywords
+    config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim'
+    config.add_show_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_sim', separator_options: BREAKS
+    config.add_show_field 'subject_tesim', label: 'Subject', link_to_facet: 'subject_sim', separator_options: BREAKS
+    config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim', separator_options: BREAKS
+    config.add_show_field 'subject_topic_tesim', label: 'Subject topic', separator_options: BREAKS
+    # 'Subject geographic'
+    # 'Subject temporal'
+    config.add_show_field 'location_tesim', label: 'Location', link_to_facet: 'location_sim', separator_options: BREAKS
+    config.add_show_field 'latitude_tesim', label: 'Latitude', separator_options: BREAKS
+    config.add_show_field 'longitude_tesim', label: 'Longitude', separator_options: BREAKS
+    config.add_show_field 'geographic_coordinates_ssim'
+
+    # SECONDARY
+    # Find This Item
+    config.add_show_field 'repository_tesim', label: 'Repository', separator_options: BREAKS
+    config.add_show_field 'local_identifier_ssm', label: 'Local identifier', separator_options: BREAKS
+    config.add_show_field 'oclc_ssi', label: 'OCLC Number'
+    config.add_show_field 'iiif_manifest_url_ssi', label: 'Manifest url'
+    config.add_show_field 'finding_aid_url_ssm', label: 'Finding aid url'
+    config.add_show_field 'opac_url_ssi', label: 'Opac url'
+    config.add_show_field 'ark_ssi', label: 'ARK'
+
+    # Access Conditions
+    config.add_show_field 'human_readable_rights_statement_tesim', label: 'Rights statement', separator_options: BREAKS
+    config.add_show_field 'local_rights_statement_ssim', label: 'Local rights statement'
+    config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation', separator_options: BREAKS
+    config.add_show_field 'rights_holder_tesim', label: 'Rights holder', separator_options: BREAKS
+    config.add_show_field 'services_contact_ssm', label: 'Rights contact'
+    # 'License'
+    config.add_show_field 'funding_note_tesim', label: 'Funding note', separator_options: BREAKS
+
+    # RECORD INFO
+    # 'Depositer'
+    # 'Submitted'
+    # config.add_show_field 'date_modified_tesim', label: 'Date modifed', separator_options: BREAKS
+    # config.add_show_field 'date_uploaded_tesim', label: 'Date uploaded', separator_options: BREAKS
+    # 'Filename'
+    # 'Import URL'
+    # 'Source'
+    # 'IIIF Viewing Hint'
+    # 'IIIF Text direction'
+    # 'IIIF Range'
+
+    # NOT USING
+    config.add_show_field 'creator_tesim', label: 'Creator', link_to_facet: 'creator_sim', separator_options: BREAKS
+    config.add_show_field 'contributor_tesim', label: 'Contributor', separator_options: BREAKS
+    config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
+    config.add_show_field 'identifier_tesim', label: 'Identifier', separator_options: BREAKS
+    # 'Citation'
+    # 'Arkivo Checksum'
+    # 'Folder'
+    config.add_show_field 'keyword_tesim', label: 'Keyword', separator_options: BREAKS
+    config.add_show_field 'based_near_label_tesim', label: 'Location (based near)', separator_options: BREAKS
+    # 'Related URL'
+
+    # ----------------------------------------------
+    # DROPDOWN IN SEARCHBAR
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
     #
-    # Search fields will inherit the :qt solr request handler from
-    # config[:default_solr_parameters], OR can specify a different one
-    # with a :qt key/value. Below examples inherit, except for subject
-    # that specifies the same :qt as default for our own internal
-    # testing purposes.
+    # Search fields will inherit the :qt solr request handler
+    # from config[:default_solr_parameters],
+    # OR can specify a different one with a :qt key/value.
+    # Below examples inherit,
+    # except for subject which specifies the same :qt as default
+    # for our own internal testing purposes.
     #
-    # The :key is what will be used to identify this BL search field internally,
-    # as well as in URLs -- so changing it after deployment may break bookmarked
-    # urls.  A display label will be automatically calculated from the :key,
+    # The :key is what will be used
+    # to identify this BL search field internally, as well as in URLs
+    # -- so changing it after deployment may break bookmarked urls.
+    # A display label will be automatically calculated from the :key,
     # or can be specified manually to be different.
     #
-    # This one uses all the defaults set by the solr request handler. Which
-    # solr request handler? The one set in config[:default_solr_parameters][:qt],
+    # This one uses all the defaults set by the solr request handler. 
+    # Which solr request handler?
+    # The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
     search_field_service = ::SearchFieldService.instance
     config.add_search_field('all_fields', label: 'All Fields') do |field|
@@ -260,10 +308,13 @@ class CatalogController < ApplicationController
       }
     end
 
-    # "sort results by" select (pulldown)
-    # label in pulldown is followed by the name of the SOLR field to sort by and
-    # whether the sort is ascending or descending (it must be asc or desc
-    # except in the relevancy case).
+    # ------------------------------------------------------
+    # CATALOG RESULTS 'SORT RESULTS BY' DROPDOWN
+    # the _sort_widget.html.erb partial called in the _browse_results.html.erb partial
+    # label in dropdown is followed by
+    # the name of the SOLR field to sort by
+    # and whether the sort is ascending or descending
+    # (it must be asc or desc except in the relevancy case)
     # label is key, solr field is value
     config.add_sort_field 'score desc', label: 'Relevance'
     config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
@@ -278,18 +329,23 @@ class CatalogController < ApplicationController
       config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
     end
 
-    # If there are more than this many search results, no spelling ("did you
-    # mean") suggestion is offered.
+    #------------------------------------------------------
+    # AUTO_SUGGEST / AUTO_COMPLETE / 
+    # If there are more than this many search results,
+    # no spelling ("did you mean") suggestion is offered.
     config.spell_max = 5
 
-    # TO-DO: what about autsuggest? Do we want this?
+    # TO-DO: what about autosuggest? Do we want this?
     # Configuration for autocomplete suggestor
     # config.autocomplete_enabled = true
     # config.autocomplete_path = 'suggest'
 
+    # ------------------------------------------------------
+    # BOOKMARK / CITATION
     # Blacklight update to 7.0.0
     config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
 
+    # ------------------------------------------------------
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
     config.add_results_collection_tool(:view_type_group)
@@ -300,6 +356,8 @@ class CatalogController < ApplicationController
     config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
   end
 
+  # ------------------------------------------------------
+  # PERMISSIONS
   # Override this method from the
   # blacklight-access_controls gem to allow the
   # user to view the show page if they have at least
@@ -312,7 +370,11 @@ class CatalogController < ApplicationController
     permissions
   end
 
+  # ------------------------------------------------------
+  # COLLECTION COUNT
   # override this method from Blacklight::Catalog.rb to find the collection count
+  # https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb -- line: 46
+  # https://www.rubydoc.info/github/projectblacklight/blacklight/Blacklight/Catalog
   def show
     deprecated_response, @document = search_service.fetch(params[:id])
     @response = ActiveSupport::Deprecation::DeprecatedObjectProxy.new(deprecated_response, 'The @response instance variable is deprecated; use @document.response instead.')
