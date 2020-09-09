@@ -19,6 +19,7 @@ en:
       new_search: 'Start New Search'
       fields:
         facet:
+          author_sim: 'Author'
           date_created_tesim: 'Date Created'
           date_modified_dtsi: 'Date Modified'
           date_uploaded_dtsi: 'Date Uploaded'
@@ -49,6 +50,7 @@ en:
           subject_sim: 'Subject'
           subject_tesim: 'Subjects'
           title_tesim: 'Title'
+          uniform_title_sim: 'Uniform title'
           year_isim: 'Date'
         index:
           date_created_tesim: 'Date Created'
