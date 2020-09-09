@@ -151,7 +151,7 @@ class CatalogController < ApplicationController
     # PRIMARY
     # Item Overview
     config.add_show_field 'title_tesim', label: 'Title', separator_options: BREAKS
-    config.add_show_field 'alternative_title_tesim', label: 'Alternative title',  separator_options: BREAKS
+    config.add_show_field 'alternative_title_tesim', label: 'Alternative title', separator_options: BREAKS
     config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'uniform_title_sim', separator_options: BREAKS
     config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim', separator_options: BREAKS
     config.add_show_field 'architect_tesim', label: 'Architect', link_to_facet: 'architect_sim', separator_options: BREAKS
@@ -175,6 +175,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'publisher_tesim', label: 'Publisher', separator_options: BREAKS
     config.add_show_field 'human_readable_language_tesim', label: 'Language', link_to_facet: 'human_readable_language_sim', separator_options: BREAKS
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+    config.add_show_field 'creator_tesim', label: 'Creator', link_to_facet: 'creator_sim', separator_options: BREAKS
 
     # IF SINAI ?
     config.add_show_field 'explicit_tesim', label: 'Explicit', separator_options: BREAKS
@@ -254,7 +255,6 @@ class CatalogController < ApplicationController
     # 'IIIF Range'
 
     # NOT USING
-    config.add_show_field 'creator_tesim', label: 'Creator', link_to_facet: 'creator_sim', separator_options: BREAKS
     config.add_show_field 'contributor_tesim', label: 'Contributor', separator_options: BREAKS
     config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
     config.add_show_field 'identifier_tesim', label: 'Identifier', separator_options: BREAKS
@@ -283,7 +283,7 @@ class CatalogController < ApplicationController
     # A display label will be automatically calculated from the :key,
     # or can be specified manually to be different.
     #
-    # This one uses all the defaults set by the solr request handler. 
+    # This one uses all the defaults set by the solr request handler.
     # Which solr request handler?
     # The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
@@ -330,7 +330,7 @@ class CatalogController < ApplicationController
     end
 
     #------------------------------------------------------
-    # AUTO_SUGGEST / AUTO_COMPLETE / 
+    # AUTO_SUGGEST / AUTO_COMPLETE
     # If there are more than this many search results,
     # no spelling ("did you mean") suggestion is offered.
     config.spell_max = 5
