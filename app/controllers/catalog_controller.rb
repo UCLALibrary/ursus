@@ -169,7 +169,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim', separator_options: BREAKS
     config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_sim', separator_options: BREAKS
     config.add_show_field 'date_created_tesim', label: 'Date created', separator_options: BREAKS
-    # 'Normalized date' if dateCreateD == nil
+    # 'Normalized date'
     # 'Year'
     config.add_show_field 'place_of_origin_tesim', label: 'Place of origin', separator_options: BREAKS
     config.add_show_field 'publisher_tesim', label: 'Publisher', separator_options: BREAKS
