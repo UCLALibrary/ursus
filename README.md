@@ -57,7 +57,7 @@ docker-compose up
 
 Ursus should now be running with its regular look on [port 3003](http://localhost:3003), and on [port 3004](http://localhost:3004) with the [Sinai Manuscripts Digital Library](https://sinaimanuscripts.library.ucla.edu/) UI enabled.
 
-Note: to view Sinai images, first visit the [production site](https://sinaimanuscripts.library.ucla.edu) to load the cookie.
+Note: to view Sinai images, first visit the [production site](https://sinaimanuscripts.library.ucla.edu) and sign in/up to load the cookie.
 
 ### Running in conjunction with local instance of Californica
 
