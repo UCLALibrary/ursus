@@ -33,6 +33,8 @@ Ursus can be locally run in two ways:
 
 ### Running in standalone mode
 
+The file `docker-compose-standalone.yml` includes a setup with a clone of the ursus-stage and sinai-stage solr indexes, so you do not need to run californica and manually ingest material (in fact, californica should #not# be running to avoid port conflicts.)
+
 Clone the repo from GitHub and change directories into the repo:
 
 ```
@@ -55,19 +57,17 @@ docker-compose up
 
 Ursus should now be running with its regular look on [port 3003](http://localhost:3003), and on [port 3004](http://localhost:3004) with the [Sinai Manuscripts Digital Library](https://sinaimanuscripts.library.ucla.edu/) UI enabled.
 
-The file `docker-compose-standalone.yml` includes a setup with a clone of the ursus-stage and sinai-stage solr indexes, so you do not need to run californica and manually ingest material (in fact, californica should #not# be running to avoid port conflicts.)
+Note: to view Sinai images, first visit the [production site](https://sinaimanuscripts.library.ucla.edu) to load the cookie.
 
-You can select this setup in one of three ways:
+### Running in conjunction with local instance of Californica
 
-- Delete the file `docker-compose.yml`, which by default is a symlink to `docker-compose-with-californica.yml`. Then run `ln -s docker-compose-standalone.yml docker-compose.yml` to create a new symlink.
-- Set the environment variable `COMPOSE_FILE=docker-compose-standalone.yml`. You can do this in each terminal you open or add it to an `ursus/.env` file (you can start one with `cp default.env ursus.env`.)
-- Every time you run `docker-compose`, add the flag `-f docker-compose-standalone.yml` _before_ any subcommands (e.g. `docker-compose -f docker-compose-standalone.yml run web bash`.)
+If the stand-alone version of Ursus is running, stop it with:
 
-### Running in conjunction with local instance Californica
+`docker-compose down`
 
-First, install [Californica](https://github.com/UCLALibrary/californica) and ingest some data; make sure californica is running so ursus can point to its data.
+First, [install Californica](https://github.com/UCLALibrary/californica) and ingest some data; make sure californica is running so ursus can point to its data.
 
-Clone the repo from GitHub and change directories into the repo:
+Clone the Ursus repo from GitHub and change directories into the Ursus repo:
 
 ```
 git clone git@github.com:UCLALibrary/ursus.git
@@ -76,21 +76,17 @@ cd ursus
 
 ```
 # Open a tab in your terminal
-cd .../ursus
-docker-compose run web bundle exec rails db:setup
-docker-compose run sinai bundle exec rails db:setup
+docker-compose -f docker-compose-with-californica.yml run web bundle exec rails db:setup
+docker-compose -f docker-compose-with-californica.yml run sinai bundle exec rails db:setup
 docker-compose -f docker-compose-with-californica.yml up
 
 # Open a second tab in your terminal
-cd .../ursus
 docker-compose -f docker-compose-with-californica.yml run web bash
 
 # Open a third tab in your terminal
-cd .../ursus
 docker-compose -f docker-compose-with-californica.yml run sinai bash
 
 # Open a fourth tab in your terminal for git commands
-cd .../ursus
 git ...
 ```
 
@@ -135,4 +131,4 @@ npx cypress run
 
 ### Visual regression tests
 
-Visual regression testing is done via [percy.io](https://percy.io/UCLA-Library-Software-Development/ursus). This runs only for pull requests on travis; it should not be run locally.
+Visual regression testing is done via [percy.io](https://percy.io/UCLA-Library-Software-Development/ursus). This runs only for pull requests on travis; it will not run locally.
