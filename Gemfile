@@ -10,7 +10,7 @@ gem 'blacklight-gallery', '~> 1.7.0'
 gem 'blacklight_oai_provider', github: 'projectblacklight/blacklight_oai_provider'
 gem 'dotenv-rails', '>= 2.7.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.7'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.12', '>= 3.12.6'
 # Use SCSS for stylesheets
