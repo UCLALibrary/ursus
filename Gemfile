@@ -10,7 +10,7 @@ gem 'blacklight-gallery', '~> 1.7.0'
 gem 'blacklight_oai_provider', github: 'projectblacklight/blacklight_oai_provider'
 gem 'dotenv-rails', '>= 2.7.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.7'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.12', '>= 3.12.6'
 # Use SCSS for stylesheets
@@ -87,7 +87,7 @@ gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'coveralls', '>= 0.8.23', require: false
 gem 'devise', '>= 4.7.1'
 gem 'devise-guests', '~> 0.7', '>= 0.7.0'
-gem 'flipflop'
+gem 'flipflop', '>= 2.6.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'httparty'
 gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
