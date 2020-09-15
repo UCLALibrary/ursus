@@ -87,7 +87,7 @@ gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'coveralls', '>= 0.8.23', require: false
 gem 'devise', '>= 4.7.1'
 gem 'devise-guests', '~> 0.7', '>= 0.7.0'
-gem 'flipflop'
+gem 'flipflop', '>= 2.6.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'httparty'
 gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
