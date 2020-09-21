@@ -72,8 +72,7 @@ RSpec.describe CatalogController, type: :controller do
        "dimensions_tesim", "dlcs_collection_name_tesim", "editor_tesim",
        "engraver_tesim", "explicit_tesim", "extent_tesim", "features_tesim", "finding_aid_url_ssm",
        "foliation_tesim", "format_tesim", "funding_note_tesim", "genre_tesim",
-       "geographic_coordinates_ssim", "human_readable_resource_type_tesim",
-       "human_readable_rights_statement_tesim", "human_readable_language_tesim",
+       "geographic_coordinates_ssim", "human_readable_resource_type_tesim", "human_readable_language_tesim",
        "identifier_tesim", "illuminator_tesim", "illustrator_tesim", "iiif_manifest_url_ssi",
        "illustrations_note_tesim", "incipit_tesim", "inscription_tesim",
        "keyword_tesim", "latitude_tesim", "local_rights_statement_ssim", "location_tesim", "local_identifier_ssm",
@@ -83,7 +82,8 @@ RSpec.describe CatalogController, type: :controller do
        "repository_tesim", "rights_country_tesim", "rights_holder_tesim", "rubricator_tesim",
        "scribe_tesim", "script_tesim", "services_contact_ssm", "subject_tesim", "subject_topic_tesim",
        "summary_tesim", "support_tesim", "title_tesim", "toc_tesim", "uniform_title_tesim",
-       "writing_and_hands_tesim", "writing_system_tesim", "commentator_tesim", "translator_tesim"]
+       "writing_and_hands_tesim", "writing_system_tesim", "commentator_tesim", "translator_tesim",
+       "license_tesim", "normalized_date_sim", "subject_geographic_tesim", "subject_temporal_tesim"]
     end
 
     it 'has exactly expected show fields' do

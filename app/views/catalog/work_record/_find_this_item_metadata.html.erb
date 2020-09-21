@@ -1,11 +1,11 @@
 <% doc_presenter = show_presenter(document) %>
-<% local_info = Ursus::LocalInfoMetadataPresenter.new(document: doc_presenter.fields_to_render).local_info_terms %>
+<% find_this_item = Ursus::FindThisItemMetadataPresenter.new(document: doc_presenter.fields_to_render).find_this_item_terms %>
 
-<% if local_info.length > 0 %>
+<% if find_this_item.length > 0 %>
   <div class="metadata-block">
     <h4 class='metadata-block__title'>Find This Item</h4>
     <dl class='metadata-block__group'>
-      <% local_info.each do |field_name, field| -%>
+      <% find_this_item.each do |field_name, field| -%>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <!-- KEY -->
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>

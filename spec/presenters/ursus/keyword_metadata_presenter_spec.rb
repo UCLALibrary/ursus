@@ -5,14 +5,16 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
   let(:solr_doc) do
     {
       'genre_tesim' => 'Genre',
-      'features_tesim' => 'Features',
       'subject_tesim' => 'Subject',
-      'named_subject_tesim' => 'Named Subject',
       'subject_topic_tesim' => 'Subject topic',
+      'named_subject_tesim' => 'Named Subject',
+      'subject_geographic_tesim' => 'Subject geographic',
+      'subject_temporal_tesim' => 'Subject temporal',
       'location_tesim' => 'Location',
-      'longitude_tesim' => 'Longitude',
       'latitude_tesim' => 'Latitude',
-      'human_readable_resource_type_tesim' => 'Resource Type'
+      'longitude_tesim' => 'Longitude',
+      'human_readable_resource_type_tesim' => 'Resource Type',
+      'features_tesim' => 'Features'
     }
   end
   let(:solr_doc_missing_items) do
@@ -32,36 +34,44 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
         expect(config['genre_tesim'].to_s).to eq('Genre')
       end
 
-      it 'returns the Features Key' do
-        expect(config['features_tesim'].to_s).to eq('Features')
-      end
-
       it 'returns the Subject Key' do
         expect(config['subject_tesim'].to_s).to eq('Subject')
-      end
-
-      it 'returns the Named Subject Key' do
-        expect(config['named_subject_tesim'].to_s).to eq('Named Subject')
       end
 
       it 'returns the Subject topic Key' do
         expect(config['subject_topic_tesim'].to_s).to eq('Subject topic')
       end
 
-      it 'returns the Location Key' do
-        expect(config['location_tesim'].to_s).to eq('Location')
+      it 'returns the Named Subject Key' do
+        expect(config['named_subject_tesim'].to_s).to eq('Named Subject')
       end
 
-      it 'returns the Longitude Key' do
-        expect(config['longitude_tesim'].to_s).to eq('Longitude')
+      it 'returns the Subject geographic Key' do
+        expect(config['subject_geographic_tesim'].to_s).to eq('Subject geographic')
+      end
+
+      it 'returns the Subject temporal Key' do
+        expect(config['subject_temporal_tesim'].to_s).to eq('Subject temporal')
+      end
+
+      it 'returns the Location Key' do
+        expect(config['location_tesim'].to_s).to eq('Location')
       end
 
       it 'returns the Latitude Key' do
         expect(config['latitude_tesim'].to_s).to eq('Latitude')
       end
 
+      it 'returns the Longitude Key' do
+        expect(config['longitude_tesim'].to_s).to eq('Longitude')
+      end
+
       it 'returns the Resource Type Key' do
         expect(config['human_readable_resource_type_tesim'].to_s).to eq('Resource Type')
+      end
+
+      it 'returns the Features Key' do
+        expect(config['features_tesim'].to_s).to eq('Features')
       end
     end
 
@@ -71,7 +81,7 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.keyword_terms).to be_instance_of(Hash)
-        expect(all).to eq 9
+        expect(all).to eq 11
         expect(config.length).to eq all
       end
 
