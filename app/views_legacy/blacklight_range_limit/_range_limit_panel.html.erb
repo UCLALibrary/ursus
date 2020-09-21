@@ -32,7 +32,7 @@
            to trick blacklight into displaying actual search results instead
            of home page. Not a great solution, but easiest for now. -->
       <% unless params.has_key?(:search_field) %>
-        <%= hidden_field_tag("search_field", "dummy_range") %>
+         <%= hidden_field_tag("search_field", "dummy_range", :id => "dummy_search_field") %>
       <% end %>
 
       <%= render_range_input(field_name, :begin, input_label_range_begin, maxlength) %> – <%= render_range_input(field_name, :end, input_label_range_end, maxlength) %>
