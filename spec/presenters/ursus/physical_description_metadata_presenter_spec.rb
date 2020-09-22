@@ -18,8 +18,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       'illustrations_note_tesim' => 'Illustrations note',
       'condition_note_ssi' => 'Condition note',
       'binding_note_ssi' => 'Binding note',
-      'inscription_tesim' => 'Inscription',
-      'opac_url_tesim' => 'Opac url'
+      'inscription_tesim' => 'Inscription'
     }
   end
   let(:solr_doc_missing_items) do
@@ -90,10 +89,6 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       it 'returns the Writing system Key' do
         expect(config['writing_system_tesim'].to_s).to eq 'Writing system'
       end
-
-      it 'returns the Opac url' do
-        expect(config['opac_url_tesim'].to_s).to eq 'Opac url'
-      end
     end
 
     describe "#physical_description terms" do
@@ -102,7 +97,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.physical_description_terms).to be_instance_of(Hash)
-        expect(all).to eq 16
+        expect(all).to eq 15
         expect(config.length).to eq all
       end
 

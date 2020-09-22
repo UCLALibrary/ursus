@@ -169,7 +169,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim', separator_options: BREAKS
     config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_sim', separator_options: BREAKS
     config.add_show_field 'date_created_tesim', label: 'Date created', separator_options: BREAKS
-    # 'Normalized date'
+    config.add_show_field 'normalized_date_sim', label: 'Date'
     # 'Year'
     config.add_show_field 'place_of_origin_tesim', label: 'Place of origin', separator_options: BREAKS
     config.add_show_field 'publisher_tesim', label: 'Publisher', separator_options: BREAKS
@@ -182,27 +182,27 @@ class CatalogController < ApplicationController
     config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim', separator_options: BREAKS
     config.add_show_field 'incipit_tesim', label: 'Incipit', separator_options: BREAKS
     config.add_show_field 'inscription_tesim', label: 'Inscription', separator_options: BREAKS
-    config.add_show_field 'script_tesim', label: 'Script', separator_options: BREAKS
-    config.add_show_field 'writing_and_hands_tesim', label: 'Writing and hands', separator_options: BREAKS
-    config.add_show_field 'writing_system_tesim', label: 'Writing system', separator_options: BREAKS
+    config.add_show_field 'script_tesim', label: 'Script', link_to_facet: 'script_sim', separator_options: BREAKS
+    config.add_show_field 'writing_and_hands_tesim', link_to_facet: 'writing_and_hands_sim', label: 'Writing and hands', separator_options: BREAKS
+    config.add_show_field 'writing_system_tesim', link_to_facet: 'writing_system_sim', label: 'Writing system', separator_options: BREAKS
 
     # Notes
     config.add_show_field 'summary_tesim', label: 'Summary', separator_options: BREAKS
     config.add_show_field 'description_tesim', label: 'Description', separator_options: BREAKS
     config.add_show_field 'caption_tesim', label: 'Caption', separator_options: BREAKS
-    config.add_show_field 'toc_tesim', label: 'Table of Contents', separator_options: BREAKS
     config.add_show_field 'contents_note_tesim', label: 'Contents note', separator_options: BREAKS
-    config.add_show_field 'provenance_tesim', label: 'Provenance', separator_options: BREAKS
     config.add_show_field 'colophon_tesim', label: 'Colophon', separator_options: BREAKS
+    config.add_show_field 'provenance_tesim', label: 'Provenance', separator_options: BREAKS
     config.add_show_field 'note_tesim', label: 'Note', separator_options: BREAKS
+    config.add_show_field 'toc_tesim', label: 'Table of Contents', separator_options: BREAKS
 
     # Physical description
-    config.add_show_field 'format_tesim', label: 'Format', separator_options: BREAKS
-    # 'Book format'
-    config.add_show_field 'medium_tesim', label: 'Medium', separator_options: BREAKS
-    config.add_show_field 'support_tesim', label: 'Support', separator_options: BREAKS
     config.add_show_field 'extent_tesim', label: 'Extent', separator_options: BREAKS
     config.add_show_field 'dimensions_tesim', label: 'Dimensions', separator_options: BREAKS
+    config.add_show_field 'format_tesim', label: 'Format', separator_options: BREAKS
+    # 'Book format'
+    config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim', separator_options: BREAKS
+    config.add_show_field 'medium_tesim', label: 'Medium', separator_options: BREAKS
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
     config.add_show_field 'binding_note_ssi', label: 'Binding note'
     config.add_show_field 'condition_note_ssi', label: 'Condition note', separator_options: BREAKS
@@ -211,16 +211,16 @@ class CatalogController < ApplicationController
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note', separator_options: BREAKS
 
     # Keywords
-    config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim'
     config.add_show_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_sim', separator_options: BREAKS
     config.add_show_field 'subject_tesim', label: 'Subject', link_to_facet: 'subject_sim', separator_options: BREAKS
-    config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim', separator_options: BREAKS
     config.add_show_field 'subject_topic_tesim', label: 'Subject topic', separator_options: BREAKS
-    # 'Subject geographic'
-    # 'Subject temporal'
+    config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim', separator_options: BREAKS
+    config.add_show_field 'subject_geographic_tesim', label: 'Subject geographic', separator_options: BREAKS
+    config.add_show_field 'subject_temporal_tesim', label: 'Subject'
     config.add_show_field 'location_tesim', label: 'Location', link_to_facet: 'location_sim', separator_options: BREAKS
     config.add_show_field 'latitude_tesim', label: 'Latitude', separator_options: BREAKS
     config.add_show_field 'longitude_tesim', label: 'Longitude', separator_options: BREAKS
+    config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim', separator_options: BREAKS
     config.add_show_field 'geographic_coordinates_ssim'
 
     # SECONDARY
@@ -234,12 +234,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'ark_ssi', label: 'ARK'
 
     # Access Conditions
-    config.add_show_field 'human_readable_rights_statement_tesim', label: 'Rights statement', separator_options: BREAKS
     config.add_show_field 'local_rights_statement_ssim', label: 'Local rights statement'
     config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation', separator_options: BREAKS
     config.add_show_field 'rights_holder_tesim', label: 'Rights holder', separator_options: BREAKS
     config.add_show_field 'services_contact_ssm', label: 'Rights contact'
-    # 'License'
+    config.add_show_field 'license_tesim', label: 'License'
     config.add_show_field 'funding_note_tesim', label: 'Funding note', separator_options: BREAKS
 
     # RECORD INFO

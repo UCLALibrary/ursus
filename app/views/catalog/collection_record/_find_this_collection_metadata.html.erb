@@ -16,10 +16,8 @@
 
       <div class="metadata-block__label-key">MANIFEST URL</div>
       <div class="metadata-block__label-value">
-        <% collection_ark = @document[:ark_ssi] %>
-        <% link = "http://iiif.library.ucla.edu/collections/" + CGI.escape(collection_ark) %>
-
-        <a href="<%= link %>" target="_blank"><%= image_tag('iiif-logo.png', alt: 'IIIF Manifest') %></a>
+        <% collection_ark_link = @document[:iiif_manifest_url_ssi] %>
+        <a href="<%= collection_ark_link %>" target="_blank"><%= image_tag('iiif-logo.png', alt: 'IIIF Manifest') %></a>
       </div>
     </div>
 
