@@ -28,14 +28,6 @@
   }
 }
 
-.site-navbar__item-link-feedback {
-  color: $ucla-gold;
-
-  &:visited {
-    color: $ucla-gold;
-  }
-}
-
 .site-navbar__wrapper--ursus {
   @media (max-width: 991px) {
     .navbar-collapse {
