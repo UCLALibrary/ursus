@@ -33,13 +33,5 @@ module Ursus
         return description
       end
     end
-
-    402 	
-
-    def field_value_separator
-      ', test '
-    end
-
-
   end
 end
