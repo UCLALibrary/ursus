@@ -108,6 +108,7 @@ Rails/OutputSafety:
   Exclude:
     - app/helpers/blacklight/url_helper_behavior.rb
     - app/helpers/blacklight_helper.rb
+    - app/processors/custom_join.rb
 
 Style/BlockComments:
   Exclude:
