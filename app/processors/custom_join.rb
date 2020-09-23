@@ -4,7 +4,7 @@ class CustomJoin < Blacklight::Rendering::AbstractStep
   include ActionView::Helpers::TextHelper
 
   def render
-    joiner = config.join_with || '<br/>'
+    joiner = config.join_with || '<br>'.html_safe
     next_step(safe_join(values, joiner))
   end
 end
