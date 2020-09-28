@@ -169,7 +169,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim'
     config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_sim'
     config.add_show_field 'date_created_tesim', label: 'Date created'
-    # 'Normalized date'
+    config.add_show_field 'normalized_date_sim', label: 'Date'
     # 'Year'
     config.add_show_field 'place_of_origin_tesim', label: 'Place of origin'
     config.add_show_field 'publisher_tesim', label: 'Publisher'
@@ -216,8 +216,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_tesim', label: 'Subject', link_to_facet: 'subject_sim'
     config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim'
     config.add_show_field 'subject_topic_tesim', label: 'Subject topic'
-    # 'Subject geographic'
-    # 'Subject temporal'
+    config.add_show_field 'subject_geographic_tesim', label: 'Subject geographic'
+    config.add_show_field 'subject_temporal_tesim', label: 'Subject'
     config.add_show_field 'location_tesim', label: 'Location', link_to_facet: 'location_sim'
     config.add_show_field 'latitude_tesim', label: 'Latitude'
     config.add_show_field 'longitude_tesim', label: 'Longitude'
@@ -239,7 +239,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation'
     config.add_show_field 'rights_holder_tesim', label: 'Rights holder'
     config.add_show_field 'services_contact_ssm', label: 'Rights contact'
-    # 'License'
+    config.add_show_field 'license_tesim', label: 'License'
     config.add_show_field 'funding_note_tesim', label: 'Funding note'
 
     # RECORD INFO
