@@ -7,7 +7,6 @@ class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
   include BlacklightOaiProvider::Controller
-
   include Blacklight::AccessControls::Catalog
 
   # Apply the blacklight-access_controls
@@ -23,6 +22,7 @@ class CatalogController < ApplicationController
 
   # ------------------------------------------------------
   # OAI Configuration
+  # http://localhost:3003/catalog/oai
 
   configure_blacklight do |config|
     config.oai = {
@@ -34,8 +34,8 @@ class CatalogController < ApplicationController
         sample_id: 'kxc8j200zz-89112'
       },
       document: {
-        limit: 25,            # number of records returned with each request, default: 15
-        set_fields: [        # ability to define ListSets, optional, default: nil
+        limit: 25, # number of records returned with each request, default: 15
+        set_fields: [ # ability to define ListSets, optional, default: nil
           { label: 'collections', solr_field: 'member_of_collections_ssim' }
         ]
       }
@@ -166,86 +166,92 @@ class CatalogController < ApplicationController
     # link_to_facet: 'fieldname_sim' (refer to editor on line 162)
     # and in Californica add :facetable to its predicate in app/models/ucla_metadata.rb
     # https://docs.google.com/spreadsheets/d/1Ult1ZpMuyKd92lZ5ODmBA6c7hO1pZGjXHTzN0_BOjeA/edit#gid=0
+    #
+    # Line breaks (separator_options: BREAKS) are set globally in two files:
+    #   config/initializers/blacklight.rb
+    #   app/processors/custom_join.rb
+    #
+    # More details: https://github.com/projectblacklight/blacklight/wiki/value-rendering
 
     # PRIMARY
     # Item Overview
-    config.add_show_field 'title_tesim', label: 'Title', separator_options: BREAKS
-    config.add_show_field 'alternative_title_tesim', label: 'Alternative title', separator_options: BREAKS
-    config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'uniform_title_sim', separator_options: BREAKS
-    config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim', separator_options: BREAKS
-    config.add_show_field 'architect_tesim', label: 'Architect', link_to_facet: 'architect_sim', separator_options: BREAKS
-    config.add_show_field 'author_tesim', label: 'Author', link_to_facet: 'author_sim', separator_options: BREAKS
-    config.add_show_field 'illuminator_tesim', label: 'Illuminator', link_to_facet: 'illuminator_sim', separator_options: BREAKS
-    config.add_show_field 'scribe_tesim', label: 'Scribe', link_to_facet: 'scribe_sim', separator_options: BREAKS
-    config.add_show_field 'rubricator_tesim', label: 'Rubricator', link_to_facet: 'rubricator_sim', separator_options: BREAKS
-    config.add_show_field 'commentator_tesim', label: 'Commentator', link_to_facet: 'commentator_sim', separator_options: BREAKS
-    config.add_show_field 'translator_tesim', label: 'Translator', link_to_facet: 'translator_sim', separator_options: BREAKS
-    config.add_show_field 'lyricist_tesim', label: 'Lyricist', link_to_facet: 'lyricist_sim', separator_options: BREAKS
-    config.add_show_field 'composer_tesim', label: 'Composer', link_to_facet: 'composer_sim', separator_options: BREAKS
-    config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'illustrator_sim', separator_options: BREAKS
-    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_sim', separator_options: BREAKS
-    config.add_show_field 'calligrapher_tesim', label: 'Calligrapher', link_to_facet: 'calligrapher_sim', separator_options: BREAKS
-    config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim', separator_options: BREAKS
-    config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_sim', separator_options: BREAKS
-    config.add_show_field 'date_created_tesim', label: 'Date created', separator_options: BREAKS
-    config.add_show_field 'normalized_date_sim', label: 'Date'
+    config.add_show_field 'title_tesim', label: 'Title'
+    config.add_show_field 'alternative_title_tesim', label: 'Alternative title'
+    config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'uniform_title_sim'
+    config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
+    config.add_show_field 'architect_tesim', label: 'Architect', link_to_facet: 'architect_sim'
+    config.add_show_field 'author_tesim', label: 'Author', link_to_facet: 'author_sim'
+    config.add_show_field 'illuminator_tesim', label: 'Illuminator', link_to_facet: 'illuminator_sim'
+    config.add_show_field 'scribe_tesim', label: 'Scribe', link_to_facet: 'scribe_sim'
+    config.add_show_field 'rubricator_tesim', label: 'Rubricator', link_to_facet: 'rubricator_sim'
+    config.add_show_field 'commentator_tesim', label: 'Commentator', link_to_facet: 'commentator_sim'
+    config.add_show_field 'translator_tesim', label: 'Translator', link_to_facet: 'translator_sim'
+    config.add_show_field 'lyricist_tesim', label: 'Lyricist', link_to_facet: 'lyricist_sim'
+    config.add_show_field 'composer_tesim', label: 'Composer', link_to_facet: 'composer_sim'
+    config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'illustrator_sim'
+    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_sim'
+    config.add_show_field 'calligrapher_tesim', label: 'Calligrapher', link_to_facet: 'calligrapher_sim'
+    config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim'
+    config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_sim'
+    config.add_show_field 'date_created_tesim', label: 'Date created'
+    # 'Normalized date'
     # 'Year'
-    config.add_show_field 'place_of_origin_tesim', label: 'Place of origin', separator_options: BREAKS
-    config.add_show_field 'publisher_tesim', label: 'Publisher', separator_options: BREAKS
-    config.add_show_field 'human_readable_language_tesim', label: 'Language', link_to_facet: 'human_readable_language_sim', separator_options: BREAKS
+    config.add_show_field 'place_of_origin_tesim', label: 'Place of origin'
+    config.add_show_field 'publisher_tesim', label: 'Publisher'
+    config.add_show_field 'human_readable_language_tesim', label: 'Language', link_to_facet: 'human_readable_language_sim'
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
-    config.add_show_field 'creator_tesim', label: 'Creator', link_to_facet: 'creator_sim', separator_options: BREAKS
+    config.add_show_field 'creator_tesim', label: 'Creator', link_to_facet: 'creator_sim'
 
     # IF SINAI ?
-    config.add_show_field 'explicit_tesim', label: 'Explicit', separator_options: BREAKS
-    config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim', separator_options: BREAKS
-    config.add_show_field 'incipit_tesim', label: 'Incipit', separator_options: BREAKS
-    config.add_show_field 'inscription_tesim', label: 'Inscription', separator_options: BREAKS
-    config.add_show_field 'script_tesim', label: 'Script', link_to_facet: 'script_sim', separator_options: BREAKS
-    config.add_show_field 'writing_and_hands_tesim', link_to_facet: 'writing_and_hands_sim', label: 'Writing and hands', separator_options: BREAKS
-    config.add_show_field 'writing_system_tesim', link_to_facet: 'writing_system_sim', label: 'Writing system', separator_options: BREAKS
+    config.add_show_field 'explicit_tesim', label: 'Explicit'
+    config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim'
+    config.add_show_field 'incipit_tesim', label: 'Incipit'
+    config.add_show_field 'inscription_tesim', label: 'Inscription'
+    config.add_show_field 'script_tesim', label: 'Script'
+    config.add_show_field 'writing_and_hands_tesim', label: 'Writing and hands'
+    config.add_show_field 'writing_system_tesim', label: 'Writing system'
 
     # Notes
-    config.add_show_field 'summary_tesim', label: 'Summary', separator_options: BREAKS
-    config.add_show_field 'description_tesim', label: 'Description', separator_options: BREAKS
-    config.add_show_field 'caption_tesim', label: 'Caption', separator_options: BREAKS
-    config.add_show_field 'contents_note_tesim', label: 'Contents note', separator_options: BREAKS
-    config.add_show_field 'colophon_tesim', label: 'Colophon', separator_options: BREAKS
-    config.add_show_field 'provenance_tesim', label: 'Provenance', separator_options: BREAKS
-    config.add_show_field 'note_tesim', label: 'Note', separator_options: BREAKS
-    config.add_show_field 'toc_tesim', label: 'Table of Contents', separator_options: BREAKS
+    config.add_show_field 'summary_tesim', label: 'Summary'
+    config.add_show_field 'description_tesim', label: 'Description'
+    config.add_show_field 'caption_tesim', label: 'Caption'
+    config.add_show_field 'toc_tesim', label: 'Table of Contents'
+    config.add_show_field 'contents_note_tesim', label: 'Contents note'
+    config.add_show_field 'provenance_tesim', label: 'Provenance'
+    config.add_show_field 'colophon_tesim', label: 'Colophon'
+    config.add_show_field 'note_tesim', label: 'Note'
 
     # Physical description
-    config.add_show_field 'extent_tesim', label: 'Extent', separator_options: BREAKS
-    config.add_show_field 'dimensions_tesim', label: 'Dimensions', separator_options: BREAKS
-    config.add_show_field 'format_tesim', label: 'Format', separator_options: BREAKS
+    config.add_show_field 'format_tesim', label: 'Format'
     # 'Book format'
-    config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim', separator_options: BREAKS
-    config.add_show_field 'medium_tesim', label: 'Medium', separator_options: BREAKS
+    config.add_show_field 'medium_tesim', label: 'Medium'
+    config.add_show_field 'support_tesim', label: 'Support'
+    config.add_show_field 'extent_tesim', label: 'Extent'
+    config.add_show_field 'dimensions_tesim', label: 'Dimensions'
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
     config.add_show_field 'binding_note_ssi', label: 'Binding note'
-    config.add_show_field 'condition_note_ssi', label: 'Condition note', separator_options: BREAKS
-    config.add_show_field 'collation_tesim', label: 'Collation', separator_options: BREAKS
-    config.add_show_field 'foliation_tesim', label: 'Foliation', separator_options: BREAKS
-    config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note', separator_options: BREAKS
+    config.add_show_field 'condition_note_ssi', label: 'Condition note'
+    config.add_show_field 'collation_tesim', label: 'Collation'
+    config.add_show_field 'foliation_tesim', label: 'Foliation'
+    config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note'
 
     # Keywords
-    config.add_show_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_sim', separator_options: BREAKS
-    config.add_show_field 'subject_tesim', label: 'Subject', link_to_facet: 'subject_sim', separator_options: BREAKS
-    config.add_show_field 'subject_topic_tesim', label: 'Subject topic', separator_options: BREAKS
-    config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim', separator_options: BREAKS
-    config.add_show_field 'subject_geographic_tesim', label: 'Subject geographic', separator_options: BREAKS
-    config.add_show_field 'subject_temporal_tesim', label: 'Subject'
-    config.add_show_field 'location_tesim', label: 'Location', link_to_facet: 'location_sim', separator_options: BREAKS
-    config.add_show_field 'latitude_tesim', label: 'Latitude', separator_options: BREAKS
-    config.add_show_field 'longitude_tesim', label: 'Longitude', separator_options: BREAKS
-    config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim', separator_options: BREAKS
+    config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim'
+    config.add_show_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_sim'
+    config.add_show_field 'subject_tesim', label: 'Subject', link_to_facet: 'subject_sim'
+    config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim'
+    config.add_show_field 'subject_topic_tesim', label: 'Subject topic'
+    # 'Subject geographic'
+    # 'Subject temporal'
+    config.add_show_field 'location_tesim', label: 'Location', link_to_facet: 'location_sim'
+    config.add_show_field 'latitude_tesim', label: 'Latitude'
+    config.add_show_field 'longitude_tesim', label: 'Longitude'
     config.add_show_field 'geographic_coordinates_ssim'
 
     # SECONDARY
     # Find This Item
-    config.add_show_field 'repository_tesim', label: 'Repository', separator_options: BREAKS
-    config.add_show_field 'local_identifier_ssm', label: 'Local identifier', separator_options: BREAKS
+    config.add_show_field 'repository_tesim', label: 'Repository'
+    config.add_show_field 'local_identifier_ssm', label: 'Local identifier'
     config.add_show_field 'oclc_ssi', label: 'OCLC Number'
     config.add_show_field 'iiif_manifest_url_ssi', label: 'Manifest url'
     config.add_show_field 'finding_aid_url_ssm', label: 'Finding aid url'
@@ -253,12 +259,13 @@ class CatalogController < ApplicationController
     config.add_show_field 'ark_ssi', label: 'ARK'
 
     # Access Conditions
+    config.add_show_field 'human_readable_rights_statement_tesim', label: 'Rights statement'
     config.add_show_field 'local_rights_statement_ssim', label: 'Local rights statement'
-    config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation', separator_options: BREAKS
-    config.add_show_field 'rights_holder_tesim', label: 'Rights holder', separator_options: BREAKS
+    config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation'
+    config.add_show_field 'rights_holder_tesim', label: 'Rights holder'
     config.add_show_field 'services_contact_ssm', label: 'Rights contact'
-    config.add_show_field 'license_tesim', label: 'License'
-    config.add_show_field 'funding_note_tesim', label: 'Funding note', separator_options: BREAKS
+    # 'License'
+    config.add_show_field 'funding_note_tesim', label: 'Funding note'
 
     # RECORD INFO
     # 'Depositer'
@@ -273,14 +280,14 @@ class CatalogController < ApplicationController
     # 'IIIF Range'
 
     # NOT USING
-    config.add_show_field 'contributor_tesim', label: 'Contributor', separator_options: BREAKS
+    config.add_show_field 'contributor_tesim', label: 'Contributor'
     config.add_show_field 'dlcs_collection_name_tesim' unless Flipflop.sinai?
-    config.add_show_field 'identifier_tesim', label: 'Identifier', separator_options: BREAKS
+    config.add_show_field 'identifier_tesim', label: 'Identifier'
     # 'Citation'
     # 'Arkivo Checksum'
     # 'Folder'
-    config.add_show_field 'keyword_tesim', label: 'Keyword', separator_options: BREAKS
-    config.add_show_field 'based_near_label_tesim', label: 'Location (based near)', separator_options: BREAKS
+    config.add_show_field 'keyword_tesim', label: 'Keyword'
+    config.add_show_field 'based_near_label_tesim', label: 'Location (based near)'
     # 'Related URL'
 
     # ----------------------------------------------
