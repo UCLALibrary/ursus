@@ -65,30 +65,25 @@ RSpec.describe CatalogController, type: :controller do
         .show_fields.keys
     end
     let(:expected_show_fields) do
-      [
-        'title_tesim', 'alternative_title_tesim', 'uniform_title_tesim', 'photographer_tesim',
-        'architect_tesim', 'author_tesim', 'illuminator_tesim',
-        'scribe_tesim', 'rubricator_tesim', 'commentator_tesim', 'translator_tesim',
-        'lyricist_tesim', 'composer_tesim', 'illustrator_tesim', 'editor_tesim',
-        'calligrapher_tesim', 'engraver_tesim', 'printmaker_tesim', 'date_created_tesim',
-        'place_of_origin_tesim', 'publisher_tesim', 'human_readable_language_tesim',
-        'member_of_collections_ssim', 'creator_tesim', 'explicit_tesim', 'features_tesim',
-        'incipit_tesim', 'inscription_tesim', 'script_tesim', 'writing_and_hands_tesim',
-        'writing_system_tesim', 'summary_tesim', 'description_tesim', 'caption_tesim',
-        'toc_tesim', 'contents_note_tesim', 'provenance_tesim', 'colophon_tesim',
-        'note_tesim', 'format_tesim', 'medium_tesim', 'support_tesim','extent_tesim',
-        'dimensions_tesim', 'page_layout_ssim', 'binding_note_ssi', 'condition_note_ssi',
-        'collation_tesim', 'foliation_tesim', 'illustrations_note_tesim',
-        'human_readable_resource_type_tesim', 'genre_tesim', 'subject_tesim',
-        'named_subject_tesim', 'subject_topic_tesim', 'location_tesim', 'latitude_tesim',
-        'longitude_tesim', 'geographic_coordinates_ssim', 'repository_tesim',
-        'local_identifier_ssm', 'oclc_ssi', 'iiif_manifest_url_ssi', 'finding_aid_url_ssm',
-        'opac_url_ssi', 'ark_ssi', 'local_rights_statement_ssim', 'rights_country_tesim',
-        'rights_holder_tesim', 'services_contact_ssm', 'funding_note_tesim',
-        'contributor_tesim',  'dlcs_collection_name_tesim', 'identifier_tesim',
-        'keyword_tesim', 'based_near_label_tesim', 'license_tesim',
-        'subject_geographic_tesim', 'subject_temporal_tesim'
-      ]
+      ["architect_tesim", "alternative_title_tesim", "ark_ssi", "author_tesim",
+       "based_near_label_tesim", "binding_note_ssi", "calligrapher_tesim", "caption_tesim",
+       "collation_tesim", "colophon_tesim", "composer_tesim", "condition_note_ssi", "contents_note_tesim",
+       "contributor_tesim", "creator_tesim", "date_created_tesim", "description_tesim",
+       "dimensions_tesim", "dlcs_collection_name_tesim", "editor_tesim",
+       "engraver_tesim", "explicit_tesim", "extent_tesim", "features_tesim", "finding_aid_url_ssm",
+       "foliation_tesim", "format_tesim", "funding_note_tesim", "genre_tesim",
+       "geographic_coordinates_ssim", "human_readable_resource_type_tesim", "human_readable_rights_statement_tesim", "human_readable_language_tesim",
+       "identifier_tesim", "illuminator_tesim", "illustrator_tesim", "iiif_manifest_url_ssi",
+       "illustrations_note_tesim", "incipit_tesim", "inscription_tesim",
+       "keyword_tesim", "latitude_tesim", "local_rights_statement_ssim", "location_tesim", "local_identifier_ssm",
+       "longitude_tesim", "lyricist_tesim", "medium_tesim", "member_of_collections_ssim",
+       "named_subject_tesim", "note_tesim", "oclc_ssi", "opac_url_ssi", "page_layout_ssim", "photographer_tesim",
+       "place_of_origin_tesim", "printmaker_tesim", "provenance_tesim", "publisher_tesim",
+       "repository_tesim", "rights_country_tesim", "rights_holder_tesim", "rubricator_tesim",
+       "scribe_tesim", "script_tesim", "services_contact_ssm", "subject_tesim", "subject_topic_tesim",
+       "summary_tesim", "support_tesim", "title_tesim", "toc_tesim", "uniform_title_tesim",
+       "writing_and_hands_tesim", "writing_system_tesim", "commentator_tesim", "translator_tesim",
+       "license_tesim", "normalized_date_sim", "subject_geographic_tesim", "subject_temporal_tesim"]
     end
 
     it 'has exactly expected show fields' do

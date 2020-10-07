@@ -37,10 +37,6 @@ RSpec.describe 'Search results page', type: :system, js: false do
     # it 'displays the old site link with page results' do
     expect(page).to have_link 'original digital collections site'
 
-    # Changed to not look for break tags - See URS-423
-    # it 'displays line breaks between the values of certain fields' do
-    expect(page.all('br').length).not_to eq 1
-
     # it 'displays Gallery View button' do
     expect(page).to have_link 'Gallery'
 

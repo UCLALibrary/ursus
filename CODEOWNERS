@@ -7,5 +7,6 @@
 # Front-End Assets
 /app/assets/              @tinuola
 
-# End-to-end Tests
-/e2e                      @andrewbenedictwallace
+# ci
+/.travis.yml              @andrewbenedictwallace,@pghorpade
+/start-ci.sh              @andrewbenedictwallace,@pghorpade

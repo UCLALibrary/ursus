@@ -31,8 +31,9 @@ script:
   - docker-compose run web bundle exec rails db:setup
   - docker-compose run sinai bundle exec rails db:setup
   - docker-compose up --detach
-  - docker-compose run web sh start-ci.sh
-  - cd e2e && sh start-e2e.sh
+  # - docker-compose run web sh start-ci.sh
+  - docker-compose run web spring rspec spec
+  # - cd e2e && sh start-e2e.sh
 notifications:
   email: false
 after_success:
