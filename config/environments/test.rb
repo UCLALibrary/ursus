@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+$VERBOSE=nil
 Rails.application.configure do
   # Before filter for Flipflop dashboard. Replace with a lambda or method name
   # defined in ApplicationController to implement access control.
