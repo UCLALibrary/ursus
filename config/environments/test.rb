@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 Rails.application.configure do
-  $VERBOSE=nil
+  $VERBOSE = nil
   # Before filter for Flipflop dashboard. Replace with a lambda or method name
   # defined in ApplicationController to implement access control.
   config.flipflop.dashboard_access_filter = nil
@@ -41,7 +41,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :test
 
   # Print deprecation notices to the stderr.
-  config.active_support.deprecation = :stderr
+  # config.active_support.deprecation = :stderr
+  # Print deprecation notices to the log file instead of console.
+  config.active_support.deprecation = :log
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

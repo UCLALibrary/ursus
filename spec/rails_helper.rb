@@ -81,7 +81,7 @@ RSpec.configure do |config|
     solr = Blacklight.default_index.connection
     solr.delete_by_query('*:*')
   end
-  
+
   config.before(:all, silent: true) do
     @with_warnings = $VERBOSE
     $VERBOSE = nil
