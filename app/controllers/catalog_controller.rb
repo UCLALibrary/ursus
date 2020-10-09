@@ -14,12 +14,6 @@ class CatalogController < ApplicationController
 
   include BlacklightHelper
 
-  BREAKS = {
-    words_connector: '<br/>',
-    two_words_connector: '<br/>',
-    last_word_connector: '<br/>'
-  }.freeze
-
   # ------------------------------------------------------
   # OAI Configuration
   # http://localhost:3003/catalog/oai
