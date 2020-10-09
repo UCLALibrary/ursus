@@ -26,6 +26,7 @@ end
 Dir[Pathname.new(File.expand_path('support/**/*.rb', __dir__))].each { |f| require f }
 
 RSpec.configure do |config|
+  Deprecation.default_deprecation_behavior = :silence
   config.disable_monkey_patching!
 
   # When we're testing the API, only run the api tests
@@ -93,7 +94,7 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 
-  # # Silence normal program output (cf. https://stackoverflow.com/questions/15430551/suppress-console-output-during-rspec-tests#15432948)
+  # Silence normal program output (cf. https://stackoverflow.com/questions/15430551/suppress-console-output-during-rspec-tests#15432948)
   # original_stderr = $stderr
   # original_stdout = $stdout
   # config.before(:all) do
