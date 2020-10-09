@@ -24,7 +24,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
     expect(page).to have_content 'Description 2'
     expect(page).to have_content 'SUBJECTS Subj 1'
     expect(page).to have_content 'RESOURCE TYPE still image'
-    expect(page).to have_content 'COPYRIGHT STATUS copyrighted'
+    expect(page).to have_content 'RIGHTS STATEMENT copyrighted'
     expect(page).to have_content 'GENRE Genre 1'
     expect(page).to have_content 'NAMES Named Subject 1'
     expect(page).to have_content 'LOCATION Los Angeles'
