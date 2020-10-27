@@ -94,6 +94,8 @@ class CatalogController < ApplicationController
       config.add_facet_field 'script_sim', limit: 7, label: 'Script'
       config.add_facet_field 'features_sim', limit: 7, label: 'Features'
       config.add_facet_field 'support_sim', limit: 7, label: 'Support'
+      config.add_facet_field 'associated_name_sim', limit: 7, label: 'Associated name'
+      config.add_facet_field 'form_sim', limit: 7, label: 'Form'
 
     # URSUS
     else
@@ -150,6 +152,10 @@ class CatalogController < ApplicationController
 
     # PRIMARY
     # Item Overview
+    config.add_show_field 'shelfmark_tesim', label: 'Shelfmark', link_to_facet: 'shelfmark_sim' # Sinai only
+    config.add_show_field 'descriptive_title_tesim', label: 'Descriptive title '# Sinai only
+    config.add_show_field 'associated_name_tesim', label: 'Associated name' # Sinai only
+    config.add_show_field 'references_tesim', label: 'References' # Sinai only
     config.add_show_field 'title_tesim', label: 'Title'
     config.add_show_field 'alternative_title_tesim', label: 'Alternative title'
     config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'uniform_title_sim'
@@ -184,7 +190,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'incipit_tesim', label: 'Incipit'
     config.add_show_field 'inscription_tesim', label: 'Inscription'
     config.add_show_field 'script_tesim', label: 'Script'
-    config.add_show_field 'writing_and_hands_tesim', label: 'Writing and hands'
     config.add_show_field 'writing_system_tesim', label: 'Writing system'
 
     # Notes
@@ -210,6 +215,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'collation_tesim', label: 'Collation'
     config.add_show_field 'foliation_tesim', label: 'Foliation'
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note'
+    config.add_show_field 'form_tesim', label: 'Form', link_to_facet: 'form_sim'
+    config.add_facet_field 'hand_note_sim', limit: 7, label: 'Hand note' # 'Writing and hands'
 
     # Keywords
     config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim'
@@ -243,6 +250,10 @@ class CatalogController < ApplicationController
     # 'License'
     config.add_show_field 'license_tesim', label: 'License'
     config.add_show_field 'funding_note_tesim', label: 'Funding note'
+
+    # Do not Display
+    config.add_show_field 'delivery_tesim'
+    config.add_show_field 'image_count_tesim'
 
     # RECORD INFO
     # 'Depositer'
@@ -289,25 +300,59 @@ class CatalogController < ApplicationController
     # Which solr request handler?
     # The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
-    search_field_service = ::SearchFieldService.instance
-    config.add_search_field('all_fields', label: 'All Fields') do |field|
-      field.solr_parameters = {
-        qf: search_field_service.search_fields
-      }
-    end
 
-    config.add_search_field('title_tesim', label: 'Title') do |field|
-      field.solr_parameters = {
-        qf: 'title_tesim',
-        pf: ''
-      }
-    end
+    # SINAI
+    if Flipflop.sinai?
+      search_field_service = ::SearchFieldService.instance
+      config.add_search_field('all_fields', label: 'All Fields') do |field|
+        field.solr_parameters = {
+          qf: search_field_service.search_fields
+        }
+      end
 
-    config.add_search_field('subject_tesim', label: 'Subject') do |field|
-      field.solr_parameters = {
-        qf: 'subject_tesim',
-        pf: ''
-      }
+      config.add_search_field('shelfmark_tesim', label: 'Shelfmark') do |field|
+        field.solr_parameters = {
+          qf: 'shelfmark_tesim',
+          pf: ''
+        }
+      end
+
+      config.add_search_field('descriptive_title_tesim', label: 'Title') do |field|
+        field.solr_parameters = {
+          qf: 'descriptive_title_tesim',
+          pf: ''
+        }
+      end
+
+      config.add_search_field('reference_tesim', label: 'Reference') do |field|
+        field.solr_parameters = {
+          qf: 'reference_tesim',
+          pf: ''
+        }
+      end
+
+    # URSUS
+    else
+      search_field_service = ::SearchFieldService.instance
+      config.add_search_field('all_fields', label: 'All Fields') do |field|
+        field.solr_parameters = {
+          qf: search_field_service.search_fields
+        }
+      end
+
+      config.add_search_field('title_tesim', label: 'Title') do |field|
+        field.solr_parameters = {
+          qf: 'title_tesim',
+          pf: ''
+        }
+      end
+
+      config.add_search_field('subject_tesim', label: 'Subject') do |field|
+        field.solr_parameters = {
+          qf: 'subject_tesim',
+          pf: ''
+        }
+      end
     end
 
     # ------------------------------------------------------

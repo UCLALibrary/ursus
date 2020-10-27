@@ -9,8 +9,10 @@ condition_note_ssi: 'Condition note'
 collation_tesim: 'Collation'
 foliation_tesim: 'Foliation'
 illustrations_note_tesim: 'Illustrations note'
+form: 'Form'
 
+# Sinai only
 writing_system_tesim: 'Writing system'
 script_tesim: 'Script'
-writing_and_hands_tesim: 'Writing and hands'
+hand_note: 'Hand note' # writing_and_hands_tesim: 'Writing and hands'
 inscription_tesim: 'Inscription'

@@ -1,5 +1,11 @@
 # These fields are in order of display
 
+# Sinai only
+shelfmark_tesim: 'Shelfmark'
+descriptive_title: 'Descriptive title'
+associated_name: 'Associated name'
+references: 'References'
+
 # Titles
 title_tesim: 'Title'
 alternative_title_tesim: 'Alternative Title'
