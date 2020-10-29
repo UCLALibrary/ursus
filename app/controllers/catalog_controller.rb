@@ -7,7 +7,6 @@ class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
   include BlacklightOaiProvider::Controller
-
   include Blacklight::AccessControls::Catalog
 
   # Apply the blacklight-access_controls
@@ -15,7 +14,27 @@ class CatalogController < ApplicationController
 
   include BlacklightHelper
 
+  # ------------------------------------------------------
+  # OAI Configuration
+  # http://localhost:3003/catalog/oai
+
   configure_blacklight do |config|
+    config.oai = {
+      provider: {
+        repository_name: 'UCLA Library Digital Collections',
+        repository_url: 'https://digital.library.ucla.edu/catalog/oai?verb=Identify',
+        record_prefix: 'oai:library.ucla.edu',
+        admin_email: 'dlp@library.ucla.edu',
+        sample_id: 'kxc8j200zz-89112'
+      },
+      document: {
+        limit: 25, # number of records returned with each request, default: 15
+        set_fields: [ # ability to define ListSets, optional, default: nil
+          { label: 'collections', solr_field: 'member_of_collections_ssim' }
+        ]
+      }
+    }
+
     config.view.gallery.partials = [:gallery]
     # config.view.masonry.partials = [:index]
     # config.view.slideshow.partials = [:index]
@@ -169,7 +188,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim'
     config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_sim'
     config.add_show_field 'date_created_tesim', label: 'Date created'
-    # 'Normalized date'
     config.add_show_field 'normalized_date_sim', label: 'Date'
     # 'Year'
     config.add_show_field 'place_of_origin_tesim', label: 'Place of origin'
@@ -240,7 +258,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation'
     config.add_show_field 'rights_holder_tesim', label: 'Rights holder'
     config.add_show_field 'services_contact_ssm', label: 'Rights contact'
-    # 'License'
     config.add_show_field 'license_tesim', label: 'License'
     config.add_show_field 'funding_note_tesim', label: 'Funding note'
 
