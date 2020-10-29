@@ -23,7 +23,7 @@ class CatalogController < ApplicationController
       provider: {
         repository_name: 'UCLA Library Digital Collections',
         repository_url: 'https://digital.library.ucla.edu/catalog/oai?verb=Identify',
-        record_prefix: 'oai:localhost',
+        record_prefix: 'oai:library.ucla.edu',
         admin_email: 'dlp@library.ucla.edu',
         sample_id: 'kxc8j200zz-89112'
       },

@@ -32,7 +32,7 @@ class SolrDocument
 
   field_semantics.merge!(
     title: 'title_tesim',
-    identifier: ['local_identifier_ssm', 'opac_url_ssi', 'oclc_ssi', 'ark_ssi'],
+    identifier: ['local_identifier_ssm', 'opac_url_ssi', 'oclc_ssi', 'ark_ssi', 'thumbnail_url_ss'],
     creator: 'creator_tesim',
     contributor: [
       'author_tesim', 'editor_tesim', 'photographer_tesim', 'architect_tesim',
@@ -41,11 +41,15 @@ class SolrDocument
       'commentator_tesim', 'lyricist_tesim', 'composer_tesim'
     ],
     date: ['date_created_tesim', 'normalized_date_sim'],
-    publisher: ['place_of_origin_tesim', 'publiisher_tesim'],
+    publisher: ['place_of_origin_tesim', 'publisher_tesim'],
     language: 'language_tesim',
     provenance: 'provenance_tesim',
     format: ['format_tesim', 'support_tesim', 'medium_tesim', 'page_layout_ssim'],
-    description: ['binding_note_ssi', 'condition_note_ssi', 'foliation_tesim', 'illustrations_note_tesim', 'funding_note_tesim', 'note_tesim'],
+    description: [
+      'binding_note_ssi', 'condition_note_ssi', 'foliation_tesim',
+      'illustrations_note_tesim', 'funding_note_tesim', 'note_tesim', 'description_tesim',
+      'colophon_tesim', 'toc_tesim', 'caption_tesim', 'contents_note_tesim'
+    ],
     subject: ['subject_tesim', 'subject_topic_tesim', 'named_subject_tesim', 'subject_geo_tesim'],
     type: 'resource_type_tesim',
     rights: ['rights_country_tesim', 'services_contact_ssm']
