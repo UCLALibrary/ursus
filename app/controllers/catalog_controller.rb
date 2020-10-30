@@ -153,7 +153,7 @@ class CatalogController < ApplicationController
     # PRIMARY
     # Item Overview
     config.add_show_field 'shelfmark_tesim', label: 'Shelfmark', link_to_facet: 'shelfmark_sim' # Sinai only
-    config.add_show_field 'descriptive_title_tesim', label: 'Descriptive title '# Sinai only
+    config.add_show_field 'descriptive_title_tesim', label: 'Descriptive title' # Sinai only
     config.add_show_field 'associated_name_tesim', label: 'Associated name' # Sinai only
     config.add_show_field 'references_tesim', label: 'References' # Sinai only
     config.add_show_field 'title_tesim', label: 'Title'
@@ -302,8 +302,8 @@ class CatalogController < ApplicationController
     # since we aren't specifying it otherwise.
 
     # SINAI
+    search_field_service = ::SearchFieldService.instance
     if Flipflop.sinai?
-      search_field_service = ::SearchFieldService.instance
       config.add_search_field('all_fields', label: 'All Fields') do |field|
         field.solr_parameters = {
           qf: search_field_service.search_fields
@@ -333,7 +333,6 @@ class CatalogController < ApplicationController
 
     # URSUS
     else
-      search_field_service = ::SearchFieldService.instance
       config.add_search_field('all_fields', label: 'All Fields') do |field|
         field.solr_parameters = {
           qf: search_field_service.search_fields
