@@ -302,7 +302,7 @@ class CatalogController < ApplicationController
     # since we aren't specifying it otherwise.
 
     # SINAI
-    search_field_service = ::SearchFieldService.instance    
+    search_field_service = ::SearchFieldService.instance
     config.add_search_field('all_fields', label: 'All Fields') do |field|
       field.solr_parameters = {
         qf: search_field_service.search_fields
