@@ -32,7 +32,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'year_isim' => 'Year',
       'shelfmark_tesim' => 'Shelfmark',
       'descriptive_title_tesim' => 'Descriptive title',
-      'references_tesim'=> 'References'
+      'references_tesim' => 'References',
       'associated_name_tesim' => 'Associated name'
     }
   end
@@ -43,8 +43,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'member_of_collections_ssim' => 'Collection',
       'contents_note_tesim' => 'Contents note',
       'incipit_tesim' => 'Incipit',
-      'explicit_tesim' => 'Explicit',
-
+      'explicit_tesim' => 'Explicit'
     }
   end
   let(:presenter_object) { described_class.new(document: solr_doc) }
