@@ -29,7 +29,11 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'title_tesim' => 'Title',
       'translator_tesim' => 'Translator',
       'uniform_title_tesim' => 'Uniform title',
-      'year_isim' => 'Year'
+      'year_isim' => 'Year',
+      'shelfmark_tesim' => 'Shelfmark',
+      'descriptive_title_tesim' => 'Descriptive title',
+      'references_tesim'=> 'References'
+      'associated_name_tesim' => 'Associated name'
     }
   end
   let(:solr_doc_missing_items) do
@@ -39,7 +43,8 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'member_of_collections_ssim' => 'Collection',
       'contents_note_tesim' => 'Contents note',
       'incipit_tesim' => 'Incipit',
-      'explicit_tesim' => 'Explicit'
+      'explicit_tesim' => 'Explicit',
+
     }
   end
   let(:presenter_object) { described_class.new(document: solr_doc) }
@@ -158,7 +163,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       let(:missing) { presenter_object_missing_items.overview_terms.keys.length }
 
       it "returns existing keys" do
-        expect(all).to eq 26
+        expect(all).to eq 30
         expect(config.length).to eq all
       end
 

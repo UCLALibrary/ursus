@@ -2,9 +2,9 @@
 
 # Sinai only
 shelfmark_tesim: 'Shelfmark'
-descriptive_title: 'Descriptive title'
-associated_name: 'Associated name'
-references: 'References'
+descriptive_title_tesim: 'Descriptive title'
+associated_name_tesim: 'Associated name'
+references_tesim: 'References'
 
 # Titles
 title_tesim: 'Title'

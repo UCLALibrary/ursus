@@ -50,7 +50,7 @@ class SearchFieldService
     'title_tesim',
     'toc_tesim',
     'uniform_title_tesim',
-    'writing_and_hands_tesim',
+    'hand_note_sim',
     'writing_system_tesim',
     'uniform_title_tesim'
   ].join(' ').freeze

@@ -216,7 +216,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'foliation_tesim', label: 'Foliation'
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note'
     config.add_show_field 'form_tesim', label: 'Form', link_to_facet: 'form_sim'
-    config.add_facet_field 'hand_note_sim', limit: 7, label: 'Hand note' # 'Writing and hands'
+    config.add_show_field 'hand_note_sim', limit: 7, label: 'Hand note' # 'Writing and hands'
 
     # Keywords
     config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim'
