@@ -135,7 +135,7 @@ en:
           support_tesim: 'Support'
           title_tesim: 'Title'
           uniform_title_tesim: 'Uniform title'
-          hand_note_sim: 'Hand note'
+          hand_note_tesim: 'Hand note'
           writing_system_tesim: 'Writing system'
           year_isim: '1974'
     tools:

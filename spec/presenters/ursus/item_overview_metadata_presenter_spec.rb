@@ -30,7 +30,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'translator_tesim' => 'Translator',
       'uniform_title_tesim' => 'Uniform title',
       'year_isim' => 'Year',
-      'shelfmark_tesim' => 'Shelfmark',
+      'shelfmark_ssi' => 'Shelfmark',
       'descriptive_title_tesim' => 'Descriptive title',
       'references_tesim' => 'References',
       'associated_name_tesim' => 'Associated name'

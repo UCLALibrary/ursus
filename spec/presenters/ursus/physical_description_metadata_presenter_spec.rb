@@ -14,12 +14,12 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       'page_layout_ssim' => 'Page layout',
       'writing_system_tesim' => 'Writing system',
       'script_tesim' => 'Script',
-      'hand_note_sim' => 'Hand note',
+      'hand_note_tesim' => 'Hand note',
       'illustrations_note_tesim' => 'Illustrations note',
       'condition_note_ssi' => 'Condition note',
       'binding_note_ssi' => 'Binding note',
       'inscription_tesim' => 'Inscription',
-      'form_tesim' => 'Form'
+      'form_ssi' => 'Form'
     }
   end
   let(:solr_doc_missing_items) do
@@ -84,7 +84,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       end
 
       it 'returns the Hand note Key' do
-        expect(config['hand_note_sim'].to_s).to eq 'Hand note'
+        expect(config['hand_note_tesim'].to_s).to eq 'Hand note'
       end
 
       it 'returns the Writing system Key' do
