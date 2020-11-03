@@ -14,11 +14,12 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       'page_layout_ssim' => 'Page layout',
       'writing_system_tesim' => 'Writing system',
       'script_tesim' => 'Script',
-      'writing_and_hands_tesim' => 'Writing and hands',
+      'hand_note_tesim' => 'Hand note',
       'illustrations_note_tesim' => 'Illustrations note',
       'condition_note_ssi' => 'Condition note',
       'binding_note_ssi' => 'Binding note',
-      'inscription_tesim' => 'Inscription'
+      'inscription_tesim' => 'Inscription',
+      'form_ssi' => 'Form'
     }
   end
   let(:solr_doc_missing_items) do
@@ -82,8 +83,8 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
         expect(config['support_tesim'].to_s).to eq 'Support'
       end
 
-      it 'returns the Wrtiting and hands Key' do
-        expect(config['writing_and_hands_tesim'].to_s).to eq 'Writing and hands'
+      it 'returns the Hand note Key' do
+        expect(config['hand_note_tesim'].to_s).to eq 'Hand note'
       end
 
       it 'returns the Writing system Key' do
@@ -97,7 +98,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.physical_description_terms).to be_instance_of(Hash)
-        expect(all).to eq 15
+        expect(all).to eq 16
         expect(config.length).to eq all
       end
 

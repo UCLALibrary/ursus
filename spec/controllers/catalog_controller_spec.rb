@@ -82,8 +82,9 @@ RSpec.describe CatalogController, type: :controller do
        "repository_tesim", "rights_country_tesim", "rights_holder_tesim", "rubricator_tesim",
        "scribe_tesim", "script_tesim", "services_contact_ssm", "subject_tesim", "subject_topic_tesim",
        "summary_tesim", "support_tesim", "title_tesim", "toc_tesim", "uniform_title_tesim",
-       "writing_and_hands_tesim", "writing_system_tesim", "commentator_tesim", "translator_tesim",
-       "license_tesim", "normalized_date_sim", "subject_geographic_tesim", "subject_temporal_tesim"]
+       "hand_note_tesim", "writing_system_tesim", "commentator_tesim", "translator_tesim",
+       "license_tesim", "normalized_date_sim", "subject_geographic_tesim", "subject_temporal_tesim",
+       "associated_name_tesim", "descriptive_title_tesim", "form_ssi", "references_tesim", "shelfmark_ssi"]
     end
 
     it 'has exactly expected show fields' do

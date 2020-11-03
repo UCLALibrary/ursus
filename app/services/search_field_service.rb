@@ -50,9 +50,12 @@ class SearchFieldService
     'title_tesim',
     'toc_tesim',
     'uniform_title_tesim',
-    'writing_and_hands_tesim',
+    'hand_note_tesim',
     'writing_system_tesim',
-    'uniform_title_tesim'
+    'uniform_title_tesim',
+    'shelfmark_ssi',
+    'descriptive_title_tesim',
+    'delivery_ssi'
   ].join(' ').freeze
 
   def search_fields
