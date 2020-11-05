@@ -46,6 +46,13 @@ module BlacklightHelper
     opac_link.html_safe
   end
 
+  def render_other_versions_link
+    other_versions_link = @document[:other_versions_tesim]
+    return unless other_versions_link
+    other_versions_link = "<dt class = 'metadata-block__label-key'>Other version</dt><dd class = 'metadata-block__label-value'><a href = '" + other_versions_link + "'>" + other_versions_link + "</a></dd>"
+    other_versions_link.html_safe
+  end
+
   def render_table_of_contents_key
     unless @document[:toc_tesim].nil? || @document[:toc_tesim].empty?
       'Table of contents'
