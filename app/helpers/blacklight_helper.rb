@@ -46,11 +46,19 @@ module BlacklightHelper
     opac_link.html_safe
   end
 
+  def other_versions_markup
+    other_versions_text = ''
+    urls = @document[:other_versions_tesim]
+    for url in urls
+      link = '<a href="' + url + '">' + url + '</a> <br>'
+      other_versions_text += link
+    end
+    other_versions_text
+  end
+
   def render_other_versions_link
-    other_versions_link = @document[:iiif_manifest_url_ssi]
-    return unless other_versions_link
-    other_versions_link = "<dt class = 'metadata-block__label-key'>Other version(s)</dt><dd class = 'metadata-block__label-value'><a href = '" + other_versions_link + "'>" + other_versions_link + "</a></dd>"
-    other_versions_link.html_safe
+    data = other_versions_markup
+    data.html_safe
   end
 
   def render_table_of_contents_key
