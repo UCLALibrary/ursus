@@ -1,0 +1,84 @@
+# You can use any metadata element defined in metadata.yml
+# or any valid method of a SolrDocument that requires no arguments
+default:
+  title:
+    - title_tesim
+  alternative:
+    - alternative_title_tesim
+    - uniform_title_tesim
+  creator:
+    - creator_tesim
+  contributor:
+    - author_tesim
+    - editor_tesim
+    - photographer_tesim
+    - architect_tesim
+    - illuminator_tesim
+    - illustrator_tesim
+    - engraver_tesim
+    - printmaker_tesim
+    - scribe_tesim
+    - translator_tesim
+    - rubricator_tesim
+    - calligrapher_tesim
+    - commentator_tesim
+    - lyricist_tesim
+    - composer_tesim
+  publisher:
+    - place_of_origin_tesim
+    - publisher_tesim
+  type:
+    - resource_type_tesim
+  rights:
+    - rights_country_tesim
+    - services_contact_ssm
+  subject:
+    - subject_tesim
+    - subject_topic_tesim
+    - named_subject_tesim
+    - subject_geo_tesim
+  date:
+    - date_created_tesim
+    - normalized_date_sim
+  description:
+    - binding_note_ssi
+    - condition_note_ssi
+    - foliation_tesim
+    - illustrations_note_tesim
+    - funding_note_tesim
+    - note_tesim
+    - description_tesim
+    - colophon_tesim
+    - toc_tesim
+    - caption_tesim
+    - contents_note_tesim
+  format:
+    - format_tesim
+    - support_tesim
+    - medium_tesim
+    - page_layout_ssim
+  language:
+    - language_tesim
+  identifier:
+    - masterFilename
+    - itemCallNumber
+  source:
+    - member_of_collections_ssim
+DC:
+  parent_schema: default
+  identifier:
+    - local_identifier_ssm
+    - opac_url_ssi
+    - oclc_ssi
+    - ark_ssi
+    - thumbnail_url_ss
+DPLA:
+  parent_schema: default
+  object:
+    - thumbnail_url_ss
+  isShownAt:
+    - permalink
+  dataProvider:
+    - repository_tesim
+  hasType:
+    - genre_tesim
