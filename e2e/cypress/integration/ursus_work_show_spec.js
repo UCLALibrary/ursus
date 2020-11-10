@@ -5,8 +5,11 @@ describe('Work show pages', () => {
       'h1',
       'Manuscript No. 32: Calendar of Feasts 14th/15th Century'
     );
-    cy.get('iframe').then(($iframe) => {
-      const $body = $iframe.contents().find('body')});
+    cy.frameLoaded({
+      url:
+        'https://d1eaxpqd9huxux.cloudfront.net/uv.html#?manifest=https%3A%2F%2Fiiif.library.ucla.edu%2Fark%253A%252F21198%252Fzz0026hvpq%2Fmanifest',
+    });
+    cy.iframe().contains('span', 'Manuscript No.32: 00');
     cy.percySnapshot();
   });
 });
