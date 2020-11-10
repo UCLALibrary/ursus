@@ -1,0 +1,39 @@
+<schema xmlns:oai_dpla="http://digital.library.ucla.edu/oai_dpla/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:edm="http://www.europeana.eu/schemas/edm/"
+  xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://digital.library.ucla.edu/oai_dpla/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <annotation>
+    <documentation>
+XML Schema 2018-04-05 by Ned Henry, adapted from Pete Johnston for use with DPLA schema (DC + a few EDM). 
+    </documentation>
+  </annotation>
+  <import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/simpledc20021212.xsd"/>
+  <import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd"/>
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="http://www.europeana.eu/schemas/ese/ESE-V3.4.xsd"/>
+  <element name="dc" type="oai_dc:oai_dcType"/>
+  <complexType name="oai_dcType">
+    <choice minOccurs="0" maxOccurs="unbounded">
+      <element ref="edm:isShownAt"/>
+      <element ref="edm:Object"/>
+      <element ref="edm:hasType"/>
+      <element ref="edm:dataProvider"/>
+      <element ref="dc:title"/>
+      <element ref="dcterms:alternative"/>
+      <element ref="dc:creator"/>
+      <element ref="dc:subject"/>
+      <element ref="dc:description"/>
+      <element ref="dc:publisher"/>
+      <element ref="dc:contributor"/>
+      <element ref="dc:date"/>
+      <element ref="dc:type"/>
+      <element ref="dc:format"/>
+      <element ref="dc:identifier"/>
+      <element ref="dc:source"/>
+      <element ref="dc:language"/>
+      <element ref="dc:relation"/>
+      <element ref="dc:coverage"/>
+      <element ref="dc:rights"/>
+    </choice>
+  </complexType>
+</schema>
