@@ -112,7 +112,7 @@ class SolrDocument
   end
 
   def root_url
-    "https://"+Socket.gethostname
+    "#{ENV['RAILS_HOST']}" # +Socket.gethostname
   end
 
   def export_as_ucla_citation_txt

@@ -646,12 +646,12 @@ p.intro {
       </td>
     </tr>
 
-    <tr>
+    <!-- Commented because Ucsc implemented in hyrax.rb which ursus does not have-<tr>
       <td class="key">Object Type</td>
       <td class="value">
         <xsl:value-of select="oai:type"/>
       </td>
-    </tr>
+    </tr>-->
 
     <tr>
       <td class="key">Datestamp</td>
@@ -746,7 +746,7 @@ p.intro {
 <!-- oai_dpla record -->
 
 <xsl:template match="oai_dpla:dpla"
-  xmlns:oai_dpla="https://ursus-dev.library.ucla.edu/oai_dpla/">
+  xmlns:oai_dpla="https://digital.library.ucla.edu/oai_dpla/">
   <div class="dpladata">
     <h3>DPLA Metadata (oai_dpla)</h3>
     <table class="dpladata">

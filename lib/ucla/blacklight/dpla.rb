@@ -34,12 +34,12 @@ module Ucla::Blacklight::Dpla
   def export_as_oai_dpla_xml
     xml = Builder::XmlMarkup.new
     xml.tag!("oai_dpla:dpla ",
-             'xmlns:oai_dpla' => "https://ursus-dev.library.ucla.edu/oai_dpla/",
+             'xmlns:oai_dpla' => "https://digital.library.ucla.edu/oai_dpla/",
              'xmlns:dc' => "http://purl.org/dc/elements/1.1/",
              'xmlns:dcterms' => "http://purl.org/dc/terms/",
              'xmlns:edm' => "http://www.europeana.eu/schemas/edm/",
              'xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
-             'xsi:schemaLocation' => %(https://ursus-dev.library.ucla.edu/oai_dpla/ https://ursus-dev.library.ucla.edu/oai_dpla/oai_dpla.xsd)) do
+             'xsi:schemaLocation' => %(https://digital.library.ucla.edu/oai_dpla/ https://digital.library.ucla.edu/oai_dpla/oai_dpla.xsd)) do
       to_semantic_values("dpla").select { |field, _values| dpla_field_name? field  }.each do |field, values|
         Array.wrap(values).each do |v|
           xml.tag! "#{field_prefix(field)}:#{field}", v
