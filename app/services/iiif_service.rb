@@ -6,9 +6,9 @@ class IiifService
       "#{request&.base_url}/mirador.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
     else
       if request.query_parameters.include?('cv')
-        "#{request&.base_url}/uv/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        "https://d1eaxpqd9huxux.cloudfront.net/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
       else
-        "#{request&.base_url}/uv/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        "https://d1eaxpqd9huxux.cloudfront.net/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
       end
     end
   end
