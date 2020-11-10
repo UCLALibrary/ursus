@@ -9,7 +9,8 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       'finding_aid_url_ssm' => 'Finding aid url',
       'opac_url_tesim' => 'Opac url',
       'oclc_ssi' => 'OCLC Number',
-      'ark_ssi' => 'ARK'
+      'ark_ssi' => 'ARK',
+      'other_versions_tesim' => 'Other version(s)'
     }
   end
   let(:solr_doc_missing_items) do
@@ -57,7 +58,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       it "returns existing keys" do
         expect(presenter_object.find_this_item_terms).to be_instance_of(Hash)
         expect(presenter_object.find_this_item_terms.include?('ark_ssi')).to be true
-        expect(all).to eq 6
+        expect(all).to eq 7
         expect(config.length).to eq all
       end
 

@@ -257,6 +257,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'finding_aid_url_ssm', label: 'Finding aid url'
     config.add_show_field 'opac_url_ssi', label: 'Opac url'
     config.add_show_field 'ark_ssi', label: 'ARK'
+    config.add_show_field 'other_versions_tesim', label: 'Other version(s)'
 
     # Access Conditions
     config.add_show_field 'human_readable_rights_statement_tesim', label: 'Rights statement'
