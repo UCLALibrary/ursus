@@ -25,6 +25,7 @@ Metrics/AbcSize:
   Exclude:
     - app/helpers/blacklight/url_helper_behavior.rb
     - app/controllers/catalog_controller.rb
+    - app/models/solr_document.rb
 
 Metrics/BlockLength:
   Enabled: true
@@ -46,6 +47,8 @@ Metrics/CyclomaticComplexity:
   Exclude:
     - app/helpers/blacklight/url_helper_behavior.rb
     - app/helpers/blacklight/blacklight_helper_behavior.rb
+    - app/models/solr_document.rb
+
 
 Metrics/LineLength:
   Exclude:
@@ -71,6 +74,7 @@ Metrics/PerceivedComplexity:
   Exclude:
     - app/helpers/blacklight/url_helper_behavior.rb
     - app/helpers/blacklight/blacklight_helper_behavior.rb
+    - app/models/solr_document.rb
 
 Performance/RegexpMatch:
   Exclude:
