@@ -9,17 +9,23 @@ class IiifService
     else
       # CANVAS
       if request.query_parameters.include?('cv')
-        "#{request&.base_url}/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        if request.base_url.include?('ursus-test') || request.base_url.to_s.include?('localhost')
+          "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        elsif request.base_url.include?('ursus-dev')
+          "https://d-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        elsif request.base_url.include?('ursus-stage')
+          "https://s-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        elsif request.base_url.include?('ursus') || request.base_url.to_s.include?('digital.library')
+          "https://p-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        end
       else
-        if request.base_url.to_s.include?('localhost')
-          "https://d1eaxpqd9huxux.cloudfront.net/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
-        elsif request.base_url.include?('ursus-test')
+        if request.base_url.include?('ursus-test') || request.base_url.to_s.include?('localhost')
           "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
         elsif request.base_url.include?('ursus-dev')
           "https://d-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
         elsif request.base_url.include?('ursus-stage')
           "https://s-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
-        else
+        elsif request.base_url.include?('ursus') || request.base_url.to_s.include?('digital.library')
           "https://p-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
         end
       end
