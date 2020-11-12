@@ -6,9 +6,9 @@ class IiifService
       "#{request&.base_url}/mirador.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
     else
       if request.query_parameters.include?('cv')
-        "https://t-w-dl-viewer01.library.ucla.edu//uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
       else
-          "https://t-w-dl-viewer01.library.ucla.edu//uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
       end
     end
   end
