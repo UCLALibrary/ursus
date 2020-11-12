@@ -148,7 +148,7 @@ p.intro {
         </style>
       </head>
       <body>
-        <h1>OAI 2.0 Request Results localhost</h1>
+        <h1>OAI 2.0 Request Results</h1>
         <xsl:call-template name="quicklinks"/>
         <p class="intro">You are viewing an HTML version of the XML OAI response. To see the underlying XML use your web browsers view source option. More information about this XSLT is at the <a href="#moreinfo">bottom of the page</a>.
         </p>
