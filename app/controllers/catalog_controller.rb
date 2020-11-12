@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require 'solrizer'
+require 'ucla/oai/solr_document_provider'
 
 class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
@@ -22,7 +23,7 @@ class CatalogController < ApplicationController
     config.oai = {
       provider: {
         repository_name: 'UCLA Library Digital Collections',
-        repository_url: 'https://digital.library.ucla.edu/catalog/oai?verb=Identify',
+        repository_url: 'https://' + ENV['RAILS_HOST'] + '/catalog/oai?verb=Identify',
         record_prefix: 'oai:library.ucla.edu',
         admin_email: 'dlp@library.ucla.edu',
         sample_id: 'kxc8j200zz-89112'
@@ -434,5 +435,9 @@ class CatalogController < ApplicationController
         end
       end
     end
+  end
+
+  def oai_provider
+    @oai_provider ||= Ucla::Oai::SolrDocumentProvider.new(self, oai_config)
   end
 end
