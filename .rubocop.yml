@@ -26,6 +26,7 @@ Metrics/AbcSize:
     - app/helpers/blacklight/url_helper_behavior.rb
     - app/controllers/catalog_controller.rb
     - app/models/solr_document.rb
+    - app/services/iiif_service.rb
 
 Metrics/BlockLength:
   Enabled: true
@@ -48,7 +49,7 @@ Metrics/CyclomaticComplexity:
     - app/helpers/blacklight/url_helper_behavior.rb
     - app/helpers/blacklight/blacklight_helper_behavior.rb
     - app/models/solr_document.rb
-
+    - app/services/iiif_service.rb
 
 Metrics/LineLength:
   Exclude:
@@ -69,12 +70,14 @@ Metrics/MethodLength:
     - app/forms/hyrax/californica_collections_form.rb
     - app/helpers/blacklight/url_helper_behavior.rb
     - app/controllers/catalog_controller.rb
+    - app/services/iiif_service.rb
 
 Metrics/PerceivedComplexity:
   Exclude:
     - app/helpers/blacklight/url_helper_behavior.rb
     - app/helpers/blacklight/blacklight_helper_behavior.rb
     - app/models/solr_document.rb
+    - app/services/iiif_service.rb
 
 Performance/RegexpMatch:
   Exclude:

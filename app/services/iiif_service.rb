@@ -2,13 +2,32 @@
 
 class IiifService
   def src(request, document)
+    # SINAI
     if Flipflop.sinai?
       "#{request&.base_url}/mirador.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+    # URSUS
     else
+      # CANVAS
       if request.query_parameters.include?('cv')
-        "#{request&.base_url}/uv/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        if ENV['RAILS_HOST'] == 'localhost' || ENV['RAILS_HOST'] == 'web' || request.base_url.include?('ursus-test')
+          "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        elsif request.base_url.include?('ursus-dev')
+          "https://d-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        elsif request.base_url.include?('ursus-stage')
+          "https://s-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        elsif request.base_url.include?('ursus') || request.base_url.to_s.include?('digital.library')
+          "https://p-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        end
       else
-        "#{request&.base_url}/uv/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        if ENV['RAILS_HOST'] || ENV['RAILS_HOST'] == 'web' || request.base_url.include?('ursus-test')
+          "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        elsif request.base_url.include?('ursus-dev')
+          "https://d-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        elsif request.base_url.include?('ursus-stage')
+          "https://s-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        elsif request.base_url.include?('ursus') || request.base_url.to_s.include?('digital.library')
+          "https://p-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+        end
       end
     end
   end
