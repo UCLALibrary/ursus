@@ -9,7 +9,7 @@ class IiifService
     else
       # CANVAS
       if request.query_parameters.include?('cv')
-        if ENV['RAILS_HOST'] == 'localhost' || request.base_url.include?('ursus-test')
+        if ENV['RAILS_HOST'] == 'localhost' || ENV['RAILS_HOST'] == 'web' || request.base_url.include?('ursus-test')
           "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
         elsif request.base_url.include?('ursus-dev')
           "https://d-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
@@ -19,7 +19,7 @@ class IiifService
           "https://p-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
         end
       else
-        if ENV['RAILS_HOST'] || request.base_url.include?('ursus-test')
+        if ENV['RAILS_HOST'] || ENV['RAILS_HOST'] == 'web' || request.base_url.include?('ursus-test')
           "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
         elsif request.base_url.include?('ursus-dev')
           "https://d-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
