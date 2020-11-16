@@ -28,6 +28,11 @@
       <dd class='metadata-block__label-value'>
         <a href="<%= @document[:iiif_manifest_url_ssi] %>" target="_blank"><%= image_tag('iiif-logo.png', alt: 'IIIF Manifest') %></a>
       </dd>
+
+      <!-- other versions -->
+      <% if Flipflop.sinai? %>
+        <%= render 'otherversion' %>
+      <% end %>
     </dl>
     <hr>
     <% if Flipflop.sinai? %>

@@ -46,6 +46,18 @@ module BlacklightHelper
     opac_link.html_safe
   end
 
+  def other_versions_markup
+    other_versions_text = ''
+    urls = @document[:other_versions_tesim]
+    urls.each { |url| other_versions_text += '<a href="' + url + '">' + url + '</a> <br>' }
+    other_versions_text
+  end
+
+  def render_other_versions_link
+    data = other_versions_markup
+    data.html_safe
+  end
+
   def render_table_of_contents_key
     unless @document[:toc_tesim].nil? || @document[:toc_tesim].empty?
       'Table of contents'
