@@ -10,23 +10,23 @@ class IiifService
       # CANVAS
       if request.query_parameters.include?('cv')
         if ENV['RAILS_HOST'] == 'localhost' || ENV['RAILS_HOST'] == 'web' || request.base_url.include?('ursus-test')
-          "http://t-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+          "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
         elsif request.base_url.include?('ursus-dev')
-          "http://d-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+          "https://d-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
         elsif request.base_url.include?('ursus-stage')
-          "http://s-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+          "https://s-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
         elsif request.base_url.include?('ursus') || request.base_url.to_s.include?('digital.library')
-          "http://p-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
+          "https://p-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
         end
       else
         if ENV['RAILS_HOST'] || ENV['RAILS_HOST'] == 'web' || request.base_url.include?('ursus-test')
-          "http://t-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+          "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
         elsif request.base_url.include?('ursus-dev')
-          "http://d-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+          "https://d-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
         elsif request.base_url.include?('ursus-stage')
-          "http://s-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+          "https://s-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
         elsif request.base_url.include?('ursus') || request.base_url.to_s.include?('digital.library')
-          "http://p-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
+          "https://p-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
         end
       end
     end
@@ -34,7 +34,7 @@ class IiifService
 
   def iiif_manifest_url(document)
     if Flipflop.use_manifest_store? && document[:iiif_manifest_url_ssi]
-      document[:iiif_manifest_url_ssi]
+      document[:iiif_manifest_url_ssi].sub('http:', 'https:') 
     else
       "#{Rails.application.config.iiif_url}/#{document.id}/manifest"
     end
