@@ -22,6 +22,6 @@ describe('Sinai Search', () => {
     cy.get('[id=search]').click();
     cy.get('.search-count__heading').contains('Catalog Results');
     cy.get('.document-position-1 > .document__list-item-wrapper > .document__list-title > a').click();
-    cy.get('.item-page__title');
+    cy.contains('h4','Item Overview');
   });
 });
