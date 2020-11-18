@@ -55,7 +55,7 @@ class SearchFieldService
     'uniform_title_tesim',
     'shelfmark_ssi',
     'descriptive_title_tesim',
-    'delivery_ssi',
+    'delivery_tesim',
     'other_versions_tesim'
   ].join(' ').freeze
 

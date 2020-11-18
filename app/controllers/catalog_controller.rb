@@ -270,7 +270,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'funding_note_tesim', label: 'Funding note'
 
     # Do not Display
-    # config.add_show_field 'delivery_ssi'
+    # config.add_show_field 'delivery_tesim'
     # config.add_show_field 'image_count_ssi'
 
     # RECORD INFO
