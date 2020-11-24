@@ -7,17 +7,32 @@
   padding-right: 10px;
 }
 
+.site-header__search-icon--sinai {
+  height: 25px;
+}
+
 .site-navbar__logo-block--sinai {
   align-items: unset;
   justify-content: unset;
   flex-direction: column;
 
   @media (max-width: 500px) {
+    padding-left: 0px;
     flex-basis: 83%;
   }
 
   @media (max-width: 330px) {
+    padding-left: 0px;
     flex-basis: 80%;
+  }
+}
+
+.nav-item--sinai {
+  padding-right: 10px;
+
+  @media (max-width: 991px) {
+    background-color: $sinai-dark-beige;
+    padding-left: 27px;
   }
 }
 

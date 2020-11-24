@@ -8,22 +8,17 @@
     </div>
   </div>
 
-    <button class='navbar-toggler navbar-toggler-icon--sinai' type='button' data-toggle='collapse' data-target='#user-util-collapse' aria-controls='user-util-collapse' aria-expanded='false' aria-label='Toggle navigation'>
+    <button class='navbar-toggler  navbar-toggler-icon--sinai' type='button' data-toggle='collapse' data-target='#user-util-collapse' aria-controls='user-util-collapse' aria-expanded='false' aria-label='Toggle navigation'>
       <span class='navbar-toggler-icon'></span>
     </button>
 
     <div class='collapse navbar-collapse' id='user-util-collapse'>
-      <ul class='navbar-nav ml-auto'>
-        <li class='site-navbar__item site-navbar__item--sinai dropdown'>
-          <a class='site-navbar__item-link site-navbar__item-link--sinai dropdown-toggle' href='#' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About the Project</a>
-          <div class='dropdown-menu dropdown-menu-right dropdown-menu--sinai' aria-labelledby='navbarDropdown'>
-          <a class='dropdown-item dropdown-item--sinai' href='/sinai_about'>About</a>
-          <a class='dropdown-item dropdown-item--sinai' href='/manuscript_descriptions'>Manuscript Descriptions</a>
-          <a class='dropdown-item dropdown-item--sinai' href='/terms-of-use'>Terms of Use</a>
-          <a class='dropdown-item dropdown-item--sinai' href='/sinai_contact'>Contact Us</a>
-        </div>
-        </li>
+      <ul class='navbar-nav nav ml-auto'>
+        <li class='nav-item nav-item--sinai'><a href='/sinai_about'>About</a></li>
+        <li class='nav-item nav-item--sinai'><a href='/login'>Login</a></li>
+        <li class='nav-item nav-item--sinai'><a href='https://sinaimanuscripts.library.ucla.edu/catalog?utf8=%E2%9C%93&q=&search_field=all_fields'><%= image_tag('sinai/search-icon-bold.svg', class: 'site-header__search-icon--sinai', alt: 'Search icon') %></a></li>
       </ul>
     </div>
+
   </nav>
 </div>
