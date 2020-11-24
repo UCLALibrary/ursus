@@ -1,11 +1,14 @@
 <div class="container-full container-full--navbar site-navbar site-navbar--sinai">
   <nav class="navbar navbar-expand-lg navbar-dark site-navbar__wrapper site-navbar__wrapper--sinai" role="navigation">
+  <div class='site-navbar__logo-block'>
+    <%= image_tag('sinai/sinai-logo-header.svg', class: 'site-header__logo--sinai', alt: 'St Catherine Monastery logo') %>
     <div class='site-navbar__logo-block site-navbar__logo-block--sinai'>
       <%= link_to "Sinai Manuscripts Digital Library", root_path, class: 'site-navbar__logo--sinai' %>
       <span class="site-navbar__logo-subtitle--sinai">A publication of St. Catherine's Monastery of the Sinai, Egypt</span>
     </div>
+  </div>
 
-    <button class='navbar-toggler  navbar-toggler-icon--sinai' type='button' data-toggle='collapse' data-target='#user-util-collapse' aria-controls='user-util-collapse' aria-expanded='false' aria-label='Toggle navigation'>
+    <button class='navbar-toggler navbar-toggler-icon--sinai' type='button' data-toggle='collapse' data-target='#user-util-collapse' aria-controls='user-util-collapse' aria-expanded='false' aria-label='Toggle navigation'>
       <span class='navbar-toggler-icon'></span>
     </button>
 
