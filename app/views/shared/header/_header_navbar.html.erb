@@ -3,9 +3,11 @@
   <% url = request.original_url %>
   <% unless url.include?('login') %>
     <%= render 'shared/header/sinai_header' %>
+    <!--
     <div class="container-full site-searchbar site-searchbar--sinai" role="search">
-      <%= render_search_bar %>
+      <%#= render_search_bar %>
     </div>
+    -->
   <% end %>
 
 <%# URSUS %>
