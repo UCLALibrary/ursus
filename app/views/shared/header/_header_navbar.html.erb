@@ -1,13 +1,13 @@
 <%# SINAI %>
 <% if Flipflop.sinai? %>
   <% url = request.original_url %>
-  <% unless url.include?('login') %>
+    <% if current_page?(root_url) %>
     <%= render 'shared/header/sinai_header' %>
-    <!--
+  <% else %>
+    <%= render 'shared/header/sinai_header' %>
     <div class="container-full site-searchbar site-searchbar--sinai" role="search">
-      <%#= render_search_bar %>
+      <%= render_search_bar %>
     </div>
-    -->
   <% end %>
 
 <%# URSUS %>
