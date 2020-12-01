@@ -5,6 +5,10 @@
 .site-header__logo--sinai {
   height: 66px;
   padding-right: 10px;
+
+  @media (max-widtth: 375px) {
+    font-size: $text-24;
+  }
 }
 
 .site-navbar__logo-block--sinai {
@@ -37,19 +41,18 @@
   }
 }
 
-.nav-item--sinai {
-  padding-right: 10px;
+.nav-item--sinai:not(:last-child) {
+  padding-right: 20px;
+}
 
-  @media (max-width: 991px) {
-    background-color: $sinai-dark-beige;
-    padding-left: 27px;
-  }
+.nav-item--sinai {
+  text-transform: uppercase;
 }
 
 .site-navbar__logo--sinai {
-  font-size: $text-24;
-  font-weight: $font-bold;
+  font-size: $text-28;
   color: $gray-80;
+  text-transform: uppercase;
 
   &:hover {
     text-decoration: none;
@@ -66,14 +69,11 @@
 }
 
 .site-navbar__logo-subtitle--sinai {
+  font-size: $text-18;
   display: block;
 
-  @media (max-width: 991px) {
+  @media (max-width: 375px) {
     font-size: $text-14;
-  }
-
-  @media (max-width: 540px) {
-    font-size: $text-12;
   }
 }
 
@@ -108,9 +108,9 @@
   }
 }
 
-
 .site-header__search-icon--sinai {
   height: 25px;
+  display: inline;
 }
 
 .dropdown-menu--sinai {
@@ -142,12 +142,6 @@
     &:hover {
       background-color: $sinai-beige;
     }
-  }
-}
-
-.navbar-toggler-icon--sinai .navbar-toggler-icon {
-  @media (max-width: 991px) {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128, 0, 32, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
 }
 
