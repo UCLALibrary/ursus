@@ -2,51 +2,22 @@
   background-color: $sinai-beige;
 }
 
-.site-header__logo--sinai {
-  height: 66px;
-  padding-right: 10px;
-
-  @media (max-widtth: 375px) {
-    font-size: $text-24;
+.site-navbar__wrapper--sinai {
+  @media (max-width: 800px) {
+    display: block;
   }
 }
 
 .site-navbar__logo-block--sinai {
-  align-items: unset;
-  justify-content: unset;
-  flex-direction: column;
 
-  @media (max-width: 500px) {
-    padding-left: 0px;
-    flex-basis: 83%;
-  }
-
-  @media (max-width: 330px) {
-    padding-left: 0px;
-    flex-basis: 80%;
+  @media (max-width: 800px) {
+    justify-content: unset;
   }
 }
 
-.site-navbar__logo-and-text-block--sinai {
-  align-items: unset;
-  justify-content: unset;
-  flex-direction: column;
-
-  @media (max-width: 500px) {
-    flex-basis: 83%;
-  }
-
-  @media (max-width: 330px) {
-    flex-basis: 80%;
-  }
-}
-
-.nav-item--sinai:not(:last-child) {
-  padding-right: 20px;
-}
-
-.nav-item--sinai {
-  text-transform: uppercase;
+.site-navbar__logo-img--sinai {
+  height: 66px;
+  padding-right: 10px;
 }
 
 .site-navbar__logo--sinai {
@@ -73,14 +44,23 @@
   }
 }
 
+.nav-item--sinai:not(:last-child) {
+  padding-right: 20px;
+}
+
 .site-navbar__item--sinai {
   font-weight: inherit;
+  text-transform: uppercase;
 
   @media (max-width: 991px) {
     &:hover {
       background-color: $sinai-dark-beige;
     }
   }
+}
+
+.site-navbar__link-block--sinai {
+  justify-content: flex-end;
 }
 
 .site-navbar__item-link--sinai {
@@ -107,35 +87,4 @@
 .site-header__search-icon--sinai {
   height: 25px;
   display: inline;
-}
-
-.nav-items-right--sinai {
-  display: flex;
-  align-content: center;
-}
-
-// .dropdown-item--sinai {
-//   padding: 0.5rem 2.5rem;
-
-//   &:active,
-//   &:focus {
-//     background-color: $sinai-beige;
-//   }
-
-//   &:hover {
-//     text-decoration: underline;
-//     color: $sinai-red;
-//   }
-
-//   @media (max-width: 375px) {
-//     &:hover {
-//       background-color: $sinai-beige;
-//     }
-//   }
-// }
-
-.site-navbar__wrapper--sinai .navbar-collapse {
-  @media (max-width: 375px) {
-    background-color: $sinai-beige;
-  }
 }
