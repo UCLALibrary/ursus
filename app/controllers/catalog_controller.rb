@@ -344,7 +344,7 @@ class CatalogController < ApplicationController
     if Flipflop.sinai?
       config.add_search_field('shelfmark_ssi', label: 'Shelfmark') do |field|
         field.solr_parameters = {
-          qf: 'shelfmark_ssi',
+          qf: 'shelfmark',
           pf: ''
         }
       end
