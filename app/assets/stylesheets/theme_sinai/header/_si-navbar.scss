@@ -18,6 +18,11 @@
 .site-navbar__logo-img--sinai {
   height: 66px;
   padding-right: 10px;
+
+  @media (max-width: 400px) {
+    height: 50px;
+    padding-right: 6px;
+  }
 }
 
 .site-navbar__logo--sinai {
@@ -30,8 +35,12 @@
     color: $sinai-red;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 800px) {
     font-size: $text-24;
+  }
+
+  @media (max-width: 400px) {
+    font-size: $text-18;
   }
 }
 
@@ -39,28 +48,45 @@
   font-size: $text-18;
   display: block;
 
-  @media (max-width: 375px) {
+  @media (max-width: 800px) {
     font-size: $text-14;
+  }
+
+  @media (max-width: 400px) {
+    font-size: .75rem;
   }
 }
 
-.nav-item--sinai:not(:last-child) {
-  padding-right: 20px;
+.site-navbar__item--sinai:not(:last-child) {
+  padding-inline-end: 20px;
+
+  @media (max-width: 500px) {
+    padding-inline-end: 16px;
+  }
 }
 
 .site-navbar__item--sinai {
   font-weight: inherit;
   text-transform: uppercase;
+  padding-top:10px;
+  padding-bottom:10px;
 
   @media (max-width: 991px) {
-    &:hover {
-      background-color: $sinai-dark-beige;
-    }
+    padding-inline-end: 20px;
+  }
+
+  @media (max-width: 500px) {
+    padding-inline-end: 20px;
   }
 }
 
 .site-navbar__link-block--sinai {
   justify-content: flex-end;
+
+  @media (max-width: 800px) {
+    border-top: red;
+    border-top: 1px solid $gray-40;
+  }
 }
 
 .site-navbar__item-link--sinai {
