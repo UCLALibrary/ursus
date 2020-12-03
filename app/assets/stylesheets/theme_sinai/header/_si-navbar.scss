@@ -108,6 +108,10 @@
       color: $sinai-red;
     }
   }
+
+  @media (max-width: 500px) {
+    font-size: $text-14;
+  }
 }
 
 .site-header__search-icon--sinai {
