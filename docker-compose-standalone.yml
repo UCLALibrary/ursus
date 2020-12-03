@@ -1,4 +1,4 @@
-version: "3.6"
+version: '3.6'
 
 services:
   web:
@@ -16,7 +16,7 @@ services:
       DATABASE_USERNAME: ursus
       DATABASE_PASSWORD: ursus
     ports:
-      - "127.0.0.1:3003:3000"
+      - '127.0.0.1:3003:3000'
     volumes:
       - .:/ursus
       - ursus_bundle_dir:/usr/local/bundle
@@ -24,7 +24,7 @@ services:
       - ursus_public_uv:/ursus/public/uv
       - ursus_tmp:/ursus/tmp
     working_dir: /ursus
-  
+
   sinai:
     image: uclalibrary/ursus
     command: 'sh start-sinai.sh'
@@ -41,7 +41,7 @@ services:
       DATABASE_USERNAME: ursus
       DATABASE_PASSWORD: ursus
     ports:
-      - "127.0.0.1:3004:3000"
+      - '127.0.0.1:3004:3000'
     volumes:
       - .:/ursus
       - sinai_bundle_dir:/usr/local/bundle
@@ -56,20 +56,19 @@ services:
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - mysql_data:/var/lib/mysql
     ports:
-      - "127.0.0.1:3306:3306"
+      - '127.0.0.1:3306:3306'
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
 
   solr:
     image: uclalibrary/solr-ursus:2020-07-22
     ports:
-      - "127.0.0.1:8983:8983"
+      - '127.0.0.1:8983:8983'
 
   solr_test:
     image: uclalibrary/solr-ursus:2020-07-22
     ports:
-      - "127.0.0.1:8985:8983"
-
+      - '127.0.0.1:8985:8983'
 
 volumes:
   mysql_data:
