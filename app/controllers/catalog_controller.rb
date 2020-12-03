@@ -320,6 +320,8 @@ class CatalogController < ApplicationController
     # since we aren't specifying it otherwise.
 
     search_field_service = ::SearchFieldService.instance
+
+    unless Flipflop.sinai?
     config.add_search_field('all_fields', label: 'All Fields') do |field|
       field.solr_parameters = {
         qf: search_field_service.search_fields
@@ -338,6 +340,8 @@ class CatalogController < ApplicationController
         qf: 'subject_tesim',
         pf: ''
       }
+    end
+
     end
 
     # SINAI
