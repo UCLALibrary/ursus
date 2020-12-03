@@ -1,34 +1,64 @@
+.site-footer--sinai {
+  background-color: $black-90;
+}
+
 .site-footer__primary--sinai {
-  background-color: $sinai-beige;
+  background-color: $black-90;
+}
+
+.site-footer__title--sinai {
+  padding: 1rem 0;
+  font-weight: 300;
+  color: $white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  @media (max-width: 767px) {
+    text-align: center;
+  }
 }
 
 .site-footer__primary-wrapper--sinai {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
 
   @media (max-width: 991px) {
     flex-wrap: wrap;
   }
 
   @media (max-width: 767px) {
-    justify-content: center;
+    margin: 0 auto;
+    width: 95%;
   }
 }
 
 .site-footer__logo-wrapper--sinai {
   display: flex;
   justify-content: center;
-  flex: 0 0 19%;
+  flex: 0 0 17%;
 
   @media (max-width: 767px) {
-    flex: 0 0 33%;
-    display: flex;
-    justify-content: center;
+    flex: 0 0 40%;
 
-    &:nth-child(4),
-    &:nth-child(5) {
+    &:nth-child(3),
+    &:nth-child(4) {
       margin-top: 1rem;
+    }
+
+    &:nth-child(5) {
+      margin-top: 2rem;
+    }
+  }
+
+  @media (max-width: 502px) {
+    &:nth-child(1),
+    &:nth-child(3) {
+      flex: 0 0 52%;
+    }
+
+    &:nth-child(4) {
+      flex: 0 0 35%;
     }
   }
 }
@@ -37,4 +67,9 @@
   height: 100px;
   object-fit: contain;
   object-position: center;
+
+  /* To constrain EMEL logo */
+  &:last-of-type {
+    height: 85px;
+  }
 }

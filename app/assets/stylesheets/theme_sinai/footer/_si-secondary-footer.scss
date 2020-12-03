@@ -1,23 +1,31 @@
 .site-footer__secondary--sinai {
-  background-color: $sinai-red;
+  background-color: $black-90;
+
+  hr {
+    margin: 0 auto;
+    width: 65%;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
 }
 
 .site-footer__secondary-wrapper--sinai {
   display: flex;
   justify-content: center;
-}
-
-.site-footer__list-item--sinai {
-  display: inline;
+  padding: 2rem 0;
 }
 
 .site-footer__link--sinai {
-  padding-right: 2.5rem;
-  color: $sinai-beige;
+  font-weight: 300;
+  color: $white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 
   &:visited,
   &:hover,
   &:active {
-    color: $sinai-beige;
+    color: $white;
   }
 }
