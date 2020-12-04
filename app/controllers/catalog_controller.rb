@@ -353,9 +353,9 @@ class CatalogController < ApplicationController
         }
       end
 
-      config.add_search_field('shelfmark_ssi', label: 'Shelfmark') do |field|
+      config.add_search_field('shelfmark_tsi', label: 'Shelfmark') do |field|
         field.solr_parameters = {
-          qf: 'shelfmark_ssi',
+          qf: 'shelfmark_tsi',
           pf: ''
         }
       end
