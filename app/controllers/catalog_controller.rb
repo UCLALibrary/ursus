@@ -359,18 +359,21 @@ class CatalogController < ApplicationController
     # (it must be asc or desc except in the relevancy case)
     # label is key, solr field is value
     config.add_sort_field 'score desc', label: 'Relevance'
-    config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
-    config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
+
     # config.add_sort_field 'sort_title_ssort asc', label: 'Title (A-Z)'
     # config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
     if Flipflop.sinai?
-      config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
-      config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
+      config.add_sort_field 'shelfmark_alpha_numeric_ssort asc', label: 'Shelfmark (A-Z)'
+      config.add_sort_field 'shelfmark_alpha_numeric_ssort desc', label: 'Shelfmark (Z-A)'
+      #  config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
+      #  config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
     else
-      config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
-      config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
+      config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
+      config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
     end
 
+    config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
+    config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
     #------------------------------------------------------
     # AUTO_SUGGEST / AUTO_COMPLETE
     # If there are more than this many search results,
