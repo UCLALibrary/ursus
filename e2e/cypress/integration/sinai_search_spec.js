@@ -24,4 +24,20 @@ describe('Sinai Search', () => {
     cy.get('.document-position-1 > .document__list-item-wrapper > .document__list-title > a').click();
     cy.contains('h4','Item Overview');
   });
+
+  it('Search Shelfmark Found', () => {
+    cy.get('[id=q]').type('sinai syriac 100');
+    cy.get('select').select('Shelfmark').should('have.value', 'shelfmark_tsi');
+    cy.get('[id=search]').click();
+    cy.get('.search-count__heading').contains('Catalog Results');
+    cy.percySnapshot();
+  });
+
+  it('Search Title Found', () => {
+    cy.get('[id=q]').type('sinai');
+    cy.get('select').select('Title').should('have.value', 'title_tesim descriptive_title_tesim alternative_title_tesim uniform_title_tesim');
+    cy.get('[id=search]').click();
+    cy.get('.search-count__heading').contains('Catalog Results');
+    cy.percySnapshot();
+  });
 });
