@@ -16,12 +16,12 @@
 }
 
 .site-navbar__logo-img--sinai {
-  height: 66px;
   padding-right: 10px;
+  height: 66px;
 
   @media (max-width: 400px) {
-    height: 50px;
     padding-right: 6px;
+    height: 50px;
   }
 }
 
@@ -45,15 +45,15 @@
 }
 
 .site-navbar__logo-subtitle--sinai {
-  font-size: $text-18;
   display: block;
+  font-size: $text-18;
 
   @media (max-width: 800px) {
     font-size: $text-14;
   }
 
   @media (max-width: 400px) {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -66,18 +66,18 @@
 }
 
 .site-navbar__item--sinai {
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-weight: inherit;
   text-transform: uppercase;
-  padding-top:10px;
-  padding-bottom:10px;
 
   @media (max-width: 991px) {
     padding-inline-end: 20px;
   }
 
   @media (max-width: 500px) {
-    padding-inline-end: 20px;
     font-size: $text-14;
+    padding-inline-end: 20px;
   }
 }
 
@@ -85,12 +85,12 @@
   justify-content: flex-end;
 
   @media (max-width: 800px) {
-    border-top: red;
+    border-top: $sinai-red;
     border-top: 1px solid $gray-10;
   }
 }
 
 .site-header__search-icon--sinai {
-  height: 25px;
   display: inline;
+  height: 25px;
 }

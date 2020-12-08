@@ -10,37 +10,51 @@ describe('Sinai Homepage', () => {
   });
 
 // Navbar Links
+  it('Search Link', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
+    cy.contains('a', 'Search ');
+    cy.get('.site-header__search-icon--sinai').click({ force: true });
+    cy.url().should('include', 'search_field=all_fields');
+  });
+
   it('About Link', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('a', 'About the Project');
-    cy.get('#navbarDropdown').click({ force: true });
+    cy.contains('a', 'About');
     cy.get('[href="/sinai_about"]').click({ force: true });
     cy.url().should('include', '/sinai_about');
   });
 
-  it('Manuscript Descriptions Link', () => {
+  it('Login Link', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('a', 'About the Project');
-    cy.get('#navbarDropdown').click({ force: true });
-    cy.contains('a', 'Manuscript Descriptions').click({ force: true });
-    cy.url().should('include', '/manuscript_descriptions');
+    cy.contains('a', 'Login');
+    cy.get('[href="/login"]').click({ force: true });
+    cy.url().should('include', '/login');
   });
 
-  it('Terms of Use Link', () => {
-    cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('a', 'About the Project');
-    cy.get('#navbarDropdown').click({ force: true });
-    cy.contains('a', 'Terms of Use').click({ force: true });
-    cy.url().should('include', '/terms-of-use');
-  });
+  // it('Manuscript Descriptions Link', () => {
+  //   cy.visit(Cypress.env('SINAI_BASE_URL'));
+  //   cy.contains('a', 'About the Project');
+  //   cy.get('.nav > :nth-child(1) > a')
+  //   cy.get('#navbarDropdown').click({ force: true });
+  //   cy.contains('a', 'Manuscript Descriptions').click({ force: true });
+  //   cy.url().should('include', '/manuscript_descriptions');
+  // });
 
-  it('Contact Us Link', () => {
-    cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('a', 'About the Project');
-    cy.get('#navbarDropdown').click({ force: true });
-    cy.contains('a', 'Contact Us').click({ force: true });
-    cy.url().should('include', '/sinai_contact');
-  });
+  // it('Terms of Use Link', () => {
+  //   cy.visit(Cypress.env('SINAI_BASE_URL'));
+  //   cy.contains('a', 'About the Project');
+  //   cy.get('#navbarDropdown').click({ force: true });
+  //   cy.contains('a', 'Terms of Use').click({ force: true });
+  //   cy.url().should('include', '/terms-of-use');
+  // });
+
+  // it('Contact Us Link', () => {
+  //   cy.visit(Cypress.env('SINAI_BASE_URL'));
+  //   cy.contains('a', 'About the Project');
+  //   cy.get('#navbarDropdown').click({ force: true });
+  //   cy.contains('a', 'Contact Us').click({ force: true });
+  //   cy.url().should('include', '/sinai_contact');
+  // });
 
   // Static pages
   it('About Page', () => {
