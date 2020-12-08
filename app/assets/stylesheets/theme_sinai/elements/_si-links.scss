@@ -1,13 +1,9 @@
 .si-link {
-  color: $sinai-red;
+  color: $sinai-orange;
 
   &:visited {
-    color: $sinai-red;
+    color: $sinai-orange;
   }
-}
-
-.si-link:hover {
-  color: $sinai-lighter-red;
 }
 
 .si-link--dark {
@@ -15,7 +11,7 @@
 }
 
 .si-link--dark:hover {
-  color: $sinai-red;
+  color: $sinai-orange;
 }
 
 .si-link--light,

@@ -1,18 +1,18 @@
-.btn-sinai--red {
+.btn-sinai--orange {
   color: $white;
-  background-color: $sinai-red;
+  background-color: $sinai-orange;
   border-color: $sinai-red;
 }
 
-.btn-outline-sinai--red {
+.btn-outline-sinai--orange {
   color: $gray-80;
-  border-color: $sinai-red;
+  border-color: $sinai-orange;
 }
 
-.btn-outline-sinai--red:hover {
+.btn-outline-sinai--orange:hover {
   color: $white;
-  background-color: $sinai-red;
-  border-color: $sinai-red;
+  background-color: $sinai-orange;
+  border-color: $sinai-orange;
 
   .blacklight-icons svg g,
   .blacklight-icons svg path {
@@ -30,10 +30,10 @@
   }
 }
 
-.btn-outline-sinai--red:not(:disabled):not(.disabled).active {
+.btn-outline-sinai--orange:not(:disabled):not(.disabled).active {
   color: $white;
-  background-color: $sinai-red;
-  border-color: $sinai-red;
+  background-color: $sinai-orange;
+  border-color: $sinai-orange;
 
   .blacklight-icons svg g,
   .blacklight-icons svg path {
@@ -42,18 +42,18 @@
 }
 
 .btn-base--base--sinai {
-  color: $sinai-red;
+  color: $sinai-orange;
   background-color: $white;
-  border-color: $sinai-red;
+  border-color: $sinai-orange;
 
   &:visited {
-    color: $sinai-red;
+    color: $sinai-orange;
     background-color: $white;
-    border-color: $sinai-red;
+    border-color: $sinai-orange;
   }
 
   &:hover {
     color: $white;
-    background-color: $sinai-red;
+    background-color: $sinai-orange;
   }
 }
