@@ -23,7 +23,7 @@
 
   &:hover {
     text-decoration: none;
-    color: $sinai-orange;
+    color: $sinai-red;
   }
 
   @media (max-width: 540px) {
@@ -63,13 +63,13 @@
 
   &:hover {
     text-decoration: underline;
-    color: $sinai-orange;
+    color: $sinai-red;
   }
 
   @media (max-width: 991px) {
     &:hover {
       text-decoration: underline;
-      color: $sinai-orange;
+      color: $sinai-red;
     }
   }
 }
@@ -96,7 +96,7 @@
 
   &:hover {
     text-decoration: underline;
-    color: $sinai-orange;
+    color: $sinai-red;
   }
 
   @media (max-width: 991px) {

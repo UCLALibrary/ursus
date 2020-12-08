@@ -1,6 +1,6 @@
 .facets__navbar--sinai {
   @media (max-width: 991px) {
-    background-color: $sinai-orange;
+    background-color: $sinai-red;
   }
 }
 
@@ -25,17 +25,17 @@
   a,
   a:active,
   a:visited {
-    color: $sinai-orange;
+    color: $sinai-red;
   }
 
   a:hover {
     text-decoration: underline;
-    color: $sinai-orange;
+    color: $sinai-red;
   }
 
   &.collapse-toggle[aria-expanded='true'] {
-    background-color: $sinai-orange;
-    border: 1px solid $sinai-orange;
+    background-color: $sinai-red;
+    border: 1px solid $sinai-red;
     border-radius: 0;
 
     a,
@@ -50,8 +50,8 @@
 .facet-field__heading--sinai
 .collapse-toggle[aria-expanded='true']
 .facet-field {
-  background-color: $sinai-orange;
-  border: 1px solid $sinai-orange;
+  background-color: $sinai-red;
+  border: 1px solid $sinai-red;
   border-radius: 0;
 
   h3 {
@@ -62,10 +62,10 @@
 .facet-limit-active {
   .facet-field__heading--sinai {
     color: $white;
-    background-color: $sinai-orange;
+    background-color: $sinai-red;
 
     &.collapse-toggle[aria-expanded='true'] {
-      background-color: $sinai-orange;
+      background-color: $sinai-red;
     }
   }
 }
@@ -76,12 +76,12 @@
 
 .facet-field__body--sinai {
   .btn {
-    color: $sinai-orange;
+    color: $sinai-red;
     background-color: $sinai-beige;
   }
 
   .remove-icon {
-    color: $sinai-orange;
+    color: $sinai-red;
   }
 }
 
@@ -89,7 +89,7 @@
   a,
   a:active,
   a:visited {
-    color: $sinai-orange;
+    color: $sinai-red;
   }
 }
 
@@ -97,6 +97,6 @@
   a,
   a:active,
   a:visited {
-    color: $sinai-orange;
+    color: $sinai-red;
   }
 }

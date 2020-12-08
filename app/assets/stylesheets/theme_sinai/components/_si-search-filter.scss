@@ -1,8 +1,8 @@
 .filter-group__label--sinai {
-  background-color: $sinai-orange;
+  background-color: $sinai-red;
 
   &:hover {
-    background-color: $sinai-orange;
+    background-color: $sinai-red;
   }
 }
 
@@ -21,11 +21,11 @@
 
 .filter-label-remove--sinai {
   color: $white;
-  background-color: $sinai-orange;
+  background-color: $sinai-red;
 
   &:visited {
     color: $white;
-    background-color: $sinai-orange;
+    background-color: $sinai-red;
   }
 
   &:hover {
