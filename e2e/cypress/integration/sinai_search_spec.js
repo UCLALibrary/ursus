@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 beforeEach(() => {
-  cy.visit(Cypress.env('SINAI_BASE_URL'));
+  cy.visit(Cypress.env('SINAI_BASE_URL') + '/catalog?utf8=%E2%9C%93&q=&search_field=all_fields');
 });
 
 describe('Sinai Search', () => {
