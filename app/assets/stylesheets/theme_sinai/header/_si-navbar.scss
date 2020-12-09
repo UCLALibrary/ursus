@@ -94,3 +94,28 @@
   display: inline;
   height: 25px;
 }
+
+// Sinai Static Pages
+
+.site-navbar--sinai-static {
+  align-self: flex-start;
+  border-right: 1px solid black;
+  background: transparent;
+  flex-basis: 15%;
+}
+
+.navbar-nav--sinai-static {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-navbar__item--sinai-static {
+  margin-bottom: 2rem;
+  border-bottom: 1px black solid;
+  padding-bottom: 1rem;
+  width: 120px;
+}
+
+.site-navbar__item-link--sinai2 {
+  color: $black;
+}

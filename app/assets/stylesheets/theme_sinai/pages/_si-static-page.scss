@@ -1,11 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,600&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,600&display=swap');
+
+.sinai-static-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sinai-static-test {
+  flex-basis: 80%;
+}
 
 .static-page__row--sinai {
   @extend .row;
 }
 
 .static-page__title--sinai {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Dosis', san serif;
+  font-size: $text-24;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .static-page__subtitle--sinai {
