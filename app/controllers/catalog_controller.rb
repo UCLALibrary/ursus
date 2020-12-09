@@ -115,6 +115,7 @@ class CatalogController < ApplicationController
       config.add_facet_field 'features_sim', limit: 7, label: 'Features'
       config.add_facet_field 'support_sim', limit: 7, label: 'Support'
       config.add_facet_field 'form_sim', limit: 7, label: 'Form'
+      config.add_facet_field 'title_sim', limit: 7
 
     # URSUS
     else
