@@ -5,6 +5,7 @@
 .pagination__page-link--sinai {
   color: $gray-80;
   background-color: $white;
+  border-color: $sinai-dark-beige;
 
   &:visited {
     color: $gray-80;
@@ -12,13 +13,13 @@
   }
 
   &:hover {
-    color: $gray-80;
-    background-color: $sinai-dark-beige;
+    color: $white;
+    background-color: $sinai-orange-med;
   }
 }
 
 .pagination__page-item--sinai.active .pagination__page-link--sinai {
   color: $white;
-  background-color: $sinai-red;
-  border-color: $sinai-red;
+  background-color: $sinai-orange-med;
+  border-color: $sinai-dark-beige;
 }

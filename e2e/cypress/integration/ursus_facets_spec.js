@@ -1,3 +1,7 @@
+beforeEach(() => {
+  cy.visit(Cypress.env('baseUrl'));
+});
+
 describe('Facets', () => {
   it('Subject', () => {
     cy.visit('/');
