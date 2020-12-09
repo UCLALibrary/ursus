@@ -1,18 +1,18 @@
 .btn-sinai--orange {
   color: $white;
   background-color: $sinai-orange;
-  border-color: $sinai-red;
+  border-color: $gray-10;
 }
 
 .btn-outline-sinai--beige {
   color: $gray-80;
-  border-color: $sinai-orange;
+  border-color: $gray-10;
 }
 
-.btn-outline-sinai--orange:hover {
+.btn-outline-sinai--beige:hover {
   color: $white;
   background-color: $sinai-orange;
-  border-color: $sinai-orange;
+  border-color: $gray-10;
 
   .blacklight-icons svg g,
   .blacklight-icons svg path {
