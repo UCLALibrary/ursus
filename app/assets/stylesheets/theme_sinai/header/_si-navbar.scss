@@ -1,119 +1,96 @@
 .site-navbar--sinai {
-  background-color: $white;
+  background-color: $sinai-beige;
+}
+
+.site-navbar__wrapper--sinai {
+  @media (max-width: 800px) {
+    display: block;
+  }
 }
 
 .site-navbar__logo-block--sinai {
-  align-items: unset;
-  justify-content: unset;
-  flex-direction: column;
 
-  @media (max-width: 500px) {
-    flex-basis: 83%;
+  @media (max-width: 800px) {
+    justify-content: unset;
   }
+}
 
-  @media (max-width: 330px) {
-    flex-basis: 80%;
+.site-navbar__logo-img--sinai {
+  padding-right: 10px;
+  height: 66px;
+
+  @media (max-width: 400px) {
+    padding-right: 6px;
+    height: 50px;
   }
 }
 
 .site-navbar__logo--sinai {
-  font-size: $text-24;
-  font-weight: $font-bold;
+  font-size: $text-28;
   color: $gray-80;
+  text-transform: uppercase;
 
   &:hover {
     text-decoration: none;
     color: $sinai-red;
   }
 
-  @media (max-width: 540px) {
-    font-size: $text-18;
+  @media (max-width: 800px) {
+    font-size: $text-24;
   }
 
-  @media (max-width: 374px) {
-    font-size: $text-16;
+  @media (max-width: 400px) {
+    font-size: $text-18;
   }
 }
 
 .site-navbar__logo-subtitle--sinai {
   display: block;
+  font-size: $text-18;
 
-  @media (max-width: 540px) {
+  @media (max-width: 800px) {
     font-size: $text-14;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 0.75rem;
+  }
+}
+
+.site-navbar__item--sinai:not(:last-child) {
+  padding-inline-end: 20px;
+
+  @media (max-width: 500px) {
+    padding-inline-end: 16px;
   }
 }
 
 .site-navbar__item--sinai {
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-weight: inherit;
+  text-transform: uppercase;
 
   @media (max-width: 991px) {
-    &:hover {
-      background-color: $sinai-dark-beige;
-    }
+    padding-inline-end: 20px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: $text-14;
+    padding-inline-end: 20px;
   }
 }
 
-.site-navbar__item-link--sinai {
-  font-size: $text-18;
-  color: $gray-80;
+.site-navbar__link-block--sinai {
+  justify-content: flex-end;
 
-  &:visited {
-    color: $gray-80;
-  }
-
-  &:hover {
-    text-decoration: underline;
-    color: $sinai-red;
-  }
-
-  @media (max-width: 991px) {
-    &:hover {
-      text-decoration: underline;
-      color: $sinai-red;
-    }
+  @media (max-width: 800px) {
+    border-top: $sinai-red;
+    border-top: 1px solid $gray-10;
   }
 }
 
-.dropdown-menu--sinai {
-  padding: 0;
-  border: 1px solid $sinai-lighter-red;
-  border-radius: 0.125rem;
-
-  @media (max-width: 991px) {
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
-  }
-}
-
-.dropdown-item--sinai {
-  padding: 0.5rem 2.5rem;
-
-  &:active,
-  &:focus {
-    background-color: $sinai-beige;
-  }
-
-  &:hover {
-    text-decoration: underline;
-    color: $sinai-red;
-  }
-
-  @media (max-width: 991px) {
-    &:hover {
-      background-color: $sinai-beige;
-    }
-  }
-}
-
-.navbar-toggler-icon--sinai .navbar-toggler-icon {
-  @media (max-width: 991px) {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128, 0, 32, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-  }
-}
-
-.site-navbar__wrapper--sinai .navbar-collapse {
-  @media (max-width: 991px) {
-    background-color: $sinai-beige;
-  }
+.site-header__search-icon--sinai {
+  display: inline;
+  height: 25px;
 }

@@ -10,36 +10,25 @@ describe('Sinai Homepage', () => {
   });
 
 // Navbar Links
+  it('Search Link', () => {
+    cy.visit(Cypress.env('SINAI_BASE_URL'));
+    cy.contains('a', 'Search ');
+    cy.get('.site-header__search-icon--sinai').click({ force: true });
+    cy.url().should('include', 'search_field=all_fields');
+  });
+
   it('About Link', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('a', 'About the Project');
-    cy.get('#navbarDropdown').click({ force: true });
+    cy.contains('a', 'About');
     cy.get('[href="/sinai_about"]').click({ force: true });
     cy.url().should('include', '/sinai_about');
   });
 
-  it('Manuscript Descriptions Link', () => {
+  it('Login Link', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('a', 'About the Project');
-    cy.get('#navbarDropdown').click({ force: true });
-    cy.contains('a', 'Manuscript Descriptions').click({ force: true });
-    cy.url().should('include', '/manuscript_descriptions');
-  });
-
-  it('Terms of Use Link', () => {
-    cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('a', 'About the Project');
-    cy.get('#navbarDropdown').click({ force: true });
-    cy.contains('a', 'Terms of Use').click({ force: true });
-    cy.url().should('include', '/terms-of-use');
-  });
-
-  it('Contact Us Link', () => {
-    cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('a', 'About the Project');
-    cy.get('#navbarDropdown').click({ force: true });
-    cy.contains('a', 'Contact Us').click({ force: true });
-    cy.url().should('include', '/sinai_contact');
+    cy.contains('a', 'Login');
+    cy.get('[href="/login"]').click({ force: true });
+    cy.url().should('include', '/login');
   });
 
   // Static pages
@@ -47,24 +36,6 @@ describe('Sinai Homepage', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL') + '/sinai_about');
     cy.url().should('include', '/sinai_about');
     cy.contains('h1', 'About the Project');
-    cy.percySnapshot();
-  });
-
-  it('Manuscript Descriptions Page', () => {
-    cy.visit(Cypress.env('SINAI_BASE_URL') + '/manuscript_descriptions');
-    cy.contains('h1', 'Manuscript Descriptions');
-    cy.percySnapshot();
-  });
-
-  it('Terms of Use Page', () => {
-    cy.visit(Cypress.env('SINAI_BASE_URL') + '/terms-of-use');
-    cy.contains('h1', 'Terms of Use');
-    cy.percySnapshot();
-  });
-
-  it('Contact Us Page', () => {
-    cy.visit(Cypress.env('SINAI_BASE_URL') + '/sinai_contact');
-    cy.contains('h1', 'Contact Us');
     cy.percySnapshot();
   });
 

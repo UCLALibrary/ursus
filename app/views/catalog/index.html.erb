@@ -8,6 +8,7 @@
     <%= render 'homepage_sinai' %>
 
   <% else %>
+    <% request.original_url %>
     <div class='content-container--index-page'>
       <%= render 'facets' %>
       <%= render 'search_results' %>
