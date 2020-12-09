@@ -7,11 +7,26 @@
         <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai"><%= tn %></div>
       <% end %>
 
-      <span class="document__list-title document__list-title--sinai">
-        <% if counter = document_counter_with_offset(document_counter) %>
-        <%= link_to_document(document, counter: counter) %>
+
+      <% doc_presenter.fields_to_render.each do | field_name, field | %>
+        <%= render_index_field_label document, field: field_name %>
+        <%= doc_presenter.field_value field %>
       <% end %>
-      </span>
+
+<!-- Line 1 -->
+<!-- [Shelfmark], [Date.creation]. [Form], [Format.extent], [Collection] -->
+
+<!-- Line 2 -->
+<!-- Title(s) 
+  Uniform title (clickable facet that results in a search of the facet term)
+  and Descriptive title fields) -->
+
+<!-- Line 3 -->
+<!-- Language(s) (clickable facet that results in a search of the facet term) -->
+
+<!-- Line 4 -->
+<!-- Genre(s) (clickable facet that results in a search of the facet term) -->
+
   </div>
 
 <% else %><!-- URSUS -->
@@ -19,8 +34,11 @@
   <div class="document__list-item-wrapper">
     <!-- default partial to display solr document fields in catalog index view -->
     <dl class="document-metadata document__list-metadata-group">
+
       <% doc_presenter.fields_to_render.each do | field_name, field | %>
+
       <% if field_name == "member_of_collections_ssim" %>
+
         <% if document[:member_of_collections_ssim] && document[:member_of_collection_ids_ssim] %>
           <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-<%= field_name.parameterize %>">
             <%= render_index_field_label document, field: field_name %>
