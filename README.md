@@ -44,6 +44,7 @@ git clone git@github.com:UCLALibrary/ursus.git
 ```
 
 #### 2. Change directories into the repo
+
 ```
 cd ursus
 ```
@@ -56,6 +57,7 @@ docker-compose run sinai bundle exec rails db:setup
 ```
 
 #### 4. Bring up the development environment
+
 ** Do this _after_ setting up the databases** - the startup scripts require the database to be ready so that they can set feature flags e.g. for the Sinai UI mode.
 
 ```
@@ -63,9 +65,10 @@ docker-compose up
 ```
 
 #### Ursus should now be running
-+ Ursus / [UCLA Library Digital Collections](https://digital.library.ucla.edu/) UI is enabled on [port 3003](http://localhost:3003)
-+ [Sinai Manuscripts Digital Library](https://sinaimanuscripts.library.ucla.edu/) UI is enabled on [port 3004](http://localhost:3004)
-    + **Note**: to view Sinai images, first visit the [production site](https://sinaimanuscripts.library.ucla.edu) and sign in/up to load the cookie.
+
+- Ursus / [UCLA Library Digital Collections](https://digital.library.ucla.edu/) UI is enabled on [port 3003](http://localhost:3003)
+- [Sinai Manuscripts Digital Library](https://sinaimanuscripts.library.ucla.edu/) UI is enabled on [port 3004](http://localhost:3004)
+  - **Note**: to view Sinai images, first visit the [production site](https://sinaimanuscripts.library.ucla.edu) and sign in/up to load the cookie from Production.
 
 ---
 
@@ -75,7 +78,8 @@ If the stand-alone version of Ursus is running, stop it with:
 
 `docker-compose down`
 
-#### 1. First, [install Californica](https://github.com/UCLALibrary/californica) and ingest some data;  
+#### 1. First, [install Californica](https://github.com/UCLALibrary/californica) and ingest some data;
+
 make sure californica is running so ursus can point to its data.
 
 #### 2.Clone the Ursus repo from GitHub and change directories into the Ursus repo:
@@ -86,6 +90,7 @@ cd ursus
 ```
 
 #### 4. Open a tab in your terminal
+
 ```
 docker-compose -f docker-compose-with-californica.yml run web bundle exec rails db:setup
 docker-compose -f docker-compose-with-californica.yml run sinai bundle exec rails db:setup
@@ -93,20 +98,23 @@ docker-compose -f docker-compose-with-californica.yml up
 ```
 
 #### 5. Open a second tab in your terminal
+
 This will connect to a shell _inside_ the container.  
 This is where you will run the linters and unit tests
+
 ```
 docker-compose -f docker-compose-with-californica.yml run web bash
 
 ```
 
-
 #### 6. Open a third tab in your terminal
+
 ```
 docker-compose -f docker-compose-with-californica.yml run sinai bash
 ```
 
 #### 7. Open a fourth tab in your terminal for git commands
+
 ```
 git ...
 ```
