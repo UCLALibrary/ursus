@@ -207,8 +207,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim'
     config.add_show_field 'incipit_tesim', label: 'Incipit'
     config.add_show_field 'inscription_tesim', label: 'Inscription'
-    config.add_show_field 'script_tesim', label: 'Script'
-    config.add_show_field 'writing_system_tesim', label: 'Writing system'
+    config.add_show_field 'script_tesim', label: 'Script', link_to_facet: 'script_sim'
+    config.add_show_field 'writing_system_tesim', label: 'Writing system', link_to_facet: 'writing_system_sim'
 
     # Notes
     config.add_show_field 'summary_tesim', label: 'Summary'
@@ -224,7 +224,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'format_tesim', label: 'Format'
     # 'Book format'
     config.add_show_field 'medium_tesim', label: 'Medium'
-    config.add_show_field 'support_tesim', label: 'Support'
+    config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_tesim'
     config.add_show_field 'extent_tesim', label: 'Extent'
     config.add_show_field 'dimensions_tesim', label: 'Dimensions'
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
