@@ -88,7 +88,9 @@ en:
           rights_holder_tesim: 'Rights Holder'
           human_readable_rights_statement_tesim: 'Copyright Status'
           subject_tesim: 'Subjects'
+          support_tesim: 'Support'
           title_tesim: 'Title'
+          writing_tesim: 'Writing system'
         show:
           alternative_title_tesim: 'Alternative title'
           architect_tesim: 'Architect'
