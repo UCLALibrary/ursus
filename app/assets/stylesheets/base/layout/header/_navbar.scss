@@ -94,3 +94,10 @@
     background: $gray-60;
   }
 }
+
+// Removes outline that shows up when toggler is selected
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+}

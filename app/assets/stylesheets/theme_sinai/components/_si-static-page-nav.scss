@@ -1,0 +1,135 @@
+.site-navbar__wrapper--sinai-static-page {
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.site-navbar--sinai-static-page {
+  align-self: flex-start;
+  border-right: 1px solid $gray-10;
+  background: transparent;
+  flex-basis: 15%;
+  margin-right: 3.675rem;
+
+  @media (max-width: 767px) {
+    border-right: none;
+    border-bottom: 1px solid $gray-10;
+    margin-right: 0;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.navbar-nav--sinai-static-page {
+  display: flex;
+  flex-direction: column;
+  padding-right: 3.675rem;
+
+  @media (max-width: 767px) {
+    padding-right: 0;
+  }
+}
+
+.navbar-collapse--sinai-static-page {
+  background: $white;
+}
+
+.site-navbar__item--sinai-static-page {
+  margin-bottom: 2rem;
+  border-bottom: 1px $gray-10 solid;
+  padding-bottom: 1rem;
+  width: 135px;
+  font-size: $text-18;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-weight: 400;
+  list-style: none;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    font-size: $text-16;
+    margin-bottom: 1.5rem;
+
+    &:first-child {
+      border-top: 1px solid $gray-10;
+      margin-top: 1rem;
+      padding-top: 1.5rem;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.site-navbar__item-link--sinai-static-page {
+  color: $black;
+
+  &:active,
+  &:visited {
+    color: $black;
+  }
+
+  &:hover {
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
+.active--sinai-static-page-nav {
+  color: $sinai-orange;
+  font-weight: 600;
+
+  &:active,
+  &:visited,
+  &:hover {
+    text-decoration: none;
+    color: $black;
+  }
+
+  &:active,
+  &:visited {
+    color: $sinai-orange;
+  }
+
+  &:hover {
+    color: $black;
+  }
+}
+
+.site-navbar__text--sinai-static-page {
+  display: none;
+
+  @media (max-width: 767px) {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
+
+.navbar-toggler-icon--sinai-static-page {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 0.75rem;
+
+  &::before {
+    position: relative;
+    content: 'More About Sinai';
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $black;
+    top: 3px;
+    margin-right: 0.15rem;
+    font-size: $text-16;
+  }
+}
+
+.navbar-toggler-icon--sinai-static-page .navbar-toggler-icon {
+  @media (max-width: 767px) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(203, 50, 8, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+}

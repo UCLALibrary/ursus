@@ -13,7 +13,8 @@
         <li class='nav-item site-navbar__item--sinai'><span>
         <%= link_to "Search #{image_tag('sinai-logos/search-icon-bold.svg', class: 'site-header__search-icon--sinai', alt: 'Search icon')}".html_safe, '/catalog?utf8=%E2%9C%93&q=&search_field=all_fields' %>
       </li>
-      <li class='nav-item site-navbar__item--sinai'><%= link_to 'About', sinai_about_path %></li>
+      <li class='nav-item site-navbar__item--sinai'>
+      <a href='/sinai_about'>About</a></li>
       <li class='nav-item site-navbar__item--sinai'><%= link_to 'Login', login_path %></li>
     </ul>
 

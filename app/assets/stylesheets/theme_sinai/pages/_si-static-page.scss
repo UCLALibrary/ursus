@@ -1,12 +1,18 @@
-// @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,600&display=swap');
-
-.sinai-static-container {
+.content-container--sinai-static-page {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
 }
 
-.sinai-static-test {
-  flex-basis: 80%;
+.sinai-static-page-inner-container {
+  flex-basis: 81%;
+
+  @media (max-width: 767px) {
+    flex-basis: 100%;
+  }
 }
 
 .static-page__row--sinai {
@@ -15,13 +21,24 @@
 
 .static-page__title--sinai {
   font-family: 'Dosis', san serif;
-  font-size: $text-24;
+  font-size: 30px;
+  font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
+
+  @media (max-width: 767px) {
+    font-size: $text-24;
+    font-weight: 600;
+  }
 }
 
 .static-page__subtitle--sinai {
   margin-bottom: 1.25rem;
+  text-transform: uppercase;
+
+  @media (max-width: 767px) {
+    font-size: $text-18;
+  }
 }
 
 .static-page__subtitle--sinai-about {
