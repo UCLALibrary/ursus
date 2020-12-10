@@ -146,15 +146,17 @@ class CatalogController < ApplicationController
     # The config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
     if Flipflop.sinai?
+      # All four together:
       config.add_index_field 'shelfmark_sim'
       config.add_index_field 'date_created_tesim'
       config.add_index_field 'form_sim'
       config.add_index_field 'member_of_collections_ssim'
       # Title
-      config.add_index_field 'uniform_title_tesim', link_to_facet: 'uniform_title_tesim'
+      config.add_index_field 'uniform_title_tesim', link_to_facet: 'uniform_title_tesim', label: 'Title'
       config.add_index_field 'descriptive_title_tesim', link_to_facet: 'descriptive_title_tesim'
-
+      # Langauge
       config.add_index_field 'human_readable_language_tesim', label: 'Language', link_to_facet: 'human_readable_language_tesim'
+      # Genre
       config.add_index_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_tesim'
     else
       config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
@@ -238,7 +240,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'format_tesim', label: 'Format'
     # 'Book format'
     config.add_show_field 'medium_tesim', label: 'Medium'
-    config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_tesim'
+    config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim'
     config.add_show_field 'extent_tesim', label: 'Extent'
     config.add_show_field 'dimensions_tesim', label: 'Dimensions'
     config.add_show_field 'page_layout_ssim', label: 'Page layout'

@@ -1,0 +1,10 @@
+<% doc_presenter = show_presenter(document) %>
+<% sinai_index_header = Ursus::SinaiIndexHeaderMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_header_terms %>
+
+<% if sinai_index_header.length > 0 %>
+  <% sinai_index_header.each do |field_name, field| -%>
+    <h1>
+      <%= doc_presenter.field_value field %>
+    </h1>
+  <% end %>
+<% end %>
