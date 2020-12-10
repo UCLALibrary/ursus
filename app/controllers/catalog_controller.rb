@@ -207,8 +207,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim'
     config.add_show_field 'incipit_tesim', label: 'Incipit'
     config.add_show_field 'inscription_tesim', label: 'Inscription'
-    config.add_show_field 'script_tesim', label: 'Script', link_to_facet: 'script_tesim'
-    config.add_show_field 'writing_system_tesim', label: 'Writing system', label: 'Writing system', link_to_facet: 'writing_system_sim'
+    config.add_show_field 'script_tesim', label: 'Script', link_to_facet: 'script_sim'
+    config.add_show_field 'writing_system_tesim', label: 'Writing system', link_to_facet: 'writing_system_sim'
 
     # Notes
     config.add_show_field 'summary_tesim', label: 'Summary'
