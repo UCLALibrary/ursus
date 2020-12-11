@@ -39,12 +39,17 @@ class ApplicationController < ActionController::Base
   def sinai_authn_check
     return true if ENV['SINAI_ID_BYPASS'] # skip auth in development
     return true if !Flipflop.sinai? || [login_path, version_path].include?(request.path) || sinai_authenticated?
-    if ucla_token?
-      set_auth_cookies
-      redirect_to cookies[:requested_path]
-    else
-      redirect_to redirect_target
-    end
+    check_document_paths
+    return unless ucla_token?
+    set_auth_cookies
+    redirect_to cookies[:requested_path]
+    # else
+    # redirect_to redirect_target
+    # end
+  end
+
+  def check_document_paths
+    redirect_to redirect_target if params[:id] && [solr_document_path(params[:id])].include?(request.path) # check if someone bookmarked the show page
   end
 
   def banner_cookie?
