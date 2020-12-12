@@ -1,15 +1,15 @@
 .item-page__secondary-metadata--sinai {
   @extend .col-lg-5;
 
-  background-color: $sinai-beige;
+  background-color: $sinai-secondary;
 }
 
 .item-page__pagination-widgets--sinai {
   .previous {
-    color: $sinai-red;
+    color: $sinai-primary;
 
     &:hover {
-      color: $sinai-lighter-red;
+      color: $gray-80;
     }
 
     &:not(a) {
@@ -18,10 +18,10 @@
   }
 
   .next {
-    color: $sinai-red;
+    color: $sinai-primary;
 
     &:hover {
-      color: $sinai-lighter-red;
+      color: $gray-80;
     }
   }
 }

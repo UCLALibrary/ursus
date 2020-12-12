@@ -1,16 +1,29 @@
 .site-navbar--sinai {
-  background-color: $sinai-beige;
+  background-color: $sinai-secondary;
 }
 
 .site-navbar__wrapper--sinai {
+  @media (max-width: 991px) {
+    padding-bottom: 0.75rem;
+  }
+
   @media (max-width: 800px) {
     display: block;
   }
 }
 
 .site-navbar__logo-block--sinai {
+  &:hover {
+    text-decoration: none;
+  }
+
+  @media (max-width: 991px) {
+    margin-bottom: 0;
+  }
+
   @media (max-width: 800px) {
     justify-content: unset;
+    padding-bottom: 0.75rem;
   }
 }
 
@@ -24,14 +37,18 @@
   }
 }
 
-.site-navbar__logo--sinai {
+.site-navbar__logo-block--sinai-text-logo {
+  line-height: 1.25;
+}
+
+.site-navbar__logo-title--sinai {
   font-size: $text-28;
   color: $gray-80;
   text-transform: uppercase;
 
   &:hover {
     text-decoration: none;
-    color: $sinai-red;
+    color: $gray-80;
   }
 
   @media (max-width: 800px) {
@@ -46,37 +63,15 @@
 .site-navbar__logo-subtitle--sinai {
   display: block;
   font-size: $text-18;
+  color: $gray-80;
+
+  &:hover {
+    text-decoration: none;
+    color: $gray-80;
+  }
 
   @media (max-width: 800px) {
-    font-size: $text-14;
-  }
-
-  @media (max-width: 400px) {
-    font-size: 0.75rem;
-  }
-}
-
-.site-navbar__item--sinai:not(:last-child) {
-  padding-inline-end: 20px;
-
-  @media (max-width: 500px) {
-    padding-inline-end: 16px;
-  }
-}
-
-.site-navbar__item--sinai {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-weight: inherit;
-  text-transform: uppercase;
-
-  @media (max-width: 991px) {
-    padding-inline-end: 20px;
-  }
-
-  @media (max-width: 500px) {
-    font-size: $text-14;
-    padding-inline-end: 20px;
+    font-size: $text-16;
   }
 }
 
@@ -84,12 +79,27 @@
   justify-content: flex-end;
 
   @media (max-width: 800px) {
-    border-top: $sinai-red;
+    padding-top: 0.75rem;
     border-top: 1px solid $gray-10;
   }
 }
 
+.site-navbar__item--sinai {
+  text-transform: uppercase;
+  font-weight: 500;
+
+  @media (max-width: 991px) {
+    padding-right: 20px;
+  }
+}
+
+.site-navbar__item--sinai:not(:last-child) {
+  padding-right: 20px;
+}
+
 .site-header__search-icon--sinai {
+  position: relative;
+  top: 0.5px;
   display: inline;
   height: 25px;
 }

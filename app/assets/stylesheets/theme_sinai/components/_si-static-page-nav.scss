@@ -1,21 +1,21 @@
 .site-navbar__wrapper--sinai-static-page {
-  padding: 0;
   justify-content: flex-end;
+  padding: 0;
 }
 
 .site-navbar--sinai-static-page {
+  margin-right: 3.675rem;
+  background: transparent;
   align-self: flex-start;
   border-right: 1px solid $gray-10;
-  background: transparent;
   flex-basis: 15%;
-  margin-right: 3.675rem;
 
   @media (max-width: 767px) {
-    border-right: none;
-    border-bottom: 1px solid $gray-10;
     margin-right: 0;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
+    border-right: transparent;
+    border-bottom: 1px solid $gray-10;
   }
 }
 
@@ -50,18 +50,18 @@
   }
 
   @media (max-width: 767px) {
+    margin-bottom: 1.5rem;
     width: 100%;
     font-size: $text-16;
-    margin-bottom: 1.5rem;
 
     &:first-child {
-      border-top: 1px solid $gray-10;
       margin-top: 1rem;
       padding-top: 1.5rem;
+      border-top: 1px solid $gray-10;
     }
 
     &:last-child {
-      border-bottom: none;
+      border-bottom: transparent;
     }
   }
 }
@@ -70,19 +70,20 @@
   color: $black;
 
   &:active,
-  &:visited {
+  &:visited,
+  &:hover {
     color: $black;
   }
 
   &:hover {
-    text-decoration: none;
     font-weight: 600;
+    text-decoration: none;
   }
 }
 
 .active--sinai-static-page-nav {
-  color: $sinai-orange;
   font-weight: 600;
+  color: $sinai-primary;
 
   &:active,
   &:visited,
@@ -93,7 +94,7 @@
 
   &:active,
   &:visited {
-    color: $sinai-orange;
+    color: $sinai-primary;
   }
 
   &:hover {
@@ -112,24 +113,23 @@
 }
 
 .navbar-toggler-icon--sinai-static-page {
+  margin-left: 0.75rem;
   padding-right: 0;
   padding-left: 0;
-  margin-left: 0.75rem;
 
   &::before {
     position: relative;
-    content: 'More About Sinai';
-    text-transform: uppercase;
-    font-weight: 500;
-    color: $black;
     top: 3px;
     margin-right: 0.15rem;
     font-size: $text-16;
+    color: $black;
+    content: 'More About Sinai';
+    text-transform: uppercase;
   }
 }
 
 .navbar-toggler-icon--sinai-static-page .navbar-toggler-icon {
   @media (max-width: 767px) {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(203, 50, 8, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(167, 74, 46, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
 }

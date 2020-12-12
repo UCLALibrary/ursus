@@ -1,24 +1,55 @@
-.btn-sinai--orange {
-  color: $white;
-  background-color: $sinai-orange;
+.btn-outline-sinai--light {
+  background-color: $white;
   border-color: $gray-10;
+
+  &:hover {
+    color: $white;
+    background-color: $sinai-primary;
+  }
+
+  // .blacklight-icons svg g,
+  // .blacklight-icons svg path {
+  //   stroke: $white;
+  // }
 }
 
-.btn-outline-sinai--beige {
-  color: $gray-80;
-  border-color: $gray-10;
-}
-
-.btn-outline-sinai--beige:hover {
+.btn-outline-sinai--light:not(:disabled):not(.disabled).active {
   color: $white;
-  background-color: $sinai-orange;
-  border-color: $gray-10;
+  background-color: $sinai-primary;
+  border-color: $sinai-primary;
 
   .blacklight-icons svg g,
   .blacklight-icons svg path {
     stroke: $white;
   }
 }
+
+.btn-outline-sinai--primary {
+  color: $gray-80;
+  border-color: $sinai-primary;
+}
+
+.btn-outline-sinai--primary:hover {
+  color: $white;
+  background-color: $sinai-primary;
+  border-color: $sinai-primary;
+
+  .blacklight-icons svg g,
+  .blacklight-icons svg path {
+    stroke: $white;
+  }
+}
+
+// .btn-outline-sinai--primary:not(:disabled):not(.disabled).active {
+//   color: $white;
+//   background-color: $sinai-primary;
+//   border-color: $sinai-primary;
+
+//   .blacklight-icons svg g,
+//   .blacklight-icons svg path {
+//     stroke: $white;
+//   }
+// }
 
 .btn-outline-sinai--white {
   color: $white;
@@ -27,33 +58,5 @@
   &:hover {
     color: $white;
     background-color: transparent;
-  }
-}
-
-.btn-outline-sinai--orange:not(:disabled):not(.disabled).active {
-  color: $white;
-  background-color: $sinai-orange;
-  border-color: $sinai-orange;
-
-  .blacklight-icons svg g,
-  .blacklight-icons svg path {
-    stroke: $white;
-  }
-}
-
-.btn-base--base--sinai {
-  color: $sinai-orange;
-  background-color: $white;
-  border-color: $sinai-orange;
-
-  &:visited {
-    color: $sinai-orange;
-    background-color: $white;
-    border-color: $sinai-orange;
-  }
-
-  &:hover {
-    color: $white;
-    background-color: $sinai-orange;
   }
 }
