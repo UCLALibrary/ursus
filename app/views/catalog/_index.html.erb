@@ -17,15 +17,16 @@
 
       <span class="document__list-title document__list-title--sinai">
         <% if !cookies[:sinai_authenticated] %>
-          <%= link_to_document(document, counter: counter) %>	          <%# cookies[:request_original_url] = request.original_url %>
+          <%# cookies[:request_original_url] = request.original_url %>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
             <%= document['title_tesim'][0] %>
           </a>
+
        <% else %>
           <% if counter = document_counter_with_offset(document_counter) %>
             <%= link_to_document(document, counter: counter) %>
           <% end %>
-       <% end %>
+      <% end %>
       </span>
   </div>
 

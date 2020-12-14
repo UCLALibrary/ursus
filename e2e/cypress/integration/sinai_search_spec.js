@@ -18,6 +18,8 @@ describe('Sinai Search', () => {
   });
 
   it('Search Found', () => {
+    cy.clearCookie('sinai_authenticated');
+    cy.setCookie('sinai_authenticated', 'true')
     cy.get('[id=q]').type('manuscript');
     cy.get('[id=search]').click();
     cy.get('.search-count__heading').contains('Catalog Results');
