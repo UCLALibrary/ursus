@@ -89,12 +89,12 @@
   font-weight: $font-bold;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: $sinai-orange;
+  color: $sinai-primary;
 
   &:active,
   &:visited,
   &:hover {
-    color: $sinai-orange;
+    color: $sinai-primary;
   }
 
   &:hover {
@@ -109,7 +109,7 @@
     -webkit-transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
     transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
     content: ' ';
-    border-bottom: 0.25rem solid $callisto-orange;
+    border-bottom: 0.25rem solid $sinai-primary;
   }
 
   &:hover::after {

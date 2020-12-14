@@ -6,7 +6,7 @@ describe('Sinai Homepage', () => {
 
   it('Sinai Manuscripts Digital Library Logo', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.get('.site-navbar__logo--sinai');
+    cy.get('.site-navbar__logo-block--sinai');
   });
 
 // Navbar Links

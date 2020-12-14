@@ -1,11 +1,11 @@
 .pagination-block--siani {
-  background-color: $sinai-beige;
+  background-color: $sinai-secondary;
 }
 
 .pagination__page-link--sinai {
   color: $gray-80;
   background-color: $white;
-  border-color: $sinai-dark-beige;
+  border-color: $sinai-secondary-dk;
 
   &:visited {
     color: $gray-80;
@@ -14,12 +14,13 @@
 
   &:hover {
     color: $white;
-    background-color: $sinai-orange-med;
+    background-color: $sinai-primary;
+    border-color: $sinai-primary;
   }
 }
 
 .pagination__page-item--sinai.active .pagination__page-link--sinai {
   color: $white;
-  background-color: $sinai-orange-med;
-  border-color: $sinai-dark-beige;
+  background-color: $sinai-primary;
+  border-color: $sinai-primary;
 }

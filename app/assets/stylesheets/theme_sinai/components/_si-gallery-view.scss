@@ -8,12 +8,12 @@
 
 .document__gallery-item-text-wrapper--sinai {
   a:hover {
-    color: $sinai-red;
+    color: $sinai-primary;
   }
 }
 
 .document__gallery-more-results--sinai {
   a {
-    @extend .btn-outline-sinai--orange;
+    @extend .btn-outline-sinai--primary;
   }
 }
