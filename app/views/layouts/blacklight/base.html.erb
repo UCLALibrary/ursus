@@ -35,6 +35,11 @@
       <%= favicon_link_tag 'favicons/favicon.ico' %>
     <% end %>
 
+    <% if Flipflop.sinai? %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&display=swap' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap' %>
+    <% end %>
+
     <%= stylesheet_link_tag (Flipflop.sinai? ? "sinai" : "ursus"), media: "all" %>
     <%= javascript_include_tag "application", defer: Rails.env.development? ? false : true %>
     <%= csrf_meta_tags %>

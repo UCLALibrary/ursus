@@ -5,6 +5,8 @@
 }
 
 .facets__navbar-heading--sinai {
+  font-weight: 400;
+
   @media (max-width: 991px) {
     color: $white;
   }
@@ -22,6 +24,8 @@
 }
 
 .facet-field__heading--sinai {
+  font-weight: 400;
+
   a,
   a:active,
   a:visited {

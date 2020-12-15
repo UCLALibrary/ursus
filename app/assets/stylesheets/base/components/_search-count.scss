@@ -11,7 +11,12 @@
 }
 
 .search-count__heading {
+  font-weight: 400;
   font-size: $text-24;
+
+  @media (max-width: 575px) {
+    font-size: $text-20;
+  }
 }
 
 .search-widgets-wrapper {
@@ -32,7 +37,7 @@
     @extend .sr-only;
   }
 
-  @media screen and (max-width: 767px) {
+  @media (max-width: 767px) {
     margin-top: 0.5em;
   }
 }
@@ -48,7 +53,7 @@
 }
 
 .search-widget__icon {
-  @media screen and (max-width: 767px) {
+  @media (max-width: 767px) {
     display: none;
   }
 }
