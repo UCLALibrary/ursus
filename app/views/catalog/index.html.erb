@@ -4,7 +4,7 @@
 <%
       cookies[:requested_path] = request.original_url
       login_service = LoginService.new
-      token = login_service.create_token
+      @token = login_service.create_token
 %>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -18,7 +18,7 @@
         </div>
       <div class="modal-body">
         You need to login before you can access this record.
-        <%= button_to 'Login', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: token }, method: :post, class: 'btn-base btn-outline-sinai--red' %>
+        <%= button_to 'Login', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn-base btn-outline-sinai--red' %>
       </div>
       <div class="modal-footer">
       </div>
