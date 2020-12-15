@@ -40,6 +40,7 @@
 
   @media (max-width: 767px) {
     flex: 0 0 40%;
+    justify-content: flex-start;
 
     &:nth-child(3),
     &:nth-child(4) {
@@ -67,9 +68,4 @@
   height: 100px;
   object-fit: contain;
   object-position: center;
-
-  /* To constrain EMEL logo */
-  &:last-of-type {
-    height: 85px;
-  }
 }

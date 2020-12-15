@@ -7,10 +7,9 @@
     background-color: $sinai-primary;
   }
 
-  // .blacklight-icons svg g,
-  // .blacklight-icons svg path {
-  //   stroke: $white;
-  // }
+  @media (max-width: 499px) {
+    font-size: $text-14;
+  }
 }
 
 .btn-outline-sinai--light:not(:disabled):not(.disabled).active {
