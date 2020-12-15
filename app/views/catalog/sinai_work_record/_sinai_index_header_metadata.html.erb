@@ -3,8 +3,6 @@
 
 <% if sinai_index_header.length > 0 %>
   <% sinai_index_header.each do |field_name, field| -%>
-    <h1>
-      <%= doc_presenter.field_value field %>
-    </h1>
+    <%= doc_presenter.field_value field %>
   <% end %>
 <% end %>

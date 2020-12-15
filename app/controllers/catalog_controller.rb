@@ -146,18 +146,20 @@ class CatalogController < ApplicationController
     # The config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
     if Flipflop.sinai?
+      # All fields ark:%2F21198%2Fz1qz3vn2
+      
       # All four together:
-      config.add_index_field 'shelfmark_sim'
-      config.add_index_field 'date_created_tesim'
-      config.add_index_field 'form_sim'
-      config.add_index_field 'member_of_collections_ssim'
+      # config.add_index_field 'shelfmark_sim'
+      # config.add_index_field 'date_created_tesim'
+      # config.add_index_field 'form_sim'
+      # config.add_index_field 'member_of_collections_ssim'
       # Title
-      config.add_index_field 'uniform_title_tesim', link_to_facet: 'uniform_title_tesim', label: 'Title'
-      config.add_index_field 'descriptive_title_tesim', link_to_facet: 'descriptive_title_tesim'
-      # Langauge
-      config.add_index_field 'human_readable_language_tesim', label: 'Language', link_to_facet: 'human_readable_language_tesim'
-      # Genre
-      config.add_index_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_tesim'
+      # config.add_index_field 'uniform_title_tesim', link_to_facet: 'uniform_title_sim', label: 'Title'
+      # config.add_index_field 'descriptive_title_tesim', link_to_facet: 'descriptive_title_sim'
+      # # Langauge
+      # config.add_index_field 'human_readable_language_tesim', label: 'Language', link_to_facet: 'human_readable_language_sim'
+      # # Genre
+      # config.add_index_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_sim'
     else
       config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
       config.add_index_field 'date_created_tesim', label: 'Date Created'

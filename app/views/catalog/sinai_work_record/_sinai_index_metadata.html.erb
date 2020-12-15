@@ -1,0 +1,19 @@
+<% doc_presenter = show_presenter(document) %>
+<% sinai_index = Ursus::SinaiIndexMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_terms %>
+
+<% if sinai_index.length > 0 %>
+  <div class='metadata-block'>
+    <% sinai_index.each do |field_name, field| %>
+      <div class='metadata-block__group--collection-pg'>
+        <!-- KEY -->
+        <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
+          <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
+        </div>
+        <!-- VALUE -->
+        <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
+          <%= doc_presenter.field_value field %>
+        </div>
+      </div>
+  <% end %>
+  </div>
+<% end %>

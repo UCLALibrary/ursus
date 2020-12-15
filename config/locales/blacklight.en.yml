@@ -90,6 +90,7 @@ en:
           subject_tesim: 'Subjects'
           support_tesim: 'Support'
           title_tesim: 'Title'
+          uniform_title_sim: 'Uniform title'
           writing_tesim: 'Writing system'
         show:
           alternative_title_tesim: 'Alternative title'
