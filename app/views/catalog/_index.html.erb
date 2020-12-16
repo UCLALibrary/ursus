@@ -15,11 +15,10 @@
       <!-- Line 1 -->
       <!-- [Shelfmark], [Date.creation]. [Form], [Format.extent], [Collection] -->
 
-
 <!-- ------------------ -->
 
 <!-- Line 2 -->
-<!-- Title(s) 
+<!-- Title(s)
   Uniform title (clickable facet that results in a search of the facet term)
   and Descriptive title fields) -->
 <% doc_presenter = show_presenter(document) %>
@@ -48,7 +47,7 @@
         </div>
     </div>
   <% end %>
-</div>
+
 
 <!-- ------------------- -->
 
@@ -61,11 +60,10 @@
       <%#= render 'catalog/sinai_work_record/sinai_index_metadata', document: document %>
 <!-- ------------------- -->
 
-<% doc_presenter = show_presenter(document) %>
-<% sinai_index = Ursus::SinaiIndexMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_terms %>
+  <% doc_presenter = show_presenter(document) %>
+  <% sinai_index = Ursus::SinaiIndexMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_terms %>
 
-<% if sinai_index.length > 0 %>
-  <div class='metadata-block'>
+  <% if sinai_index.length > 0 %>
     <% sinai_index.each do |field_name, field| %>
       <div class='metadata-block__group--collection-pg'>
         <!-- KEY -->
@@ -78,16 +76,12 @@
         </div>
       </div>
     <% end %>
-  </div>
-<% end %>
+  <% end %>
 
+      </div>
     </div>
   </div>
 </div>
-
-
-    <%#= render 'catalog/sinai_work_record/sinai_index', document: document %>
-  </div>
 
 <!-- URSUS -->
 <% else %>
