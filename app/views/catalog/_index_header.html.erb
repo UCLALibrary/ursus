@@ -1,8 +1,22 @@
 <%# header bar for doc items in index view -%>
 <% if Flipflop.sinai? %>
-  <h3 class="document__list-title document__list-title--sinai %>">
-    <%= render 'catalog/sinai_work_record/sinai_index_header_metadata', document: document %>
-  </h3>
+  <% doc_presenter = show_presenter(document) %>
+  <% sinai_index_header = Ursus::SinaiIndexHeaderMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_header_terms %>
+
+  <header class='document__list-header document__list-header--sinai'>
+    <% header = ['shelfmark_ssi', 'date_created_tesim', 'form_ssi', 'extent_tesim'] %>
+    <% if header.length > 0 %>
+      <% all_header_fields = "" %>
+      <% header.each do |field| -%>
+        <% if sinai_index_header[field] %>
+          <% header_field = (doc_presenter.field_value sinai_index_header[field]) + ', ' %>
+          <% all_header_fields << header_field %>
+        <% end %>
+      <% end %>
+      <%= all_header_fields.delete_suffix(', ').html_safe %>
+    <% end %>
+  </header>
+
 <% else %>
   <header class='document__list-header'>
     <%# main title container for doc partial view
