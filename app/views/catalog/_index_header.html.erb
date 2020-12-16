@@ -1,4 +1,5 @@
 <%# header bar for doc items in index view -%>
+<%# SINAI %>
 <% if Flipflop.sinai? %>
   <% doc_presenter = show_presenter(document) %>
   <% sinai_index_header = Ursus::SinaiIndexHeaderMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_header_terms %>
@@ -17,6 +18,7 @@
     <% end %>
   </header>
 
+<%# URSUS %>
 <% else %>
   <header class='document__list-header'>
     <%# main title container for doc partial view
