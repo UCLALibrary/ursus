@@ -1,20 +1,28 @@
 <% doc_presenter = show_presenter(document) %>
 <% sinai_index_title = Ursus::SinaiIndexTitleMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_title_terms %>
 
-
 <% if sinai_index_title.length > 0 %>
   <div class='metadata-block'>
-      <% sinai_index_title.each do |field_name, field| %>
-      
-      <div class='metadata-block__group--collection-pg'>
-        <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
-          <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
-        </div>
-        <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
-          <%= doc_presenter.field_value field %>
-        </div>
+    <div class='metadata-block__group--collection-pg'>
+
+      <div class="metadata-block__label-key">
+        TITLE:
       </div>
 
-    <% end %>
+      <% title = ['uniform_title_tesim', 'descriptive_title_tesim'] %>
+      <div class="metadata-block__label-value">
+      <% if title.length > 0 %>
+        <% all_title_fields = "" %>
+        <% title.each do |field| -%>
+          <% if sinai_index_title[field] %>
+            <% title_field = (doc_presenter.field_value sinai_index_title[field]) + ', ' %>
+            <% all_title_fields << title_field %>
+          <% end %>
+        <% end %>
+        <%= all_title_fields.delete_suffix(', ').html_safe %>
+      <% end %>
+      </div>
+
+    </div>
   </div>
 <% end %>

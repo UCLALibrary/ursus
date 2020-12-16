@@ -147,7 +147,7 @@ class CatalogController < ApplicationController
 
     if Flipflop.sinai?
       # All fields ark:%2F21198%2Fz1qz3vn2
-      
+
       # All four together:
       # config.add_index_field 'shelfmark_sim'
       # config.add_index_field 'date_created_tesim'
@@ -168,7 +168,6 @@ class CatalogController < ApplicationController
       config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
       config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim'
     end
-
 
     # ------------------------------------------------------
     # SHOW PAGE / ITEM PAGE / Individual Work (Universal Viewer Page)

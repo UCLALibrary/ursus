@@ -1,5 +1,9 @@
 <%# header bar for doc items in index view -%>
-<% if !Flipflop.sinai? %>
+<% if Flipflop.sinai? %>
+  <h3 class="document__list-title document__list-title--sinai %>">
+    <%= render 'catalog/sinai_work_record/sinai_index_header_metadata', document: document %>
+  </h3>
+<% else %>
   <header class='document__list-header'>
     <%# main title container for doc partial view
         How many bootstrap columns need to be reserved

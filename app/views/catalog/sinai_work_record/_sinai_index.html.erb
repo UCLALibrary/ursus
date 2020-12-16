@@ -1,18 +1,20 @@
 <% if Flipflop.sinai? %>
-  <div class='metadata-block'>
-    <!-- Line 1 -->
-    <!-- [Shelfmark], [Date.creation]. [Form], [Format.extent], [Collection] -->
-    <h3 class="document__list-title document__list-title--sinai">
-      <%= render 'catalog/sinai_work_record/sinai_index_header_metadata', document: document %>
-    </h3>
+  <div class="document__list-item-wrapper document__list-item-wrapper--sinai">
+  <div class='metadata-block__group--collection-pg'>
+      <!-- Line 1 -->
+      <!-- [Shelfmark], [Date.creation]. [Form], [Format.extent], [Collection] -->
+      <!-- <h3 class="document__list-title document__list-title--sinai">
+        <%#= render 'catalog/sinai_work_record/sinai_index_header_metadata', document: document %>
+      </h3>-->
 
-    <div class='metadata-block__group--collection-pg'>
+    <div class='metadata-block'>
       <!-- Line 2 -->
       <!-- Title(s) 
         Uniform title (clickable facet that results in a search of the facet term)
         and Descriptive title fields) -->
-      <%= render 'catalog/sinai_work_record/sinai_index_title_metadata', document: document %>
-
+      <div class='item-page__metadata-wrapper'>
+        <%= render 'catalog/sinai_work_record/sinai_index_title_metadata', document: document %>
+      </div>
         <!-- Line 3 -->
         <!-- Language(s) (clickable facet that results in a search of the facet term) -->
         <!-- Line 4 -->
@@ -20,4 +22,5 @@
       <%= render 'catalog/sinai_work_record/sinai_index_metadata', document: document %>
     </div>
   </div>
+    </div>
 <% end %>

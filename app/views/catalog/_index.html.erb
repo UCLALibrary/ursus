@@ -4,19 +4,13 @@
   <div class="document__list-item-wrapper document__list-item-wrapper--sinai">
     <!-- default partial to display solr document fields in catalog index view -->
 
-      <%# THUMBNAIL %>
-      <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-        <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai"><%= tn %></div>
-      <% end %>
+    <%# THUMBNAIL %>
+    <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
+      <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai"><%= tn %></div>
+    <% end %>
 
-<div class='item-page__metadata-wrapper'>
-  <%= render 'catalog/sinai_work_record/sinai_index', document: document %>
-</div>
-
-
-
-
-
+    <%= render 'catalog/sinai_work_record/sinai_index', document: document %>
+  </div>
 
 <!-- URSUS -->
 <% else %>
