@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
     check_document_paths
     return unless ucla_token?
     set_auth_cookies
-    redirect_to cookies[:requested_path] if cookies[:requested_path] 
+    redirect_to cookies[:requested_path]
     # else
     # redirect_to redirect_target
     # end
