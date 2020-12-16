@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/privacy_policy', to: 'static#ursus_privacy'
 
   # Sinai static pages
+  get '/logout', to: 'logout#logout'
   get '/login', to: 'login#new', as: 'login'
   get '/sinai_about', to: 'static#sinai_about'
   get '/sinai_contact', to: 'static#sinai_contact'
