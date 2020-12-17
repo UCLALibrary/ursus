@@ -2,6 +2,14 @@
   img {
     width: 100px;
     height: 100px;
+    object-fit: none;
+  }
+}
+
+.document__gallery-thumbnail--sinai-generic {
+  img {
+    width: 100px;
+    height: 100px;
     object-fit: cover;
   }
 }
