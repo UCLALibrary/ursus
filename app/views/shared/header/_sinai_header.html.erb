@@ -19,10 +19,7 @@
       <li class='nav-item site-navbar__item--sinai'><%#= link_to 'Login', login_path %>
       <%= button_to 'LOGIN', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn btn_nav_link--sinai' %>
        </li>
-       <% else %>
-       <% cookies[:request_original_url] = request.original_url %>
-       <li class='nav-item site-navbar__item--sinai'><%= link_to 'Logout', logout_path %></li>
-        <% end %>
+       <% end %>
 
     </ul>
 
