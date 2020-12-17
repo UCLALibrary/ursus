@@ -14,6 +14,8 @@ RSpec.describe ApplicationController, type: :controller do
     allow(controller).to receive(:set_auth_cookies)
     allow(controller).to receive(:sinai_authenticated?).and_return(false)
     allow(controller).to receive(:version_path).and_return('/test_version')
+    allow(controller).to receive(:solr_document_path).with('ark:').and_return('/catalog/ark:')
+    allow(controller).to receive(:params).and_return(id: nil)
     allow(ENV).to receive(:[]).and_call_original
     allow(ENV).to receive(:[]).with('SINAI_ID_BYPASS').and_return(nil)
   end
@@ -68,9 +70,9 @@ RSpec.describe ApplicationController, type: :controller do
       before do
         allow(controller).to receive(:ucla_token?).and_return(false)
       end
-      it 'redirects to requested path' do
-        controller.sinai_authn_check
-        expect(controller).to have_received(:redirect_to).with('/redirect_target')
+      it 'returns nil' do
+        # controller.sinai_authn_check
+        expect(controller.sinai_authn_check).to be_nil # have_received(:redirect_to).with('/redirect_target')
       end
     end
 
@@ -117,6 +119,18 @@ RSpec.describe ApplicationController, type: :controller do
       end
       it 'allows Rails to continue' do
         expect(controller.sinai_authn_check).to be true
+      end
+    end
+
+    context 'if the requested path is solr_document_path' do
+      before do
+        allow(controller).to receive(:params).and_return(id: 'ark:')
+        allow(controller).to receive(:sinai_authenticated?).and_return(false)
+        allow(controller).to receive(:request).and_return(instance_double('ActionDispatch::Request', path: controller.solr_document_path('ark:')))
+      end
+      it 'redirects to requested path' do
+        controller.sinai_authn_check
+        expect(controller).to have_received(:redirect_to).with('/redirect_target')
       end
     end
   end

@@ -26,9 +26,7 @@ describe('Sinai Homepage', () => {
 
   it('Login Link', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('a', 'Login');
-    cy.get('[href="/login"]').click({ force: true });
-    cy.url().should('include', '/login');
+    cy.contains('[type="submit"]', 'LOGIN');
   });
 
   // Static pages
