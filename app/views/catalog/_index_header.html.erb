@@ -7,7 +7,7 @@
   <header class='document__list-header document__list-header--sinai'>
     <% all_header_fields = "" %>
 
-    <% all_header_fields << (link_to_document document, (doc_presenter.field_value sinai_index_header['shelfmark_ssi'])) + ', ' %>
+    <% all_header_fields << ("<span class='document__list-item-link--sinai'>" + (link_to_document document, (doc_presenter.field_value sinai_index_header['shelfmark_ssi'])) + ', ' + '</span>') %>
 
     <% header = ['date_created_tesim', 'form_ssi', 'extent_tesim'] %>
     <% if header.length > 0 %>
