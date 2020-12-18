@@ -1,118 +1,217 @@
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,600&display=swap');
+.si-inner-container {
+  // background: lightgray;
+  @media (min-width: 800px) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
 
-.homepage__subtitle--sinai,
-.grid-title--sinai {
-  font-family: 'Cormorant Garamond', serif;
+.si-intro-container {
+  flex-basis: 20%;
+
+  @media (max-width: 767px) {
+    order: 1;
+  }
+}
+
+.si-intro {
+  // padding: 0 1rem;
+}
+
+.si-grid-container {
+  flex-basis: 75%;
+}
+.si-grid-wrapper {
+  // background: yellowgreen;
+
+  @media (min-width: 768px) {
+    // position: relative;
+    height: 100%;
+    min-height: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1.75rem;
+    // grid-auto-flow: compact;
+  }
+
+  @media (min-width: 992px) {
+    // position: relative;
+    // flex-basis: 75%;
+    height: 100%;
+    min-height: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1.75rem;
+    // grid-auto-flow: compact;
+  }
+}
+
+.si-grid-item {
+  // width: 250px;
+  // height: 280px;
+  // width: 350px;
+  // min-height: 250px;
+  // max-height: 300px;
+  // background: black;
+  // margin: 1rem 0;
+
+  @media (min-width: 767px) {
+    grid-row: span 2;
+
+    &:nth-child(2),
+    &:nth-child(6) {
+      grid-row: span 3;
+    }
+  }
+
+  @media (min-width: 992px) {
+    grid-row: span 2;
+
+    &:nth-child(2),
+    &:nth-child(6) {
+      grid-row: span 3;
+    }
+  }
+}
+
+.si-grid-img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .homepage__subtitle--sinai {
+  font-size: $text-24;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
   padding-bottom: 2rem;
-  font-weight: inherit;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.lead__row--sinai {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.lead__text--homepage--sinai {
-  @extend .lead__text--homepage;
-
-  font-size: $text-20;
-
-  @media (max-width: 575px) {
-    font-size: $text-18;
-  }
-}
-
-.homepage-grid--sinai {
-  @extend .col-12;
-}
-
-.grid__img-wrapper--sinai {
-  @extend .col-md-7;
-
-  height: 580px;
-  max-height: 580px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: transform 0.7s;
-  background-image: image-url('sinai/inner-hmpg-grid-lg-arb0151_0059_f_029r.jpg');
-
-  &:hover {
-    transform: scale(1.01);
-  }
-}
-
-.grid__content-wrapper--sinai {
-  @extend .col-md-5;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-left: 3rem;
-  flex-direction: column;
-
-  @media (min-width: 768px) {
-    padding-top: 0;
-  }
 
   @media (max-width: 767px) {
-    padding-top: 2rem;
-    padding-left: 0;
+    font-size: $text-20;
   }
 }
 
-.grid-title--sinai {
-  font-size: $text-28;
-  font-weight: $font-bold;
-}
+// @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,600&display=swap');
 
-.grid-title--sinai-list {
-  padding-top: 1.75rem;
-}
+// .homepage__subtitle--sinai,
+// .grid-title--sinai {
+//   font-family: 'Cormorant Garamond', serif;
+// }
 
-.grid-text--sinai {
-  padding-top: 1.75rem;
-  font-size: $text-18;
-  font-weight: $font-light;
-}
+// .homepage__subtitle--sinai {
+//   padding-bottom: 2rem;
+//   font-weight: inherit;
+//   text-transform: uppercase;
+//   letter-spacing: 1px;
+// }
 
-.grid-link--sinai {
-  position: relative;
-  margin-top: 1rem;
-  width: max-content;
-  font-size: $text-14;
-  font-weight: $font-bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: $sinai-primary;
+// .lead__row--sinai {
+//   padding-right: 0;
+//   padding-left: 0;
+// }
 
-  &:active,
-  &:visited,
-  &:hover {
-    color: $sinai-primary;
-  }
+// .lead__text--homepage--sinai {
+//   @extend .lead__text--homepage;
 
-  &:hover {
-    text-decoration: none;
-  }
+//   font-size: $text-20;
 
-  &::after {
-    position: absolute;
-    bottom: -0.5rem;
-    right: 100%;
-    left: 0;
-    -webkit-transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
-    transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
-    content: ' ';
-    border-bottom: 0.25rem solid $sinai-primary;
-  }
+//   @media (max-width: 575px) {
+//     font-size: $text-18;
+//   }
+// }
 
-  &:hover::after {
-    right: 0%;
-  }
-}
+// .homepage-grid--sinai {
+//   @extend .col-12;
+// }
+
+// .grid__img-wrapper--sinai {
+//   @extend .col-md-7;
+
+//   height: 580px;
+//   max-height: 580px;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   transition: transform 0.7s;
+//   background-image: image-url('sinai/inner-hmpg-grid-lg-arb0151_0059_f_029r.jpg');
+
+//   &:hover {
+//     transform: scale(1.01);
+//   }
+// }
+
+// .grid__content-wrapper--sinai {
+//   @extend .col-md-5;
+
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: center;
+//   padding-left: 3rem;
+//   flex-direction: column;
+
+//   @media (min-width: 768px) {
+//     padding-top: 0;
+//   }
+
+//   @media (max-width: 767px) {
+//     padding-top: 2rem;
+//     padding-left: 0;
+//   }
+// }
+
+// .grid-title--sinai {
+//   font-size: $text-28;
+//   font-weight: $font-bold;
+// }
+
+// .grid-title--sinai-list {
+//   padding-top: 1.75rem;
+// }
+
+// .grid-text--sinai {
+//   padding-top: 1.75rem;
+//   font-size: $text-18;
+//   font-weight: $font-light;
+// }
+
+// .grid-link--sinai {
+//   position: relative;
+//   margin-top: 1rem;
+//   width: max-content;
+//   font-size: $text-14;
+//   font-weight: $font-bold;
+//   letter-spacing: 2px;
+//   text-transform: uppercase;
+//   color: $sinai-primary;
+
+//   &:active,
+//   &:visited,
+//   &:hover {
+//     color: $sinai-primary;
+//   }
+
+//   &:hover {
+//     text-decoration: none;
+//   }
+
+//   &::after {
+//     position: absolute;
+//     bottom: -0.5rem;
+//     right: 100%;
+//     left: 0;
+//     -webkit-transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
+//     transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
+//     content: ' ';
+//     border-bottom: 0.25rem solid $sinai-primary;
+//   }
+
+//   &:hover::after {
+//     right: 0%;
+//   }
+// }
