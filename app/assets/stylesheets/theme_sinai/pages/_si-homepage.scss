@@ -17,6 +17,13 @@
     order: 2;
     flex-basis: 25%;
   }
+
+  hr {
+    margin-top: 2rem;
+    width: 120px;
+    border-width: 10px;
+    border-color: $sinai-primary;
+  }
 }
 
 .si-intro {
@@ -38,9 +45,9 @@
 
 .si-grid-wrapper {
   @media (min-width: 600px) {
+    display: grid;
     height: 100%;
     min-height: 800px;
-    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 1.25rem;
@@ -54,16 +61,21 @@
 
 .si-grid-item {
   position: relative;
+  display: block;
   margin-bottom: 1.25rem;
 
+  &:hover {
+    transition: transform 0.7s;
+    transform: scale(1.01);
+  }
+
   @media (min-width: 600px) {
-    grid-row: span 2;
     margin-bottom: 0;
+    grid-row: span 2;
   }
 
   @media (min-width: 800px) {
     margin-bottom: 0;
-
     grid-row: span 4;
 
     &:nth-child(2),
@@ -82,13 +94,13 @@
 }
 
 .grid-item__title-wrapper {
-  background: $black;
   position: absolute;
   bottom: 0;
-  width: 100%;
-  opacity: 0.8;
   padding: 1rem 0;
+  width: 100%;
+  background: $black;
   border-radius: 0 0 8px 8px;
+  opacity: 0.8;
 
   @media (min-width: 800px) {
     padding: 0.75rem 0;
@@ -100,19 +112,23 @@
 }
 
 .grid-item__title {
-  text-transform: uppercase;
-  text-align: center;
-  color: $white;
-  font-size: $text-18;
+  font-size: $text-16;
   font-family: 'Dosis', sans-serif;
   font-weight: 600;
+  text-align: center;
+  color: $white;
+  text-transform: uppercase;
+
+  @media (min-width: 800px) {
+    font-size: $text-18;
+  }
 }
 
 .homepage__subtitle--sinai {
+  padding-bottom: 2rem;
   font-size: $text-20;
   font-family: 'Dosis', sans-serif;
   font-weight: 400;
-  padding-bottom: 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 
