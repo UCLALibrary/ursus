@@ -4,7 +4,6 @@
     <!-- default partial to display solr document fields in catalog index view -->
 
       <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-                
           <% if !cookies[:sinai_authenticated] %>
           <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai-generic">
            <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
