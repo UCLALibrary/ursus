@@ -1,0 +1,21 @@
+<%# SINAI ONLY %>
+<% doc_presenter = index_presenter(document) %>
+<% sinai_index_header = Ursus::SinaiIndexHeaderMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_header_terms %>
+<%# sinai_index_header returns: {"date_created_tesim"=>#<Blacklight::Configuration::ShowField label="Date created", key="date_created_tesim", field="date_created_tesim", if=true, unless=false>, "extent_tesim"=>#<Blacklight::Configuration::ShowField label="Extent", key="extent_tesim", field="extent_tesim", if=true, unless=false>} %>
+
+<header class='document__list-header document__list-header--sinai'>
+  <% all_header_fields = "" %>
+
+  <% if sinai_index_header['shelfmark_ssi'] %>
+    <% all_header_fields << ("<span class='document__list-item-link--sinai'>" + (link_to_document document, (doc_presenter.field_value sinai_index_header['shelfmark_ssi'])) + ', ' + '</span>') %>
+  <% end %>
+
+  <% header = ['date_created_tesim', 'form_ssi', 'extent_tesim'] %>
+  <% header.each do |field| -%>
+    <% if sinai_index_header[field] %><%# if field exists append to variable header %>
+      <% header_field = (doc_presenter.field_value sinai_index_header[field]) + ', ' %>
+      <% all_header_fields << header_field %>
+    <% end %>
+    <%= all_header_fields.delete_suffix(', ').html_safe %>
+  <% end %>
+</header>
