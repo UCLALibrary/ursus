@@ -1,4 +1,4 @@
-.si-inner-container {
+.sinai-homepage-inner-container {
   @media (min-width: 800px) {
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
   }
 }
 
-.si-intro-container {
+.lead-container--sinai {
   margin-bottom: 2rem;
 
   @media (min-width: 992px) {
@@ -26,7 +26,7 @@
   }
 }
 
-.si-intro {
+.lead__text--homepage--sinai {
   font-size: $text-16;
   line-height: 1.75;
   letter-spacing: 0.5px;
@@ -36,21 +36,21 @@
   }
 }
 
-.si-grid-container {
+.homepage-grid-container--sinai {
   @media (min-width: 992px) {
     order: 1;
     flex-basis: 70%;
   }
 }
 
-.si-grid-wrapper {
+.homepage-grid--sinai {
   @media (min-width: 600px) {
     display: grid;
     height: 100%;
     min-height: 800px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 1.25rem;
+    grid-gap: 1.75rem;
   }
 
   @media (min-width: 800px) {
@@ -59,7 +59,7 @@
   }
 }
 
-.si-grid-item {
+.grid-item--sinai {
   position: relative;
   display: block;
   margin-bottom: 1.25rem;
@@ -85,7 +85,7 @@
   }
 }
 
-.si-grid-img {
+.grid-image--sinai {
   display: block;
   object-fit: cover;
   width: 100%;
@@ -93,7 +93,7 @@
   border-radius: 8px;
 }
 
-.grid-item__title-wrapper {
+.grid-item__title-wrapper--sinai {
   position: absolute;
   bottom: 0;
   padding: 1rem 0;
@@ -111,7 +111,7 @@
   }
 }
 
-.grid-item__title {
+.grid-item__title--sinai {
   font-size: $text-16;
   font-family: 'Dosis', sans-serif;
   font-weight: 600;
@@ -136,122 +136,3 @@
     font-size: $text-24;
   }
 }
-
-// @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,600&display=swap');
-
-// .homepage__subtitle--sinai,
-// .grid-title--sinai {
-//   font-family: 'Cormorant Garamond', serif;
-// }
-
-// .homepage__subtitle--sinai {
-//   padding-bottom: 2rem;
-//   font-weight: inherit;
-//   text-transform: uppercase;
-//   letter-spacing: 1px;
-// }
-
-// .lead__row--sinai {
-//   padding-right: 0;
-//   padding-left: 0;
-// }
-
-// .lead__text--homepage--sinai {
-//   @extend .lead__text--homepage;
-
-//   font-size: $text-20;
-
-//   @media (max-width: 575px) {
-//     font-size: $text-18;
-//   }
-// }
-
-// .homepage-grid--sinai {
-//   @extend .col-12;
-// }
-
-// .grid__img-wrapper--sinai {
-//   @extend .col-md-7;
-
-//   height: 580px;
-//   max-height: 580px;
-//   background-position: center center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   transition: transform 0.7s;
-//   background-image: image-url('sinai/inner-hmpg-grid-lg-arb0151_0059_f_029r.jpg');
-
-//   &:hover {
-//     transform: scale(1.01);
-//   }
-// }
-
-// .grid__content-wrapper--sinai {
-//   @extend .col-md-5;
-
-//   display: flex;
-//   align-items: flex-start;
-//   justify-content: center;
-//   padding-left: 3rem;
-//   flex-direction: column;
-
-//   @media (min-width: 768px) {
-//     padding-top: 0;
-//   }
-
-//   @media (max-width: 767px) {
-//     padding-top: 2rem;
-//     padding-left: 0;
-//   }
-// }
-
-// .grid-title--sinai {
-//   font-size: $text-28;
-//   font-weight: $font-bold;
-// }
-
-// .grid-title--sinai-list {
-//   padding-top: 1.75rem;
-// }
-
-// .grid-text--sinai {
-//   padding-top: 1.75rem;
-//   font-size: $text-18;
-//   font-weight: $font-light;
-// }
-
-// .grid-link--sinai {
-//   position: relative;
-//   margin-top: 1rem;
-//   width: max-content;
-//   font-size: $text-14;
-//   font-weight: $font-bold;
-//   letter-spacing: 2px;
-//   text-transform: uppercase;
-//   color: $sinai-primary;
-
-//   &:active,
-//   &:visited,
-//   &:hover {
-//     color: $sinai-primary;
-//   }
-
-//   &:hover {
-//     text-decoration: none;
-//   }
-
-//   &::after {
-//     position: absolute;
-//     bottom: -0.5rem;
-//     right: 100%;
-//     left: 0;
-//     -webkit-transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
-//     transition: right 0.4s cubic-bezier(0, 0.5, 0, 1);
-//     content: ' ';
-//     border-bottom: 0.25rem solid $sinai-primary;
-//   }
-
-//   &:hover::after {
-//     right: 0%;
-//   }
-// }

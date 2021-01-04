@@ -1,80 +1,61 @@
 <div class='content-container--homepage'>
-<!--Codepen starts -->
-  <div class="si-inner-container">
-    <div class="si-intro-container">
-      <p class="si-intro">St. Catherine’s Monastery of the Sinai, in partnership with the Early Manuscripts Electronic Library (EMEL) and the UCLA Library, welcomes you to the Sinai Manuscripts Digital Library. Widely recognized as the world’s oldest continually operating library, the manuscript holdings of St. Catherine’s Monastery represent an unparalleled resource to study the history and literature of the Eastern Mediterranean from late antiquity until early modernity.</p>
+  <div class="sinai-homepage-inner-container">
+    <div class="lead-container--sinai">
+      <p class="lead__text--homepage--sinai">St. Catherine’s Monastery of the Sinai, in partnership with the Early Manuscripts Electronic Library (EMEL) and the UCLA Library, welcomes you to the Sinai Manuscripts Digital Library. Widely recognized as the world’s oldest continually operating library, the manuscript holdings of St. Catherine’s Monastery represent an unparalleled resource to study the history and literature of the Eastern Mediterranean from late antiquity until early modernity.</p>
       <hr>
     </div>
-    <div class="si-grid-container">
-      <h2 class="homepage__subtitle homepage__subtitle--sinai">Browse Manuscripts</h2>
-      <div class="si-grid-wrapper">
-        <a href="/catalog?utf8=%E2%9C%93&q=&search_field=all_fields" class="si-grid-item">
-          <%= image_tag("sinai/grid/all-mss.jpg", class: "si-grid-img") %>
-          <div class="grid-item__title-wrapper">
-            <h3 class="grid-item__title">All Manuscripts</h3>
+    <div class="homepage-grid-container--sinai">
+      <h2 class="homepage__subtitle--sinai">Browse Manuscripts</h2>
+      <div class="homepage-grid--sinai">
+        <a href="/catalog?utf8=%E2%9C%93&q=&search_field=all_fields" class="grid-item--sinai">
+          <%= image_tag("sinai/grid/all-mss.jpg", class: "grid-image--sinai") %>
+          <div class="grid-item__title-wrapper--sinai">
+            <h3 class="grid-item__title--sinai">All Manuscripts</h3>
           </div>
         </a>
-        <a href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=Arabic&q=&search_field=all_fields" class="si-grid-item">
-          <%= image_tag("sinai/grid/arabic-mss.jpg", class: "si-grid-img") %>
-          <div class="grid-item__title-wrapper">
-            <h3 class="grid-item__title">Arabic Manuscripts</h3>
+        <a href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=Arabic&q=&search_field=all_fields" class="grid-item--sinai">
+          <%= image_tag("sinai/grid/arabic-mss.jpg", class: "grid-image--sinai") %>
+          <div class="grid-item__title-wrapper--sinai">
+            <h3 class="grid-item__title--sinai">Arabic Manuscripts</h3>
           </div>
         </a>
-        <a href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=Syriac&q=&search_field=all_fields" class="si-grid-item">
-          <%= image_tag("sinai/grid/syriac-mss.jpg", class: "si-grid-img") %>
-          <div class="grid-item__title-wrapper">
-            <h3 class="grid-item__title">Syriac Manuscripts</h3>
+        <a href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=Syriac&q=&search_field=all_fields" class="grid-item--sinai">
+          <%= image_tag("sinai/grid/syriac-mss.jpg", class: "grid-image--sinai") %>
+          <div class="grid-item__title-wrapper--sinai">
+            <h3 class="grid-item__title--sinai">Syriac Manuscripts</h3>
           </div>
         </a>
-        <a href="/catalog?f%5Bfeatures_sim%5D%5B%5D=Dated&q=&search_field=all_fields" class="si-grid-item">
-          <%= image_tag("sinai/grid/dated-mss.jpg", class: "si-grid-img") %>
-          <div class="grid-item__title-wrapper">
-            <h3 class="grid-item__title">Dated Manuscripts</h3>
+        <a href="/catalog?f%5Bfeatures_sim%5D%5B%5D=Dated&q=&search_field=all_fields" class="grid-item--sinai">
+          <%= image_tag("sinai/grid/dated-mss.jpg", class: "grid-image--sinai") %>
+          <div class="grid-item__title-wrapper--sinai">
+            <h3 class="grid-item__title--sinai">Dated Manuscripts</h3>
           </div>
         </a>
-        <a href="/catalog?f%5Bgenre_sim%5D%5B%5D=Liturgical+texts&q=&search_field=all_fields" class="si-grid-item">
-          <%= image_tag("sinai/grid/liturgies-mss.jpg", class: "si-grid-img") %>
-          <div class="grid-item__title-wrapper">
-            <h3 class="grid-item__title">Liturgies</h3>
+        <a href="/catalog?f%5Bgenre_sim%5D%5B%5D=Liturgical+texts&q=&search_field=all_fields" class="grid-item--sinai">
+          <%= image_tag("sinai/grid/liturgies-mss.jpg", class: "grid-image--sinai") %>
+          <div class="grid-item__title-wrapper--sinai">
+            <h3 class="grid-item__title--sinai">Liturgies</h3>
           </div>
         </a>
-        <a href="/catalog?f%5Bgenre_sim%5D%5B%5D=Hagiographies&q=&search_field=all_fields" class="si-grid-item">
-          <%= image_tag("sinai/grid/hagiographies-mss.jpg", class: "si-grid-img") %>
-          <div class="grid-item__title-wrapper">
-            <h3 class="grid-item__title">Hagiographies</h3>
+        <a href="/catalog?f%5Bgenre_sim%5D%5B%5D=Hagiographies&q=&search_field=all_fields" class="grid-item--sinai">
+          <%= image_tag("sinai/grid/hagiographies-mss.jpg", class: "grid-image--sinai") %>
+          <div class="grid-item__title-wrapper--sinai">
+            <h3 class="grid-item__title--sinai">Hagiographies</h3>
           </div>
         </a>
-        <a href="/catalog?f%5Bgenre_sim%5D%5B%5D=Historical+works&q=&search_field=all_fields" class="si-grid-item">
-          <%= image_tag("sinai/grid/historical-mss.jpg", class: "si-grid-img") %>
-          <div class="grid-item__title-wrapper">
-            <h3 class="grid-item__title">Historical Works</h3>
+        <a href="/catalog?f%5Bgenre_sim%5D%5B%5D=Historical+works&q=&search_field=all_fields" class="grid-item--sinai">
+          <%= image_tag("sinai/grid/historical-mss.jpg", class: "grid-image--sinai") %>
+          <div class="grid-item__title-wrapper--sinai">
+            <h3 class="grid-item__title--sinai">Historical Works</h3>
           </div>
         </a>
-        <a href="/catalog?f%5Bgenre_sim%5D%5B%5D=Biblical+texts&q=&search_field=all_fields" class="si-grid-item">
-          <%= image_tag("sinai/grid/biblical-mss.jpg", class: "si-grid-img") %>
-          <div class="grid-item__title-wrapper">
-            <h3 class="grid-item__title">Biblical Texts</h3>
+        <a href="/catalog?f%5Bgenre_sim%5D%5B%5D=Biblical+texts&q=&search_field=all_fields" class="grid-item--sinai">
+          <%= image_tag("sinai/grid/biblical-mss.jpg", class: "grid-image--sinai") %>
+          <div class="grid-item__title-wrapper--sinai">
+            <h3 class="grid-item__title--sinai">Biblical Texts</h3>
           </div>
         </a>
       </div>
     </div>
-
   </div>
-
-<!--Codepen stops-->
-  <!--<div class='lead__row lead__row--sinai'>
-    <p class='lead__text--homepage--sinai'>St. Catherine’s Monastery of the Sinai, in partnership with the Early Manuscripts Electronic Library (EMEL) and the UCLA Library, welcomes you to the Sinai Manuscripts Digital Library. Widely recognized as the world’s oldest continually operating library, the manuscript holdings of St. Catherine’s Monastery represent an unparalleled resource to study the history and literature of the Eastern Mediterranean from late antiquity until early modernity.</p>
-    <hr class="divider">
-  </div>
-  <h2 class="homepage__subtitle homepage__subtitle--sinai">Explore</h2>
-  <div class="homepage-grid--sinai">
-      <div class="homepage-grid__row">
-        <div class="grid__img-wrapper--sinai"></div>
-        <div class="grid__content-wrapper--sinai">
-          <h3 class="grid-title--sinai">Manuscripts</h3>
-          <p class="grid-text--sinai">Explore the Arabic and Syriac manuscripts of St. Catherine’s Monastery of the Sinai.</p>
-          <a href="/catalog?utf8=✓&q=&search_field=all_fields" class="grid-link--sinai">View the Sinai Manuscripts</a>
-        </>
-      </div>
-  </div>-->
 </div>
