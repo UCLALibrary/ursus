@@ -11,5 +11,5 @@
     <% header_field = (doc_presenter.field_value field) + ', ' %>
     <% concatonated_header << header_field %>
   <% end %>
-  <%= concatonated_header.delete_suffix(', ').html_safe  %>
+  <%= concatonated_header.delete_suffix(', ').html_safe %>
 <% end %>

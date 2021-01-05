@@ -33,6 +33,12 @@
               <%= render 'catalog/index_header_sinai', document: document %>
             </a>
           </header>
+          <div class='metadata-block'>
+            <dl class='metadata-block__group'>
+              <%= render 'catalog/index_title_sinai', document: document %>
+              <%= render 'catalog/index_metadata_sinai', document: document %>
+            </dl>
+          </div>
 
       <%# Header LOGGED IN %>
       <% else %>
