@@ -22,21 +22,26 @@
       <!-- ----------------- -->
 
       <span class="document__list-title document__list-title--sinai">
-        <%# Header NOT Logged in %>
+
+        <%# Header NOT LOGGED IN %>
         <% if !cookies[:sinai_authenticated] %>
           <%# cookies[:request_original_url] = request.original_url %>
+          <%= "NOT LOGGED IN" %>
+          <br><br>
           <header class='document__list-header'>
             <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-              <%= document['shelfmark_ssi'] %>, <%= document['date_created_tesim'][0] %>, <%= document['form_ssi'] %>, <%= document['date_created_tesim'][0] %>, <%= document['extent_tesim'][0] %>
+              <%= render 'catalog/index_header_sinai', document: document %>
             </a>
           </header>
 
-      <%# Header Logged in %>
+      <%# Header LOGGED IN %>
       <% else %>
-      <%= "LOGGED IN" %>
-      <%# link all to the work %><% link_to document['shelfmark_ssi'],  %>
-        <%= document['shelfmark_ssi'] %>, <%= document['date_created_tesim'][0] %>, <%= document['form_ssi'] %>, <%= document['date_created_tesim'][0] %>, <%= document['extent_tesim'][0] %>
-        <% end %>
+        <%= "LOGGED IN" %>
+        <br><br>
+        <%# link the header to the work by the ark %>
+        <% the_ark = CGI.escape document['ark_ssi'] %>
+        <% index_header_sinai = render 'catalog/index_header_sinai', document: document %>
+        <%= link_to index_header_sinai, "/catalog/#{the_ark}" %>
       <% end %>
       </span>
   </div>
