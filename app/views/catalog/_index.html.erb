@@ -6,13 +6,13 @@
 
       <%# THUMBNAIL %>
       <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-          <%# NOT LOGGED IN %>
+          <%# Thumnail NOT logged in %>
           <% if !cookies[:sinai_authenticated] %>
           <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai-generic">
            <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
                 <%= image_tag("sinai/sinai-generic-thumbnail.png") %>
               </a>
-          <%# LOGGED IN %>
+          <%# Thumbnail logged in%>
           <% else %>
           <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai">
             <%= tn %>
@@ -22,72 +22,20 @@
       <!-- ----------------- -->
 
       <span class="document__list-title document__list-title--sinai">
-        <%# NOT LOGGED IN %>
+        <%# Header NOT Logged in %>
         <% if !cookies[:sinai_authenticated] %>
           <%# cookies[:request_original_url] = request.original_url %>
-          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-          <%= "NOT LOGGED IN" %>
-          <%#= render "index_header_sinai" %>
-            <%# document['title_tesim'][0] %>
-            <%#= document['date_created_tesim'][0] %>
-            <%#= document['form_ssi'][0] %>
-            <%#= document['extent_tesim'][0] %>
-            Shelfmark: <%= document['shelfmark_ssi'] %>
+          <header class='document__list-header'>
+            <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+              <%= document['shelfmark_ssi'] %>, <%= document['date_created_tesim'][0] %>, <%= document['form_ssi'] %>, <%= document['date_created_tesim'][0] %>, <%= document['extent_tesim'][0] %>
+            </a>
+          </header>
 
-<!-- OOOOOOOOOOOOOOOOOO -->
-<%# SINAI ONLY %>
-<%# doc_presenter = index_presenter(document) %>
-<%= sinai_index_header = Ursus::SinaiIndexHeaderMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_header_terms %>
-<%# sinai_index_header returns: {"date_created_tesim"=>#<Blacklight::Configuration::ShowField label="Date created", key="date_created_tesim", field="date_created_tesim", if=true, unless=false>, "extent_tesim"=>#<Blacklight::Configuration::ShowField label="Extent", key="extent_tesim", field="extent_tesim", if=true, unless=false>} %>
-
-
-<% if sinai_index_header.length > 0 %>
-  <header class= 'document__list-header document__list-header--sinai'>
-    <span class='document__list-item-link--sinai'>
-      <% sinai_index_header.each do |index, field_name, field| -%>
-      Index:<%= index %><br>
-      Field name: <%= field_name%><br>
-      Field: <%= field %>
-        <%#= doc_presenter.field_value field %> 
-        <%# if index < sinai_index_header.length %>
-          <%#= ', ' %>
-        <%# end %>
-      <% end %>
-    </span>
-  </header>
-<% end %>
-
-<header class='document__list-header document__list-header--sinai'>
-  <% all_header_fields = "" %>
-
-  <% if sinai_index_header['shelfmark_ssi'] %>
-    <% all_header_fields << ("<span class='document__list-item-link--sinai'>" + (link_to_document document, (doc_presenter.field_value sinai_index_header['shelfmark_ssi'])) + ', ' + '</span>') %>
-  <% end %>
-
-  <% header = ['date_created_tesim', 'form_ssi', 'extent_tesim'] %>
-  <% header.each do |field| -%>
-    <% if sinai_index_header[field] %><%# if field exists append to variable header %>
-      <% header_field = (doc_presenter.field_value sinai_index_header[field]) + ', ' %>
-      <% all_header_fields << header_field %>
-    <% end %>
-    <%= all_header_fields.delete_suffix(', ').html_safe %>
-  <% end %>
-</header>
-<!-- OOOOOOOOOOOOOOOOOO -->
-
-
-
-
-
-
-
-          </a>
-
-      <%# LOGGED IN %>
+      <%# Header Logged in %>
       <% else %>
       <%= "LOGGED IN" %>
-        <% if counter = document_counter_with_offset(document_counter) %>
-          <%#= link_to_document(document, counter: counter) %>
+      <%# link all to the work %><% link_to document['shelfmark_ssi'],  %>
+        <%= document['shelfmark_ssi'] %>, <%= document['date_created_tesim'][0] %>, <%= document['form_ssi'] %>, <%= document['date_created_tesim'][0] %>, <%= document['extent_tesim'][0] %>
         <% end %>
       <% end %>
       </span>
