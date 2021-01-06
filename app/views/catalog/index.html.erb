@@ -18,8 +18,8 @@
         </div>
       <div class="modal-body">
         You need to login before you can access this record.
-        <div class="test">
-          <div class="test_two">
+        <div class="si-auth-modal-btn-block">
+          <div class="si-auth-modal-btn-group">
             <%= button_to 'Login', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn-base btn-outline-sinai--primary' %>
             <%= button_to 'Register', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn-base btn-outline-sinai--primary' %>
           </div>
