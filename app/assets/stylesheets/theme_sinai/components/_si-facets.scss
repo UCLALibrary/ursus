@@ -5,7 +5,16 @@
 }
 
 .facets__navbar-heading--sinai {
+  padding-bottom: 2rem;
+  font-size: $text-20;
+  font-family: 'Dosis', sans-serif;
   font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  @media (min-width: 800px) {
+    font-size: $text-24;
+  }
 
   @media (max-width: 991px) {
     color: $white;
