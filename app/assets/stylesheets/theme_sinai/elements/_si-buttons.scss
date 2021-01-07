@@ -66,3 +66,13 @@
   font-family: 'Dosis', sans-serif;
   font-weight: 600;
 }
+
+.btn-base-link--sinai {
+  font-size: $text-14;
+  color: $gray-40;
+  
+  &:hover {
+    background-color: transparent;
+  }
+  
+}

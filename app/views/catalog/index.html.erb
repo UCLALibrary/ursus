@@ -8,18 +8,24 @@
 %>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-    <div class="modal-content">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content msg-container">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Access</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Login Required</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         </div>
       <div class="modal-body">
-        You need to login before you can access this record.
-        <%= button_to 'Login', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn-base btn-outline-sinai--red' %>
-      </div>
+      Login is required to view the manuscripts. Please login or register for a free account.
+        <div class="si-auth-modal-btn-block">
+          <div class="si-auth-modal-btn-group">
+            <%= button_to 'Login', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn-base btn-outline-sinai--primary' %>
+            <%= button_to 'Register', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn-base btn-outline-sinai--primary' %>
+          </div>
+          <button type="button" class="btn-base-link btn-base btn-base-link--sinai" data-dismiss="modal">Skip for Now</button>
+        </div>
+        </div>
       <div class="modal-footer">
       </div>
     </div>
