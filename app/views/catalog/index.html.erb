@@ -17,7 +17,7 @@
         </button>
         </div>
       <div class="modal-body">
-      Login with a free account is required to view images, item details, and metadata.
+      Login is required to view the manuscripts. Please login or register for a free account.
         <div class="si-auth-modal-btn-block">
           <div class="si-auth-modal-btn-group">
             <%= button_to 'Login', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn-base btn-outline-sinai--primary' %>
