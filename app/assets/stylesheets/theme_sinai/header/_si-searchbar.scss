@@ -6,3 +6,15 @@
 .site-searchbar__search-icon--sinai svg g {
   stroke: $sinai-black;
 }
+
+// Dropdown field
+.site-searchbar__dropdown--sinai {
+  color: $gray-60;
+  &::after {
+    content: 'test';
+  }
+  border-right: 1px solid $gray-40;
+}
+.input-group > .custom-select {
+  width: auto;
+}
