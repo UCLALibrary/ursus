@@ -65,6 +65,15 @@
   padding-left: 0;
   font-family: 'Dosis', sans-serif;
   font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+    color: $gray-60;
+  }
+
+  @media (max-width: 800px) {
+    font-size: $text-14;
+  }
 }
 
 .btn-base-link--sinai {

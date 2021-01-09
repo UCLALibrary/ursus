@@ -3,11 +3,10 @@
 }
 
 .site-navbar__wrapper--sinai {
-  @media (max-width: 991px) {
-    padding-bottom: 0.75rem;
-  }
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 
-  @media (max-width: 800px) {
+  @media (max-width: 991px) {
     display: block;
   }
 }
@@ -20,18 +19,13 @@
   @media (max-width: 991px) {
     margin-bottom: 0;
   }
-
-  @media (max-width: 800px) {
-    justify-content: unset;
-    padding-bottom: 0.75rem;
-  }
 }
 
 .site-navbar__logo-img--sinai {
   padding-right: 10px;
   height: 66px;
 
-  @media (max-width: 400px) {
+  @media (max-width: 800px) {
     padding-right: 6px;
     height: 50px;
   }
@@ -40,6 +34,7 @@
 .site-navbar__logo-block--sinai-text-logo {
   font-family: 'Dosis', sans-serif;
   line-height: 1.25;
+  align-self: flex-end;
 }
 
 .site-navbar__logo-title--sinai {
@@ -56,8 +51,8 @@
     font-size: $text-24;
   }
 
-  @media (max-width: 400px) {
-    font-size: $text-18;
+  @media (max-width: 600px) {
+    font-size: $text-20;
   }
 }
 
@@ -78,11 +73,13 @@
 }
 
 .site-navbar__link-block--sinai {
-  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-  @media (max-width: 800px) {
-    padding-top: 0.75rem;
-    border-top: 1px solid $gray-10;
+  @media (max-width: 991px) {
+    align-items: center;
+    padding-top: 1rem;
   }
 }
 
@@ -91,13 +88,20 @@
   font-family: 'Dosis', sans-serif;
   font-weight: 600;
 
-  @media (max-width: 991px) {
-    padding-right: 20px;
+  @media (max-width: 800px) {
+    font-size: $text-14;
   }
 }
 
 .site-navbar__item--sinai:not(:last-child) {
-  padding-right: 20px;
+  padding-right: 10px;
+}
+
+// Aligns "Login" link to "About" link
+.site-navbar__item--sinai .button_to {
+  position: relative;
+  top: -0.0625rem;
+  left: 0.75rem;
 }
 
 .site-header__search-icon--sinai {
