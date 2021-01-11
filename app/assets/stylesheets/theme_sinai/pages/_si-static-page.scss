@@ -46,12 +46,14 @@
 }
 
 .static-page__text--sinai {
-  line-height: 1.5;
   margin-bottom: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 .static-page__list--sinai {
   margin-bottom: 1rem;
+  font-weight: 300;
 
   @media (max-width: 767px) {
     font-size: $text-16;

@@ -27,12 +27,17 @@
 }
 
 .lead__text--homepage--sinai {
-  font-size: $text-16;
+  font-size: $text-20;
+  font-family: 'Dosis', sans-serif;
   line-height: 1.75;
   letter-spacing: 0.5px;
 
   @media (min-width: 992px) {
     padding-top: 3.75rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: $text-16;
   }
 }
 
