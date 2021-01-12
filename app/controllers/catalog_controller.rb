@@ -225,7 +225,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'format_tesim', label: 'Format'
     # 'Book format'
     config.add_show_field 'medium_tesim', label: 'Medium'
-    config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_tesim'
+    config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim'
     config.add_show_field 'extent_tesim', label: 'Extent'
     config.add_show_field 'dimensions_tesim', label: 'Dimensions'
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
