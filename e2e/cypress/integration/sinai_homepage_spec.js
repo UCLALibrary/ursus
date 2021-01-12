@@ -9,14 +9,13 @@ describe('Sinai Homepage', () => {
     cy.get('.site-navbar__logo-block--sinai');
   });
 
-// Navbar Links
-  it('Search Link', () => {
+
+  it('Search Component', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('a', 'Search ');
-    cy.get('.site-header__search-icon--sinai').click({ force: true });
+    cy.get('[id=search]').click();
     cy.url().should('include', 'search_field=all_fields');
   });
-
+// Navbar Links
   it('About Link', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.contains('a', 'About');
