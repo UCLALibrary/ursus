@@ -1,45 +1,83 @@
-<% if Flipflop.sinai? %><!-- SINAI -->
+<!-- SINAI -->
+<% if Flipflop.sinai? %>
   <% doc_presenter = index_presenter(document) %>
   <div class="document__list-item-wrapper document__list-item-wrapper--sinai">
     <!-- default partial to display solr document fields in catalog index view -->
 
-      <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-          <% if !cookies[:sinai_authenticated] %>
-          <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai-generic">
-           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-                <%= image_tag("sinai/sinai-generic-thumbnail.png") %>
-              </a>
-          <% else %>
-          <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai">
-            <%= tn %>
-          <% end %>
+    <%# THUMBNAIL %>
+    <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
+        <%# Thumnail NOT logged in %>
+        <% if !cookies[:sinai_authenticated] %>
+        <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai-generic">
+          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+              <%= image_tag("sinai/sinai-generic-thumbnail.png") %>
+            </a>
+        <%# Thumbnail logged in%>
+        <% else %>
+        <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai">
+          <%= tn %>
+        <% end %>
+      </div>
+    <% end %>
+    <!-- ----------------- -->
+
+    <span class="document__list-title document__list-title--sinai">
+
+      <% if !cookies[:sinai_authenticated] %>
+        <%# Sinai NOT LOGGED IN %>
+        <%# cookies[:request_original_url] = request.original_url %>
+
+        <header class='document__list-header'>
+          <%# link the header to the block access modal%>
+          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+            <%= render 'catalog/index_header_sinai', document: document %>
+          </a>
+        </header>
+        <div class='metadata-block'>
+          <dl class='metadata-block__group'>
+            <%= render 'catalog/index_title_sinai', document: document %>
+            <%= render 'catalog/index_metadata_sinai', document: document %>
+            <%= render 'catalog/index_name_sinai', document: document %>
+            <!--<br><br>
+            <%#= "NOT LOGGED IN" %> -->
+          </dl>
+        </div>
+
+      <% else %>
+        <%# Sinai LOGGED IN %>
+        <%# link the header to the work by the ark %>
+        <% the_ark = CGI.escape document['ark_ssi'] %>
+        <% index_header_sinai = render 'catalog/index_header_sinai', document: document %>
+
+        <header class='document__list-header'>
+          <%# link the header to the work by the ark %>
+          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+            <%= link_to index_header_sinai, "/catalog/#{the_ark}" %>
+          </a>
+        </header>
+        <div class='metadata-block'>
+          <dl class='metadata-block__group'>
+            <%= render 'catalog/index_title_sinai', document: document %>
+            <%= render 'catalog/index_metadata_sinai', document: document %>
+            <%= render 'catalog/index_name_sinai', document: document %>
+            <!--<br><br>
+            <%#= "LOGGED IN" %> -->
+          </dl>
         </div>
       <% end %>
-
-      <span class="document__list-title document__list-title--sinai">
-        <% if !cookies[:sinai_authenticated] %>
-          <%# cookies[:request_original_url] = request.original_url %>
-          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-            <%= document['title_tesim'][0] %>
-          </a>
-
-       <% else %>
-          <% if counter = document_counter_with_offset(document_counter) %>
-            <%= link_to_document(document, counter: counter) %>
-          <% end %>
-      <% end %>
-      </span>
+    </span>
   </div>
 
-<% else %><!-- URSUS -->
+<!-- URSUS -->
+<% else %>
   <% doc_presenter = index_presenter(document) %>
   <div class="document__list-item-wrapper">
     <!-- default partial to display solr document fields in catalog index view -->
     <dl class="document-metadata document__list-metadata-group">
       <% doc_presenter.fields_to_render.each do | field_name, field | %>
-      <% if field_name == "member_of_collections_ssim" %>
-        <% if document[:member_of_collections_ssim] && document[:member_of_collection_ids_ssim] %>
-          <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-<%= field_name.parameterize %>">
+        <% if field_name == "member_of_collections_ssim" %>
+          <% if document[:member_of_collections_ssim] && document[:member_of_collection_ids_ssim] %>
+            <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-<%= field_name.parameterize %>">
             <%= render_index_field_label document, field: field_name %>
           </dt>
           <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-<%= field_name.parameterize %>">
@@ -47,9 +85,9 @@
               <% document[:member_of_collections_ssim].each_with_index do | member, index | %>
                 <%= link_to member, "/catalog/#{document[:member_of_collection_ids_ssim][index]}" %><br>
               <% end %>
-              <% else %>
-                <%= link_to document[:member_of_collections_ssim][0], "/catalog/#{document[:member_of_collection_ids_ssim][0]}" %>
-              <% end %>
+            <% else %>
+              <%= link_to document[:member_of_collections_ssim][0], "/catalog/#{document[:member_of_collection_ids_ssim][0]}" %>
+            <% end %>
           </dd>
         <% end %>
 
