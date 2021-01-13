@@ -109,13 +109,13 @@ class CatalogController < ApplicationController
       config.add_facet_field 'genre_sim', sort: 'index', limit: 7
       config.add_facet_field 'place_of_origin_sim', sort: 'index', limit: 7, label: 'Place of origin'
       config.add_facet_field 'year_isim', limit: 7, range: true
-      config.add_facet_field 'human_readable_language_sim',sort: 'index', limit: 7
-      config.add_facet_field 'writing_system_sim',sort: 'index', limit: 7, label: 'Writing system'
-      config.add_facet_field 'script_sim',sort: 'index', limit: 7, label: 'Script'
-      config.add_facet_field 'features_sim',sort: 'index', limit: 7, label: 'Features'
-      config.add_facet_field 'support_sim',sort: 'index', limit: 7, label: 'Support'
-      config.add_facet_field 'form_sim',sort: 'index', limit: 7, label: 'Form'
-      config.add_facet_field 'names_sim',sort: 'index', limit: 7, label: 'Names'
+      config.add_facet_field 'human_readable_language_sim', sort: 'index', limit: 7
+      config.add_facet_field 'writing_system_sim', sort: 'index', limit: 7, label: 'Writing system'
+      config.add_facet_field 'script_sim', sort: 'index', limit: 7, label: 'Script'
+      config.add_facet_field 'features_sim', sort: 'index', limit: 7, label: 'Features'
+      config.add_facet_field 'support_sim', sort: 'index', limit: 7, label: 'Support'
+      config.add_facet_field 'form_sim', sort: 'index', limit: 7, label: 'Form'
+      config.add_facet_field 'names_sim', sort: 'index', limit: 7, label: 'Names'
 
     # URSUS
     else
