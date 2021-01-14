@@ -2,15 +2,16 @@
 <% if Flipflop.sinai? %>
   <% url = request.original_url %>
   <%# NO SEARCHBAR %>
-  <% unless !url.include?('catalog/ark:') && url.include?('catalog') %>
+  <%# unless !url.include?('catalog/ark:') && url.include?('catalog') %>
     <%= render 'shared/header/sinai_header' %>
-  <% else %>
+  <%# else %>
     <%# SHOW SEARCHBAR %>
-    <%= render 'shared/header/sinai_header' %>
+    <%#= render 'shared/header/sinai_header' %>
+    <!--
     <div class="container-full site-searchbar site-searchbar--sinai" role="search">
-      <%= render_search_bar %>
-    </div>
-  <% end %>
+      <%#= render_search_bar %>
+    </div> -->
+  <%# end %>
 
 <%# URSUS %>
 <% else %>

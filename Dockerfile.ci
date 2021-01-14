@@ -2,8 +2,9 @@ FROM uclalibrary/ursus
 
 WORKDIR /ursus
 
+RUN apt-get update -qq
 # New apt packages - these can be removed once they're incorporated into the base uclalibrary/ursus image on dockerhub
-RUN apt-get install -y nodejs=10.21.0~dfsg-1~deb10u1
+RUN apt-get install -y nodejs
 
 EXPOSE 3000
 

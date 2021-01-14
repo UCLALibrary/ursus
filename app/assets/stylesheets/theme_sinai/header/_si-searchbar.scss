@@ -6,3 +6,23 @@
 .site-searchbar__search-icon--sinai svg g {
   stroke: $sinai-black;
 }
+
+// Dropdown field
+.site-searchbar__dropdown--sinai {
+  font-size: $text-14;
+  color: $gray-60;
+  border-right: 1px solid $gray-10;
+}
+
+.input-group > .custom-select--sinai {
+  width: auto;
+  flex: 0 1 auto;
+}
+
+.form-control--sinai {
+  font-size: $text-14;
+}
+
+.site-searchbar__search-icon--sinai .btn {
+  font-size: $text-14;
+}
