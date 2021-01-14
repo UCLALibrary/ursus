@@ -15,7 +15,7 @@ describe('Sinai Homepage', () => {
     cy.get('[id=search]').click();
     cy.url().should('include', 'search_field=all_fields');
   });
-// Navbar Links
+  // Navbar Links
   it('About Link', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.contains('a', 'About');
@@ -23,10 +23,11 @@ describe('Sinai Homepage', () => {
     cy.url().should('include', '/sinai_about');
   });
 
-  it('Login Link', () => {
-    cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.contains('[type="submit"]', 'LOGIN');
-  });
+  // Can't test login link because we bypass auth in the test server
+  // it('Login Link', () => {
+  //   cy.visit(Cypress.env('SINAI_BASE_URL'));
+  //   cy.contains('[type="submit"]', 'LOGIN');
+  // });
 
   // Static pages
   it('About Page', () => {
@@ -62,14 +63,14 @@ describe('Sinai Homepage', () => {
     cy.get('[alt="Arcadia logo"]').should('be.visible');
   });
 
-// Footer Secondary - Sinai Palimpsests Project Link
+  // Footer Secondary - Sinai Palimpsests Project Link
   it('Sinai Palimpsests Project', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
     cy.contains('a[href="http://sinaipalimpsests.org/"]', 'Sinai Palimpsests Project');
   });
 });
 
-/* 
-https://github.com/cypress-io/cypress-example-recipes/ Tab Handling and Links 
+/*
+https://github.com/cypress-io/cypress-example-recipes/ Tab Handling and Links
 https://docs.cypress.io/guides/guides/environment-variables.html#Option-1-configuration-file
 */
