@@ -11,8 +11,8 @@ services:
       - ./default.env
       - ./docker.env
     environment:
-      # SOLR_URL: http://solr:8983/solr/ursus
-      SOLR_URL: http://host.docker.internal:6983/solr/californica
+      SOLR_URL: http://solr:8983/solr/ursus
+      # SOLR_URL: http://host.docker.internal:6983/solr/californica
       SOLR_TEST_URL: http://solr_test:8983/solr/ursus
       DATABASE_USERNAME: ursus
       DATABASE_PASSWORD: ursus
@@ -37,7 +37,8 @@ services:
       - ./docker.env
     environment:
       DATABASE_NAME: sinai
-      SOLR_URL: http://solr:8983/solr/sinai
+      # SOLR_URL: http://solr:8983/solr/sinai
+      SOLR_URL: http://host.docker.internal:6983/solr/californica
       SOLR_TEST_URL: http://solr_test:8983/solr/sinai
       DATABASE_USERNAME: ursus
       DATABASE_PASSWORD: ursus
