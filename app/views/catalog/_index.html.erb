@@ -35,11 +35,14 @@
         </header>
         <div class='metadata-block'>
           <dl class='metadata-block__group'>
+            <%# TITLE %>
             <%= render 'catalog/index_title_sinai', document: document %>
+            <%# DATE - LANGUAGE %>
             <%= render 'catalog/index_metadata_sinai', document: document %>
+            <%# NAME %>
             <%= render 'catalog/index_name_sinai', document: document %>
-            <!--<br><br>
-            <%#= "NOT LOGGED IN" %> -->
+            <br><br>
+            <%= "NOT LOGGED IN" %>
           </dl>
         </div>
 
@@ -57,11 +60,12 @@
         </header>
         <div class='metadata-block'>
           <dl class='metadata-block__group'>
+          <h1>LOG-GED IN</h1>
             <%= render 'catalog/index_title_sinai', document: document %>
             <%= render 'catalog/index_metadata_sinai', document: document %>
             <%= render 'catalog/index_name_sinai', document: document %>
-            <!--<br><br>
-            <%#= "LOGGED IN" %> -->
+            <br><br>
+            <%= "LOGGED IN" %>
           </dl>
         </div>
       <% end %>

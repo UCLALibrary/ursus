@@ -11,5 +11,13 @@ module Ursus
     def sinai_index_name_terms
       @document.slice(*@config.keys)
     end
+
+    def sinai_index_name_values
+      @document
+    end
+
+    def sinai_index_name_keys
+      @config.keys
+    end
   end
 end

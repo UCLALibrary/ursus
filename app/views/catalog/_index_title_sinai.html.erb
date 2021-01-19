@@ -6,14 +6,17 @@
 
 <% if sinai_index_title.length > 0 %>
   <% concatonated_title_key = "TITLE" %>
-  <% concatonated_title = "" %>
+  <% concatonated_titles = [] %>
 
-  <% sinai_index_title.each do |field_name, field| %>
-    <% title_field = (doc_presenter.field_value field) + ' | ' %>
-    <% concatonated_title << title_field %>
-  <% end %>
+<% if document['descriptive_title_tesim'] && !document['descriptive_title_tesim'].empty? %>
+  <% concatonated_titles << document['descriptive_title_tesim'] %>
+<% end %>
 
-  <% concat_title = concatonated_title.delete_suffix(' | ').html_safe %>
+<% if document['uniform_title_tesim'] && !document['uniform_title_tesim'].empty? %>
+  <% concatonated_titles  << document['uniform_title_tesim'] %>
+<% end %>
+
+<% combined_titles = concatonated_titles.flatten! %>
 
   <dt class="metadata-block__label-key">
     <!-- KEY -->
@@ -21,6 +24,11 @@
   </dt>
   <!-- VALUE -->
   <dd class="metadata-block__label-value">
-    <%= concat_title %>
+    <% combined_titles.each_with_index do |title, index| %>
+      <%= title.html_safe %>
+      <% if index +  1 < combined_titles.length %>
+        <%= ' | ' %>
+      <% end %>
+    <% end %>
   </dd>
 <% end %>

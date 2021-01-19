@@ -5,6 +5,7 @@
 <% sinai_index_name = Ursus::SinaiIndexNameMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_name_terms %>
 
 <% if sinai_index_name.length > 0 %>
+<% if sinai_index_name.length > 0 %>
   <% concatonated_name_key = "NAME" %>
   <% concatonated_name = "" %>
 
@@ -14,7 +15,6 @@
   <% end %>
 
   <% concat_name = concatonated_name.delete_suffix(' | ').html_safe %>
-
   <dt class="metadata-block__label-key">
     <!-- KEY -->
     <%= concatonated_name_key %>
@@ -24,3 +24,15 @@
     <%= concat_name %>
   </dd>
 <% end %>
+author: <%= document['author_tesim'] %>
+associated_name: <%= document['associated_name_tesim'] %>
+scribe: <%= document['scribe_tesim'] %>
+
+terms: <%= sinai_index_name = Ursus::SinaiIndexNameMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_name_terms %>
+
+@document: <%= sinai_index_name_values = Ursus::SinaiIndexNameMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_name_values %>
+
+@config_keys<%= sinai_index_name_keys = Ursus::SinaiIndexNameMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_name_keys %>
+
+<% end %>
+
