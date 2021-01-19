@@ -25,3 +25,17 @@
     @extend .btn-outline-sinai--primary;
   }
 }
+
+.document__gallery-item-thumbnail-link--sinai {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 250px;
+  background-color: $black;
+
+  img {
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+  }
+}
