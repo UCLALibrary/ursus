@@ -53,21 +53,26 @@
         <%# Sinai LOGGED IN %>
         <%# link the header to the work by the ark %>
         <% the_ark = CGI.escape document['ark_ssi'] %>
-        <% index_header_sinai = render 'catalog/index_header_sinai', document: document %>
 
         <header class='document__list-header'>
           <%# link the header to the work by the ark %>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-            <%= link_to index_header_sinai, "/catalog/#{the_ark}" %>
-            <%= document[:header_index_tesim][0] %>
+            <%= link_to document[:header_index_tesim][0], "/catalog/#{the_ark}" %>
           </a>
         </header>
         <div class='metadata-block'>
           <dl class='metadata-block__group'>
-          <h1>LOG-GED IN</h1>
-            <%#= render 'catalog/index_title_sinai', document: document %>
-            <%#= render 'catalog/index_metadata_sinai', document: document %>
-            <%#= render 'catalog/index_name_sinai', document: document %>
+            <%# TITLE %>
+            <dt class="metadata-block__label-key">TITLE</dt>
+            <dd class="metadata-block__label-value"><%= render 'catalog/index_title_sinai', document: document %></dd>
+
+            <%# DATE - LANGUAGE %>
+            <%= render 'catalog/index_metadata_sinai', document: document %>
+
+            <%# NAME %>
+            <%= render 'catalog/index_name_sinai', document: document %>
+
+            NAMES: <%= document[:name_fields_index_tesim] %>
             <br><br>
             <%= "LOGGED IN" %>
           </dl>

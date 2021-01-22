@@ -149,7 +149,7 @@ class CatalogController < ApplicationController
     if Flipflop.sinai?
       config.add_index_field 'header_index_sim', label: 'Header'
       # config.add_index_field 'title_index_tesim', label: 'Title'
-      config.add_index_field 'date_created_tesim', label: 'Date Created'
+      config.add_index_field 'date_created_tesim', label: 'Date'
       config.add_index_field 'human_readable_language_tesim', label: 'Language'
       config.add_index_field 'names_sim', label: 'Name', link_to_facet: 'names_sim'
       config.add_index_field 'uniform_title_tesim', link_to_facet: 'uniform_title_sim'
