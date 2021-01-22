@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 0.5rem 1rem;
+  font-weight: $font-light;
 }
 
 .filter-group__label--sinai {
@@ -29,5 +31,10 @@
   &:hover {
     color: $white;
     background-color: #b22222;
+  }
+
+  .remove-icon {
+    font-size: 0.75rem;
+    font-weight: 900;
   }
 }

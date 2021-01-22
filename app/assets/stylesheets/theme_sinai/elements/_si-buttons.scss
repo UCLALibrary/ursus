@@ -27,6 +27,11 @@
   color: $sinai-primary;
   border-color: $sinai-primary;
   border-radius: 0.25rem;
+
+  .remove-icon {
+    font-size: 0.65rem;
+    font-weight: 900;
+  }
 }
 
 .btn-outline-sinai--primary:visited:hover {

@@ -60,7 +60,9 @@
   }
 }
 
-.facet-field__heading--sinai .collapse-toggle[aria-expanded='true'] .facet-field {
+.facet-field__heading--sinai
+.collapse-toggle[aria-expanded='true']
+.facet-field {
   background-color: $sinai-primary;
   border: 1px solid $sinai-primary;
   border-radius: 0;

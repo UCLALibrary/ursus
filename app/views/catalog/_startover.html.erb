@@ -1,8 +1,8 @@
 <!-- SINAI -->
 <% if Flipflop.sinai? %>
   <% if query_has_constraints? %>
-    <%= link_to(content_tag(:span, '✖', class: 'remove-icon') + ' ' + t('blacklight.search.clear_all'), '/catalog?utf8=%E2%9C%93&q=&search_field=all_fields', 
-    class: "btn-base btn-base-sm btn-outline-sinai--primary") %>
+    <%= link_to(content_tag(:span, '✕', class: 'remove-icon') + ' ' + t('blacklight.search.clear_all'), '/catalog?utf8=%E2%9C%93&q=&search_field=all_fields',
+                class: "btn-base btn-base-sm btn-outline-sinai--primary") %>
   <% end %>
 
 <!-- URSUS -->
