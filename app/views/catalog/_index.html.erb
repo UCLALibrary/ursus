@@ -43,7 +43,7 @@
             <%# NAME %>
             <%= render 'catalog/index_name_sinai', document: document %>
 
-            NAMES: <%= document[:names_sim] %>
+            NAMES: <%= document[:name_fields_index_tesim] %>
             <br><br>
             <%= "NOT LOGGED IN" %>
           </dl>
@@ -70,9 +70,9 @@
             <%= render 'catalog/index_metadata_sinai', document: document %>
 
             <%# NAME %>
-            <%= render 'catalog/index_name_sinai', document: document %>
+            Namess:<% render 'catalog/index_name_sinai', document: document %>
 
-            NAMES: <%= document[:name_fields_index_tesim] %>
+            <%= document[:author_tesim] %>
             <br><br>
             <%= "LOGGED IN" %>
           </dl>
