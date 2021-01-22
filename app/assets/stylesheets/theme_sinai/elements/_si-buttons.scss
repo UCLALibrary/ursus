@@ -24,11 +24,12 @@
 }
 
 .btn-outline-sinai--primary {
-  color: $gray-80;
+  color: $sinai-primary;
   border-color: $sinai-primary;
+  border-radius: 0.25rem;
 }
 
-.btn-outline-sinai--primary:hover {
+.btn-outline-sinai--primary:visited:hover {
   color: $white;
   background-color: $sinai-primary;
   border-color: $sinai-primary;
@@ -37,6 +38,10 @@
   .blacklight-icons svg path {
     stroke: $white;
   }
+}
+
+.btn-outline-sinai--primary:visited {
+  color: $sinai-primary;
 }
 
 // .btn-outline-sinai--primary:not(:disabled):not(.disabled).active {
@@ -79,9 +84,8 @@
 .btn-base-link--sinai {
   font-size: $text-14;
   color: $gray-40;
-  
+
   &:hover {
     background-color: transparent;
   }
-  
 }

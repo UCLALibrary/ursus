@@ -1,5 +1,5 @@
 <div class='search-results-container'>
- <%= render 'catalog/constraints' %>
+<%= render 'catalog/constraints' unless Flipflop.sinai? %>
   <% url = request.original_url %>
   <% if url.include?('has_model_ssim') && url.include?('Collection') %>
     <div class='search-count-wrapper'>
