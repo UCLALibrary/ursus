@@ -30,17 +30,20 @@
         <header class='document__list-header'>
           <%# link the header to the block access modal%>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-            <%= render 'catalog/index_header_sinai', document: document %>
+            <%= document[:header_index_tesim][0] %>
           </a>
         </header>
         <div class='metadata-block'>
           <dl class='metadata-block__group'>
             <%# TITLE %>
-            <%= render 'catalog/index_title_sinai', document: document %>
+            <dt class="metadata-block__label-key">TITLE</dt>
+            <dd class="metadata-block__label-value"><%= render 'catalog/index_title_sinai', document: document %></dd>
             <%# DATE - LANGUAGE %>
             <%= render 'catalog/index_metadata_sinai', document: document %>
             <%# NAME %>
             <%= render 'catalog/index_name_sinai', document: document %>
+
+            NAMES: <%= document[:names_sim] %>
             <br><br>
             <%= "NOT LOGGED IN" %>
           </dl>
@@ -56,14 +59,15 @@
           <%# link the header to the work by the ark %>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
             <%= link_to index_header_sinai, "/catalog/#{the_ark}" %>
+            <%= document[:header_index_tesim][0] %>
           </a>
         </header>
         <div class='metadata-block'>
           <dl class='metadata-block__group'>
           <h1>LOG-GED IN</h1>
-            <%= render 'catalog/index_title_sinai', document: document %>
-            <%= render 'catalog/index_metadata_sinai', document: document %>
-            <%= render 'catalog/index_name_sinai', document: document %>
+            <%#= render 'catalog/index_title_sinai', document: document %>
+            <%#= render 'catalog/index_metadata_sinai', document: document %>
+            <%#= render 'catalog/index_name_sinai', document: document %>
             <br><br>
             <%= "LOGGED IN" %>
           </dl>
