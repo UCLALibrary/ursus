@@ -148,12 +148,12 @@ class CatalogController < ApplicationController
 
     if Flipflop.sinai?
       config.add_index_field 'header_index_sim', label: 'Header'
-      # config.add_index_field 'title_index_tesim', label: 'Title'
+      # Title descriptive_title_tesim & uniform_title_tesim
+      config.add_index_field 'descriptive_title_tesim'
+      config.add_index_field 'uniform_title_tesim', link_to_facet: 'uniform_title_sim'
       config.add_index_field 'date_created_tesim', label: 'Date'
       config.add_index_field 'human_readable_language_tesim', label: 'Language'
-      config.add_index_field 'names_sim', label: 'Name', link_to_facet: 'names_sim'
-      config.add_index_field 'uniform_title_tesim', link_to_facet: 'uniform_title_sim'
-      config.add_index_field 'descriptive_title_tesim'
+      config.add_index_field 'name_fields_index_tesim', label: 'Name', link_to_facet: 'names_sim'
 
     else
       config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
