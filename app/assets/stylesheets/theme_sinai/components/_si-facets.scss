@@ -11,6 +11,7 @@
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-bottom: 1px solid $gray-10;
 
   @media (min-width: 800px) {
     font-size: $text-24;
