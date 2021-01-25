@@ -4,10 +4,9 @@
     <div id='appliedParams'>
       <h2 class='sr-only'><%= t('blacklight.search.search_constraints_header') %></h2>
       <div class="search-filter-wrapper search-filter-wrapper--sinai">
-        <p>You searched for: </p>
-
+        <p class="filter-group__heading filter-group__heading--sinai">You searched for: </p>
         <%= render_constraints(params) %>
-         <%= render 'catalog/startover' %>
+        <%= render 'catalog/startover' %>
       </div>
 
     </div>
