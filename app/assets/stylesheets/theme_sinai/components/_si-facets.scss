@@ -5,12 +5,13 @@
 }
 
 .facets__navbar-heading--sinai {
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   font-size: $text-20;
   font-family: 'Dosis', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-bottom: 1px solid $gray-10;
 
   @media (min-width: 800px) {
     font-size: $text-24;
@@ -60,7 +61,9 @@
   }
 }
 
-.facet-field__heading--sinai .collapse-toggle[aria-expanded='true'] .facet-field {
+.facet-field__heading--sinai
+.collapse-toggle[aria-expanded='true']
+.facet-field {
   background-color: $sinai-primary;
   border: 1px solid $sinai-primary;
   border-radius: 0;

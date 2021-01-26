@@ -1,35 +1,46 @@
+.search-filter-wrapper--sinai {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+  font-weight: $font-light;
+  flex-direction: column;
+  border-bottom: unset;
+}
+
+.filter-group__heading--sinai {
+  padding-bottom: 0.75rem;
+}
+
 .filter-group__label--sinai {
-  background-color: $sinai-primary;
+  background-color: $white;
 
   &:hover {
-    background-color: $sinai-primary;
+    background-color: $white;
   }
 }
 
-.filter-label-key--sinai {
-  color: $white;
-}
-
 .filter-label-key--sinai::after {
-  color: $white;
   content: '❯';
 }
 
-.filter-label-value--sinai {
-  color: $white;
-}
-
 .filter-label-remove--sinai {
-  color: $white;
-  background-color: $sinai-primary;
+  margin-left: 0.5rem;
+  padding: 0;
+  color: $sinai-primary;
+  background-color: $white;
 
   &:visited {
-    color: $white;
-    background-color: $sinai-primary;
+    color: $sinai-primary;
+    background-color: $white;
   }
 
   &:hover {
     color: $white;
     background-color: #b22222;
+  }
+
+  .remove-icon {
+    font-size: 0.75rem;
+    font-weight: 900;
   }
 }

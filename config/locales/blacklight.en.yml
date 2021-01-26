@@ -6,6 +6,7 @@ en:
     search:
       facets:
         title: 'Browse items'
+      clear_all: 'Clear all'
       zero_results:
         title: 'No results found.'
         modify_search: ''

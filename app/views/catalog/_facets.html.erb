@@ -2,6 +2,7 @@
 
 <!-- SINAI -->
 <% if Flipflop.sinai? %>
+
   <% if has_facet_values? %>
     <div id="facets" class="facets facets-toggleable-md facets-container">
 
@@ -13,6 +14,8 @@
           </svg>
         </button>
       </div>
+
+      <%= render 'catalog/constraints' %>
 
       <div id="facet-panel-collapse" class="facets-collapse collapse facet-field__heading--sinai collapse-toggle--sinai .facet-field__heading--sinai.collapse-toggle[aria-expanded='true']">
         <%= render_facet_partials %>
