@@ -30,20 +30,20 @@
         <header class='document__list-header'>
           <%# link the header to the block access modal%>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-            <%= document[:header_index_tesim][0] %>
+            <%= render 'catalog/index_header_sinai', document: document %>
           </a>
         </header>
         <div class='metadata-block'>
           <dl class='metadata-block__group'>
-            <%# TITLE %>
-            <dt class="metadata-block__label-key">TITLE</dt>
-            <dd class="metadata-block__label-value"><%= render 'catalog/index_title_sinai', document: document %></dd>
+            <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
+            <dt class="metadata-block__label-key metadata-block__label-key--sinai">TITLE</dt>
+            <dd class="metadata-block__label-value metadata-block__label-value--sinai"><%= render 'catalog/index_title_sinai', document: document %></dd>
+
             <%# DATE - LANGUAGE %>
             <%= render 'catalog/index_metadata_sinai', document: document %>
-            <%# NAME %>
-            <%= render 'catalog/index_name_sinai', document: document %>
 
-            NAMES: <%= document[:name_fields_index_tesim] %>
+            <%# NAMES %>
+            <% render 'catalog/index_name_sinai', document: document %>
             <br><br>
             <%= "NOT LOGGED IN" %>
           </dl>
@@ -54,25 +54,23 @@
         <%# link the header to the work by the ark %>
         <% the_ark = CGI.escape document['ark_ssi'] %>
 
-        <header class='document__list-header'>
+        <header class='document__list-header document__list-header--sinai'>
           <%# link the header to the work by the ark %>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-            <%= link_to document[:header_index_tesim][0], "/catalog/#{the_ark}" %>
+            <%= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
           </a>
         </header>
         <div class='metadata-block'>
           <dl class='metadata-block__group'>
-            <%# TITLE %>
-            <dt class="metadata-block__label-key">TITLE</dt>
-            <dd class="metadata-block__label-value"><%= render 'catalog/index_title_sinai', document: document %></dd>
+            <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
+            <dt class="metadata-block__label-key metadata-block__label-key--sinai">TITLE</dt>
+            <dd class="metadata-block__label-value metadata-block__label-value--sinai"><%= render 'catalog/index_title_sinai', document: document %></dd>
 
             <%# DATE - LANGUAGE %>
             <%= render 'catalog/index_metadata_sinai', document: document %>
 
-            <%# NAME %>
-            Namess:<% render 'catalog/index_name_sinai', document: document %>
-
-            <%= document[:author_tesim] %>
+            <%# NAMES %>
+            <% render 'catalog/index_name_sinai', document: document %>
             <br><br>
             <%= "LOGGED IN" %>
           </dl>
