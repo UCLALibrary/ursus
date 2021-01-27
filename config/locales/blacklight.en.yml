@@ -71,7 +71,7 @@ en:
           writing_system_sim: 'Writing system'
           year_isim: 'Date'
         index:
-          date_created_tesim: 'Date Created'
+          date_created_tesim: 'Date'
           date_modified_dtsi: 'Date Modified'
           date_uploaded_dtsi: 'Date Uploaded'
           description_tesim: 'Description'
