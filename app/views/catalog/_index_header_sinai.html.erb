@@ -1,10 +1,10 @@
 <%# SINAI ONLY %>
 
-<% if document[:header_index_tesim].length > 0 %>
+<% if document[:header_index_tesim] %>
   <% header_index = document[:header_index_tesim] %>
    <% header_index.each_with_index do |field, index| %>
-      <% if index + 1 == 1 %>
-        <%= field %> ' | '
+      <% if index == 0 %>
+        <%= field %>&nbsp;|&nbsp;
       <% else %>
         <%= field %>
       <% end %>
