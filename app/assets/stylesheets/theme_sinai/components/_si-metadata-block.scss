@@ -1,8 +1,9 @@
 .metadata-block__label-key--sinai {
   @extend .col-sm-4;
 
+  font-size: 1rem;
   text-align: left;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .metadata-block__label-value--sinai {
@@ -25,4 +26,8 @@
     text-decoration: none;
     color: $sinai-primary;
   }
+}
+
+.metadata-block__group {
+  padding-top: .1rem;
 }
