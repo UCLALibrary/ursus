@@ -1,24 +1,18 @@
 <%# SINAI ONLY %>
 
 <% doc_presenter = index_presenter(document) %>
-<%= sinai_index_name = Ursus::SinaiIndexNameMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_name_terms %>
+<% sinai_index_name = Ursus::SinaiIndexNameMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_name_terms %>
 
 <% if sinai_index_name.length > 0 %>
-  <% concatonated_name_key = "NAME" %>
-  <% concatonated_names = "" %>
 
-  <% sinai_index_name.each do |field_name, field| %>
-    <% name_field = (doc_presenter.field_value field) + ' | ' %>
-    <% concatonated_names << name_field %>
+  <% sinai_index_name.each do |field_name, field| -%>
+    <dt class="metadata-block__label-key metadata-block__label-key--sinai">
+      <!-- KEY -->
+      <%= (render_index_field_label document, field: field_name).tr(':', '') %>
+    </dt>
+    <!-- VALUE -->
+    <dd class="metadata-block__label-value metadata-block__label-value--sinai">
+      <%= doc_presenter.field_value field %>
+    </dd>
   <% end %>
-
-  <% concat_name_values = concatonated_names.delete_suffix(' | ').html_safe %>
-  <dt class="metadata-block__label-key">
-    <!-- KEY -->
-    <%= concatonated_name_key %>
-  </dt>
-  <!-- VALUE -->
-  <dd class="metadata-block__label-value">
-    <%= concat_name_values %>
-  </dd>
 <% end %>
