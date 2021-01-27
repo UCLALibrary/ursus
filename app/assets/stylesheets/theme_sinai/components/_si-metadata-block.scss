@@ -1,13 +1,17 @@
 .metadata-block__label-key--sinai {
   @extend .col-sm-4;
 
-  font-size: 1rem;
+  font-size: .75rem;
   text-align: left;
   font-weight: 300;
 }
 
 .metadata-block__label-value--sinai {
+  font-size: 1rem;
+  font-weight: 300;
   a {
+    font-size: 1rem;
+    font-weight: 300;
     text-decoration: none;
     color: $sinai-primary;
   }
