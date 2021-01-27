@@ -58,6 +58,9 @@
           <%# link the header to the work by the ark %>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
             <%= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
+            <BR><br>
+            Test: <%= link_to (document[:header_index_tesim][0]), "/catalog/#{the_ark}" %>
+             %>
           </a>
         </header>
         <div class='metadata-block'>
