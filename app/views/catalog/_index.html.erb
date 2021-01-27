@@ -27,7 +27,7 @@
         <%# Sinai NOT LOGGED IN %>
         <%# cookies[:request_original_url] = request.original_url %>
 
-        <header class='document__list-header'>
+        <header class='document__list-header document__list-header--sinai'>
           <%# link the header to the block access modal%>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
             <%= render 'catalog/index_header_sinai', document: document %>
@@ -44,8 +44,6 @@
 
             <%# NAMES %>
             <% render 'catalog/index_name_sinai', document: document %>
-            <br><br>
-            <%= "NOT LOGGED IN" %>
           </dl>
         </div>
 
@@ -58,24 +56,21 @@
           <%# link the header to the work by the ark %>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
             <%= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
-            <BR><br>
-            Test: <%= link_to (document[:header_index_tesim][0]), "/catalog/#{the_ark}" %>
-             %>
           </a>
         </header>
         <div class='metadata-block'>
           <dl class='metadata-block__group'>
             <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
             <dt class="metadata-block__label-key metadata-block__label-key--sinai">TITLE</dt>
-            <dd class="metadata-block__label-value metadata-block__label-value--sinai"><%= render 'catalog/index_title_sinai', document: document %></dd>
+            <dd class="metadata-block__label-value metadata-block__label-value--sinai">
+              <%= render 'catalog/index_title_sinai', document: document %>
+            </dd>
 
             <%# DATE - LANGUAGE %>
             <%= render 'catalog/index_metadata_sinai', document: document %>
 
             <%# NAMES %>
-            <% render 'catalog/index_name_sinai', document: document %>
-            <br><br>
-            <%= "LOGGED IN" %>
+            <%= render 'catalog/index_name_sinai', document: document %>
           </dl>
         </div>
       <% end %>
