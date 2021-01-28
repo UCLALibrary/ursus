@@ -9,16 +9,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/mirador@3.0.0/dist/css/mirador-combined.min.css">
-  <script src="https://unpkg.com/mirador@3.0.0/dist/mirador.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://unpkg.com/mirador@2.6.0/dist/css/mirador-combined.min.css">
+  <script src="http://unpkg.com/mirador@3.0.0/dist/mirador.min.js"></script>
 </head>
 
 <body>
   <div id="viewer"></div>
   <script type="text/javascript">
+    var urlParams = {};
+    var urlParts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+      urlParams[key] = value;
+    });
+
     //manifestURL = 'manifest_test.json';
     //manifestURL = 'https://iiif.library.ucla.edu/ark%3A%2F21198%2Fzz002kh3x8/manifest';
-    manifestURL = 'https://iiif.library.ucla.edu/ark%3A%2F21198%2Fz10c6dfr/manifest';
+    //manifestURL = 'https://iiif.library.ucla.edu/ark%3A%2F21198%2Fz10c6dfr/manifest';
+    manifestURL = decodeURIComponent(urlParams["manifest"]);
 
     Mirador.viewer({
       "id": "viewer",
@@ -89,28 +95,12 @@
         height: 200, // height of gallery view thumbnails
         width: null, // width of gallery view thumbnails (or null, to auto-calculate an aspect-ratio appropriate size)
       },
-
-
-
-
-
-
       "layout": "1",
       "buildPath": "https://unpkg.com/mirador@3.0.0/dist/",
       "data": [
         { "manifestUri": manifestURL, 
         "location": "UCLA Library"}
       ],
-
-
-
-
-
-
-
-
-
-
 
       "annotationEndpoint": {
         "name": "Local Storage",
