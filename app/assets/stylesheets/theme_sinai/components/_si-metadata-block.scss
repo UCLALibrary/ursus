@@ -1,17 +1,19 @@
 .metadata-block__label-key--sinai {
   @extend .col-sm-4;
 
-  font-size: .75rem;
+  font-size: $text-12;
   text-align: left;
-  font-weight: 300;
+  font-weight: $font-light;
+  color: $gray-60;
+  background-color: pink;
 }
 
 .metadata-block__label-value--sinai {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: $text-16;
+  font-weight: $font-light;
   a {
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: $text-16;
+    font-weight: $font-light;
     text-decoration: none;
     color: $sinai-primary;
   }
@@ -33,5 +35,5 @@
 }
 
 .metadata-block__group {
-  padding-top: .1rem;
+  padding-top: $text-16;
 }
