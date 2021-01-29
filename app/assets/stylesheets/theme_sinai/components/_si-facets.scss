@@ -62,8 +62,8 @@
 }
 
 .facet-field__heading--sinai
-  .collapse-toggle[aria-expanded='true']
-  .facet-field {
+.collapse-toggle[aria-expanded='true']
+.facet-field {
   background-color: $sinai-primary;
   border: unset;
   //border-radius: 0;
@@ -81,9 +81,11 @@
     &.collapse-toggle[aria-expanded='true'] {
       background-color: $white;
     }
+
     &.collapse-toggle::after {
       color: $black;
     }
+
     a,
     a:active,
     a:visited {
@@ -102,8 +104,8 @@
 }
 
 .facet-field__body--sinai {
-  border: unset;
   padding: 0.25rem 1.25rem 1.25rem 1.75rem;
+  border: unset;
 
   .remove-icon {
     color: $sinai-primary;
@@ -112,6 +114,7 @@
   .facet-label {
     margin-bottom: 0;
   }
+
   a,
   a:active,
   a:visited {
@@ -122,6 +125,7 @@
     text-decoration: underline;
     color: $sinai-primary;
   }
+
   .btn {
     color: $sinai-primary;
     background-color: $sinai-secondary;
@@ -129,12 +133,13 @@
 }
 
 .facet-label--sinai {
+  margin-bottom: 0;
+
   a,
   a:active,
   a:visited {
     color: $sinai-primary;
   }
-  margin-bottom: 0;
 }
 
 .more_facets--sinai {
