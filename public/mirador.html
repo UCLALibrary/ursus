@@ -95,27 +95,6 @@
         height: 200, // height of gallery view thumbnails
         width: null, // width of gallery view thumbnails (or null, to auto-calculate an aspect-ratio appropriate size)
       },
-      "layout": "1",
-      "buildPath": "https://unpkg.com/mirador@3.0.0/dist/",
-      "data": [
-        { "manifestUri": manifestURL, 
-        "location": "UCLA Library"}
-      ],
-
-      "annotationEndpoint": {
-        "name": "Local Storage",
-        "module": "LocalStorageEndpoint"
-      },
-      "windowSettings": {
-        "canvasControls": { // The types of controls available to be displayed on a canvas
-          "imageManipulation": {
-            "manipulationLayer": true,
-            "controls": {
-              "mirror": true
-            }
-          }
-        }
-      }
     });
   </script>
 </body>
