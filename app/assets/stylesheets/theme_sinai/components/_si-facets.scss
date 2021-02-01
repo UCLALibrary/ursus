@@ -34,7 +34,86 @@
 }
 
 .facet-field__heading--sinai {
-  font-weight: 400;
+  font-weight: 300;
+
+  a,
+  a:active,
+  a:visited {
+    color: $black;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $sinai-black;
+  }
+
+  &.collapse-toggle[aria-expanded='true'] {
+    background-color: $white;
+    border: unset;
+    border-radius: 0;
+
+    a,
+    a:active,
+    a:visited,
+    a:hover {
+      color: $black;
+    }
+  }
+}
+
+.facet-field__heading--sinai
+.collapse-toggle[aria-expanded='true']
+.facet-field {
+  background-color: $sinai-primary;
+  border: unset;
+  //border-radius: 0;
+
+  h3 {
+    color: $white;
+  }
+}
+
+.facet-limit-active {
+  .facet-field__heading--sinai {
+    color: $black;
+    background-color: $white;
+
+    &.collapse-toggle[aria-expanded='true'] {
+      background-color: $white;
+    }
+
+    &.collapse-toggle::after {
+      color: $black;
+    }
+
+    a,
+    a:active,
+    a:visited {
+      color: $black;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: $black;
+    }
+  }
+}
+
+.facet-field__heading--sinai.collapse-toggle::after {
+  color: $black;
+}
+
+.facet-field__body--sinai {
+  padding: 0.25rem 1.25rem 1.25rem 1.75rem;
+  border: unset;
+
+  .remove-icon {
+    color: $sinai-primary;
+  }
+
+  .facet-label {
+    margin-bottom: 0;
+  }
 
   a,
   a:active,
@@ -47,59 +126,15 @@
     color: $sinai-primary;
   }
 
-  &.collapse-toggle[aria-expanded='true'] {
-    background-color: $sinai-primary;
-    border: 1px solid $sinai-primary;
-    border-radius: 0;
-
-    a,
-    a:active,
-    a:visited,
-    a:hover {
-      color: $white;
-    }
-  }
-}
-
-.facet-field__heading--sinai
-.collapse-toggle[aria-expanded='true']
-.facet-field {
-  background-color: $sinai-primary;
-  border: 1px solid $sinai-primary;
-  border-radius: 0;
-
-  h3 {
-    color: $white;
-  }
-}
-
-.facet-limit-active {
-  .facet-field__heading--sinai {
-    color: $white;
-    background-color: $sinai-primary;
-
-    &.collapse-toggle[aria-expanded='true'] {
-      background-color: $sinai-primary;
-    }
-  }
-}
-
-.facet-field__heading--sinai.collapse-toggle::after {
-  color: $white;
-}
-
-.facet-field__body--sinai {
   .btn {
     color: $sinai-primary;
     background-color: $sinai-secondary;
   }
-
-  .remove-icon {
-    color: $sinai-primary;
-  }
 }
 
 .facet-label--sinai {
+  margin-bottom: 0;
+
   a,
   a:active,
   a:visited {
