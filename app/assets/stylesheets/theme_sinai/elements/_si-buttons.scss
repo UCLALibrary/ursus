@@ -50,6 +50,10 @@
   color: $sinai-primary;
 }
 
+.btn-underline-sinai--primary:visited:hover {
+  text-decoration: underline;
+}
+
 // .btn-outline-sinai--primary:not(:disabled):not(.disabled).active {
 //   color: $white;
 //   background-color: $sinai-primary;

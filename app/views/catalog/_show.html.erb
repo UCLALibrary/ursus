@@ -1,4 +1,22 @@
-<div class='item-page__metadata-wrapper'>
-  <%= render 'catalog/work_record/primary_metadata', document: document %>
-  <%= render 'catalog/work_record/secondary_metadata', document: document %>
-</div>
+<% if Flipflop.sinai? %>
+  <div class='item-page__metadata-wrapper item-page__metadata-wrapper-results--sinai'>
+    <%= link_back_to_catalog label: 'Back to Search Results', class: 'si-link si-link-search-results' %>
+
+    <%= link_to image_tag('iiif-logo.png', alt: 'IIIF Manifest'), @document[:iiif_manifest_url_ssi], class: 'si-link-iiif' %>
+  </div>
+
+  <div class='item-page__metadata-wrapper title-row-show--siani'>
+    <%= @document[:shelfmark_ssi] %>
+  </div>
+
+  <div class='item-page__metadata-wrapper'>
+    <%= render 'catalog/work_record/primary_metadata', document: document %>
+    <%= render 'catalog/work_record/secondary_metadata', document: document %>
+  </div>
+
+<% else %>
+  <div class='item-page__metadata-wrapper'>
+    <%= render 'catalog/work_record/primary_metadata', document: document %>
+    <%= render 'catalog/work_record/secondary_metadata', document: document %>
+  </div>
+<% end %>

@@ -55,10 +55,17 @@
       <%= render partial: 'shared/header/header_navbar' %>
       <%= render 'catalog/banners/homepage_banner' %>
 
-      <main class="main-content-container container-constrained">
-        <%= content_for(:container_header) %>
-          <%= content_for?(:content) ? yield(:content) : yield %>
-      </main>
+      <% if Flipflop.sinai? && current_search_session && controller.controller_name == 'catalog' && controller.action_name == 'show' %>
+        <main class="main-content-container container-constrained container-constrained__item-page--sinai">
+          <%= content_for(:container_header) %>
+            <%= content_for?(:content) ? yield(:content) : yield %>
+        </main>
+      <% else %>
+        <main class="main-content-container container-constrained">
+          <%= content_for(:container_header) %>
+            <%= content_for?(:content) ? yield(:content) : yield %>
+        </main>
+      <% end %>
 
       <%= render partial: 'shared/footer/footer' %>
       <%= render partial: 'shared/modal' %>
