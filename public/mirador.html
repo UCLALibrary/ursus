@@ -9,13 +9,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/mirador@2.6.0/dist/css/mirador-combined.min.css">
-  <script src="https://unpkg.com/mirador@3.0.0/dist/mirador.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://unpkg.com/mirador@2.6.0/dist/css/mirador-combined.min.css">
+  <script src="http://unpkg.com/mirador@3.0.0/dist/mirador.min.js"></script>
 </head>
 
 <body>
   <div id="viewer"></div>
   <script type="text/javascript">
+    __Zone_disable_IntersectionObserver = true
     var urlParams = {};
     var urlParts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
       urlParams[key] = value;
@@ -69,8 +70,8 @@
           layers: false,
         },
         views: [
-          { key: 'single', behaviors: ['individuals'] },
-          { key: 'gallery', behaviors: ['paged'] },
+          { key: 'single' },
+          { key: 'book', behaviors: ['paged'] },
           { key: 'scroll', behaviors: ['continuous'] },
           { key: 'gallery' },
         ],
@@ -95,6 +96,27 @@
         height: 200, // height of gallery view thumbnails
         width: null, // width of gallery view thumbnails (or null, to auto-calculate an aspect-ratio appropriate size)
       },
+      "layout": "1",
+      "buildPath": "https://unpkg.com/mirador@3.0.0/dist/",
+      "data": [
+        { "manifestUri": manifestURL, 
+        "location": "UCLA Library"}
+      ],
+
+      "annotationEndpoint": {
+        "name": "Local Storage",
+        "module": "LocalStorageEndpoint"
+      },
+      "windowSettings": {
+        "canvasControls": { // The types of controls available to be displayed on a canvas
+          "imageManipulation": {
+            "manipulationLayer": true,
+            "controls": {
+              "mirror": true
+            }
+          }
+        }
+      }
     });
   </script>
 </body>
