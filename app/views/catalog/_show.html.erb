@@ -1,10 +1,19 @@
 <% if Flipflop.sinai? %>
+  <%# --------- Back to Search Results ----- %>
+
   <div class='item-page__metadata-wrapper item-page__metadata-wrapper-results--sinai'>
     <%= link_back_to_catalog label: 'Back to Search Results', class: 'si-link si-link-search-results' %>
+    <%#= link_to image_tag('iiif-logo.png', alt: 'IIIF Manifest'), @document[:iiif_manifest_url_ssi], class: 'si-link-iiif' %>
 
-    <%= link_to image_tag('iiif-logo.png', alt: 'IIIF Manifest'), @document[:iiif_manifest_url_ssi], class: 'si-link-iiif' %>
+    <%# ---------- IIIF & Tooltip ------------ %>
+
+    <div class='iiif-tooltip--sinai'>
+      <%= link_to image_tag('iiif-logo.png', alt: 'IIIF Manifest'), @document[:iiif_manifest_url_ssi], class: 'si-link-iiif' %>
+    </div>
+
   </div>
 
+  <%# ----------- Shelfmark --------------- %>
   <div class='item-page__metadata-wrapper title-row-show--siani'>
     <%= @document[:shelfmark_ssi] %>
   </div>

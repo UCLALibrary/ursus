@@ -35,3 +35,60 @@
 .container-constrained__item-page--sinai {
   margin-top: 1rem;
 }
+
+.title-row-show--siani {
+  font-size: $text-20;
+  font-weight: 500;
+  margin-left: 12px;
+  margin-top: 15px;
+
+  @media (max-width: 767px) {
+    font-size: $text-18;
+  }
+}
+
+
+.iiif-tooltip--sinai.tooltip {
+  position: absolute;
+  width: 106px;
+  height: 25px;
+  line-height: 25px;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  color: $white;
+  background: $black;
+  border: 0px solid $white;
+  border-radius: 4px;
+}
+
+
+
+.iiif-tooltip--sinai:hover::before {
+  content: 'IIIF Manifest URL';
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: max-content;
+  height: 25px;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  color: $white;
+  background: $black;
+  border: 0px solid $white;
+  border-radius: 4px;
+}
+
+// arrow
+.iiif-tooltip--sinai.tooltip:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #FFFFFF transparent;
+    top: -20px;
+    left: 75px;
+}

@@ -19,14 +19,3 @@
     color: $sinai-primary;
   }
 }
-
-.title-row-show--siani {
-  font-size: $text-20;
-  font-weight: 500;
-  margin-left: 12px;
-  margin-top: 40px;
-
-  @media (max-width: 767px) {
-    font-size: $text-18;
-  }
-}
