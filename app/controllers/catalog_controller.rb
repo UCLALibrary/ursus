@@ -106,16 +106,16 @@ class CatalogController < ApplicationController
 
     # SINAI
     if Flipflop.sinai?
-      config.add_facet_field 'genre_sim', sort: 'index'
-      config.add_facet_field 'place_of_origin_sim', sort: 'index', label: 'Place of origin'
-      config.add_facet_field 'year_isim', range: true
-      config.add_facet_field 'human_readable_language_sim', sort: 'index'
-      config.add_facet_field 'writing_system_sim', sort: 'index', label: 'Writing system'
-      config.add_facet_field 'script_sim', sort: 'index', label: 'Script'
-      config.add_facet_field 'features_sim', sort: 'index', label: 'Features'
-      config.add_facet_field 'support_sim', sort: 'index', label: 'Support'
-      config.add_facet_field 'form_sim', sort: 'index', label: 'Form'
-      config.add_facet_field 'names_sim', sort: 'index', label: 'Names'
+      config.add_facet_field 'genre_sim', sort: 'index', limit: 7
+      config.add_facet_field 'place_of_origin_sim', sort: 'index', limit: 7, label: 'Place of origin'
+      config.add_facet_field 'year_isim', limit: 7, range: true
+      config.add_facet_field 'human_readable_language_sim', sort: 'index', limit: 7
+      config.add_facet_field 'writing_system_sim', sort: 'index', limit: 7, label: 'Writing system'
+      config.add_facet_field 'script_sim', sort: 'index', limit: 7, label: 'Script'
+      config.add_facet_field 'features_sim', sort: 'index', limit: 7, label: 'Features'
+      config.add_facet_field 'support_sim', sort: 'index', limit: 7, label: 'Support'
+      config.add_facet_field 'form_sim', sort: 'index', limit: 7, label: 'Form'
+      config.add_facet_field 'names_sim', sort: 'index', limit: 7, label: 'Names'
 
     # URSUS
     else
@@ -144,14 +144,25 @@ class CatalogController < ApplicationController
     # ------------------------------------------------------
     # INDEX PAGE / SEARCH RESULTS
     # solr fields to be displayed in the index search results / list view
-    # The config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
+    # The config.add_index_field ::Solrizer.solr_name('title',  :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
-    config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
-    config.add_index_field 'date_created_tesim', label: 'Date Created'
-    # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
-    config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
-    config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
-    config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+    if Flipflop.sinai?
+      config.add_index_field 'header_index_sim', label: 'Header'
+      # Title descriptive_title_tesim & uniform_title_tesim
+      config.add_index_field 'descriptive_title_tesim'
+      config.add_index_field 'uniform_title_tesim', link_to_facet: 'uniform_title_sim'
+      config.add_index_field 'date_created_tesim', label: 'Date'
+      config.add_index_field 'human_readable_language_tesim', label: 'Language'
+      config.add_index_field 'name_fields_index_tesim', label: 'Name', link_to_facet: 'names_sim'
+
+    else
+      config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
+      config.add_index_field 'date_created_tesim', label: 'Date Created'
+      # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
+      config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
+      config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
+      config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+    end
 
     # ------------------------------------------------------
     # SHOW PAGE / ITEM PAGE / Individual Work (Universal Viewer Page)
