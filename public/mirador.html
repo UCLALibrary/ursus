@@ -10,48 +10,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/mirador@2.6.0/dist/css/mirador-combined.min.css">
-  <script src="https://unpkg.com/mirador@2.6.0/dist/mirador.min.js"></script>
+  <script src="https://unpkg.com/mirador@3.0.0/dist/mirador.min.js"></script>
 </head>
 
 <body>
   <div id="viewer"></div>
   <script type="text/javascript">
-    $(function () {
-      var urlParams = {};
-      var urlParts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-        urlParams[key] = value;
-      });
+    __Zone_disable_IntersectionObserver = true
+    var urlParams = {};
+    var urlParts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+      urlParams[key] = value;
+    });
 
-      manifestURL = decodeURIComponent(urlParams['manifest']);
+    //manifestURL = 'manifest_test.json';
+    //manifestURL = 'https://iiif.library.ucla.edu/ark%3A%2F21198%2Fzz002kh3x8/manifest';
+    //manifestURL = 'https://iiif.library.ucla.edu/ark%3A%2F21198%2Fz10c6dfr/manifest';
+    manifestURL = decodeURIComponent(urlParams["manifest"]);
 
-      myMiradorInstance = Mirador({
-        "id": "viewer",
-        "layout": "1",
-        "buildPath": "https://unpkg.com/mirador@2.6.0/dist/",
-        "data": [
-          { "manifestUri": manifestURL, 
-          "location": "UCLA Library"}
-        ],
-        "windowObjects": [{
-          loadedManifest: manifestURL,
-          viewType: "ImageView",
-          slotAddress: "row1.column1"
-        }],
-        "annotationEndpoint": {
-          "name": "Local Storage",
-          "module": "LocalStorageEndpoint"
+    Mirador.viewer({
+      "id": "viewer",
+      selectedTheme: 'dark',
+      language: 'en', // The default language set in the application
+      availableLanguages: { // All the languages available in the language switcher
+        ar: 'العربية',
+        de: 'Deutsch',
+        en: 'English',
+        fr: 'Français',
+        ja: '日本語',
+        lt: 'Lietuvių',
+        nl: 'Nederlands',
+        'pt-BR': 'Português do Brasil',
+        'zh-CN': '中文(简体)',
+        'zh-TW': '中文(繁體)',
+        it: "Italiano",
+        sr: 'Српски',
+      },
+      window: { //global window defaults
+        allowClose: false, // Configure if windows can be closed or not
+        allowFullscreen: true, // Configure to show a "fullscreen" button in the     WindowTopBar
+        allowMaximize: true, // Configure if windows can be maximized or not
+        allowTopMenuButton: true, // Configure if window view and thumbnail display   menu   are visible or not
+        allowWindowSideBar: true, // Configure if side bar menu is visible or not
+        authNewWindowCenter: 'parent', // Configure how to center a new window created   by   the authentication flow. Options: parent, screen
+        sideBarPanel: 'info', // Configure which sidebar is selected by default.   Options:   info, attribution, canvas, annotations, search
+        defaultSidebarPanelHeight: 201,  // Configure default sidebar height in pixels
+        defaultSidebarPanelWidth: 235, // Configure default sidebar width in pixels
+        defaultView: 'gallery',  // Configure which viewing mode (e.g. single, book,     gallery) for windows to be opened in
+        forceDrawAnnotations: false,
+        hideWindowTitle: false, // Configure if the window title is shown in the   window   title bar or not
+        highlightAllAnnotations: false, // Configure whether to display annotations on   the   canvas by default
+        showLocalePicker: false, // Configure locale picker for multi-lingual metadata
+        sideBarOpen: false, // Configure if the sidebar (and its content panel) is open   by   default
+        panels: { // Configure which panels are visible in WindowSideBarButtons
+          info: true,
+          attribution: true,
+          canvas: true,
+          annotations: true,
+          search: true,
+          layers: false,
         },
-        "windowSettings": {
-          "canvasControls": { // The types of controls available to be displayed on a canvas
-            "imageManipulation": {
-              "manipulationLayer": true,
-              "controls": {
-                "mirror": true
-              }
-            }
-          }
-        }
-      });
+        views: [
+          { key: 'single' },
+          { key: 'book', behaviors: ['paged'] },
+          { key: 'scroll', behaviors: ['continuous'] },
+          { key: 'gallery' },
+        ],
+      },
+      windows: [{
+        loadedManifest: manifestURL,
+        viewType: "ImageView",
+        slotAddress: "row1.column1"
+      }],
+      workspace: {
+        draggingEnabled: true,
+        allowNewWindows: true,
+        showZoomControls: true, // Configure if zoom controls should be displayed by     default
+        type: 'mosaic', // Which workspace type to load by default. Other possible values     are "elastic". If "mosaic" or "elastic" are not selected no worksapce type will be     used.
+        viewportPosition: { // center coordinates for the elastic mode workspace
+          x: 0,
+          y: 0,
+        },
+        width: 5000, // width of the elastic mode's virtual canvas
+      },
+      galleryView: {
+        height: 200, // height of gallery view thumbnails
+        width: null, // width of gallery view thumbnails (or null, to auto-calculate an aspect-ratio appropriate size)
+      },
     });
   </script>
 </body>
