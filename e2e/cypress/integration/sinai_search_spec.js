@@ -23,7 +23,8 @@ describe('Sinai Search', () => {
     cy.get('[id=q]').type('manuscript');
     cy.get('[id=search]').click();
     cy.get('.search-count__heading').contains('Catalog Results');
-    cy.get('.document-position-1 > .document__list-item-wrapper > .document__list-title > a').click();
+    cy.get('#documents > article.document.document__list-item.blacklight-work.document-position-0 > div > span > header > a:nth-child(2)').click();
+    // cy.get('.document-position-1 > .document__list-item-wrapper > .document__list-title > a').click();
     cy.contains('h4','Item Overview');
   });
 
