@@ -5,6 +5,7 @@
 .document__list-title--sinai {
   margin-right: 0;
   margin-left: 2rem;
+  width: -webkit-fill-available;
 
   a:hover {
     color: $sinai-primary;
