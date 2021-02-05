@@ -5,11 +5,22 @@
   font-weight: $font-light;
   text-align: left;
   color: $gray-60;
+
+  @media (min-width: 992px) {
+    padding-left: 100px;
+    background-color: pink;
+  }
+
+  @media (min-width: 1199px) {
+    padding-left: 150px;
+    background-color: pink;
+  }
 }
 
 .metadata-block__label-value--sinai {
   font-size: $text-16;
   font-weight: $font-light;
+  padding-left: 50px;
 
   a {
     font-size: $text-16;
