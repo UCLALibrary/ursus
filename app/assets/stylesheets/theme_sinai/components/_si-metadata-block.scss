@@ -7,7 +7,6 @@
 
 .sinai-index-metadata-block {
   grid-template-columns: 100%;
-  grid-template-rows: 1fr 1fr;
 }
 .blue-2 {
   margin-left: 100px;
@@ -20,10 +19,12 @@
   font-size: $text-18;
   font-weight: 400;
   color: $black;
+  font-size: 1.25rem;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
 }
-.sinai-index-metadata-key{
-  text-transform: uppercase;
-  font-size: $text-14;
+.sinai-index-title{
+  font-size: $text-16;
   font-weight: $font-light;
   text-align: left;
   color: $gray-60;
@@ -32,11 +33,11 @@
 }
 .sinai-index-metadata-value{
   display: flex;
-  font-size: $text-16;
+  font-size: $text-14;
   font-weight: $font-light;
   color: $black;
   a {
-    font-size: $text-16;
+    font-size: $text-14;
     font-weight: $font-light;
     text-decoration: none;
     color: $sinai-primary;
@@ -56,6 +57,13 @@
     text-decoration: none;
     color: $sinai-primary;
   }
+}
+
+img.index-icon--sinai {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  margin-right: 3px;
 }
 
 // --------------------------------

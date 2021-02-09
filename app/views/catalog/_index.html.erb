@@ -63,28 +63,26 @@
       <div class='sinai-index-metadata-block'>
         <header class='sinai-index-header'>
           <%# link the header to the work by the ark %>
-          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">SINAI
-            <%#= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
+          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+            <%= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
           </a>
         </header>
-      </div>
 
-      <div class='sinai-index-metadata-block blue-2'>
-        <div class="sinai-index-metadata">
-          <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
-          <dt class="sinai-index-metadata-key">TITLE</dt>
-          <dd class="sinai-index-metadata-value">
-            <%= render 'catalog/index_title_sinai', document: document %>
-          </dd>
+        <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
+        <%# <dt class="sinai-index-metadata-key">TITLE</dt> %>
+        <div class="sinai-index-title">
+          <%= render 'catalog/index_title_sinai', document: document %>
         </div>
 
         <%# DATE - LANGUAGE %>
-        <%= render 'catalog/index_metadata_sinai', document: document %>
+        <div class="sinai-index-metadata">
+        <%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag("sinai-icons/world-icon.png", class: "index-icon--sinai") %><%= render 'catalog/index_language_sinai', document: document %>
+        </div>
 
         <%# NAMES %>
-        <div class="sinai-index-metadata">
-        <%= render 'catalog/index_name_sinai', document: document %>
-        </div>
+        <span class="sinai-index-metadata">
+          <%= render 'catalog/index_name_sinai', document: document %>
+        </span>
       </div><%# sinai-index-metadata-block %>
 
     </div><%# wrapper %>

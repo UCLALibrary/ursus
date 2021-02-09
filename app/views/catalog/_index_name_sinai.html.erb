@@ -4,17 +4,8 @@
 <% sinai_index_name = Ursus::SinaiIndexNameMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_name_terms %>
 
 <% if sinai_index_name.length > 0 %>
-
   <% sinai_index_name.each do |field_name, field| -%>
-    <div class="sinai-index-metadata">
-      <dt class="sinai-index-metadata-key">
-        <!-- KEY -->
-        <%= (render_index_field_label document, field: field_name).tr(':', '') %>
-      </dt>
-      <!-- VALUE -->
-      <dd class="sinai-index-metadata-value">
-        <%= doc_presenter.field_value field %>
-      </dd>
-    </div>
+    <!-- VALUE -->
+    <%= doc_presenter.field_value field %>
   <% end %>
 <% end %>
