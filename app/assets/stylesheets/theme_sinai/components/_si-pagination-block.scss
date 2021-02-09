@@ -14,13 +14,13 @@
 
   &:hover {
     color: $white;
-    background-color: $sinai-primary;
-    border-color: $sinai-primary;
+    background-color: #5b5b5b;
+    border-color: #5b5b5b;
   }
 }
 
 .pagination__page-item--sinai.active .pagination__page-link--sinai {
   color: $white;
-  background-color: $sinai-primary;
-  border-color: $sinai-primary;
+  background-color: #5b5b5b;
+  border-color: #5b5b5b;
 }
