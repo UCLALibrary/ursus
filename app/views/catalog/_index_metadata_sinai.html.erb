@@ -6,7 +6,6 @@
 <% if sinai_index_metadata.length > 0 %>
 
   <% sinai_index_metadata.each do |field_name, field| -%>
-    <div class="sinai-index-metadata">
       <dt class="sinai-index-metadata-key">
         <!-- KEY -->
         <%= (render_index_field_label document, field: field_name).tr(':', '') %>
@@ -15,7 +14,6 @@
       <dd class="sinai-index-metadata-value">
         <%= doc_presenter.field_value field %>
       </dd>
-    </div>
   <% end %>
 
 <% end %>

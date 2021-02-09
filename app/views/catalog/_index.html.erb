@@ -63,8 +63,8 @@
       <div class='sinai-index-metadata-block'>
         <header class='sinai-index-header'>
           <%# link the header to the work by the ark %>
-          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-            <%= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
+          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">SINAI
+            <%#= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
           </a>
         </header>
       </div>
@@ -82,8 +82,9 @@
         <%= render 'catalog/index_metadata_sinai', document: document %>
 
         <%# NAMES %>
+        <div class="sinai-index-metadata">
         <%= render 'catalog/index_name_sinai', document: document %>
-
+        </div>
       </div><%# sinai-index-metadata-block %>
 
     </div><%# wrapper %>
