@@ -1,81 +1,98 @@
 <!-- SINAI -->
 <% if Flipflop.sinai? %>
   <% doc_presenter = index_presenter(document) %>
+
   <div class="document__list-item-wrapper document__list-item-wrapper--sinai">
     <!-- default partial to display solr document fields in catalog index view -->
 
     <%# THUMBNAIL %>
     <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-        <%# Thumnail NOT logged in %>
-        <% if !cookies[:sinai_authenticated] %>
+      <%# Thumnail NOT logged in %>
+      <% if !cookies[:sinai_authenticated] %>
         <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai-generic">
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
               <%= image_tag("sinai/sinai-generic-thumbnail.png", class: 'document__gallery-thumbnail--sinai-generic') %>
-            </a>
+          </a>
+        </div>
         <%# Thumbnail logged in%>
-        <% else %>
+      <% else %>
         <div class="document__gallery-thumbnail document__gallery-thumbnail--sinai">
           <%= tn %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     <% end %>
     <!-- ----------------- -->
 
-    <span class="document__list-title document__list-title--sinai">
+    <%# <span class="document__list-title document__list-title--sinai"> %>
 
-      <% if !cookies[:sinai_authenticated] %>
-        <%# Sinai NOT LOGGED IN %>
-        <%# cookies[:request_original_url] = request.original_url %>
+    <%# METADATA %>
+    <% if !cookies[:sinai_authenticated] %>
+      <%# Sinai NOT LOGGED IN %>
+      <%# cookies[:request_original_url] = request.original_url %>
 
-        <header class='document__list-header document__list-header--sinai'>
-          <%# link the header to the block access modal%>
-          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-            <%= render 'catalog/index_header_sinai', document: document %>
-          </a>
-        </header>
-        <div class='metadata-block metadata-block__group--sinai'>
-          <dl class='metadata-block__group'>
-            <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
-            <dt class="metadata-block__label-key metadata-block__label-key--sinai">TITLE</dt>
-            <dd class="metadata-block__label-value metadata-block__label-value--sinai"><%= render 'catalog/index_title_sinai', document: document %></dd>
-
-            <%# DATE - LANGUAGE %>
-            <%= render 'catalog/index_metadata_sinai', document: document %>
-
-            <%# NAMES %>
-            <% render 'catalog/index_name_sinai', document: document %>
-          </dl>
+      <div class="wrapper">
+        <div class='sinai-index-metadata-block'>
+          <header class='sinai-index-header'>
+            <%# link the header to the block access modal%>
+            <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+              <%= render 'catalog/index_header_sinai', document: document %>
+            </a>
+          </header>
         </div>
+        <div class='sinai-index-metadata-block blue-2'>
+          <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
+          <div class="sinai-index-metadata">
+            <dt class="sinai-index-metadata-key">TITLE</dt>
+            <dd class="sinai-index-metadata-value"><%= render 'catalog/index_title_sinai', document: document %></dd>
 
-      <% else %>
-        <%# Sinai LOGGED IN %>
-        <%# link the header to the work by the ark %>
-        <% the_ark = CGI.escape document['ark_ssi'] %>
+              <%# DATE - LANGUAGE %>
+              <%= render 'catalog/index_metadata_sinai', document: document %>
 
-        <header class='document__list-header document__list-header--sinai'>
+              <%# NAMES %>
+              <% render 'catalog/index_name_sinai', document: document %>
+          </div>
+        </div>
+      </div><%# wrapper %>
+
+    <% else %>
+      <%# Sinai LOGGED IN %>
+      <%# link the header to the work by the ark %>
+      <% the_ark = CGI.escape document['ark_ssi'] %>
+
+    <div class="wrapper">
+      <div class='sinai-index-metadata-block'>
+        <header class='sinai-index-header'>
           <%# link the header to the work by the ark %>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
             <%= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
           </a>
         </header>
-        <div class='metadata-block'>
-          <dl class='metadata-block__group'>
-            <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
-            <dt class="metadata-block__label-key metadata-block__label-key--sinai">TITLE</dt>
-            <dd class="metadata-block__label-value metadata-block__label-value--sinai">
-              <%= render 'catalog/index_title_sinai', document: document %>
-            </dd>
+      </div>
 
-            <%# DATE - LANGUAGE %>
-            <%= render 'catalog/index_metadata_sinai', document: document %>
-
-            <%# NAMES %>
-            <%= render 'catalog/index_name_sinai', document: document %>
-          </dl>
+      <div class='sinai-index-metadata-block blue-2'>
+        <div class="sinai-index-metadata">
+          <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
+          <dt class="sinai-index-metadata-key">TITLE</dt>
+          <dd class="sinai-index-metadata-value">
+            <%= render 'catalog/index_title_sinai', document: document %>
+          </dd>
         </div>
+
+        <%# DATE - LANGUAGE %>
+        <%= render 'catalog/index_metadata_sinai', document: document %>
+
+        <%# NAMES %>
+        <%= render 'catalog/index_name_sinai', document: document %>
+
+      </div><%# sinai-index-metadata-block %>
+
+    </div><%# wrapper %>
+
+</div><%# if Flipflop.sinai? %>
+
       <% end %>
-    </span>
-  </div>
+    <%# </span> %>
+
 
 <!-- URSUS -->
 <% else %>

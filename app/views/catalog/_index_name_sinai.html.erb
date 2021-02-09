@@ -6,13 +6,15 @@
 <% if sinai_index_name.length > 0 %>
 
   <% sinai_index_name.each do |field_name, field| -%>
-    <dt class="metadata-block__label-key metadata-block__label-key--sinai">
-      <!-- KEY -->
-      <%= (render_index_field_label document, field: field_name).tr(':', '') %>
-    </dt>
-    <!-- VALUE -->
-    <dd class="metadata-block__label-value metadata-block__label-value--sinai">
-      <%= doc_presenter.field_value field %>
-    </dd>
+    <div class="sinai-index-metadata">
+      <dt class="sinai-index-metadata-key">
+        <!-- KEY -->
+        <%= (render_index_field_label document, field: field_name).tr(':', '') %>
+      </dt>
+      <!-- VALUE -->
+      <dd class="sinai-index-metadata-value">
+        <%= doc_presenter.field_value field %>
+      </dd>
+    </div>
   <% end %>
 <% end %>
