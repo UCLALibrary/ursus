@@ -45,11 +45,11 @@
             <dt class="sinai-index-metadata-key">TITLE</dt>
             <dd class="sinai-index-metadata-value"><%= render 'catalog/index_title_sinai', document: document %></dd>
 
-              <%# DATE - LANGUAGE %>
-              <%= render 'catalog/index_metadata_sinai', document: document %>
+            <%# DATE - LANGUAGE %>
+            <%= render 'catalog/index_metadata_sinai', document: document %>
 
-              <%# NAMES %>
-              <% render 'catalog/index_name_sinai', document: document %>
+            <%# NAMES %>
+            <% render 'catalog/index_name_sinai', document: document %>
           </div>
         </div>
       </div><%# wrapper %>
@@ -60,7 +60,7 @@
       <% the_ark = CGI.escape document['ark_ssi'] %>
 
     <div class="sinai-index-metadata-block">
-      
+
         <header class='sinai-index-header'>
           <%# link the header to the work by the ark %>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
@@ -75,13 +75,13 @@
 
         <%# DATE - LANGUAGE %>
         <div class="sinai-index-metadata">
-        <%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag("sinai-icons/world-icon.png", class: "index-icon--sinai") %><%= render 'catalog/index_language_sinai', document: document %>
+        <%= image_tag("sinai-icons/calendar-icon.png", class: "index-calendar-icon--sinai") %><%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag("sinai-icons/world-icon.png", class: "index-world-icon--sinai") %><%= render 'catalog/index_language_sinai', document: document %>
         </div>
 
         <%# NAMES %>
         <div class="sinai-index-metadata">
-        <div class="sinai-index-metadata-value">
-          <%= render 'catalog/index_name_sinai', document: document %>
+          <div class="sinai-index-metadata-value">
+            <%= render 'catalog/index_name_sinai', document: document %>
           </div>
         </div>
     <%# sinai-index-metadata-block %>
