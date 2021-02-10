@@ -21,61 +21,30 @@
         </div>
       <% end %>
     <% end %>
-    <!-- ----------------- -->
-
-    <%# <span class="document__list-title document__list-title--sinai"> %>
+    <%# ----------------------------------------------- %>
 
     <%# METADATA %>
     <% if !cookies[:sinai_authenticated] %>
       <%# Sinai NOT LOGGED IN %>
       <%# cookies[:request_original_url] = request.original_url %>
 
-      <div class="wrapper">
-        <div class='sinai-index-metadata-block'>
-          <header class='sinai-index-header'>
-            <%# link the header to the block access modal%>
-            <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-              <%= render 'catalog/index_header_sinai', document: document %>
-            </a>
-          </header>
-        </div>
-        <div class='sinai-index-metadata-block blue-2'>
-          <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
-          <div class="sinai-index-metadata">
-            <dt class="sinai-index-metadata-key">TITLE</dt>
-            <dd class="sinai-index-metadata-value"><%= render 'catalog/index_title_sinai', document: document %></dd>
+      <div class="metadata-block-index--sinai">
 
-            <%# DATE - LANGUAGE %>
-            <%= render 'catalog/index_metadata_sinai', document: document %>
-
-            <%# NAMES %>
-            <% render 'catalog/index_name_sinai', document: document %>
-          </div>
-        </div>
-      </div><%# wrapper %>
-
-    <% else %>
-      <%# Sinai LOGGED IN %>
-      <%# link the header to the work by the ark %>
-      <% the_ark = CGI.escape document['ark_ssi'] %>
-
-    <div class="sinai-index-metadata-block">
-
-        <header class='sinai-index-header'>
-          <%# link the header to the work by the ark %>
+        <header class='header-index--sinai'>
+          <%# link the header to the block access modal%>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-            <%= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
+            <%= render 'catalog/index_header_sinai', document: document %>
           </a>
         </header>
 
         <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
-        <div class="sinai-index-title">
+        <div class="title-index--sinai">
           <%= render 'catalog/index_title_sinai', document: document %>
         </div>
 
         <%# DATE - LANGUAGE %>
         <div class="sinai-index-metadata">
-        <%= image_tag("sinai-icons/calendar-icon.png", class: "index-calendar-icon--sinai") %><%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag("sinai-icons/world-icon.png", class: "index-world-icon--sinai") %><%= render 'catalog/index_language_sinai', document: document %>
+          <%= image_tag("sinai-icons/calendar-icon.png", class: "index-calendar-icon--sinai") %><%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag("sinai-icons/world-icon.png", class: "index-world-icon--sinai") %><%= render 'catalog/index_language_sinai', document: document %>
         </div>
 
         <%# NAMES %>
@@ -84,14 +53,46 @@
             <%= render 'catalog/index_name_sinai', document: document %>
           </div>
         </div>
-    <%# sinai-index-metadata-block %>
 
-    </div><%# wrapper %>
+      </div><%# metadata-block-index--sinai %>
 
-</div><%# if Flipflop.sinai? %>
+    <%# ----------------------------------------------- %>
+    <% else %>
+      <%# Sinai LOGGED IN %>
+      <%# link the header to the work by the ark %>
+      <% the_ark = CGI.escape document['ark_ssi'] %>
 
-      <% end %>
-    <%# </span> %>
+      <div class="metadata-block-index--sinai">
+
+        <header class='header-index--sinai'>
+          <%# link the header to the work by the ark %>
+          <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+            <%= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
+          </a>
+        </header>
+
+        <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
+        <div class="title-index--sinai">
+          <%= render 'catalog/index_title_sinai', document: document %>
+        </div>
+
+        <%# DATE - LANGUAGE %>
+        <div class="sinai-index-metadata">
+          <%= image_tag("sinai-icons/calendar-icon.png", class: "index-calendar-icon--sinai") %><%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag("sinai-icons/world-icon.png", class: "index-world-icon--sinai") %><%= render 'catalog/index_language_sinai', document: document %>
+        </div>
+
+        <%# NAMES %>
+        <div class="sinai-index-metadata">
+          <div class="sinai-index-metadata-value">
+            <%= render 'catalog/index_name_sinai', document: document %>
+          </div>
+        </div>
+
+      </div><%# metadata-block-index--sinai %>
+    </div><%# document__list-item-wrapper--sinai %>
+  <% end %><%# if Flipflop.sinai? %>
+
+<%# ----------------------------------------------- %>
 
 <!-- URSUS -->
 <% else %>

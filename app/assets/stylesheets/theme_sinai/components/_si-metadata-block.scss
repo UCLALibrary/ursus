@@ -3,16 +3,16 @@
   grid-auto-columns: auto;
 }
 
-.sinai-index-metadata-block {
+.metadata-block-index--sinai {
   margin-right: 0;
   margin-left: 30px;
   width: 100%;
   font-family: 'Roboto', sans-serif;
 }
 
-.sinai-index-header {
+.header-index--sinai {
   a {
-    font-size: $text-28;
+    font-size: $text-20;
     font-weight: $font-bold;
     text-decoration: none;
     color: $sinai-primary;
@@ -34,15 +34,15 @@
   }
 }
 
-.sinai-index-title {
+.title-index--sinai {
   padding-top: 3px;
-  font-size: $text-24;
+  font-size: $text-18;
   font-weight: $font-light;
   text-align: left;
   color: $gray-80;
 
   a {
-    font-size: $text-24;
+    font-size: $text-18;
     font-weight: $font-light;
     text-decoration: none;
     color: $gray-80;
@@ -69,12 +69,12 @@
 }
 
 .sinai-index-metadata-value {
-  font-size: $text-18;
+  font-size: $text-14;
   font-weight: $font-light;
   color: $gray-80;
 
   a {
-    font-size: $text-18;
+    font-size: $text-14;
     font-weight: $font-light;
     text-decoration: none;
     color: $gray-80;
@@ -97,17 +97,17 @@
 }
 
 .index-calendar-icon--sinai {
-  margin-top: 4px;
+  margin-top: 2px;
   margin-right: 8px;
   margin-left: 3px;
-  width: $text-18;
-  height: $text-18;
+  width: $text-14;
+  height: $text-14;
 }
 
 .index-world-icon--sinai {
-  margin-top: 4px;
+  margin-top: 2px;
   margin-right: 3px;
   margin-left: 3px;
-  width: $text-18;
-  height: $text-18;
+  width: $text-14;
+  height: $text-14;
 }
