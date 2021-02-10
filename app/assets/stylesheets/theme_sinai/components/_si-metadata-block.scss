@@ -13,14 +13,14 @@
 .header-index--sinai {
   a {
     font-size: $text-20;
-    font-weight: $font-bold;
+    font-weight: $font-medium;
     text-decoration: none;
     color: $sinai-primary;
   }
 
   a:visited {
     text-decoration: none;
-    color: $gray-60;
+    color: $sinai-primary-lt;
   }
 
   a:hover {
@@ -40,6 +40,8 @@
   font-weight: $font-light;
   text-align: left;
   color: $gray-80;
+  line-height: 1.3rem;
+  padding-bottom: 5px;
 
   a {
     font-size: $text-18;
@@ -69,12 +71,12 @@
 }
 
 .sinai-index-metadata-value {
-  font-size: $text-14;
+  font-size: .9rem;
   font-weight: $font-light;
   color: $gray-80;
 
   a {
-    font-size: $text-14;
+    font-size: .9rem;
     font-weight: $font-light;
     text-decoration: none;
     color: $gray-80;
@@ -98,7 +100,7 @@
 
 .index-calendar-icon--sinai {
   margin-top: 2px;
-  margin-right: 8px;
+  margin-right: 5px;
   margin-left: 3px;
   width: $text-14;
   height: $text-14;
