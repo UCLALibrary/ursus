@@ -25,8 +25,8 @@
 
 .btn-outline-sinai--primary {
   margin-top: 0.75rem;
-  color: #5b5b5b;
-  border-color: #5b5b5b;
+  color: $sinai-primary;
+  border-color: $sinai-primary;
   border-radius: 0.25rem;
 
   .remove-icon {
@@ -37,8 +37,8 @@
 
 .btn-outline-sinai--primary:visited:hover {
   color: $white;
-  background-color: #5b5b5b;
-  border-color: #5b5b5b;
+  background-color: $sinai-primary;
+  border-color: $sinai-primary;
 
   .blacklight-icons svg g,
   .blacklight-icons svg path {
@@ -47,7 +47,7 @@
 }
 
 .btn-outline-sinai--primary:visited {
-  color: #5b5b5b;
+  color: $sinai-primary;
 }
 
 // .btn-outline-sinai--primary:not(:disabled):not(.disabled).active {
