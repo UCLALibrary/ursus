@@ -59,8 +59,8 @@
       <%# link the header to the work by the ark %>
       <% the_ark = CGI.escape document['ark_ssi'] %>
 
-    <div class="wrapper">
-      <div class='sinai-index-metadata-block'>
+    <div class="sinai-index-metadata-block">
+      
         <header class='sinai-index-header'>
           <%# link the header to the work by the ark %>
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
@@ -69,7 +69,6 @@
         </header>
 
         <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
-        <%# <dt class="sinai-index-metadata-key">TITLE</dt> %>
         <div class="sinai-index-title">
           <%= render 'catalog/index_title_sinai', document: document %>
         </div>
@@ -80,10 +79,12 @@
         </div>
 
         <%# NAMES %>
-        <span class="sinai-index-metadata">
+        <div class="sinai-index-metadata">
+        <div class="sinai-index-metadata-value">
           <%= render 'catalog/index_name_sinai', document: document %>
-        </span>
-      </div><%# sinai-index-metadata-block %>
+          </div>
+        </div>
+    <%# sinai-index-metadata-block %>
 
     </div><%# wrapper %>
 
@@ -91,7 +92,6 @@
 
       <% end %>
     <%# </span> %>
-
 
 <!-- URSUS -->
 <% else %>

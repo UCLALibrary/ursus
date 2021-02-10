@@ -6,8 +6,8 @@
 <% if sinai_index_language.length > 0 %>
   <% sinai_index_language.each do |field_name, field| -%>
     <!-- VALUE -->
-    <span class="sinai-index-metadata-value">
+    <div class="sinai-index-metadata-value">
       <%= doc_presenter.field_value field %>
-    </span>
+    </div>
   <% end %>
 <% end %>
