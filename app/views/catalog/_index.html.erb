@@ -48,11 +48,16 @@
         </div>
 
         <%# NAMES %>
-        <div class="sinai-index-metadata">
-          <div class="sinai-index-metadata-value">
-            <%= render 'catalog/index_name_sinai', document: document %>
+        <% name_field = render 'catalog/index_name_sinai', document: document %>
+        <% if name_field.length > 2 %>
+          <div class="sinai-index-metadata">
+            <div class="sinai-index-metadata-value">
+              <div class="sinai-index-metadata">
+                <%= image_tag("sinai-icons/people-icon.svg", class: "index-calendar-icon--sinai") %>
+                <%= name_field %>
+            </div>
           </div>
-        </div>
+        <% end %>
 
       </div><%# metadata-block-index--sinai %>
 
@@ -82,11 +87,16 @@
         </div>
 
         <%# NAMES %>
-        <div class="sinai-index-metadata">
-          <div class="sinai-index-metadata-value">
-            <%= render 'catalog/index_name_sinai', document: document %>
+        <% name_field = render 'catalog/index_name_sinai', document: document %>
+        <% if name_field.length > 2 %>
+          <div class="sinai-index-metadata">
+            <div class="sinai-index-metadata-value">
+              <div class="sinai-index-metadata">
+                <%= image_tag("sinai-icons/people-icon.svg", class: "index-calendar-icon--sinai") %>
+                <%= name_field %>
+            </div>
           </div>
-        </div>
+        <% end %>
 
       </div><%# metadata-block-index--sinai %>
     </div><%# document__list-item-wrapper--sinai %>

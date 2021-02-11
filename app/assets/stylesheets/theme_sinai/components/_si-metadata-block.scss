@@ -12,7 +12,7 @@
 
 .header-index--sinai {
   a {
-    font-size: $text-20;
+    font-size: $text-sinai-19;
     font-weight: $font-medium;
     text-decoration: none;
     color: $sinai-primary;
@@ -36,15 +36,15 @@
 
 .title-index--sinai {
   padding-top: 3px;
-  font-size: $text-18;
+  padding-bottom: 5px;
+  font-size: $text-sinai-16;
   font-weight: $font-light;
   text-align: left;
   color: $gray-80;
   line-height: 1.3rem;
-  padding-bottom: 5px;
 
   a {
-    font-size: $text-18;
+    font-size: $text-sinai-16;
     font-weight: $font-light;
     text-decoration: none;
     color: $gray-80;
@@ -71,12 +71,12 @@
 }
 
 .sinai-index-metadata-value {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: $font-light;
   color: $gray-80;
 
   a {
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: $font-light;
     text-decoration: none;
     color: $gray-80;
