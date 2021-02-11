@@ -1,9 +1,4 @@
-.wrapper {
-  display: grid;
-  grid-auto-columns: auto;
-}
-
-.metadata-block-index--sinai {
+.metadata-wrapper-index--sinai {
   margin-right: 0;
   margin-left: 30px;
   width: 100%;
@@ -66,11 +61,11 @@
   }
 }
 
-.sinai-index-metadata {
+.metadata-block-index--sinai {
   display: flex;
 }
 
-.sinai-index-metadata-value {
+.metadata-value-index--sinai {
   font-size: 0.9rem;
   font-weight: $font-light;
   color: $gray-80;
@@ -99,6 +94,7 @@
 }
 
 .icon-calendar-index--sinai {
+  display: inline;
   margin-top: 2px;
   margin-right: 5px;
   margin-left: 3px;
@@ -107,6 +103,7 @@
 }
 
 .icon-world-index-sinai {
+  display: inline;
   margin-top: 2px;
   margin-right: 3px;
   margin-left: 3px;
@@ -115,6 +112,7 @@
 }
 
 .icon-people-index--sinai {
+  display: inline;
   margin-top: 1px;
   margin-right: 3px;
   margin-left: 3px;

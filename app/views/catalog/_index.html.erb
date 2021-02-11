@@ -28,7 +28,7 @@
       <%# Sinai NOT LOGGED IN %>
       <%# cookies[:request_original_url] = request.original_url %>
 
-      <div class='metadata-block-index--sinai'>
+      <div class='metadata-wrapper-index--sinai'>
 
         <header class='header-index--sinai'>
           <%# link the header to the block access modal%>
@@ -43,21 +43,23 @@
         </div>
 
         <%# DATE - LANGUAGE %>
-        <div class='sinai-index-metadata'>
-          <%= image_tag('sinai-icons/calendar-icon.png', class: 'icon-calendar-index--sinai') %><%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag('sinai-icons/world-icon.png', class: 'icon-world-index-sinai') %><%= render 'catalog/index_language_sinai', document: document %>
+        <div class='metadata-block-index--sinai'>
+          <div class='metadata-block-index--sinai-value'>
+            <%= image_tag('sinai-icons/calendar-icon.png', class: 'icon-calendar-index--sinai') %><%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag('sinai-icons/world-icon.png', class: 'icon-world-index-sinai') %><%= render 'catalog/index_language_sinai', document: document %>
+          </div>
         </div>
 
         <%# NAMES %>
         <% name_field = render 'catalog/index_name_sinai', document: document %>
         <% if name_field.length > 2 %>
-          <div class='sinai-index-metadata'>
-            <div class='sinai-index-metadata-value'>
-                <%= image_tag('sinai-icons/people-icon.svg', class: 'icon-people-index--sinai') %>&nbsp;<%= name_field %>
+          <div class='metadata-block-index--sinai'>
+            <div class='metadata-block-index--sinai-value'>
+                <%= image_tag('sinai-icons/people-icon.svg', class: 'icon-people-index--sinai') %><%= name_field %>
             </div>
           </div>
         <% end %>
 
-      </div><%# metadata-block-index--sinai %>
+      </div><%# metadata-wrapper-index--sinai %>
 
     <%# ----------------------------------------------- %>
 
@@ -66,7 +68,7 @@
       <%# link the header to the work by the ark %>
       <% the_ark = CGI.escape document['ark_ssi'] %>
 
-      <div class='metadata-block-index--sinai'>
+      <div class='metadata-wrapper-index--sinai'>
 
         <header class='header-index--sinai'>
           <%# link the header to the work by the ark %>
@@ -81,21 +83,19 @@
         </div>
 
         <%# DATE - LANGUAGE %>
-        <div class='sinai-index-metadata'>
+        <div class='metadata-block-index--sinai'>
           <%= image_tag('sinai-icons/calendar-icon.png', class: 'icon-calendar-index--sinai') %><%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag('sinai-icons/world-icon.png', class: 'icon-world-index-sinai') %><%= render 'catalog/index_language_sinai', document: document %>
         </div>
-
         <%# NAMES %>
         <% name_field = render 'catalog/index_name_sinai', document: document %>
         <% if name_field.length > 2 %>
-          <div class='sinai-index-metadata'>
-            <div class='sinai-index-metadata-value'>
-                <%= image_tag('sinai-icons/people-icon.svg', class: 'icon-people-index--sinai') %>&nbsp;<%= name_field %>
+          <div class='metadata-block-index--sinai'>
+            <div class='metadata-value-index--sinai'>
+                <%= image_tag('sinai-icons/people-icon.svg', class: 'icon-people-index--sinai') %><%= name_field %>
             </div>
-          </div>
+          </div><%# metadata-block-index--sinai %>
         <% end %>
-
-      </div><%# metadata-block-index--sinai %>
+      </div><%# metadata-wrapper-index--sinai %>
     </div><%# document__list-item-wrapper--sinai %>
   <% end %><%# if Flipflop.sinai? %>
 
