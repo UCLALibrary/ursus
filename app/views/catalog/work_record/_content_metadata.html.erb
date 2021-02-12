@@ -1,5 +1,5 @@
 <% doc_presenter = show_presenter(document) %>
-<% overview = Sinai::ContentMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
+<% overview = Sinai::ContentsMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
 
 <% if overview.length > 0 %>
   <div class='metadata-block'>
