@@ -144,14 +144,25 @@ class CatalogController < ApplicationController
     # ------------------------------------------------------
     # INDEX PAGE / SEARCH RESULTS
     # solr fields to be displayed in the index search results / list view
-    # The config.add_index_field ::Solrizer.solr_name('title', :stored_searchable), label: 'Title', itemprop: 'name', if: false
+    # The config.add_index_field ::Solrizer.solr_name('title',  :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
-    config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
-    config.add_index_field 'date_created_tesim', label: 'Date Created'
-    # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
-    config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
-    config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
-    config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+    if Flipflop.sinai?
+      config.add_index_field 'header_index_sim', label: 'Header'
+      # Title descriptive_title_tesim & uniform_title_tesim
+      config.add_index_field 'descriptive_title_tesim'
+      config.add_index_field 'uniform_title_tesim', link_to_facet: 'uniform_title_sim'
+      config.add_index_field 'date_created_tesim', label: 'Date'
+      config.add_index_field 'human_readable_language_tesim', label: 'Language'
+      config.add_index_field 'name_fields_index_tesim', label: 'Name', link_to_facet: 'names_sim'
+
+    else
+      config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
+      config.add_index_field 'date_created_tesim', label: 'Date Created'
+      # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
+      config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
+      config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
+      config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+    end
 
     # ------------------------------------------------------
     # SHOW PAGE / ITEM PAGE / Individual Work (Universal Viewer Page)

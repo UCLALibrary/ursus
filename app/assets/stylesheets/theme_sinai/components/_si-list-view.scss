@@ -5,6 +5,7 @@
 .document__list-title--sinai {
   margin-right: 0;
   margin-left: 2rem;
+  width: -webkit-fill-available;
 
   a:hover {
     color: $sinai-primary;
@@ -17,4 +18,9 @@
   @media (max-width: 767px) {
     flex-direction: unset;
   }
+}
+
+.document__list-header--sinai {
+  font-size: $text-18;
+  font-weight: 400;
 }

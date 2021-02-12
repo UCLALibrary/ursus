@@ -1,0 +1,18 @@
+<%# SINAI ONLY %>
+<%# Combine fields for the Title value %>
+<%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
+
+<% doc_presenter = index_presenter(document) %>
+<% sinai_index_title = Ursus::SinaiIndexTitleMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_title_terms %>
+
+<% if sinai_index_title.length > 0 %>
+  <% count = 1 %>
+  <% sinai_index_title.each do |field_name, field| -%>
+    <% if count < sinai_index_title.length %>
+      <%= doc_presenter.field_value field %>&nbsp;|
+      <% count += 1 %>
+    <% else %>
+      <%= doc_presenter.field_value field %>
+    <% end %>
+  <% end %>
+<% end %>

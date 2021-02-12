@@ -1,15 +1,18 @@
 .document__gallery-thumbnail--sinai {
   img {
-    width: 100px;
-    height: 100px;
+    width: 190px;
+    height: 190px;
     object-fit: none;
+    font-size: 12px;
   }
 }
 
 .document__gallery-thumbnail--sinai-generic {
+  font-size: 10px;
+
   img {
-    width: 100px;
-    height: 100px;
+    width: 190px;
+    height: 190px;
     object-fit: cover;
   }
 }
