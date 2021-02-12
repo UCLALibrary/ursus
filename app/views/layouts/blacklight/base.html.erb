@@ -51,14 +51,24 @@
       <noscript id='analytics-noscript'><iframe src="https://www.googletagmanager.com/ns.html?id=<%= ENV["GOOGLE_TAG_MGR_ID"] %>"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <% end %>
+
     <div class="site-container" <%= schema_org_markup %>>
       <%= render partial: 'shared/header/header_navbar' %>
       <%= render 'catalog/banners/homepage_banner' %>
 
-      <main class="main-content-container container-constrained">
-        <%= content_for(:container_header) %>
-          <%= content_for?(:content) ? yield(:content) : yield %>
-      </main>
+      <% if Flipflop.sinai? && controller.controller_name == 'catalog' && controller.action_name == 'show' %>
+
+        <main class="main-content-container container-constrained container-constrained__item-page--sinai">
+          <%= content_for(:container_header) %>
+            <%= content_for?(:content) ? yield(:content) : yield %>
+        </main>
+
+      <% else %>
+        <main class="main-content-container container-constrained">
+          <%= content_for(:container_header) %>
+            <%= content_for?(:content) ? yield(:content) : yield %>
+        </main>
+      <% end %>
 
       <%= render partial: 'shared/footer/footer' %>
       <%= render partial: 'shared/modal' %>
