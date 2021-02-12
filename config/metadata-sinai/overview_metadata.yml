@@ -3,13 +3,11 @@
 # Sinai only - Overview
 place_of_origin_tesim: 'Place of origin'
 date_created_tesim: 'Date created'
-abstract: 'Abstract'
 foliation_tesim', label: 'Foliation'
-form_sim: 'Form'
-member_of_collections_ssim: 'Collection' #???
+form_ssi: 'Form'
 human_readable_language_tesim: 'Language'
-writing_system_sim: 'Writing system'
-script_sim: 'Script'
+writing_system_tesim: 'Writing system'
+script_tesim: 'Script'
 repository_tesim: 'Repository'
 human_readable_rights_statement_tesim: 'Rights statement'
 services_contact_ssm: 'Rights contact'

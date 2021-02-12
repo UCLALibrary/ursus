@@ -2,7 +2,7 @@
 
 # Sinai only - Keywords
 genre_tesim: 'Genre'
-features_sim: 'Features'
-place_of_origin_sim: 'Place of origin'
-support_sim: 'Support'
-form_sim: 'Form'
+features_tesim: 'Features'
+place_of_origin_tesim: 'Place of origin'
+support_tesim: 'Support'
+form_ssi: 'Form'
