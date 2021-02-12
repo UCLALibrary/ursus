@@ -1,0 +1,8 @@
+# These fields are in order of display
+
+# Sinai only - Keywords
+genre_tesim: 'Genre'
+features_sim: 'Features'
+place_of_origin_sim: 'Place of origin'
+support_sim: 'Support'
+form_sim: 'Form'

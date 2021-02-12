@@ -1,7 +1,7 @@
 # These fields are in order of display
 
 # Sinai only - Codicology
-extent_tesim: 'Extent'
+extent_tesim: 'Extent' #???
 collation_tesim: 'Collation'
 form_sim: 'Form'
 support_sim: 'Support'
@@ -14,4 +14,4 @@ hand_note_tesim: 'Hand note' #???
 script_sim: 'Script note' #???
 binding_note_ssi: 'Binding note'
 condition_note_ssi: 'Condition note'
-description_tesim: 'Description note' #???
+description_tesim: 'Physical Description note' #???
