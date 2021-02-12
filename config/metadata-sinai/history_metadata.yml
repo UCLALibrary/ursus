@@ -1,0 +1,10 @@
+# These fields are in order of display
+
+# Sinai only - History
+date_created_tesim: 'Date created'
+scribe_tesim: 'Scribe'
+place_of_origin_tesim: 'Place of Origin'
+colophon_tesim: 'Colophon'
+hand_note_tesim: 'Hand note'
+script_sim: 'Script note'
+provenance_tesim: 'Provenance'
