@@ -1,0 +1,18 @@
+extent_tesim: 'Extent'
+dimensions_tesim: 'Dimensions'
+format_tesim: 'Format'
+support_tesim: 'Support'
+medium_tesim: 'Medium'
+page_layout_ssim: 'Page layout'
+binding_note_ssi: 'Binding note'
+condition_note_ssi: 'Condition note'
+collation_tesim: 'Collation'
+foliation_tesim: 'Foliation'
+illustrations_note_tesim: 'Illustrations note'
+form_ssi: 'Form'
+
+# Sinai only
+writing_system_tesim: 'Writing system'
+script_tesim: 'Script'
+hand_note_tesim: 'Hand note' # writing_and_hands_tesim: 'Writing and hands'
+inscription_tesim: 'Inscription'
