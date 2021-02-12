@@ -10,20 +10,16 @@
 <% else %>
   <% if current_search_session && controller.controller_name == 'catalog' && controller.action_name == 'show' %>
 
-<div class='content-container--item-page'>
-<%# PAGINATION %>
-  <div id='appliedParams' class='item-page__pagination-wrapper'>
-  <%= render 'previous_next_doc' if @search_context %>
+    <div class='content-container--item-page'>
+      <%# PAGINATION %>
+      <% if !Flipflop.sinai? %>
+        <div id='appliedParams' class='item-page__pagination-wrapper'>
+          <%= render 'previous_next_doc' if @search_context %>
+          <%= link_back_to_catalog label: 'Back to Search Results', class: 'btn-base btn-base-sm btn-outline-ursus--blue' %>
+        </div>
+      <% end %>
 
-    <% if Flipflop.sinai? %>
-      <%= link_back_to_catalog label: 'Back to Search Results', class: 'btn-base btn-base-sm btn-outline-sinai--primary' %>
-    <% else %>
-      <%= link_back_to_catalog label: 'Back to Search Results', class: 'btn-base btn-base-sm btn-outline-ursus--blue' %>
-    <% end %>
-  </div>
-  <% if Flipflop.sinai? %>
-    <hr class='divider'>
-  <% else %>
+  <% if !Flipflop.sinai? %>
     <hr class='divider divider--ursus'>
   <% end %>
 
