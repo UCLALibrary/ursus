@@ -1,8 +1,0 @@
-<div class='item-page__primary-metadata'>
-  <div hidden>
-  <% document_json = JSON.parse @document.to_json.tr("'", '_') %>
-  <% tn = "<img src=\"" + document_json['thumbnail_url_ss'] + "\" alt=\"" + render_document_alttag(document) + "\" \>" unless document_json['thumbnail_url_ss'].blank? %>
-    <%= tn.html_safe unless document_json['thumbnail_url_ss'].blank? %>
-    </div>
-    <%= render 'catalog/work_record/primary_metadata', document: document %>
-    </div>
