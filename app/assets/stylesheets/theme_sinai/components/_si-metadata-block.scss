@@ -119,3 +119,29 @@
   width: $text-18;
   height: $text-18;
 }
+
+.metadata-block--sinai {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+.metadata-block_title--sinai {
+  text-transform: uppercase;
+  font-size: 14px;
+  width: 33%;
+  letter-spacing: 0.86px;
+}
+.metadata-block_value--sinai {
+  margin-left: auto;
+  width: 66%;
+  span {
+    padding: 2px 4px;
+    border-radius: 0.25rem;
+    border: 1px solid $sinai-black;
+    i {
+      padding-right: 5px;
+    }
+  }
+}

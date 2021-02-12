@@ -1,0 +1,64 @@
+.primary-metadata_tab-container--sinai {
+  display: flex;
+  flex-wrap: wrap; // make sure it wraps
+  @media (max-width: 450px) {
+    display: block;
+  }
+}
+.primary-metadata_tab-container--sinai label {
+  order: 1; // Put the labels first
+  display: block;
+  padding: 0.5rem 0.5rem;
+  margin-right: 0.2rem;
+  cursor: pointer;
+  //background: #90caf9;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background ease 0.2s;
+  border-radius: 0.25rem;
+  border: 1px solid $sinai-secondary;
+  text-transform: uppercase;
+  margin-bottom: unset;
+}
+
+.primary-metadata_tab-container--sinai .primary-metadata_tab-box--sinai {
+  order: 99; // Put the tabs last
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  padding: 1rem;
+  background: $sinai-secondary;
+}
+
+.primary-metadata_tab-container--sinai input[type='radio'] {
+  display: none;
+}
+.primary-metadata_tab-container--sinai input[type='radio']:checked + label {
+  background: $sinai-secondary;
+}
+.primary-metadata_tab-container--sinai
+  input[type='radio']:not(:checked)
+  + label {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.primary-metadata_tab-container--sinai
+  input[type='radio']:checked
+  + label
+  + .primary-metadata_tab-box--sinai {
+  display: block;
+}
+
+@media (max-width: 45em) {
+  .primary-metadata_tab-container--sinai .tab,
+  .primary-metadata_tab-container--sinai label {
+    order: initial;
+  }
+  .primary-metadata_tab-container--sinai label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
+}

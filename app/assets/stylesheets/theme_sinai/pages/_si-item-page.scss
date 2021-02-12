@@ -1,7 +1,16 @@
+.item-page__primary-metadata--sinai {
+  order: 1;
+}
 .item-page__secondary-metadata--sinai {
   @extend .col-lg-5;
 
-  background-color: $sinai-secondary;
+  background-color: $white;
+  order: 3;
+}
+.item-page__metadata-wrapper::before {
+  order: 2;
+  content: '';
+  border-right: 2px solid $sinai-secondary;
 }
 
 .item-page__pagination-widgets--sinai {
@@ -64,3 +73,11 @@
 //     font-size: $text-18;
 //   }
 // }
+.secondary-metadata_container--sinai {
+  margin-top: 2rem;
+}
+@media (max-width: 900px) {
+  .item-page__secondary-metadata--sinai {
+    margin-top: 2em;
+  }
+}
