@@ -1,0 +1,42 @@
+# These fields are in order of display
+
+# Sinai only
+shelfmark_ssi: 'Shelfmark'
+descriptive_title_tesim: 'Descriptive title'
+associated_name_tesim: 'Associated name'
+references_tesim: 'References'
+
+# Titles
+title_tesim: 'Title'
+alternative_title_tesim: 'Alternative Title'
+uniform_title_tesim: 'Uniform title'
+
+# Relators
+creator_tesim: 'Creator'
+author_tesim: 'Author'
+editor_tesim: 'Editor'
+photographer_tesim: 'Photographer'
+architect_tesim: 'Architect'
+illuminator_tesim: 'Illuminator'
+illustrator_tesim: 'Illustrator'
+engraver_tesim: 'Engraver'
+printmaker_tesim: 'Printmaker'
+scribe_tesim: 'Scribe'
+translator_tesim: 'Translator'
+rubricator_tesim: 'Rubricator'
+calligrapher_tesim: 'Calligrapher'
+commentator_tesim: 'Commentator'
+lyricist_tesim: 'Lyricist'
+composer_tesim: 'Composer'
+
+# Publication info
+date_created_tesim: 'Date Created'
+normalized_date_sim: 'Date'
+year_isim: 'Year'
+place_of_origin_tesim: 'Place of Origin'
+publisher_tesim: 'Publisher'
+
+# Other
+human_readable_language_tesim: 'Language'
+member_of_collections_ssim: 'Collection'
+# dlcs_collection_name_tesim: 'Collection (native)'
