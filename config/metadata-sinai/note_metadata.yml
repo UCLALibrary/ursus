@@ -1,0 +1,11 @@
+summary_tesim: 'Summary'
+description_tesim: 'Description'
+caption_tesim: 'Caption'
+contents_note_tesim: 'Contents note'
+colophon_tesim: 'Colophon'
+provenance_tesim: 'Provenance'
+note_tesim: 'Note'
+# toc_tesim: 'Table of Contents' (render_table_of_contents_key / value)
+
+incipit_tesim: 'Incipit'
+explicit_tesim: 'Explicit'
