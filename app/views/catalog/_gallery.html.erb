@@ -1,7 +1,7 @@
 <% if counter = document_counter_with_offset(document_counter) %>
   <div class='metadata-value-index--sinai'>
     <header class="header-index--sinai"> 
-     <%= link_to document['shelfmark_ssi'][0], document, class:"title-index--sinai" %>
+     <%= link_to document['shelfmark_ssi'], document, class:"title-index--sinai" %>
     </header>
     <%= document['date_created_tesim'][0] %> | <%= document['extent_tesim'][0] %>
   </div>
