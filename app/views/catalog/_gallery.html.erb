@@ -1,11 +1,9 @@
 <% if counter = document_counter_with_offset(document_counter) %>
   <div class='metadata-value-index--sinai'>
-    <header class="header-index--sinai">  
-    <a href='#' data-toggle='modal' data-target='#exampleModalCenter'>
-     <%= link_to document[:genre_tesim], document, class:"title-index--sinai" %>
-      </a>
+    <header class="header-index--sinai"> 
+     <%= link_to document['shelfmark_ssi'][0], document, class:"title-index--sinai" %>
     </header>
-    <%= link_to document[:date_created_tesim], document, class:"title-index--sinai" %>
+    <%= document['date_created_tesim'][0] %> | <%= document['extent_tesim'][0] %>
   </div>
 <% end %>
 
