@@ -1,4 +1,13 @@
-<div class="primary-metadata_tab-box--sinai">
-  <h1>Tab Three Content</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-</div>
+<% doc_presenter = show_presenter(document) %>
+<% overview = Sinai::DecorationMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
+
+<% if overview.length > 0 %>
+  <div class="primary-metadata_tab-box--sinai">
+  <% overview.each do |field_name, field| %>
+    <div class="metadata-block--sinai">
+        <span class="metadata-block_title--sinai"> <%= (render_document_show_field_label document, field: field_name).tr(':', '') %></span>  
+        <span class="metadata-block_value--sinai"><%= doc_presenter.field_value field %></span>
+    </div>
+    <% end %>
+  </div>
+<% end %>

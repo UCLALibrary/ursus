@@ -8,7 +8,7 @@
     <h5 class='metadata-block__title'>Notes</h5>
     <dl class='metadata-block__group'>
       <!-- LOOP START -->
-      <% note.each do |field_name, field| -%>
+      <% note.each do |field_name, field| %>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <!-- KEY -->
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>

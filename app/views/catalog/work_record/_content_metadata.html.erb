@@ -1,37 +1,13 @@
-<div class="primary-metadata_tab-box--sinai">
-   <div class="metadata-block--sinai">
-      <span class="metadata-block_title--sinai">Descriptive title</span>  
-      <span class="metadata-block_value--sinai">Psalter and Odes</span>
-   </div>
-   <div class="metadata-block--sinai">
-      <span class="metadata-block_title--sinai">Uniform title</span>  
-      <span class="metadata-block_value--sinai">Psalter and Odes</span>
-   </div>
-   <div class="metadata-block--sinai">
-      <span class="metadata-block_title--sinai">Alternative title</span>  
-      <span class="metadata-block_value--sinai">Psalter and Odes</span>
-   </div>
-   <div class="metadata-block--sinai">
-      <span class="metadata-block_title--sinai">Incipit</span>  
-      <span class="metadata-block_value--sinai">Psalter and Odes</span>
-   </div>
-   <div class="metadata-block--sinai">
-      <span class="metadata-block_title--sinai">Explicit</span>  
-      <span class="metadata-block_value--sinai">Psalter and Odes</span>
-   </div>
-   <div class="metadata-block--sinai">
-      <span class="metadata-block_title--sinai">Author</span>  
-      <span class="metadata-block_value--sinai">Psalter and Odes</span>
-   </div>
-   <div class="metadata-block--sinai">
-      <span class="metadata-block_title--sinai">Associated name</span>  
-      <span class="metadata-block_value--sinai">Psalter and Odes</span>
-   </div>
-   <div class="metadata-block--sinai">
-      <span class="metadata-block_title--sinai">CONTENTS NOTE</span>  
-      <span class="metadata-block_value--sinai">Contents not goes here - sometimes there isn’t a
-      contents note - sometimes they are long - mostly
-      they are two to three sentences long, so would
-      take up anywhere from 3 to 10 lines maybe?</span>
-   </div>
-</div>
+<% doc_presenter = show_presenter(document) %>
+<% overview = Sinai::ContentsMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
+
+<% if overview.length > 0 %>
+  <div class="primary-metadata_tab-box--sinai">
+  <% overview.each do |field_name, field| %>
+    <div class="metadata-block--sinai">
+        <span class="metadata-block_title--sinai"> <%= (render_document_show_field_label document, field: field_name).tr(':', '') %></span>  
+        <span class="metadata-block_value--sinai"><%= doc_presenter.field_value field %></span>
+    </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,76 +1,10 @@
 <% if Flipflop.sinai? %>
   <div class='item-page__secondary-metadata item-page__secondary-metadata--sinai'>
-  <h2 class="metadata-block__title">Item Overview</h2>
-  <div class="secondary-metadata_container--sinai">
-  <div class="metadata-block--sinai">
-          <div class="metadata-block_title--sinai">Keywords</div>
-          <div class="metadata-block_value--sinai">
-            <span><i class="fa fa-tag"></i>Codex</span>
-              <span><i class="fa fa-tag"></i>Turkish</span></div>
-        </div>
-  <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">Place of origin</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Date</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Abstract</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Foliation</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Form</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Collection</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Language</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Writing system</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Script</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Repository</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Rights statement</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        <div class="metadata-block--sinai">
-          <span class="metadata-block_title--sinai">
-Rights contact</span>
-          <span class="metadata-block_value--sinai">Psalter and Odes</span>
-        </div>
-        </div>
-    <%#= render 'catalog/work_record/find_this_item_metadata', document: document %>
-
-    <%#= render 'catalog/work_record/access_condition_metadata', document: document %>
+    <h2 class="metadata-block__title">Item Overview</h2>
+    <div class="secondary-metadata_container--sinai">
+      <%= render 'catalog/work_record/keyword_metadata', document: document %>
+      <%= render 'catalog/work_record/item_overview_metadata', document: document %>
+    </div>
   </div>
 <% else %>
   <div class='item-page__secondary-metadata item-page__secondary-metadata--ursus'>
