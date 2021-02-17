@@ -2,7 +2,7 @@
 <span class="sr-only"><%= t('blacklight.search.per_page.title') %></span>
 <div id="per_page-dropdown" class="search-widget__dropdown">
 <% if Flipflop.sinai? %>
-  <button type="button" class="btn-base btn-outline-sinai--light dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+  <button type="button" class="btn-base btn-outline-sinai--light dropdown-toggle search-sort--sinai " data-toggle="dropdown" aria-expanded="false">
     <%= t(:'blacklight.search.per_page.button_label', count: current_per_page) %> <span class="caret"></span>
   </button>
 <% else %>

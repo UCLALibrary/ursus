@@ -10,10 +10,10 @@
     </div>
   <% else %>
     <div class='search-count-wrapper'>
-      <h2 class='search-count__heading'>
+      <h2 class='search-count__heading search-count__heading--sinai'>
         <%= @response['response'].dig(:numFound) %> Catalog Results
       </h2>
-      <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %>
+      <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper search-widgets-wrapper--sinai" %>
     </div>
   <% end %>
   <hr class='divider'>

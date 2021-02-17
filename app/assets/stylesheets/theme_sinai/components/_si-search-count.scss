@@ -4,3 +4,17 @@
     stroke: $sinai-primary;
   }
 }
+
+.search-count__heading--sinai {
+  font-size: $text-sinai-20;
+  font-weight: $font-light;
+
+  @media (max-width: 575px) {
+    font-size: $text-16;
+  }
+}
+
+.search-sort--sinai {
+  font-size: $text-14;
+  font-weight: $font-light;
+}
