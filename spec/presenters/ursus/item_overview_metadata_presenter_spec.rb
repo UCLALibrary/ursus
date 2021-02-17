@@ -52,7 +52,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
 
   context 'with a solr document containing overview metadata' do
     describe '#terms' do
-      it 'returns the Title Key' do
+      it 'returns the Sinai Title Key' do
         expect(config['title_tesim'].to_s).to eq('Title')
       end
 

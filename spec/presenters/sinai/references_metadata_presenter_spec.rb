@@ -19,16 +19,16 @@ RSpec.describe Sinai::ReferencesMetadataPresenter do
 
   context 'with a solr document containing references metadata' do
     describe '#terms' do
-      it 'returns the Title Key' do
+      it 'returns the References Key' do
         expect(config['references_tesim'].to_s).to eq('References')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Other version(s) Key' do
         expect(config['other_versions_tesim'].to_s).to eq('Other version(s)')
       end
-      
+
     end
-  
+
     describe "#references_terms terms" do
       let(:all) { presenter_object.references_terms.keys.length }
       let(:missing) { presenter_object_missing_items.references_terms.keys.length }

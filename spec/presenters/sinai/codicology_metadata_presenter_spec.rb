@@ -34,55 +34,55 @@ RSpec.describe Sinai::CodicologyMetadataPresenter do
 
   context 'with a solr document containing codicology metadata' do
     describe '#terms' do
-      it 'returns the Title Key' do
+      it 'returns the Extent Key' do
         expect(config['extent_tesim'].to_s).to eq('Extent')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Collation Key' do
         expect(config['collation_tesim'].to_s).to eq('Collation')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Form Key' do
         expect(config['form_sim'].to_s).to eq('Form')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Support Key' do
         expect(config['support_tesim'].to_s).to eq('Support')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Writing system Key' do
         expect(config['writing_system_tesim'].to_s).to eq('Writing system')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Script Key' do
         expect(config['script_tesim'].to_s).to eq('Script')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Page layout Key' do
         expect(config['page_layout_ssim'].to_s).to eq('Page layout')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Foliation note Key' do
         expect(config['foliation_tesim'].to_s).to eq('Foliation note')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Hand note Key' do
         expect(config['hand_note_tesim'].to_s).to eq('Hand note')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Binding note Key' do
         expect(config['binding_note_tesim'].to_s).to eq('Binding note')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Condition note Key' do
         expect(config['condition_note_tesim'].to_s).to eq('Condition note')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Physical Description note Key' do
         expect(config['description_tesim'].to_s).to eq('Physical Description note')
       end
     end
-  
+
     describe "#codicology_terms terms" do
       let(:all) { presenter_object.codicology_terms.keys.length }
       let(:missing) { presenter_object_missing_items.codicology_terms.keys.length }

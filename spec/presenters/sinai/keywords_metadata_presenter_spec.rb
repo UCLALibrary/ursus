@@ -24,28 +24,27 @@ RSpec.describe Sinai::KeywordsMetadataPresenter do
 
   context 'with a solr document containing keywords metadata' do
     describe '#terms' do
-      it 'returns the Title Key' do
+      it 'returns the Genre Key' do
         expect(config['genre_tesim'].to_s).to eq('Genre')
       end
-      
-      it 'returns the Title Key' do
-        expect(config['features_tesim'].to_s).to eq('Features')
-      end
-      
-      it 'returns the Title Key' do
-        expect(config['place_of_origin_tesim'].to_s).to eq('Place of Origin')
-      end
-      
-      it 'returns the Title Key' do
-        expect(config['support_tesim'].to_s).to eq('Support')
-      end
-      
-      it 'returns the Title Key' do
-        expect(config['form_ssi'].to_s).to eq('Form')
+
+      it 'returns the Genre Key' do
+        expect(config['features_tesim'].to_s).to eq('Genre')
       end
 
+      it 'returns the Place of Origin Key' do
+        expect(config['place_of_origin_tesim'].to_s).to eq('Place of Origin')
+      end
+
+      it 'returns the Support Key' do
+        expect(config['support_tesim'].to_s).to eq('Support')
+      end
+
+      it 'returns the Form Key' do
+        expect(config['form_ssi'].to_s).to eq('Form')
+      end
     end
-  
+
     describe "#keywords_terms terms" do
       let(:all) { presenter_object.keywords_terms.keys.length }
       let(:missing) { presenter_object_missing_items.keywords_terms.keys.length }

@@ -28,39 +28,39 @@ RSpec.describe Sinai::ContentsMetadataPresenter do
 
   context 'with a solr document containing contents metadata' do
     describe '#terms' do
-      it 'returns the Title Key' do
+      it 'returns the Descriptive title Key' do
         expect(config['descriptive_title_tesim'].to_s).to eq('Descriptive title')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Uniform title Key' do
         expect(config['uniform_title_tesim'].to_s).to eq('Uniform title')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Alternative title Key' do
         expect(config['alternative_title_tesim'].to_s).to eq('Alternative title')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Incipit Key' do
         expect(config['incipit_tesim'].to_s).to eq('Incipit')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Explicit Key' do
         expect(config['explicit_tesim'].to_s).to eq('Explicit')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Author Key' do
         expect(config['author_tesim'].to_s).to eq('Author')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Associated Name Key' do
         expect(config['associated_name_tesim'].to_s).to eq('Associated Name')
       end
-      
+
       it 'returns the Title Key' do
         expect(config['contents_note_tesim'].to_s).to eq('Contents note')
       end
     end
-  
+
     describe "#contents_terms terms" do
       let(:all) { presenter_object.contents_terms.keys.length }
       let(:missing) { presenter_object_missing_items.contents_terms.keys.length }

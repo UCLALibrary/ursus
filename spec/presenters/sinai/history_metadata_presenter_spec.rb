@@ -26,35 +26,35 @@ RSpec.describe Sinai::HistoryMetadataPresenter do
 
   context 'with a solr document containing history metadata' do
     describe '#terms' do
-      it 'returns the Title Key' do
+      it 'returns the Date created Key' do
         expect(config['date_created_tesim'].to_s).to eq('Date created')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Scribe Key' do
         expect(config['scribe_tesim'].to_s).to eq('Scribe')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Place of Origin Key' do
         expect(config['place_of_origin_tesim'].to_s).to eq('Place of Origin')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Colophon Key' do
         expect(config['colophon_tesim'].to_s).to eq('Colophon')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Hand note Key' do
         expect(config['hand_note_tesim'].to_s).to eq('Hand note')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Script note Key' do
         expect(config['script_tesim'].to_s).to eq('Script note')
       end
-      
-      it 'returns the Title Key' do
+
+      it 'returns the Provenance Key' do
         expect(config['provenance_tesim'].to_s).to eq('Provenance')
       end
     end
-  
+
     describe "#history_terms terms" do
       let(:all) { presenter_object.history_terms.keys.length }
       let(:missing) { presenter_object_missing_items.history_terms.keys.length }
