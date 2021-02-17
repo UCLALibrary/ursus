@@ -53,7 +53,7 @@
 }
 
 // SHELFMARK - Once the tabs are included on the item page, delete this
-.title-row-show--siani {
+/* .title-row-show--siani {
   margin-top: 15px;
   margin-left: 12px;
   font-size: $text-24;
@@ -62,19 +62,19 @@
   @media (max-width: 767px) {
     font-size: $text-20;
   }
-}
+} */
 
 // SHELFMARK - Once the tabs are included on the item page, uncomment this
-// .title-row-show--siani {
-//   font-size: $text-20;
-//   font-weight: 500;
-//   margin-left: 12px;
-//   margin-top: 15px;
+.title-row-show--siani {
+  font-size: $text-20;
+  font-weight: 500;
+  margin-left: 12px;
+  margin-top: 15px;
 
-//   @media (max-width: 767px) {
-//     font-size: $text-18;
-//   }
-// }
+  @media (max-width: 767px) {
+    font-size: $text-18;
+  }
+}
 .secondary-metadata_container--sinai {
   margin-top: 2rem;
 }
