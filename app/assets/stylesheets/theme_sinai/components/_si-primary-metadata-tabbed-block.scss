@@ -5,49 +5,50 @@
     display: block;
   }
 }
+
 .primary-metadata_tab-container--sinai label {
-  order: 1; // Put the labels first
   display: block;
-  padding: 0.5rem 0.5rem;
   margin-right: 0.2rem;
-  cursor: pointer;
+  margin-bottom: unset;
+  padding: 0.5rem;
   //background: #90caf9;
   font-size: 1rem;
   font-weight: 500;
-  transition: background ease 0.2s;
-  border-radius: 0.25rem;
   border: 1px solid $sinai-secondary;
+  border-radius: 0.25rem;
+  transition: background ease 0.2s;
+  order: 1; // Put the labels first
+  cursor: pointer;
   text-transform: uppercase;
-  margin-bottom: unset;
 }
 
 .primary-metadata_tab-container--sinai .primary-metadata_tab-box--sinai {
-  order: 99; // Put the tabs last
-  flex-grow: 1;
-  width: 100%;
   display: none;
   padding: 1rem;
+  width: 100%;
+  background: $sinai-secondary;
+  order: 99; // Put the tabs last
+  flex-grow: 1;
+}
+
+.primary-metadata_tab-container--sinai input {
+  display: none;
+}
+
+.primary-metadata_tab-container--sinai input:checked + label {
   background: $sinai-secondary;
 }
 
-.primary-metadata_tab-container--sinai input[type='radio'] {
-  display: none;
-}
-.primary-metadata_tab-container--sinai input[type='radio']:checked + label {
-  background: $sinai-secondary;
-}
-.primary-metadata_tab-container--sinai
-  input[type='radio']:not(:checked)
-  + label {
+.primary-metadata_tab-container--sinai input:not(:checked) + label {
   &:hover {
     text-decoration: underline;
   }
 }
 
 .primary-metadata_tab-container--sinai
-  input[type='radio']:checked
-  + label
-  + .primary-metadata_tab-box--sinai {
+input:checked
++ label
++ .primary-metadata_tab-box--sinai {
   display: block;
 }
 
@@ -56,9 +57,10 @@
   .primary-metadata_tab-container--sinai label {
     order: initial;
   }
+
   .primary-metadata_tab-container--sinai label {
-    width: 100%;
-    margin-right: 0;
     margin-top: 0.2rem;
+    margin-right: 0;
+    width: 100%;
   }
 }

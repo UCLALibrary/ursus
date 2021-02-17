@@ -5,7 +5,7 @@
     <% tn = "<img src=\"" + document_json['thumbnail_url_ss'] + "\" alt=\"" + render_document_alttag(document) + "\" \>" unless document_json['thumbnail_url_ss'].blank? %>
       <%= tn.html_safe unless document_json['thumbnail_url_ss'].blank? %>
     </div>
-    
+
     <div class="primary-metadata_tab-container--sinai">
       <input type="radio" name="tabs" id="tabone" checked="checked">
       <label for="tabone">Content</label>
@@ -37,4 +37,3 @@
     <%= render 'catalog/work_record/keyword_metadata', document: document %>
   </div>
 <% end %>
-
