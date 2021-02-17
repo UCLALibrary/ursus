@@ -149,4 +149,9 @@
       padding-right: 5px;
     }
   }
+
+  a:hover {
+    text-decoration: underline;
+    color: $sinai-primary;
+  }
 }
