@@ -6,11 +6,9 @@
     <%#= link_to image_tag('iiif-logo.png', alt: 'IIIF Manifest'), @document[:iiif_manifest_url_ssi], class: 'si-link-iiif' %>
 
     <%# ---------- IIIF & Tooltip ------------ %>
-
     <div class='si-link-iiif'>
-      <div class='iiif-tooltip--sinai'><%= link_to image_tag('iiif-logo.png', alt: 'IIIF Manifest'), @document[:iiif_manifest_url_ssi], class: 'si-link-iiif' %></div>
+      <div class='iiif-tooltip--sinai' data-toggle="tooltip" data-placement="bottom" data-html="true" title="IIIF Manifest URL"><%= link_to image_tag('iiif-logo.png', alt: 'IIIF Manifest'), @document[:iiif_manifest_url_ssi], class: 'si-link-iiif' %></div>
     </div>
-
   </div>
 
   <%# ----------- Shelfmark --------------- %>
@@ -29,3 +27,9 @@
     <%= render 'catalog/work_record/secondary_metadata', document: document %>
   </div>
 <% end %>
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
