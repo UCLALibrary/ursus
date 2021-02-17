@@ -1,11 +1,14 @@
-<% if counter = document_counter_with_offset(document_counter) %>
-  <div class='metadata-value-index--sinai'>
-    <header class="header-index--sinai"> 
-     <%= link_to document['shelfmark_ssi'], document, class:"title-index--sinai" %>
-    </header>
-    <%= document['date_created_tesim'][0] %> | <%= document['extent_tesim'][0] %>
-  </div>
+<% if Flipflop.sinai? %>
+  <% if counter = document_counter_with_offset(document_counter) %>
+        <header class="header-index--sinai"> 
+         <%= link_to document['genre_tesim'][0], document %>
+        </header>
+        <div class = "title-index--sinai">
+          <%= document['date_created_tesim'][0] %> | <%= document['extent_tesim'][0] %>
+        </div>
+    <% end %>
+<% else %>
+  <% if counter = document_counter_with_offset(document_counter) %>
+    <%= link_to_document(document, truncate(index_presenter(document).label(document_show_link_field(document)), length: 150, separator: ' '), counter: counter) %>
+  <% end %>
 <% end %>
-
-
-<a href='#' data-toggle='modal' data-target='#exampleModalCenter'>
