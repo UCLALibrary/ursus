@@ -8,7 +8,7 @@ module Sinai
       @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata-sinai/history_metadata.yml')))
     end
 
-    def overview_terms
+    def history_terms
       @document.slice(*@config.keys)
     end
   end

@@ -3,7 +3,7 @@
 # Sinai only - Overview
 place_of_origin_tesim: 'Place of origin'
 date_created_tesim: 'Date created'
-foliation_tesim', label: 'Foliation'
+foliation_tesim: 'Foliation'
 form_ssi: 'Form'
 human_readable_language_tesim: 'Language'
 writing_system_tesim: 'Writing system'

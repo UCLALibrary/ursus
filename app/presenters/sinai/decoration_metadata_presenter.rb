@@ -8,7 +8,7 @@ module Sinai
       @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata-sinai/decoration_metadata.yml')))
     end
 
-    def overview_terms
+    def decoration_terms
       @document.slice(*@config.keys)
     end
   end

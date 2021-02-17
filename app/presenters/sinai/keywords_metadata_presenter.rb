@@ -8,7 +8,7 @@ module Sinai
       @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata-sinai/keywords_metadata.yml')))
     end
 
-    def overview_terms
+    def keywords_terms
       @document.slice(*@config.keys)
     end
   end
