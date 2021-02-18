@@ -26,7 +26,6 @@ RSpec.describe Sinai::ReferencesMetadataPresenter do
       it 'returns the Other version(s) Key' do
         expect(config['other_versions_tesim'].to_s).to eq('Other version(s)')
       end
-
     end
 
     describe "#references_terms terms" do

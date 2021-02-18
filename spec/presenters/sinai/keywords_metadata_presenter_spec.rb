@@ -28,8 +28,8 @@ RSpec.describe Sinai::KeywordsMetadataPresenter do
         expect(config['genre_tesim'].to_s).to eq('Genre')
       end
 
-      it 'returns the Genre Key' do
-        expect(config['features_tesim'].to_s).to eq('Genre')
+      it 'returns the Features Key' do
+        expect(config['features_tesim'].to_s).to eq('Features')
       end
 
       it 'returns the Place of Origin Key' do
