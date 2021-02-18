@@ -6,6 +6,7 @@
 }
 
 .header-index--sinai {
+
   a {
     font-size: $text-sinai-19;
     font-weight: $font-medium;
@@ -118,4 +119,30 @@
   margin-left: 3px;
   width: $text-18;
   height: $text-18;
+}
+
+.header-gallery--sinai {
+  display: flex;
+  justify-content: center;
+  a {
+    font-size: $text-sinai-19;
+    font-weight: $font-medium;
+    text-decoration: none;
+    color: $sinai-primary;
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: $sinai-primary-lt;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $sinai-primary;
+  }
+
+  a:active {
+    text-decoration: none;
+    color: $gray-80;
+  }
 }
