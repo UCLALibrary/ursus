@@ -11,9 +11,9 @@
   <% else %>
     <div class='search-count-wrapper'>
       <h2 class='search-count__heading'>
-        <%= @response['response'].dig(:numFound) %> Catalog Results
+        <span class="search-count__results-found"><%= @response['response'].dig(:numFound) %></span> <span class="search-count__catalog-results ">Catalog Results</span>
       </h2>
-      <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %>
+      <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper search-widgets-wrapper--sinai" %>
     </div>
   <% end %>
   <hr class='divider'>
