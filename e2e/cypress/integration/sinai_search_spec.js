@@ -1,9 +1,9 @@
 /// <reference types="Cypress" />
-beforeEach(() => {
-  cy.visit(Cypress.env('SINAI_BASE_URL') + '/catalog');
-});
-
 describe('Sinai Search', () => {
+  beforeEach(() => {
+    cy.visit(Cypress.env('SINAI_BASE_URL') + '/catalog');
+  });
+
   it('Search Blank', () => {
     cy.get('[id=search]').click();
     cy.contains('span', 'You searched for:').should('not.exist');
@@ -24,7 +24,7 @@ describe('Sinai Search', () => {
     cy.get('[id=search]').click();
     cy.get('.search-count__heading').contains('Catalog Results');
     cy.get('.document-position-0 > .document__list-item-wrapper > .document__gallery-thumbnail > a > img').click();
-    cy.contains('h4','Item Overview');
+    cy.contains('h4', 'Item Overview');
   });
 
   it('Search Shelfmark Found', () => {
