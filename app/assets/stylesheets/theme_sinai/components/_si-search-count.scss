@@ -5,16 +5,11 @@
   }
 }
 
-.search-count__heading--sinai {
+.search-count__results-found {
   font-size: $text-sinai-20;
   font-weight: $font-light;
-
-  @media (max-width: 575px) {
-    font-size: $text-16;
-  }
 }
 
-.search-sort--sinai {
-  font-size: $text-14;
+.search-count__catalog-results {
   font-weight: $font-light;
 }
