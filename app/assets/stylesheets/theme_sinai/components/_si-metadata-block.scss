@@ -122,36 +122,70 @@
 
 .metadata-block--sinai {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
   flex-wrap: wrap;
   margin: 1rem;
 }
 
 .metadata-block_title--sinai {
-  width: 33%;
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.86px;
 }
 
 .metadata-block_value--sinai {
   display: flex;
-  margin-left: auto;
-  width: 66%;
   flex-wrap: wrap;
+  font-weight: 300;
 
   span {
-    padding: 2px 4px;
+    margin: 5px;
+    padding: 5px 6px;
+    font-size: 0.9rem;
     border: 1px solid $sinai-black;
-    border-radius: 0.25rem;
+    border-radius: 0.7rem;
 
     i {
       padding-right: 5px;
     }
+
+    a {
+      text-decoration: none;
+      color: $sinai-black;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: $sinai-black;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: $sinai-black;
+    }
+
+    a:active {
+      text-decoration: none;
+      color: $sinai-black;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $sinai-primary;
   }
 
   a:hover {
     text-decoration: underline;
+    color: $sinai-primary;
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: #bb583a;
+  }
+
+  a:active {
+    text-decoration: none;
     color: $sinai-primary;
   }
 }

@@ -216,7 +216,6 @@ class CatalogController < ApplicationController
 
     # IF SINAI ?
     config.add_show_field 'explicit_tesim', label: 'Explicit'
-    config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim'
     config.add_show_field 'incipit_tesim', label: 'Incipit'
     config.add_show_field 'inscription_tesim', label: 'Inscription'
     config.add_show_field 'script_tesim', label: 'Script', link_to_facet: 'script_sim'
@@ -236,7 +235,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'format_tesim', label: 'Format'
     # 'Book format'
     config.add_show_field 'medium_tesim', label: 'Medium'
-    config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim'
     config.add_show_field 'extent_tesim', label: 'Extent'
     config.add_show_field 'dimensions_tesim', label: 'Dimensions'
     config.add_show_field 'page_layout_ssim', label: 'Page layout'
@@ -245,12 +243,23 @@ class CatalogController < ApplicationController
     config.add_show_field 'collation_tesim', label: 'Collation'
     config.add_show_field 'foliation_tesim', label: 'Foliation'
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note'
-    config.add_show_field 'form_ssi', label: 'Form', link_to_facet: 'form_sim'
+    
     config.add_show_field 'hand_note_tesim', limit: 7, label: 'Hand note' # 'Writing and hands'
 
-    # Keywords
+    
     config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim'
-    config.add_show_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_sim'
+    # Keywords
+    if Flipflop.sinai?
+      config.add_show_field 'form_ssi', label: 'Form', link_to_facet: 'form_sim', separator_options: {}
+      config.add_show_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_sim', separator_options: {}
+      config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim', separator_options: {}
+      config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim', separator_options: {}
+    else
+      config.add_show_field 'form_ssi', label: 'Form', link_to_facet: 'form_sim'
+      config.add_show_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_sim'
+      config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim'
+      config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim'
+    end
     config.add_show_field 'subject_tesim', label: 'Subject', link_to_facet: 'subject_sim'
     config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim'
     config.add_show_field 'subject_topic_tesim', label: 'Subject topic'
