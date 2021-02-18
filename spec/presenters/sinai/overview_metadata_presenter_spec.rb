@@ -4,10 +4,8 @@ require 'rails_helper'
 RSpec.describe Sinai::OverviewMetadataPresenter do
   let(:solr_doc) do
     {
-      'place_of_origin_tesim' => 'Place of origin',
       'date_created_tesim' => 'Date created',
       'foliation_tesim' => 'Foliation',
-      'form_ssi' => 'Form',
       'human_readable_language_tesim' => 'Language',
       'writing_system_tesim' => 'Writing system',
       'script_tesim' => 'Script',
@@ -18,10 +16,8 @@ RSpec.describe Sinai::OverviewMetadataPresenter do
   end
   let(:solr_doc_missing_items) do
     {
-      'place_of_origin_tesim' => 'Place of origin',
       'date_created_tesim' => 'Date created',
       'foliation_tesim' => 'Foliation',
-      'form_ssi' => 'Form',
       'human_readable_language_tesim' => 'Language'
     }
   end
@@ -31,9 +27,6 @@ RSpec.describe Sinai::OverviewMetadataPresenter do
 
   context 'with a solr document containing overview metadata' do
     describe '#terms' do
-      it 'returns the Place of origin Key' do
-        expect(config['place_of_origin_tesim'].to_s).to eq('Place of origin')
-      end
 
       it 'returns the Date created Key' do
         expect(config['date_created_tesim'].to_s).to eq('Date created')
@@ -41,10 +34,6 @@ RSpec.describe Sinai::OverviewMetadataPresenter do
 
       it 'returns the Foliation Key' do
         expect(config['foliation_tesim'].to_s).to eq('Foliation')
-      end
-
-      it 'returns the Form Key' do
-        expect(config['form_ssi'].to_s).to eq('Form')
       end
 
       it 'returns the Language Key' do
@@ -77,7 +66,7 @@ RSpec.describe Sinai::OverviewMetadataPresenter do
       let(:missing) { presenter_object_missing_items.overview_terms.keys.length }
 
       it "returns existing keys" do
-        expect(all).to eq 10
+        expect(all).to eq 8
         expect(config.length).to eq all
       end
 

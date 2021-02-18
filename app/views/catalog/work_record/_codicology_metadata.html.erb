@@ -1,5 +1,5 @@
 <% doc_presenter = show_presenter(document) %>
-<% overview = Sinai::CodicologyMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
+<% overview = Sinai::CodicologyMetadataPresenter.new(document: doc_presenter.fields_to_render).codicology_terms %>
 
 <% if overview.length > 0 %>
   <input type="radio" name="tabs" id="tabtwo">

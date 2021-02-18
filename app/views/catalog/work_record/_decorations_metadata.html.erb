@@ -1,11 +1,11 @@
 <% doc_presenter = show_presenter(document) %>
-<% overview = Sinai::DecorationMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
+<% decorations = Sinai::DecorationMetadataPresenter.new(document: doc_presenter.fields_to_render).decoration_terms %>
 
-<% if overview.length > 0 %>
+<% if decorations.length > 0 %>
   <input type="radio" name="tabs" id="tabfour">
   <label for="tabfour">Decorations</label>
   <div class="primary-metadata_tab-box--sinai">
-  <% overview.each do |field_name, field| %>
+  <% decorations.each do |field_name, field| %>
     <div class="metadata-block--sinai">
         <span class="metadata-block_title--sinai"> <%= (render_document_show_field_label document, field: field_name).tr(':', '') %></span>
         <span class="metadata-block_value--sinai"><%= doc_presenter.field_value field %></span>

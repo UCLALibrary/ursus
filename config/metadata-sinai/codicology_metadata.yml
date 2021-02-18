@@ -3,8 +3,6 @@
 # Sinai only - Codicology
 extent_tesim: 'Extent'
 collation_tesim: 'Collation'
-form_sim: 'Form'
-support_tesim: 'Support'
 writing_system_tesim: 'Writing system'
 script_tesim: 'Script'
 page_layout_ssim: 'Page layout'
