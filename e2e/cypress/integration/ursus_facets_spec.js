@@ -1,8 +1,9 @@
-beforeEach(() => {
-  cy.visit(Cypress.env('baseUrl'));
-});
 
 describe('Facets', () => {
+  beforeEach(() => {
+    cy.visit(Cypress.env('baseUrl'));
+  });
+
   it('Subject', () => {
     cy.visit('/');
     cy.contains('a', 'Subject').click({ force: true });
