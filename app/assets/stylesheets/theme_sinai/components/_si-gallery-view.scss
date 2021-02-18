@@ -1,3 +1,8 @@
+.document__gallery-item--sinai {
+  // Note, bc of the way our sass compiles, classes in the .document__gallery-item base class will override these values. This is fine for now bc that class doesn't use the xl breakpoint. Hopefully we'll have the sinai and ursus codebases separated before we need to do anything else.
+  @extend .col-xl-3;
+}
+
 .document__gallery-thumbnail--sinai {
   img {
     width: 190px;
