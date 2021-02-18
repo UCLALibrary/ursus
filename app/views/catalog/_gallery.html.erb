@@ -1,7 +1,7 @@
 <% if Flipflop.sinai? %>
   <% if counter = document_counter_with_offset(document_counter) %>
     <header class="header-gallery--sinai">
-      <%= link_to document['genre_tesim'][0], document %>
+      <%= link_to document['shelfmark_ssi'], document %>
     </header>
     <div class="metadata-block-index--sinai">
       <%= image_tag('sinai-icons/calendar-icon.png', class: 'icon-calendar-index--sinai') %>
