@@ -381,7 +381,7 @@ class CatalogController < ApplicationController
           pf: ''
         }
       end
-      config.add_search_field('toc_tesim contents_note_tesim', label: 'Table of Contents') do |field|
+      config.add_search_field('toc_tesim contents_note_tesim', label: 'Contents') do |field|
         field.solr_parameters = {
           qf: 'toc_tesim contents_note_tesim',
           pf: ''

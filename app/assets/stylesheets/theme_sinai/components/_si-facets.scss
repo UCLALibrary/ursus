@@ -1,34 +1,34 @@
 .facets__navbar--sinai {
+
   @media (max-width: 991px) {
-    background-color: $sinai-primary;
+
   }
 }
 
 .facets__navbar-heading--sinai {
+  color: $sinai-primary;
   padding-bottom: 1.5rem;
   font-size: $text-20;
   font-family: 'Dosis', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 1px solid $gray-10;
 
   @media (min-width: 800px) {
     font-size: $text-24;
   }
 
   @media (max-width: 991px) {
-    color: $white;
+    color: $sinai-primary;
   }
 }
 
 @media (max-width: 991px) {
   .facets__svg-icon--sinai {
-    stroke: $white;
+    stroke: $sinai-primary;
     stroke-width: 0.05rem;
 
     path {
-      fill: $white;
+      fill: $sinai-primary;
     }
   }
 }

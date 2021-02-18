@@ -27,4 +27,21 @@
 
 .site-searchbar__search-icon--sinai .btn {
   font-size: $text-14;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.input-group--sinai {
+  border: 1px solid $sinai-grey;
+  border-radius: 0.25rem;
+}
+
+.custom-select--sinai {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.input-group > .custom-select--sinai {
+  width: auto;
+  flex: 0 1 auto;
 }
