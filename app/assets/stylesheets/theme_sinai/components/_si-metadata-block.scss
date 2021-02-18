@@ -66,6 +66,11 @@
   display: flex;
 }
 
+.metadata-block-gallery--sinai {
+  display: flex;
+  justify-content: center;
+}
+
 .metadata-value-index--sinai {
   font-size: 0.9rem;
   font-weight: $font-light;
