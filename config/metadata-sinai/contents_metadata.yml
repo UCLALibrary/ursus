@@ -1,0 +1,11 @@
+# These fields are in order of display
+
+# Sinai only - Contents
+descriptive_title_tesim: 'Descriptive title'
+uniform_title_tesim: 'Uniform title'
+alternative_title_tesim: 'Alternative title'
+incipit_tesim: 'Incipit'
+explicit_tesim: 'Explicit'
+author_tesim: 'Author'
+associated_name_tesim: 'Associated Name'
+contents_note_tesim: 'Contents note'
