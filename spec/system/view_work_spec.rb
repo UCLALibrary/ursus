@@ -17,7 +17,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
   it 'displays the metadata' do
     visit solr_document_path(id)
 
-    expect(page).to have_selector('.item-page__primary-metadata')
+    expect(page).to have_selector('.item-page__metadata-wrapper')
     expect(page).to have_selector('.item-page__secondary-metadata')
     expect(page).to have_content 'The Title of my Work'
     expect(page).to have_content 'DESCRIPTION Description 1'
@@ -63,7 +63,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
     expect(page).to have_content 'Powell Library'
     expect(page).to have_content 'Film Still'
     expect(page).to have_content 'Mom & Dad'
-    expect(page.html).to match(/<img src="http/)
+    expect(page.html).to match(/<img src=&quot;http:/)
   end
 
   context 'license' do
