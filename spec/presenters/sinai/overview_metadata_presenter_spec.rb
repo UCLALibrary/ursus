@@ -27,7 +27,6 @@ RSpec.describe Sinai::OverviewMetadataPresenter do
 
   context 'with a solr document containing overview metadata' do
     describe '#terms' do
-
       it 'returns the Date created Key' do
         expect(config['date_created_tesim'].to_s).to eq('Date created')
       end
