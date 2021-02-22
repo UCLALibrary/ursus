@@ -126,9 +126,6 @@
 }
 
 .header-gallery--sinai {
-  display: flex;
-  justify-content: center;
-  
   a {
     font-size: $text-sinai-19;
     font-weight: $font-medium;
@@ -157,4 +154,10 @@
   font-weight: $font-medium;
   text-decoration: none;
   color: $sinai-primary;
+}
+
+.metadata-value-gallery--sinai {
+  font-size: 0.9rem;
+  font-weight: $font-light;
+  color: $gray-80;
 }

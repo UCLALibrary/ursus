@@ -8,12 +8,16 @@
         <div class="caption document__gallery-item-text-wrapper document__gallery-item-text-wrapper--sinai">
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
             <header class="header-gallery-unauthenticated--sinai">
-            <%= document['shelfmark_ssi'] %>
+              <% if document['shelfmark_ssi'] %>
+                <%= link_to document['shelfmark_ssi'], document %>
+              <% else %>
+                <%= link_to Placeholder, document %>
+              <% end %>
             </header>
           </a>
-            <div class="metadata-block-index--sinai">
+            <div class="metadata-block-gallery--sinai">
+              <div class="metadata-value-gallery--sinai">
               <%= image_tag('sinai-icons/calendar-icon.png', class: 'icon-calendar-index--sinai') %>
-              <div class="metadata-value-index--sinai">
                 <%= document['date_created_tesim'][0] %> &nbsp; | &nbsp; <%= document['extent_tesim'][0] %>
               </div>
             </div>

@@ -1,12 +1,16 @@
 <% if Flipflop.sinai? %>
   <% if counter = document_counter_with_offset(document_counter) %>
     <header class="header-gallery--sinai">
-      <%= link_to document['shelfmark_ssi'], document %>
+      <% if document['shelfmark_ssi'] %>
+        <%= link_to document['shelfmark_ssi'], document %>
+      <% else %>
+        <%= link_to 'Placeholder', document %>
+      <% end %>
     </header>
-    <div class="metadata-block-index--sinai">
+    <div class="metadata-block-gallery--sinai">
+      <div class="metadata-value-gallery--sinai">
       <%= image_tag('sinai-icons/calendar-icon.png', class: 'icon-calendar-index--sinai') %>
-      <div class="metadata-value-index--sinai">
-        <%= document['date_created_tesim'][0] %> &nbsp; | &nbsp; <%= document['extent_tesim'][0] %>
+      <%= document['date_created_tesim'][0] %> &nbsp; | &nbsp; <%= document['extent_tesim'][0] %>
       </div>
     </div>
   <% end %>
