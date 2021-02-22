@@ -32,7 +32,8 @@
     padding-top: 0.5rem;
     padding-right: 0.45rem;
     padding-bottom: 0.5rem;
-    background-color: $gray-10;
+    //background-color: $gray-10;
+    background-color: pink;
 
     .navbar-toggler {
       padding-right: 0;
@@ -53,7 +54,11 @@
 
 // Facets Navbar Icon
 .facets-toggleable-md .navbar-toggler {
-  display: none;
+   display: block;
+
+  @media (max-width: 991px) {
+    display: block;
+  }
 }
 
 .facets-toggleable-md .facets-collapse {
