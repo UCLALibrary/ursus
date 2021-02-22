@@ -149,30 +149,6 @@
   }
 }
 
-.header-gallery-unauthenticated--sinai {
-  a {
-    font-size: $text-sinai-19;
-    font-weight: $font-medium;
-    text-decoration: none;
-    color: $sinai-primary;
-  }
-
-  a:visited {
-    text-decoration: none;
-    color: $sinai-primary-lt;
-  }
-
-  a:hover {
-    text-decoration: underline;
-    color: $sinai-primary;
-  }
-
-  a:active {
-    text-decoration: none;
-    color: $gray-80;
-  }
-}
-
 .metadata-value-gallery--sinai {
   font-size: 0.9rem;
   font-weight: $font-light;
