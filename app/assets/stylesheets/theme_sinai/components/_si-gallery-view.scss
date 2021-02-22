@@ -23,6 +23,11 @@
 }
 
 .document__gallery-item-text-wrapper--sinai {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  
   a:hover {
     color: $sinai-primary;
   }
@@ -47,3 +52,4 @@
     padding: 0;
   }
 }
+
