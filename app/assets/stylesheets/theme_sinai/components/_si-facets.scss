@@ -1,16 +1,16 @@
-.browse-items-block--sinai {
-  margin-bottom: 30px;
+.facets-container--sinai {
+  margin-bottom: 2.25rem;
 }
 
 .facets__navbar-heading--sinai {
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
-  color: $sinai-primary;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.625rem;
   font-size: $text-20;
   font-family: 'Dosis', sans-serif;
   font-weight: 400;
+  color: $sinai-primary;
+  flex-direction: row;
   text-transform: uppercase;
 
   @media (min-width: 800px) {
@@ -28,6 +28,7 @@
     stroke-width: 0.05rem;
     margin-top: -8px;
     margin-left: 15px;
+
     path {
       fill: $sinai-primary;
     }

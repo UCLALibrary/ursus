@@ -23,7 +23,6 @@
       <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
       <%= text_field_tag :q, params[:q], class: "search-q q form-control form-control--sinai site-searchbar__query-field", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
 
-
     <% else %>
       <% placeholder_text = t('blacklight.search.form.search.placeholder') %>
       <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
