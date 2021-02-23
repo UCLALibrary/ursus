@@ -32,8 +32,7 @@
     padding-top: 0.5rem;
     padding-right: 0.45rem;
     padding-bottom: 0.5rem;
-    //background-color: $gray-10;
-    background-color: pink;
+    background-color: $gray-10;
 
     .navbar-toggler {
       padding-right: 0;
@@ -59,6 +58,9 @@
   @media (max-width: 991px) {
     display: block;
   }
+}
+.arrow {
+margin-bottom: 50px;
 }
 
 .facets-toggleable-md .facets-collapse {

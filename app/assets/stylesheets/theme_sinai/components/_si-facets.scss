@@ -1,11 +1,26 @@
 .facets__navbar--sinai {
+  align-items: flex-start;
 
   @media (max-width: 991px) {
-
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
   }
 }
 
+.browse-items--sinai {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: aquamarine;
+  margin-bottom: 0px;
+}
+
 .facets__navbar-heading--sinai {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   color: $sinai-primary;
   padding-bottom: 1.5rem;
   font-size: $text-20;
@@ -26,7 +41,8 @@
   .facets__svg-icon--sinai {
     stroke: $sinai-primary;
     stroke-width: 0.05rem;
-
+    margin-top: -8px;
+    margin-left: 15px;
     path {
       fill: $sinai-primary;
     }
@@ -108,7 +124,6 @@
   padding: 0.25rem 1.25rem 1.25rem 1.75rem;
   max-height: 300px;
   border: unset;
-
 
   .remove-icon {
     color: $sinai-primary;
