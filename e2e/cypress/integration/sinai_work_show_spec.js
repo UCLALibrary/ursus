@@ -5,7 +5,7 @@ describe('Sinai Work show pages', () => {
     cy.percySnapshot();
   });
 
-  it('MSinai Syriac 45', () => {
+  it('Sinai Syriac 45', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL') + '/catalog/' + encodeURIComponent('ark:/21198/z1zs40v7'));
     cy.contains('div.title-row-show--siani', 'Sinai Syriac 45');
     //cy.get('.item-page__title')

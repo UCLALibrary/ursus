@@ -8,7 +8,7 @@
       <% keyword.each do |field_name, field| %>
         <% keyword_terms = doc_presenter.field_value field %>
         <% keyword_terms.each do |keyword_term| %>
-          <span><i class="fa fa-tag"></i><%= keyword_term %></span>
+          <span><%= keyword_term %></span>
         <% end %>
       <% end %>
       </div>

@@ -13,7 +13,7 @@
   padding: 0.5rem;
   //background: #90caf9;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   border: 1px solid $sinai-secondary;
   border-radius: 0.25rem;
   transition: background ease 0.2s;
@@ -37,12 +37,6 @@
 
 .primary-metadata_tab-container--sinai input:checked + label {
   background: $sinai-secondary;
-}
-
-.primary-metadata_tab-container--sinai input:not(:checked) + label {
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .primary-metadata_tab-container--sinai

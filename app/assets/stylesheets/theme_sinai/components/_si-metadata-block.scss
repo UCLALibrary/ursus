@@ -138,11 +138,12 @@
   font-weight: 300;
 
   span {
-    margin: 5px;
-    padding: 5px 6px;
+    margin: 5px 5px 5px 0;
+    padding: 3px 10px;
     font-size: 0.9rem;
-    border: 1px solid $sinai-black;
-    border-radius: 0.7rem;
+    background-color: #0b3954;
+    //border: 1px solid $sinai-black;
+    //border-radius: 0.7rem;
 
     i {
       padding-right: 5px;
@@ -150,22 +151,22 @@
 
     a {
       text-decoration: none;
-      color: $sinai-black;
+      color: $white;
     }
 
     a:hover {
-      text-decoration: underline;
-      color: $sinai-black;
+      text-decoration: none;
+      color: $white;
     }
 
     a:visited {
       text-decoration: none;
-      color: $sinai-black;
+      color: $white;
     }
 
     a:active {
       text-decoration: none;
-      color: $sinai-black;
+      color: $white;
     }
   }
 
