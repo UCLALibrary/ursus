@@ -6,10 +6,18 @@
           <%= image_tag("sinai/sinai-generic-thumbnail.png") %>
         </a>
         <div class="caption document__gallery-item-text-wrapper document__gallery-item-text-wrapper--sinai">
+        <header class="header-gallery--sinai">
           <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-            <%= document['title_tesim'][0] %>
-            <%#= render_document_partials document, blacklight_config.view_config(:gallery).partials, document_counter: document_counter %>
+            <%= document['shelfmark_ssi'] %>
           </a>
+        </header>
+            <div class="metadata-block-gallery--sinai">
+              <div class="metadata-value-gallery--sinai">
+              <%= image_tag('sinai-icons/calendar-icon.png', class: 'icon-calendar-index--sinai') %>
+                <%= document['date_created_tesim'][0] %> &nbsp; | &nbsp; <%= document['extent_tesim'][0] %>
+              </div>
+            </div>
+            <%#= render_document_partials document, blacklight_config.view_config(:gallery).partials, document_counter: document_counter %>
           <%# cookies[:request_original_url] = request.original_url %>
         </div>
       <% else %>

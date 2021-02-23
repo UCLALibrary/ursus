@@ -65,6 +65,11 @@
   display: flex;
 }
 
+.metadata-block-gallery--sinai {
+  display: flex;
+  justify-content: center;
+}
+
 .metadata-value-index--sinai {
   font-size: 0.9rem;
   font-weight: $font-light;
@@ -118,6 +123,36 @@
   margin-left: 3px;
   width: $text-18;
   height: $text-18;
+}
+
+.header-gallery--sinai {
+  a {
+    font-size: $text-sinai-19;
+    font-weight: $font-medium;
+    text-decoration: none;
+    color: $sinai-primary;
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: $sinai-primary-lt;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $sinai-primary;
+  }
+
+  a:active {
+    text-decoration: none;
+    color: $gray-80;
+  }
+}
+
+.metadata-value-gallery--sinai {
+  font-size: 0.9rem;
+  font-weight: $font-light;
+  color: $gray-80;
 }
 
 .metadata-block--sinai {
