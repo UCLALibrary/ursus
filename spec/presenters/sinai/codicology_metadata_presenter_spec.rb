@@ -6,6 +6,8 @@ RSpec.describe Sinai::CodicologyMetadataPresenter do
     {
       'extent_tesim' => 'Extent',
       'collation_tesim' => 'Collation',
+      'form_ssi' => 'Form',
+      'support_tesim' => 'Support',
       'writing_system_tesim' => 'Writing system',
       'script_tesim' => 'Script',
       'page_layout_ssim' => 'Page layout',
@@ -20,6 +22,8 @@ RSpec.describe Sinai::CodicologyMetadataPresenter do
     {
       'extent_tesim' => 'Extent',
       'collation_tesim' => 'Collation',
+      'form_sim' => 'Form',
+      'support_tesim' => 'Support',
       'writing_system_tesim' => 'Writing system',
       'script_tesim' => 'Script'
     }
@@ -36,6 +40,14 @@ RSpec.describe Sinai::CodicologyMetadataPresenter do
 
       it 'returns the Collation Key' do
         expect(config['collation_tesim'].to_s).to eq('Collation')
+      end
+
+      it 'returns the Form Key' do
+        expect(config['form_ssi'].to_s).to eq('Form')
+      end
+
+      it 'returns the Support Key' do
+        expect(config['support_tesim'].to_s).to eq('Support')
       end
 
       it 'returns the Writing system Key' do
@@ -76,7 +88,7 @@ RSpec.describe Sinai::CodicologyMetadataPresenter do
       let(:missing) { presenter_object_missing_items.codicology_terms.keys.length }
 
       it "returns existing keys" do
-        expect(all).to eq 10
+        expect(all).to eq 12
         expect(config.length).to eq all
       end
 
