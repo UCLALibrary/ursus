@@ -1,20 +1,5 @@
-.facets__navbar--sinai {
-  align-items: flex-start;
-
-  @media (max-width: 991px) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    
-  }
-}
-
-.browse-items--sinai {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  background-color: aquamarine;
-  margin-bottom: 0px;
+.browse-items-block--sinai {
+  margin-bottom: 30px;
 }
 
 .facets__navbar-heading--sinai {
