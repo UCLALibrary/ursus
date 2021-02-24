@@ -38,12 +38,12 @@ describe('Search', () => {
     cy.visit('/');
     cy.contains('a', 'Resource Type').click();
     cy.contains('a', 'text').click({ force: true });
-    cy.get('[title="text"]');
+    cy.get('[title="text"]',{ timeout: 100000 });
     cy.get(
       '.document-position-0 > .document__list-header > .document__list-title > a'
     ).click({ force: true });
     cy.contains('a', 'text').click();
-    cy.contains('span', 'Resource Type');
+    cy.get('.filter-label-key',{ timeout: 100000 }).contains('Resource Type');
     cy.get('[title=text]').contains('text');
     cy.percySnapshot();
   });
@@ -56,7 +56,7 @@ describe('Search', () => {
       '.document-position-0 > .document__list-header > .document__list-title > a'
     ).click({ force: true });
     cy.contains('a', 'still image').click();
-    cy.contains('span', 'Genre');
+    cy.get('.filter-label-key',{ timeout: 100000 }).contains('Genre');
     cy.contains('span', 'still image');
     cy.percySnapshot();
   });
@@ -64,7 +64,7 @@ describe('Search', () => {
   it('Metadata Artistic Photo', () => {
     cy.visit('/catalog?utf8=%E2%9C%93&q=Artistic+Photo&search_field=all_fields');
     cy.get('a[href*="photographer_sim"]').eq(0).click();
-    cy.contains('span', 'Photographer');
+    cy.get('.filter-label-key',{ timeout: 100000 }).contains('Photographer');
     cy.percySnapshot();
   });
 
