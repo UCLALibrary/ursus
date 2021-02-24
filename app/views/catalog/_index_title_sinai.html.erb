@@ -9,7 +9,7 @@
   <% count = 1 %>
   <% sinai_index_title.each do |field_name, field| -%>
     <% if count < sinai_index_title.length %>
-      <%= doc_presenter.field_value field %>
+      <%= doc_presenter.field_value field %>&nbsp;|
       <% count += 1 %>
     <% else %>
       <% all_vals = doc_presenter.field_value field %>
