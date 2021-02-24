@@ -1,7 +1,7 @@
 
 describe('Facets', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('baseUrl'));
+    cy.visit(Cypress.env('baseUrl'), { responseTimeout: 31000 });
   });
 
   it('Subject', () => {

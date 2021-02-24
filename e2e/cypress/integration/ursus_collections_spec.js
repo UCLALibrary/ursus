@@ -1,6 +1,6 @@
 describe('Collection pages', () => {
   it('Los Angeles Daily News Negatives', () => {
-    cy.visit('/');
+    cy.visit('/', { responseTimeout: 31000 });
     cy.contains('h3', 'Los Angeles Daily News Negatives').click();
     cy.get('[class=banner__title--collection]').contains(
       'Los Angeles Daily News Negatives'
@@ -9,7 +9,7 @@ describe('Collection pages', () => {
   });
 
   it('Walter E. Bennett Photographic Collection, 1937-1983', () => {
-    cy.visit('/');
+    cy.visit('/', { responseTimeout: 31000 });
     cy.contains(
       'h3',
       'Walter E. Bennett Photographic Collection, 1937-1983'
@@ -21,14 +21,14 @@ describe('Collection pages', () => {
   });
 
   it('Will Connell Papers', () => {
-    cy.visit('/');
+    cy.visit('/', { responseTimeout: 31000 });
     cy.contains('h3', 'Will Connell Papers').click();
     cy.get('[class=banner__title--collection]').contains('Connell (Will) Papers');
     cy.percySnapshot();
   });
 
   it('California Postcards - Collection Record', () => {
-    cy.visit('/');
+    cy.visit('/', { responseTimeout: 31000 });
     cy.get(
       '[href="/catalog/37sh8000zz-89112"] > .collection-grid__item-content > .collection-grid__item-link'
     ).click();
