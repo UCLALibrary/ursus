@@ -10,7 +10,7 @@ describe('Search', () => {
 
   it('Search Not Found', () => {
     cy.visit('/');
-    cy.get('[id=q]').type('unicorn');
+    cy.get('[id=q]').type('werewolf');
     cy.get('[id=search]').click();
     cy.contains('h2', '0 Catalog Results').should('exist');
     cy.percySnapshot();

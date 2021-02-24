@@ -13,13 +13,13 @@ describe('Facets', () => {
     cy.contains('Landmarks');
 
     cy.contains('a', 'A-Z Sort').click({ force: true });
-    cy.contains('Abbots--Japan');
+    cy.contains('ARPANET (Computer network)');
     cy.contains('a', 'Next').click({ force: true });
     cy.percySnapshot('Subject facet modal');
-    cy.contains('Academy Awards (Motion pictures)').click({ force: true });
+    cy.contains('Abandoned buildings--California').click({ force: true });
 
     cy.get('.filter-label-key').contains('Subject');
-    cy.get('.filter-label-value').contains('Academy Awards (Motion pictures)');
+    cy.get('.filter-label-value').contains('Abandoned buildings--California');
     cy.percySnapshot('Subject facet selected');
   });
 
@@ -49,8 +49,8 @@ describe('Facets', () => {
   it('Genre + Language', () => {
     cy.visit('/');
     cy.contains('a', 'Genre').click();
-    cy.contains('a', 'Black-and-white photographs').click({ force: true });
-    cy.get('[title="Black-and-white photographs"]');
+    cy.contains('a', 'black-and-white photographs').click({ force: true });
+    cy.get('[title="black-and-white photographs"]');
     cy.contains('a', 'Language').click();
     cy.contains('a', 'English').click({ force: true });
     cy.get('[title="English"]');
@@ -59,7 +59,7 @@ describe('Facets', () => {
     ).contains('Genre');
     cy.get(
       '.filter-genre_sim > .filter-group__label > .filter-label-value'
-    ).contains('Black-and-white photographs');
+    ).contains('black-and-white photographs');
     cy.get(
       '.filter-human_readable_language_sim > .filter-group__label > .filter-label-key'
     ).contains('Language');
@@ -116,9 +116,9 @@ describe('Facets', () => {
       '#facet-member_of_collections_ssim > .facet-values > .more_facets > a'
     ).click({ force: true });
     cy.contains('a', 'Next').click({ force: true });
-    cy.get('a[href*="Ethiopic"]').click({ force: true });
+    cy.get('a[href*="Tom Leung Collection"]').click({ force: true });
     cy.get('.filter-label-key').contains('Collection');
-    cy.get('.filter-label-value').contains('Ethiopic Manuscripts');
+    cy.get('.filter-label-value').contains('Tom Leung Collection');
     cy.percySnapshot();
   });
 
