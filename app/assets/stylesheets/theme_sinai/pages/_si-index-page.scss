@@ -1,0 +1,18 @@
+.search-results-container--sinai {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  max-width: 100%;
+  flex: 0 0 100%;
+
+  @media (min-width: 992px) {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 65%;
+    flex: 0 0 65%;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 70%;
+    flex: 0 0 70%;
+  }
+}

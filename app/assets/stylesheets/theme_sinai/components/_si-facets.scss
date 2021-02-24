@@ -1,34 +1,63 @@
-.facets__navbar--sinai {
-  @media (max-width: 991px) {
-    background-color: $sinai-primary;
+.facets-container--sinai {
+  margin-bottom: 2.25rem;
+
+  @media (min-width: 992px) {
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 30%;
+    flex: 0 0 30%;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 0;
+    max-width: 25%;
+    flex: 0 0 25%;
   }
 }
 
 .facets__navbar-heading--sinai {
-  padding-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 0.625rem;
   font-size: $text-20;
   font-family: 'Dosis', sans-serif;
   font-weight: 400;
+  color: $sinai-primary;
+  flex-direction: row;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 1px solid $gray-10;
 
   @media (min-width: 800px) {
     font-size: $text-24;
   }
 
   @media (max-width: 991px) {
-    color: $white;
+    color: $sinai-primary;
   }
+}
+
+// Facets Navbar Icon
+.facets-toggleable-md .navbar-toggler {
+  display: block;
+
+  @media (max-width: 991px) {
+    display: block;
+  }
+}
+
+.arrow {
+  margin-bottom: 50px;
 }
 
 @media (max-width: 991px) {
   .facets__svg-icon--sinai {
-    stroke: $white;
+    stroke: $sinai-primary;
     stroke-width: 0.05rem;
+    margin-top: -8px;
+    margin-left: 15px;
 
     path {
-      fill: $white;
+      fill: $sinai-primary;
     }
   }
 }
@@ -108,7 +137,6 @@
   padding: 0.25rem 1.25rem 1.25rem 1.75rem;
   max-height: 300px;
   border: unset;
-
 
   .remove-icon {
     color: $sinai-primary;
