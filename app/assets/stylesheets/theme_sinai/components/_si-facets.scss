@@ -1,5 +1,19 @@
 .facets-container--sinai {
   margin-bottom: 2.25rem;
+
+  @media (min-width: 992px) {
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 30%;
+    flex: 0 0 30%;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 0;
+    max-width: 25%;
+    flex: 0 0 25%;
+  }
 }
 
 .facets__navbar-heading--sinai {

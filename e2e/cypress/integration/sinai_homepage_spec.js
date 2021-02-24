@@ -9,12 +9,12 @@ describe('Sinai Homepage', () => {
     cy.get('.site-navbar__logo-block--sinai');
   });
 
-
   it('Search Component', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.get('[id=search]').click();
+    cy.get('.nav > :nth-child(2) > a').click();
     cy.url().should('include', 'search_field=all_fields');
   });
+
   // Navbar Links
   it('About Link', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
