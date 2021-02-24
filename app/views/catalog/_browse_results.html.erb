@@ -1,4 +1,8 @@
-<div class='search-results-container'>
+<% if Flipflop.sinai? %>
+  <div class='search-results-container--sinai'>
+<% else %>
+  <div class='search-results-container'>
+<% end %>
 <%= render 'catalog/constraints' unless Flipflop.sinai? %>
   <% url = request.original_url %>
   <% if url.include?('has_model_ssim') && url.include?('Collection') %>
