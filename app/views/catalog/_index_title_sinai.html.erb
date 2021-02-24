@@ -9,10 +9,23 @@
   <% count = 1 %>
   <% sinai_index_title.each do |field_name, field| -%>
     <% if count < sinai_index_title.length %>
-      <%= doc_presenter.field_value field %>&nbsp;|
+      <%= doc_presenter.field_value field %>
       <% count += 1 %>
     <% else %>
-      <%= doc_presenter.field_value field %>
+      <% all_vals = doc_presenter.field_value field %>
+      <% all_vals_array = all_vals.split("|") %>
+      <% all_vals_array_truncated = all_vals_array[0..1] %>
+      <% count2 = 1 %>
+      <% all_vals_array_truncated.each do |each_val| -%>
+        <%= each_val.html_safe %>
+        <% if count2 < all_vals_array_truncated.length %>
+          <%= '|'.html_safe %>
+        <% end %>
+        <% count2 += 1 %>
+      <% end %>
+      <% if all_vals_array.length > all_vals_array_truncated.length %>
+        <%= '| ...'.html_safe %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
