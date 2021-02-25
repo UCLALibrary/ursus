@@ -6,7 +6,7 @@ RSpec.describe Sinai::OverviewMetadataPresenter do
     {
       'place_of_origin_tesim' => 'Place of origin',
       'date_created_tesim' => 'Date created',
-      'foliation_tesim' => 'Foliation',
+      'extent_tesim' => 'Extent',
       'form_ssi' => 'Form',
       'human_readable_language_tesim' => 'Language',
       'writing_system_tesim' => 'Writing system',
@@ -20,7 +20,7 @@ RSpec.describe Sinai::OverviewMetadataPresenter do
     {
       'place_of_origin_tesim' => 'Place of origin',
       'date_created_tesim' => 'Date created',
-      'foliation_tesim' => 'Foliation',
+      'extent_tesim' => 'Extent',
       'form_ssi' => 'Form',
       'human_readable_language_tesim' => 'Language'
     }
@@ -39,8 +39,8 @@ RSpec.describe Sinai::OverviewMetadataPresenter do
         expect(config['date_created_tesim'].to_s).to eq('Date created')
       end
 
-      it 'returns the Foliation Key' do
-        expect(config['foliation_tesim'].to_s).to eq('Foliation')
+      it 'returns the Extent Key' do
+        expect(config['extent_tesim'].to_s).to eq('Extent')
       end
 
       it 'returns the Form Key' do
