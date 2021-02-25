@@ -1,4 +1,4 @@
-version: "3.6"
+version: '3.6'
 
 services:
   web:
@@ -21,7 +21,7 @@ services:
       - 3000
     ports:
       - 3003:3000
-  
+
   sinai:
     build:
       context: .
@@ -50,10 +50,10 @@ services:
     volumes:
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-  
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+
   solr:
-    image: uclalibrary/solr-ursus:2020-07-22
+    image: uclalibrary/solr-ursus:2021-02-23
 
   solr_test:
-    image: uclalibrary/solr-ursus:2020-07-22
+    image: uclalibrary/solr-ursus:2021-02-23

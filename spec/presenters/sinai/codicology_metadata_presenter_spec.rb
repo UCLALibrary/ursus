@@ -6,7 +6,7 @@ RSpec.describe Sinai::CodicologyMetadataPresenter do
     {
       'extent_tesim' => 'Extent',
       'collation_tesim' => 'Collation',
-      'form_sim' => 'Form',
+      'form_ssi' => 'Form',
       'support_tesim' => 'Support',
       'writing_system_tesim' => 'Writing system',
       'script_tesim' => 'Script',
@@ -43,7 +43,7 @@ RSpec.describe Sinai::CodicologyMetadataPresenter do
       end
 
       it 'returns the Form Key' do
-        expect(config['form_sim'].to_s).to eq('Form')
+        expect(config['form_ssi'].to_s).to eq('Form')
       end
 
       it 'returns the Support Key' do

@@ -1,7 +1,7 @@
 
 describe('Facets', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('baseUrl'));
+    cy.visit(Cypress.env('baseUrl'), { responseTimeout: 31000 });
   });
 
   it('Subject', () => {
@@ -13,13 +13,13 @@ describe('Facets', () => {
     cy.contains('Landmarks');
 
     cy.contains('a', 'A-Z Sort').click({ force: true });
-    cy.contains('Abbots--Japan');
+    cy.contains('ARPANET (Computer network)');
     cy.contains('a', 'Next').click({ force: true });
     cy.percySnapshot('Subject facet modal');
-    cy.contains('Academy Awards (Motion pictures)').click({ force: true });
+    cy.contains('Abandoned buildings--California').click({ force: true });
 
-    cy.get('.filter-label-key').contains('Subject');
-    cy.get('.filter-label-value').contains('Academy Awards (Motion pictures)');
+    cy.get('.filter-label-key',{ timeout: 100000 }).contains('Subject');
+    cy.get('.filter-label-value').contains('Abandoned buildings--California');
     cy.percySnapshot('Subject facet selected');
   });
 
@@ -27,10 +27,10 @@ describe('Facets', () => {
     cy.visit('/');
     cy.contains('a', 'Resource Type').click();
     cy.contains('a', 'cartographic').click({ force: true });
-    cy.get('[title="cartographic"]');
+    cy.get('[title="cartographic"]',{ timeout: 100000 });
     cy.contains('a', 'Language').click();
     cy.contains('a', 'English').click({ force: true });
-    cy.get('[title="English"]');
+    cy.get('[title="English"]',{ timeout: 100000 });
     cy.get(
       '.filter-human_readable_language_sim > .filter-group__label > .filter-label-key'
     ).contains('Language');
@@ -49,17 +49,17 @@ describe('Facets', () => {
   it('Genre + Language', () => {
     cy.visit('/');
     cy.contains('a', 'Genre').click();
-    cy.contains('a', 'Black-and-white photographs').click({ force: true });
-    cy.get('[title="Black-and-white photographs"]');
+    cy.contains('a', 'black-and-white photographs').click({ force: true });
+    cy.get('[title="black-and-white photographs"]',{ timeout: 100000 });
     cy.contains('a', 'Language').click();
     cy.contains('a', 'English').click({ force: true });
-    cy.get('[title="English"]');
+    cy.get('[title="English"]',{ timeout: 100000 });
     cy.get(
       '.filter-genre_sim > .filter-group__label > .filter-label-key'
     ).contains('Genre');
     cy.get(
       '.filter-genre_sim > .filter-group__label > .filter-label-value'
-    ).contains('Black-and-white photographs');
+    ).contains('black-and-white photographs');
     cy.get(
       '.filter-human_readable_language_sim > .filter-group__label > .filter-label-key'
     ).contains('Language');
@@ -72,17 +72,17 @@ describe('Facets', () => {
     cy.visit('/catalog?f[genre_sim][]=Black-and-white+photographs');
     cy.get('[title="Black-and-white photographs"]');
     cy.contains('a', 'Start Over').click({ force: true });
-    cy.get('.search-results-container').should('not.contain', 'You searched for');
+    cy.get('.search-results-container',{ timeout: 100000 }).should('not.contain', 'You searched for');
   });
 
   it('Names', () => {
     cy.visit('/');
     cy.contains('a', 'Names').click();
     cy.contains('a', 'Tournament of Roses').click({ force: true });
-    cy.get('[title="Tournament of Roses"]');
+    cy.get('[title="Tournament of Roses"]',{ timeout: 100000 });
     cy.contains('a', 'Location').click();
     cy.contains('a', 'Los Angeles (Calif.)').click({ force: true });
-    cy.get('[title="Los Angeles (Calif.)"]');
+    cy.get('[title="Los Angeles (Calif.)"]',{ timeout: 100000 });
     cy.get(
       '.filter-location_sim > .filter-group__label > .filter-label-key'
     ).contains('Location');
@@ -116,9 +116,9 @@ describe('Facets', () => {
       '#facet-member_of_collections_ssim > .facet-values > .more_facets > a'
     ).click({ force: true });
     cy.contains('a', 'Next').click({ force: true });
-    cy.get('a[href*="Ethiopic"]').click({ force: true });
-    cy.get('.filter-label-key').contains('Collection');
-    cy.get('.filter-label-value').contains('Ethiopic Manuscripts');
+    cy.contains('a','Tom Leung Collection').click({ force: true });
+    cy.get('.filter-label-key',{ timeout: 100000 }).contains('Collection');
+    cy.get('.filter-label-value').contains('Tom Leung Collection');
     cy.percySnapshot();
   });
 
@@ -130,7 +130,7 @@ describe('Facets', () => {
     });
     cy.contains('a', 'A-Z Sort').click({ force: true });
     cy.get('a[href*="Architectural+drawings"]').click({ force: true });
-    cy.get('.filter-label-key').contains('Genre');
+    cy.get('.filter-label-key',{ timeout: 100000 }).contains('Genre');
     cy.get('.filter-label-value').contains('Architectural drawings');
     cy.percySnapshot();
   });

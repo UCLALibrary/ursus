@@ -1,0 +1,15 @@
+<% doc_presenter = show_presenter(document) %>
+<% overview = Sinai::CodicologyMetadataPresenter.new(document: doc_presenter.fields_to_render).codicology_terms %>
+
+<% if overview.length > 0 %>
+  <input type="radio" name="tabs" id="tabtwo">
+  <label for="tabtwo">Codicology</label>
+  <div class="primary-metadata_tab-box--sinai">
+  <% overview.each do |field_name, field| %>
+    <div class="metadata-block--sinai">
+        <span class="metadata-block_title--sinai"> <%= (render_document_show_field_label document, field: field_name).tr(':', '') %></span>
+        <span class="metadata-block_value--sinai"><%= doc_presenter.field_value field %></span>
+    </div>
+    <% end %>
+  </div>
+<% end %>

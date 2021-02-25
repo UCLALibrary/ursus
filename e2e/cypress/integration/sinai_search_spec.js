@@ -24,7 +24,7 @@ describe('Sinai Search', () => {
     cy.get('[id=search]').click();
     cy.get('.search-count__heading').contains('Catalog Results');
     cy.get('.document-position-0 > .document__list-item-wrapper > .document__gallery-thumbnail > a > img').click();
-    cy.contains('h4', 'Item Overview');
+    cy.contains('h2','Item Overview');
   });
 
   it('Search Shelfmark Found', () => {

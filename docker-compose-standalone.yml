@@ -12,7 +12,6 @@ services:
       - ./docker.env
     environment:
       SOLR_URL: http://solr:8983/solr/ursus
-      # SOLR_URL: http://host.docker.internal:6983/solr/californica
       SOLR_TEST_URL: http://solr_test:8983/solr/ursus
       DATABASE_USERNAME: ursus
       DATABASE_PASSWORD: ursus
@@ -37,6 +36,7 @@ services:
       - ./docker.env
     environment:
       DATABASE_NAME: sinai
+      #SOLR_URL: http://host.docker.internal:6983/solr/californica
       SOLR_URL: http://solr:8983/solr/sinai
       SOLR_TEST_URL: http://solr_test:8983/solr/sinai
       DATABASE_USERNAME: ursus
@@ -62,12 +62,12 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
 
   solr:
-    image: uclalibrary/solr-ursus:2020-07-22
+    image: uclalibrary/solr-ursus:2021-02-23
     ports:
       - '127.0.0.1:8983:8983'
 
   solr_test:
-    image: uclalibrary/solr-ursus:2020-07-22
+    image: uclalibrary/solr-ursus:2021-02-23
     ports:
       - '127.0.0.1:8985:8983'
 

@@ -1,7 +1,19 @@
+.item-page__primary-metadata--sinai {
+  order: 1;
+  padding-top: 1rem;
+}
+
 .item-page__secondary-metadata--sinai {
   @extend .col-lg-5;
 
-  background-color: $sinai-secondary;
+  background-color: $white;
+  order: 3;
+}
+
+.item-page__metadata-wrapper::before {
+  order: 2;
+  content: '';
+  border-right: 2px solid $sinai-secondary;
 }
 
 .item-page__pagination-widgets--sinai {
@@ -42,7 +54,8 @@
 }
 
 // SHELFMARK - Once the tabs are included on the item page, delete this
-.title-row-show--siani {
+
+/* .title-row-show--siani {
   margin-top: 15px;
   margin-left: 12px;
   font-size: $text-24;
@@ -51,16 +64,25 @@
   @media (max-width: 767px) {
     font-size: $text-20;
   }
-}
+} */
 
 // SHELFMARK - Once the tabs are included on the item page, uncomment this
-// .title-row-show--siani {
-//   font-size: $text-20;
-//   font-weight: 500;
-//   margin-left: 12px;
-//   margin-top: 15px;
+.title-row-show--siani {
+  margin-top: 15px;
+  margin-left: 12px;
+  font-size: $text-20;
+  font-weight: 500;
 
-//   @media (max-width: 767px) {
-//     font-size: $text-18;
-//   }
-// }
+  @media (max-width: 767px) {
+    font-size: $text-18;
+  }
+}
+
+.secondary-metadata_container--sinai {
+  margin-top: 1.5rem;
+}
+@media (max-width: 900px) {
+  .item-page__secondary-metadata--sinai {
+    margin-top: 2em;
+  }
+}
