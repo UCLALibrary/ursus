@@ -72,12 +72,11 @@ module BlacklightHelper
     end
   end
 
-  def render_truncated_list(doc_presenter, sinai_index_language)
-
-    if sinai_index_language.length > 0
-      sinai_index_language.each do |field_name, field|
-        pone = "<div class='metadata-value-index--sinai'>".html_safe
-          all_vals = doc_presenter.field_value field
+  def render_truncated_list(d_presenter, sinai_index)
+    if sinai_index.length > 0
+      sinai_index.each do |field_name, field|
+        pone = "<div class='metadata-value-index--sinai'>"
+          all_vals = d_presenter.field_value field
           all_vals_array = all_vals.split("&nbsp;|&nbsp;")
           all_vals_array_truncated = all_vals_array[0..2]
           count = 1
@@ -89,26 +88,12 @@ module BlacklightHelper
             count += 1
           end
           if all_vals_array.length > all_vals_array_truncated.length
-            pone += ". ..."
+            pone += "&nbsp;|&nbsp;..."
           end
-          return pone += "</div>".html_safe
+          pone += "</div>"
+          return pone.html_safe
       end
-
-    end
-
-
-
-
-  end
-
-  def render_truncated_list_oem(list_name)
-    truncated_output = String.new
-    content_tag :div, class: 'truncate-description' do
-      description = args[:value].first
-      button = "<span class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></span></br>"
-      truncated_output << "<div class='description'>#{description}</div>#{button}</br>"
-      # return truncated_output.html_safe
-      return description
     end
   end
+
 end
