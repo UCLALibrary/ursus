@@ -4,26 +4,22 @@
 <% sinai_index_name = Ursus::SinaiIndexNameMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_name_terms %>
 
 <% if sinai_index_name.length > 0 %>
-  <% count = 1 %>
   <% sinai_index_name.each do |field_name, field| -%>
-    <% if count < sinai_index_name.length %>
-      <%= doc_presenter.field_value field %>&nbsp;|
-      <% count += 1 %>
-    <% else %>
+    <div class='metadata-value-index--sinai'>
       <% all_vals = doc_presenter.field_value field %>
       <% all_vals_array = all_vals.split("|") %>
       <% all_vals_array_truncated = all_vals_array[0..2] %>
-      <% count2 = 1 %>
+      <% count = 1 %>
       <% all_vals_array_truncated.each do |each_val| -%>
         <%= each_val.html_safe %>
-        <% if count2 < all_vals_array_truncated.length %>
+        <% if count < all_vals_array_truncated.length %>
           <%= '|'.html_safe %>
         <% end %>
-        <% count2 += 1 %>
+        <% count += 1 %>
       <% end %>
       <% if all_vals_array.length > all_vals_array_truncated.length %>
         <%= '| ...'.html_safe %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
 <% end %>
