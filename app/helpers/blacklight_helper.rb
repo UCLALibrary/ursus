@@ -73,27 +73,19 @@ module BlacklightHelper
   end
 
   def render_truncated_list(d_presenter, sinai_index)
-    if sinai_index.length > 0
-      sinai_index.each do |field_name, field|
-        pone = "<div class='metadata-value-index--sinai'>"
-          all_vals = d_presenter.field_value field
-          all_vals_array = all_vals.split("&nbsp;|&nbsp;")
-          all_vals_array_truncated = all_vals_array[0..2]
-          count = 1
-          all_vals_array_truncated.each do |each_val|
-            pone += each_val
-            if count < all_vals_array_truncated.length
-              pone += " | "
-            end
-            count += 1
-          end
-          if all_vals_array.length > all_vals_array_truncated.length
-            pone += "&nbsp;|&nbsp;..."
-          end
-          pone += "</div>"
-          return pone.html_safe
+    if sinai_index.length.positive?
+      sinai_index.each do |_field_name, field|
+        trunc = "<div class='metadata-value-index--sinai'>"
+        all_vals_array_truncated = (d_presenter.field_value field).split("&nbsp;|&nbsp;")[0..2]
+        count = 1
+        all_vals_array_truncated.each do |each_val|
+          trunc += each_val
+          trunc += " | " if count < all_vals_array_truncated.length
+          count += 1
+        end
+        trunc += "&nbsp;|&nbsp;..." if (d_presenter.field_value field).split("&nbsp;|&nbsp;").length > all_vals_array_truncated.length
+        return (trunc += "</div>").html_safe
       end
     end
   end
-
 end

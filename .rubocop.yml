@@ -13,6 +13,10 @@ Layout/BlockEndNewline:
   Exclude:
     - spec/features/search_catalog_spec.rb
 
+Performance/HashEachMethods:
+  Exclude:
+    - app/helpers/blacklight_helper.rb
+
 Lint/RequireParentheses:
   Exclude:
     - app/helpers/blacklight_helper.rb
