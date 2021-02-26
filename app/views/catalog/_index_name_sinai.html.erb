@@ -3,7 +3,4 @@
 <% doc_presenter = index_presenter(document) %>
 <% sinai_index_name = Ursus::SinaiIndexNameMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_name_terms %>
 
-zzzzzzz<%= sinai_index_name %>qqqqqqqqqqq
-
-
-<%= render_truncated_list(doc_presenter, sinai_index_name) if sinai_index_name.eql?("{}") %>
+<%= render_truncated_list(doc_presenter, sinai_index_name) %>
