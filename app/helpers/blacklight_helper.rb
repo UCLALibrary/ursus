@@ -77,10 +77,11 @@ module BlacklightHelper
       sinai_index.each do |_field_name, field|
         trunc = "<div class='metadata-value-index--sinai'>"
         value = (d_presenter.field_value field)
-        field_values = value.split("&nbsp;|&nbsp;") 
+        field_values = value.split("&nbsp;|&nbsp;")
         trunc += field_values[0..2].join("&nbsp;|&nbsp;")
         trunc += "&nbsp;|&nbsp;..." if field_values.length > 3
-        return (trunc += "</div>").html_safe
+        trunc += "</div>"
+        return trunc.html_safe
       end
     end
   end
