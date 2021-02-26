@@ -1,6 +1,9 @@
 ---
 EnableDefaultLinters: true
-exclude: ["**/views_legacy/**"]
+exclude: 
+  - '**/views_legacy/**'
+  - '**/vendor/**/*'
+  - '**/node_modules/**/*'
 linters:
   ErbSafety:
     enabled: false
