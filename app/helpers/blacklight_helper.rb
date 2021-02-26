@@ -76,14 +76,13 @@ module BlacklightHelper
     if sinai_index.length.positive?
       sinai_index.each do |_field_name, field|
         trunc = "<div class='metadata-value-index--sinai'>"
-        all_vals_array_truncated = (d_presenter.field_value field).split("&nbsp;|&nbsp;")[0..2]
-        count = 1
-        all_vals_array_truncated.each do |each_val|
-          trunc += each_val
-          trunc += " | " if count < all_vals_array_truncated.length
-          count += 1
-        end
-        trunc += "&nbsp;|&nbsp;..." if (d_presenter.field_value field).split("&nbsp;|&nbsp;").length > all_vals_array_truncated.length
+        value = (d_presenter.field_value field)
+        field_values = value.split("&nbsp;|&nbsp;") 
+        trunc += field_values[0..2].join("&nbsp;|&nbsp;")
+        trunc += "&nbsp;|&nbsp;..." if field_values.length > 3
+        trunc += "....."
+        trunc += sinai_index.length.to_s
+        trunc += "....."
         return (trunc += "</div>").html_safe
       end
     end
