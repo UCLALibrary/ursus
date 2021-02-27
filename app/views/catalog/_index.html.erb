@@ -48,8 +48,7 @@
         </div>
         <%# NAMES %>
         <% name_field = render 'catalog/index_name_sinai', document: document %>
-        111<%= name_field %>222
-        <% if name_field.length > 2 %>
+        <% if name_field =~ /href/ %>
           <div class='metadata-block-index--sinai'>
             <div class='metadata-value-index--sinai'>
                 <%= image_tag('sinai-icons/people-icon.svg', class: 'icon-people-index--sinai') %><%= name_field %>
@@ -85,8 +84,7 @@
         </div>
         <%# NAMES %>
         <% name_field = render 'catalog/index_name_sinai', document: document %>
-        333<%= name_field.to_s %>444
-        <% if name_field.length > 2 %>
+        <% if name_field =~ /href/ %>
           <div class='metadata-block-index--sinai'>
             <%= image_tag('sinai-icons/people-icon.svg', class: 'icon-people-index--sinai') %><%= name_field %>
           </div><%# metadata-block-index--sinai %>
