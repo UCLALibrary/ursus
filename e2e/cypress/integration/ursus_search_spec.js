@@ -71,7 +71,7 @@ describe('Search', () => {
   it('Title links to item page', () => {
     cy.visit('/catalog?utf8=%E2%9C%93&q=&search_field=all_fields');
     cy.get('h3.document__list-title').eq(0).find('a').click();
-    cy.get('.item-page__pagination-widgets').should('contain', '1 of')
+    cy.get('.item-page__pagination-widgets',{ timeout: 100000 }).should('contain', '1 of')
   });
 
   it('Thumbnail links to item page', () => {
