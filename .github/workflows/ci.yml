@@ -76,6 +76,8 @@ jobs:
         docker-compose run sinai bundle exec rails db:setup
     - name: restart sinai container (can only set feature flag after db init)
       run: docker-compose restart sinai
+    - name: prime the OAI-PMH rails engine (first load can be very slow)
+      run: curl localhost:3003/catalog/oai?verb=Identify
     - uses: cypress-io/github-action@224f894ce0b082eba28a3a4562f630c54a17b432
       with:
         command-prefix: 'percy exec -- npx'
