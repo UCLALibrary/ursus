@@ -16,7 +16,7 @@ RSpec.describe CatalogController, type: :controller do
       end
 
       let(:expected_facets) do
-        ['subject',
+        ['combined_subject',
          'human_readable_resource_type',
          'genre',
          'named_subject',
