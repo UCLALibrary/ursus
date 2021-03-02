@@ -1,0 +1,12 @@
+<div hidden>
+  <% document_json = JSON.parse @document.to_json.tr("'", '_') %>
+  <% tn = "<img src=\"" + document_json['thumbnail_url_ss'] + "\" alt=\"" + render_document_alttag(document) + "\" \>" unless document_json['thumbnail_url_ss'].blank? %>
+  <%= tn.html_safe unless document_json['thumbnail_url_ss'].blank? %>
+</div>
+
+<div class="item-page__primary-metadata">
+  <%= render 'catalog/work_record--ursus/item_overview_metadata', document: document %>
+  <%= render 'catalog/work_record--ursus/note_metadata', document: document %>
+  <%= render 'catalog/work_record--ursus/physical_description_metadata', document: document %>
+  <%= render 'catalog/work_record--ursus/keyword_metadata', document: document %>
+</div>

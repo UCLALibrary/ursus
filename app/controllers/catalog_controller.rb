@@ -119,7 +119,7 @@ class CatalogController < ApplicationController
 
     # URSUS
     else
-      config.add_facet_field 'subject_sim', limit: 5, label: 'Subjects'
+      config.add_facet_field 'combined_subject_ssim', limit: 5, label: 'Subject'
       # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5 same as : config.add_facet_field 'resource_type_sim', limit: 5
       config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
       config.add_facet_field 'genre_sim', limit: 5
