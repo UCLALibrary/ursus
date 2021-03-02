@@ -13,13 +13,13 @@ describe('Facets', () => {
     cy.contains('Landmarks');
 
     cy.contains('a', 'A-Z Sort').click({ force: true });
-    cy.contains('ARPANET (Computer network)');
+    cy.contains('Abandoned children--California--Los Angeles');
     cy.contains('a', 'Next').click({ force: true });
     cy.percySnapshot('Subject facet modal');
-    cy.contains('Abandoned buildings--California').click({ force: true });
+    cy.contains('Actresses--Australian--California').click({ force: true });
 
     cy.get('.filter-label-key',{ timeout: 100000 }).contains('Subject');
-    cy.get('.filter-label-value').contains('Abandoned buildings--California');
+    cy.get('.filter-label-value').contains('Actresses--Australian--California');
     cy.percySnapshot('Subject facet selected');
   });
 
@@ -78,23 +78,23 @@ describe('Facets', () => {
   it('Names', () => {
     cy.visit('/');
     cy.contains('a', 'Names').click();
-    cy.contains('a', 'Tournament of Roses').click({ force: true });
-    cy.get('[title="Tournament of Roses"]',{ timeout: 100000 });
+    cy.contains('a', 'Sachtleben, William Lewis').click({ force: true });
+    cy.get('[title="Sachtleben, William Lewis"]',{ timeout: 100000 });
     cy.contains('a', 'Location').click();
-    cy.contains('a', 'Los Angeles (Calif.)').click({ force: true });
-    cy.get('[title="Los Angeles (Calif.)"]',{ timeout: 100000 });
+    cy.contains('a', 'Greece--Athens').click({ force: true });
+    cy.get('[title="Greece--Athens"]',{ timeout: 100000 });
     cy.get(
       '.filter-location_sim > .filter-group__label > .filter-label-key'
     ).contains('Location');
     cy.get(
       '.filter-location_sim > .filter-group__label > .filter-label-value'
-    ).contains('Los Angeles (Calif.)');
+    ).contains('Greece--Athens');
     cy.get(
       '.filter-named_subject_sim > .filter-group__label > .filter-label-key'
     ).contains('Names');
     cy.get(
       '.filter-named_subject_sim > .filter-group__label > .filter-label-value'
-    ).contains('Tournament of Roses');
+    ).contains('Sachtleben, William Lewis');
     cy.percySnapshot();
   });
 
@@ -116,9 +116,9 @@ describe('Facets', () => {
       '#facet-member_of_collections_ssim > .facet-values > .more_facets > a'
     ).click({ force: true });
     cy.contains('a', 'Next').click({ force: true });
-    cy.contains('a','Tom Leung Collection').click({ force: true });
+    cy.contains('a','Palmer Family Papers').click({ force: true });
     cy.get('.filter-label-key',{ timeout: 100000 }).contains('Collection');
-    cy.get('.filter-label-value').contains('Tom Leung Collection');
+    cy.get('.filter-label-value').contains('Palmer Family Papers');
     cy.percySnapshot();
   });
 

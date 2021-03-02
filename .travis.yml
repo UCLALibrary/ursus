@@ -9,14 +9,6 @@ env:
     - JENKINS_API_URSUS="${TRAVIS_JENKINS_API_URSUS}"
 script:
   - echo "No more tests in Travis! The only function remaining is to trigger Jenkins deploys."
-  - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USER" --password-stdin
-  - docker-compose up --detach db
-  - docker-compose run web bundle exec rails db:setup
-  - docker-compose run sinai bundle exec rails db:setup
-  - docker-compose up --detach
-  - docker-compose run web sh start-ci.sh
-  - curl http://localhost:3003/catalog/oai?verb=Identify
-  - cd e2e && sh start-e2e.sh
 notifications:
   email: false
 after_success:
