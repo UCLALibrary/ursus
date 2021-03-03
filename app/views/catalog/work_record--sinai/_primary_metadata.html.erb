@@ -1,0 +1,15 @@
+<div hidden>
+  <% document_json = JSON.parse @document.to_json.tr("'", '_') %>
+  <% tn = "<img src=\"" + document_json['thumbnail_url_ss'] + "\" alt=\"" + render_document_alttag(document) + "\" \>" unless document_json['thumbnail_url_ss'].blank? %>
+  <%= tn.html_safe unless document_json['thumbnail_url_ss'].blank? %>
+</div>
+
+<div class='item-page__primary-metadata item-page__primary-metadata--sinai'>
+  <div class="primary-metadata_tab-container--sinai">
+    <%= render 'catalog/work_record--sinai/content_metadata', document: document %>
+    <%= render 'catalog/work_record--sinai/codicology_metadata', document: document %>
+    <%= render 'catalog/work_record--sinai/history_metadata', document: document %>
+    <%= render 'catalog/work_record--sinai/decorations_metadata', document: document %>
+    <%= render 'catalog/work_record--sinai/references_and_link_metadata', document: document %>
+  </div>
+</div>

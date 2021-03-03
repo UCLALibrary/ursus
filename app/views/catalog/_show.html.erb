@@ -17,15 +17,15 @@
   </div>
 
   <div class='item-page__metadata-wrapper'>
-    <%= render 'catalog/work_record/primary_metadata', document: document %>
-    <%= render 'catalog/work_record/secondary_metadata', document: document %>
+    <%= render 'catalog/work_record--sinai/primary_metadata', document: document %>
+    <%= render 'catalog/work_record--sinai/secondary_metadata', document: document %>
   </div>
 
 <%# ----------- Ursus --------------- %>
 <% else %>
   <div class='item-page__metadata-wrapper'>
-    <%= render 'catalog/work_record/primary_metadata', document: document %>
-    <%= render 'catalog/work_record/secondary_metadata', document: document %>
+    <%= render 'catalog/work_record--ursus/primary_metadata', document: document %>
+    <%= render 'catalog/work_record--ursus/secondary_metadata', document: document %>
   </div>
 <% end %>
 
