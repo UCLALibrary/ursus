@@ -19,12 +19,19 @@
   font-weight: 700;
   flex-basis: 90%;
 
+  a {
+    text-decoration: underline;
+  }
+
   @media (max-width: 767px) {
     flex-basis: 80%;
   }
 }
 
 .alert-bar__close {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   font-weight: 500;
 
   &:hover {
@@ -36,4 +43,8 @@
     padding-left: 0.5rem;
     color: $gray-80;
   }
+}
+
+.alert-bar__button {
+  padding: 5px;
 }
