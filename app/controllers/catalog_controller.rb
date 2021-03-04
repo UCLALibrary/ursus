@@ -401,7 +401,7 @@ class CatalogController < ApplicationController
     # and whether the sort is ascending or descending
     # (it must be asc or desc except in the relevancy case)
     # label is key, solr field is value
-    config.add_sort_field 'score desc', label: 'Relevance'
+    
 
     # config.add_sort_field 'sort_title_ssort asc', label: 'Title (A-Z)'
     # config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
@@ -414,9 +414,11 @@ class CatalogController < ApplicationController
       config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
       config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
     end
+    
 
     config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
     config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
+    config.add_sort_field 'score desc', label: 'Relevance'
     #------------------------------------------------------
     # AUTO_SUGGEST / AUTO_COMPLETE
     # If there are more than this many search results,
