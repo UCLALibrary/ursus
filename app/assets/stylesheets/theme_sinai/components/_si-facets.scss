@@ -36,20 +36,16 @@
   }
 }
 
-// Facets Navbar Icon
-.facets-toggleable-md .navbar-toggler {
-  display: block;
-
-  @media (max-width: 991px) {
-    display: block;
-  }
-}
-
 .arrow {
   margin-bottom: 50px;
 }
 
 @media (max-width: 991px) {
+  // Facets Navbar Icon
+  .facets-toggleable-md .navbar-toggler {
+    display: block;
+  }
+  
   .facets__svg-icon--sinai {
     stroke: $sinai-primary;
     stroke-width: 0.05rem;
