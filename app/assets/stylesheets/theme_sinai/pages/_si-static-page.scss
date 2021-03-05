@@ -82,7 +82,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   transition: transform 0.7s;
-  background-image: image-url('sinai/IMG_0188.jpg');
+  background-image: image-url('sinai/DSC_6971.jpg');
 
   &:hover {
     transform: scale(1.01);
@@ -97,6 +97,20 @@
   background-size: cover;
   transition: transform 0.7s;
   background-image: image-url('sinai/Imaging-Room-1911.jpg');
+
+  &:hover {
+    transform: scale(1.01);
+  }
+}
+
+.grid__img-wrapper--sinai-about3 {
+  height: 580px;
+  max-height: 580px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.7s;
+  background-image: image-url('sinai/2020-06-06_c.jpg');
 
   &:hover {
     transform: scale(1.01);
