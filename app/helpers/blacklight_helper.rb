@@ -72,17 +72,17 @@ module BlacklightHelper
     end
   end
 
-  def render_truncated_list(d_presenter, sinai_index)
-    if sinai_index.length.positive?
+  def render_truncated_list(doc_presenter, sinai_index_language)
+    if sinai_index_language.length.positive?
       field_values = []
-      sinai_index.each_value do |field|
-        value = (d_presenter.field_value field)
+      sinai_index_language.each_value do |field|
+        value = (doc_presenter.field_value field)
         field_values += value.split("&nbsp;|&nbsp;")
       end
       trunc = "<div class='metadata-value-index--sinai'>"
       trunc += field_values[0..2].join("&nbsp;|&nbsp;")
       trunc += "&nbsp;|&nbsp;..." if field_values.length > 3
-      trunc += "</div>".html_safe
+      trunc += "</div>"
       trunc.html_safe
     end
   end

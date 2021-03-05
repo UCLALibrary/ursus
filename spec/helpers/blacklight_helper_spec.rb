@@ -51,4 +51,24 @@ RSpec.describe BlacklightHelper, type: :helper do
     xit do
     end
   end
+
+    
+  describe 'render_truncated_list' do
+    context 'ellipses' do
+      let(:document) do
+        SolrDocument.new(
+          'descriptive_title_tesim' => ["title1","title2",],
+          'uniform_title_tesim' => ["utitle1","utitle2",]
+        )
+      end
+      it 'returns ellipses' do
+        doc_presenter = index_presenter(document)
+        sinai_index_language = Ursus::SinaiIndexLanguagePresenter.new(document: doc_presenter.fields_to_render).sinai_index_language_terms
+        expect(render_truncated_list(doc_presenter, sinai_index_language)).to eq "title1&nbsp;|&nbsp;title2&nbsp;|&nbsp;utitle1&nbsp;|&nbsp;..."
+      end
+    end
+  end
+  
+
+
 end
