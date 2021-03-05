@@ -1,5 +1,6 @@
 ---
 sudo: true
+language: bash
 env:
   global:
     - COMPOSE_FILE=docker-compose-ci.yml
