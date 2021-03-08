@@ -11,7 +11,7 @@ describe('Sinai Homepage', () => {
 
   it('Search Component', () => {
     cy.visit(Cypress.env('SINAI_BASE_URL'));
-    cy.get('.nav > :nth-child(2) > a').click();
+    cy.get('.nav').contains('Search').click(); 
     cy.url().should('include', 'search_field=all_fields');
   });
 
