@@ -12,13 +12,13 @@
     <div class='site-navbar__link-block--sinai'>
       <ul class='nav'>
 
-        <li class='nav-item site-navbar__item--sinai'><%= link_to 'About', sinai_about_path %></li>
         <li class='nav-item site-navbar__item--sinai'><%= link_to "Search#{image_tag('sinai-logos/search-icon-bold.svg', class: 'site-header__search-icon--sinai', alt: 'Search icon')}".html_safe, '/catalog?utf8=%E2%9C%93&q=&search_field=all_fields' %></li>
-
+        <li class='nav-item site-navbar__item--sinai'><%= link_to 'About', sinai_about_path %></li>
+        
         <% if !cookies[:sinai_authenticated] %>
           <% cookies[:request_original_url] = request.original_url %>
           <li class='nav-item site-navbar__item--sinai'><%#= link_to 'Login', login_path %>
-          <%= button_to 'LOGIN', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn btn_nav_link--sinai' %>
+          <%= button_to 'LOGIN/REGISTER', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn btn_nav_link--sinai' %>
           </li>
         <% end %>
 
