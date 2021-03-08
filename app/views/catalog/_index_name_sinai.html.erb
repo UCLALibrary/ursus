@@ -7,7 +7,7 @@
   <% field_values = [] %>
   <% sinai_index_name.each_value do |field| %>
     <% value = (doc_presenter.field_value field) %>
-    <%= field_values += value.split("&nbsp;|&nbsp;") %>
+    <% field_values += value.split("&nbsp;|&nbsp;") %>
   <% end %>
   <%= render_truncated_list(field_values) %>
 <% end %>
