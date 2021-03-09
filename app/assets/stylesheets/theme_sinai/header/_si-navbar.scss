@@ -94,14 +94,13 @@
 }
 
 .site-navbar__item--sinai:not(:last-child) {
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
 // Aligns "Login" link to "About" link
 .site-navbar__item--sinai .button_to {
   position: relative;
   top: -0.0625rem;
-  left: 0.75rem;
 }
 
 .site-header__search-icon--sinai {

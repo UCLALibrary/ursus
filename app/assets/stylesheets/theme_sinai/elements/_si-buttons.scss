@@ -78,8 +78,10 @@
 .btn_nav_link--sinai {
   padding-top: 0;
   padding-left: 0;
+  font-size: 16px;
   font-family: 'Dosis', sans-serif;
   font-weight: 600;
+  border: none transparent;
 
   &:hover {
     text-decoration: underline;
