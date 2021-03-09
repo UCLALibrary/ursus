@@ -316,7 +316,6 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
-    retriable (3.1.2)
     rollbar (3.0.0)
     rsolr (2.3.0)
       builder (>= 2.1.2)
@@ -378,11 +377,6 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
     smart_properties (1.15.0)
-    solr_wrapper (2.2.0)
-      faraday
-      retriable
-      ruby-progressbar
-      rubyzip
     solrizer (4.1.0)
       activesupport
       nokogiri
@@ -496,7 +490,6 @@ DEPENDENCIES
   sassc-rails (>= 2.1.2)
   selenium-webdriver (>= 3.142.3)
   sidekiq (~> 5.2.7)
-  solr_wrapper (>= 2.1.0)
   solrizer (>= 4.1.0)
   spring
   spring-commands-rspec
