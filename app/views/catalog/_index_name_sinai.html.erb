@@ -3,9 +3,11 @@
 <% doc_presenter = index_presenter(document) %>
 <% sinai_index_name = Ursus::SinaiIndexNameMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_name_terms %>
 
-<% if sinai_index_name.length > 0 %>
-  <% sinai_index_name.each do |field_name, field| -%>
-    <!-- VALUE -->
-    <%= doc_presenter.field_value field %>
+<% if sinai_index_name.length.positive? %>
+  <% field_values = [] %>
+  <% sinai_index_name.each_value do |field| %>
+    <% value = (doc_presenter.field_value field) %>
+    <% field_values += value.split("&nbsp;|&nbsp;") %>
   <% end %>
+  <%= render_truncated_list(field_values) %>
 <% end %>

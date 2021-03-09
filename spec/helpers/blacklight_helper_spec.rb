@@ -51,4 +51,34 @@ RSpec.describe BlacklightHelper, type: :helper do
     xit do
     end
   end
+
+  describe 'render_truncated_list' do
+    context 'no field values' do
+      let(:document) {}
+      let(:field_values) do
+        []
+      end
+      it 'no change' do
+        expect(render_truncated_list(field_values)).to eq "<div class='metadata-value-index--sinai'></div>"
+      end
+    end
+    context '3 or fewer fields' do
+      let(:document) {}
+      let(:field_values) do
+        ["title1", "title2"]
+      end
+      it 'adds divider(s), no truncation' do
+        expect(render_truncated_list(field_values)).to eq "<div class='metadata-value-index--sinai'>title1&nbsp;|&nbsp;title2</div>"
+      end
+    end
+    context '4 or more filed values' do
+      let(:document) {}
+      let(:field_values) do
+        ["title1", "title2", "title3", "title4"]
+      end
+      it 'adds dividers, truncates to 3, adds ellipises' do
+        expect(render_truncated_list(field_values)).to eq "<div class='metadata-value-index--sinai'>title1&nbsp;|&nbsp;title2&nbsp;|&nbsp;title3&nbsp;|&nbsp;...</div>"
+      end
+    end
+  end
 end

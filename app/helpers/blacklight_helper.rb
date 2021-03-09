@@ -71,4 +71,12 @@ module BlacklightHelper
       table_contents[0]
     end
   end
+
+  def render_truncated_list(field_values)
+    trunc = "<div class='metadata-value-index--sinai'>"
+    trunc += field_values[0..2].join("&nbsp;|&nbsp;")
+    trunc += "&nbsp;|&nbsp;..." if field_values.length > 3
+    trunc += "</div>"
+    trunc.html_safe
+  end
 end

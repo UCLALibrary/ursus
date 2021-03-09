@@ -5,14 +5,11 @@
 <% doc_presenter = index_presenter(document) %>
 <% sinai_index_title = Ursus::SinaiIndexTitleMetadataPresenter.new(document: doc_presenter.fields_to_render).sinai_index_title_terms %>
 
-<% if sinai_index_title.length > 0 %>
-  <% count = 1 %>
-  <% sinai_index_title.each do |field_name, field| -%>
-    <% if count < sinai_index_title.length %>
-      <%= doc_presenter.field_value field %>&nbsp;|
-      <% count += 1 %>
-    <% else %>
-      <%= doc_presenter.field_value field %>
-    <% end %>
+<% if sinai_index_title.length.positive? %>
+  <% field_values = [] %>
+  <% sinai_index_title.each_value do |field| %>
+    <% value = (doc_presenter.field_value field) %>
+    <% field_values += value.split("&nbsp;|&nbsp;") %>
   <% end %>
+  <%= render_truncated_list(field_values) %>
 <% end %>
