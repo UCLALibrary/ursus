@@ -52,7 +52,7 @@ group :development, :test do
   gem 'rails-controller-testing', '>= 1.0.4'
   gem 'rspec-collection_matchers'
   gem 'rspec-its'
-  gem 'rspec-rails', '~> 3.9', '>= 3.9.0'
+  gem 'rspec-rails', '~> 5.0'
   gem 'rubocop'
   gem 'selenium-webdriver', '>= 3.142.3'
   gem 'solr_wrapper', '>= 2.1.0'
