@@ -33,7 +33,6 @@ gem 'sidekiq', '~> 5.2.7'
 gem 'solrizer', '>= 4.1.0'
 gem 'sprockets', '>= 3.7.2', '< 4'
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'uglifier', '>= 1.3.0' # JavaScript compressor
 gem 'whenever', require: false
 
@@ -69,4 +68,3 @@ group :development do
   gem 'web-console', '>= 3.7.0' # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'xray-rails', '>= 0.3.2'
 end
-
