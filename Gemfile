@@ -8,8 +8,8 @@ end
 
 gem 'blacklight', '~> 7.3.0'
 gem 'blacklight-access_controls', '>= 6.0.0'
-gem 'blacklight-gallery', '~> 1.7.0'
-gem 'blacklight_dynamic_sitemap', '~> 0.1.0'
+gem 'blacklight-gallery', '~> 2.1.0'
+gem 'blacklight_dynamic_sitemap', '~> 0.3.0'
 gem 'blacklight_oai_provider', github: 'projectblacklight/blacklight_oai_provider'
 gem 'blacklight_range_limit', '~> 7.0.0'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
@@ -25,7 +25,7 @@ gem 'loofah', '>= 2.4.0'
 gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
 gem 'puma', '~> 5.2' # app server
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 6.0', '>= 6.0.3.5'
 gem 'rollbar' # Error reporting tool
 gem 'rsolr', '>= 1.0'
 gem 'sassc-rails', '>= 2.1.2' # SASS -> CSS compiler
