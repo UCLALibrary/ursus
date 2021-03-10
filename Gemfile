@@ -6,16 +6,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'blacklight', '~> 7.3.0'
+gem 'blacklight-access_controls', '>= 6.0.0'
+gem 'blacklight-gallery', '~> 1.7.0'
 gem 'blacklight_dynamic_sitemap', '~> 0.1.0'
 gem 'blacklight_oai_provider', github: 'projectblacklight/blacklight_oai_provider'
 gem 'blacklight_range_limit', '~> 7.0.0'
-gem 'blacklight-access_controls', '>= 6.0.0'
-gem 'blacklight-gallery', '~> 1.7.0'
-gem 'blacklight', '~> 7.3.0'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'coveralls', '>= 0.8.23', require: false
-gem 'devise-guests', '~> 0.7', '>= 0.7.0'
 gem 'devise', '>= 4.7.1'
+gem 'devise-guests', '~> 0.7', '>= 0.7.0'
 gem 'dotenv-rails', '>= 2.7.5'
 gem 'flipflop'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
@@ -39,8 +39,8 @@ gem 'whenever', require: false
 group :development, :test do
   gem 'bixby', '~> 1.0'
   gem 'byebug' # debugger
-  gem 'capybara-mechanize', '>= 1.11.0'
   gem 'capybara', '~> 2.18', '>= 2.18.0' # Adds support for Capybara system testing and selenium driver
+  gem 'capybara-mechanize', '>= 1.11.0'
   gem 'equivalent-xml', '>= 0.6.0'
   gem 'erb_lint', '>= 0.0.30', require: false
   gem 'factory_bot_rails', '>= 5.1.1'
@@ -54,16 +54,16 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '3.11.0'
   gem 'capistrano-bundler', '~> 1.3'
   gem 'capistrano-ext'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-sidekiq', '~> 0.20.0'
-  gem 'capistrano', '3.11.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'spring'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'spring'
   gem 'web-console', '>= 3.7.0' # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'xray-rails', '>= 0.3.2'
 end
