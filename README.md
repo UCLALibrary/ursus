@@ -11,7 +11,7 @@ In 1984 to mark its 50th Anniversary, the UCLA Alumni Association commissioned "
 
 ---
 
-[![Build Status](https://travis-ci.org/UCLALibrary/ursus.svg?branch=master)](https://travis-ci.org/UCLALibrary/ursus)
+[![Build Status](https://travis-ci.org/UCLALibrary/ursus.svg?branch=main)](https://travis-ci.org/UCLALibrary/ursus)
 [![Apache 2.0 License](http://img.shields.io/badge/APACHE2-license-blue.svg)](./LICENSE)
 [![Coverage Status](https://coveralls.io/repos/github/UCLALibrary/ursus/badge.svg?branch=ci%2Fadd-coveralls)](https://coveralls.io/github/UCLALibrary/ursus?branch=ci%2Fadd-coveralls)
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/UCLA-Library-Software-Development/ursus)
@@ -24,7 +24,7 @@ This section gives basic instructions to get Ursus running locally. More extensi
 
 ### Install and run locally
 
-Ursus is a Black application and only needs Solr and Fedora.
+Ursus is a Blacklight application and only needs Solr and Fedora.
 
 Ursus can be locally run in two ways:
 
