@@ -2,9 +2,9 @@ name: Run CI Suite
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 env:
   COMPOSE_FILE: docker-compose-standalone.yml

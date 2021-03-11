@@ -24,7 +24,7 @@ This section gives basic instructions to get Ursus running locally. More extensi
 
 ### Install and run locally
 
-Ursus is a Black application and only needs Solr and Fedora.
+Ursus is a Blacklight application and only needs Solr and Fedora.
 
 Ursus can be locally run in two ways:
 
