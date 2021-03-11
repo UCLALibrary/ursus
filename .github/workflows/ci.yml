@@ -2,9 +2,9 @@ name: Run CI Suite
 
 on:
   push:
-    branches: [ master ]
+    branches: [main]
   pull_request:
-    branches: [ master ]
+    branches: [main]
 
 env:
   COMPOSE_FILE: docker-compose-standalone.yml
@@ -13,82 +13,82 @@ jobs:
   rubocop:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@b818bea8cf015031920150a891dbdd4105cc7e47
-      with:
-        ruby-version: '2.5'
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: rubocop
-      run: bundle exec rubocop
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@b818bea8cf015031920150a891dbdd4105cc7e47
+        with:
+          ruby-version: '2.5'
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: rubocop
+        run: bundle exec rubocop
 
   erblint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@b818bea8cf015031920150a891dbdd4105cc7e47
-      with:
-        ruby-version: '2.5'
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: erblint
-      run: bundle exec erblint --lint-all
-  
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@b818bea8cf015031920150a891dbdd4105cc7e47
+        with:
+          ruby-version: '2.5'
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: erblint
+        run: bundle exec erblint --lint-all
+
   stylelint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
-    - uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
-    - run: yarn install --frozen-lockfile
-    - run: yarn run lint
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+      - uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+      - run: yarn install --frozen-lockfile
+      - run: yarn run lint
 
   rspec:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
-    - name: Login to DockerHub
-      uses: docker/login-action@f3364599c6aa293cdc2b8391b1b56d0c30e45c8a
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-    - name: Start and Initialize Docker services
-      run: |
-        docker-compose run web bundle install
-        docker-compose run sinai bundle install
-        docker-compose up --detach
-        docker-compose run web bundle exec rails db:setup
-        docker-compose run sinai bundle exec rails db:setup
-        docker-compose ps
-    - name: run rspec
-      run: docker-compose run web bundle exec rspec spec
-    - name: Stop docker services
-      run: docker-compose down
-  
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+      - name: Login to DockerHub
+        uses: docker/login-action@f3364599c6aa293cdc2b8391b1b56d0c30e45c8a
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Start and Initialize Docker services
+        run: |
+          docker-compose run web bundle install
+          docker-compose run sinai bundle install
+          docker-compose up --detach
+          docker-compose run web bundle exec rails db:setup
+          docker-compose run sinai bundle exec rails db:setup
+          docker-compose ps
+      - name: run rspec
+        run: docker-compose run web bundle exec rspec spec
+      - name: Stop docker services
+        run: docker-compose down
+
   cypress:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
-    - name: Login to DockerHub
-      uses: docker/login-action@f3364599c6aa293cdc2b8391b1b56d0c30e45c8a
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-    - name: Start and Initialize Docker services
-      run: |
-        docker-compose run web bundle install
-        docker-compose run sinai bundle install
-        docker-compose up --detach
-        docker-compose run web bundle exec rails db:setup
-        docker-compose run sinai bundle exec rails db:setup
-    - name: restart sinai container (can only set feature flag after db init)
-      run: docker-compose restart sinai
-    - name: prime the OAI-PMH rails engine (first load can be very slow)
-      run: curl localhost:3003/catalog/oai?verb=Identify
-    - uses: cypress-io/github-action@224f894ce0b082eba28a3a4562f630c54a17b432
-      with:
-        command-prefix: 'percy exec -- npx'
-        working-directory: e2e
-      env: 
-        PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-    - name: Stop docker services
-      run: docker-compose down
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+      - name: Login to DockerHub
+        uses: docker/login-action@f3364599c6aa293cdc2b8391b1b56d0c30e45c8a
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Start and Initialize Docker services
+        run: |
+          docker-compose run web bundle install
+          docker-compose run sinai bundle install
+          docker-compose up --detach
+          docker-compose run web bundle exec rails db:setup
+          docker-compose run sinai bundle exec rails db:setup
+      - name: restart sinai container (can only set feature flag after db init)
+        run: docker-compose restart sinai
+      - name: prime the OAI-PMH rails engine (first load can be very slow)
+        run: curl localhost:3003/catalog/oai?verb=Identify
+      - uses: cypress-io/github-action@224f894ce0b082eba28a3a4562f630c54a17b432
+        with:
+          command-prefix: 'percy exec -- npx'
+          working-directory: e2e
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      - name: Stop docker services
+        run: docker-compose down

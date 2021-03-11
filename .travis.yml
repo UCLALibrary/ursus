@@ -16,7 +16,7 @@ after_success:
   - |
     # A canary to allow verification that our firewall allows Travis in
     curl https://api.ipify.org; echo
-    if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
+    if [[ $TRAVIS_BRANCH == 'main' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
       BASE_URL="https://$JENKINS_USER@$JENKINS_HOST"
       BASE_QUERY="buildWithParameters?GIT_BRANCH=$TRAVIS_BRANCH&cause=Travis+Build"
 

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# https://github.com/UCLALibrary/ursus/blob/master/spec/helpers/home_page_helper_spec.rb
+# https://github.com/UCLALibrary/ursus/blob/main/spec/helpers/home_page_helper_spec.rb
 
 require 'rails_helper'
 
