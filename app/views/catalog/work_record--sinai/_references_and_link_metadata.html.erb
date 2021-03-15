@@ -5,11 +5,19 @@
   <input type="radio" name="tabs" id="tabfive">
   <label for="tabfive">References</label>
   <div class="primary-metadata_tab-box--sinai">
-  <% references.each do |field_name, field| %>
-    <div class="metadata-block--sinai">
-        <span class="metadata-block_title--sinai"> <%= (render_document_show_field_label document, field: field_name).tr(':', '') %></span>
-        <span class="metadata-block_value--sinai"><%= doc_presenter.field_value field %></span>
+    <%# references_tesim %>
+    <div class="primary-metadata_tab-box--sinai">
+    <% references.each do |field_name, field| %>
+      <div class="metadata-block--sinai">
+          <span class="metadata-block_title--sinai"> <%= (render_document_show_field_label document, field: field_name).tr(':', '') %></span>
+          <span class="metadata-block_value--sinai"><%= doc_presenter.field_value field %></span>
+      </div>
+      <% end %>
     </div>
-    <% end %>
+    <%# other_versions_tesim %>
+    <div class="metadata-block--sinai">
+        <span class="metadata-block_title--sinai"> <%= 'Other version(s)' %></span>
+        <span class="metadata-block_value--sinai">  <%= render_other_versions_link %></span>
+    </div>
   </div>
 <% end %>
