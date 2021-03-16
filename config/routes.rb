@@ -10,13 +10,6 @@ Rails.application.routes.draw do
   get '/copyright_and_collections', to: 'static#ursus_copyright'
   get '/privacy_policy', to: 'static#ursus_privacy'
 
-  # Sinai static pages
-  get '/login', to: 'login#new', as: 'login'
-  get '/sinai_about', to: 'static#sinai_about'
-  get '/sinai_contact', to: 'static#sinai_contact'
-  get '/manuscript_descriptions', to: 'static#sinai_manuscript_descriptions'
-  get '/terms-of-use', to: 'static#sinai_terms_of_use'
-
   # Canon Law
   get '/canonlaw', to: 'canon_law#index'
   get '/canonlaw/introduction', to: 'canon_law#introduction'
