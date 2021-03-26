@@ -8,9 +8,12 @@ RSpec.describe 'The genre field of the item display view', :clean, type: :system
     solr.commit
   end
 
+  let(:ark) { 'ark:/123/genre_display' }
+  let(:solr_id) { ark.sub('ark:/', '').sub('/', '-').reverse }
   let(:work_attributes) do
     {
-      id: '123_genre_display',
+      id: solr_id,
+      ark_ssi: ark,
       genre_tesim: ['genre1', 'genre2', 'genre3'],
       read_access_group_ssim: ["public"],
       has_model_ssim: ['Work']
@@ -18,7 +21,7 @@ RSpec.describe 'The genre field of the item display view', :clean, type: :system
   end
 
   it 'lists each genre on its own line, as a link to a search for that genre' do
-    visit('/catalog/123_genre_display')
+    visit("/catalog/#{ark}")
 
     page.within('dd.blacklight-genre_tesim') do
       expect(all(:css, 'br').length).to eq 2

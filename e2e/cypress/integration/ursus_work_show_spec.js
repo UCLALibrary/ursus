@@ -1,6 +1,6 @@
 describe('Work show pages', () => {
   it('Calendar of Feasts', () => {
-    cy.visit('/catalog/qpvh6200zz-89112');
+    cy.visit('/catalog/ark:/21198/zz0026hvpq');
     cy.contains(
       'h1',
       'Manuscript No. 32: Calendar of Feasts 14th/15th Century'

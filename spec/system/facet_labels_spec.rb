@@ -13,6 +13,7 @@ RSpec.describe 'The facet sidebar', :clean, type: :system do
     let(:work_attributes) do
       {
         id: '123',
+        ark_ssi: 'ark:/321',
         title_tesim: ['Title'],
         has_model_ssim: ['Work'],
         has_model_sim: ['Work'],
@@ -66,42 +67,6 @@ RSpec.describe 'The facet sidebar', :clean, type: :system do
       click_on 'Genre'
       click_on 'news photographs'
       expect(page).to have_selector('.facet-selected')
-    end
-  end
-  xcontext 'in the sinai site' do
-    before do
-      allow(Flipflop).to receive(:sinai?).and_return(true)
-      allow_any_instance_of(ApplicationController).to receive(:sinai_authn_check).and_return(true)
-      solr = Blacklight.default_index.connection
-      solr.add(work_attributes_sinai)
-      solr.commit
-    end
-    let(:work_attributes_sinai) do
-      {
-        id: '123',
-        title_tesim: ['Sinai title1'],
-        has_model_ssim: ['Work'],
-        has_model_sim: ['Work'],
-        place_of_origin_tesim: ['place'],
-        human_readable_resource_type_sim: ['text'],
-        genre_sim: ['Manuscripts'],
-        support_tesim: ['paper'],
-        year_isim: [1947],
-        human_readable_language_sim: ['arabic'],
-        member_of_collections_ssim: ['sinai collection'],
-        visibility_ssi: 'sinai'
-      }
-    end
-    it 'displays expected facet labels' do
-      visit('/catalog')
-      facet_headings = page.all(:css, 'h3.facet-field-heading/a').to_a.map(&:text)
-      expect(facet_headings).to contain_exactly(
-        'Genre',
-        'Place of origin',
-        'Date',
-        'Language',
-        'Support'
-      )
     end
   end
 end

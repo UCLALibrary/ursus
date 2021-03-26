@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 FIRST_WORK = {
-  id: '123',
-  ark_ssi: ['ark:/24920492/029402'],
+  id: '204920-29402942',
+  ark_ssi: 'ark:/24920492/029402',
   has_model_ssim: ['Work'],
   title_tesim: ['The Title of my Work'],
   sort_title_ssort: 'The Title of my Work',
@@ -48,7 +48,8 @@ FIRST_WORK = {
 }.freeze
 
 SECOND_WORK = {
-  id: 'id123',
+  id: 'id-123',
+  ark_ssi: 'ark:/321/di',
   has_model_ssim: ['Work'],
   title_tesim: ['Title One'],
   sort_title_ssort: 'Title One',
@@ -62,14 +63,15 @@ SECOND_WORK = {
   photographer_tesim: ['Person 1', 'Person 2'],
   place_of_origin_tesim: ['Boston, MA', 'Philadelphia, PA', 'New York, NY', 'Los Angeles, CA'],
   location_tesim: ['search_results_spec'], # to control what displays,
-  member_of_collection_ids_ssim: ['coll123'],
+  member_of_collection_ids_ssim: ['coll-123'],
   read_access_group_ssim: ["public"],
   thumbnail_url_ss: ["http://thumbnail/work2.jpg"],
   visibility_ssi: ['open']
 }.freeze
 
 THIRD_WORK = {
-  id: 'id456',
+  id: 'id-456',
+  ark_ssi: 'ark:/654/di',
   has_model_ssim: ['Work'],
   title_tesim: ['Title Two'],
   sort_title_ssort: 'Title Two',
@@ -84,14 +86,15 @@ THIRD_WORK = {
   location_tesim: ['search_results_spec'], # to control what displays
   collection_tesim: ['Slide Film', 'Analog', 'Photographs'],
   member_of_collections_ssim: ['Photographic Collection'],
-  member_of_collection_ids_ssim: ['coll123'],
+  member_of_collection_ids_ssim: ['coll-123'],
   read_access_group_ssim: ["public"],
   thumbnail_url_ss: ["http://thumbnail/work3.jpg"],
   visibility_ssi: ['open']
 }.freeze
 
 FIRST_COLLECTION = {
-  id: 'coll123',
+  id: 'coll-123',
+  ark_ssi: 'ark:/321/lloc',
   services_contact_ssm: ['someone somewhere'],
   description_tesim: ['Description 3', 'Description 4', 'another desc'],
   date_created_tesim: ["Date 1"],
@@ -101,7 +104,8 @@ FIRST_COLLECTION = {
 }.freeze
 
 FOURTH_WORK = {
-  id: 'id456',
+  id: 'id-456',
+  ark_ssi: 'ark:/654/di',
   has_model_ssim: ['Work'],
   title_tesim: ['Title Three'],
   sort_title_ssort: 'Title Three',
@@ -119,7 +123,8 @@ FOURTH_WORK = {
 }.freeze
 
 WORK_A = {
-  id: 'id456a',
+  id: 'id-456a',
+  ark_ssi: 'ark:/a654/di',
   has_model_ssim: ['Work'],
   title_tesim: ['Title Three'],
   sort_title_ssort: 'Title Three',
@@ -138,7 +143,8 @@ WORK_A = {
 }.freeze
 
 WORK_B = {
-  id: 'id456b',
+  id: 'id-456b',
+  ark_ssi: 'ark:/b654/di',
   has_model_ssim: ['Work'],
   title_tesim: ['Title Three'],
   sort_title_ssort: 'Title Three',
@@ -157,7 +163,8 @@ WORK_B = {
 }.freeze
 
 WORK_C = {
-  id: 'id456c',
+  id: 'id-456c',
+  ark_ssi: 'ark:/c654/di',
   has_model_ssim: ['Work'],
   title_tesim: ['Title Three'],
   sort_title_ssort: 'Title Three',
@@ -176,7 +183,8 @@ WORK_C = {
 }.freeze
 
 WORK_D = {
-  id: 'id456d',
+  id: 'id-456d',
+  ark_ssi: 'ark:/d654/di',
   has_model_ssim: ['Work'],
   title_tesim: ['Title Three'],
   sort_title_ssort: 'Title Three',
@@ -196,6 +204,7 @@ WORK_D = {
 
 WORK_E = {
   id: 'id456e',
+  ark_ssi: 'ark:/e654/di',
   has_model_ssim: ['Work'],
   title_tesim: ['Title Three'],
   sort_title_ssort: 'Title Three',

@@ -3,13 +3,17 @@
 require 'rails_helper'
 
 RSpec.describe IiifService do
+  let(:id) { 'abc123' }
+  let(:ark) { 'ark:/123/not_the_id' }
   let(:service) { described_class.new }
   let(:solr_document) do
-    SolrDocument.new(id: 'abc123',
+    SolrDocument.new(id: id,
+                     ark: ark,
                      iiif_manifest_url_ssi: 'https://manifest.store/ark%3A%2Fabc%2F123/manifest')
   end
   let(:solr_document_with_cv) do
-    SolrDocument.new(id: 'cde123',
+    SolrDocument.new(id: id,
+                     ark: ark,
                      iiif_manifest_url_ssi: 'https://manifest.store/ark%3A%2Fabc%2F123/manifest',
                      member_ids_ssim: 7)
   end
@@ -28,20 +32,20 @@ RSpec.describe IiifService do
     end
 
     context 'when a url is stored but feature is disabled' do
-      it 'builds a local url' do
+      it 'builds a local url using the solr ID, *not* the ARK' do
         allow(Flipflop).to receive(:use_manifest_store?).and_return(false)
 
-        expect(service.iiif_manifest_url(solr_document)).to eq 'https://californica.url/concern/works/abc123/manifest'
+        expect(service.iiif_manifest_url(solr_document)).to eq "https://californica.url/concern/works/#{id}/manifest"
       end
     end
 
     context 'when nothing is stored' do
-      let(:solr_document) { SolrDocument.new(id: 'abc123') }
+      let(:solr_document) { SolrDocument.new(id: id) }
 
-      it 'builds a local url' do
+      it 'builds a local url using the solr ID, *not* the ARK' do
         allow(Flipflop).to receive(:use_manifest_store?).and_return(true)
 
-        expect(service.iiif_manifest_url(solr_document)).to eq 'https://californica.url/concern/works/abc123/manifest'
+        expect(service.iiif_manifest_url(solr_document)).to eq "https://californica.url/concern/works/#{id}/manifest"
       end
     end
   end

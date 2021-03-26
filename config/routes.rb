@@ -57,7 +57,7 @@ Rails.application.routes.draw do
   root to: "catalog#index"
   concern :exportable, Blacklight::Routes::Exportable.new
 
-  resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
+  resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog', constraints: { id: /.*/ } do
     concerns :exportable
   end
 

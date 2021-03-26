@@ -4,7 +4,8 @@
 require 'rails_helper'
 
 RSpec.describe 'View a Collection', type: :system, js: true do
-  let(:id) { 'm8f11000zz-89112' }
+  let(:ark) { 'ark:/21198/zz00011f8m' }
+  let(:solr_id) { ark.sub('ark:/', '').sub('/', '-').reverse }
   let(:services_contact) do
     'UCLA Charles E. Young Research Library Department of Special Collections Phone: (310)825-4988'
   end
@@ -13,12 +14,12 @@ RSpec.describe 'View a Collection', type: :system, js: true do
   end
   let(:collection_attributes) do
     {
-      id: id,
+      id: solr_id,
+      ark_ssi: ark,
       has_model_ssim: ['Collection'],
       accessControl_ssim: ['7b1af782-af1f-46a6-9bd2-b53be0f1bb68'],
       title_tesim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
       collection_type_gid_ssim: ['gid://californica/hyrax-collectiontype/1'],
-      ark_ssi: 'ark:/21198/zz00011f8m',
       local_identifier_ssm: ['Collection 686'],
       normalized_date_tesim: ['1937/1983'],
       photographer_tesim: ['Bennett, Walter E. (Walter Edward), 1921-1995'],
@@ -64,7 +65,7 @@ RSpec.describe 'View a Collection', type: :system, js: true do
   end
 
   it 'displays the metadata' do
-    visit solr_document_path(id)
+    visit "/catalog/#{ark}"
 
     # expect(page).to have_selector('.primary-metadata')
     # expect(page).to have_selector('.secondary-metadata')
@@ -76,14 +77,14 @@ RSpec.describe 'View a Collection', type: :system, js: true do
   end
 
   it 'displays the schema.org values' do
-    visit solr_document_path(id)
-    expect(page.find('div[itemtype = "http://schema.org/Collection"]')['itemid']).to have_content '/catalog/m8f11000zz-89112'
+    visit "/catalog/#{ark}"
+    expect(page.find('div[itemtype = "http://schema.org/Collection"]')['itemid']).to end_with 'catalog/ark:/21198/zz00011f8m'
     expect(page.find('div > p[itemprop]')['itemprop']).to have_content 'abstract'
     expect(page.find('div[itemprop]')['itemprop']).to have_content 'collectionSize'
   end
 
   it 'displays headings' do
-    visit solr_document_path(id)
+    visit "/catalog/#{ark}"
     expect(page).to have_content 'Collection Overview'
     expect(page).to have_content 'Contact'
     expect(page).to have_content 'Find this Collection'

@@ -12,10 +12,10 @@ RSpec.describe 'View a Work', type: :system, js: true do
   end
 
   let(:work_attributes) { FIRST_WORK }
-  let(:id) { FIRST_WORK[:id] }
+  let(:ark) { FIRST_WORK[:ark_ssi] }
 
   it 'displays the metadata' do
-    visit solr_document_path(id)
+    visit "/catalog/#{ark}"
 
     expect(page).to have_selector('.item-page__primary-metadata')
     expect(page).to have_selector('.item-page__secondary-metadata')
@@ -68,14 +68,14 @@ RSpec.describe 'View a Work', type: :system, js: true do
 
   context 'license' do
     it 'displays the creative commons text and logo when there is a cc license' do
-      visit solr_document_path(id)
+      visit "/catalog/#{ark}"
       expect(page).to have_content 'License'
       expect(page).to have_link 'Creative Commons Attribution 4.0 International License'
     end
   end
 
   it 'displays facetable fields as links' do
-    visit solr_document_path(id)
+    visit "/catalog/#{ark}"
     expect(page.find('dd.blacklight-subject_tesim')).to have_link 'Subj 1'
     expect(page.find('dd.blacklight-subject_tesim')).to have_link 'Subj 2'
     expect(page.find('dd.blacklight-human_readable_resource_type_tesim')).to have_link 'still image'
@@ -90,15 +90,15 @@ RSpec.describe 'View a Work', type: :system, js: true do
   end
 
   it 'displays the schema.org values' do
-    visit solr_document_path(id)
-    expect(page.find('div[itemtype = "http://schema.org/CreativeWork"]')['itemid']).to have_content '/catalog/123'
+    visit "/catalog/#{ark}"
+    expect(page.find('div[itemtype = "http://schema.org/CreativeWork"]')['itemid']).to have_content "/catalog/#{ark}"
     # expect(page.find('dd.blacklight-genre_tesim')['itemprop']).to have_content 'genre'
     # Capybara cannot find schema.org link tag
     # expect(page.find('link[itemid$="/catalog/9qsg9000zz-89112"')['itemtype']).to have_content 'http://schema.org/Collection'
   end
 
   it 'only displays the tools we want to support' do
-    visit solr_document_path(id)
+    visit "/catalog/#{ark}"
 
     # we DO NOT want the tools panel
     expect(page).not_to have_content 'Tools'
@@ -112,7 +112,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
   end
 
   it 'loads UV on the page with the correct controls' do
-    visit solr_document_path(id)
+    visit "/catalog/#{ark}"
     expect(page.html).to match(/media-viewer-iframe/)
 
     within_frame(find('.media-viewer-iframe')) do

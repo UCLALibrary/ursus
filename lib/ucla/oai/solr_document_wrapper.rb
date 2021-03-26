@@ -14,6 +14,16 @@ module Ucla
         response.documents.first.timestamp
       end
 
+      def find(selector, options = {})
+        return next_set(options[:resumption_token]) if options[:resumption_token]
+
+        if selector == :all
+          super(selector, options)
+        else
+          super(selector.sub(/^ark\:\/+/, '').sub('/', '-').reverse, options)
+        end
+      end
+
       private
 
         def conditions(options) # conditions/query derived from options

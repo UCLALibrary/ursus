@@ -63,7 +63,7 @@ RSpec.describe Ursus::CollectionBlockPresenter do
     end
 
     it 'can get the collection document' do
-      expect(collection_presenter.collection_document[:id]).to eq('coll123')
+      expect(collection_presenter.collection_document[:id]).to eq('coll-123')
     end
 
     it ' can get the description' do

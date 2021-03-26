@@ -9,11 +9,13 @@ RSpec.describe 'View a a work with breaks', type: :system do
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
   end
 
-  let(:id) { '123' }
+  let(:ark) { 'ark:/123/456' }
+  let(:solr_id) { ark.sub('ark:/', '').sub('/', '-').reverse }
 
   let(:work_attributes) do
     {
-      id: id,
+      id: solr_id,
+      ark_ssi: ark,
       has_model_ssim: ['Work'],
       title_tesim: ['The Title of my Work'],
       description_tesim: ['Description 1', 'Description 2'],
@@ -45,7 +47,7 @@ RSpec.describe 'View a a work with breaks', type: :system do
   end
 
   it 'displays line breaks between the values of certain fields' do
-    visit solr_document_path(id)
+    visit "/catalog/#{ark}"
     expect(page.find('dd.blacklight-description_tesim').all(:css, 'br').length).to eq 1
     expect(page.find('dd.blacklight-subject_tesim').all(:css, 'br').length).to eq 1
     expect(page.find('dd.blacklight-genre_tesim').all(:css, 'br').length).to eq 2

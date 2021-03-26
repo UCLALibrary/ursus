@@ -13,6 +13,8 @@ class CatalogController < ApplicationController
   # Apply the blacklight-access_controls
   before_action :enforce_show_permissions, only: :show
 
+  before_action :unescape_url_ark, only: :show
+
   include BlacklightHelper
 
   # ------------------------------------------------------
@@ -26,7 +28,7 @@ class CatalogController < ApplicationController
         repository_url: 'https://' + ENV['RAILS_HOST'] + '/catalog/oai?verb=Identify',
         record_prefix: 'oai:library.ucla.edu',
         admin_email: 'dlp@library.ucla.edu',
-        sample_id: 'kxc8j200zz-89112'
+        sample_id: 'ark:/21198/zz002j8cxk'
       },
       document: {
         limit: 25, # number of records returned with each request, default: 15
@@ -60,7 +62,7 @@ class CatalogController < ApplicationController
       mm: '100%',
       rows: 10,
       qf: 'title_tesim description_tesim creator_tesim keyword_tesim',
-      fq: '(((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !((visibility_ssi:restricted) OR (visibility_ssi:discovery) OR (visibility_ssi:sinai)))'
+      fq: '(ark_ssi:* AND ((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !((visibility_ssi:restricted) OR (visibility_ssi:discovery) OR (visibility_ssi:sinai)))'
       ### we want to only return works where visibility_ssi == open (not restricted)
     }
     config.default_solr_params[:fq] = '((has_model_ssim:Work) AND !(visibility_ssi:restricted))' if Flipflop.sinai?
@@ -451,7 +453,7 @@ class CatalogController < ApplicationController
   # user to view the show page if they have at least
   # 'discovery'-level permission.
   def enforce_show_permissions(_opts = {})
-    permissions = current_ability.permissions_doc(params[:id])
+    permissions = current_ability.permissions_doc(solr_id)
     unless can? :discover, permissions
       raise Blacklight::AccessControls::AccessDenied.new('You do not have sufficient access privileges to view this document, which has been marked private.', :discover, params[:id])
     end
@@ -464,7 +466,7 @@ class CatalogController < ApplicationController
   # https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb -- line: 46
   # https://www.rubydoc.info/github/projectblacklight/blacklight/Blacklight/Catalog
   def show
-    deprecated_response, @document = search_service.fetch(params[:id])
+    deprecated_response, @document = search_service.fetch(solr_id)
     @response = ActiveSupport::Deprecation::DeprecatedObjectProxy.new(deprecated_response, 'The @response instance variable is deprecated; use @document.response instead.')
     respond_to do |format|
       format.html { @search_context = setup_next_and_previous_documents }
@@ -483,7 +485,15 @@ class CatalogController < ApplicationController
     end
   end
 
+  def unescape_url_ark
+    redirect_to solr_document_path(params[:id]) unless request.path == solr_document_path(params[:id])
+  end
+
   def oai_provider
     @oai_provider ||= Ucla::Oai::SolrDocumentProvider.new(self, oai_config)
+  end
+
+  def solr_id
+    params[:id].sub(/^ark\:\/+/, '').sub('/', '-').reverse
   end
 end

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'catalog/_bookmark_control.html.erb' do
-  let(:document) { SolrDocument.new id: 'xyz', format: 'a' }
+  let(:document) { SolrDocument.new id: 'xyz', ark_ssi: 'ark:/zyx', format: 'a' }
   let(:blacklight_config) { Blacklight::Configuration.new }
 
   before do

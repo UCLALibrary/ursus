@@ -25,7 +25,7 @@ module Ursus
     BlacklightDynamicSitemap::Engine.config.max_documents_expiration = 1.day
     BlacklightDynamicSitemap::Engine.config.minimum_average_chunk = 10_000
     BlacklightDynamicSitemap::Engine.config.hashed_id_field = 'hashed_id_ssi'
-    BlacklightDynamicSitemap::Engine.config.unique_id_field = 'id'
+    BlacklightDynamicSitemap::Engine.config.unique_id_field = 'ark_ssi'
     BlacklightDynamicSitemap::Engine.config.last_modified_field = 'timestamp'
   end
 end
