@@ -128,6 +128,7 @@ class CatalogController < ApplicationController
       config.add_facet_field 'year_isim', limit: 5, range: true
       config.add_facet_field 'human_readable_language_sim', limit: 5
       config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
+      config.add_facet_field 'repository_sim', limit: 5
     end
 
     # The generic_type isn't displayed on the facet list
@@ -162,6 +163,7 @@ class CatalogController < ApplicationController
       config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
       config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
       config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+      config.add_index_field 'repository_tesim', label: 'Repository', link_to_facet: 'repository_sim'
     end
 
     # ------------------------------------------------------
@@ -267,7 +269,7 @@ class CatalogController < ApplicationController
 
     # SECONDARY
     # Find This Item
-    config.add_show_field 'repository_tesim', label: 'Repository'
+    config.add_show_field 'repository_tesim', label: 'Repository', link_to_facet: 'repository_sim'
     config.add_show_field 'local_identifier_ssm', label: 'Local identifier'
     config.add_show_field 'oclc_ssi', label: 'OCLC Number'
     config.add_show_field 'iiif_manifest_url_ssi', label: 'Manifest url'
