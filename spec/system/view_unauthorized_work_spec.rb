@@ -8,19 +8,20 @@ RSpec.feature "View a work you aren't authorized to see", js: true do
     solr.commit
   end
 
-  let(:work_id) { '123' }
+  let(:ark) { 'ark:/21198/123' }
+  let(:solr_id) { ark.sub('ark:/', '').sub('/', '-').reverse }
 
   let(:restricted_work) do
     {
-      id: work_id,
-      ark_ssi: ['ark:/123/123'],
+      id: solr_id,
+      ark_ssi: ark,
       has_model_ssim: ['Work'],
       title_tesim: ['Restricted Work']
     }
   end
 
   it 'denies access' do
-    visit solr_document_path(work_id)
+    visit "/catalog/#{ark}"
     expect(page).to have_content 'The page you were looking for doesn\'t exist'
   end
 end

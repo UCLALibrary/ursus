@@ -11,7 +11,8 @@ RSpec.describe 'Search the catalog', :clean, type: :system do
 
   let(:llama) do
     {
-      id: '111',
+      id: '111-aaa',
+      ark_ssi: 'ark:/aaa/111',
       has_model_ssim: ['Work'],
       title_tesim: ['Llama Love'],
       year_isim: [1920]
@@ -21,6 +22,7 @@ RSpec.describe 'Search the catalog', :clean, type: :system do
   let(:newt) do
     {
       id: '222',
+      ark_ssi: 'ark:/222',
       has_model_ssim: ['Work'],
       title_tesim: ['Newt Nutrition'],
       year_isim: [1940]

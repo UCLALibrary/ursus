@@ -9,9 +9,12 @@ RSpec.describe 'The subject field of the item display view', :clean, type: :syst
     solr.commit
   end
 
+  let(:ark) { 'ark:/123/subject_display' }
+  let(:solr_id) { ark.sub('ark:/', '').sub('/', '-').reverse }
   let(:work_attributes) do
     {
-      id: '123_subject_display',
+      id: solr_id,
+      ark_ssi: ark,
       subject_tesim: ['subject1', 'subject2', 'subject3'],
       read_access_group_ssim: ["public"],
       has_model_ssim: ['Work']
@@ -19,7 +22,7 @@ RSpec.describe 'The subject field of the item display view', :clean, type: :syst
   end
 
   it 'lists each subject on its own line, as a link to a search for that subject' do
-    visit('/catalog/123_subject_display')
+    visit("/catalog/#{ark}")
 
     page.within('dd.blacklight-subject_tesim') do
       expect(all(:css, 'br').length).to eq 2

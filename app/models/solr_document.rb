@@ -13,7 +13,7 @@ class SolrDocument
   # add collection membership in OAI-PMH feed source element for all schemas
   add_field_semantics('source', 'member_of_collections_ssim')
 
-  # self.unique_key = 'id'
+  self.unique_key = 'ark_ssi'
 
   # Email uses the semantic field mappings below to generate the body of an email.
   SolrDocument.use_extension(Blacklight::Document::Email)
@@ -75,6 +75,7 @@ class SolrDocument
     end
   end
 
+  # populates OAI feed
   def permalink(record = self)
     "#{root_url}/catalog/#{record.id}"
   end

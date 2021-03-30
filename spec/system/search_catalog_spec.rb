@@ -13,6 +13,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
   let(:orange) do
     {
       id: '111',
+      ark_ssi: 'ark:/111',
       has_model_ssim: ['Work'],
       title_tesim: ['Orange Carrot'],
       photographer_tesim: ['Bittersweet Tangerine'],
@@ -23,6 +24,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
   let(:banana) do
     {
       id: '222',
+      ark_ssi: 'ark:/222',
       has_model_ssim: ['Work'],
       title_tesim: ['Yellow Banana'],
       photographer_tesim: ['Buff Saffron']
@@ -32,6 +34,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
   let(:creator) do
     {
       id: '333',
+      ark_ssi: 'ark:/333',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in creator',
       creator_tesim: ['3Guv4P44']
@@ -41,6 +44,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
   let(:contributor) do
     {
       id: '444',
+      ark_ssi: 'ark:/444',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in contributor',
       contributor_tesim: ['3Guv4P44']
@@ -50,6 +54,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
   let(:publisher) do
     {
       id: '555',
+      ark_ssi: 'ark:/555',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in publisher',
       publisher_tesim: ['3Guv4P44']
@@ -59,6 +64,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
   let(:genre) do
     {
       id: '666',
+      ark_ssi: 'ark:/666',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in genre',
       genre_tesim: ['3Guv4P44']
@@ -68,6 +74,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
   let(:medium) do
     {
       id: '777',
+      ark_ssi: 'ark:/777',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in medium',
       medium_tesim: ['3Guv4P44']
@@ -77,6 +84,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
   let(:named_subject) do
     {
       id: '888',
+      ark_ssi: 'ark:/888',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in named_subject',
       named_subject_tesim: ['3Guv4P44']
@@ -86,6 +94,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
   let(:sinai_work) do
     {
       id: '999',
+      ark_ssi: 'ark:/999',
       has_model_ssim: ['Work'],
       title_tesim: 'Sinai work RsYAM429',
       visibility_ssi: 'sinai'

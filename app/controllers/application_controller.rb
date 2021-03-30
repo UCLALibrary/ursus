@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/ClassLength:
 class ApplicationController < ActionController::Base
   before_action :display_banner?, :sinai_authn_check, :add_legacy_views, :cors_preflight_check
   after_action :cors_set_access_control_headers
+  helper_method :solr_document_path
 
   def add_legacy_views
     prepend_view_path "app/views_legacy"
@@ -108,6 +110,18 @@ class ApplicationController < ActionController::Base
 
   def render_404
     render file: Rails.root.join('public', '404.html'), status: :not_found, layout: false
+  end
+
+  def solr_document_path(document_or_id)
+    ark = case document_or_id
+          when SolrDocument
+            document_or_id.id
+          when String
+            document_or_id
+          else
+            raise ArgumentError, 'Argument must be a SolrDocument with an ARK, or a string containing a SolrDocument ARK'
+          end
+    "/catalog/#{ark}"
   end
 
   private

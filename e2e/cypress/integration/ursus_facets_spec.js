@@ -1,9 +1,5 @@
 
 describe('Facets', () => {
-  beforeEach(() => {
-    cy.visit(Cypress.env('baseUrl'), { responseTimeout: 31000 });
-  });
-
   it('Subject', () => {
     cy.visit('/');
     cy.contains('a', 'Subject').click({ force: true });
@@ -18,7 +14,7 @@ describe('Facets', () => {
     cy.percySnapshot('Subject facet modal');
     cy.contains('Actresses--Australian--California').click({ force: true });
 
-    cy.get('.filter-label-key',{ timeout: 100000 }).contains('Subject');
+    cy.get('.filter-label-key', { timeout: 100000 }).contains('Subject');
     cy.get('.filter-label-value').contains('Actresses--Australian--California');
     cy.percySnapshot('Subject facet selected');
   });
@@ -27,10 +23,10 @@ describe('Facets', () => {
     cy.visit('/');
     cy.contains('a', 'Resource Type').click();
     cy.contains('a', 'cartographic').click({ force: true });
-    cy.get('[title="cartographic"]',{ timeout: 100000 });
+    cy.get('[title="cartographic"]', { timeout: 100000 });
     cy.contains('a', 'Language').click();
     cy.contains('a', 'English').click({ force: true });
-    cy.get('[title="English"]',{ timeout: 100000 });
+    cy.get('[title="English"]', { timeout: 100000 });
     cy.get(
       '.filter-human_readable_language_sim > .filter-group__label > .filter-label-key'
     ).contains('Language');
@@ -50,10 +46,10 @@ describe('Facets', () => {
     cy.visit('/');
     cy.contains('a', 'Genre').click();
     cy.contains('a', 'black-and-white photographs').click({ force: true });
-    cy.get('[title="black-and-white photographs"]',{ timeout: 100000 });
+    cy.get('[title="black-and-white photographs"]', { timeout: 100000 });
     cy.contains('a', 'Language').click();
     cy.contains('a', 'English').click({ force: true });
-    cy.get('[title="English"]',{ timeout: 100000 });
+    cy.get('[title="English"]', { timeout: 100000 });
     cy.get(
       '.filter-genre_sim > .filter-group__label > .filter-label-key'
     ).contains('Genre');
@@ -72,17 +68,17 @@ describe('Facets', () => {
     cy.visit('/catalog?f[genre_sim][]=Black-and-white+photographs');
     cy.get('[title="Black-and-white photographs"]');
     cy.contains('a', 'Start Over').click({ force: true });
-    cy.get('.search-results-container',{ timeout: 100000 }).should('not.contain', 'You searched for');
+    cy.get('.search-results-container', { timeout: 100000 }).should('not.contain', 'You searched for');
   });
 
   it('Names', () => {
     cy.visit('/');
     cy.contains('a', 'Names').click();
     cy.contains('a', 'Sachtleben, William Lewis').click({ force: true });
-    cy.get('[title="Sachtleben, William Lewis"]',{ timeout: 100000 });
+    cy.get('[title="Sachtleben, William Lewis"]', { timeout: 100000 });
     cy.contains('a', 'Location').click();
     cy.contains('a', 'Greece--Athens').click({ force: true });
-    cy.get('[title="Greece--Athens"]',{ timeout: 100000 });
+    cy.get('[title="Greece--Athens"]', { timeout: 100000 });
     cy.get(
       '.filter-location_sim > .filter-group__label > .filter-label-key'
     ).contains('Location');
@@ -116,8 +112,8 @@ describe('Facets', () => {
       '#facet-member_of_collections_ssim > .facet-values > .more_facets > a'
     ).click({ force: true });
     cy.contains('a', 'Next').click({ force: true });
-    cy.contains('a','Palmer Family Papers').click({ force: true });
-    cy.get('.filter-label-key',{ timeout: 100000 }).contains('Collection');
+    cy.contains('a', 'Palmer Family Papers').click({ force: true });
+    cy.get('.filter-label-key', { timeout: 100000 }).contains('Collection');
     cy.get('.filter-label-value').contains('Palmer Family Papers');
     cy.percySnapshot();
   });
@@ -130,7 +126,7 @@ describe('Facets', () => {
     });
     cy.contains('a', 'A-Z Sort').click({ force: true });
     cy.get('a[href*="Architectural+drawings"]').click({ force: true });
-    cy.get('.filter-label-key',{ timeout: 100000 }).contains('Genre');
+    cy.get('.filter-label-key', { timeout: 100000 }).contains('Genre');
     cy.get('.filter-label-value').contains('Architectural drawings');
     cy.percySnapshot();
   });

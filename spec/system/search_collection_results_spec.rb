@@ -11,7 +11,8 @@ RSpec.describe 'Search collection results page', type: :system, js: false do
 
   let(:collection_attributes) do
     {
-      id: 'id123',
+      id: 'id-123',
+      ark_ssi: 'ark:/321/di',
       has_model_ssim: ['Collection'],
       title_tesim: ['Title'],
       description_tesim: ['Description 1'],
