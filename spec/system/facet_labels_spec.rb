@@ -23,7 +23,8 @@ RSpec.describe 'The facet sidebar', :clean, type: :system do
         year_isim: [1947],
         human_readable_language_sim: ['No linguistic content'],
         location_sim: ['Echo Park'],
-        member_of_collections_ssim: ['Connell']
+        member_of_collections_ssim: ['Connell'],
+        repository_sim: ['Fowler Museum']
       }
     end
 
@@ -38,7 +39,8 @@ RSpec.describe 'The facet sidebar', :clean, type: :system do
         'Location',
         'Date',
         'Language',
-        'Collection'
+        'Collection',
+        'Repository'
       )
     end
 
