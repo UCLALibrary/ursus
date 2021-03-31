@@ -10,10 +10,10 @@ class CatalogController < ApplicationController
   include BlacklightOaiProvider::Controller
   include Blacklight::AccessControls::Catalog
 
+  before_action :cannonical_url_redirect, only: :show
+
   # Apply the blacklight-access_controls
   before_action :enforce_show_permissions, only: :show
-
-  before_action :unescape_url_ark, only: :show
 
   include BlacklightHelper
 
@@ -486,8 +486,15 @@ class CatalogController < ApplicationController
     end
   end
 
-  def unescape_url_ark
+  def cannonical_url_redirect
+    # If the ARK is URL-escaped, redirect to an unescaped URL
     redirect_to solr_document_path(params[:id]) unless request.path == solr_document_path(params[:id])
+
+    # For old-style reversed-ark URLs, redirect to a URL with the forward ARK, BUT only  if the record exists
+    # otherwise, short-circuit to a 404
+    unless params[:id].start_with?('ark:/')
+      redirect_to solr_document_path('ark:/' + params[:id].reverse.sub('-', '/')) if SolrDocument.find(params[:id])
+    end
   end
 
   def oai_provider
