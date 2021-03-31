@@ -105,19 +105,14 @@
         <% if field_name == 'member_of_collections_ssim' %>
           <% if document[:member_of_collections_ssim] && document[:member_of_collection_ids_ssim] %>
             <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-<%= field_name.parameterize %>">
-            <%= render_index_field_label document, field: field_name %>
-          </dt>
-          <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-<%= field_name.parameterize %>">
-            <% if document[:member_of_collections_ssim].length > 1 %>
-              <% document[:member_of_collections_ssim].each_with_index do | member, index | %>
-                <%= link_to member, "/catalog/#{document[:member_of_collection_ids_ssim][index]}" %><br>
+              <%= render_index_field_label document, field: field_name %>
+            </dt>
+            <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-<%= field_name.parameterize %>">
+              <% document[:member_of_collections_ssim].zip(document[:member_of_collection_ids_ssim]).each do | title, id | %>
+                <%= link_to title, solr_document_path('ark:/' + id.reverse.sub('-', '/')) %><br>
               <% end %>
-            <% else %>
-              <%= link_to document[:member_of_collections_ssim][0], "/catalog/#{document[:member_of_collection_ids_ssim][0]}" %>
-            <% end %>
-          </dd>
-        <% end %>
-
+            </dd>
+          <% end %>
         <% else %>
           <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-<%= field_name.parameterize %>">
             <%= render_index_field_label document, field: field_name %>
