@@ -56,7 +56,8 @@ class SearchFieldService
     'shelfmark_ssi',
     'descriptive_title_tesim',
     'delivery_tesim',
-    'other_versions_tesim'
+    'other_versions_tesim',
+    'repository_tesim'
   ].join(' ').freeze
 
   def search_fields
