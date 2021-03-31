@@ -113,11 +113,21 @@ class ApplicationController < ActionController::Base
   end
 
   def solr_document_path(*args)
-    URI.unescape(super(*args))
+    ark = case args[0]
+          when nil
+            document.id
+          when SolrDocument
+            args[0].id
+          when String
+            args[0]
+          else
+            raise ArgumentError, 'Argument must be a SolrDocument with an ARK, or a string containing a SolrDocument ARK'
+          end
+    "/catalog/#{ark}"
   end
 
   def solr_document_url(*args)
-    URI.unescape(super(*args))
+    request.scheme + '://' + request.host_with_port + solr_document_path(*args)
   end
 
   private
