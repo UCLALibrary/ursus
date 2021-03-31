@@ -9,7 +9,7 @@ xml.urlset(
   @sitemap_entries.each do |doc|
     xml.url do
       mylink = doc[BlacklightDynamicSitemap::Engine.config.unique_id_field]
-      xml.loc(main_app.solr_document_url(mylink))
+      xml.loc(solr_document_url(mylink))
       xml.lastmod(doc[BlacklightDynamicSitemap::Engine.config.last_modified_field])
     end
   end
