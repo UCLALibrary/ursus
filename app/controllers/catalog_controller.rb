@@ -163,7 +163,6 @@ class CatalogController < ApplicationController
       config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
       config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
       config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
-      config.add_index_field 'repository_tesim', label: 'Repository', link_to_facet: 'repository_sim'
     end
 
     # ------------------------------------------------------
