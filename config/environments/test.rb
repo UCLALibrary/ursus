@@ -47,6 +47,7 @@ Rails.application.configure do
   config.user_account_ui_enabled = ENV['USER_ACCOUNT_UI_ENABLED'] || 'false'
   config.californica_thumbnail_url = ENV['THUMBNAIL_BASE_URL'] || ''
   config.iiif_url = ENV['IIIF_URL'] || ''
+  config.media_viewer_url = ENV['MEDIA_VIEWER'] || 'https://p-w-dl-viewer01.library.ucla.edu/uv.html'
 
   config.serve_static_assets = true
 end
