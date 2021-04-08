@@ -21,4 +21,4 @@ jobs:
       uses: romoh/dependencies-autoupdate@7f7253db45afa787a234f0fe48fd1ae5dc2dfde5
       with: 
         token: ${{ secrets.GITHUB_TOKEN }}
-        update-command: bundle update
+        update-command: bundle lock --update
