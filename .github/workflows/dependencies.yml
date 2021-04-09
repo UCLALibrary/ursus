@@ -1,0 +1,24 @@
+name:  Autoupdate Dependencies
+
+on: 
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '21 9 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    ruby-bundle:
+    - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@b818bea8cf015031920150a891dbdd4105cc7e47
+      with:
+        ruby-version: '2.5'
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Run auto dependency update 
+      uses: romoh/dependencies-autoupdate@7f7253db45afa787a234f0fe48fd1ae5dc2dfde5
+      with: 
+        token: ${{ secrets.GITHUB_TOKEN }}
+        update-command: bundle lock --update
