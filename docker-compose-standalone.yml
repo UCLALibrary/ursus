@@ -10,11 +10,8 @@ services:
     env_file:
       - ./default.env
       - ./docker.env
-    environment:
-      SOLR_URL: http://solr:8983/solr/ursus
-      SOLR_TEST_URL: http://solr_test:8983/solr/ursus
-      DATABASE_USERNAME: ursus
-      DATABASE_PASSWORD: ursus
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:3000", "||", "exit", "1"]
     ports:
       - '127.0.0.1:3003:3000'
     volumes:
@@ -23,32 +20,6 @@ services:
       - ursus_node_modules:/ursus/node_modules
       - ursus_public_uv:/ursus/public/uv
       - ursus_tmp:/ursus/tmp
-    working_dir: /ursus
-
-  sinai:
-    image: uclalibrary/ursus
-    command: 'sh start-sinai.sh'
-    depends_on:
-      - db
-      - solr
-    env_file:
-      - ./default.env
-      - ./docker.env
-    environment:
-      DATABASE_NAME: sinai
-      #SOLR_URL: http://host.docker.internal:6983/solr/californica
-      SOLR_URL: http://solr:8983/solr/sinai
-      SOLR_TEST_URL: http://solr_test:8983/solr/sinai
-      DATABASE_USERNAME: ursus
-      DATABASE_PASSWORD: ursus
-    ports:
-      - '127.0.0.1:3004:3000'
-    volumes:
-      - .:/ursus
-      - sinai_bundle_dir:/usr/local/bundle
-      - sinai_node_modules:/ursus/node_modules
-      - sinai_public_uv:/ursus/public/uv
-      - sinai_tmp:/ursus/tmp
     working_dir: /ursus
 
   db:
@@ -73,10 +44,6 @@ services:
 
 volumes:
   mysql_data:
-  sinai_bundle_dir:
-  sinai_node_modules:
-  sinai_public_uv:
-  sinai_tmp:
   ursus_bundle_dir:
   ursus_node_modules:
   ursus_public_uv:
