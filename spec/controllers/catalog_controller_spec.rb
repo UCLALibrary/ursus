@@ -2,6 +2,26 @@
 require 'rails_helper'
 
 RSpec.describe CatalogController, type: :controller do
+  # rubocop:disable RSpec/ExpectActual
+  describe 'routes' do
+    it 'recognizes an ark' do
+      expect(get: '/catalog/ark:/123/abc').to route_to(controller: 'catalog', action: 'show', id: 'ark:/123/abc')
+    end
+
+    it 'recognizes a content type extension' do
+      expect(get: '/catalog/ark:/123/abc.json').to route_to(controller: 'catalog', action: 'show', id: 'ark:/123/abc', format: 'json')
+    end
+
+    it 'recognizes a URL query parameter' do
+      expect(get: '/catalog/ark:/123/abc.json?cv=3').to route_to(controller: 'catalog', action: 'show', id: 'ark:/123/abc', format: 'json', cv: '3')
+    end
+
+    it 'recognizes a reversed ark' do
+      # This will get forwarded, but that happens in #show, not in the route, so we don't test it here.
+      expect(get: '/catalog/cba-321').to route_to(controller: 'catalog', action: 'show', id: 'cba-321')
+    end
+  end
+
   describe 'facets' do
     context 'in the default site' do
       before do

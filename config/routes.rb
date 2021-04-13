@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   devise_for :users
   concern :exportable, Blacklight::Routes::Exportable.new
 
-  resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
+  resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog', constraints: { id: /(ark\:)?[\w\=\#\*\+\@\_\$\%\-\/]+/ } do
     concerns :exportable
   end
 
@@ -48,19 +48,6 @@ Rails.application.routes.draw do
   mount BlacklightDynamicSitemap::Engine => '/'
 
   root to: "catalog#index"
-  concern :exportable, Blacklight::Routes::Exportable.new
-
-  resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog', constraints: { id: /.*/ } do
-    concerns :exportable
-  end
-
-  resources :bookmarks do
-    concerns :exportable
-
-    collection do
-      delete 'clear'
-    end
-  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
