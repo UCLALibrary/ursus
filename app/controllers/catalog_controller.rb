@@ -493,7 +493,9 @@ class CatalogController < ApplicationController
     # For old-style reversed-ark URLs, redirect to a URL with the forward ARK, BUT only  if the record exists
     # otherwise, short-circuit to a 404
     unless params[:id].start_with?('ark:/')
-      redirect_to solr_document_path('ark:/' + params[:id].reverse.sub('-', '/')) if SolrDocument.find(params[:id])
+      if SolrDocument.find(params[:id])
+        redirect_to solr_document_path('ark:/' + params[:id].reverse.sub('-', '/')) + ("?cv=#{params[:cv]}" if params.include? :cv)
+      end
     end
   end
 
