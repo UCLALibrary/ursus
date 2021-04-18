@@ -487,16 +487,13 @@ class CatalogController < ApplicationController
   end
 
   def cannonical_url_redirect
-    # If the ARK is URL-escaped, redirect to an unescaped URL
-    redirect_to solr_document_path(params[:id]) unless request.path == solr_document_path(params[:id])
-
-    # For old-style reversed-ark URLs, redirect to a URL with the forward ARK, BUT only  if the record exists
-    # otherwise, short-circuit to a 404
-    unless params[:id].start_with?('ark:/')
-      if SolrDocument.find(params[:id])
-        redirect_to solr_document_path('ark:/' + params[:id].reverse.sub('-', '/')) + ("?cv=#{params[:cv]}" if params.include? :cv)
-      end
+    if params[:id].start_with?('ark:/')
+      return if request.path == CGI.unescape(request.path) # Good URL!
+      target = solr_document_path(params[:id]) # redirect to an unescaped URL
+    else
+      target = solr_document_path(SolrDocument.find(params[:id])) # redirect to forward-ARK URL, but only if document exists; otherwise raises a 404
     end
+    redirect_to target + (request.query_string.to_s.empty? ? '' : '?' + request.query_string)
   end
 
   def oai_provider

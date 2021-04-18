@@ -172,4 +172,43 @@ RSpec.describe CatalogController, type: :controller do
       # expect(assigns[:document]).not_to be_nil
     end
   end
+
+  describe '#cannonical_url_redirect', type: :request do
+    # Use a request spec to include routing logic
+
+    let(:solr_document) do
+      SolrDocument.new(id: 'cba-321', ark_ssi: 'ark:/123/abc', has_model_ssim: 'Work')
+    end
+
+    before do
+      allow_any_instance_of(CatalogController).to receive(:enforce_show_permissions).and_return true
+      allow_any_instance_of(Blacklight::SearchService).to receive(:fetch).and_return [nil, solr_document]
+      allow(SolrDocument).to receive(:find).and_return solr_document
+    end
+
+    it 'does not redirect a properly-formatted URL' do
+      expect(get('/catalog/ark:/123/abc')).not_to redirect_to('/catalog/ark:/123/abc')
+    end
+
+    it 'redirects an escaped ARK to the unescaped version, without query parameters' do
+      expect(get('/catalog/ark:%2F123%2Fabc')).to redirect_to('/catalog/ark:/123/abc')
+    end
+
+    it 'redirects an escaped ARK to the unescaped version, with query parameters' do
+      expect(get('/catalog/ark:%2F123%2Fabc?cv=5')).to redirect_to('/catalog/ark:/123/abc?cv=5')
+    end
+
+    it 'redirects a reversed ARK to the full ARK, without query parameters' do
+      expect(get('/catalog/cba-321')).to redirect_to('/catalog/ark:/123/abc')
+    end
+
+    it 'redirects a reversed ARK to the full ARK, with query parameters' do
+      expect(get('/catalog/cba-321?cv=921')).to redirect_to('/catalog/ark:/123/abc?cv=921')
+    end
+
+    it 'does not redirect something that looks like a reversed ARK but doesn\'t lead to a record in Solr' do
+      allow_any_instance_of(Blacklight::SearchService).to receive(:fetch).and_raise(Blacklight::Exceptions::RecordNotFound)
+      expect(get('/catalog/ark:%2F123%2Fabc?cv=5')).not_to redirect_to('/catalog/ark:/123/abc?cv=921')
+    end
+  end
 end
