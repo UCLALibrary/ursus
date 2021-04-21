@@ -13,7 +13,7 @@
           <%= doc_presenter.field_value field %>
         </div>
       <% end %>
-
+      <%= render_finding_aid_link %>
       <div class="metadata-block__label-key">MANIFEST URL</div>
       <div class="metadata-block__label-value">
         <% collection_ark_link = @document[:iiif_manifest_url_ssi] %>
