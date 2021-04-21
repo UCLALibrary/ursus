@@ -1,6 +1,5 @@
-repository_tesim: 'Repository'
-local_identifier_ssm: 'Local identifier'
-oclc_ssi: 'OCLC Number'
-ark_ssi: 'ARK'
-opac_url_ssi: 'Opac url'
-finding_aid_url_ssm: 'Finding aid url'
+repository_tesim: "Repository"
+local_identifier_ssm: "Local identifier"
+oclc_ssi: "OCLC Number"
+ark_ssi: "ARK"
+opac_url_ssi: "Opac url"

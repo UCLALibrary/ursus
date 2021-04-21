@@ -46,6 +46,16 @@ module BlacklightHelper
     opac_link.html_safe
   end
 
+  def render_finding_aid_link
+    finding_aid_link = @document[:finding_aid_url_ssm]
+    return unless finding_aid_link
+    finding_aid_link = "<div class='blacklight-finding-aid metadata-block__label-key'>
+    Finding Aid URL</div>
+    <div class='blacklight-finding-aid metadata-block__label-value'>
+    <a href = '" + finding_aid_link + "'>" + finding_aid_link + "</a></div>"
+    finding_aid_link.html_safe
+  end
+
   def other_versions_markup
     other_versions_text = ''
     urls = @document[:other_versions_tesim]
