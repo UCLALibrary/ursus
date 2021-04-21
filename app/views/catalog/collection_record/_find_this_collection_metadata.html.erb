@@ -15,7 +15,7 @@
       <% end %>
       <div class="metadata-block__label-key">FINDING AID URL</div>
       <div class="metadata-block__label-value">
-        <% finding_aid_link = @document[::finding_aid_url_ssm] %>
+        <% finding_aid_link = @document[:finding_aid_url_ssm] %>
         <a href="<%= finding_aid_link %>" target="_blank">finding_aid_link</a>
       </div>
       <div class="metadata-block__label-key">MANIFEST URL</div>
