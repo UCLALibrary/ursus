@@ -50,11 +50,12 @@ module BlacklightHelper
     finding_aid_link = @document[:finding_aid_url_ssm]
     return unless finding_aid_link
     finding_aid_link[0].to_s
-    finding_aid_link = "<div class='blacklight-finding-aid metadata-block__label-key'>
+    byebug
+    finding_aid_html = "<div class='blacklight-finding-aid metadata-block__label-key'>
     Finding Aid URL</div>
     <div class='blacklight-finding-aid metadata-block__label-value'>
-    <a href = '" + finding_aid_link + "'>" + finding_aid_link + "</a></div>"
-    finding_aid_link.html_safe
+    '<a href="' + finding_aid_link + '">' + finding_aid_link + '</a></div>"
+    finding_aid_html.html_safe
   end
 
   def other_versions_markup
