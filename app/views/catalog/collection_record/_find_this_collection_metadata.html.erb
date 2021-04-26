@@ -13,11 +13,10 @@
           <%= doc_presenter.field_value field %>
         </div>
       <% end %>
-      
+
       <% if @document[:finding_aid_url_ssm] %>
         <div class='blacklight-finding-aid metadata-block__label-key'>
         Finding Aid URL</div>
-        
         <div class='blacklight-finding-aid metadata-block__label-value'>
         <%= render_finding_aid_link %>
         </div>

@@ -6,7 +6,6 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
     {
       'repository_tesim' => 'Repository',
       'local_identifier_ssm' => 'Local identifier',
-      'finding_aid_url_ssm' => 'Finding aid url',
       'opac_url_tesim' => 'Opac url',
       'oclc_ssi' => 'OCLC Number',
       'ark_ssi' => 'ARK'
@@ -31,10 +30,6 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
 
       it 'returns the Local identifier Key' do
         expect(config['local_identifier_ssm'].to_s).to eq('Local identifier')
-      end
-
-      it 'Finding aid url' do
-        expect(config['finding_aid_url_ssm'].to_s).to eq('Finding aid url')
       end
 
       it 'returns the Opac url' do
