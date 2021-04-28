@@ -21,6 +21,12 @@
           <% end %>
         </dt>
       <% end %>
+
+      <% if @document[:finding_aid_url_ssm] %>
+      <dt class="metadata-block__label-key">Finding aid url</dt>
+        <dd class="metadata-block__label-value"><%= render_finding_aid_link %></dd>
+      <% end %>
+
       <%= render_opac_link %>
 
       <!-- iiif drag and drop logo -->
