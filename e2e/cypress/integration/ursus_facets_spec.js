@@ -6,7 +6,7 @@ describe('Facets', () => {
     cy.percySnapshot('Subject facet open');
 
     cy.contains('a', 'more').click({ force: true });
-    cy.contains('Landmarks');
+    cy.contains('People');
 
     cy.contains('a', 'A-Z Sort').click({ force: true });
     cy.contains('Abandoned children--California--Los Angeles');
