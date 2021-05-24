@@ -12,7 +12,7 @@ class IiifService
 
   def iiif_manifest_url(document)
     if Flipflop.use_manifest_store? && document[:iiif_manifest_url_ssi]
-      document[:iiif_manifest_url_ssi].sub('http:', 'https:')
+      document[:iiif_manifest_url_ssi].sub('http:', 'https:').sub('ingest.iiif.library.ucla.edu', 'ingest.iiif.library.ucla.edu')
     else
       "#{Rails.application.config.iiif_url}/#{document['id']}/manifest"
     end
