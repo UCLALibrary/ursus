@@ -69,7 +69,7 @@ class ApplicationController < ActionController::Base
           else
             raise ArgumentError, 'Argument must be a SolrDocument with an ARK, or a string containing a SolrDocument ARK'
           end
-    "/catalog/#{CGI.unescape(ark)}"
+    "/catalog/#{CGI.unescape(ark.to_s)}"
   end
 
   def solr_document_url(*args)
