@@ -46,6 +46,12 @@ module BlacklightHelper
     opac_link.html_safe
   end
 
+  def render_finding_aid_link
+    finding_aid_link = @document[:finding_aid_url_ssm]
+    finding_aid_html = '<a href="' + finding_aid_link[0].to_s + '">' + finding_aid_link[0].to_s + '</a>'
+    finding_aid_html.html_safe
+  end
+
   def other_versions_markup
     other_versions_text = ''
     urls = @document[:other_versions_tesim]

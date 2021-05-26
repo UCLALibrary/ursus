@@ -2,34 +2,12 @@
 
 class IiifService
   def src(request, document)
-    # SINAI
-    if Flipflop.sinai?
-      "#{request&.base_url}/mirador.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
-    # URSUS
-    else
-      # CANVAS
-      if request.query_parameters.include?('cv')
-        if ENV['RAILS_HOST'] == 'localhost' || ENV['RAILS_HOST'] == 'web' || request.base_url.include?('ursus-test')
-          "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
-        elsif request.base_url.include?('ursus-dev')
-          "https://d-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
-        elsif request.base_url.include?('ursus-stage')
-          "https://s-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
-        elsif request.base_url.include?('ursus') || request.base_url.to_s.include?('digital.library')
-          "https://p-w-dl-viewer01.library.ucla.edu/uv.html#?cv=#{request.query_parameters['cv']}&manifest=#{CGI.escape(iiif_manifest_url(document))}"
-        end
-      else
-        if ENV['RAILS_HOST'] || ENV['RAILS_HOST'] == 'web' || request.base_url.include?('ursus-test')
-          "https://t-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
-        elsif request.base_url.include?('ursus-dev')
-          "https://d-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
-        elsif request.base_url.include?('ursus-stage')
-          "https://s-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
-        elsif request.base_url.include?('ursus') || request.base_url.to_s.include?('digital.library')
-          "https://p-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=#{CGI.escape(iiif_manifest_url(document))}"
-        end
-      end
-    end
+    media_viewer_url(request) + "#?manifest=#{CGI.escape(iiif_manifest_url(document))}" + canvas_parameter(request)
+  end
+
+  def canvas_parameter(request)
+    return '' unless request.query_parameters['cv']
+    "&cv=#{request.query_parameters['cv']}"
   end
 
   def iiif_manifest_url(document)
@@ -37,6 +15,17 @@ class IiifService
       document[:iiif_manifest_url_ssi].sub('http:', 'https:')
     else
       "#{Rails.application.config.iiif_url}/#{document['id']}/manifest"
+    end
+  end
+
+  def media_viewer_url(request)
+    case request.query_parameters['media_viewer_url']
+    when nil
+      Rails.application.config.media_viewer_url
+    when 'dev', 'test', 'stage', 'prod'
+      'https://' + request.query_parameters['viewer'][0] + '-w-dl-viewer01.library.ucla.edu'
+    else
+      request.query_parameters['viewer']
     end
   end
 end

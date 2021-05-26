@@ -11,12 +11,7 @@ RSpec.describe IiifService do
                      ark: ark,
                      iiif_manifest_url_ssi: 'https://manifest.store/ark%3A%2Fabc%2F123/manifest')
   end
-  let(:solr_document_with_cv) do
-    SolrDocument.new(id: id,
-                     ark: ark,
-                     iiif_manifest_url_ssi: 'https://manifest.store/ark%3A%2Fabc%2F123/manifest',
-                     member_ids_ssim: 7)
-  end
+  let(:iiif_manifest_url) { service.iiif_manifest_url(solr_document) }
 
   before do
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://californica.url/concern/works')
@@ -27,7 +22,7 @@ RSpec.describe IiifService do
       it 'uses that url' do
         allow(Flipflop).to receive(:use_manifest_store?).and_return(true)
 
-        expect(service.iiif_manifest_url(solr_document)).to eq 'https://manifest.store/ark%3A%2Fabc%2F123/manifest'
+        expect(iiif_manifest_url).to eq 'https://manifest.store/ark%3A%2Fabc%2F123/manifest'
       end
     end
 
@@ -35,7 +30,7 @@ RSpec.describe IiifService do
       it 'builds a local url using the solr ID, *not* the ARK' do
         allow(Flipflop).to receive(:use_manifest_store?).and_return(false)
 
-        expect(service.iiif_manifest_url(solr_document)).to eq "https://californica.url/concern/works/#{id}/manifest"
+        expect(iiif_manifest_url).to eq "https://californica.url/concern/works/#{id}/manifest"
       end
     end
 
@@ -45,7 +40,7 @@ RSpec.describe IiifService do
       it 'builds a local url using the solr ID, *not* the ARK' do
         allow(Flipflop).to receive(:use_manifest_store?).and_return(true)
 
-        expect(service.iiif_manifest_url(solr_document)).to eq "https://californica.url/concern/works/#{id}/manifest"
+        expect(iiif_manifest_url).to eq "https://californica.url/concern/works/#{id}/manifest"
       end
     end
   end
@@ -57,28 +52,20 @@ RSpec.describe IiifService do
     end
 
     let(:request) { instance_double('ActionDispatch::Request', base_url: 'http://test.url') }
+    let(:src) { service.src(request, solr_document) }
 
     context 'by default' do
       it 'links to universal viewer' do
         allow(Flipflop).to receive(:sinai?).and_return(false)
 
-        expect(service.src(request, solr_document)).to eq 'https://t-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=https%3A%2F%2Fmanifest.store%2Fark%253A%252Fabc%252F123%2Fmanifest'
-      end
-    end
-
-    context 'when the sinai feature flag is set' do
-      it 'links to mirador' do
-        allow(Flipflop).to receive(:sinai?).and_return(true)
-
-        expect(service.src(request, solr_document)).to eq 'http://test.url/mirador.html#?manifest=https%3A%2F%2Fmanifest.store%2Fark%253A%252Fabc%252F123%2Fmanifest'
+        expect(src).to eq 'https://p-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=https%3A%2F%2Fmanifest.store%2Fark%253A%252Fabc%252F123%2Fmanifest'
       end
     end
 
     context 'when the link parameter "cv" exists' do
       it 'links to the corresponding Work page in the universal viewer' do
         allow(request).to receive(:query_parameters).and_return('cv' => 7)
-
-        expect(service.src(request, solr_document_with_cv)).to eq 'https://t-w-dl-viewer01.library.ucla.edu/uv.html#?cv=7&manifest=https%3A%2F%2Fmanifest.store%2Fark%253A%252Fabc%252F123%2Fmanifest'
+        expect(CGI.parse(URI.parse(src.sub('#?', '?')).query)['cv'][0]).to eq '7'
       end
     end
   end
