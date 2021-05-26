@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 require 'solrizer'
-require 'ucla/oai/solr_document_provider'
 
 class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
@@ -495,10 +494,6 @@ class CatalogController < ApplicationController
     unless params[:id].start_with?('ark:/')
       redirect_to solr_document_path('ark:/' + params[:id].reverse.sub('-', '/')) if SolrDocument.find(params[:id])
     end
-  end
-
-  def oai_provider
-    @oai_provider ||= Ucla::Oai::SolrDocumentProvider.new(self, oai_config)
   end
 
   def solr_id
