@@ -28,4 +28,34 @@ RSpec.describe SolrDocument do
       expect(solr_document.export_as_ucla_citation_txt).to eq("Untitled. [unknown type]. UCLA Library Digital Collections. No collection. https://#{ENV['RAILS_HOST']}/catalog/abc123")
     end
   end
+
+  describe '#find' do
+    let(:arguments) do
+      {
+        id: hyrax_id,
+        ark_ssi: ark
+      }
+    end
+    let(:ark) { 'ark:/123/abc' }
+    let(:repository) { instance_double('Blacklight::Solr::Repository') }
+    let(:hyrax_id) { 'cba-321' }
+    let(:solr_document) { described_class.new(arguments) }
+
+    before do
+      allow(repository).to receive(:find).with(hyrax_id).and_return(instance_double('Blacklight::Solr::Response', documents: [solr_document]))
+      allow(Blacklight).to receive(:default_index).and_return(repository)
+    end
+
+    it 'calls parent class\'s `#find`' do
+      expect(described_class.find(hyrax_id)).to eq solr_document
+    end
+
+    context 'when the document has no ARK' do
+      let(:ark) { nil }
+
+      it 'raises an exception' do
+        expect { described_class.find(hyrax_id) } .to raise_error Blacklight::Exceptions::RecordNotFound
+      end
+    end
+  end
 end
