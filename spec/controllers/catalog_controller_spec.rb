@@ -52,31 +52,6 @@ RSpec.describe CatalogController, type: :controller do
         expect(facets).to contain_exactly(*expected_facets)
       end
     end
-
-    xcontext 'in the sinai site' do
-      before do
-        allow(Flipflop).to receive(:sinai?).and_return(true)
-      end
-
-      let(:facets_sinai) do
-        controller
-          .blacklight_config
-          .facet_fields.keys
-          .map { |field| field.gsub(/\_s+im$/, '') }
-      end
-
-      let(:expected_facets) do
-        ['genre',
-         'place_of_origin',
-         'year_isim',
-         'human_readable_language',
-         'support']
-      end
-
-      it 'has exactly expected facets' do
-        expect(facets_sinai).to contain_exactly(*expected_facets)
-      end
-    end
   end
 
   describe "show fields" do
@@ -209,6 +184,15 @@ RSpec.describe CatalogController, type: :controller do
     it 'does not redirect something that looks like a reversed ARK but doesn\'t lead to a record in Solr' do
       allow_any_instance_of(Blacklight::SearchService).to receive(:fetch).and_raise(Blacklight::Exceptions::RecordNotFound)
       expect(get('/catalog/ark:%2F123%2Fabc?cv=5')).not_to redirect_to('/catalog/ark:/123/abc?cv=921')
+    end
+
+    context 'when the URL contains the ID of a hyrax object without an ark (e.g. a permissions object)' do
+      let(:solr_document) { SolrDocument.new(id: 'cba-321') }
+
+      it 'raises an exception' do
+        allow(SolrDocument).to receive(:find).and_call_original
+        expect { get('/catalog/cba-321') } .to raise_exception(Blacklight::Exceptions::RecordNotFound)
+      end
     end
   end
 end
