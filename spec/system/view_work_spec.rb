@@ -110,18 +110,4 @@ RSpec.describe 'View a Work', type: :system, js: true do
     expect(page).to_not have_content 'SMS This'
     expect(page).to_not have_selector '#emailLink'
   end
-
-  it 'loads UV on the page with the correct controls' do
-    visit "/catalog/#{ark}"
-    expect(page.html).to match(/media-viewer-iframe/)
-
-    within_frame(find('.media-viewer-iframe')) do
-      # Don't show download
-      expect(page).to have_selector('button.download', visible: false)
-      # Show fullscreen
-      # This will only be visible when the screen is desktop size
-      # Look into setting the chromedriver window size explicilty for this
-      # expect(page).to have_selector('button.fullScreen', visible: true)
-    end
-  end
 end
