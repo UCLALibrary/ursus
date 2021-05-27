@@ -1,25 +1,11 @@
-<!-- SINAI -->
-<% if Flipflop.sinai? %>
-  <div class="facet-field blacklight-<%= facet_field.key.parameterize %> <%= 'facet-limit-active' if facet_field_in_params?(facet_field.key) %>">
-    <h3 class="<%= "collapsed" if should_collapse_facet?(facet_field) %> collapse-toggle facet-field__heading facet-field__heading--sinai" aria-expanded="false" data-toggle="collapse" data-target="#<%= facet_field_id(facet_field) %>">
-      <%= link_to facet_field_label(facet_field.key), "##{facet_field_id(facet_field)}", "data-turbolinks": false %>
-    </h3>
-    <div id="<%= facet_field_id(facet_field) %>" class="panel-collapse facet-field__body facet-field__body--sinai <%= should_collapse_facet?(facet_field) ? 'collapse' : 'show' %>">
-      <%= yield %>
-    </div>
+<div class="facet-field blacklight-<%= facet_field.key.parameterize %> <%= 'facet-limit-active' if facet_field_in_params?(facet_field.key) %>">
+  <h3 class="<%= "collapsed" if should_collapse_facet?(facet_field) %> collapse-toggle facet-field__heading facet-field__heading--ursus" aria-expanded="false" data-toggle="collapse" data-target="#<%= facet_field_id(facet_field) %>">
+    <%= link_to facet_field_label(facet_field.key), "##{facet_field_id(facet_field)}", "data-turbolinks": false %>
+  </h3>
+  <div id="<%= facet_field_id(facet_field) %>" class="panel-collapse facet-field__body facet-field__body--ursus <%= should_collapse_facet?(facet_field) ? 'collapse' : 'show' %>">
+    <%= yield %>
   </div>
-
-<!-- URSUS -->
-<% else %>
-  <div class="facet-field blacklight-<%= facet_field.key.parameterize %> <%= 'facet-limit-active' if facet_field_in_params?(facet_field.key) %>">
-    <h3 class="<%= "collapsed" if should_collapse_facet?(facet_field) %> collapse-toggle facet-field__heading facet-field__heading--ursus" aria-expanded="false" data-toggle="collapse" data-target="#<%= facet_field_id(facet_field) %>">
-      <%= link_to facet_field_label(facet_field.key), "##{facet_field_id(facet_field)}", "data-turbolinks": false %>
-    </h3>
-    <div id="<%= facet_field_id(facet_field) %>" class="panel-collapse facet-field__body facet-field__body--ursus <%= should_collapse_facet?(facet_field) ? 'collapse' : 'show' %>">
-      <%= yield %>
-    </div>
-  </div>
-<% end %>
+</div>
 
 <!-- Remove page jump on browse facet label click -->
 <script type="text/javascript">
