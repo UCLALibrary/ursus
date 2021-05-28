@@ -1,102 +1,3 @@
-<!-- SINAI -->
-<% if Flipflop.sinai? %>
-  <% doc_presenter = index_presenter(document) %>
-
-  <div class='document__list-item-wrapper document__list-item-wrapper--sinai'>
-    <!-- default partial to display solr document fields in catalog index view -->
-
-    <%# THUMBNAIL %>
-    <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-      <%# Thumnail NOT logged in %>
-      <% if !cookies[:sinai_authenticated] %>
-        <div class='document__gallery-thumbnail document__gallery-thumbnail--sinai-generic'>
-          <a href='#' data-toggle='modal' data-target='#exampleModalCenter'>
-              <%= image_tag('sinai/sinai-generic-thumbnail.png', class: 'document__gallery-thumbnail--sinai-generic') %>
-          </a>
-        </div>
-        <%# Thumbnail logged in%>
-      <% else %>
-        <div class='document__gallery-thumbnail document__gallery-thumbnail--sinai'>
-          <%= tn %>
-        </div>
-      <% end %>
-    <% end %>
-    <%# ----------------------------------------------- %>
-
-    <%# METADATA %>
-    <% if !cookies[:sinai_authenticated] %>
-      <%# Sinai NOT LOGGED IN %>
-      <%# cookies[:request_original_url] = request.original_url %>
-
-      <div class='metadata-wrapper-index--sinai'>
-
-        <header class='header-index--sinai'>
-          <%# link the header to the block access modal%>
-          <a href='#' data-toggle='modal' data-target='#exampleModalCenter'>
-            <%= render 'catalog/index_header_sinai', document: document %>
-          </a>
-        </header>
-
-        <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
-        <div class='title-index--sinai'>
-          <%= render 'catalog/index_title_sinai', document: document %>
-        </div>
-
-        <%# DATE - LANGUAGE %>
-        <div class='metadata-block-index--sinai'>
-          <%= image_tag('sinai-icons/calendar-icon.png', class: 'icon-calendar-index--sinai') %><%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag('sinai-icons/world-icon.png', class: 'icon-world-index-sinai') %><%= render 'catalog/index_language_sinai', document: document %>
-        </div>
-        <%# NAMES %>
-        <% name_field = render 'catalog/index_name_sinai', document: document %>
-        <% if name_field =~ /href/ %>
-          <div class='metadata-block-index--sinai'>
-            <div class='metadata-value-index--sinai'>
-                <%= image_tag('sinai-icons/people-icon.svg', class: 'icon-people-index--sinai') %><%= name_field %>
-            </div>
-          </div><%# metadata-block-index--sinai %>
-        <% end %>
-      </div><%# metadata-wrapper-index--sinai %>
-
-    <%# ----------------------------------------------- %>
-
-    <% else %>
-      <%# Sinai LOGGED IN %>
-      <%# link the header to the work by the ark %>
-      <% the_ark = CGI.escape document['ark_ssi'] %>
-
-      <div class='metadata-wrapper-index--sinai'>
-
-        <header class='header-index--sinai'>
-          <%# link the header to the work by the ark %>
-          <a href='#' data-toggle='modal' data-target='#exampleModalCenter'>
-            <%= link_to (render 'catalog/index_header_sinai', document: document), "/catalog/#{the_ark}" %>
-          </a>
-        </header>
-
-        <%# TITLE: descriptive_title_one | descriptive_title_two | uniform_title_one | uniform_title_two %>
-        <div class='title-index--sinai'>
-          <%= render 'catalog/index_title_sinai', document: document %>
-        </div>
-
-        <%# DATE - LANGUAGE %>
-        <div class='metadata-block-index--sinai'>
-          <%= image_tag('sinai-icons/calendar-icon.png', class: 'icon-calendar-index--sinai') %><%= render 'catalog/index_date_sinai', document: document %>&nbsp;&nbsp;<%= image_tag('sinai-icons/world-icon.png', class: 'icon-world-index-sinai') %><%= render 'catalog/index_language_sinai', document: document %>
-        </div>
-        <%# NAMES %>
-        <% name_field = render 'catalog/index_name_sinai', document: document %>
-        <% if name_field =~ /href/ %>
-          <div class='metadata-block-index--sinai'>
-            <%= image_tag('sinai-icons/people-icon.svg', class: 'icon-people-index--sinai') %><%= name_field %>
-          </div><%# metadata-block-index--sinai %>
-        <% end %>
-      </div><%# metadata-wrapper-index--sinai %>
-    </div><%# document__list-item-wrapper--sinai %>
-  <% end %><%# if Flipflop.sinai? %>
-
-<%# ----------------------------------------------- %>
-
-<!-- URSUS -->
-<% else %>
   <% doc_presenter = index_presenter(document) %>
   <div class='document__list-item-wrapper'>
     <!-- default partial to display solr document fields in catalog index view -->
@@ -109,26 +10,25 @@
             </dt>
             <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-<%= field_name.parameterize %>">
               <% document[:member_of_collections_ssim].zip(document[:member_of_collection_ids_ssim]).each do | title, id | %>
-                <%= link_to title, solr_document_path('ark:/' + id.reverse.sub('-', '/')) %><br>
-              <% end %>
-            </dd>
-          <% end %>
-        <% else %>
-          <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-<%= field_name.parameterize %>">
-            <%= render_index_field_label document, field: field_name %>
-          </dt>
-          <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-<%= field_name.parameterize %>">
-            <%= doc_presenter.field_value field %>
+              <%= link_to title, solr_document_path('ark:/' + id.reverse.sub('-', '/')) %><br>
+            <% end %>
           </dd>
-          <% if field_name == "Description" %>
-            <dt class="document__list-metadata-key blacklight-<%= field_name.parameterize %>"></dt>
-            <dd class="document__list-metadata-value blacklight-<%= field_name.parameterize %>">&nbsp;&nbsp;&nbsp;</dd>
-          <% end %>
+        <% end %>
+      <% else %>
+        <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-<%= field_name.parameterize %>">
+          <%= render_index_field_label document, field: field_name %>
+        </dt>
+        <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-<%= field_name.parameterize %>">
+          <%= doc_presenter.field_value field %>
+        </dd>
+        <% if field_name == "Description" %>
+          <dt class="document__list-metadata-key blacklight-<%= field_name.parameterize %>"></dt>
+          <dd class="document__list-metadata-value blacklight-<%= field_name.parameterize %>">&nbsp;&nbsp;&nbsp;</dd>
         <% end %>
       <% end %>
-    </dl>
-    <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
-      <div class='document__gallery-thumbnail'><%= tn %></div>
     <% end %>
-  </div>
-<% end %>
+  </dl>
+  <% if presenter(document).thumbnail.exists? && tn = presenter(document).thumbnail.thumbnail_tag({}, counter: document_counter_with_offset(document_counter)) %>
+    <div class='document__gallery-thumbnail'><%= tn %></div>
+  <% end %>
+</div>
