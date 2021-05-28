@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Ursus
-  module ThumbnailPresenter
+  class ThumbnailPresenter < Blacklight::ThumbnailPresenter
     ##
     # Render the thumbnail, if available, for a document and
     # link it to the document record.
@@ -21,7 +21,19 @@ module Ursus
     end
 
     def thumbnail_value_from_document(document)
-      document[:thumbnail_url_ss]
+      super(document) || thumbnail_default(document)
+    end
+
+    def thumbnail_default(document)
+      resource_type_id = document['resource_type_ssim'] || document['resource_type_tesim'] # We're indexing as _tesim, but should change to _ssim
+
+      # based on resource type ids from https://github.com/UCLALibrary/californica/blob/main/config/authorities/resource_types.yml
+      case resource_type_id.to_a.first.to_s.sub(/^http\:\/\/id\.loc\.gov\/vocabulary\/resourceTypes\//, '')
+      when 'mov' # moving image
+        'https://prod-uclalibrary-resources.s3-us-west-2.amazonaws.com/video_icon.svg'
+      when 'aud', 'aum', 'aun' # sound recording types
+        'https://prod-uclalibrary-resources.s3-us-west-2.amazonaws.com/audio_icon.svg'
+      end
     end
   end
 end
