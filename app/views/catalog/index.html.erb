@@ -1,65 +1,13 @@
-<!-- SINAI -->
-<% if Flipflop.sinai? %>
-<% if !cookies[:sinai_authenticated] %>
-<%
-      cookies[:requested_path] = request.original_url
-      login_service = LoginService.new
-      @token = login_service.create_token
-%>
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content msg-container">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Login Required</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-      <div class="modal-body">
-      Login is required to view the manuscripts. Please login or register for a free account.
-        <div class="si-auth-modal-btn-block">
-          <div class="si-auth-modal-btn-group">
-            <%= button_to 'Login', ENV['SINAIID_URL'], params: { 'key' => ENV['SINAIID_UCLA_KEY'], callback_url: request.original_url, token: @token }, method: :post, class: 'btn-base btn-outline-sinai--primary' %>
-            <%= link_to 'Register', 'https://sinai-id.org/users/sign_up', class: 'btn-base btn-outline-sinai--primary' %>
-          </div>
-          <button type="button" class="btn-base-link btn-base btn-base-link--sinai" data-dismiss="modal">Skip for Now</button>
-        </div>
-        </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
-  <!--% unless has_search_parameters? % -->
-  <% if current_page?(root_path) %>
-    <%# if there are no input/search related params,
-              display the "sitelinks_search_box" partial -%>
-    <%= render 'shared/sitelinks_search_box' %>
-    <%= render 'homepage_sinai' %>
+<% unless has_search_parameters? %>
+  <%# if there are no input/search related params,
+            display the "home" partial -%>
+  <%= render 'home' %>
 
-  <% else %>
-    <% request.original_url %>
-    <div class='content-container--index-page'>
-      <%= render 'facets' %>
-      <%= render 'search_results' %>
-    </div>
-  <% end %>
-
-<!-- URSUS -->
 <% else %>
-  <% unless has_search_parameters? %>
-    <%# if there are no input/search related params,
-              display the "home" partial -%>
-    <%= render 'home' %>
-
-  <% else %>
-    <div class='content-container--index-page'>
-      <%= render 'facets' %>
-      <%= render 'search_results' %>
-    </div>
-  <% end %>
+  <div class='content-container--index-page'>
+    <%= render 'facets' %>
+    <%= render 'search_results' %>
+  </div>
 <% end %>
 
 <!-- add Title/Shelfmark Sort -->
