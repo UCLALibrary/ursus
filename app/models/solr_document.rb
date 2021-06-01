@@ -15,6 +15,12 @@ class SolrDocument
 
   self.unique_key = 'ark_ssi'
 
+  def self.find(hyrax_id)
+    doc = super(hyrax_id)
+    raise Blacklight::Exceptions::RecordNotFound, "SolrDocument #{hyrax_id} has no ARK, and cannot be used in Ursus. Usually this means it is an internal Hyrax object from Californica (eg something permissions-related)." unless doc.id # rubocop:disable Metrics/LineLength -- RecordNotFound isn't really appropriate but will ensure it returns a 404
+    doc
+  end
+
   # Email uses the semantic field mappings below to generate the body of an email.
   SolrDocument.use_extension(Blacklight::Document::Email)
 

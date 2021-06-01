@@ -6,7 +6,6 @@ env:
     - COMPOSE_FILE=docker-compose-ci.yml
     - JENKINS_HOST=jenkins-devsupport.library.ucla.edu
     - JENKINS_USER="${TRAVIS_JENKINS_USER}"
-    - JENKINS_API_CALLISTO="${TRAVIS_JENKINS_API_CALLISTO}"
     - JENKINS_API_URSUS="${TRAVIS_JENKINS_API_URSUS}"
 script:
   - echo "No more tests in Travis! The only function remaining is to trigger Jenkins deploys."
@@ -20,11 +19,6 @@ after_success:
       BASE_URL="https://$JENKINS_USER@$JENKINS_HOST"
       BASE_QUERY="buildWithParameters?GIT_BRANCH=$TRAVIS_BRANCH&cause=Travis+Build"
 
-      JOB=job/DeploySinaiManuscripts
-      HOST=t-w-sinaimanuscripts01.library.ucla.edu
-      API="$JENKINS_API_CALLISTO"
-      curl "$BASE_URL/$JOB/$BASE_QUERY&DEPLOY_HOST=$HOST&token=$API"
-
       JOB=job/DeployUrsus
       HOST=t-w-ursus01.library.ucla.edu
       API="$JENKINS_API_URSUS"
@@ -33,11 +27,6 @@ after_success:
     if [[ $TRAVIS_TAG != "" ]]; then
       BASE_URL="https://$JENKINS_USER@$JENKINS_HOST"
       BASE_QUERY="buildWithParameters?GIT_BRANCH=$TRAVIS_TAG&cause=Travis+Build+With+Tag"
-
-      JOB=job/DeploySinaiManuscripts
-      HOST=s-w-sinaimanuscripts01.library.ucla.edu
-      API="$JENKINS_API_CALLISTO"
-      curl "$BASE_URL/$JOB/$BASE_QUERY&DEPLOY_HOST=$HOST&token=$API"
 
       JOB=job/DeployUrsus
       HOST=s-w-ursus01.library.ucla.edu

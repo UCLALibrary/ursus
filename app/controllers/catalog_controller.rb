@@ -77,6 +77,7 @@ class CatalogController < ApplicationController
     config.index.title_field = 'title_tesim'
     config.index.display_type_field = 'has_model_ssim'
     config.index.thumbnail_field = 'thumbnail_url_ss'
+    config.index.document_presenter_class = Ursus::IndexPresenter
 
     # solr path which will be added to solr base url before the other solr params.
     # config.solr_path = 'select'
@@ -487,13 +488,14 @@ class CatalogController < ApplicationController
   end
 
   def cannonical_url_redirect
-    if params[:id].start_with?('ark:/')
+    if params[:id].match?(/ark(\:|(%3A))(\/|(%2F)).*(\/|(%2F)).*/)
       return if request.path == CGI.unescape(request.path) # Good URL!
       target = solr_document_path(params[:id]) # redirect to an unescaped URL
     else
-      target = solr_document_path(SolrDocument.find(params[:id])) # redirect to forward-ARK URL, but only if document exists; otherwise raises a 404
+      doc = SolrDocument.find(params[:id]) # will raise Blacklight::Exceptions::RecordNotFound (returns 404) if nothing exists, or if it returns a record w/o an ARK (e.g. hyrax permissions object)
+      target = solr_document_path(doc) # request used an old-style hyrax ID (w/ reversed ARK); redirect to the forward-ark ID
     end
-    redirect_to target + (request.query_string.to_s.empty? ? '' : '?' + request.query_string)
+    redirect_to target + (request.query_string.to_s.empty? ? '' : "?#{request.query_string}")
   end
 
   def oai_provider
