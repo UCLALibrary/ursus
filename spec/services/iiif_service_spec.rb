@@ -24,6 +24,18 @@ RSpec.describe IiifService do
       end
     end
 
+    context 'when the url includes `ingest.iiif`' do
+      let(:solr_document) do
+        SolrDocument.new(id: id,
+                         ark: ark,
+                         iiif_manifest_url_ssi: 'https://ingest.iiif.library.ucla.edu/ark%3A%2Fabc%2F123/manifest')
+      end
+
+      it 'removes the `ingest` domain' do
+        expect(service.iiif_manifest_url(solr_document)).to eq 'https://iiif.library.ucla.edu/ark%3A%2Fabc%2F123/manifest'
+      end
+    end
+
     context 'when nothing is stored' do
       let(:solr_document) { SolrDocument.new(id: id) }
 
