@@ -11,11 +11,7 @@ class IiifService
   end
 
   def iiif_manifest_url(document)
-    if Flipflop.use_manifest_store? && document[:iiif_manifest_url_ssi]
-      document[:iiif_manifest_url_ssi].sub('http:', 'https:')
-    else
-      "#{Rails.application.config.iiif_url}/#{document['id']}/manifest"
-    end
+    document[:iiif_manifest_url_ssi]&.sub('http:', 'https:')&.sub('ingest.iiif.library.ucla.edu', 'iiif.library.ucla.edu') || "#{Rails.application.config.iiif_url}/#{document['id']}/manifest"
   end
 
   def media_viewer_url(request)
