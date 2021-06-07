@@ -30,9 +30,9 @@ module Ursus
       # based on resource type ids from https://github.com/UCLALibrary/californica/blob/main/config/authorities/resource_types.yml
       case resource_type_id.to_a.first.to_s.sub(/^http\:\/\/id\.loc\.gov\/vocabulary\/resourceTypes\//, '')
       when 'mov' # moving image
-        'https://prod-uclalibrary-resources.s3-us-west-2.amazonaws.com/video_icon.svg'
+        'https://static.library.ucla.edu/video_icon.svg'
       when 'aud', 'aum', 'aun' # sound recording types
-        'https://prod-uclalibrary-resources.s3-us-west-2.amazonaws.com/audio_icon.svg'
+        'https://static.library.ucla.edu/audio_icon.svg'
       end
     end
   end
