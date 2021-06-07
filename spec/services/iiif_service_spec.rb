@@ -18,19 +18,21 @@ RSpec.describe IiifService do
   end
 
   describe '#iiif_manifest_url' do
-    context 'when a url is stored and feature enabled' do
+    context 'when a url is stored' do
       it 'uses that url' do
-        allow(Flipflop).to receive(:use_manifest_store?).and_return(true)
-
         expect(iiif_manifest_url).to eq 'https://manifest.store/ark%3A%2Fabc%2F123/manifest'
       end
     end
 
-    context 'when a url is stored but feature is disabled' do
-      it 'builds a local url using the solr ID, *not* the ARK' do
-        allow(Flipflop).to receive(:use_manifest_store?).and_return(false)
+    context 'when the url includes `ingest.iiif`' do
+      let(:solr_document) do
+        SolrDocument.new(id: id,
+                         ark: ark,
+                         iiif_manifest_url_ssi: 'https://ingest.iiif.library.ucla.edu/ark%3A%2Fabc%2F123/manifest')
+      end
 
-        expect(iiif_manifest_url).to eq "https://californica.url/concern/works/#{id}/manifest"
+      it 'removes the `ingest` domain' do
+        expect(service.iiif_manifest_url(solr_document)).to eq 'https://iiif.library.ucla.edu/ark%3A%2Fabc%2F123/manifest'
       end
     end
 
@@ -38,8 +40,6 @@ RSpec.describe IiifService do
       let(:solr_document) { SolrDocument.new(id: id) }
 
       it 'builds a local url using the solr ID, *not* the ARK' do
-        allow(Flipflop).to receive(:use_manifest_store?).and_return(true)
-
         expect(iiif_manifest_url).to eq "https://californica.url/concern/works/#{id}/manifest"
       end
     end
@@ -47,7 +47,6 @@ RSpec.describe IiifService do
 
   describe '#src' do
     before do
-      allow(Flipflop).to receive(:use_manifest_store?).and_return(true)
       allow(request).to receive(:query_parameters).and_return({})
     end
 
