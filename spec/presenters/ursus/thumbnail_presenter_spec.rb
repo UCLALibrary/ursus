@@ -78,7 +78,7 @@ RSpec.describe Ursus::ThumbnailPresenter do
       let(:solr_document) { SolrDocument.new(resource_type_ssim: ['http://id.loc.gov/vocabulary/resourceTypes/aum']) }
 
       it 'uses a default icon' do
-        expect(presenter.thumbnail_value_from_document(solr_document)).to eq 'https://prod-uclalibrary-resources.s3-us-west-2.amazonaws.com/audio_icon.svg'
+        expect(presenter.thumbnail_value_from_document(solr_document)).to eq 'https://static.library.ucla.edu/audio_icon.svg'
       end
 
       context 'when no default is set for resource type' do
