@@ -9,6 +9,9 @@ Rollbar.configure do |config|
   # Here we'll disable in 'test':
   config.enabled = false if Rails.env.test?
 
+  config.branch = BRANCH
+  config.code_version = GIT_SHA
+
   # By default, Rollbar will try to call the `current_user` controller method
   # to fetch the logged-in user object, and then call that object's `id`
   # method to fetch this property. To customize:
@@ -29,10 +32,18 @@ Rollbar.configure do |config|
   # via the rollbar interface.
   # Valid levels: 'critical', 'error', 'warning', 'info', 'debug', 'ignore'
   # 'ignore' will cause the exception to not be reported at all.
-  # config.exception_level_filters.merge!('MyCriticalException' => 'critical')
-  #
-  # You can also specify a callable, which will be called with the exception instance.
-  # config.exception_level_filters.merge!('MyCriticalException' => lambda { |e| 'critical' })
+  config.exception_level_filters.merge!(
+    'ActionController::RoutingError' => lambda do |error|
+      if error.message == 'No route matches [GET] "/ads.txt"'
+        'ignore'
+      elsif error.message == 'Not Found' && error.backtrace&.first&.match?(/\/blacklight\/catalog.rb line \d+ in facet/)
+        'ignore'
+      else
+        'warning'
+      end
+    end,
+    'Blacklight::Exceptions::RecordNotFound' => 'ignore'
+  )
 
   # Enable asynchronous reporting (uses girl_friday or Threading if girl_friday
   # is not installed)
