@@ -12,3 +12,18 @@
     </iframe>
   </div>
 <% end %>
+
+<div class="players" id="player1-container">
+<div class="media-wrapper">
+<video src="<%= document[:access_copy_ssi] %>" width="320" height="240"
+    class="mejs__player"
+    poster="https://static.library.ucla.edu/video_icon.svg"
+     data-mejsoptions='{"alwaysShowControls": "true"}'>
+</video>
+</div>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js"></script>
+<script src="/app/assets/javascripts/mejs.js"></script>
