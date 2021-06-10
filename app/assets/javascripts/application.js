@@ -28,4 +28,3 @@
 // this:
 //= require 'blacklight_range_limit'
 
-//= require mediaelement_rails
