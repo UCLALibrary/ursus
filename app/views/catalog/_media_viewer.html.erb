@@ -1,4 +1,5 @@
 <% if can?(:read, document) %>
+<% if is_video==false %>
   <div class='media-viewer-container'>
     <% iiif_service = IiifService.new %>
     <iframe
@@ -11,20 +12,25 @@
       frameborder='0'>
     </iframe>
   </div>
+  <% end %>
 
-
+  <% if is_video==false %>
     <div class="media-wrapper">
       <video source src="<%= document[:access_copy_ssi] %>" width='924px'height='668px'
       class="mejs__player"
       poster="https://static.library.ucla.edu/video_icon.svg">
       </video>
     </div>
+<% end %>
 
-  <script>
-    $('video').mediaelementplayer({
-      alwaysShowControls: true,
-      videoVolume: 'horizontal',
-      features: ['playpause','progress','volume','fullscreen', 'poster']
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+      $('video').mediaelementplayer({
+        alwaysShowControls: false,
+        videoVolume: 'horizontal',
+        features: ['playpause','progress','volume','fullscreen']
+      });
     });
-  </script>
+    </script>
 <% end %>
