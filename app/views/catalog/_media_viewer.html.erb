@@ -16,25 +16,13 @@
 
   <% if is_video==false %>
     <div class="media-wrapper">
-      <video source src="http://embed.wistia.com/deliveries/afe41e4a3b366c5599fb17d96c469ad85007e2df/file.mp4" width='924px'height='668px'
+      <video source src="<%= document[:access_copy_ssi] %>" width='924px'height='668px'
       class="mejs__player"
       poster="https://static.library.ucla.edu/video_icon.svg">
       </video>
     </div>
   <% end %>
 
-
-  <script>
-  window.onload = function() {
-    if (window.jQuery) {  
-        // jQuery is loaded  
-        alert("Yeah!");
-    } else {
-        // jQuery is not loaded
-        alert("Doesn't Work");
-    }
-}
-</script>
   <script type="text/javascript">  
   $(document).ready(function() {
       $('video').mediaelementplayer({
