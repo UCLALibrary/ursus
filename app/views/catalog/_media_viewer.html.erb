@@ -12,8 +12,19 @@
     </iframe>
   </div>
 
+
+<div class="players" id="player1-container">
+<div class="media-wrapper">
+<video src="<%= document[:access_copy_ssi] %>" width="320" height="240"
+    class="mejs__player"
+    poster="https://static.library.ucla.edu/video_icon.svg"
+     data-mejsoptions='{"alwaysShowControls": "true"}'>
+</video>
+</div>
+</div>
+
 <video width="640" height="267">
-    <source src="<%= document[:access_copy_ssi] %>" type="video/mp4" poster="https://static.library.ucla.edu/video_icon.svg">
+    <source src="http://embed.wistia.com/deliveries/afe41e4a3b366c5599fb17d96c469ad85007e2df/file.mp4" type="video/mp4">
 </video>
 
 <script>
