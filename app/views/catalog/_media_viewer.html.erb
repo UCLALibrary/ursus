@@ -12,13 +12,22 @@
     </iframe>
   </div>
 
-  <div class="players" id="player1-container">
+
     <div class="media-wrapper">
-      <video src="https://p-w-dl-viewer01.library.ucla.edu/da80f405-edda-48cf-9735-3c6c47e70892" width='924px'height='668px'
+      <video source src="<%= document[:access_copy_ssi] %>" width='924px'height='668px'
       class="mejs__player"
-      poster="https://static.library.ucla.edu/video_icon.svg"
-     data-mejsoptions='{"alwaysShowControls": "true", features:   ['playpause','progress','volume','fullscreen', 'poster']}'>
+      poster="https://static.library.ucla.edu/video_icon.svg">
       </video>
     </div>
-  </div>
+
+
+  <script>
+  $(document).ready(function() {
+    $('video').mediaelementplayer({
+      alwaysShowControls: false,
+      videoVolume: 'horizontal',
+      features: ['playpause','progress','volume','fullscreen', 'poster']
+    });
+  });
+  </script>
 <% end %>
