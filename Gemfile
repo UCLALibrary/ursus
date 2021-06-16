@@ -24,7 +24,7 @@ gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
 gem 'loofah', '>= 2.4.0'
 gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
-gem 'puma', '~> 5.2' # app server
+gem 'puma', '~> 5.3' # app server
 gem 'rails', '~> 5.2'
 gem 'rollbar' # Error reporting tool
 gem 'rsolr', '>= 1.0'
