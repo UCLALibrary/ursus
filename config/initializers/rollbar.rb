@@ -34,10 +34,15 @@ Rollbar.configure do |config|
   # 'ignore' will cause the exception to not be reported at all.
   config.exception_level_filters.merge!(
     'ActionController::RoutingError' => lambda do |error|
-      if error.message == 'No route matches [GET] "/ads.txt"'
+      case error.message
+      when 'No route matches [GET] "/ads.txt"', 'No route matches [GET] "/sheetmusic"'
         'ignore'
-      elsif error.message == 'Not Found' && error.backtrace&.first&.match?(/\/blacklight\/catalog.rb line \d+ in facet/)
-        'ignore'
+      when 'Not Found'
+        if error.backtrace&.first&.match?(/\/blacklight\/catalog.rb\:\d+\:in `facet'/)
+          'ignore'
+        else
+          'warning'
+        end
       else
         'warning'
       end
