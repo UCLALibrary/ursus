@@ -53,6 +53,11 @@
   }
 }
 
+.static-page__meta-list--canon {
+  margin-top: 0;
+  list-style: none;
+}
+
 .canon-byline-row {
   text-align: right;
 }
@@ -92,4 +97,8 @@
   @media (max-width: 575px) {
     padding: 0.5rem;
   }
+}
+
+.metadata-block__label-key--canon {
+  flex: 0 0 20%;
 }
