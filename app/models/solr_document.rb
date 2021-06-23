@@ -80,6 +80,13 @@ class SolrDocument
       hash[key] = value unless value.empty?
     end
   end
+=begin
+def sets
+    byebug
+    collection_solr_set = Ucla::Oai::CollectionSolrSet
+    collection_solr_set.sets_for(self)
+  end
+=end
 
   # populates OAI feed
   def permalink(record = self)
