@@ -501,7 +501,7 @@ class CatalogController < ApplicationController
   end
 
   def oai_provider
-    @oai_provider ||= Ucla::Oai::SolrDocumentProvider.new(self, oai_config)
+    @oai_provider ||= Ucla::Oai::SolrDocumentProvider.new(self, blacklight_config)
   end
 
   def solr_id
