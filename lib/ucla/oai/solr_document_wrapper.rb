@@ -16,7 +16,7 @@ module Ucla
 
       def find(selector, options = {})
         return next_set(options[:resumption_token]) if options[:resumption_token]
-        
+
         if selector == :all
           super(selector, options)
         else
@@ -27,15 +27,7 @@ module Ucla
       private
 
         def conditions(options) # conditions/query derived from options
-          begin
-            byebug
-            super(options).merge(fq: ["has_model_ssim:Work"]) { |_key, a, b| a + b }
-            byebug
-          rescue => error
-            byebug
-            puts error
-            raise error
-          end
+          super(options).merge(fq: ["has_model_ssim:Work"]) { |_key, a, b| a + b }
         end
     end
   end

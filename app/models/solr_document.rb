@@ -81,16 +81,8 @@ class SolrDocument
     end
   end
 
-  def sets()
-=begin
-    Array.wrap([{:solr_field=>"member_of_collection_ids_ssim"}]).map do |field|
-      self.fetch(field[:solr_field], []).map do |value|
-        byebug
-        Ucla::Oai::CollectionSolrSet.new("member_of_collection_ids_ssim:#{value}")
-      end
-    end.flatten
-=end
-   Ucla::Oai::CollectionSolrSet.sets_for(self)
+  def sets
+    Ucla::Oai::CollectionSolrSet.sets_for(self)
   end
 
   # populates OAI feed

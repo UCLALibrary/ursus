@@ -7,7 +7,6 @@ module Ucla
 
       def initialize(controller, options = {})
         super(controller, options)
-        byebug
         self.class.model = Ucla::Oai::SolrDocumentWrapper.new(controller, options[:document])
       end
     end
