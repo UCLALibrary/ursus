@@ -80,13 +80,18 @@ class SolrDocument
       hash[key] = value unless value.empty?
     end
   end
+
+  def sets()
 =begin
-def sets
-    byebug
-    collection_solr_set = Ucla::Oai::CollectionSolrSet
-    collection_solr_set.sets_for(self)
-  end
+    Array.wrap([{:solr_field=>"member_of_collection_ids_ssim"}]).map do |field|
+      self.fetch(field[:solr_field], []).map do |value|
+        byebug
+        Ucla::Oai::CollectionSolrSet.new("member_of_collection_ids_ssim:#{value}")
+      end
+    end.flatten
 =end
+   Ucla::Oai::CollectionSolrSet.sets_for(self)
+  end
 
   # populates OAI feed
   def permalink(record = self)

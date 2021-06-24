@@ -16,8 +16,9 @@ module Ucla
 
       def find(selector, options = {})
         return next_set(options[:resumption_token]) if options[:resumption_token]
-
+        
         if selector == :all
+          byebug
           super(selector, options)
         else
           super(selector.sub(/^ark\:\/+/, '').sub('/', '-').reverse, options)
@@ -27,7 +28,9 @@ module Ucla
       private
 
         def conditions(options) # conditions/query derived from options
+          byebug
           super(options).merge(fq: ["has_model_ssim:Work"]) { |_key, a, b| a + b }
+          byebug
         end
     end
   end
