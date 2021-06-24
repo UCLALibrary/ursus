@@ -81,6 +81,10 @@ class SolrDocument
     end
   end
 
+  def sets
+    Ucla::Oai::CollectionSolrSet.sets_for(self)
+  end
+
   # populates OAI feed
   def permalink(record = self)
     "#{root_url}/catalog/#{record.id}"
