@@ -18,7 +18,8 @@ jobs:
         ruby-version: '2.5'
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Run auto dependency update 
-      uses: romoh/dependencies-autoupdate@7f7253db45afa787a234f0fe48fd1ae5dc2dfde5
+      uses: romoh/dependencies-autoupdate@7b9baa46f909a5dc8562d1357055bd55aca4577c
       with: 
         token: ${{ secrets.GITHUB_TOKEN }}
         update-command: bundle lock --update
+        update-path: .
