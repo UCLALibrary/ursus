@@ -11,6 +11,16 @@
               "moreInfoEnabled": false,
               "printEnabled": true,
               "shareEnabled": false
+            },
+            "content": {
+              "bookmark": "Add to bookmarks",
+              "download": "Download and print page  ",
+              "embed": "Embed",
+              "feedback": "Feedback",
+              "exitFullScreen": "",
+              "fullScreen": "",
+              "open": "Open",
+              "share": "Share"
             }
         }
     }
