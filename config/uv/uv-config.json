@@ -3,12 +3,40 @@
         "rightPanelEnabled": false
     },
     "modules": {
-        "footerPanel": {
-            "options": {
-                "downloadEnabled": false,
-                "fullscreenEnabled": true,
-                "shareEnabled": true
-            }
+      "headerPanel": {
+        "options": {
+          "settingsButtonEnabled": true
         }
+      },
+      "footerPanel": {
+          "options": 
+          {
+            "downloadEnabled": true,
+            "fullscreenEnabled": true,
+            "moreInfoEnabled": false,
+            "printEnabled": true,
+            "shareEnabled": false
+          },
+          "content": {
+            "bookmark": "Add to bookmarks",
+            "download": "Download ",
+            "embed": "Embed",
+            "feedback": "Feedback",
+            "exitFullScreen": "",
+            "fullScreen": "",
+            "open": "Open",
+            "share": "Share"
+          }
+      },
+      "downloadDialogue": {
+        "options": {
+          "confinedImageSize": 200,
+          "currentViewDisabledPercentage": 90,
+          "maxImageWidth": 5000,
+          "optionsExplanatoryTextEnabled": true,
+          "selectionEnabled": true
+        }
+      }
     }
-}
+  }
+  
