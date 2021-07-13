@@ -17,7 +17,6 @@
   <% if is_video==true %>
       <div id="media-viewer-container">
         <div class="players" id="player1-container">
-          <h3>Video Player</h3>
           <div class="media-wrapper">
             <video
               src="<%= document[:access_copy_ssi] %>"
@@ -32,6 +31,7 @@
       </div>
 
       <script src="/assets/javascripts/mediaelement_player.js"></script>
+      <style
 
   <% end %>
 <% end %>
