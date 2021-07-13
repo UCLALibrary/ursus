@@ -12,7 +12,7 @@
     </iframe>
   </div>
 
-<body>
+
 <div class="players" id="player1-container">
 <div class="media-wrapper">
 <video src="<%= document[:access_copy_ssi] %>" width="320" height="240"
@@ -23,7 +23,18 @@
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js">
-<script src="/app/assets/javascripts/mejs.js">
-</body>
+
+<script>
+$(document).ready(function() {
+  $('video').mediaelementplayer({
+    alwaysShowControls: false,
+    videoVolume: 'horizontal',
+    features: ['playpause','progress','volume','fullscreen']
+  });
+});
+</script>
+
+<style>
+
+
 <% end %>
