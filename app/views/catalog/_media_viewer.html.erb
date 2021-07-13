@@ -14,7 +14,7 @@
     </div>
   <% end %>
 
-  <% if is_video==true %>
+  <% if is_video==false %>
 
   <div id="container">
 
@@ -23,9 +23,9 @@
 
       <div class="media-wrapper">
         <video
-          src="<%= document[:access_copy_ssi] %>"
-          width="924px"
-          height="668px"
+          src="https://wowza.library.ucla.edu/iiif_av_public/definst/mp4:synanon/pairtree_root/21/19/8=/zz/00/2h/ds/j2/21198=zz002hdsj2/ark%2B=21198=zz002hdsj2.mp4/manifest.mpd"
+          width="320"
+          height="240"
           class="mejs__player"
           poster="https://static.library.ucla.edu/video_icon.svg"
           data-mejsoptions='{"alwaysShowControls": "true"}'
