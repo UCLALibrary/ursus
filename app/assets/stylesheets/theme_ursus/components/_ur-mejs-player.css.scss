@@ -1,5 +1,14 @@
 /* Accessibility: hide screen reader texts (and prefer "top" for RTL languages).
 Reference: http://blog.rrwd.nl/2015/04/04/the-screen-reader-text-class-why-and-how/ */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
+
 .mejs__offscreen {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -227,7 +236,7 @@ Reference: http://blog.rrwd.nl/2015/04/04/the-screen-reader-text-class-why-and-h
 }
 
 .mejs__button > button {
-  background: transparent image_url("mejs-controls.svg");
+  background: transparent imageurl("mejs-controls.svg");
   border: 0;
   cursor: pointer;
   display: block;
