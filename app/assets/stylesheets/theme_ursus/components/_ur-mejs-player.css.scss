@@ -1,17 +1,17 @@
 /* Accessibility: hide screen reader texts (and prefer "top" for RTL languages).
 Reference: http://blog.rrwd.nl/2015/04/04/the-screen-reader-text-class-why-and-how/ */
-.mejs_player_container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: stretch;
-  align-items: center;
-
-  margin-bottom: 60px;
-  margin-left: auto;
-  margin-right: auto;
-}
+// .mejs_player_container {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
+//   justify-content: center;
+//   align-content: stretch;
+//   align-items: center;
+//
+//   margin-bottom: 60px;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
 
 .mejs__offscreen {
   border: 0;
