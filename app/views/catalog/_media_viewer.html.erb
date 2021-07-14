@@ -15,13 +15,13 @@
   <% end %>
 
   <% if is_video==true %>
-      <div id="container">
+      <div id="mejs_player_container">
         <div class="players" id="player1-container">
           <div class="media-wrapper">
             <video
               src="<%= document[:access_copy_ssi] %>"
               width="1300px"
-              height="668px"
+              height="650px"
               class="mejs__player"
               poster="https://static.library.ucla.edu/video_icon.svg"
               data-mejsoptions='{"alwaysShowControls": "true"}'
