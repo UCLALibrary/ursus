@@ -87,6 +87,6 @@ module BlacklightHelper
   end
 end
 
-  def is_video
-    @document['resource_type_ssim'].to_a.first || @document['resource_type_tesim'].to_a.first == "http://id.loc.gov/vocabulary/resourceTypes/mov" ? true : false
+def video?
+  @document['resource_type_ssim'].to_a.first || @document['resource_type_tesim'].to_a.first == "http://id.loc.gov/vocabulary/resourceTypes/mov" ? true : false
 end
