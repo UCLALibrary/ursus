@@ -15,12 +15,12 @@
   <% end %>
 
   <% if is_video==true %>
-      <div id="mejs_meta_container">
+      <div id="container">
         <div class="players" id="player1-container">
           <div class="media-wrapper">
             <video
               src="<%= document[:access_copy_ssi] %>"
-              width="1300px"
+              width="924px"
               height="668px"
               class="mejs__player"
               poster="https://static.library.ucla.edu/video_icon.svg"
@@ -31,5 +31,6 @@
       </div>
 
       <script src="/assets/javascripts/mediaelement_player.js"></script>
+
   <% end %>
 <% end %>
