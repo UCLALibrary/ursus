@@ -4,6 +4,8 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '21 9 * * *'
+  workflow_dispatch:
+    inputs: {}
 
 jobs:
   ruby-bundle:
