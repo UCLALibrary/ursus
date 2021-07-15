@@ -1,14 +1,36 @@
 <% if can?(:read, document) %>
-  <div class='media-viewer-container'>
-    <% iiif_service = IiifService.new %>
-    <iframe
-      class='media-viewer-iframe'
-      src="<%= iiif_service.src(request, document) %>"
-      width='924px'
-      height='668px'
-      id='media-viewer-iframe'
-      allowfullscreen
-      frameborder='0'>
-    </iframe>
-  </div>
+  <% if !video? %>
+    <div class='media-viewer-container'>
+      <% iiif_service = IiifService.new %>
+      <iframe
+        class='media-viewer-iframe'
+        src="<%= iiif_service.src(request, document) %>"
+        width='924px'
+        height='668px'
+        id='media-viewer-iframe'
+        allowfullscreen
+        frameborder='0'>
+      </iframe>
+    </div>
+  <% end %>
+
+  <% if video? %>
+      <div id='media-viewer-container'>
+        <div class="players" id="player1-container">
+          <div class="media-wrapper">
+            <video
+              src="<%= document[:access_copy_ssi] %>"
+              width="1300px"
+              height="668px"
+              class="mejs__player"
+              poster="https://static.library.ucla.edu/video_icon.svg"
+              data-mejsoptions='{"alwaysShowControls": "true"}'>
+          </video>
+          </div>
+        </div>
+      </div>
+
+      <script src="/assets/javascripts/mediaelement_player.js"></script>
+
+  <% end %>
 <% end %>
