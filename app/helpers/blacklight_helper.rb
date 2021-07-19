@@ -86,7 +86,3 @@ module BlacklightHelper
     trunc.html_safe
   end
 end
-
-def video?
-  @document['resource_type_ssim'].to_a.first || @document['resource_type_tesim'].to_a.first == "http://id.loc.gov/vocabulary/resourceTypes/mov" ? true : false
-end
