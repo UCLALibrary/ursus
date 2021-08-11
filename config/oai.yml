@@ -74,6 +74,11 @@ DC:
     - thumbnail_url_ss
 DPLA:
   parent_schema: default
+  identifier:
+    - local_identifier_ssm
+    - opac_url_ssi
+    - oclc_ssi
+    - ark_ssi
   object:
     - thumbnail_url_ss
   isShownAt:
@@ -82,3 +87,4 @@ DPLA:
     - repository_tesim
   hasType:
     - genre_tesim
+
