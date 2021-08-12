@@ -7,7 +7,7 @@ describe('Work show pages', () => {
     );
     cy.frameLoaded({
       url:
-        'https://p-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=https%3A%2F%2Fiiif.library.ucla.edu%2Fark%253A%252F21198%252Fzz0026hvpq%2Fmanifest',
+        'https://p-w-dl-viewer01.library.ucla.edu/#?manifest=https%3A%2F%2Fiiif.library.ucla.edu%2Fark%253A%252F21198%252Fzz0026hvpq%2Fmanifest',
     });
     cy.iframe().contains('span', 'Manuscript No.32: 00');
     cy.percySnapshot();
