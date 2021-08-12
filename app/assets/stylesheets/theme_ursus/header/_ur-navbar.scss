@@ -6,9 +6,9 @@
   position: relative;
   top: 0.4rem;
   left: 0.4rem;
-  font-size: 1.50rem;
+  font-size: 1.5rem;
   font-weight: $font-bold;
-  color: $ucla-gold;
+  color: $ucla-gold; //#FFF6CC to fix contrast error
   letter-spacing: 0.05rem;
 
   @media (max-width: 575px) {
