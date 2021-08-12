@@ -17,6 +17,7 @@
 
 .alert-bar__text {
   font-weight: 700;
+  font-size: 1.50rem;
   flex-basis: 90%;
 
   a {
@@ -45,6 +46,10 @@
   }
 }
 
+.close {
+    color: #000000;
+}
 .alert-bar__button {
   padding: 5px;
+  color: #000000;
 }
