@@ -106,7 +106,7 @@
 // Individual Facet Sections
 .facet-field {
   @extend .card;
-  
+
   margin-bottom: 0.2rem;
   background-color: $white;
   border: 0;
@@ -240,7 +240,7 @@
 
   .remove-icon {
     padding-left: 0.5rem;
-    color: $white;
+    color: #005587;
 
     &:hover {
       color: #f00;
