@@ -46,7 +46,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.user_account_ui_enabled = ENV['USER_ACCOUNT_UI_ENABLED'] || 'false'
   config.iiif_url = ENV['IIIF_URL'] || ''
-  config.media_viewer_url = ENV['MEDIA_VIEWER_URL'] || 'https://p-w-dl-viewer01.library.ucla.edu/uv.html'
+  config.media_viewer_url = ENV['MEDIA_VIEWER_URL'] || 'https://p-w-dl-viewer01.library.ucla.edu/'
 
   config.serve_static_assets = true
 end

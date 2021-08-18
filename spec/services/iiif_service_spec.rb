@@ -57,7 +57,7 @@ RSpec.describe IiifService do
       it 'links to universal viewer' do
         allow(Flipflop).to receive(:sinai?).and_return(false)
 
-        expect(src).to eq 'https://p-w-dl-viewer01.library.ucla.edu/uv.html#?manifest=https%3A%2F%2Fmanifest.store%2Fark%253A%252Fabc%252F123%2Fmanifest'
+        expect(src).to eq 'https://p-w-dl-viewer01.library.ucla.edu/#?manifest=https%3A%2F%2Fmanifest.store%2Fark%253A%252Fabc%252F123%2Fmanifest'
       end
     end
 
