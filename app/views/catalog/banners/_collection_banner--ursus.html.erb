@@ -5,6 +5,8 @@
   ),url(<%= image_path create_representative_image(@document) %>);">
   <%= render 'catalog/banners/collection_masthead_overlay', document: @document, collection_count: @collection_count %>
 </div>
+<% if @document[:caption_tesim] %>
 <div class="collection-masthead-caption">
-    <%=@document[:caption_tesim][0]%>
+    <%= @document[:caption_tesim][0] %>
 </div>
+<% end %>
