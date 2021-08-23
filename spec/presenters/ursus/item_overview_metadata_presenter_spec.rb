@@ -33,7 +33,14 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'shelfmark_ssi' => 'Shelfmark',
       'descriptive_title_tesim' => 'Descriptive title',
       'references_tesim' => 'References',
-      'associated_name_tesim' => 'Associated name'
+      'associated_name_tesim' => 'Associated name',
+      'interviewer_tesim' => 'Interviewer',
+      'interviewee_tesim' => 'Interviewee',
+      'cartographer_tesim' => 'Cartographer',
+      'artist_tesim' => 'Artist',
+      'recipient_tesim' => 'Recipient',
+      'director_tesim' => 'Director',
+      'producer_tesim' => 'Producer'
     }
   end
   let(:solr_doc_missing_items) do
@@ -155,6 +162,34 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       it 'returns the Collection Key' do
         expect(config['member_of_collections_ssim'].to_s).to eq('Collection')
       end
+
+      it 'returns the Interviewere Key' do
+        expect(config['interviewee_tesim'].to_s).to eq('Interviewee')
+      end
+
+      it 'returns the Interviewer Key' do
+        expect(config['interviewer_tesim'].to_s).to eq('Interviewer')
+      end
+
+      it 'returns the Cartographer Key' do
+        expect(config['cartographer_tesim'].to_s).to eq('Cartographer')
+      end
+
+      it 'returns the Artist Key' do
+        expect(config['artist_tesim'].to_s).to eq('Artist')
+      end
+
+      it 'returns the Recipient Key' do
+        expect(config['recipient_tesim'].to_s).to eq('Recipient')
+      end
+
+      it 'returns the Director Key' do
+        expect(config['director_tesim'].to_s).to eq('Director')
+      end
+
+      it 'returns the Producer Key' do
+        expect(config['producer_tesim'].to_s).to eq('Producer')
+      end
     end
 
     describe "#overview_terms terms" do
@@ -162,7 +197,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       let(:missing) { presenter_object_missing_items.overview_terms.keys.length }
 
       it "returns existing keys" do
-        expect(all).to eq 30
+        expect(all).to eq 37
         expect(config.length).to eq all
       end
 
