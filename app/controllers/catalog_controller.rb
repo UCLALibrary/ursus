@@ -188,6 +188,9 @@ class CatalogController < ApplicationController
     # More details: https://github.com/projectblacklight/blacklight/wiki/value-rendering
 
     # PRIMARY
+    # Disclaimer
+    config.add_show_field 'content_disclaimer_ssm', label: 'Content disclaimer'
+
     # Item Overview
     config.add_show_field 'shelfmark_ssi', label: 'Shelfmark' # Sinai only
     config.add_show_field 'descriptive_title_tesim', label: 'Descriptive title' # Sinai only
@@ -218,6 +221,13 @@ class CatalogController < ApplicationController
     config.add_show_field 'human_readable_language_tesim', label: 'Language', link_to_facet: 'human_readable_language_sim'
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
     config.add_show_field 'creator_tesim', label: 'Creator', link_to_facet: 'creator_sim'
+    config.add_show_field 'artist_tesim', label: 'Artist', link_to_facet: 'artist_sim'
+    config.add_show_field 'cartographer_tesim', label: 'Cartographer', link_to_facet: 'cartographer_sim'
+    config.add_show_field 'interviewee_tesim', label: 'Interviewee', link_to_facet: 'interviewee_sim'
+    config.add_show_field 'interviewer_tesim', label: 'Interviewer', link_to_facet: 'interviewee_sim'
+    config.add_show_field 'director_tesim', label: 'Director', link_to_facet: 'director_sim'
+    config.add_show_field 'producer_tesim', label: 'Producer', link_to_facet: 'producer_sim'
+    config.add_show_field 'recipient_tesim', label: 'Recipient', link_to_facet: 'recipient_sim'
 
     # IF SINAI ?
     config.add_show_field 'explicit_tesim', label: 'Explicit'

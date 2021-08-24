@@ -28,6 +28,13 @@ calligrapher_tesim: 'Calligrapher'
 commentator_tesim: 'Commentator'
 lyricist_tesim: 'Lyricist'
 composer_tesim: 'Composer'
+interviewer_tesim: 'Interviewer'
+interviewee_tesim: 'Interviewee'
+cartographer_tesim: 'Cartographer'
+artist_tesim: 'Artist'
+recipient_tesim: 'Recipient'
+director_tesim: 'Director'
+producer_tesim: 'Producer'
 
 # Publication info
 date_created_tesim: 'Date Created'
