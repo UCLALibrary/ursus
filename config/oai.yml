@@ -79,6 +79,8 @@ DC:
     - oclc_ssi
     - ark_ssi
     - thumbnail_url_ss
+  description:
+    - content_disclaimer_ssm
 DPLA:
   parent_schema: default
   identifier:
