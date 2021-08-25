@@ -26,10 +26,10 @@ This section gives basic instructions to get Ursus running locally. More extensi
 
 Ursus is a Blacklight application and only needs Solr and Fedora.
 
-Ursus can be locally run in two ways:
+Ursus can run locally in two ways:
 
-1. Running in standalone mode
-1. Running in conjunction with local instance Californica
+1. Stand alone mode
+1. In conjunction with local instance of Californica
 
 ---
 
