@@ -24,6 +24,13 @@ default:
     - commentator_tesim
     - lyricist_tesim
     - composer_tesim
+    - interviewer_tesim
+    - interviewee_tesim
+    - cartographer_tesim
+    - artist_tesim
+    - recipient_tesim
+    - director_tesim
+    - producer_tesim
   publisher:
     - place_of_origin_tesim
     - publisher_tesim
