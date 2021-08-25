@@ -31,7 +31,6 @@ default:
     - recipient_tesim
     - director_tesim
     - producer_tesim
-
   publisher:
     - place_of_origin_tesim
     - publisher_tesim
