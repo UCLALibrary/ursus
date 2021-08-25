@@ -36,7 +36,7 @@ RSpec.describe 'View a a work with breaks', type: :system do
       medium_tesim: ['1 photograph'],
       extent_tesim: ['1 photograph'],
       dimensions_tesim: ['10 x 12.5 cm.'],
-      funding_note_ssm: ['Info about funding'],
+      funding_note_tesim: ['Info about funding'],
       geographic_coordinates_ssim: ['34.0, -118.2'],
       caption_tesim: ['the caption'],
       language_tesim: ['No linguistic content'],

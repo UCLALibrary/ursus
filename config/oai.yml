@@ -53,7 +53,7 @@ default:
     - condition_note_ssi
     - foliation_tesim
     - illustrations_note_tesim
-    - funding_note_ssm
+    - funding_note_tesim
     - note_tesim
     - description_tesim
     - colophon_tesim

@@ -24,7 +24,7 @@ FIRST_WORK = {
   medium_tesim: ['1 photograph'],
   extent_tesim: ['1 photograph'],
   dimensions_tesim: ['10 x 12.5 cm.'],
-  funding_note_ssm: ['Info about funding'],
+  funding_note_tesim: ['Info about funding'],
   caption_tesim: ['the caption'],
   human_readable_language_tesim: ['No linguistic content'],
   photographer_tesim: ['Poalillo, Charles'],

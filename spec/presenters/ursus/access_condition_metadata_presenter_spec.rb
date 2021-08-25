@@ -10,7 +10,7 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
       'rights_holder_tesim' => 'Rights Holder',
       'rights_country_tesim' => 'Rights (country of creation)',
       'license_tesim' => 'License',
-      'funding_note_ssm' => 'Funding Note'
+      'funding_note_tesim' => 'Funding Note'
     }
   end
   let(:solr_doc_missing_items) do
@@ -47,7 +47,7 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
       end
 
       it 'returns the Funding Note Key' do
-        expect(config['funding_note_ssm'].to_s).to eq('Funding Note')
+        expect(config['funding_note_tesim'].to_s).to eq('Funding Note')
       end
 
       it 'returns the Local Rights Statement key' do
