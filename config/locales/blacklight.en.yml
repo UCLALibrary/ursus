@@ -107,7 +107,7 @@ en:
           editor_tesim: 'Editor'
           engraver_tesim: 'Engraver'
           extent_tesim: 'Extent'
-          funding_note_tesim: 'Funding Note'
+          funding_note_ssm: 'Funding Note'
           genre_tesim: 'Genre'
           geographic_coordinates_ssim: 'Geographic Coordinates'
           illustrator_tesim: 'Illustrator'
