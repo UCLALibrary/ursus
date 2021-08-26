@@ -59,6 +59,7 @@ default:
     - toc_tesim
     - caption_tesim
     - contents_note_tesim
+    - content_disclaimer_ssm
   format:
     - format_tesim
     - support_tesim
@@ -69,25 +70,20 @@ default:
   identifier:
     - masterFilename
     - itemCallNumber
+    - local_identifier_ssm
+    - opac_url_ssi
+    - oclc_ssi
+    - ark_ssi
   source:
     - member_of_collections_ssim
 DC:
   parent_schema: default
   identifier:
-    - local_identifier_ssm
-    - opac_url_ssi
-    - oclc_ssi
-    - ark_ssi
     - thumbnail_url_ss
   description:
     - content_disclaimer_ssm
 DPLA:
   parent_schema: default
-  identifier:
-    - local_identifier_ssm
-    - opac_url_ssi
-    - oclc_ssi
-    - ark_ssi
   object:
     - thumbnail_url_ss
   isShownAt:
@@ -96,4 +92,3 @@ DPLA:
     - repository_tesim
   hasType:
     - genre_tesim
-
