@@ -3,7 +3,6 @@ sudo: true
 language: bash
 env:
   global:
-    - COMPOSE_FILE=docker-compose-ci.yml
     - JENKINS_HOST=jenkins-devsupport.library.ucla.edu
     - JENKINS_USER="${TRAVIS_JENKINS_USER}"
     - JENKINS_API_URSUS="${TRAVIS_JENKINS_API_URSUS}"
