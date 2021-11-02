@@ -2,8 +2,6 @@
 
 set -e
 
-bundle check || bundle install
-
 find . -name *.pid -delete
 yarn install --frozen-lockfile
 bundle exec rails ursus:sinai:off
