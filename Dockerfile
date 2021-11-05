@@ -31,4 +31,3 @@ COPY / /ursus
 CMD ["sh", "./start-ursus.sh"]
 
 EXPOSE 3000
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "curl --fail http://localhost:3000 || exit 1" ]

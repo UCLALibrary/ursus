@@ -6,41 +6,42 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
     {
       'alternative_title_tesim' => 'Alternative Title',
       'architect_tesim' => 'Architect',
+      'artist_tesim' => 'Artist',
+      'associated_name_tesim' => 'Associated name',
       'author_tesim' => 'Author',
       'calligrapher_tesim' => 'Calligrapher',
+      'cartographer_tesim' => 'Cartographer',
       'commentator_tesim' => 'Commentator',
       'composer_tesim' => 'Composer',
+      'content_disclaimer_ssm' => 'Content Disclaimer',
       'creator_tesim' => 'Creator',
       'date_created_tesim' => 'Date Created',
+      'descriptive_title_tesim' => 'Descriptive title',
+      'director_tesim' => 'Director',
       'editor_tesim' => 'Editor',
       'engraver_tesim' => 'Engraver',
       'human_readable_language_tesim' => 'Language',
       'illuminator_tesim' => 'Illuminator',
       'illustrator_tesim' => 'Illustrator',
+      'interviewer_tesim' => 'Interviewer',
+      'interviewee_tesim' => 'Interviewee',
       'lyricist_tesim' => 'Lyricist',
       'member_of_collections_ssim' => 'Collection',
       'normalized_date_sim' => 'Date',
       'photographer_tesim' => 'Photographer',
       'place_of_origin_tesim' => 'Place of Origin',
       'printmaker_tesim' => 'Printmaker',
+      'producer_tesim' => 'Producer',
       'publisher_tesim' => 'Publisher',
+      'recipient_tesim' => 'Recipient',
+      'references_tesim' => 'References',
       'rubricator_tesim' => 'Rubricator',
       'scribe_tesim' => 'Scribe',
+      'shelfmark_ssi' => 'Shelfmark',
       'title_tesim' => 'Title',
       'translator_tesim' => 'Translator',
       'uniform_title_tesim' => 'Uniform title',
-      'year_isim' => 'Year',
-      'shelfmark_ssi' => 'Shelfmark',
-      'descriptive_title_tesim' => 'Descriptive title',
-      'references_tesim' => 'References',
-      'associated_name_tesim' => 'Associated name',
-      'interviewer_tesim' => 'Interviewer',
-      'interviewee_tesim' => 'Interviewee',
-      'cartographer_tesim' => 'Cartographer',
-      'artist_tesim' => 'Artist',
-      'recipient_tesim' => 'Recipient',
-      'director_tesim' => 'Director',
-      'producer_tesim' => 'Producer'
+      'year_isim' => 'Year'
     }
   end
   let(:solr_doc_missing_items) do
@@ -59,80 +60,44 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
 
   context 'with a solr document containing overview metadata' do
     describe '#terms' do
-      it 'returns the Sinai Title Key' do
-        expect(config['title_tesim'].to_s).to eq('Title')
-      end
-
       it 'returns the Alternative Title Key' do
         expect(config['alternative_title_tesim'].to_s).to eq('Alternative Title')
-      end
-
-      it 'returns the Uniform Title Key' do
-        expect(config['uniform_title_tesim'].to_s).to eq('Uniform title')
-      end
-
-      it 'returns the Creator Key' do
-        expect(config['creator_tesim'].to_s).to eq('Creator')
-      end
-
-      it 'returns the Author Key' do
-        expect(config['author_tesim'].to_s).to eq('Author')
-      end
-
-      it 'returns the Editor Key' do
-        expect(config['editor_tesim'].to_s).to eq('Editor')
-      end
-
-      it 'returns the Photographer Key' do
-        expect(config['photographer_tesim'].to_s).to eq('Photographer')
       end
 
       it 'returns the Architect Key' do
         expect(config['architect_tesim'].to_s).to eq('Architect')
       end
 
-      it 'returns the Illuminator Key' do
-        expect(config['illuminator_tesim'].to_s).to eq('Illuminator')
+      it 'returns the Artist Key' do
+        expect(config['artist_tesim'].to_s).to eq('Artist')
       end
 
-      it 'returns the Illustrator Key' do
-        expect(config['illustrator_tesim'].to_s).to eq('Illustrator')
-      end
-
-      it 'returns the Engraver Key' do
-        expect(config['engraver_tesim'].to_s).to eq('Engraver')
-      end
-
-      it 'returns the Printmaker Key' do
-        expect(config['printmaker_tesim'].to_s).to eq('Printmaker')
-      end
-
-      it 'returns the Scribe Key' do
-        expect(config['scribe_tesim'].to_s).to eq('Scribe')
-      end
-
-      it 'returns the Translator Key' do
-        expect(config['translator_tesim'].to_s).to eq('Translator')
-      end
-
-      it 'returns the Rubricator Key' do
-        expect(config['rubricator_tesim'].to_s).to eq('Rubricator')
+      it 'returns the Author Key' do
+        expect(config['author_tesim'].to_s).to eq('Author')
       end
 
       it 'returns the Calligrapher Key' do
         expect(config['calligrapher_tesim'].to_s).to eq('Calligrapher')
       end
 
+      it 'returns the Cartographer Key' do
+        expect(config['cartographer_tesim'].to_s).to eq('Cartographer')
+      end
+
+      it 'returns the Collection Key' do
+        expect(config['member_of_collections_ssim'].to_s).to eq('Collection')
+      end
+
       it 'returns the Commentator Key' do
         expect(config['commentator_tesim'].to_s).to eq('Commentator')
       end
 
-      it 'returns the Lyricist Key' do
-        expect(config['lyricist_tesim'].to_s).to eq('Lyricist')
-      end
-
       it 'returns the Composer Key' do
         expect(config['composer_tesim'].to_s).to eq('Composer')
+      end
+
+      it 'returns the Content Disclaimer Key' do
+        expect(config['content_disclaimer_ssm'].to_s).to eq('Content Disclaimer')
       end
 
       it 'returns the Date Created Key' do
@@ -143,27 +108,31 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
         expect(config['normalized_date_sim'].to_s).to eq('Date')
       end
 
-      it 'returns the Year Key' do
-        expect(config['year_isim'].to_s).to eq('Year')
+      it 'returns the Creator Key' do
+        expect(config['creator_tesim'].to_s).to eq('Creator')
       end
 
-      it 'returns the Place of Origin Key' do
-        expect(config['place_of_origin_tesim'].to_s).to eq('Place of Origin')
+      it 'returns the Director Key' do
+        expect(config['director_tesim'].to_s).to eq('Director')
       end
 
-      it 'returns the Publisher Key' do
-        expect(config['publisher_tesim'].to_s).to eq('Publisher')
+      it 'returns the Editor Key' do
+        expect(config['editor_tesim'].to_s).to eq('Editor')
       end
 
-      it 'returns the Language Key' do
-        expect(config['human_readable_language_tesim'].to_s).to eq('Language')
+      it 'returns the Engraver Key' do
+        expect(config['engraver_tesim'].to_s).to eq('Engraver')
       end
 
-      it 'returns the Collection Key' do
-        expect(config['member_of_collections_ssim'].to_s).to eq('Collection')
+      it 'returns the Illuminator Key' do
+        expect(config['illuminator_tesim'].to_s).to eq('Illuminator')
       end
 
-      it 'returns the Interviewere Key' do
+      it 'returns the Illustrator Key' do
+        expect(config['illustrator_tesim'].to_s).to eq('Illustrator')
+      end
+
+      it 'returns the Interviewee Key' do
         expect(config['interviewee_tesim'].to_s).to eq('Interviewee')
       end
 
@@ -171,24 +140,72 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
         expect(config['interviewer_tesim'].to_s).to eq('Interviewer')
       end
 
-      it 'returns the Cartographer Key' do
-        expect(config['cartographer_tesim'].to_s).to eq('Cartographer')
+      it 'returns the Language Key' do
+        expect(config['human_readable_language_tesim'].to_s).to eq('Language')
       end
 
-      it 'returns the Artist Key' do
-        expect(config['artist_tesim'].to_s).to eq('Artist')
+      it 'returns the Lyricist Key' do
+        expect(config['lyricist_tesim'].to_s).to eq('Lyricist')
+      end
+
+      it 'returns the Place of Origin Key' do
+        expect(config['place_of_origin_tesim'].to_s).to eq('Place of Origin')
+      end
+
+      it 'returns the Photographer Key' do
+        expect(config['photographer_tesim'].to_s).to eq('Photographer')
+      end
+
+      it 'returns the Printmaker Key' do
+        expect(config['printmaker_tesim'].to_s).to eq('Printmaker')
+      end
+
+      it 'returns the Producer Key' do
+        expect(config['producer_tesim'].to_s).to eq('Producer')
+      end
+
+      it 'returns the Publisher Key' do
+        expect(config['publisher_tesim'].to_s).to eq('Publisher')
       end
 
       it 'returns the Recipient Key' do
         expect(config['recipient_tesim'].to_s).to eq('Recipient')
       end
 
-      it 'returns the Director Key' do
-        expect(config['director_tesim'].to_s).to eq('Director')
+      it 'returns the Rubricator Key' do
+        expect(config['rubricator_tesim'].to_s).to eq('Rubricator')
       end
 
-      it 'returns the Producer Key' do
-        expect(config['producer_tesim'].to_s).to eq('Producer')
+      it 'returns the Scribe Key' do
+        expect(config['scribe_tesim'].to_s).to eq('Scribe')
+      end
+
+      it 'returns the Translator Key' do
+        expect(config['translator_tesim'].to_s).to eq('Translator')
+      end
+
+      it 'returns the Uniform Title Key' do
+        expect(config['uniform_title_tesim'].to_s).to eq('Uniform title')
+      end
+
+      it 'returns the Year Key' do
+        expect(config['year_isim'].to_s).to eq('Year')
+      end
+
+      it 'returns the Associated name Key' do
+        expect(config['associated_name_tesim'].to_s).to eq('Associated name')
+      end
+
+      it 'returns the Descriptive title Key' do
+        expect(config['descriptive_title_tesim'].to_s).to eq('Descriptive title')
+      end
+
+      it 'returns the References' do
+        expect(config['references_tesim'].to_s).to eq('References')
+      end
+
+      it 'returns the Shelfmark Key' do
+        expect(config['shelfmark_ssi'].to_s).to eq('Shelfmark')
       end
     end
 
@@ -197,7 +214,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       let(:missing) { presenter_object_missing_items.overview_terms.keys.length }
 
       it "returns existing keys" do
-        expect(all).to eq 37
+        expect(all).to eq 38
         expect(config.length).to eq all
       end
 
