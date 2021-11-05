@@ -16,6 +16,7 @@ RSpec.describe 'View a Collection', type: :system, js: true do
     {
       id: solr_id,
       ark_ssi: ark,
+      content_disclaimer_ssm: ['Content Disclaimer'],
       has_model_ssim: ['Collection'],
       accessControl_ssim: ['7b1af782-af1f-46a6-9bd2-b53be0f1bb68'],
       title_tesim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
@@ -85,6 +86,7 @@ RSpec.describe 'View a Collection', type: :system, js: true do
 
   it 'displays headings' do
     visit "/catalog/#{ark}"
+    expect(page).to have_content 'Content Disclaimer'
     expect(page).to have_content 'Collection Overview'
     expect(page).to have_content 'Contact'
     expect(page).to have_content 'Find this Collection'
