@@ -1,10 +1,4 @@
-# These fields are in order of display
-
-# Sinai only
-shelfmark_ssi: 'Shelfmark'
-descriptive_title_tesim: 'Descriptive title'
-associated_name_tesim: 'Associated name'
-references_tesim: 'References'
+content_disclaimer_ssm: 'Content Disclaimer'
 
 # Titles
 title_tesim: 'Title'
@@ -47,3 +41,8 @@ publisher_tesim: 'Publisher'
 human_readable_language_tesim: 'Language'
 member_of_collections_ssim: 'Collection'
 # dlcs_collection_name_tesim: 'Collection (native)'
+
+associated_name_tesim: 'Associated name'
+descriptive_title_tesim: 'Descriptive title'
+references_tesim: 'References'
+shelfmark_ssi: 'Shelfmark'

@@ -10,8 +10,6 @@ services:
     env_file:
       - ./default.env
       - ./docker.env
-    healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost:3000", "||", "exit", "1"]
     ports:
       - '127.0.0.1:3003:3000'
     volumes:
