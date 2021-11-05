@@ -2,7 +2,6 @@ en:
   blacklight:
     short_application_name: 'Digital Collections'
     application_name: 'UCLA Library Digital Collections'
-    sinai_application_name: 'Sinai Manuscripts Digital Library'
     search:
       facets:
         title: 'Browse items'

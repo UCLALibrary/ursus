@@ -5,15 +5,6 @@
     per_page:      number of items to fetch per page
     remote:        data-remote -%>
 
-<!-- SINAI -->
-<% if Flipflop.sinai? %>
-  <li class="pagination__page-item pagination__page-item--sinai disabled">
-    <span class="pagination__page-link pagination__page-link--sinai"><%= raw(t('views.pagination.truncate')) %></span>
-  </li>
-
-<!-- URSUS -->
-<% else %>
-  <li class="pagination__page-item pagination__page-item--ursus disabled">
-    <span class="pagination__page-link pagination__page-link--ursus"><%= raw(t('views.pagination.truncate')) %></span>
-  </li>
-<% end %>
+<li class="pagination__page-item pagination__page-item--ursus disabled">
+  <span class="pagination__page-link pagination__page-link--ursus"><%= raw(t('views.pagination.truncate')) %></span>
+</li>

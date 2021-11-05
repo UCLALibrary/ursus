@@ -2,19 +2,11 @@
 class StaticController < ApplicationController
   def version; end
 
-  def ursus_contact
-    head :forbidden if Flipflop.sinai?
-  end
+  def ursus_contact; end
 
-  def ursus_about
-    head :forbidden if Flipflop.sinai?
-  end
+  def ursus_about; end
 
-  def ursus_copyright
-    head :forbidden if Flipflop.sinai?
-  end
+  def ursus_copyright; end
 
-  def ursus_privacy
-    head :forbidden if Flipflop.sinai?
-  end
+  def ursus_privacy; end
 end

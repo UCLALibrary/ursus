@@ -6,27 +6,12 @@
     per_page:      number of items to fetch per page
     remote:        data-remote -%>
 
-<!-- SINAI -->
-<% if Flipflop.sinai? %>
-  <% if current_page.first? %>
-      <li class="pagination__page-item pagination__page-item--sinai disabled">
-        <%= link_to raw(t('views.pagination.previous')), '#', rel: 'prev', onclick: 'return false;', class: 'pagination__page-link pagination__page-link--sinai', aria: { label: t('views.pagination.aria.go_to_previous_page') } %>
-      </li>
-  <% else %>
-      <li class="pagination__page-item pagination__page-item--sinai">
-        <%= link_to raw(t('views.pagination.previous')), url, rel: 'prev', remote: remote, class: 'pagination__page-link pagination__page-link--sinai', aria: { label: t('views.pagination.aria.go_to_previous_page') } %>
-      </li>
-  <% end %>
-
-<!-- URSUS -->
+<% if current_page.first? %>
+    <li class="pagination__page-item pagination__page-item--ursus disabled">
+      <%= link_to raw(t('views.pagination.previous')), '#', rel: 'prev', onclick: 'return false;', class: 'pagination__page-link pagination__page-link--ursus', aria: { label: t('views.pagination.aria.go_to_previous_page') } %>
+    </li>
 <% else %>
-  <% if current_page.first? %>
-      <li class="pagination__page-item pagination__page-item--ursus disabled">
-        <%= link_to raw(t('views.pagination.previous')), '#', rel: 'prev', onclick: 'return false;', class: 'pagination__page-link pagination__page-link--ursus', aria: { label: t('views.pagination.aria.go_to_previous_page') } %>
-      </li>
-  <% else %>
-      <li class="pagination__page-item pagination__page-item--ursus">
-        <%= link_to raw(t('views.pagination.previous')), url, rel: 'prev', remote: remote, class: 'pagination__page-link pagination__page-link--ursus', aria: { label: t('views.pagination.aria.go_to_previous_page') } %>
-      </li>
-  <% end %>
+    <li class="pagination__page-item pagination__page-item--ursus">
+      <%= link_to raw(t('views.pagination.previous')), url, rel: 'prev', remote: remote, class: 'pagination__page-link pagination__page-link--ursus', aria: { label: t('views.pagination.aria.go_to_previous_page') } %>
+    </li>
 <% end %>

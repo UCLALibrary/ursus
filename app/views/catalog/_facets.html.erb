@@ -1,56 +1,19 @@
 <!-- # main container for facets/limits menu -->
 
-<!-- SINAI -->
-<% if Flipflop.sinai? %>
+<% if has_facet_values? %>
+  <div id="facets" class="facets facets-toggleable-md facets-container">
 
-  <% if has_facet_values? %>
-    <div id="facets" class="facets facets-toggleable-md facets-container facets-container--sinai">
-
-      <%# ---------------- BROWSE ITEMS BLOCK ----------------- %>
-      <div>
-        <div class="facets__navbar-heading facets__navbar-heading--sinai">
-          <%# BROWSE ITEMS %>
-          <%= t('blacklight.search.facets.title') %>
-
-          <%# ARROW %>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#facet-panel-collapse" aria-controls="facet-panel-collapse" aria-expanded="false" aria-label="Toggle facets">
-            <svg class="facets__svg-icon facets__svg-icon--sinai" viewBox="0 0 20 20">
-              <path fill="none" d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"></path>
-            </svg>
-          </button>
-        </div>
-
-        <%# SEARCHBAR %>
-        <div class='searchbar--siani'><%= render_search_bar %></div>
-      </div>
-      <%# ---------------- --------------------- ----------------- %>
-
-      <%= render 'catalog/constraints' %>
-
-      <div id="facet-panel-collapse" class="facets-collapse collapse facet-field__heading--sinai collapse-toggle--sinai .facet-field__heading--sinai.collapse-toggle[aria-expanded='true']">
-        <%= render_facet_partials %>
-      </div>
+    <div class="navbar facets__navbar facets__navbar--ursus">
+      <h2 class="facets__navbar-heading facets__navbar-heading--ursus"><%= t('blacklight.search.facets.title') %></h2>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#facet-panel-collapse" aria-controls="facet-panel-collapse" aria-expanded="false" aria-label="Toggle facets">
+        <svg class="facets__svg-icon facets__svg-icon--ursus" viewBox="0 0 20 20">
+          <path fill="none" d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"></path>
+        </svg>
+      </button>
     </div>
-  <% end %>
 
-<!-- URSUS -->
-<% else %>
-  <% if has_facet_values? %>
-    <div id="facets" class="facets facets-toggleable-md facets-container">
-
-      <div class="navbar facets__navbar facets__navbar--ursus">
-        <h2 class="facets__navbar-heading facets__navbar-heading--ursus"><%= t('blacklight.search.facets.title') %></h2>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#facet-panel-collapse" aria-controls="facet-panel-collapse" aria-expanded="false" aria-label="Toggle facets">
-          <svg class="facets__svg-icon facets__svg-icon--ursus" viewBox="0 0 20 20">
-            <path fill="none" d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"></path>
-          </svg>
-        </button>
-      </div>
-
-      <div id="facet-panel-collapse" class="facets-collapse collapse facet-field__heading--ursus">
-        <%= render_facet_partials %>
-      </div>
+    <div id="facet-panel-collapse" class="facets-collapse collapse facet-field__heading--ursus">
+      <%= render_facet_partials %>
     </div>
-  <% end %>
-
+  </div>
 <% end %>

@@ -34,20 +34,6 @@ RSpec.describe Ursus::ThumbnailPresenter do
       expect(result).to eq '<a><i /></a>'
     end
 
-    context 'when the document has \'discovery\' visibility' do
-      let(:visibility) { 'discovery' }
-
-      it 'shows the thumbnail in Sinai mode' do
-        allow(Flipflop).to receive(:sinai?).and_return(true)
-        expect(result).to eq '<a><i /></a>'
-      end
-
-      it 'hides the thumbnail when not in Sinai mode' do
-        allow(Flipflop).to receive(:sinai?).and_return(false)
-        expect(result).to eq nil
-      end
-    end
-
     it 'sets <img> alt text to (first) title' do
       result
       expect(view_context).to have_received(:image_tag).with(solr_document['thumbnail_url_ss'], alt: 'test title lkjhqbnet')

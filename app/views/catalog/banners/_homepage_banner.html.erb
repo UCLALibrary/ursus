@@ -1,15 +1,5 @@
-<!-- SINAI -->
-<% if Flipflop.sinai? %>
-  <% if current_page?(root_path) %>
-  <!--Previously displayed masthead banner for Sinai-->
-  <%#<%= render 'catalog/banners/homepage_banner--sinai' %>
-  <% end %>
-
-<!-- URSUS -->
+<% unless controller.controller_name == 'canon_law' %>
+  <%= render 'catalog/banners/homepage_banner--ursus' %>
 <% else %>
-  <% unless controller.controller_name == 'canon_law' %>
-    <%= render 'catalog/banners/homepage_banner--ursus' %>
-  <% else %>
-    <%= render 'catalog/banners/homepage_banner--canon' %>
-  <% end %>
+  <%= render 'catalog/banners/homepage_banner--canon' %>
 <% end %>

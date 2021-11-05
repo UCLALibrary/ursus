@@ -1,9 +1,5 @@
 <%
-@page_title = if Flipflop.sinai?
-                t('blacklight.search.page_title.title', constraints: render_search_to_page_title(params), application_name: sinai_application_name)
-              else
-                t('blacklight.search.page_title.title', constraints: render_search_to_page_title(params), application_name: application_name)
-              end
+@page_title = t('blacklight.search.page_title.title', constraints: render_search_to_page_title(params), application_name: application_name)
 @page_title = @page_title.sub(' - ', '') if @page_title.starts_with? " - "
 %>
 <% content_for(:head) do %>
