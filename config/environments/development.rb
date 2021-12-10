@@ -59,5 +59,5 @@ Rails.application.configure do
 
   config.user_account_ui_enabled = ENV['USER_ACCOUNT_UI_ENABLED'] || 'false'
   config.iiif_url = ENV['IIIF_URL'] || ''
-  config.media_viewer_url = ENV['MEDIA_VIEWER_URL'] || 'https://p-w-dl-viewer01.library.ucla.edu/'
+  config.media_viewer_url = ENV['MEDIA_VIEWER_URL'] || 'https://d-w-dl-viewer01.library.ucla.edu/'
 end
