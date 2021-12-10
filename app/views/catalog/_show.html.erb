@@ -1,36 +1,50 @@
-<% if Flipflop.sinai? %>
-  <%# --------- Back to Search Results ----- %>
 
-  <div class='item-page__metadata-wrapper-results--sinai'>
-    <%= link_back_to_catalog label: '← Back to Search Results', class: 'si-link si-link-search-results' %>
-    <%#= link_to image_tag('iiif-logo.png', alt: 'IIIF Manifest'), @document[:iiif_manifest_url_ssi], class: 'si-link-iiif' %>
+<div class='item-page__metadata-wrapper'>
+  <%= render 'catalog/work_record--ursus/primary_metadata', document: document %>
+  <%= render 'catalog/work_record--ursus/secondary_metadata', document: document %>
+</div>
 
-    <%# ---------- IIIF & Tooltip ------------ %>
-    <div class='si-link-iiif'>
-      <div class='iiif-tooltip--sinai' data-toggle="tooltip" data-placement="bottom" data-html="true" title="IIIF Manifest URL"><%= link_to image_tag('iiif-logo.png', alt: 'IIIF Manifest'), @document[:iiif_manifest_url_ssi], class: 'si-link-iiif' %></div>
-    </div>
-  </div>
-
-  <%# ----------- Shelfmark --------------- %>
-  <div class='title-row-show--siani'>
-    <%= @document[:shelfmark_ssi] %>
-  </div>
-
-  <div class='item-page__metadata-wrapper'>
-    <%= render 'catalog/work_record--sinai/primary_metadata', document: document %>
-    <%= render 'catalog/work_record--sinai/secondary_metadata', document: document %>
-  </div>
-
-<%# ----------- Ursus --------------- %>
-<% else %>
-  <div class='item-page__metadata-wrapper'>
-    <%= render 'catalog/work_record--ursus/primary_metadata', document: document %>
-    <%= render 'catalog/work_record--ursus/secondary_metadata', document: document %>
-  </div>
-<% end %>
-
-<!-- <script>
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-</script> -->
+<script>
+dataLayer.push({ 
+  'event':'pageLoad',
+  'AltTitle.other': <%=raw @document[:alternative_title_tesim].to_json %>,  
+  'Coverage.geographic': <%=raw @document[:location_tesim].to_json %>,
+  'Date.normalized': <%=raw @document[:normalized_date_sim].to_json %>,
+  'Description.fundingNote': <%=raw @document[:funding_note_tesim].to_json %>,
+  'Finding Aid URL': <%=raw @document[:finding_aid_url_ssm].to_json %>,
+  'Item ARK': <%=raw @document[:ark_ssi].to_json %>,
+  'Language': <%=raw @document[:language_tesim].to_json %>,
+  'Name.architect': <%=raw @document[:architect_tesim].to_json %>,
+  'Name.artist': <%=raw @document[:artist_tesim].to_json %>,
+  'Name.caligrapher': <%=raw @document[:calligrapher_tesim].to_json %>,
+  'Name.cartographer': <%=raw @document[:cartographer_tesim].to_json %>,
+  'Name.commentator': <%=raw @document[:commentator_tesim].to_json %>,
+  'Name.composer': <%=raw @document[:composer_tesim].to_json %>,
+  'Name.creator': <%=raw @document[:creator_tesim].to_json %>,
+  'Name.director': <%=raw @document[:director_tesim].to_json %>,
+  'Name.editor': <%=raw @document[:editor_tesim].to_json %>,
+  'Name.engraver': <%=raw @document[:engraver_tesim].to_json %>,
+  'Name.illuminator': <%=raw @document[:illuminator_tesim].to_json %>,
+  'Name.illustrator': <%=raw @document[:illustrator_tesim].to_json %>,
+  'Name.interviewee': <%=raw @document[:interviewee_tesim].to_json %>,
+  'Name.interviewer': <%=raw @document[:interviewer_tesim].to_json %>,
+  'Name.lyricist': <%=raw @document[:lyricist_tesim].to_json %>,
+  'Name.photographer': <%=raw @document[:photographer_tesim].to_json %>,
+  'Name.printmaker': <%=raw @document[:printmaker_tesim].to_json %>,
+  'Name.producer': <%=raw @document[:producer_tesim].to_json %>,
+  'Name.recipient': <%=raw @document[:recipient_tesim].to_json %>,
+  'Name.rubricator': <%=raw @document[:rubricator_tesim].to_json %>,
+  'Name.subject': <%=raw @document[:named_subject_tesim].to_json %>,
+  'Name.scribe': <%=raw @document[:scribe_tesim].to_json %>,
+  'Name.translator': <%=raw @document[:translator_tesim].to_json %>,
+  'Opac url': <%=raw @document[:opac_url_ssi].to_json %>,
+  'Project Name': <%=raw @document[:member_of_collections_ssim].to_json %>, // Not sure if pulling from the right field there is no project_tesin field in solr
+  'Publisher.publisherName': <%=raw @document[:publisher_tesim].to_json %>,
+  'Repository': <%=raw @document[:repository_tesim].to_json %>,
+  'Subject geographic': <%=raw @document[:subject_geographic_tesim].to_json %>,
+  'Subject name': <%=raw @document[:named_subject_tesim].to_json %>,
+  'Subject temporal': <%=raw @document[:subject_temporal_tesim].to_json %>,
+  'Subject topic': <%=raw @document[:subject_topic_tesim].to_json %>,
+  'Type.genre': <%=raw @document[:genre_tesim].to_json %>
+  })
+</script>
