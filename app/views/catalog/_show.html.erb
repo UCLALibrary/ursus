@@ -47,5 +47,6 @@ dataLayer.push({
   'Subject topic': <%=raw @document[:subject_topic_tesim].to_json %>,
   'Title': <%=raw @document[:title_tesim].to_json %>,
   'Type.genre': <%=raw @document[:genre_tesim].to_json %>
+  'Type.typeOfResource':<%=raw @document[:human_readable_resource_type_tesim].to_json.html_safe %>
   })
 </script>
