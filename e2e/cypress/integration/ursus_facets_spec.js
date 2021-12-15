@@ -9,13 +9,13 @@ describe('Facets', () => {
     cy.contains('People');
 
     cy.contains('a', 'A-Z Sort').click({ force: true });
-    cy.contains('Abandoned children--California--Los Angeles');
+    cy.contains('14th Dynasty');
     cy.contains('a', 'Next').click({ force: true });
     cy.percySnapshot('Subject facet modal');
-    cy.contains('Actresses--Australian--California').click({ force: true });
+    cy.contains('4-H clubs').click({ force: true });
 
     cy.get('.filter-label-key', { timeout: 100000 }).contains('Subject');
-    cy.get('.filter-label-value').contains('Actresses--Australian--California');
+    cy.get('.filter-label-value').contains('4-H clubs');
     cy.percySnapshot('Subject facet selected');
   });
 
@@ -74,23 +74,23 @@ describe('Facets', () => {
   it('Names', () => {
     cy.visit('/');
     cy.contains('a', 'Names').click();
-    cy.contains('a', 'Sachtleben, William Lewis').click({ force: true });
-    cy.get('[title="Sachtleben, William Lewis"]', { timeout: 100000 });
+    cy.contains('a', 'Santa Monica Civic Opera Association').click({ force: true });
+    cy.get('[title="Santa Monica Civic Opera Association"]', { timeout: 100000 });
     cy.contains('a', 'Location').click();
-    cy.contains('a', 'Greece--Athens').click({ force: true });
-    cy.get('[title="Greece--Athens"]', { timeout: 100000 });
+    cy.contains('a', 'California--Los Angeles--Westwood').click({ force: true });
+    cy.get('[title="California--Los Angeles--Westwood"]', { timeout: 100000 });
     cy.get(
       '.filter-location_sim > .filter-group__label > .filter-label-key'
     ).contains('Location');
     cy.get(
       '.filter-location_sim > .filter-group__label > .filter-label-value'
-    ).contains('Greece--Athens');
+    ).contains('California--Los Angeles--Westwood');
     cy.get(
       '.filter-named_subject_sim > .filter-group__label > .filter-label-key'
     ).contains('Names');
     cy.get(
       '.filter-named_subject_sim > .filter-group__label > .filter-label-value'
-    ).contains('Sachtleben, William Lewis');
+    ).contains('Santa Monica Civic Opera Association');
     cy.percySnapshot();
   });
 
@@ -112,9 +112,9 @@ describe('Facets', () => {
       '#facet-member_of_collections_ssim > .facet-values > .more_facets > a'
     ).click({ force: true });
     cy.contains('a', 'Next').click({ force: true });
-    cy.contains('a', 'Palmer Family Papers').click({ force: true });
+    cy.contains('a', 'Caro Minasian Collection of Armenian Material, circa 1600-1968').click({ force: true });
     cy.get('.filter-label-key', { timeout: 100000 }).contains('Collection');
-    cy.get('.filter-label-value').contains('Palmer Family Papers');
+    cy.get('.filter-label-value').contains('Caro Minasian Collection of Armenian Material, circa 1600-1968');
     cy.percySnapshot();
   });
 
