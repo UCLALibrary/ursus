@@ -1,15 +1,15 @@
 describe('Work show pages', () => {
-  it('Calendar of Feasts', () => {
-    cy.visit('/catalog/ark:/21198/zz0026hvpq');
+  it('Arganon (Praise) of Mary', () => {
+    cy.visit('/catalog/ark:/21198/zz0009q5nq');
     cy.contains(
       'h1',
-      'Manuscript No. 32: Calendar of Feasts 14th/15th Century'
+      'Ms. 35 Arganon'
     );
     cy.frameLoaded({
       url:
-        'https://p-w-dl-viewer01.library.ucla.edu/#?manifest=https%3A%2F%2Fiiif.library.ucla.edu%2Fark%253A%252F21198%252Fzz0026hvpq%2Fmanifest',
+        'https://p-w-dl-viewer01.library.ucla.edu/#?manifest=https%3A%2F%2Fiiif.library.ucla.edu%2Fark%253A%252F21198%252Fzz0009q5nq%2Fmanifest',
     });
-    cy.iframe().contains('span', 'Manuscript No.32: 00');
+    cy.iframe().contains('div', 'Ms. 35 Arganon');
     cy.percySnapshot();
   });
 });
