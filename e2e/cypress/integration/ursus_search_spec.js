@@ -10,7 +10,7 @@ describe('Search', () => {
 
   it('Search Not Found', () => {
     cy.visit('/');
-    cy.get('[id=q]').type('werewolf');
+    cy.get('[id=q]').type('haggard');
     cy.get('[id=search]').click();
     cy.contains('h2', '0 Catalog Results').should('exist');
     cy.percySnapshot();
@@ -37,14 +37,14 @@ describe('Search', () => {
   it('Metadata Text', () => {
     cy.visit('/');
     cy.contains('a', 'Resource Type').click();
-    cy.contains('a', 'text').click({ force: true });
-    cy.get('[title="text"]', { timeout: 100000 });
+    cy.contains('a', 'still image').click({ force: true });
+    cy.get('span[title="still image"]', { timeout: 60000 });
     cy.get(
       '.document-position-0 > .document__list-header > .document__list-title > a'
     ).click({ force: true });
-    cy.contains('a', 'text').click();
-    cy.get('.filter-label-key', { timeout: 100000 }).contains('Resource Type');
-    cy.get('[title=text]').contains('text');
+    cy.contains('a', 'still image').click();
+    cy.get('.filter-label-key', { timeout: 60000 }).contains('Resource Type');
+    cy.get('span[title="still image"]').contains('still image');
     cy.percySnapshot();
   });
 
