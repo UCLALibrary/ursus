@@ -18,13 +18,14 @@
 <script>
 dataLayer.push({
   'event':'pageLoad',
+  'page_type':'collection',
   'AltTitle.other': <%= raw @document[:alternative_title_tesim].to_json %> === null ? undefined : <%= raw @document[:alternative_title_tesim].to_json.html_safe %>,
   'Coverage.geographic': <%= raw @document[:location_tesim].to_json %> === null ? undefined : <%= raw @document[:location_tesim].to_json.html_safe %>,
   'Date.normalized': <%= raw @document[:normalized_date_sim].to_json %> === null ? undefined : <%= raw @document[:normalized_date_sim].to_json.html_safe %>,
   'Description.fundingNote': <%= raw @document[:funding_note_tesim].to_json %> === null ? undefined : <%= raw @document[:funding_note_tesim].to_json.html_safe %>,
   'Finding Aid URL': <%= raw @document[:finding_aid_url_ssm].to_json %> === null ? undefined : <%= raw @document[:finding_aid_url_ssm].to_json.html_safe %>,
   'Item ARK': <%= raw @document[:ark_ssi].to_json %> === null ? undefined : <%= raw @document[:ark_ssi].to_json.html_safe %>,
-  'Language': <%= raw @document[:language_tesim].to_json %> === null ? undefined : <%= raw @document[:language_tesim].to_json.html_safe %>,
+  'Language': <%= raw @document[:human_readable_language_tesim].to_json %> === null ? undefined : <%= raw @document[:human_readable_language_tesim].to_json.html_safe %>,
   'Name.architect': <%= raw @document[:architect_tesim].to_json %> === null ? undefined : <%= raw @document[:architect_tesim].to_json.html_safe %>,
   'Name.artist': <%= raw @document[:artist_tesim].to_json %> === null ? undefined : <%= raw @document[:artist_tesim].to_json.html_safe %>,
   'Name.caligrapher': <%= raw @document[:calligrapher_tesim].to_json %> === null ? undefined : <%= raw @document[:calligrapher_tesim].to_json.html_safe %>,
