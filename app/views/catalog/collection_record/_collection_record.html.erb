@@ -15,3 +15,50 @@
   </div>
 
 </div>
+<script>
+dataLayer.push({
+  'event':'pageLoad',
+  'page_type':'collection',
+  'AltTitle.other': <%= raw @document[:alternative_title_tesim].to_json %> === null ? undefined : <%= raw @document[:alternative_title_tesim].to_json.html_safe %>,
+  'Coverage.geographic': <%= raw @document[:location_tesim].to_json %> === null ? undefined : <%= raw @document[:location_tesim].to_json.html_safe %>,
+  'Date.normalized': <%= raw @document[:normalized_date_sim].to_json %> === null ? undefined : <%= raw @document[:normalized_date_sim].to_json.html_safe %>,
+  'Description.fundingNote': <%= raw @document[:funding_note_tesim].to_json %> === null ? undefined : <%= raw @document[:funding_note_tesim].to_json.html_safe %>,
+  'Finding Aid URL': <%= raw @document[:finding_aid_url_ssm].to_json %> === null ? undefined : <%= raw @document[:finding_aid_url_ssm].to_json.html_safe %>,
+  'Item ARK': <%= raw @document[:ark_ssi].to_json %> === null ? undefined : <%= raw @document[:ark_ssi].to_json.html_safe %>,
+  'Language': <%= raw @document[:human_readable_language_tesim].to_json %> === null ? undefined : <%= raw @document[:human_readable_language_tesim].to_json.html_safe %>,
+  'Name.architect': <%= raw @document[:architect_tesim].to_json %> === null ? undefined : <%= raw @document[:architect_tesim].to_json.html_safe %>,
+  'Name.artist': <%= raw @document[:artist_tesim].to_json %> === null ? undefined : <%= raw @document[:artist_tesim].to_json.html_safe %>,
+  'Name.caligrapher': <%= raw @document[:calligrapher_tesim].to_json %> === null ? undefined : <%= raw @document[:calligrapher_tesim].to_json.html_safe %>,
+  'Name.cartographer': <%= raw @document[:cartographer_tesim].to_json %> === null ? undefined : <%= raw @document[:cartographer_tesim].to_json.html_safe %>,
+  'Name.commentator': <%= raw @document[:commentator_tesim].to_json %> === null ? undefined : <%= raw @document[:commentator_tesim].to_json.html_safe %>,
+  'Name.composer': <%= raw @document[:composer_tesim].to_json %> === null ? undefined : <%= raw @document[:composer_tesim].to_json.html_safe %>,
+  'Name.creator': <%= raw @document[:creator_tesim].to_json %> === null ? undefined : <%= raw @document[:creator_tesim].to_json.html_safe %>,
+  'Name.director': <%= raw @document[:director_tesim].to_json %> === null ? undefined : <%= raw @document[:director_tesim].to_json.html_safe %>,
+  'Name.editor': <%= raw @document[:editor_tesim].to_json %> === null ? undefined : <%= raw @document[:editor_tesim].to_json.html_safe %>,
+  'Name.engraver': <%= raw @document[:engraver_tesim].to_json %> === null ? undefined : <%= raw @document[:engraver_tesim].to_json.html_safe %>,
+  'Name.illuminator': <%= raw @document[:illuminator_tesim].to_json %> === null ? undefined : <%= raw @document[:illuminator_tesim].to_json.html_safe %>,
+  'Name.illustrator': <%= raw @document[:illustrator_tesim].to_json %> === null ? undefined : <%= raw @document[:illustrator_tesim].to_json.html_safe %>,
+  'Name.interviewee': <%= raw @document[:interviewee_tesim].to_json %> === null ? undefined : <%= raw @document[:interviewee_tesim].to_json.html_safe %>,
+  'Name.interviewer': <%= raw @document[:interviewer_tesim].to_json %> === null ? undefined : <%= raw @document[:interviewer_tesim].to_json.html_safe %>,
+  'Name.lyricist': <%= raw @document[:lyricist_tesim].to_json %> === null ? undefined : <%= raw @document[:lyricist_tesim].to_json.html_safe %>,
+  'Name.photographer': <%= raw @document[:photographer_tesim].to_json %> === null ? undefined : <%= raw @document[:photographer_tesim].to_json.html_safe %>,
+  'Name.printmaker': <%= raw @document[:printmaker_tesim].to_json %> === null ? undefined : <%= raw @document[:printmaker_tesim].to_json.html_safe %>,
+  'Name.producer': <%= raw @document[:producer_tesim].to_json %> === null ? undefined : <%= raw @document[:producer_tesim].to_json.html_safe %>,
+  'Name.recipient': <%= raw @document[:recipient_tesim].to_json %> === null ? undefined : <%= raw @document[:recipient_tesim].to_json.html_safe %>,
+  'Name.rubricator': <%= raw @document[:rubricator_tesim].to_json %> === null ? undefined : <%= raw @document[:rubricator_tesim].to_json.html_safe %>,
+  'Name.subject': <%= raw @document[:named_subject_tesim].to_json %> === null ? undefined : <%= raw @document[:named_subject_tesim].to_json.html_safe %>,
+  'Name.scribe': <%= raw @document[:scribe_tesim].to_json %> === null ? undefined : <%= raw @document[:scribe_tesim].to_json.html_safe %>,
+  'Name.translator': <%= raw @document[:translator_tesim].to_json %> === null ? undefined : <%= raw @document[:translator_tesim].to_json.html_safe %>,
+  'Opac url': <%= raw @document[:opac_url_ssi].to_json %> === null ? undefined : <%= raw @document[:opac_url_ssi].to_json.html_safe %>,
+  'Project Name': <%= raw @document[:member_of_collections_ssim].to_json %> === null ? undefined : <%= raw @document[:member_of_collections_ssim].to_json.html_safe %>, // Not sure if pulling from the right field there is no project_tesin field in solr
+  'Publisher.publisherName': <%= raw @document[:publisher_tesim].to_json %> === null ? undefined : <%= raw @document[:publisher_tesim].to_json.html_safe %>,
+  'Repository': <%= raw @document[:repository_tesim].to_json %> === null ? undefined : <%= raw @document[:repository_tesim].to_json.html_safe %>,
+  'Subject geographic': <%= raw @document[:subject_geographic_tesim].to_json %> === null ? undefined : <%= raw @document[:subject_geographic_tesim].to_json.html_safe %>,
+  'Subject name': <%= raw @document[:named_subject_tesim].to_json %> === null ? undefined : <%= raw @document[:named_subject_tesim].to_json.html_safe %>,
+  'Subject temporal': <%= raw @document[:subject_temporal_tesim].to_json %> === null ? undefined : <%= raw @document[:subject_topic_tesim].to_json.html_safe %>,
+  'Subject topic': <%= raw @document[:subject_topic_tesim].to_json.html_safe %> === null ? undefined : <%= raw @document[:subject_temporal_tesim].to_json.html_safe %>,
+  'Title': <%= raw @document[:title_tesim].to_json %>  === null ? undefined : <%= raw @document[:title_tesim].to_json.html_safe %>,
+  'Type.genre': <%= raw @document[:genre_tesim].to_json %>  === null ? undefined : <%= raw @document[:genre_tesim].to_json.html_safe %>,
+  'Type.typeOfResource':<%= raw @document[:human_readable_resource_type_tesim].to_json %> === null ? undefined : <%= raw @document[:human_readable_resource_type_tesim].to_json.html_safe %>
+  })
+</script>
