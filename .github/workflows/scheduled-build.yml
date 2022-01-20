@@ -1,20 +1,14 @@
-name: Post-merge chores
+name: Builds every day at 2:30pm
 
 on:
-    push:
-        branches: 
-            - main
+   schedule:
+      - cron:  '30 14 * * *'  
 
 jobs:
-    autoupdate:
-        name: Update outstanding PRs
+    jenkins-build:
+        name: Deploys main branch to test every day at 2:30pm
         runs-on: ubuntu-latest
         steps:
-        - uses: actions/checkout@v1
-        - name: update all prs
-          uses: maxkomarychev/pr-updater-action@92cb6e15dc3c4b9b148b65eef32836bb428587b9  # v1.0.1
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
         - name: Jenkins webhook
           uses: enflo/curl-action@fabe347922c7a9e88bafa15c4b7d6326ea802695
           with:
