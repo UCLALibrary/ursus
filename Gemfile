@@ -29,7 +29,7 @@ gem 'rails', '~> 5.2'
 gem 'rollbar' # Error reporting tool
 gem 'rsolr', '>= 1.0'
 gem 'sassc-rails', '>= 2.1.2' # SASS -> CSS compiler
-gem 'sidekiq', '~> 5.2.7'
+gem 'sidekiq', '~> 6.4.0'
 gem 'solrizer', '>= 4.1.0'
 gem 'sprockets', '>= 3.7.2', '< 4'
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
