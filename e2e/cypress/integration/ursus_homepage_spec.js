@@ -63,10 +63,6 @@ describe('Ursus Homepage', () => {
     .parent().should("have.attr", 'href', "https://www.library.ucla.edu/");
   });
 
-  it('Visit Our Legacy Site', () => {
-    cy.contains('a[href="http://digital2.library.ucla.edu/"]', 'Visit Our Legacy Site');
-  });
-
   it('Footer - Give Us Feedback', () => {
     cy.contains('a[href="https://forms.gle/x2BV9dJMK241VsAJA"]', 'Give Us Feedback');
   });
