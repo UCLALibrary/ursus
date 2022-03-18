@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :display_banner?, :add_legacy_views, :cors_preflight_check
+  before_action :cors_preflight_check
   after_action :cors_set_access_control_headers
   helper_method :solr_document_path, :solr_document_url
 
-  def add_legacy_views
-    prepend_view_path "app/views_legacy"
-    prepend_view_path "app/views" # already there, but needs to be in front of views_legacy
-  end
+  # def add_legacy_views
+  #   prepend_view_path "app/views_legacy"
+  #   prepend_view_path "app/views" # already there, but needs to be in front of views_legacy
+  # end
 
   def cors_set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
@@ -28,22 +28,21 @@ class ApplicationController < ActionController::Base
     render text: '', content_type: 'text/plain'
   end
 
-  def display_banner?
-    if banner_cookie?
-      @beta_banner_display_option = "none"
-    else
-      @beta_banner_display_option = "block"
-      set_banner_cookie
-    end
-  end
+  # def display_banner?
+  #   if banner_cookie?
+  #     @beta_banner_display_option = "none"
+  #   else
+  #     set_banner_cookie
+  #   end
+  # end
 
-  def banner_cookie?
-    cookies[:banner_display_option]
-  end
+  # def banner_cookie?
+  #   cookies[:banner_display_option]
+  # end
 
-  def set_banner_cookie
-    cookies[:banner_display_option] = "banner_off"
-  end
+  # def set_banner_cookie
+  #   cookies[:banner_display_option] = "banner_off"
+  # end
 
   helper Openseadragon::OpenseadragonHelper
   # Adds a few additional behaviors into the application controller
