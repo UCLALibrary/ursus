@@ -2,26 +2,6 @@
   background-color: #0b6ab7;
 }
 
-.site-navbar__beta-logo {
-  position: relative;
-  top: 0.4rem;
-  left: 0.4rem;
-  font-size: 1.25rem;
-  font-weight: $font-bold;
-  color: #ffe92e;
-  letter-spacing: 0.05rem;
-
-  @media (max-width: 575px) {
-    top: 0.23rem;
-    font-size: $text-16;
-  }
-
-  @media (max-width: 374px) {
-    top: 0;
-    left: 0;
-  }
-}
-
 .site-navbar__item-link--ursus {
   &:hover {
     color: $ucla-gold;
