@@ -34,9 +34,6 @@ RSpec.describe 'Search results page', type: :system, js: false do
     expect(page).not_to have_link 'Date 1'
     expect(page).to have_link 'Person 1'
 
-    # it 'displays the old site link with page results' do
-    expect(page).to have_link 'original digital collections site'
-
     # it 'displays Gallery View button' do
     expect(page).to have_link 'Gallery'
 
@@ -46,11 +43,6 @@ RSpec.describe 'Search results page', type: :system, js: false do
     # shows thumbnails for 'public' visibility, not for 'discovery'
     expect(page).not_to have_css("img[src*='work3.jpg']")
     expect(page).to have_css("img[src*='work4.jpg']")
-  end
-
-  it 'displays the old site link on page with no results' do
-    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=zebra'
-    expect(page).to have_link 'original digital collections site'
   end
 
   it 'uses AND not OR for search results by default' do
