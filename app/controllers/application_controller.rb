@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :cors_preflight_check
+  before_action :add_legacy_views, :cors_preflight_check
   after_action :cors_set_access_control_headers
   helper_method :solr_document_path, :solr_document_url
 
-  # def add_legacy_views
-  #   prepend_view_path "app/views_legacy"
-  #   prepend_view_path "app/views" # already there, but needs to be in front of views_legacy
-  # end
+  def add_legacy_views
+    prepend_view_path "app/views_legacy"
+    prepend_view_path "app/views" # already there, but needs to be in front of views_legacy
+  end
 
   def cors_set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
