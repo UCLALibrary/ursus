@@ -24,12 +24,12 @@ gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
 gem 'loofah', '>= 2.4.0'
 gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
-gem 'puma', '~> 5.3' # app server
+gem 'puma', '~> 5.5' # app server
 gem 'rails', '~> 5.2'
 gem 'rollbar' # Error reporting tool
 gem 'rsolr', '>= 1.0'
 gem 'sassc-rails', '>= 2.1.2' # SASS -> CSS compiler
-gem 'sidekiq', '~> 5.2.7'
+gem 'sidekiq', '~> 6.4'
 gem 'solrizer', '>= 4.1.0'
 gem 'sprockets', '>= 3.7.2', '< 4'
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
