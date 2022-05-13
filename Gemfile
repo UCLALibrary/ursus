@@ -59,7 +59,7 @@ group :development do
   gem 'capistrano-ext'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
-  gem 'capistrano-sidekiq', '~> 0.20.0'
+  gem 'capistrano-sidekiq', '~> 2.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-commands-rspec'
