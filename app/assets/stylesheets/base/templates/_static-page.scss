@@ -43,7 +43,21 @@
   }
 }
 
+.static_page__paragraph {
+  margin-bottom: 24px;
+}
+
 .static-page__list {
   padding-left: 24px;
   font-size: $text-18;
+}
+
+.static-page__italic {
+  font-style: italic;
+  color: coral;
+}
+
+.static-page__bold {
+  font-weight: bold;
+  color: green;
 }

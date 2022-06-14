@@ -22,3 +22,8 @@ en:
     updates:
       page_title: 'Migration Updates'
       migration_updates: 'Migration Updates'
+    iiif_guide:
+      page_title: 'Reusing Digital Collections Content with IIIF'
+      viewing_experience: 'A rich viewing experience'
+      compare_images: 'Compare images'
+      build_your_own: 'Build your own digital exhibit'
