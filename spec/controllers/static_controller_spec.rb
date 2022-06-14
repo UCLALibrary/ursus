@@ -6,19 +6,19 @@ require 'rails_helper'
 RSpec.describe StaticController, type: :controller do
   describe 'the static pages are successfully served' do
 
-    context 'GET #ursus_about' do
-      it "returns http success" do
-        get :ursus_about
-        expect(response).to have_http_status(:success)
-        expect(response).to render_template(:ursus_about)
-      end
-    end
-
     context 'GET #ursus_contact' do
       it "returns http success" do
         get :ursus_contact
         expect(response).to have_http_status(:success)
         expect(response).to render_template(:ursus_contact)
+      end
+    end
+
+    context 'GET #ursus_about' do
+      it "returns http success" do
+        get :ursus_about
+        expect(response).to have_http_status(:success)
+        expect(response).to render_template(:ursus_about)
       end
     end
 
@@ -53,6 +53,5 @@ RSpec.describe StaticController, type: :controller do
         expect(response).to render_template(:version)
       end
     end
-
   end
 end

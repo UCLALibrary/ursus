@@ -1,3 +1,21 @@
+.static-page__row--ursus {
+  @extend .row;
+}
+
+.static-page__subtitle--ursus {
+  @extend .col-lg-4;
+}
+
+.static-page__text--ursus {
+  @extend .col-lg-8;
+}
+
+.static-page__list--ursus {
+  @media (max-width: 991px) {
+    font-size: $text-16;
+  }
+}
+
 .content-container--static-page {
   padding-bottom: 4rem;
 }
@@ -76,4 +94,9 @@
 
 .static-page__hr_margins {
   margin: 75px 0;
+}
+
+.static-page__note {
+  margin: 2rem 0;
+  font-size: $text-14;
 }
