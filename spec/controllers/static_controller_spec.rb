@@ -5,6 +5,23 @@ require 'rails_helper'
 
 RSpec.describe StaticController, type: :controller do
   describe 'the static pages are successfully served' do
+
+    context 'GET #ursus_about' do
+      it "returns http success" do
+        get :ursus_about
+        expect(response).to have_http_status(:success)
+        expect(response).to render_template(:ursus_about)
+      end
+    end
+
+    context 'GET #ursus_contact' do
+      it "returns http success" do
+        get :ursus_contact
+        expect(response).to have_http_status(:success)
+        expect(response).to render_template(:ursus_contact)
+      end
+    end
+
     context 'GET #ursus_copyright' do
       it "returns http success" do
         get :ursus_copyright
@@ -21,11 +38,11 @@ RSpec.describe StaticController, type: :controller do
       end
     end
 
-    context 'GET #ursus_contact' do
+    context 'GET #ursus_iiif_guide' do
       it "returns http success" do
-        get :ursus_contact
+        get :ursus_iiif_guide
         expect(response).to have_http_status(:success)
-        expect(response).to render_template(:ursus_contact)
+        expect(response).to render_template(:ursus_iiif_guide)
       end
     end
 
@@ -37,12 +54,5 @@ RSpec.describe StaticController, type: :controller do
       end
     end
 
-    context 'GET #iiif_guide' do
-      it "returns http success" do
-        get :iiif_guide
-        expect(response).to have_http_status(:success)
-        expect(response).to render_template(:iiif_guide)
-      end
-    end
   end
 end

@@ -38,15 +38,15 @@
 
       <%#= Navigation of Paginated Objects %>
       <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__italic'>Navigation of paginated objects:</span> The <span class='static-page__bold'>Contents</span> panel (on the left side of the viewer) displays thumbnail images of each image in sequence. You can browse the thumbnails to select specific pages of a resource. You can minimize the <span class='static-page__bold'>Contents</span> panel using the double arrow (&#60;&#60;) on the panel’s top right side. The <span class='static-page__bold'>page navigation</span> icons located in the center of the top bar of the viewer also allow you to page through an item, jump to the first or last image, or choose a specific image in the sequence.</p>
-      <%= image_tag 'static/ucla_iiif_navigation.gif', alt: 'A GIF demonstrating navigation of autograph album pages via thumbnail images in the UV “Contents” panel.'%>
+      <%= image_tag 'static/ucla_iiif_navigation.gif', alt: 'A GIF demonstrating navigation of autograph album pages via thumbnail images in the UV “Contents” panel.' %>
 
       <%#= Full Screen %>
       <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__italic'>Full screen: </span> Clicking on the <span cls='static-page__bold'> frame</span> icon in the lower right-hand corner will pop the viewer out of the webpage for a full screen viewing experience.</p>
-      <%= image_tag 'static/ucla_iiif_full-screen.png', alt: 'Screenshot of an album displayed on Universal Viewer frame icon circled in red.'%>
+      <%= image_tag 'static/ucla_iiif_full-screen.png', alt: 'Screenshot of an album displayed on Universal Viewer frame icon circled in red.' %>
 
       <%#= Download Images %>
       <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__italic'>Download images:</span> The download icon in the lower left-hand corner gives you the option to download the image displayed in the main viewing area. After clicking on the download icon, a white download menu will appear. Click on the “Download” button to open the image in a new tab in your web browser. You can then download the image using your browser’s Save command. The URL for the image can also be copied and used in new contexts, which is covered in the “Reusing IIIF Images” section below.</p>
-      <%= image_tag 'static/ucla_iiif_download-images.png', alt: 'Left screenshot displays an album page displayed on Universal Viewer with the download icon circled in red. Right screenshot displays the download menu that appears after clicking on the icon.'%>
+      <%= image_tag 'static/ucla_iiif_download-images.png', alt: 'Left screenshot displays an album page displayed on Universal Viewer with the download icon circled in red. Right screenshot displays the download menu that appears after clicking on the icon.' %>
     </div>
   </div>
 
@@ -66,9 +66,9 @@
       <p class='static_page__text static-page__top_bottom_margin'>To use the IIIF Manifest, you first need to locate the <span class='static-page__bold'>IIIF Manifest URL</span> for the resources that you wish to compare. For resources in the UCLA Library Digital Collections portal, you will find the IIIF Manifest URL in the “Find this Item” section of the resource’s item page.</p>
       <%= image_tag 'static/ucla_iiif_manifest-url.png', alt: 'The “Find This Item” section from the Map of Frankfurt and Its Environs item page.' %>
 
-      <p class='static_page__text static-page__top_bottom_margin'>To <span class='static-page__bold'>copy</span> the IIIF Manifest URL, right click the IIIF logo <%= image_tag 'static/ucla_iiif_logo.png', alt: 'iiif logo icon' , width: '20px', style: 'display:inline' %> and select “Copy Link.” Clicking on the IIIF logo will open the IIIF Manifest in a new tab in your browser.</p>
+      <p class='static_page__text static-page__top_bottom_margin'>To <span class='static-page__bold'>copy</span> the IIIF Manifest URL, right click the IIIF logo <%= image_tag 'static/ucla_iiif_logo.png', alt: 'iiif logo icon', width: '20px', style: 'display:inline' %> and select “Copy Link.” Clicking on the IIIF logo will open the IIIF Manifest in a new tab in your browser.</p>
 
-      <p class='static_page__text static-page__top_bottom_margin'>A IIIF Manifest URL from our collections will look something like this: <a href="https://iiif.library.ucla.edu/ark%3A%2F21198%2Fzz002h6jvn/manifest" class="ur-link", target: "_blank">https://iiif.library.ucla.edu/ark%3A%2F21198%2Fzz002h6jvn/manifest</a></p>
+      <p class='static_page__text static-page__top_bottom_margin'>A IIIF Manifest URL from our collections will look something like this: <a href="https://iiif.library.ucla.edu/ark%3A%2F21198%2Fzz002h6jvn/manifest" class="ur-link", target="_blank">https://iiif.library.ucla.edu/ark%3A%2F21198%2Fzz002h6jvn/manifest</a></p>
 
       <p class='static_page__text static-page__top_bottom_margin'>Once you have your IIIF Manifest URLs, you can import the IIIF-enabled content to Mirador or other IIIF-friendly viewers and tools. Try it out with UCLA Library’s <a href="https://iiif.library.ucla.edu/viewers/mirador/" class="ur-link">Mirador</a> viewer following these steps:</p>
 
@@ -101,6 +101,8 @@
     </div>
   </div>
 
+  <hr class='divider divider--ursus static-page__hr_margins'>
+
   <div class='static-page__row static-page__row--ursus'>
     <div class='static-page__subtitle static-page__subtitle--ursus'>
       <%= t('static_pages.iiif_guide.annotate_images').upcase %>
@@ -114,6 +116,8 @@
       <p class='static_page__text static-page__top_bottom_margin'></p>
     </div>
   </div>
+
+  <hr class='divider divider--ursus static-page__hr_margins'>
 
   <div class='static-page__row static-page__row--ursus'>
     <div class='static-page__subtitle static-page__subtitle--ursus'>
