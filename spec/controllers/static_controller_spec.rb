@@ -36,5 +36,13 @@ RSpec.describe StaticController, type: :controller do
         expect(response).to render_template(:version)
       end
     end
+
+    context 'GET #iiif_guide' do
+      it "returns http success" do
+        get :iiif_guide
+        expect(response).to have_http_status(:success)
+        expect(response).to render_template(:iiif_guide)
+      end
+    end
   end
 end
