@@ -3,73 +3,150 @@
     <h1 class='static-page__title bordered-title bordered-title--ursus'><%= t('static_pages.iiif_guide.page_title') %></h1>
   </div>
 
-      <p class='static_page__paragraph'>The UCLA Digital Library Program preserves and provides access to local and global cultural heritage materials to support teaching, research, and expanded use of these materials.  Central to this mission is our commitment to inclusive digital collections that encourage participation from researchers, students, and communities to make new connections and discoveries and to reshape historical narratives around them. To this end, we adopt and develop technologies that promote and enable sharing, reusing, and reframing the digital collections content that we steward. One such technology, and the focus of this guide, is the <a href="https://iiif.io/" class="ur-link">International Image Interoperability Framework</a>" (IIIF).</p>
+  <p class='static_page__paragraph '>The UCLA Digital Library Program preserves and provides access to local and global cultural heritage materials to support teaching, research, and expanded use of these materials.  Central to this mission is our commitment to inclusive digital collections that encourage participation from researchers, students, and communities to make new connections and discoveries and to reshape historical narratives around them. To this end, we adopt and develop technologies that promote and enable sharing, reusing, and reframing the digital collections content that we steward. One such technology, and the focus of this guide, is the <a href="https://iiif.io/" class="ur-link">International Image Interoperability Framework</a>" (IIIF).</p>
 
-      <p class='static_page__paragraph'>IIIF (pronounced “triple-eye-eff”) is a set of open standards for publishing image and audiovisual content on the web as <span class='static-page__italic'>interoperable</span> and <span class='static-page__italic'>portable</span> resources. With IIIF, resources can be reused in new contexts and imported into IIIF-friendly tools to view, share, or re-contextualize digital collections materials. The guide introduces some of the ways you can leverage IIIF when using the UCLA Library Digital Collections, including:</p>
-      <ul class='static-page__list static-page__list--ursus'>
-        <li>Navigating rich viewing experiences for photographs, books and manuscripts, archival materials, and other image-based content</li>
-        <li>Comparing images across collections and institutions</li>
-        <li>Building digital exhibits</li>
-        <li>Annotating images</li>
-        <li>Embedding images in new contexts on the web</li>
-      </ul>
+  <p class='static_page__paragraph'>IIIF (pronounced “triple-eye-eff”) is a set of open standards for publishing image and audiovisual content on the web as <span class='static-page__italic'>interoperable</span> and <span class='static-page__italic'>portable</span> resources. With IIIF, resources can be reused in new contexts and imported into IIIF-friendly tools to view, share, or re-contextualize digital collections materials. The guide introduces some of the ways you can leverage IIIF when using the UCLA Library Digital Collections, including:</p>
 
-      <p class='static_page__paragraph'>If you have any questions about or would like more information on reusing UCLA Library Digital Collections materials or IIIF, please contact dlp@library.ucla.edu.</p>
+  <ul class='static-page__list static-page__list--ursus'>
+    <li>Navigating rich viewing experiences for photographs, books and manuscripts, archival materials, and other image-based content</li>
+    <li>Comparing images across collections and institutions</li>
+    <li>Building digital exhibits</li>
+    <li>Annotating images</li>
+    <li>Embedding images in new contexts on the web</li>
+  </ul>
 
-      <p class='static_page__paragraph static-page__italic'>Note: Copyright laws may apply to materials within our collections, so remember to consult the UCLA Library <a href="https://digital.library.ucla.edu/copyright_and_collections">copyright policies</a> when reusing images.</p>
+  <p class='static_page__paragraph '>If you have any questions about or would like more information on reusing UCLA Library Digital Collections materials or IIIF, please contact dlp@library.ucla.edu.</p>
+
+  <p class='static_page__paragraph static-page__italic s'>Note: Copyright laws may apply to materials within our collections, so remember to consult the UCLA Library <a href="https://digital.library.ucla.edu/copyright_and_collections" class="ur-link">copyright policies</a> when reusing images.</p>
+
+  <hr class='divider divider--ursus static-page__hr_margins'>
 
   <div class='static-page__row static-page__row--ursus'>
     <div class='static-page__subtitle static-page__subtitle--ursus'>
       <%= t('static_pages.iiif_guide.viewing_experience').upcase %>
     </div>
+
     <div class='static-page__text static-page__text--ursus'>
-      <p class='static_page__paragraph'>The UCLA Library Digital Collections uses <a href="https://universalviewer.io/">Universal Viewer</a> (UV) for displaying images and playing streaming audio and video. Universal Viewer is a IIIF-compliant viewer which supports deep zoom of high-resolution images and allows you to pan, zoom, or rotate images, as well as navigate paginated resources, such as books, manuscripts, or pamphlets.</p>
+      <p class='static_page__text static-page__top_bottom_margin'>The UCLA Library Digital Collections uses <a href="https://universalviewer.io/" class="ur-link">Universal Viewer</a> (UV) for displaying images and playing streaming audio and video. Universal Viewer is a IIIF-compliant viewer which supports deep zoom of high-resolution images and allows you to pan, zoom, or rotate images, as well as navigate paginated resources, such as books, manuscripts, or pamphlets.</p>
 
-      <p class='static_page__paragraph'><span class='static-page__italic'>Zoom, pan, and rotate:</span> <span class='static-page__bold'>Zoom and rotate</span> buttons are located in the top left of the viewer. You can zoom in (&#43;) or out (&#45;) and rotate the image (⟳) in 90-degree increments. If you zoom in closer than 100%, you can click in the viewing area and use your cursor to move the image and pan horizontally and vertically.</p>
+      <p class='static_page__text static-page__top_bottom_margin '><span class='static-page__italic'>Zoom, pan, and rotate:</span> <span class='static-page__bold'>Zoom and rotate</span> buttons are located in the top left of the viewer. You can zoom in (&#43;) or out (&#45;) and rotate the image (⟳) in 90-degree increments. If you zoom in closer than 100%, you can click in the viewing area and use your cursor to move the image and pan horizontally and vertically.</p>
+      <%= image_tag 'static/ucla_iiif_zoom-rotate.gif', alt: 'A GIF demonstrating the zoom, rotate, and pan functions on a page image from an  autograph album' %>
 
-      <p class='static_page__paragraph'><span class='static-page__italic'>Viewing mode:</span> The <span class='static-page__bold'>view mode</span> icons in the upper right-hand corner of the viewer allow you to toggle between viewing modes: a single image, a book view with facing pages (for paginated items), or a gallery view (when there are multiple images).</p>
+      <%#= Viewing Mode %>
+      <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__italic'>Viewing mode:</span> The <span class='static-page__bold'>view mode</span> icons in the upper right-hand corner of the viewer allow you to toggle between viewing modes: a single image, a book view with facing pages (for paginated items), or a gallery view (when there are multiple images).</p>
+      <%= image_tag 'static/ucla_iiif_view-mode.gif', alt: 'A GIF demonstrating the different view modes.' %>
 
-      <p class='static_page__paragraph'><span class='static-page__italic'>Navigation of paginated objects:</span> The <span class='static-page__bold'>Contents</span> panel (on the left side of the viewer) displays thumbnail images of each image in sequence. You can browse the thumbnails to select specific pages of a resource. You can minimize the <span class='static-page__bold'>Contents</span> panel using the double arrow (&#60;&#60;) on the panel’s top right side. The <span class='static-page__bold'>page navigation</span> icons located in the center of the top bar of the viewer also allow you to page through an item, jump to the first or last image, or choose a specific image in the sequence.</p>
+      <%#= Navigation of Paginated Objects %>
+      <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__italic'>Navigation of paginated objects:</span> The <span class='static-page__bold'>Contents</span> panel (on the left side of the viewer) displays thumbnail images of each image in sequence. You can browse the thumbnails to select specific pages of a resource. You can minimize the <span class='static-page__bold'>Contents</span> panel using the double arrow (&#60;&#60;) on the panel’s top right side. The <span class='static-page__bold'>page navigation</span> icons located in the center of the top bar of the viewer also allow you to page through an item, jump to the first or last image, or choose a specific image in the sequence.</p>
+      <%= image_tag 'static/ucla_iiif_navigation.gif', alt: 'A GIF demonstrating navigation of autograph album pages via thumbnail images in the UV “Contents” panel.'%>
 
-      <p class='static_page__paragraph'><span class='static-page__italic'>Full screen: </span> Clicking on the <span cls='static-page__bold'> frame</span> icon in the lower right-hand corner will pop the viewer out of the webpage for a full screen viewing experience.</p>
+      <%#= Full Screen %>
+      <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__italic'>Full screen: </span> Clicking on the <span cls='static-page__bold'> frame</span> icon in the lower right-hand corner will pop the viewer out of the webpage for a full screen viewing experience.</p>
+      <%= image_tag 'static/ucla_iiif_full-screen.png', alt: 'Screenshot of an album displayed on Universal Viewer frame icon circled in red.'%>
 
-      <p class='static_page__paragraph'><span class='static-page__italic'>Download images:</span> The download icon in the lower left-hand corner gives you the option to download the image displayed in the main viewing area. After clicking on the download icon, a white download menu will appear. Click on the “Download” button to open the image in a new tab in your web browser. You can then download the image using your browser’s Save command. The URL for the image can also be copied and used in new contexts, which is covered in the “Reusing IIIF Images” section below.</p>
+      <%#= Download Images %>
+      <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__italic'>Download images:</span> The download icon in the lower left-hand corner gives you the option to download the image displayed in the main viewing area. After clicking on the download icon, a white download menu will appear. Click on the “Download” button to open the image in a new tab in your web browser. You can then download the image using your browser’s Save command. The URL for the image can also be copied and used in new contexts, which is covered in the “Reusing IIIF Images” section below.</p>
+      <%= image_tag 'static/ucla_iiif_download-images.png', alt: 'Left screenshot displays an album page displayed on Universal Viewer with the download icon circled in red. Right screenshot displays the download menu that appears after clicking on the icon.'%>
     </div>
   </div>
 
-    <div class='static-page__row static-page__row--ursus'>
-      <div class='static-page__subtitle static-page__subtitle--ursus'>
-        <%= t('static_pages.iiif_guide.compare_images').upcase %>
-      </div>
-        <div class='static-page__text static-page__text--ursus'>
-          <p class='static_page__paragraph'>Since IIIF content is interoperable and portable, you can easily compare images from different collections, or even from different institutions, by importing images into a IIIF-enabled viewer that supports comparison, such as the web-based <a href="https://projectmirador.org/">Mirador viewer</a>.</p>
+  <hr class='divider divider--ursus static-page__hr_margins'>
 
-          <p class='static_page__paragraph'>In order to import IIIF resources into other IIIF-enabled viewers or tools, you’ll need the item’s <span class='static-page__bold'><a href="https://iiif.io/guides/using_iiif_resources/#what-is-a-iiif-manifest"></a>IIIF Manifest</a></span>. A IIIF Manifest is a JSON-formatted document that contains all the information about the image (or images in the case of paginated objects) along with information on how the image(s) should be presented inside a viewer. <span class='static-page__italic'>Luckily, you do not need to be able to read or understand a IIIF Manifest</span> to make use of it! Each IIIF Manifest represents a discrete resource, such as a photograph or a newspaper issue with multiple pages.</p>
-
-          <p class='static_page__paragraph'>To use the IIIF Manifest, you first need to locate the <span class='static-page__bold'>IIIF Manifest URL</span> for the resources that you wish to compare. For resources in the UCLA Library Digital Collections portal, you will find the IIIF Manifest URL in the “Find this Item” section of the resource’s item page.</p>
-
-          <p class='static_page__paragraph'>To copy the IIIF Manifest URL, right click the IIIF logo () and select “Copy Link.” Clicking on the IIIF logo will open the IIIF Manifest in a new tab in your browser.</p>
-
-          <p class='static_page__paragraph'>A IIIF Manifest URL from our collections will look something like this: https://iiif.library.ucla.edu/ark%3A%2F21198%2Fzz002h6jvn/manifest</p>
-
-          <p class='static_page__paragraph'>Once you have your IIIF Manifest URLs, you can import the IIIF-enabled content to Mirador or other IIIF-friendly viewers and tools. Try it out with UCLA Library’s Mirador viewer following these steps:</p>
-
-          <p class='static_page__paragraph'><span class='static-page__bold'>Step 1</span>: Open the UCLA Library Mirador viewer. Copy the IIIF Manifest URL for one of the resources that you would like to compare, for example this mural photograph.</p>
-
-          <p class='static_page__paragraph'><span class='static-page__bold'>Step 2</span>: Click on the blue &#34; &#43; Start Here &#34; button in the top left corner.</p>
-
-          <p class='static_page__paragraph'><span class='static-page__bold'>Step 3</span>: Click on the blue &#34; &#43; Add Resource &#34; button at the bottom right corner of the page and paste the IIIF Manifest URL into the text box. Click &#34;Add.&#34; The item should now appear in the list of available IIIF resources. Click on the resource you just added to open it in Mirador.</p>
-
-          <p class='static_page__paragraph'><span class='static-page__bold'>Step 4</span>: Copy the IIIF Manifest URL for the second resource that you would like to compare, for example a second mural photograph. Select the blue &#34; &#43; &#34; button in the top left corner. Click the &#34; &#43; Add Resource &#34; button to import this IIIF resource. You can add more items to the list of resources and compare multiple images side-by-side in the Mirador viewer.</p>
-
-          <p class='static_page__paragraph'>The images used in this example are from the Nancy Tovar Murals of East L.A. Collection.</p>
-        </div>
-      </div>
+  <div class='static-page__row static-page__row--ursus'>
+    <div class='static-page__subtitle static-page__subtitle--ursus'>
+      <%= t('static_pages.iiif_guide.compare_images').upcase %>
     </div>
 
-    <div class='static-page__row static-page__row--ursus'>
-      <div class='static-page__subtitle static-page__subtitle--ursus'>
-        <%= t('static_pages.iiif_guide.build_your_own').upcase %>
+    <div class='static-page__text static-page__text--ursus'>
+      <p class='static_page__text static-page__top_bottom_margin'>Since IIIF content is interoperable and portable, you can easily compare images from different collections, or even from different institutions, by importing images into a IIIF-enabled viewer that supports comparison, such as the web-based <a href="https://projectmirador.org/">Mirador viewer</a>.</p>
+
+      <p class='static_page__text static-page__top_bottom_margin'>In order to import IIIF resources into other IIIF-enabled viewers or tools, you’ll need the item’s <span class='static-page__bold'><a href="https://iiif.io/guides/using_iiif_resources/#what-is-a-iiif-manifest" class="ur-link"></a>IIIF Manifest</a></span>. A IIIF Manifest is a JSON-formatted document that contains all the information about the image (or images in the case of paginated objects) along with information on how the image(s) should be presented inside a viewer. <span class='static-page__italic'>Luckily, you do not need to be able to read or understand a IIIF Manifest</span> to make use of it! Each IIIF Manifest represents a discrete resource, such as a photograph or a newspaper issue with multiple pages.</p>
+
+      <%#=  IIIF Manifest URL %>
+      <p class='static_page__text static-page__top_bottom_margin'>To use the IIIF Manifest, you first need to locate the <span class='static-page__bold'>IIIF Manifest URL</span> for the resources that you wish to compare. For resources in the UCLA Library Digital Collections portal, you will find the IIIF Manifest URL in the “Find this Item” section of the resource’s item page.</p>
+      <%= image_tag 'static/ucla_iiif_manifest-url.png', alt: 'The “Find This Item” section from the Map of Frankfurt and Its Environs item page.' %>
+
+      <p class='static_page__text static-page__top_bottom_margin'>To <span class='static-page__bold'>copy</span> the IIIF Manifest URL, right click the IIIF logo <%= image_tag 'static/ucla_iiif_logo.png', alt: 'iiif logo icon' , width: '20px', style: 'display:inline' %> and select “Copy Link.” Clicking on the IIIF logo will open the IIIF Manifest in a new tab in your browser.</p>
+
+      <p class='static_page__text static-page__top_bottom_margin'>A IIIF Manifest URL from our collections will look something like this: <a href="https://iiif.library.ucla.edu/ark%3A%2F21198%2Fzz002h6jvn/manifest" class="ur-link", target: "_blank">https://iiif.library.ucla.edu/ark%3A%2F21198%2Fzz002h6jvn/manifest</a></p>
+
+      <p class='static_page__text static-page__top_bottom_margin'>Once you have your IIIF Manifest URLs, you can import the IIIF-enabled content to Mirador or other IIIF-friendly viewers and tools. Try it out with UCLA Library’s <a href="https://iiif.library.ucla.edu/viewers/mirador/" class="ur-link">Mirador</a> viewer following these steps:</p>
+
+      <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__bold'>Step 1</span>: Open the UCLA Library <a href="https://iiif.library.ucla.edu/viewers/mirador/" class="ur-link">Mirador</a> viewer. Copy the IIIF Manifest URL for one of the resources that you would like to compare, for example <a href="https://digital.library.ucla.edu/catalog/ark:/21198/zz0025q3sx" class="ur-link">this mural photograph</a>.</p>
+
+      <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__bold'>Step 2</span>: Click on the blue &#34; &#43; Start Here &#34; button in the top left corner.</p>
+
+      <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__bold'>Step 3</span>: Click on the blue &#34; &#43; Add Resource &#34; button at the bottom right corner of the page and paste the IIIF Manifest URL into the text box. Click &#34;Add.&#34; The item should now appear in the list of available IIIF resources. Click on the resource you just added to open it in Mirador.</p>
+
+      <p class='static_page__text static-page__top_bottom_margin'><span class='static-page__bold'>Step 4</span>: Copy the IIIF Manifest URL for the second resource that you would like to compare, for example a <a href="https://digital.library.ucla.edu/catalog/ark:/21198/zz0025nnnp" class="ur-link">second mural photograph</a>. Select the blue &#34; &#43; &#34; button in the top left corner. Click the &#34; &#43; Add Resource &#34; button to import this IIIF resource. You can add more items to the list of resources and compare multiple images side-by-side in the Mirador viewer.</p>
+
+      <p class='static_page__text static-page__top_bottom_margin'>The images used in this example are from the <a href="https://digital.library.ucla.edu/catalog/ark:/21198/zz001ndq5p" class="ur-link">Nancy Tovar Murals of East L.A. Collection</a>.</p>
+          <%= image_tag 'static/ucla_iiif_import-manifest.gif', alt: 'A GIF demonstrating how to import a IIIF Manifest into Mirador.', class: 'static-page__top_bottom_margin' %>
+
+        <%= image_tag 'static/ucla_iiif_open-2-images.gif', alt: 'A GIF demonstrating how to open two different images in the Mirador viewer.', class: 'static-page__top_bottom_margin' %>
       </div>
+    </div>
+  </div>
+
+  <hr class='divider divider--ursus static-page__hr_margins'>
+
+  <div class='static-page__row static-page__row--ursus'>
+    <div class='static-page__subtitle static-page__subtitle--ursus'>
+      <%= t('static_pages.iiif_guide.build_your_own').upcase %>
+    </div>
+    <div class='static-page__text static-page__text--ursus'>
+      <p class='static_page__text static-page__top_bottom_margin'>With IIIF Manifests, you can also build your own digital exhibits using items from the <a href="https://digital.library.ucla.edu" class="ur-link">UCLA Library Digital Collections</a>. Exhibits can be used to create a narrative around digital resources, recontextualize items in the collections, or highlight a particular history or experience using primary sources from one or more institutional digital collections. Thanks to the efforts of the IIIF community, there are a number of IIIF-friendly tools that allow you to create exhibits using IIIF, such as <a href="https://minicomp.github.io/wax/" class="ur-link">Wax</a>, <a href="https://exhibit.so/">Exhibit.so</a>, <a href="https://www.cogapp.com/storiiies" class="ur-link">Storiiies</a>, and <a href="https://collectionbuilder.github.io" class="ur-link">Collection Builder</a>.</p>
+
+      <p class='static_page__text static-page__top_bottom_margin'><a href="https://exhibit.so/" class="ur-link">Exhibit.so</a>, a browser-based IIIF storytelling application, allows you to build exhibits using IIIF Manifests with just a few clicks. Exhibits made with Exhibit.so can be shared via a URL or can be embedded into any web page using HTML. See the exhibit “Eadweard Muybridge's Animal Locomotion” by Edward Martin embedded below. To create your own exhibit, follow the Exhibit.so’s <a href="https://exhibit.so/docs/creating-an-exhibit" class="ur-link">Creating an Exhibit guide</a>.</p>
+    </div>
+  </div>
+
+  <div class='static-page__row static-page__row--ursus'>
+    <div class='static-page__subtitle static-page__subtitle--ursus'>
+      <%= t('static_pages.iiif_guide.annotate_images').upcase %>
+    </div>
+      <div class='static-page__text static-page__text--ursus'>
+      <p class='static_page__text static-page__top_bottom_margin'>IIIF also supports web annotation of images using the W3C Web Annotation Model. Annotating images requires connecting a dedicated annotation server to a viewing interface, however there are a few IIIF-friendly tools that support annotation through a built-in annotation environment, such as <a href="https://annonatate.herokuapp.com" class="ur-link">Annonatate</a> or <a href="https://recogito.pelagios.org/" class="ur-link">Recogito</a>. The Mirador viewer has an Annotation plugin, which does require a dedicated annotation server to store annotations, but you can try out the annotation feature using the <a href="https://mirador-annotations.netlify.app/" class="ur-link">Mirador Annotations demo</a>. Try importing a resource into the Annotations demo using a IIIF Manifest URL and annotate some images using the annotation tools provided.</p>
+      <%= image_tag 'static/ucla_iiif_annotation.png', alt: 'Screenshot of an annotation on Vincent Van Gogh’s self-portrait in the Mirador viewer.', class: 'static-page__top_bottom_margin' %>
+
+      <p class='static_page__text static-page__top_bottom_margin'></p>
+
+      <p class='static_page__text static-page__top_bottom_margin'></p>
+    </div>
+  </div>
+
+  <div class='static-page__row static-page__row--ursus'>
+    <div class='static-page__subtitle static-page__subtitle--ursus'>
+      <%= t('static_pages.iiif_guide.iiif_friendly').upcase %>
+    </div>
+
+    <div class='static-page__text static-page__text--ursus'>
+      <p class='static_page__text static-page__top_bottom_margin'>There are a variety of IIIF-enabled tools that you can use to work with IIIF resources in addition to the tools mentioned above. Listed here are just a few, but you can explore more options through <a href="https://github.com/IIIF/awesome-iiif" class="ur-link">IIIF Awesome</a>’s lists of <a href="https://github.com/IIIF/awesome-iiif#image-viewers" class="ur-link">Image Viewers</a> and <a href="https://github.com/IIIF/awesome-iiif#exhibition-and-guided-viewing-tools" class="ur-link">Exhibition and Guided Viewing Tools</a>, or on the IIIF website’s <a href="https://iiif.io/get-started/#end-users" class="ur-link">“Resources for end users”</a>.</a>
+
+      <ul class='static-page__list static-page__list--ursus'>
+        <li><a href="https://readcoop.eu/transkribus/" class="ur-link">Tranksribus</a></li>
+          <ul class='static-page__list static-page__list--ursus'>
+            <li>“Transkribus is a comprehensive platform for the digitisation, AI-powered text recognition, transcription and searching of historical documents – from any place, any time, and in any language.”</li>
+          </ul>
+
+        <li><a href="https://recogito.pelagios.org/" class="ur-link">Recogito</a></li>
+          <ul class='static-page__list static-page__list--ursus'>
+            <li>Recogito supports annotation of entities such as people, places, and relationships in text and image documents that can be exported for use in other data applications.</li>
+          </ul>
+
+        <li><a href="https://storiiies.cogapp.com/" class="ur-link">Storiiies</a></li>
+          <ul class='static-page__list static-page__list--ursus'>
+            <li>Storiiies is a web platform for creating digital stories around a single IIIF resource.</li>
+          </ul>
+
+        <li><a href="http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/" class="ur-link">IIIF Curation Viewer</a></li>
+          <ul class='static-page__list static-page__list--ursus'>
+            <li>IIIF Curation Viewer is an image viewer compliant with IIIF standards. In addition to zoom and   page-view capabilities, it offers a light box feature that allows users to cut and curate parts of images from multiple IIIF objects.</li>
+          </ul>
+      </ul>
+
+      <p class='static-page__bold static-page__top_bottom_margin'>
+        <%= t('static_pages.iiif_guide.contributors').upcase %>
+      </p>
     </div>
 </div>

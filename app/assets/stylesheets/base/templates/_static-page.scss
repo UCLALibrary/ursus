@@ -44,7 +44,13 @@
 }
 
 .static_page__paragraph {
-  margin-bottom: 24px;
+  margin: 2rem 0;
+  font-size: $text-18;
+  line-height: 2;
+
+  @media {
+    font-size: $text-16;
+  }
 }
 
 .static-page__list {
@@ -58,4 +64,16 @@
 
 .static-page__bold {
   font-weight: bold;
+}
+
+.static-page__top_bottom_margin {
+  margin: 2rem 0;
+}
+
+.static-page__bottom_margin {
+  margin-bottom: 50px;
+}
+
+.static-page__hr_margins {
+  margin: 75px 0;
 }
