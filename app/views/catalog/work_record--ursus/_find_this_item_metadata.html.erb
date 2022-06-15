@@ -34,6 +34,7 @@
         <dt class='metadata-block__label-key'>Manifest url</dt>
         <dd class='metadata-block__label-value'>
           <a href="<%= @document[:iiif_manifest_url_ssi] %>" target="_blank"><%= image_tag('iiif-logo.png', alt: 'IIIF Manifest') %></a>
+          <a href="<%= 'https://iiif.library.ucla.edu/viewers/mirador/?manifest=' + @document[:iiif_manifest_url_ssi] %>" target="_blank"><%= image_tag('iiif-logo.png', alt: 'Mirador Viewer') %></a>
         </dd>
       <% end %>
 
