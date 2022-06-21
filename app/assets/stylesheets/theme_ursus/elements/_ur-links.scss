@@ -22,3 +22,20 @@
 .ur-link--light:active {
   color: $white;
 }
+.ur-link-iiif {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+.ur-link-mirador-logo {
+  width: 34px;
+  height: 30px;
+  margin-right: 10px;
+}
+.ur-link-iiif-manifest {
+  margin-right: 10px;
+}

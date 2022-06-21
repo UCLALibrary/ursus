@@ -10,5 +10,20 @@
         allowfullscreen
         frameborder='0'>
       </iframe>
+    <div class='ur-link-iiif'>
+    <div class='ur-link-mirador' data-toggle="tooltip" data-placement="bottom" data-html="true" title="Open in Mirador Viewer">
+      <a href="<%= 'https://iiif.library.ucla.edu/viewers/mirador/?manifest=' + @document[:iiif_manifest_url_ssi] %>" target="_blank"><%= image_tag('mirador-logo.png', class: 'ur-link-mirador-logo', alt: 'Open in Mirador Viewer') %></a>
+    </div>
+    <div class="ur-link-iiif-manifest" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Open IIIF Manifest">
+      <%= link_to image_tag('iiif-logo.png'), @document[:iiif_manifest_url_ssi], target: '_blank', alt: 'Open IIIF Manifest' %>
+    </div>
+  </div>
+  <script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+});
+</script>
     </div>
 <% end %>
