@@ -1,20 +1,14 @@
 # frozen_string_literal: true
 class StaticController < ApplicationController
+  def ursus_contact; end
+
+  def ursus_about; end
+
+  def ursus_copyright; end
+
+  def ursus_privacy; end
+
+  def ursus_iiif_guide; end
+
   def version; end
-
-  def ursus_contact
-    head :forbidden if Flipflop.sinai?
-  end
-
-  def ursus_about
-    head :forbidden if Flipflop.sinai?
-  end
-
-  def ursus_copyright
-    head :forbidden if Flipflop.sinai?
-  end
-
-  def ursus_privacy
-    head :forbidden if Flipflop.sinai?
-  end
 end

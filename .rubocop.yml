@@ -4,6 +4,9 @@ inherit_gem:
 AllCops:
   TargetRubyVersion: 2.4
 
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - spec/controllers/static_controller_spec.rb
 
 Layout/MultilineBlockLayout:
   Exclude:

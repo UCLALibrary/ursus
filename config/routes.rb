@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/ursus_contact', to: 'static#ursus_contact'
   get '/copyright_and_collections', to: 'static#ursus_copyright'
   get '/privacy_policy', to: 'static#ursus_privacy'
+  get '/iiif_guide', to: 'static#ursus_iiif_guide'
 
   # Canon Law
   get '/canonlaw', to: 'canon_law#index'

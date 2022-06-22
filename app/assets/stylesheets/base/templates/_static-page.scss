@@ -1,3 +1,21 @@
+.static-page__row--ursus {
+  @extend .row;
+}
+
+.static-page__subtitle--ursus {
+  @extend .col-lg-4;
+}
+
+.static-page__text--ursus {
+  @extend .col-lg-8;
+}
+
+.static-page__list--ursus {
+  @media (max-width: 991px) {
+    font-size: $text-16;
+  }
+}
+
 .content-container--static-page {
   padding-bottom: 4rem;
 }
@@ -43,7 +61,58 @@
   }
 }
 
+.static_page__paragraph {
+  margin: 2rem 0;
+  font-size: $text-18;
+  line-height: 2;
+
+  @media {
+    font-size: $text-16;
+  }
+}
+
+.static-page__italic {
+  font-style: italic;
+}
+
+.static-page__bold {
+  font-weight: bold;
+}
+
+.static-page__top_bottom_margin {
+  margin: 2rem 0;
+}
+
+.static-page__bottom_margin {
+  margin-bottom: 50px;
+}
+
+.static-page__hr_margins {
+  margin: 75px 0;
+}
+
+.static-page__note {
+  margin: 2rem 0;
+  font-size: $text-14;
+}
+
 .static-page__list {
+  margin: 15px 50px 25px 25px;
   padding-left: 24px;
   font-size: $text-18;
+  line-height: 2;
+}
+
+.static-page__steps {
+  border: 1px solid $ucla-darker-blue;
+  border-radius: 5px;
+}
+
+.static-page__li-steps {
+  padding: 10px;
+  list-style: none;
+}
+
+.static-page__image {
+  width: 80%;
 }
