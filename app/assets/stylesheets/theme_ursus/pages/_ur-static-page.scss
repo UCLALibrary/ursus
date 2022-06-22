@@ -95,3 +95,12 @@
 .static-page__hr_margins {
   margin: 75px 0;
 }
+
+.static-page__iiif-guide_p {
+  line-height: 1.7;
+  margin: 1rem 1rem;
+}
+
+.static-page__subtitle--iiif-guide {
+  @extend .col-lg-8;
+}

@@ -71,11 +71,6 @@
   }
 }
 
-.static-page__list {
-  padding-left: 24px;
-  font-size: $text-18;
-}
-
 .static-page__italic {
   font-style: italic;
 }
@@ -99,4 +94,25 @@
 .static-page__note {
   margin: 2rem 0;
   font-size: $text-14;
+}
+
+.static-page__list {
+  padding-left: 24px;
+  font-size: $text-18;
+  line-height: 2;
+  margin: 15px 50px 25px 25px;
+}
+
+.static-page__steps {
+  border: 1px solid $ucla-darker-blue;
+  border-radius: 5px;
+}
+
+.static-page__li-steps {
+  padding: 10px;
+  list-style: none;
+}
+
+.static-page__image {
+  width: 80%;
 }
