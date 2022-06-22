@@ -69,7 +69,6 @@ docker-compose up
 
 ---
 
-
 ### Running linters and unit tests
 
 Connect to a shell _inside_ the container with:
@@ -83,8 +82,13 @@ Then run the entire suite, except for the cypress integration test, with:
 ```
 sh start-ci.sh
 ```
-
 You can inspect the `start-ci.sh` script to see which linters and tests this invokes.
+
+Or individually:
+1. root@ursus:/ursus# bundle exec erblint --lint-all
+1. root@ursus:/ursus# yarn run lint
+1. root@ursus:/ursus# rubocop
+
 
 ### Running the integration tests
 
@@ -115,4 +119,6 @@ Visual regression testing is done via [percy.io](https://percy.io/UCLA-Library-S
 
 ### Rebuilding the image
 
-If you need to rebuild the docker image (for example, if packages were added to the Gemfile), run `docker-compose up --build`.
+If you need to rebuild the docker image (for example, if packages were added to the Gemfile), run:
+1. `docker-compose pull`
+1. `docker-compose up --build`
