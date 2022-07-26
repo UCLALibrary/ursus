@@ -1,22 +1,20 @@
-<% if !Flipflop.sinai? %>
-  <div class='content-container--static-page'>
-    <div class='static-page__title-row'>
-      <h1 class='static-page__title bordered-title bordered-title--ursus'><%= t('static_pages.about.page_title') %></h1>
-    </div>
-
-  <!-- OUR MISSION -->
-    <div class='static-page__row static-page__row--ursus'>
-      <div class='static-page__subtitle static-page__subtitle--ursus'>
-        <%= t('static_pages.about.mission').upcase %>
-      </div>
-      <div class='static-page__text static-page__text--ursus'>
-      The UCLA Digital Library Program works collaboratively within the UCLA Library, across campus, and with a broad range of partners to preserve and provide enhanced access to local and global cultural heritage materials in support of the University’s teaching, learning, research and service mission.
-      <br>
-      <br>
-      UCLA Digital Library Collections follow ethical and inclusive approaches to descriptive practices as outlined in <%= link_to 'Toward Ethical and Inclusive Descriptive Practices in UCLA Library Special Collections', 'https://www.library.ucla.edu/location/library-special-collections/discover-collections/toward-ethical-inclusive-descriptive-practices-ucla-library-special-collections', class: 'ur-link', target: '_blank' %>.
-      </div>
-    </div>
-
-    <hr class='divider divider--ursus'>
+<div class='content-container--static-page'>
+  <div class='static-page__title-row'>
+    <h1 class='static-page__title bordered-title bordered-title--ursus'><%= t('static_pages.about.page_title') %></h1>
   </div>
-<% end %>
+
+<!-- OUR MISSION -->
+  <div class='static-page__row static-page__row--ursus'>
+    <div class='static-page__subtitle static-page__subtitle--ursus'>
+      <%= t('static_pages.about.mission').upcase %>
+    </div>
+    <div class='static-page__text static-page__text--ursus'>
+    The UCLA Digital Library Program works collaboratively within the UCLA Library, across campus, and with a broad range of partners to preserve and provide enhanced access to local and global cultural heritage materials in support of the University’s teaching, learning, research and service mission.
+    <br>
+    <br>
+    UCLA Digital Library Collections follow ethical and inclusive approaches to descriptive practices as outlined in <%= link_to 'Toward Ethical and Inclusive Descriptive Practices in UCLA Library Special Collections', 'https://www.library.ucla.edu/location/library-special-collections/discover-collections/toward-ethical-inclusive-descriptive-practices-ucla-library-special-collections', class: 'ur-link', target: '_blank' %>.
+    </div>
+  </div>
+
+  <hr class='divider divider--ursus'>
+</div>
