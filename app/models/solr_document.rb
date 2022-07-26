@@ -87,7 +87,7 @@ class SolrDocument
 
   # populates OAI feed
   def permalink(record = self)
-    "#{root_url}/catalog/#{record.id}"
+    "#{root_url.sub('ursus.library.ucla.edu', 'digital.library.ucla.edu')}/catalog/#{record.id}"
   end
 
   def root_url
