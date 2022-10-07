@@ -80,6 +80,7 @@ DC:
   parent_schema: default
   identifier:
     - thumbnail_url_ss
+    - permalink
   description:
     - content_disclaimer_ssm
 DPLA:
