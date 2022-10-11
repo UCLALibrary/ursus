@@ -80,7 +80,7 @@ RSpec.describe CatalogController, type: :controller do
        "longitude_tesim", "lyricist_tesim", "medium_tesim",
        "member_of_collections_ssim", "named_subject_tesim", "note_tesim",
        "oclc_ssi", "opac_url_ssi", "page_layout_ssim", "photographer_tesim",
-       "place_of_origin_tesim", "printmaker_tesim", "provenance_tesim",
+       "place_of_origin_tesim", "printmaker_tesim", "provenance_tesim", "program_tesim",
        "publisher_tesim", "repository_tesim", "rights_country_tesim",
        "rights_holder_tesim", "rubricator_tesim", "scribe_tesim", "script_tesim",
        "services_contact_ssm", "subject_tesim", "subject_topic_tesim",
