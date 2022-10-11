@@ -227,6 +227,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'interviewer_tesim', label: 'Interviewer', link_to_facet: 'interviewee_sim'
     config.add_show_field 'director_tesim', label: 'Director', link_to_facet: 'director_sim'
     config.add_show_field 'producer_tesim', label: 'Producer', link_to_facet: 'producer_sim'
+    config.add_show_field 'program_tesim', label: 'Program', link_to_facet: 'program_sim'
     config.add_show_field 'recipient_tesim', label: 'Recipient', link_to_facet: 'recipient_sim'
 
     # IF SINAI ?
