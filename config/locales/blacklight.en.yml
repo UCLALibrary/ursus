@@ -126,6 +126,7 @@ en:
           photographer_tesim: 'Photographer'
           place_of_origin_tesim: 'Place of Origin'
           printmaker_tesim: 'Printmaker'
+          program_tesim: 'Program'
           publisher_tesim: 'Publisher'
           repository_sim: 'Repository'
           repository_tesim: 'Repository'
