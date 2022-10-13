@@ -8,8 +8,7 @@ RSpec.describe Ursus::FindCollectionMetadataPresenter do
       'local_identifier_ssm' => 'Local identifier',
       'oclc_ssi' => 'OCLC Number',
       'ark_ssi' => 'ARK',
-      'opac_url_ssi' => 'Opac url',
-      'program_tesim' => 'Program'
+      'opac_url_ssi' => 'Opac url'
     }
   end
   let(:solr_doc_missing_items) do
@@ -44,10 +43,6 @@ RSpec.describe Ursus::FindCollectionMetadataPresenter do
       it 'returns the Opac url Key' do
         expect(config['opac_url_ssi'].to_s).to eq('Opac url')
       end
-
-      it 'returns the ProgramKey' do
-        expect(config['program_tesim'].to_s).to eq('Program')
-      end
     end
 
     describe "#find_collection_terms" do
@@ -56,7 +51,7 @@ RSpec.describe Ursus::FindCollectionMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.find_collection_terms).to be_instance_of(Hash)
-        expect(all).to eq 6
+        expect(all).to eq 5
         expect(config.length).to eq all
       end
 
