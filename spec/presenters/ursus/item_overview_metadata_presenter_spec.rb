@@ -41,7 +41,8 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'title_tesim' => 'Title',
       'translator_tesim' => 'Translator',
       'uniform_title_tesim' => 'Uniform title',
-      'year_isim' => 'Year'
+      'year_isim' => 'Year',
+      'program_tesim' => 'Program'
     }
   end
   let(:solr_doc_missing_items) do
@@ -207,6 +208,10 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       it 'returns the Shelfmark Key' do
         expect(config['shelfmark_ssi'].to_s).to eq('Shelfmark')
       end
+
+      it 'returns the ProgramKey' do
+        expect(config['program_tesim'].to_s).to eq('Program')
+      end
     end
 
     describe "#overview_terms terms" do
@@ -214,7 +219,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       let(:missing) { presenter_object_missing_items.overview_terms.keys.length }
 
       it "returns existing keys" do
-        expect(all).to eq 38
+        expect(all).to eq 39
         expect(config.length).to eq all
       end
 
