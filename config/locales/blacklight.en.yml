@@ -54,6 +54,8 @@ en:
           normalized_date_tesim: 'Date'
           photographer_sim: 'Photographer'
           printmaker_sim: 'Printmaker'
+          program_sim: 'Program'
+          program_tesim: 'Program'
           repository_sim: 'Repository'
           repository_tesim: 'Repository'
           resource_type_sim: 'Resource Type'
