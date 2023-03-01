@@ -76,8 +76,8 @@ RSpec.describe 'View a Work', type: :system, js: true do
 
   it 'displays facetable fields as links' do
     visit "/catalog/#{ark}"
-    expect(page.find('dd.blacklight-subject_tesim')).to have_link 'Subj 1'
-    expect(page.find('dd.blacklight-subject_tesim')).to have_link 'Subj 2'
+    expect(page.find('dd.blacklight-combined_subject_ssim')).to have_link 'Subj 1'
+    expect(page.find('dd.blacklight-combined_subject_ssim')).to have_link 'Subj 2'
     expect(page.find('dd.blacklight-human_readable_resource_type_tesim')).to have_link 'still image'
     expect(page.find('dd.blacklight-genre_tesim')).to have_link 'Genre 1'
     expect(page.find('dd.blacklight-genre_tesim')).to have_link 'Genre 2'

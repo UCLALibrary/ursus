@@ -5,8 +5,7 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
   let(:solr_doc) do
     {
       'genre_tesim' => 'Genre',
-      'subject_tesim' => 'Subject',
-      'subject_topic_tesim' => 'Subject topic',
+      'combined_subject_ssim' => 'Subject',
       'named_subject_tesim' => 'Named Subject',
       'subject_geographic_tesim' => 'Subject geographic',
       'subject_temporal_tesim' => 'Subject temporal',
@@ -21,7 +20,7 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
     {
       'genre_tesim' => 'Genre',
       'features_tesim' => 'Features',
-      'subject_tesim' => 'Subject'
+      'combined_subject_ssim' => 'Subject'
     }
   end
   let(:presenter_object) { described_class.new(document: solr_doc) }
@@ -35,12 +34,12 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
       end
 
       it 'returns the Subject Key' do
-        expect(config['subject_tesim'].to_s).to eq('Subject')
+        expect(config['combined_subject_ssim'].to_s).to eq('Subject')
       end
 
-      it 'returns the Subject topic Key' do
-        expect(config['subject_topic_tesim'].to_s).to eq('Subject topic')
-      end
+      #it 'returns the Subject topic Key' do
+        #expect(config['subject_topic_tesim'].to_s).to eq('Subject topic')
+      #end
 
       it 'returns the Named Subject Key' do
         expect(config['named_subject_tesim'].to_s).to eq('Named Subject')
@@ -81,7 +80,7 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.keyword_terms).to be_instance_of(Hash)
-        expect(all).to eq 11
+        expect(all).to eq 9
         expect(config.length).to eq all
       end
 
