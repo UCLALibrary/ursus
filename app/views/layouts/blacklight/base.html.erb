@@ -9,11 +9,8 @@
     <% if controller.controller_name == 'catalog' && controller.action_name == 'show' %>
       <meta name="Description" content="<%= render_page_title %>">
     <% else %>
-      <% if Flipflop.sinai? %><!-- SINAI -->
-        <meta name="Description" content="St. Catherine's Monastery of the Sinai, in partnership with the Early Manuscripts Electronic Library (EMEL) and the UCLA Library, welcomes you to the Sinai Manuscripts Digital Library. Widely recognized as the world’s oldest continually operating library, St. Catherine’s holdings represent an unparalleled resource to study the history and literature of the Eastern Mediterranean from late antiquity until early modernity.">
-      <% else %><!-- URSUS -->
+      <!-- URSUS -->
         <meta name="Description" content="The UCLA Library Digital Collections includes rare and unique digital materials developed by the UCLA Library to support education, research, service, and creative expression. This website is our new interface for discovery and engagement of these collections. See collections of historic photographs and manuscripts. More collections added weekly.">
-      <% end %>
     <% end %>
     <meta name="theme-color" content="#2774ae">
     <script>
@@ -31,18 +28,13 @@
 
     <%= opensearch_description_tag application_name, opensearch_catalog_url(format: 'xml') %>
 
-    <% if Flipflop.sinai? %>
-      <%= favicon_link_tag 'favicons/sinai_favicon.ico' %>
-    <% else %>
+   
       <%= favicon_link_tag 'favicons/favicon.ico' %>
-    <% end %>
+   
 
-    <% if Flipflop.sinai? %>
-    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&display=swap' %>
-    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap' %>
-    <% end %>
+    
 
-    <%= stylesheet_link_tag (Flipflop.sinai? ? "sinai" : "ursus"), media: "all" %>
+    <%= stylesheet_link_tag ("ursus"), media: "all" %>
     <%= javascript_include_tag "application", defer: Rails.env.development? ? false : true %>
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
@@ -58,19 +50,12 @@
       <%= render partial: 'shared/header/header_navbar' %>
       <%= render 'catalog/banners/homepage_banner' %>
 
-      <% if Flipflop.sinai? && controller.controller_name == 'catalog' && controller.action_name == 'show' %>
-
-        <main class="main-content-container container-constrained container-constrained__item-page--sinai">
-          <%= content_for(:container_header) %>
-            <%= content_for?(:content) ? yield(:content) : yield %>
-        </main>
-
-      <% else %>
+      
         <main class="main-content-container container-constrained">
           <%= content_for(:container_header) %>
             <%= content_for?(:content) ? yield(:content) : yield %>
         </main>
-      <% end %>
+      
 
       <%= render partial: 'shared/footer/footer' %>
       <%= render partial: 'shared/modal' %>

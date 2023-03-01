@@ -36,11 +36,9 @@ module Blacklight::BlacklightHelperBehavior
   # @return [String]
   def render_page_title
     remove_ssi_string
-    if Flipflop.sinai?
-      (content_for(:page_title) if content_for?(:page_title)) || @page_title || sinai_application_name
-    else
-      (content_for(:page_title) if content_for?(:page_title)) || @page_title || application_name
-    end
+    
+    (content_for(:page_title) if content_for?(:page_title)) || @page_title || application_name
+  
   end
 
   ##

@@ -1,33 +1,17 @@
 <!-- This pagination does not use the kaminari gem,
      it is implementing the previous/next here and using bootstrap for styling. -->
 
-<!-- SINAI -->
-<% if Flipflop.sinai? %>
-  <ul class="modal-pagination">
-    <li class='modal-pagination__page-item modal-pagination__page-item--sinai'>
-      <%= link_to_previous_page @pagination, raw(t('views.pagination.previous')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'modal-pagination__page-link modal-pagination__page-link--sinai', data: { blacklight_modal: "preserve" } do %>
-        <%= content_tag :span, raw(t('views.pagination.previous')), class: 'disabled btn-base btn-base-outline--light' %>
-      <% end %>
-    </li>
-    <li class='modal-pagination__page-item modal-pagination__page-item--sinai'>
-      <%= link_to_next_page @pagination, raw(t('views.pagination.next')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'modal-pagination__page-link modal-pagination__page-link--sinai', data: { blacklight_modal: "preserve" } do %>
-        <%= content_tag :span, raw(t('views.pagination.next')), class: 'disabled btn-base btn-base-outline--light' %>
-      <% end %>
-    </li>
-  </div>
 
-<!-- URSUS -->
-<% else %>
-  <ul class="modal-pagination">
-    <li class='modal-pagination__page-item modal-pagination__page-item--ursus'>
-      <%= link_to_previous_page @pagination, raw(t('views.pagination.previous')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'modal-pagination__page-link modal-pagination__page-link--ursus', data: { blacklight_modal: "preserve" } do %>
-        <%= content_tag :span, raw(t('views.pagination.previous')), class: 'disabled btn-base btn-base-outline--light' %>
-      <% end %>
-    </li>
-    <li class='modal-pagination__page-item modal-pagination__page-item--ursus'>
-      <%= link_to_next_page @pagination, raw(t('views.pagination.next')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'modal-pagination__page-link modal-pagination__page-link--ursus', data: { blacklight_modal: "preserve" } do %>
-        <%= content_tag :span, raw(t('views.pagination.next')), class: 'disabled btn-base btn-base-outline--light' %>
-      <% end %>
-    </li>
-  </div>
-<% end %>
+<ul class="modal-pagination">
+  <li class='modal-pagination__page-item modal-pagination__page-item--ursus'>
+    <%= link_to_previous_page @pagination, raw(t('views.pagination.previous')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'modal-pagination__page-link modal-pagination__page-link--ursus', data: { blacklight_modal: "preserve" } do %>
+      <%= content_tag :span, raw(t('views.pagination.previous')), class: 'disabled btn-base btn-base-outline--light' %>
+    <% end %>
+  </li>
+  <li class='modal-pagination__page-item modal-pagination__page-item--ursus'>
+    <%= link_to_next_page @pagination, raw(t('views.pagination.next')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'modal-pagination__page-link modal-pagination__page-link--ursus', data: { blacklight_modal: "preserve" } do %>
+      <%= content_tag :span, raw(t('views.pagination.next')), class: 'disabled btn-base btn-base-outline--light' %>
+    <% end %>
+  </li>
+</ul>
+

@@ -67,7 +67,6 @@ class CatalogController < ApplicationController
       fq: '(ark_ssi:* AND ((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !((visibility_ssi:restricted) OR (visibility_ssi:discovery) OR (visibility_ssi:sinai)))'
       ### we want to only return works where visibility_ssi == open (not restricted)
     }
-    config.default_solr_params[:fq] = '((has_model_ssim:Work) AND !(visibility_ssi:restricted))' if Flipflop.sinai?
 
     # config.show.partials.insert(1, :collection_banner)
     config.show.partials.insert(2, :media_viewer)
@@ -109,32 +108,17 @@ class CatalogController < ApplicationController
     # solr fields that will be treated as facets by the blacklight application
     # The ordering of the field names is the order of the display
 
-    # SINAI
-    if Flipflop.sinai?
-      config.add_facet_field 'genre_sim', sort: 'index'
-      config.add_facet_field 'place_of_origin_sim', sort: 'index', label: 'Place of origin'
-      config.add_facet_field 'year_isim', range: true
-      config.add_facet_field 'human_readable_language_sim', sort: 'index'
-      config.add_facet_field 'writing_system_sim', sort: 'index', label: 'Writing system'
-      config.add_facet_field 'script_sim', sort: 'index', label: 'Script'
-      config.add_facet_field 'features_sim', sort: 'index', label: 'Features'
-      config.add_facet_field 'support_sim', sort: 'index', label: 'Support'
-      config.add_facet_field 'form_sim', sort: 'index', label: 'Form'
-      config.add_facet_field 'names_sim', sort: 'index', label: 'Names'
-
-    # URSUS
-    else
-      config.add_facet_field 'combined_subject_ssim', limit: 5, label: 'Subject'
-      # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5 same as : config.add_facet_field 'resource_type_sim', limit: 5
-      config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
-      config.add_facet_field 'genre_sim', limit: 5
-      config.add_facet_field 'named_subject_sim', limit: 5
-      config.add_facet_field 'location_sim', limit: 5
-      config.add_facet_field 'year_isim', limit: 5, range: true
-      config.add_facet_field 'human_readable_language_sim', limit: 5
-      config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
-      config.add_facet_field 'repository_sim', limit: 5
-    end
+    config.add_facet_field 'combined_subject_ssim', limit: 5, label: 'Subject'
+    # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5 same as : config.add_facet_field 'resource_type_sim', limit: 5
+    config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
+    config.add_facet_field 'genre_sim', limit: 5
+    config.add_facet_field 'named_subject_sim', limit: 5
+    config.add_facet_field 'location_sim', limit: 5
+    config.add_facet_field 'year_isim', limit: 5, range: true
+    config.add_facet_field 'human_readable_language_sim', limit: 5
+    config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
+    config.add_facet_field 'repository_sim', limit: 5
+   
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
@@ -152,23 +136,14 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index search results / list view
     # The config.add_index_field ::Solrizer.solr_name('title',  :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
-    if Flipflop.sinai?
-      config.add_index_field 'header_index_sim', label: 'Header'
-      # Title descriptive_title_tesim & uniform_title_tesim
-      config.add_index_field 'descriptive_title_tesim'
-      config.add_index_field 'uniform_title_tesim', link_to_facet: 'uniform_title_sim'
-      config.add_index_field 'date_created_tesim', label: 'Date'
-      config.add_index_field 'human_readable_language_tesim', label: 'Language'
-      config.add_index_field 'name_fields_index_tesim', label: 'Name', link_to_facet: 'names_sim'
-
-    else
-      config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
-      config.add_index_field 'date_created_tesim', label: 'Date Created'
-      # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
-      config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
-      config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
-      config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
-    end
+    
+    config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
+    config.add_index_field 'date_created_tesim', label: 'Date Created'
+    # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
+    config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
+    config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
+    config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+  
 
     # ------------------------------------------------------
     # SHOW PAGE / ITEM PAGE / Individual Work (Universal Viewer Page)
@@ -263,24 +238,23 @@ class CatalogController < ApplicationController
     config.add_show_field 'hand_note_tesim', limit: 7, label: 'Hand note' # 'Writing and hands'
 
     config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim'
-    # Keywords
-    if Flipflop.sinai?
-      config.add_show_field 'keywords_tesim', label: 'Keywords', link_to_facet: 'keywords_sim', separator_options: {}
-    end
+    
     config.add_show_field 'form_ssi', label: 'Form', link_to_facet: 'form_sim'
     config.add_show_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_sim'
     config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim'
     config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim'
     config.add_show_field 'place_of_origin_tesim', label: 'Place of origin'
-    config.add_show_field 'combined_subject_ssim', label: 'Subject', link_to_facet: 'combined_subject_ssim'
+    config.add_show_field 'subject_tesim', label: 'Subject', link_to_facet: 'subject_sim'
     config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim'
-    # config.add_show_field 'subject_topic_tesim', label: 'Subject Topic', link_to_facet: 'subject_topic_sim'
+    config.add_show_field 'subject_topic_tesim', label: 'Subject Topic', link_to_facet: 'subject_topic_sim'
     config.add_show_field 'subject_geographic_tesim', label: 'Subject Geographic', link_to_facet: 'subject_geographic_sim'
     config.add_show_field 'subject_temporal_tesim', label: 'Subject Temporal', link_to_facet: 'subject_temporal_sim'
     config.add_show_field 'location_tesim', label: 'Location', link_to_facet: 'location_sim'
     config.add_show_field 'latitude_tesim', label: 'Latitude'
     config.add_show_field 'longitude_tesim', label: 'Longitude'
     config.add_show_field 'geographic_coordinates_ssim'
+    config.add_show_field 'subject_cultural_object_tesim'
+    config.add_show_field 'subject_domain_topic_tesim'
 
     # SECONDARY
     # Find This Item
@@ -376,40 +350,6 @@ class CatalogController < ApplicationController
 
     end
 
-    # SINAI
-    if Flipflop.sinai?
-      config.add_search_field('shelfmark_tsi', label: 'Shelfmark') do |field|
-        field.solr_parameters = {
-          qf: 'shelfmark_tsi',
-          pf: ''
-        }
-      end
-      config.add_search_field('title_tesim descriptive_title_tesim alternative_title_tesim uniform_title_tesim', label: 'Title') do |field|
-        field.solr_parameters = {
-          qf: 'title_tesim descriptive_title_tesim alternative_title_tesim uniform_title_tesim',
-          pf: ''
-        }
-      end
-      config.add_search_field('author_tesim scribe_tesim associated_name_tesim translator_tesim', label: 'Names') do |field|
-        field.solr_parameters = {
-          qf: 'author_tesim scribe_tesim associated_name_tesim translator_tesim',
-          pf: ''
-        }
-      end
-      config.add_search_field('incipit_tesim explicit_tesim', label: 'Incipit/Explicit') do |field|
-        field.solr_parameters = {
-          qf: 'incipit_tesim explicit_tesim',
-          pf: ''
-        }
-      end
-      config.add_search_field('toc_tesim contents_note_tesim', label: 'Contents') do |field|
-        field.solr_parameters = {
-          qf: 'toc_tesim contents_note_tesim',
-          pf: ''
-        }
-      end
-    end
-
     # ------------------------------------------------------
     # CATALOG RESULTS 'SORT RESULTS BY' DROPDOWN
     # the _sort_widget.html.erb partial called in the _browse_results.html.erb partial
@@ -422,15 +362,10 @@ class CatalogController < ApplicationController
 
     # config.add_sort_field 'sort_title_ssort asc', label: 'Title (A-Z)'
     # config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
-    if Flipflop.sinai?
-      config.add_sort_field 'shelfmark_alpha_numeric_ssort asc', label: 'Shelfmark (A-Z)'
-      config.add_sort_field 'shelfmark_alpha_numeric_ssort desc', label: 'Shelfmark (Z-A)'
-      #  config.add_sort_field 'sort_year_isi desc', label: 'Year (newest)'
-      #  config.add_sort_field 'sort_year_isi asc', label: 'Year (oldest)'
-    else
-      config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
-      config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
-    end
+
+    config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
+    config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
+  
 
     config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
     config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'

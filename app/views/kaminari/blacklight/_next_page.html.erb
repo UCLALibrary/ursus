@@ -6,20 +6,9 @@
     per_page:      number of items to fetch per page
     remote:        data-remote -%>
 
-<!-- SINAI -->
-  <% if Flipflop.sinai? %>
-  <% if current_page.last? %>
-      <li class="pagination__page-item pagination__page-item--sinai disabled">
-        <%= link_to raw(t('views.pagination.next')), '#', rel: 'next', onclick: 'return false;', class: 'pagination__page-link pagination__page-link--sinai', aria: { label: t('views.pagination.aria.go_to_next_page') } %>
-      </li>
-  <% else %>
-      <li class="pagination__page-item pagination__page-item--sinai">
-        <%= link_to raw(t('views.pagination.next')), url, rel: 'next', remote: remote, class: 'pagination__page-link pagination__page-link--sinai', aria: { label: t('views.pagination.aria.go_to_next_page') } %>
-      </li>
-  <% end %>
 
 <!-- URSUS -->
-<% else %>
+
   <% if current_page.last? %>
       <li class="pagination__page-item pagination__page-item--ursus disabled">
         <%= link_to raw(t('views.pagination.next')), '#', rel: 'next', onclick: 'return false;', class: 'pagination__page-link pagination__page-link--ursus', aria: { label: t('views.pagination.aria.go_to_next_page') } %>
@@ -29,4 +18,4 @@
         <%= link_to raw(t('views.pagination.next')), url, rel: 'next', remote: remote, class: 'pagination__page-link pagination__page-link--ursus', aria: { label: t('views.pagination.aria.go_to_next_page') } %>
       </li>
   <% end %>
-<% end %>
+

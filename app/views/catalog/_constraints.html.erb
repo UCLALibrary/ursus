@@ -1,28 +1,15 @@
-<!-- SINAI -->
-<% if Flipflop.sinai? %>
-  <% if query_has_constraints? %>
-    <div id='appliedParams'>
-      <h2 class='sr-only'><%= t('blacklight.search.search_constraints_header') %></h2>
-      <div class="search-filter-wrapper search-filter-wrapper--sinai">
-        <p class="filter-group__heading filter-group__heading--sinai">You searched for: </p>
-        <%= render_constraints(params) %>
-        <%= render 'catalog/startover' %>
-      </div>
-
-    </div>
-  <% end %>
 
 <!-- URSUS -->
-<% else %>
-  <% if query_has_constraints? %>
-    <div id='appliedParams' class='search-filter-wrapper'>
-      <h2 class='sr-only'><%= t('blacklight.search.search_constraints_header') %></h2>
-      <div class='filter-group'>
-        <span class='filter-group__heading filter-group__heading--ursus'>You searched for: </span>
-        <%= render_constraints(params) %>
-      </div>
-      <%= render 'catalog/startover' %>
-    </div>
-  <% end %>
 
+<% if query_has_constraints? %>
+  <div id='appliedParams' class='search-filter-wrapper'>
+    <h2 class='sr-only'><%= t('blacklight.search.search_constraints_header') %></h2>
+    <div class='filter-group'>
+      <span class='filter-group__heading filter-group__heading--ursus'>You searched for: </span>
+      <%= render_constraints(params) %>
+    </div>
+    <%= render 'catalog/startover' %>
+  </div>
 <% end %>
+
+
