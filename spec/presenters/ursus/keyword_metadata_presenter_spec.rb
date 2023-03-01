@@ -80,7 +80,7 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.keyword_terms).to be_instance_of(Hash)
-        expect(all).to eq 9
+        expect(all).to eq 10
         expect(config.length).to eq all
       end
 
