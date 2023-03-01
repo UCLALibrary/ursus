@@ -78,7 +78,7 @@ jobs:
       with:
         command-prefix: 'percy exec -- npx'
         working-directory: e2e
-        config-file: e2e/cypress-config.js
+        config-file: cypress-config.js
         
       env: 
         PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
