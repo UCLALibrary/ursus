@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@percy/cypress": "^2.3.1",
-    "cypress": "^4.9.0",
+    "@percy/cli": "^1.20.0",
+    "@percy/cypress": "^3.1.2",
+    "cypress": "^12.7.0",
     "cypress-iframe": "^1.0.1"
-  },
-  "dependencies": {}
+  }
 }
