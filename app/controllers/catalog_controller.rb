@@ -272,9 +272,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim'
     config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim'
     config.add_show_field 'place_of_origin_tesim', label: 'Place of origin'
-    config.add_show_field 'subject_tesim', label: 'Subject', link_to_facet: 'subject_sim'
+    config.add_show_field 'combined_subject_ssim', label: 'Subject', link_to_facet: 'combined_subject_ssim'
     config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim'
-    config.add_show_field 'subject_topic_tesim', label: 'Subject Topic', link_to_facet: 'subject_topic_sim'
+    # config.add_show_field 'subject_topic_tesim', label: 'Subject Topic', link_to_facet: 'subject_topic_sim'
     config.add_show_field 'subject_geographic_tesim', label: 'Subject Geographic', link_to_facet: 'subject_geographic_sim'
     config.add_show_field 'subject_temporal_tesim', label: 'Subject Temporal', link_to_facet: 'subject_temporal_sim'
     config.add_show_field 'location_tesim', label: 'Location', link_to_facet: 'location_sim'
@@ -367,9 +367,9 @@ class CatalogController < ApplicationController
           pf: ''
         }
       end
-      config.add_search_field('subject_tesim', label: 'Subject') do |field|
+      config.add_search_field('combined_subject_ssim', label: 'Subject') do |field|
         field.solr_parameters = {
-          qf: 'subject_tesim',
+          qf: 'combined_subject_ssim',
           pf: ''
         }
       end
