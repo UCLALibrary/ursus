@@ -8,7 +8,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
     solr.add(work_attributes)
     solr.commit
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
-    allow_any_instance_of(IiifService).to receive(:src).and_return('/uv/uv.html#?manifest=/manifest.json')
+    allow_any_instance_of(IiifService).to receive(:src).and_return('https://p-w-dl-viewer01.library.ucla.edu/#?manifest=/manifest.json')
   end
 
   let(:work_attributes) { FIRST_WORK }
@@ -22,7 +22,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
     expect(page).to have_content 'The Title of my Work'
     expect(page).to have_content 'DESCRIPTION Description 1'
     expect(page).to have_content 'Description 2'
-    expect(page).to have_content 'SUBJECTS Subj 1'
+    expect(page).to have_content 'SUBJECT Subj 1'
     expect(page).to have_content 'RESOURCE TYPE still image'
     expect(page).to have_content 'RIGHTS STATEMENT copyrighted'
     expect(page).to have_content 'GENRE Genre 1'
@@ -76,8 +76,8 @@ RSpec.describe 'View a Work', type: :system, js: true do
 
   it 'displays facetable fields as links' do
     visit "/catalog/#{ark}"
-    expect(page.find('dd.blacklight-subject_tesim')).to have_link 'Subj 1'
-    expect(page.find('dd.blacklight-subject_tesim')).to have_link 'Subj 2'
+    expect(page.find('dd.blacklight-combined_subject_ssim')).to have_link 'Subj 1'
+    expect(page.find('dd.blacklight-combined_subject_ssim')).to have_link 'Subj 2'
     expect(page.find('dd.blacklight-human_readable_resource_type_tesim')).to have_link 'still image'
     expect(page.find('dd.blacklight-genre_tesim')).to have_link 'Genre 1'
     expect(page.find('dd.blacklight-genre_tesim')).to have_link 'Genre 2'
