@@ -37,9 +37,9 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
         expect(config['combined_subject_ssim'].to_s).to eq('Subject')
       end
 
-      #it 'returns the Subject topic Key' do
-        #expect(config['subject_topic_tesim'].to_s).to eq('Subject topic')
-      #end
+      # it 'returns the Subject topic Key' do
+      # expect(config['subject_topic_tesim'].to_s).to eq('Subject topic')
+      # end
 
       it 'returns the Named Subject Key' do
         expect(config['named_subject_tesim'].to_s).to eq('Named Subject')

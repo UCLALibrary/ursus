@@ -5,9 +5,8 @@ describe('Facets', () => {
     cy.contains('a', 'Subject').click({ force: true });
     cy.percySnapshot('Subject facet open');
 
-    cy.contains('a', 'more')
-    cy.intercept('/catalog/facet/combined_subject_ssim',).as('getAllSubjects')
-    cy.wait(['getAllSubjects']);
+    cy.contains('a', 'more').click({ force: true });
+    cy.request('/catalog/facet/combined_subject_ssim').its('body').should('include', 'A-Z Sort');
     cy.contains('People')
 
     cy.contains('a', 'A-Z Sort').click({ force: true });

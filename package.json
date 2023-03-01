@@ -1,19 +1,11 @@
 {
   "name": "ursus",
   "private": true,
-  "dependencies": {
-    "universalviewer": "3.0.16"
-  },
   "scripts": {
     "lint": "stylelint app/assets/stylesheets/** --syntax scss",
-    "lint:fix": "stylelint app/assets/stylesheets/** --syntax scss --fix",
-    "preinstall": "mkdir -p ./public/uv; rm -rf ./public/uv/*",
-    "postinstall": "yarn run uv-install && yarn run uv-config",
-    "uv-install": "shx cp -r ./node_modules/universalviewer/uv/* ./public/uv/",
-    "uv-config": "shx cp ./config/uv/uv.html ./public/uv/uv.html & shx cp ./config/uv/uv-config.json ./public/uv/"
+    "lint:fix": "stylelint app/assets/stylesheets/** --syntax scss --fix"
   },
   "devDependencies": {
-    "cypress": "^8.5.5",
     "shx": "^0.3.2",
     "stylelint": "12.0.1",
     "stylelint-config-prettier": "^8.0.1",
