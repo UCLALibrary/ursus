@@ -20,7 +20,7 @@ RSpec.describe 'View a a work with breaks', type: :system do
       title_tesim: ['The Title of my Work'],
       description_tesim: ['Description 1', 'Description 2'],
       identifier_tesim: ['ark 123'],
-      subject_tesim: ['Subj 1', 'Subj 2'],
+      combined_subject_ssim: ['Subj 1', 'Subj 2'],
       resource_type_tesim: ['still image'],
       human_readable_rights_statement_tesim: ['copyrighted'],
       genre_tesim: ['Genre 1', 'Genre 2', 'Genre 3'],
@@ -49,7 +49,7 @@ RSpec.describe 'View a a work with breaks', type: :system do
   it 'displays line breaks between the values of certain fields' do
     visit "/catalog/#{ark}"
     expect(page.find('dd.blacklight-description_tesim').all(:css, 'br').length).to eq 1
-    expect(page.find('dd.blacklight-subject_tesim').all(:css, 'br').length).to eq 1
+    expect(page.find('dd.blacklight-combined_subject_ssim').all(:css, 'br').length).to eq 1
     expect(page.find('dd.blacklight-genre_tesim').all(:css, 'br').length).to eq 2
     expect(page.find('dd.blacklight-named_subject_tesim').all(:css, 'br').length).to eq 3
   end

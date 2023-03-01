@@ -44,7 +44,7 @@ RSpec.describe 'Search results page', type: :system, js: true do
     solr.add(collection_attributes)
     solr.commit
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
-    allow_any_instance_of(IiifService).to receive(:src).and_return('/uv/uv.html#?manifest=/manifest.json')
+    allow_any_instance_of(IiifService).to receive(:src).and_return('https://p-w-dl-viewer01.library.ucla.edu/#?manifest=/manifest.json')
   end
 
   it 'displays the metadata' do
