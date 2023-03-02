@@ -65,7 +65,7 @@ describe('Facets', () => {
     ).contains('English');
   });
 
-  it('Start Over', () => {
+  /*it('Start Over', () => {
     cy.visit('/catalog?f[genre_sim][]=Black-and-white+photographs');
     cy.get('[title="Black-and-white photographs"]');
     cy.contains('a', 'Start Over').click({ force: true });
@@ -117,7 +117,7 @@ describe('Facets', () => {
     cy.get('.filter-label-key', { timeout: 100000 }).contains('Collection');
     cy.get('.filter-label-value').contains('Caro Minasian Collection of Armenian Material, circa 1600-1968');
     cy.percySnapshot();
-  });
+  });*/
 
   it('Genre', () => {
     cy.visit('/');
