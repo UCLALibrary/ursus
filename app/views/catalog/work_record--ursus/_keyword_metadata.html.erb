@@ -6,7 +6,17 @@
       <h4 class='metadata-block__title'>Keywords</h4>
       <dl class='metadata-block__group'>
         <% keyword.each do |field_name, field| %>
+        <% if field_name == "subject_tesim" || field_name == "subject_topic_tesim" %>
           <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
+            <!-- KEY -->
+            <%= (render_document_show_field_label document, field: field_name).tr(':', '') if field_name == "subject_tesim" %>
+            <!-- VALUE -->
+              <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
+                <%= doc_presenter.field_value field %>
+              </dd>
+          </dt>
+        <% else %>
+         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
             <!-- KEY -->
             <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
             <!-- VALUE -->
@@ -14,6 +24,8 @@
                 <%= doc_presenter.field_value field %>
               </dd>
           </dt>
+        <% end %>
+          
         <% end %>
       </dl>
       <hr class='divider divider--ursus'>
