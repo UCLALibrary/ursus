@@ -162,6 +162,4 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       expect(page).to have_content('0 Catalog Results')
     end
   end
-
-  
 end

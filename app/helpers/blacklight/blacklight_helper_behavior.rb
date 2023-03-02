@@ -36,9 +36,8 @@ module Blacklight::BlacklightHelperBehavior
   # @return [String]
   def render_page_title
     remove_ssi_string
-    
+
     (content_for(:page_title) if content_for?(:page_title)) || @page_title || application_name
-  
   end
 
   ##

@@ -118,7 +118,6 @@ class CatalogController < ApplicationController
     config.add_facet_field 'human_readable_language_sim', limit: 5
     config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
     config.add_facet_field 'repository_sim', limit: 5
-   
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
@@ -136,14 +135,12 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index search results / list view
     # The config.add_index_field ::Solrizer.solr_name('title',  :stored_searchable), label: 'Title', itemprop: 'name', if: false
 
-    
     config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
     config.add_index_field 'date_created_tesim', label: 'Date Created'
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
     config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
     config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
-  
 
     # ------------------------------------------------------
     # SHOW PAGE / ITEM PAGE / Individual Work (Universal Viewer Page)
@@ -238,7 +235,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'hand_note_tesim', limit: 7, label: 'Hand note' # 'Writing and hands'
 
     config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim'
-    
+
     config.add_show_field 'form_ssi', label: 'Form', link_to_facet: 'form_sim'
     config.add_show_field 'genre_tesim', label: 'Genre', link_to_facet: 'genre_sim'
     config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim'
@@ -365,7 +362,6 @@ class CatalogController < ApplicationController
 
     config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
     config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
-  
 
     config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
     config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
