@@ -1,6 +1,6 @@
 genre_tesim: 'Genre'
-combined_subject_ssim: 'Subject'
-#subject_topic_tesim: 'Subject topic'
+subject_tesim: 'Subject'
+subject_topic_tesim: 'Subject topic'
 named_subject_tesim: 'Named Subject'
 subject_geographic_tesim: 'Subject geographic'
 subject_temporal_tesim: 'Subject temporal'
