@@ -1,8 +1,6 @@
-<% if Flipflop.sinai? %>
-  <div class='search-results-container--sinai'>
-<% else %>
-  <div class='search-results-container'>
-<% end %>
+
+<div class='search-results-container'>
+
 <%= render 'catalog/constraints' unless Flipflop.sinai? %>
   <% url = request.original_url %>
   <% if url.include?('has_model_ssim') && url.include?('Collection') %>
@@ -27,7 +25,6 @@
   <h2 class='sr-only'><%= t('blacklight.search.search_results') %></h2>
 
   <% if @response.empty? %>
-    <%= render 'catalog/constraints' if Flipflop.sinai? %>
     <%= render 'zero_results' %>
   <% elsif render_grouped_response? %>
     <%= render_grouped_document_index %>
