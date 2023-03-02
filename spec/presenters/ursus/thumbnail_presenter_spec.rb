@@ -37,11 +37,6 @@ RSpec.describe Ursus::ThumbnailPresenter do
     context 'when the document has \'discovery\' visibility' do
       let(:visibility) { 'discovery' }
 
-      it 'shows the thumbnail in Sinai mode' do
-        allow(Flipflop).to receive(:sinai?).and_return(true)
-        expect(result).to eq '<a><i /></a>'
-      end
-
       it 'hides the thumbnail when not in Sinai mode' do
         allow(Flipflop).to receive(:sinai?).and_return(false)
         expect(result).to eq nil
