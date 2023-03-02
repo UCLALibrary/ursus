@@ -8,5 +8,4 @@ location_tesim: 'Location'
 latitude_tesim: 'Latitude'
 longitude_tesim: 'Longitude'
 human_readable_resource_type_tesim: 'Resource Type'
-
 features_tesim: 'Features'

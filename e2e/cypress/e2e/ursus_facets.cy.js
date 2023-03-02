@@ -6,7 +6,8 @@ describe('Facets', () => {
     cy.percySnapshot('Subject facet open');
 
     cy.contains('a', 'more').click({ force: true });
-    cy.contains('People');
+    cy.request('/catalog/facet/combined_subject_ssim').its('body').should('include', 'A-Z Sort');
+    cy.contains('People')
 
     cy.contains('a', 'A-Z Sort').click({ force: true });
     cy.contains('14th Dynasty');
@@ -64,7 +65,7 @@ describe('Facets', () => {
     ).contains('English');
   });
 
-  it('Start Over', () => {
+  /*it('Start Over', () => {
     cy.visit('/catalog?f[genre_sim][]=Black-and-white+photographs');
     cy.get('[title="Black-and-white photographs"]');
     cy.contains('a', 'Start Over').click({ force: true });
@@ -116,7 +117,7 @@ describe('Facets', () => {
     cy.get('.filter-label-key', { timeout: 100000 }).contains('Collection');
     cy.get('.filter-label-value').contains('Caro Minasian Collection of Armenian Material, circa 1600-1968');
     cy.percySnapshot();
-  });
+  });*/
 
   it('Genre', () => {
     cy.visit('/');

@@ -82,9 +82,9 @@ RSpec.describe CatalogController, type: :controller do
        "oclc_ssi", "opac_url_ssi", "page_layout_ssim", "photographer_tesim",
        "place_of_origin_tesim", "printmaker_tesim", "provenance_tesim", "program_tesim",
        "publisher_tesim", "repository_tesim", "rights_country_tesim",
-       "rights_holder_tesim", "rubricator_tesim", "scribe_tesim", "script_tesim",
-       "series_tesim",
-       "services_contact_ssm", "subject_tesim", "subject_topic_tesim",
+       "rights_holder_tesim", "rubricator_tesim", "scribe_tesim", "script_tesim", "series_tesim",
+       "services_contact_ssm", "subject_tesim", "subject_cultural_object_tesim",
+       "subject_domain_topic_tesim", "subject_topic_tesim",
        "summary_tesim", "support_tesim", "title_tesim", "toc_tesim",
        "uniform_title_tesim", "hand_note_tesim", "writing_system_tesim",
        "commentator_tesim", "translator_tesim", "license_tesim",
@@ -139,7 +139,7 @@ RSpec.describe CatalogController, type: :controller do
     let(:search_fields) { controller.blacklight_config.search_fields.keys }
 
     let(:expected_search_fields) do
-      ['all_fields', 'subject_tesim', 'title_tesim']
+      ['all_fields', 'combined_subject_ssim', 'title_tesim']
     end
 
     it { expect(search_fields).to contain_exactly(*expected_search_fields) }
