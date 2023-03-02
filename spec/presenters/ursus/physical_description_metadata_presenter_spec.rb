@@ -12,13 +12,9 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       'medium_tesim' => 'Medium',
       'support_tesim' => 'Support',
       'page_layout_ssim' => 'Page layout',
-      'writing_system_tesim' => 'Writing system',
-      'script_tesim' => 'Script',
-      'hand_note_tesim' => 'Hand note',
       'illustrations_note_tesim' => 'Illustrations note',
       'condition_note_ssi' => 'Condition note',
       'binding_note_ssi' => 'Binding note',
-      'inscription_tesim' => 'Inscription',
       'form_ssi' => 'Form'
     }
   end
@@ -63,10 +59,6 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
         expect(config['illustrations_note_tesim'].to_s).to eq 'Illustrations note'
       end
 
-      it 'returns the Incription note Key' do
-        expect(config['inscription_tesim'].to_s).to eq 'Inscription'
-      end
-
       it 'returns the Medium Key' do
         expect(config['medium_tesim'].to_s).to eq 'Medium'
       end
@@ -75,20 +67,8 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
         expect(config['page_layout_ssim'].to_s).to eq 'Page layout'
       end
 
-      it 'returns the Script Key' do
-        expect(config['script_tesim'].to_s).to eq 'Script'
-      end
-
       it 'returns the Support Key' do
         expect(config['support_tesim'].to_s).to eq 'Support'
-      end
-
-      it 'returns the Hand note Key' do
-        expect(config['hand_note_tesim'].to_s).to eq 'Hand note'
-      end
-
-      it 'returns the Writing system Key' do
-        expect(config['writing_system_tesim'].to_s).to eq 'Writing system'
       end
     end
 
@@ -98,7 +78,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.physical_description_terms).to be_instance_of(Hash)
-        expect(all).to eq 16
+        expect(all).to eq 12
         expect(config.length).to eq all
       end
 

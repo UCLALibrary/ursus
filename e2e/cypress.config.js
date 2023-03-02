@@ -1,7 +1,6 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  SINAI_BASE_URL: 'http://localhost:3004',
   video: false,
   chromeWebSecurity: false,
   e2e: {

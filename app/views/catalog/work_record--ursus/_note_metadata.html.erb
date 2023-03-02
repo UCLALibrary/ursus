@@ -14,18 +14,13 @@
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
 
           <!-- VALUE -->
-          <!-- SINAI -->
-          <% if Flipflop.sinai? %>
-            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--sinai">
-              <%= doc_presenter.field_value field %>
-            </dd>
 
           <!-- URSUS -->
-          <% else %>
+
             <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
               <%= raw doc_presenter.field_value field %>
             </dd>
-          <% end %>
+
         </dt>
       <!-- LOOP END -->
       <% end %>
@@ -35,11 +30,7 @@
       <dd class='metadata-block__label-value'><%= raw toc_value %></dd>
     </dl>
 
-  <% if Flipflop.sinai? %>
-   <hr class='divider'>
-  <% else %>
     <hr class='divider divider--ursus'>
-  <% end %>
 
   </div>
 <% end %>
