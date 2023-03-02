@@ -59,8 +59,6 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
         expect(config['illustrations_note_tesim'].to_s).to eq 'Illustrations note'
       end
 
-     
-
       it 'returns the Medium Key' do
         expect(config['medium_tesim'].to_s).to eq 'Medium'
       end
@@ -69,12 +67,9 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
         expect(config['page_layout_ssim'].to_s).to eq 'Page layout'
       end
 
-      
-
       it 'returns the Support Key' do
         expect(config['support_tesim'].to_s).to eq 'Support'
       end
-
     end
 
     describe "#physical_description terms" do
