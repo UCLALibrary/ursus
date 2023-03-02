@@ -1,7 +1,6 @@
 <!-- This pagination does not use the kaminari gem,
      it is implementing the previous/next here and using bootstrap for styling. -->
 
-
 <ul class="modal-pagination">
   <li class='modal-pagination__page-item modal-pagination__page-item--ursus'>
     <%= link_to_previous_page @pagination, raw(t('views.pagination.previous')), params: search_state.to_h, param_name: blacklight_config.facet_paginator_class.request_keys[:page], class: 'modal-pagination__page-link modal-pagination__page-link--ursus', data: { blacklight_modal: "preserve" } do %>
@@ -14,4 +13,3 @@
     <% end %>
   </li>
 </ul>
-

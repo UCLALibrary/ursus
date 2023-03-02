@@ -16,9 +16,9 @@
   if ( urlFacet.indexOf("catalog?sort=" ) !== -1){
     window.history.replaceState('page2', 'Title', '/catalog');
   } else if ( ((urlFacet.indexOf("&q=&") !== -1) || (urlFacet.indexOf("%5B%5D=") !== -1)) && ((urlFacet.indexOf("[member_of_collections_") !== -1) || ((urlFacet.indexOf("&sort=") == -1) && (urlFacet != "?utf8=%E2%9C%93&q=&search_field=all_fields"))) ) {
-    
+
       var titleSortUrl = urlFacet+"&sort=title_alpha_numeric_ssort+asc";
-   
+
       window.location = titleSortUrl;
   }
 </script>

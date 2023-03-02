@@ -14,14 +14,13 @@
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
 
           <!-- VALUE -->
-          
 
           <!-- URSUS -->
-          
+
             <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
               <%= raw doc_presenter.field_value field %>
             </dd>
-          
+
         </dt>
       <!-- LOOP END -->
       <% end %>
@@ -31,9 +30,7 @@
       <dd class='metadata-block__label-value'><%= raw toc_value %></dd>
     </dl>
 
-  
     <hr class='divider divider--ursus'>
-  
 
   </div>
 <% end %>

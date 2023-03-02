@@ -10,11 +10,11 @@
           <!-- KEY -->
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
           <!-- VALUE -->
-          
+
             <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
               <%= doc_presenter.field_value field %>
             </dd>
-          
+
         </dt>
       <% end %>
 
@@ -26,15 +26,15 @@
       <%= render_opac_link %>
 
       <!-- iiif drag and drop logo -->
-     
+
         <dt class='metadata-block__label-key'>Manifest url</dt>
         <dd class='metadata-block__label-value'>
           <a href="<%= @document[:iiif_manifest_url_ssi] %>" target="_blank"><%= image_tag('iiif-logo.png', alt: 'IIIF Manifest') %></a>
         </dd>
     </dl>
     <hr>
-    
+
       <hr class='divider divider--white'>
-    
+
   </div>
 <% end %>

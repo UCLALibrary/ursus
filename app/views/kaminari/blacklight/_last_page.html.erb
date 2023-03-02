@@ -6,10 +6,8 @@
     per_page:      number of items to fetch per page
     remote:        data-remote -%>
 
-
 <!-- URSUS -->
 
   <li class="pagination__page-item pagination__page-item--ursus <%= 'disabled' if current_page.last? %>">
     <%= link_to_unless current_page.last?, raw(t('views.pagination.last')), url, remote: remote, class: 'pagination__page-link pagination__page-link--ursus', aria: { label: t('views.pagination.aria.go_to_last_page') } %>
   </li>
-
