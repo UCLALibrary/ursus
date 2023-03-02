@@ -6,7 +6,6 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
     {
       'repository_tesim' => 'Repository',
       'local_identifier_ssm' => 'Local identifier',
-      'series_tesim' => 'Series',
       'opac_url_tesim' => 'Opac url',
       'oclc_ssi' => 'OCLC Number',
       'ark_ssi' => 'ARK'
@@ -33,10 +32,6 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
         expect(config['local_identifier_ssm'].to_s).to eq('Local identifier')
       end
 
-      it 'returns the Series Key' do
-        expect(config['series_tesim'].to_s).to eq 'Series'
-      end
-
       it 'returns the Opac url' do
         expect(config['opac_url_tesim'].to_s).to eq 'Opac url'
       end
@@ -57,7 +52,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       it "returns existing keys" do
         expect(presenter_object.find_this_item_terms).to be_instance_of(Hash)
         expect(presenter_object.find_this_item_terms.include?('ark_ssi')).to be true
-        expect(all).to eq 6
+        expect(all).to eq 5
         expect(config.length).to eq all
       end
 
