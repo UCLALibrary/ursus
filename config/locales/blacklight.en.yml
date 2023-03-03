@@ -64,7 +64,6 @@ en:
           rubricator_sim: 'Rubricator'
           scribe_sim: 'Scribe'
           script_sim: 'Script'
-          series_tesim: 'Series'
           series_sim: 'Series'
           subject_sim: 'Subject'
           subject_topic_sim: 'Subject Topic'
