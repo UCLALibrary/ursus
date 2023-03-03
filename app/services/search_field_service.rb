@@ -56,7 +56,11 @@ class SearchFieldService
     'descriptive_title_tesim',
     'delivery_tesim',
     'other_versions_tesim',
-    'repository_tesim'
+    'repository_tesim',
+    'host_tesim',
+    'musician_tesim',
+    'printer_tesim',
+    'researcher_tesim'
   ].join(' ').freeze
 
   def search_fields

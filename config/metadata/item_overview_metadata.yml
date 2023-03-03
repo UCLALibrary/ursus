@@ -47,3 +47,8 @@ descriptive_title_tesim: 'Descriptive title'
 references_tesim: 'References'
 shelfmark_ssi: 'Shelfmark'
 program_tesim: 'Program'
+
+host_tesim: 'Host'
+musician_tesim: 'Musician'
+printer_tesim: 'Printer'
+researcher_tesim: 'Researcher'
