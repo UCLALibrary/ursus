@@ -43,6 +43,7 @@ class SearchFieldService
     'publisher_tesim',
     'scribe_tesim',
     'script_tesim',
+    'series_tesim',
     'combined_subject_ssim',
     'summary_tesim',
     'support_tesim',
