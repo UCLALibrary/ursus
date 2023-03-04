@@ -192,6 +192,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'publisher_tesim', label: 'Publisher'
     config.add_show_field 'human_readable_language_tesim', label: 'Language', link_to_facet: 'human_readable_language_sim'
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+    config.add_show_field 'series_tesim', label: 'Series', link_to_facet: 'series_sim'
     config.add_show_field 'creator_tesim', label: 'Creator', link_to_facet: 'creator_sim'
     config.add_show_field 'artist_tesim', label: 'Artist', link_to_facet: 'artist_sim'
     config.add_show_field 'cartographer_tesim', label: 'Cartographer', link_to_facet: 'cartographer_sim'
