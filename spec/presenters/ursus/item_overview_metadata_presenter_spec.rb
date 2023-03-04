@@ -27,6 +27,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'interviewee_tesim' => 'Interviewee',
       'lyricist_tesim' => 'Lyricist',
       'member_of_collections_ssim' => 'Collection',
+      'series_tesim' => 'Series',
       'normalized_date_sim' => 'Date',
       'photographer_tesim' => 'Photographer',
       'place_of_origin_tesim' => 'Place of Origin',
@@ -87,6 +88,10 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
 
       it 'returns the Collection Key' do
         expect(config['member_of_collections_ssim'].to_s).to eq('Collection')
+      end
+
+      it 'returns the Series Key' do
+        expect(config['series_tesim'].to_s).to eq 'Series'
       end
 
       it 'returns the Commentator Key' do
@@ -219,7 +224,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       let(:missing) { presenter_object_missing_items.overview_terms.keys.length }
 
       it "returns existing keys" do
-        expect(all).to eq 39
+        expect(all).to eq 40
         expect(config.length).to eq all
       end
 
