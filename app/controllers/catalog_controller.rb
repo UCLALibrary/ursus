@@ -253,6 +253,10 @@ class CatalogController < ApplicationController
     config.add_show_field 'geographic_coordinates_ssim'
     config.add_show_field 'subject_cultural_object_tesim'
     config.add_show_field 'subject_domain_topic_tesim'
+    config.add_show_field 'host_tesim', label: 'Host', link_to_facet: 'host_sim'
+    config.add_show_field 'musician_tesim', label: 'Musician', link_to_facet: 'musician_sim'
+    config.add_show_field 'printer_tesim', label: 'Printer', link_to_facet: 'printer_sim'
+    config.add_show_field 'researcher_tesim', label: 'Researcher', link_to_facet: 'researcher_sim'
 
     # SECONDARY
     # Find This Item
