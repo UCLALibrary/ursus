@@ -9,6 +9,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       'collation_tesim' => 'Collation',
       'foliation_tesim' => 'Foliation',
       'format_tesim' => 'Format',
+      'format_book_tesim' => 'Format',
       'medium_tesim' => 'Medium',
       'support_tesim' => 'Support',
       'page_layout_ssim' => 'Page layout',
@@ -55,6 +56,10 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
         expect(config['format_tesim'].to_s).to eq 'Format'
       end
 
+      it 'returns the Format Key' do
+        expect(config['format_book_tesim'].to_s).to eq 'Format'
+      end
+
       it 'returns the Illustrations note Key' do
         expect(config['illustrations_note_tesim'].to_s).to eq 'Illustrations note'
       end
@@ -78,7 +83,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.physical_description_terms).to be_instance_of(Hash)
-        expect(all).to eq 12
+        expect(all).to eq 13
         expect(config.length).to eq all
       end
 
