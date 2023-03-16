@@ -56,7 +56,7 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
         expect(config['format_tesim'].to_s).to eq 'Format'
       end
 
-      it 'returns the Format Key' do
+      it 'returns the Format Book Key' do
         expect(config['format_book_tesim'].to_s).to eq 'Format'
       end
 
