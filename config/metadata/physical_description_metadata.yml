@@ -1,7 +1,7 @@
 extent_tesim: 'Extent'
 dimensions_tesim: 'Dimensions'
 format_tesim: 'Format'
-format_book: 'Format'
+format_book_tesim: 'Format'
 support_tesim: 'Support'
 medium_tesim: 'Medium'
 page_layout_ssim: 'Page layout'
