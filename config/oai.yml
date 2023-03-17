@@ -32,6 +32,9 @@ default:
     - director_tesim
     - producer_tesim
     - series_tesim
+    - resp_statement_tesim
+    - citation_source_tesim
+    - format_book_tesim
   publisher:
     - place_of_origin_tesim
     - publisher_tesim
