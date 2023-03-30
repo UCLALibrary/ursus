@@ -6,6 +6,8 @@ colophon_tesim: 'Colophon'
 provenance_tesim: 'Provenance'
 note_tesim: 'Note'
 # toc_tesim: 'Table of Contents' (render_table_of_contents_key / value)
+resp_statement_tesim: 'Statement of Responsibility'
+citation_source_tesim: 'References'
 
 incipit_tesim: 'Incipit'
 explicit_tesim: 'Explicit'

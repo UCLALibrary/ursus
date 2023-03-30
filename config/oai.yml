@@ -61,8 +61,11 @@ default:
     - caption_tesim
     - contents_note_tesim
     - content_disclaimer_ssm
+    - resp_statement_tesim
+    - citation_source_tesim
   format:
     - format_tesim
+    - format_book_tesim
     - support_tesim
     - medium_tesim
     - page_layout_ssim
