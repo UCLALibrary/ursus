@@ -219,7 +219,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'provenance_tesim', label: 'Provenance'
     config.add_show_field 'colophon_tesim', label: 'Colophon'
     config.add_show_field 'note_tesim', label: 'Note'
-    config.add_show_field 'note_admin_tesim', label: 'AdminNote'
     config.add_show_field 'resp_statement_tesim', label: 'Statement of Responsibility'
     config.add_show_field 'citation_source_tesim', label: 'References'
 

@@ -13,7 +13,6 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       'incipit_tesim' => 'Incipit',
       'explicit_tesim' => 'Explicit',
       'note_tesim' => 'Note',
-      'note_admin_tesim' => 'AdminNote',
       'resp_statement_tesim' => 'Statement of Responsibility',
       'citation_source_tesim' => 'References'
     }
@@ -67,10 +66,6 @@ RSpec.describe Ursus::NoteMetadataPresenter do
         expect(config['note_tesim'].to_s).to eq('Note')
       end
 
-      it 'returns the AdminNote Key' do
-        expect(config['note_admin_tesim'].to_s).to eq('AdminNote')
-      end
-
       it 'returns the Statement of Responsibility Key' do
         expect(config['resp_statement_tesim'].to_s).to eq('Statement of Responsibility')
       end
@@ -86,7 +81,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.note_terms).to be_instance_of(Hash)
-        expect(all).to eq 12
+        expect(all).to eq 11
         expect(config.length).to eq all
       end
 
