@@ -94,7 +94,8 @@ RSpec.describe CatalogController, type: :controller do
        "shelfmark_ssi", "other_versions_tesim", "content_disclaimer_ssm",
        "interviewer_tesim", "interviewee_tesim", "cartographer_tesim",
        "artist_tesim", "recipient_tesim", "director_tesim", "producer_tesim", "host_tesim",
-       "musician_tesim", "printer_tesim", "researcher_tesim"]
+       "musician_tesim", "printer_tesim", "researcher_tesim",
+       'format_book_tesim', 'resp_statement_tesim', 'citation_source_tesim']
     end
 
     it 'has exactly expected show fields' do
