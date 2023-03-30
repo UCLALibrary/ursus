@@ -63,7 +63,6 @@ class SearchFieldService
     'printer_tesim',
     'researcher_tesim',
     'format_book_tesim',
-    'note_admin_tesim',
     'resp_statement_tesim',
     'citation_source_tesim'
   ].join(' ').freeze
