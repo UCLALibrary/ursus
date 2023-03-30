@@ -12,7 +12,9 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       'colophon_tesim' => 'Colophon',
       'incipit_tesim' => 'Incipit',
       'explicit_tesim' => 'Explicit',
-      'note_tesim' => 'Note'
+      'note_tesim' => 'Note',
+      'resp_statement_tesim' => 'Statement of Responsibility',
+      'citation_source_tesim' => 'References'
     }
   end
   let(:solr_doc_missing_items) do
@@ -63,6 +65,14 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       it 'returns the Note Key' do
         expect(config['note_tesim'].to_s).to eq('Note')
       end
+
+      it 'returns the Statement of Responsibility Key' do
+        expect(config['resp_statement_tesim'].to_s).to eq('Statement of Responsibility')
+      end
+
+      it 'returns the References Key' do
+        expect(config['citation_source_tesim'].to_s).to eq('References')
+      end
     end
 
     describe "#note terms" do
@@ -71,7 +81,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.note_terms).to be_instance_of(Hash)
-        expect(all).to eq 9
+        expect(all).to eq 11
         expect(config.length).to eq all
       end
 
