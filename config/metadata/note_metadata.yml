@@ -8,6 +8,7 @@ note_tesim: 'Note'
 # toc_tesim: 'Table of Contents' (render_table_of_contents_key / value)
 resp_statement_tesim: 'Statement of Responsibility'
 citation_source_tesim: 'References'
+related_to_ssm: 'Related Items'
 
 incipit_tesim: 'Incipit'
 explicit_tesim: 'Explicit'
