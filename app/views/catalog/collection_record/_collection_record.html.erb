@@ -11,7 +11,7 @@
   <%= render 'catalog/collection_record/keyword_metadata', document: document %>
 
   <div class='collection-page__btn-row'>
-    <a href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=<%= document[:title_tesim][0] %>" class="btn-base btn-base-lg btn-ursus--gold" role="button">Browse items in this collection</a>
+    <a href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=<%= CGI.unescape(document[:title_tesim][0]) %>" class="btn-base btn-base-lg btn-ursus--gold" role="button">Browse items in this collection</a>
   </div>
 
 </div>
