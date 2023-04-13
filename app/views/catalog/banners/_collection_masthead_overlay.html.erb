@@ -4,6 +4,6 @@
     <% if collection_count %>
     <div class='banner__collection-count' itemprop="collectionSize"><%= collection_count %> items</div>
     <% end %>
-    <%= link_to 'Browse items in this collection', "/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=#{document[:title_tesim][0]}", class: 'btn-base btn-outline-ursus--gold ur-link--gold banner__overlay-btn-text' %>
+    <%= link_to 'Browse items in this collection', "/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=#{CGI.escape(document[:title_tesim][0])}", class: 'btn-base btn-outline-ursus--gold ur-link--gold banner__overlay-btn-text' %>
   </div>
 </div>

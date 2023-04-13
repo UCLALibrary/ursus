@@ -14,6 +14,7 @@ RSpec.describe 'the result bar displays the correct links', :clean, type: :syste
     solr.add(work_3_attributes)
     solr.commit
     allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
+    allow_any_instance_of(IiifService).to receive(:src).and_return('https://p-w-dl-viewer01.library.ucla.edu/#?manifest=https://wellcomelibrary.org/iiif/b18035723/manifest')
   end
 
   it 'has expected fields on initial search page and show page' do

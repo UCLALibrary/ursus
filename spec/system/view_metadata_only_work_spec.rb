@@ -20,7 +20,7 @@ RSpec.feature "View a metadata-only Work", js: true do
       discover_access_group_ssim: ["public"],
       edit_access_group_ssim: ["admin"],
       has_model_ssim: ['Work'],
-      iiif_manifest_url_ssi: 'https://iiif.server/url/manifest',
+      iiif_manifest_url_ssi: 'https://wellcomelibrary.org/iiif/b18035723/manifest',
       title_tesim: ['Work with Discovery Access']
     }
   end
@@ -31,7 +31,7 @@ RSpec.feature "View a metadata-only Work", js: true do
       ark_ssi: open_work_ark,
       edit_access_group_ssim: ["admin"],
       has_model_ssim: ['Work'],
-      iiif_manifest_url_ssi: 'https://iiif.server/url/manifest',
+      iiif_manifest_url_ssi: 'https://wellcomelibrary.org/iiif/b18035723/manifest',
       read_access_group_ssim: ["public"],
       title_tesim: ['Work with Open Access']
     }
