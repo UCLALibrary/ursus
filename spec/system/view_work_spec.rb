@@ -7,8 +7,8 @@ RSpec.describe 'View a Work', type: :system, js: true do
     solr = Blacklight.default_index.connection
     solr.add(work_attributes)
     solr.commit
-    allow(Rails.application.config).to receive(:iiif_url).and_return('https://example.com')
-    allow_any_instance_of(IiifService).to receive(:src).and_return('https://p-w-dl-viewer01.library.ucla.edu/#?manifest=/manifest.json')
+    allow(Rails.application.config).to receive(:iiif_url).and_return('https://wellcomelibrary.org/iiif/b18035723/manifest')
+    allow_any_instance_of(IiifService).to receive(:src).and_return('https://p-w-dl-viewer01.library.ucla.edu/#?manifest=https://wellcomelibrary.org/iiif/b18035723/manifest')
   end
 
   let(:work_attributes) { FIRST_WORK }
