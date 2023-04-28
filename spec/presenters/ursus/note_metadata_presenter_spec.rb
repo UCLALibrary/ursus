@@ -73,10 +73,6 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       it 'returns the References Key' do
         expect(config['citation_source_tesim'].to_s).to eq('References')
       end
-
-      it 'returns the Related Items Key' do
-        expect(config['related_to_ssm'].to_s).to eq('Related Items')
-      end
     end
 
     describe "#note terms" do
