@@ -83,7 +83,7 @@ class SolrDocument
 
   def sets
     record = self
-    Ucla::Oai::CollectionSolrSet.new("member_of_collection_ids_ssim:#{record[:member_of_collection_ids_ssim][0]}")
+    Ucla::Oai::CollectionSolrSet.new("member_of_collection_ids_ssim:#{record[:member_of_collection_ids_ssim][0]}") if !record[:member_of_collection_ids_ssim].nil?
   end
 
   # populates OAI feed
