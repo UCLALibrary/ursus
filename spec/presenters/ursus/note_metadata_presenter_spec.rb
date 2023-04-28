@@ -14,8 +14,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       'explicit_tesim' => 'Explicit',
       'note_tesim' => 'Note',
       'resp_statement_tesim' => 'Statement of Responsibility',
-      'citation_source_tesim' => 'References',
-      'related_to_ssm' => 'Related Items'
+      'citation_source_tesim' => 'References'
     }
   end
   let(:solr_doc_missing_items) do
@@ -86,7 +85,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.note_terms).to be_instance_of(Hash)
-        expect(all).to eq 12
+        expect(all).to eq 11
         expect(config.length).to eq all
       end
 
