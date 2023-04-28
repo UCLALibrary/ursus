@@ -25,6 +25,12 @@
       <!-- LOOP END -->
       <% end %>
 
+      <% if @document[:related_to_ssm] %>
+      <dt class="metadata-block__label-key">Other version(s)</dt>
+
+        <dd class="metadata-block__label-value"><%= render_related_to_link %></dd>
+      <% end %>
+
       <!-- TABLE OF CONTENTS -->
       <dt class='metadata-block__label-key'><%= toc_key %></dt>
       <dd class='metadata-block__label-value'><%= raw toc_value %></dd>

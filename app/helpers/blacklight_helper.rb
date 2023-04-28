@@ -64,6 +64,18 @@ module BlacklightHelper
     data.html_safe
   end
 
+  def render_related_to_markup
+    related_to_text = ''
+    urls = @document[:related_to_ssm]
+    urls.each { |url| related_to_text += '<a href="' + url + '">' + url + '</a> <br>' }
+    related_to_text
+  end
+
+  def render_other_versions_link
+    data = render_related_to_markup
+    data.html_safe
+  end
+
   def render_table_of_contents_key
     unless @document[:toc_tesim].nil? || @document[:toc_tesim].empty?
       'Table of contents'
