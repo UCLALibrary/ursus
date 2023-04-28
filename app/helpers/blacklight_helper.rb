@@ -71,7 +71,7 @@ module BlacklightHelper
     related_to_text
   end
 
-  def render_other_versions_link
+  def render_related_to_link
     data = render_related_to_markup
     data.html_safe
   end
