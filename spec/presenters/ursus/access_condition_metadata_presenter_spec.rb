@@ -42,10 +42,6 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
         expect(config['services_contact_ssm'].to_s).to eq('Rights Contact')
       end
 
-      it 'returns the License Key' do
-        expect(config['license_tesim'].to_s).to eq('License')
-      end
-
       it 'returns the Funding Note Key' do
         expect(config['funding_note_tesim'].to_s).to eq('Funding Note')
       end
@@ -61,7 +57,7 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.access_condition_terms).to be_instance_of(Hash)
-        expect(all).to eq 7
+        expect(all).to eq 6
         expect(config.length).to eq all
       end
 
