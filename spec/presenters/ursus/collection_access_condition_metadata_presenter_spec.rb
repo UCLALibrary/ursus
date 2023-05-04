@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.describe Ursus::AccessConditionMetadataPresenter do
+RSpec.describe Ursus::CollectionAccessConditionMetadataPresenter do
   let(:solr_doc) do
     {
       'human_readable_rights_statement_tesim' => 'Rights statement',
@@ -22,7 +22,7 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
   end
   let(:presenter_object) { described_class.new(document: solr_doc) }
   let(:presenter_object_missing_items) { described_class.new(document: solr_doc_missing_items) }
-  let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/access_condition_metadata.yml'))) }
+  let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/collection_access_condition_metadata.yml'))) }
 
   context 'with a solr document containing overview metadata' do
     describe 'config' do
@@ -57,10 +57,10 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
 
     describe "#access_condition terms" do
       let(:all) { presenter_object.access_condition_terms.keys.length }
-      let(:missing) { presenter_object_missing_items.access_condition_terms.keys.length }
+      let(:missing) { presenter_object_missing_items.collection_access_condition_terms.keys.length }
 
       it "returns existing keys" do
-        expect(presenter_object.access_condition_terms).to be_instance_of(Hash)
+        expect(presenter_object.collection_access_condition_terms).to be_instance_of(Hash)
         expect(all).to eq 7
         expect(config.length).to eq all
       end
