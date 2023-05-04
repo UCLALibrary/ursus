@@ -13,4 +13,3 @@ module Ursus
     end
   end
 end
-  
