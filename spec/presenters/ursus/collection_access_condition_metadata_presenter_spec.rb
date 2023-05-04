@@ -56,7 +56,7 @@ RSpec.describe Ursus::CollectionAccessConditionMetadataPresenter do
     end
 
     describe "#access_condition terms" do
-      let(:all) { presenter_object.access_condition_terms.keys.length }
+      let(:all) { presenter_object.collection_access_condition_terms.keys.length }
       let(:missing) { presenter_object_missing_items.collection_access_condition_terms.keys.length }
 
       it "returns existing keys" do
