@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.describe Ursus::AccessConditionMetadataPresenter do
+RSpec.describe Ursus::CollectionAccessConditionMetadataPresenter do
   let(:solr_doc) do
     {
       'human_readable_rights_statement_tesim' => 'Rights statement',
@@ -9,6 +9,7 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
       'services_contact_ssm' => 'Rights Contact',
       'rights_holder_tesim' => 'Rights Holder',
       'rights_country_tesim' => 'Rights (country of creation)',
+      'license_tesim' => 'License',
       'funding_note_tesim' => 'Funding Note'
     }
   end
@@ -21,7 +22,7 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
   end
   let(:presenter_object) { described_class.new(document: solr_doc) }
   let(:presenter_object_missing_items) { described_class.new(document: solr_doc_missing_items) }
-  let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/access_condition_metadata.yml'))) }
+  let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/collection_access_condition_metadata.yml'))) }
 
   context 'with a solr document containing overview metadata' do
     describe 'config' do
@@ -41,6 +42,10 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
         expect(config['services_contact_ssm'].to_s).to eq('Rights Contact')
       end
 
+      it 'returns the License Key' do
+        expect(config['license_tesim'].to_s).to eq('License')
+      end
+
       it 'returns the Funding Note Key' do
         expect(config['funding_note_tesim'].to_s).to eq('Funding Note')
       end
@@ -51,12 +56,12 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
     end
 
     describe "#access_condition terms" do
-      let(:all) { presenter_object.access_condition_terms.keys.length }
-      let(:missing) { presenter_object_missing_items.access_condition_terms.keys.length }
+      let(:all) { presenter_object.collection_access_condition_terms.keys.length }
+      let(:missing) { presenter_object_missing_items.collection_access_condition_terms.keys.length }
 
       it "returns existing keys" do
-        expect(presenter_object.access_condition_terms).to be_instance_of(Hash)
-        expect(all).to eq 6
+        expect(presenter_object.collection_access_condition_terms).to be_instance_of(Hash)
+        expect(all).to eq 7
         expect(config.length).to eq all
       end
 
