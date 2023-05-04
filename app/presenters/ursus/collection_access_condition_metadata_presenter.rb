@@ -5,7 +5,7 @@ module Ursus
 
     def initialize(document:)
       @document = document
-      @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata/collections_access_condition_metadata.yml')))
+      @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata/collection_access_condition_metadata.yml')))
     end
 
     def collection_access_condition_terms
