@@ -87,6 +87,7 @@ DC:
     - permalink
   description:
     - content_disclaimer_ssm
+    - related_to_ssm
 DPLA:
   parent_schema: default
   object:
