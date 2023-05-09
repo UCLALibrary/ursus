@@ -39,13 +39,13 @@ module ModsSolrDocument
           if self[:creator_tesim]
             xml['mods'].name do
               self[:creator_tesim]&.each { |creator_display| xml['mods'].namePart(creator_display.to_s) }
-              xml['mods'].roleTerm "creator"
+              xml['mods'].roleTerm "Creator"
             end
           end
           if self[:photographer_tesim]
             xml['mods'].name do
-              self[:creator_tesim]&.each { |creator_display| xml['mods'].namePart(creator_display.to_s) }
-              xml['mods'].roleTerm "creator"
+              self[:photographer_tesim]&.each { |creator_display| xml['mods'].namePart(creator_display.to_s) }
+              xml['mods'].roleTerm "Photographer"
             end
           end
           xml['mods'].titleInfo do
