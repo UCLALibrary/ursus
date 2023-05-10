@@ -642,6 +642,8 @@ p.intro {
         <xsl:text></xsl:text>
         <a class="link" href="?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier={oai:identifier}">oai_dc</a>
         <xsl:text></xsl:text>
+        <a class="link" href="?verb=GetRecord&amp;metadataPrefix=oai_mods&amp;identifier={oai:identifier}">oai_mods</a>
+        <xsl:text></xsl:text>
         <a class="link" href="?verb=ListMetadataFormats&amp;identifier={oai:identifier}">formats</a>
       </td>
     </tr>
@@ -738,6 +740,17 @@ p.intro {
   <div class="dcdata">
     <h3>Dublin Core Metadata (oai_dc)</h3>
     <table class="dcdata">
+      <xsl:apply-templates select="*" />
+    </table>
+  </div>
+</xsl:template>
+<!-- oai_mods record -->
+
+<xsl:template match="mods:mods"
+  xmlns:mods="https://www.loc.gov/standards/mods/v3/mods-3-8.xsd">
+  <div class="modsdata">
+    <h3>Mods Metadata (mods)</h3>
+    <table class="modsdata">
       <xsl:apply-templates select="*" />
     </table>
   </div>

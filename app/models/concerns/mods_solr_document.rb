@@ -15,7 +15,7 @@ module ModsSolrDocument
           self[:description_tesim]&.each { |abstract| xml['mods'].abstract abstract.to_s }
           self[:license_tesim]&.each { |access| xml['mods'].accessCondition( { type: "use and reproduction", displayLabel: "license" } ,access.to_s) }
           self[:local_rights_statement_ssim]&.each { |access| xml['mods'].accessCondition( { type: "local rights statements" } ,access.to_s) }
-          self[:human_readable_rights_statement_tesim]&.each { |access| xml['mods'].accessCondition( { type: "use and reproduction", displayLabel: "rightsUri" } ,access.to_s) 
+          self[:human_readable_rights_statement_tesim]&.each { |access| xml['mods'].accessCondition( { type: "use and reproduction", displayLabel: "rightsUri" } ,access.to_s) }
           self[:genre_tesim]&.each { |genre| xml['mods'].genre genre.to_s }
           self[:resp_statement_tesim]&.each { |note| xml['mods'].note({ type: 'statementofresponsibility', displayLabel: 'statementofresponsibility' }, note.to_s) }
           # self[:callNumber_ssim]&.each { |classification| xml['mods'].classification classification.to_s }
