@@ -5,9 +5,9 @@ module ModsSolrDocument
     extend ActiveSupport::Concern
   
     # rubocop:disable Metrics/BlockLength,Metrics/MethodLength,Metrics/PerceivedComplexity,Metrics/AbcSize/Metrics/
-    def to_oai_mods
+    def to_mods
       builder = Nokogiri::XML::Builder.new do |xml|
-        xml.mods('xmlns:mods' => 'http://www.loc.gov/mods/v3', 'version' => '3.8', 'xmlns:xlink' => 'http://www.w3.org/1999/xlink') do
+        xml['mods'].mods('xmlns:mods' => 'http://www.loc.gov/mods/v3', 'version' => '3.8', 'xmlns:xlink' => 'http://www.w3.org/1999/xlink') do
           # xml['mods'].identifier({ type: 'ladybird' }, "oid#{self[:id]}")
           # xml['mods'].identifier({ displayLabel: 'Accession Number', type: 'local' }, self[:accessionNumber_ssi]) if self[:accessionNumber_ssi].present?
           # xml['mods'].identifier({ displayLabel: 'Barcode', type: 'local' }, self[:orbisBarcode_ssi]) if self[:orbisBarcode_ssi].present?
