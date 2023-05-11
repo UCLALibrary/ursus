@@ -179,14 +179,14 @@ module ModsSolrDocument
         end
 
         if self[:rights_holder_tesim]
-            xml['mods'].access_condition({ 'type' => "use and reproduction" }) do
-                xml['copyrightMD'].copyright({ 'xsi:schemaLocation' => "http://www.cdlib.org/inside/diglib/copyrightMD http://www.cdlib.org/groups/rmg/docs/copyrightMD.xsd",
-                 'xmlns:copyrightMD' => "http://www.cdlib.org/inside/diglib/copyrightMD", 'copyright.status' => "copyrighted" }) do
-                    xml['copyrightMD'].services do
-                        self[:rights_holder_tesim]&.each { |value| xml['copyrightMD'].contact value.to_s }
-                    end    
-                end    
+          xml['mods'].access_condition('type' => "use and reproduction") do
+            xml['copyrightMD'].copyright('xsi:schemaLocation' => "http://www.cdlib.org/inside/diglib/copyrightMD http://www.cdlib.org/groups/rmg/docs/copyrightMD.xsd",
+                                         'xmlns:copyrightMD' => "http://www.cdlib.org/inside/diglib/copyrightMD", 'copyright.status' => "copyrighted") do
+              xml['copyrightMD'].services do
+                self[:rights_holder_tesim]&.each { |value| xml['copyrightMD'].contact value.to_s }
+              end
             end
+          end
         end
 
         xml['mods'].location do
