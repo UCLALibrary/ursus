@@ -191,14 +191,8 @@ module ModsSolrDocument
 
         xml['mods'].location do
           xml['mods'].url({ access: 'raw object', note: 'IIIFManifest' }, self[:iiif_manifest_url_ssi]) if self[:iiif_manifest_url_ssi].present?
-        end
-        xml['mods'].location do
           xml['mods'].url({ access: 'raw object', note: 'IIIFService' }, self[:access_copy_ssi]) if self[:access_copy_ssi].present?
-        end
-        xml['mods'].location do
           xml['mods'].url({ access: 'preview' }, self[:thumbnail_url_ss]) if self[:thumbnail_url_ss].present?
-        end
-        xml['mods'].location do
           self[:repository_tesim]&.each { |value| xml['mods'].physicalLocation({ type: 'repository', displayLabel: 'Repository' }, value.to_s) }
         end
         #           xml['mods'].location do
