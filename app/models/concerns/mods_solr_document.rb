@@ -12,7 +12,7 @@ module ModsSolrDocument
         # xml['mods'].identifier({ displayLabel: 'Accession Number', type: 'local' }, self[:accessionNumber_ssi]) if self[:accessionNumber_ssi].present?
         # xml['mods'].identifier({ displayLabel: 'Barcode', type: 'local' }, self[:orbisBarcode_ssi]) if self[:orbisBarcode_ssi].present?
         xml['mods'].identifier({ type: 'local' }, self[:local_identifier_ssm]) if self[:local_identifier_ssm].present?
-        self[:description_tesim]&.each { |abstract| xml['mods'].abstract abstract.to_s }
+        self[:note_tesim]&.each { |abstract| xml['mods'].abstract abstract.to_s }
         self[:license_tesim]&.each { |access| xml['mods'].accessCondition({ type: "use and reproduction", displayLabel: "license" }, access.to_s) }
         self[:local_rights_statement_ssim]&.each { |access| xml['mods'].accessCondition({ type: "local rights statements" }, access.to_s) }
         # self[:human_readable_rights_statement_tesim]&.each { |access| xml['mods'].accessCondition( { type: "use and reproduction", displayLabel: "rightsUri" } ,access.to_s) }
@@ -61,7 +61,7 @@ module ModsSolrDocument
         end
         if self[:medium_tesim]
           xml['mods'].physicalDescription do
-            self[:medium_tesim]&.each { |medium| xml['mods'].extent medium.to_s }
+            self[:medium_tesim]&.each { |medium| xml['mods'].form medium.to_s }
           end
         end
         # self[:findingAid_ssim]&.each { |finding_aid| xml['mods'].relatedItem({ displayLabel: 'Finding Aid', "xlink:href" => finding_aid }) }
@@ -166,6 +166,7 @@ module ModsSolrDocument
           xml['mods'].subject do
             self[:named_subject_tesim]&.each { |value| xml['mods'].name { xml['mods'].namePart value.to_s } }
             self[:subject_topic_tesim]&.each { |value| xml['mods'].topic value.to_s }
+            self[:subject_temporal_tesim]&.each { |value| xml['mods'].temporal value.to_s }
             self[:subject_cultural_object_tesim]&.each { |value| xml['mods'].topic({ type: 'culturalObject' }, value.to_s) }
             self[:subject_domain_topic_tesim]&.each { |value| xml['mods'].topic({ type: 'domainTopic' }, value.to_s) }
             self[:subject_geographic_tesim]&.each { |value| xml['mods']. geographic value.to_s }
