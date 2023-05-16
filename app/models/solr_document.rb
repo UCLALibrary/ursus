@@ -4,6 +4,7 @@ class SolrDocument
   include BlacklightOaiProvider::SolrDocument
 
   include Blacklight::Gallery::OpenseadragonSolrDocument
+  include ModsSolrDocument
 
   def self.add_field_semantics(label, solr_name, schema = nil)
     label = "#{schema}:#{label}" if schema

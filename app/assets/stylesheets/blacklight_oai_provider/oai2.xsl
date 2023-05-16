@@ -642,6 +642,8 @@ p.intro {
         <xsl:text></xsl:text>
         <a class="link" href="?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier={oai:identifier}">oai_dc</a>
         <xsl:text></xsl:text>
+        <a class="link" href="?verb=GetRecord&amp;metadataPrefix=mods&amp;identifier={oai:identifier}">mods</a>
+        <xsl:text></xsl:text>
         <a class="link" href="?verb=ListMetadataFormats&amp;identifier={oai:identifier}">formats</a>
       </td>
     </tr>
@@ -742,6 +744,16 @@ p.intro {
     </table>
   </div>
 </xsl:template>
+<!-- oai_mods record -->
+<xsl:template match="mods:mods" xmlns:mods="http://www.loc.gov/mods/v3">
+<div class="modsdata">
+    <h3>Mods Metadata (mods)</h3>
+    <div class="xmlSource">
+    <xsl:apply-templates select="." mode='xmlMarkup' />
+  </div>
+  </div>
+</xsl:template>
+
 
 <!-- oai_dpla record -->
 
