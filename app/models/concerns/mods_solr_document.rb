@@ -14,7 +14,7 @@ module ModsSolrDocument
         xml['mods'].identifier({ type: 'local' }, self[:local_identifier_ssm]) if self[:local_identifier_ssm].present?
         self[:note_tesim]&.each { |abstract| xml['mods'].abstract abstract.to_s }
         self[:license_tesim]&.each { |access| xml['mods'].accessCondition({ type: "use and reproduction", displayLabel: "license" }, access.to_s) }
-        self[:local_rights_statement_ssim]&.each { |access| xml['mods'].accessCondition({ type: "local rights statements" }, access.to_s) }
+        self[:local_rights_statement_ssm]&.each { |access| xml['mods'].accessCondition({ type: "local rights statements" }, access.to_s) }
         # self[:human_readable_rights_statement_tesim]&.each { |access| xml['mods'].accessCondition( { type: "use and reproduction", displayLabel: "rightsUri" } ,access.to_s) }
         self[:genre_tesim]&.each { |genre| xml['mods'].genre genre.to_s }
         self[:funding_note_tesim]&.each { |note| xml['mods'].note({ type: 'funding', displayLabel: 'funding' }, note.to_s) }

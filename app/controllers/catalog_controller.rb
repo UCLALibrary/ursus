@@ -271,7 +271,7 @@ class CatalogController < ApplicationController
 
     # Access Conditions
     config.add_show_field 'human_readable_rights_statement_tesim', label: 'Rights statement'
-    config.add_show_field 'local_rights_statement_ssim', label: 'Local rights statement'
+    config.add_show_field 'local_rights_statement_ssm', label: 'Local rights statement'
     config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation'
     config.add_show_field 'rights_holder_tesim', label: 'Rights holder'
     config.add_show_field 'services_contact_ssm', label: 'Rights contact'

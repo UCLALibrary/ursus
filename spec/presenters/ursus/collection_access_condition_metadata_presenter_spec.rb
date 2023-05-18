@@ -5,7 +5,7 @@ RSpec.describe Ursus::CollectionAccessConditionMetadataPresenter do
   let(:solr_doc) do
     {
       'human_readable_rights_statement_tesim' => 'Rights statement',
-      'local_rights_statement_ssim' => 'Local Rights statement',
+      'local_rights_statement_ssm' => 'Local Rights statement',
       'services_contact_ssm' => 'Rights Contact',
       'rights_holder_tesim' => 'Rights Holder',
       'rights_country_tesim' => 'Rights (country of creation)',
@@ -16,7 +16,7 @@ RSpec.describe Ursus::CollectionAccessConditionMetadataPresenter do
   let(:solr_doc_missing_items) do
     {
       'human_readable_rights_statement_tesim' => 'Rights statement',
-      'local_rights_statement_ssim' => 'Local Rights statement',
+      'local_rights_statement_ssm' => 'Local Rights statement',
       'services_contact_ssm' => 'Rights Contact'
     }
   end
@@ -51,7 +51,7 @@ RSpec.describe Ursus::CollectionAccessConditionMetadataPresenter do
       end
 
       it 'returns the Local Rights Statement key' do
-        expect(config['local_rights_statement_ssim'].to_s).to eq('Local Rights statement')
+        expect(config['local_rights_statement_ssm'].to_s).to eq('Local Rights statement')
       end
     end
 
