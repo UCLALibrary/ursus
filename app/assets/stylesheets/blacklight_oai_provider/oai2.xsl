@@ -555,7 +555,12 @@ p.intro {
       <tr>
         <td class="key">setName</td>
         <td class="value">
-          <xsl:value-of select="oai:setName"/>
+          <xsl:choose>
+            <xsl:when test="oai:setName = 'Record not found Blacklight::Exceptions::RecordNotFound'"> <xsl:value-of select="oai:setSpec"/> </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="oai:setName"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </td>
       </tr>
       <xsl:if test="oai:setDescription">
@@ -642,7 +647,7 @@ p.intro {
         <xsl:text></xsl:text>
         <a class="link" href="?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier={oai:identifier}">oai_dc</a>
         <xsl:text></xsl:text>
-        <a class="link" href="?verb=GetRecord&amp;metadataPrefix=mods&amp;identifier={oai:identifier}">mods</a>
+        <a class="link" href="?verb=GetRecord&amp;metadataPrefix=mods_arce&amp;identifier={oai:identifier}">mods_arce</a>
         <xsl:text></xsl:text>
         <a class="link" href="?verb=ListMetadataFormats&amp;identifier={oai:identifier}">formats</a>
       </td>

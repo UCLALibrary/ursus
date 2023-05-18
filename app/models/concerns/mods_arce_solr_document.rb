@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 # rubocop:disable Metrics/ModuleLength,Metrics/CyclomaticComplexity
-module ModsSolrDocument
+module ModsArceSolrDocument
   extend ActiveSupport::Concern
 
   # rubocop:disable Metrics/BlockLength,Metrics/MethodLength,Metrics/PerceivedComplexity,Metrics/AbcSize/Metrics/
-  def to_mods
+  def to_mods_arce
     builder = Nokogiri::XML::Builder.new do |xml|
       xml['mods'].mods('xmlns:mods' => 'http://www.loc.gov/mods/v3', 'version' => '3.8', 'xmlns:xlink' => 'http://www.w3.org/1999/xlink') do
         # xml['mods'].identifier({ type: 'ladybird' }, "oid#{self[:id]}")
