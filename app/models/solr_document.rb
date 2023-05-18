@@ -83,8 +83,11 @@ class SolrDocument
   end
 
   def sets
-    record = self
-    Ucla::Oai::CollectionSolrSet.new("member_of_collection_ids_ssim:#{record[:member_of_collection_ids_ssim][0]}") unless record[:member_of_collection_ids_ssim].nil?
+    Ucla::Oai::CollectionSolrSet.fields = [ # ability to define ListSets, optional, default: nil
+      { solr_field: 'member_of_collection_ids_ssim' },
+      { solr_field: 'oai_set_ssim' }
+    ]
+    Ucla::Oai::CollectionSolrSet.sets_for(self)
   end
 
   # populates OAI feed

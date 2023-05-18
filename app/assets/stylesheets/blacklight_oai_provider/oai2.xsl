@@ -647,7 +647,9 @@ p.intro {
         <xsl:text></xsl:text>
         <a class="link" href="?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier={oai:identifier}">oai_dc</a>
         <xsl:text></xsl:text>
-        <a class="link" href="?verb=GetRecord&amp;metadataPrefix=mods_arce&amp;identifier={oai:identifier}">mods_arce</a>
+        <xsl:if test="oai:setSpec = 'oai_set_ssim:arce'">
+          <a class="link" href="?verb=GetRecord&amp;metadataPrefix=mods_arce&amp;identifier={oai:identifier}">mods_arce</a>
+        </xsl:if>
         <xsl:text></xsl:text>
         <a class="link" href="?verb=ListMetadataFormats&amp;identifier={oai:identifier}">formats</a>
       </td>

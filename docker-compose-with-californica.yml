@@ -3,6 +3,8 @@ version: "3.6"
 services:
   web:
     build: .
+    stdin_open: true
+    tty: true
     hostname: ursus
     depends_on:
       - db
