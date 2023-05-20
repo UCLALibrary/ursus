@@ -11,8 +11,8 @@ describe('OAI-PMH Requests', () => {
   it('ListRecords Request page', () => {
     cy.request('/catalog/oai?verb=ListRecords&metadataPrefix=oai_dc').its('body').should('include', '<ListRecords><record><header><identifier>oai:library.ucla.edu:');
   });
-  it('ListRecords Request page with mods', () => {
-    cy.request('/catalog/oai?verb=ListRecords&metadataPrefix=mods').its('body').should('include', '<ListRecords><record><header><identifier>oai:library.ucla.edu:');
+  it('ListRecords Request page with mods arce', () => {
+    cy.request('/catalog/oai?verb=ListRecords&metadataPrefix=mods_arce').its('body').should('include', '<ListRecords><record><header><identifier>oai:library.ucla.edu:');
   });
   it('ListIdentifiers Request page', () => {
     cy.request('/catalog/oai?verb=ListIdentifiers&metadataPrefix=oai_dc').its('body').should('include', '<ListIdentifiers><header><identifier>oai:library.ucla.edu:');

@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 # rubocop:disable Metrics/ModuleLength,Metrics/CyclomaticComplexity
-module ModsSolrDocument
+module ModsArceSolrDocument
   extend ActiveSupport::Concern
 
   # rubocop:disable Metrics/BlockLength,Metrics/MethodLength,Metrics/PerceivedComplexity,Metrics/AbcSize/Metrics/
-  def to_mods
+  def to_mods_arce
     builder = Nokogiri::XML::Builder.new do |xml|
       xml['mods'].mods('xmlns:mods' => 'http://www.loc.gov/mods/v3', 'version' => '3.8', 'xmlns:xlink' => 'http://www.w3.org/1999/xlink') do
         # xml['mods'].identifier({ type: 'ladybird' }, "oid#{self[:id]}")
         # xml['mods'].identifier({ displayLabel: 'Accession Number', type: 'local' }, self[:accessionNumber_ssi]) if self[:accessionNumber_ssi].present?
         # xml['mods'].identifier({ displayLabel: 'Barcode', type: 'local' }, self[:orbisBarcode_ssi]) if self[:orbisBarcode_ssi].present?
-        xml['mods'].identifier({ type: 'local' }, self[:local_identifier_ssm]) if self[:local_identifier_ssm].present?
+        self[:local_identifier_ssm]&.each { |local_identifier| xml['mods'].identifier({ type: 'local' }, local_identifier.to_s) } if self[:local_identifier_ssm].present?
         self[:note_tesim]&.each { |abstract| xml['mods'].abstract abstract.to_s }
         self[:license_tesim]&.each { |access| xml['mods'].accessCondition({ type: "use and reproduction", displayLabel: "license" }, access.to_s) }
         self[:local_rights_statement_ssm]&.each { |access| xml['mods'].accessCondition({ type: "local rights statements" }, access.to_s) }
