@@ -35,7 +35,8 @@ class CatalogController < ApplicationController
         limit: 25, # number of records returned with each request, default: 15
         set_fields: [ # ability to define ListSets, optional, default: nil
           # { label: 'collections', solr_field: 'member_of_collections_ssim' },
-          { solr_field: 'member_of_collection_ids_ssim' }
+          { solr_field: 'member_of_collection_ids_ssim' },
+          { solr_field: 'oai_set_ssim' }
         ]
       }
     }
@@ -163,6 +164,8 @@ class CatalogController < ApplicationController
     # Disclaimer
     config.add_show_field 'content_disclaimer_ssm', label: 'Content disclaimer'
 
+    # List set
+    config.add_show_field 'oai_set_ssim'
     # Item Overview
     config.add_show_field 'shelfmark_ssi', label: 'Shelfmark' # Sinai only
     config.add_show_field 'descriptive_title_tesim', label: 'Descriptive title' # Sinai only
