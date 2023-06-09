@@ -5,6 +5,7 @@ class SearchFieldService
 
   SEARCH_FIELDS = [
     'ark_ssi',
+    'artist_tesim',
     'alternative_title_tesim',
     'architect_tesim',
     'author_tesim',
@@ -39,6 +40,7 @@ class SearchFieldService
     'page_layout_ssim',
     'photographer_tesim',
     'place_of_origin_tesim',
+    'producer_tesim',
     'provenance_tesim',
     'publisher_tesim',
     'scribe_tesim',
