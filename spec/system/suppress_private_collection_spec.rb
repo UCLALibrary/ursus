@@ -19,7 +19,7 @@ RSpec.describe 'Search results page', type: :system, js: true do
       accessControl_ssim: ['7b1af782-af1f-46a6-9bd2-b53be0f1bb68'],
       title_tesim: ['Zen and the Art of Motorcycle Maintenance: An Inquiry Into Values'],
       collection_type_gid_ssim: ['gid://californica/hyrax-collectiontype/1'],
-      local_identifier_ssm: ['Collection 686'],
+      local_identifier_ssim: ['Collection 686'],
       normalized_date_tesim: ['1937/1983'],
       photographer_tesim: ['Bennett, Walter E. (Walter Edward), 1921-1995'],
       repository_tesim: ['University of California, Los Angeles. Library Special Collections'],
