@@ -11,7 +11,7 @@ module ModsArceSolrDocument
         # xml['mods'].identifier({ type: 'ladybird' }, "oid#{self[:id]}")
         # xml['mods'].identifier({ displayLabel: 'Accession Number', type: 'local' }, self[:accessionNumber_ssi]) if self[:accessionNumber_ssi].present?
         # xml['mods'].identifier({ displayLabel: 'Barcode', type: 'local' }, self[:orbisBarcode_ssi]) if self[:orbisBarcode_ssi].present?
-        self[:local_identifier_ssm]&.each { |local_identifier| xml['mods'].identifier({ type: 'local' }, local_identifier.to_s) } if self[:local_identifier_ssm].present?
+        self[:local_identifier_ssim]&.each { |local_identifier| xml['mods'].identifier({ type: 'local' }, local_identifier.to_s) } if self[:local_identifier_ssim].present?
         self[:note_tesim]&.each { |abstract| xml['mods'].abstract abstract.to_s }
         self[:license_tesim]&.each { |access| xml['mods'].accessCondition({ type: "use and reproduction", displayLabel: "license" }, access.to_s) }
         self[:local_rights_statement_ssm]&.each { |access| xml['mods'].accessCondition({ type: "local rights statements" }, access.to_s) }
