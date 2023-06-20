@@ -30,7 +30,7 @@ class SearchFieldService
     'illustrations_note_tesim',
     'inscription_tesim',
     'incipit_tesim',
-    'local_identifier_ssim',
+    'local_identifier_ssm',
     'location_tesim',
     'lyricist_tesim',
     'medium_tesim',
