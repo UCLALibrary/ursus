@@ -264,7 +264,7 @@ class CatalogController < ApplicationController
     # SECONDARY
     # Find This Item
     config.add_show_field 'repository_tesim', label: 'Repository', link_to_facet: 'repository_sim'
-    config.add_show_field 'local_identifier_ssim', label: 'Local identifier'
+    config.add_show_field 'local_identifier_ssm', label: 'Local identifier'
     config.add_show_field 'oclc_ssi', label: 'OCLC Number'
     config.add_show_field 'iiif_manifest_url_ssi', label: 'Manifest url'
     config.add_show_field 'finding_aid_url_ssm', label: 'Finding aid url'
