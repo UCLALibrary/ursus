@@ -1,0 +1,70 @@
+<script type="text/javascript">
+   let hideButton = false
+   function removeAlertFunction() {
+     document.getElementById('alertBar').style.display = 'none';
+     document.cookie="message_shown=true";
+   }
+   function showFunction() {
+      const collection = document.getElementsByClassName("alert-bar__toggle-text");
+      const textMain = document.getElementsByClassName("alert-bar__text-main");
+      textMain[0].style.borderBottom = "none";
+      const buttonShow = document.getElementsByClassName("btn-ursus--show-toggle");
+      buttonShow[0].style.display = "none";
+      const buttonHide = document.getElementsByClassName("btn-ursus--hide-toggle");
+      buttonHide[0].style.display = "block";
+      collection[0].style.display = "block";
+   }
+   function hideFunction() {
+      const buttonShow = document.getElementsByClassName("btn-ursus--show-toggle");
+      buttonShow[0].style.display = "block";
+      const buttonHide = document.getElementsByClassName("btn-ursus--hide-toggle");
+      buttonHide[0].style.display = "none";
+      const collection = document.getElementsByClassName("alert-bar__toggle-text");
+      collection[0].style.display = "none";
+      const textMain = document.getElementsByClassName("alert-bar__text-main");
+      textMain[0].style.borderBottom = "1px solid #333";
+   }
+</script>
+<div
+   class="alert-bar alert-bar--ursus"
+   id="alertBar">
+
+      <div class="alert-bar__wrapper alert-bar__wrapper--ursus alert-bar__text-main">
+         <div class="alert-bar__row">   
+            <span><%= image_tag('icon-alert-circle.svg') %></span>
+            <h3 class="alert-title alert-title--ursus">
+               <%= flash[:notice] %>
+            </h3>
+         </div>
+         <div class="alert-bar__row">
+            <button type="button" class="btn-base btn-base-lg btn-outline-ursus--light" onclick="removeAlertFunction()">
+               Dismiss
+            </button>
+            <button type="button" class="btn-base btn-base-lg btn-ursus--gold btn-ursus--show-toggle" onclick="showFunction()">
+               Show Instructions
+            </button>
+            <button type="button" class="btn-base btn-base-lg btn-ursus--gold btn-ursus--hide-toggle" onclick="hideFunction()">
+               Hide Instructions
+            </button>
+         </div>
+      </div>
+
+      <div class="alert-bar__wrapper alert-bar__wrapper--ursus alert-bar__toggle-text">
+         <div class="alert-bar__divider"></div>
+            <ul class="alert-bar__list">
+               <li>
+                  Enable pop-ups (i.e., add the viewer site to the list in Settings &gt;        Privacy &amp; Security &gt; Permissions &gt; Block pop-up-windows &gt;        Exceptions...)
+                  <ul class="alert-bar__sub-list">
+                     <li><em>Reason:</em> IIIF Authentication 1.0 specifies that viewers must open a            new window as part of this particular authentication flow, which is not            possible unless you allow pop-ups from our site          </li>
+                  </ul>
+               </li>
+               <li>
+                  Disable "Enhanced Tracking Protection"
+                  <ul class="alert-bar__sub-list">
+                     <li> <em>Reason:</em> IIIF Authentication 1.0 specifies that viewers must set a            IIIF access cookie during this particular authentication flow, which is not            possible unless Firefox will allow us to use a cookie when you are using our site
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+      </div>
+</div>
