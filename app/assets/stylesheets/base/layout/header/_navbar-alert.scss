@@ -83,9 +83,9 @@
 
 .alert-bar__row {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
   align-content: center;
   flex: 1 1 auto;
 }

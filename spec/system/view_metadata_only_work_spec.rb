@@ -18,6 +18,7 @@ RSpec.feature "View a metadata-only Work", js: true do
       id: discovery_work_solr_id,
       ark_ssi: discovery_work_ark,
       discover_access_group_ssim: ["public"],
+      read_access_group_ssim: ["public"],
       edit_access_group_ssim: ["admin"],
       has_model_ssim: ['Work'],
       iiif_manifest_url_ssi: 'https://wellcomelibrary.org/iiif/b18035723/manifest',

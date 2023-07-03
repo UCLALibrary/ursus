@@ -408,7 +408,7 @@ class CatalogController < ApplicationController
   # 'discovery'-level permission.
   def enforce_show_permissions(_opts = {})
     permissions = current_ability.permissions_doc(solr_id)
-    if permissions['read_access_group_ssim'].include?('registered') || can?(:discover, permissions)
+    if (permissions['read_access_group_ssim'].present? && permissions['read_access_group_ssim'].include?('registered')) || can?(:discover, permissions)
       permissions
     else
       raise Blacklight::AccessControls::AccessDenied.new('You do not have sufficient access privileges to view this document, which has been marked private.', :discover, params[:id])
