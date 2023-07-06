@@ -1,4 +1,4 @@
-<% if can?(:read, document) %>
+<% if can?(:read, document) || document[:visibility_ssi] == "authenticated" %>
     <div class='media-viewer-container'>
       <% iiif_service = IiifService.new %>
       <iframe
