@@ -16,6 +16,7 @@ RSpec.feature "View a work you aren't authorized to see", js: true do
       id: solr_id,
       ark_ssi: ark,
       has_model_ssim: ['Work'],
+      visibility_ssi: 'restricted',
       title_tesim: ['Restricted Work']
     }
   end
