@@ -1,3 +1,19 @@
 .alert-bar--ursus {
-  background-color: $ucla-gold;
+  background-color: $white;
+  border: 1px solid $gray-10;
+  border-top: 3px solid $ucla-gold;
 }
+
+.alert-title--ursus {
+  font-size: $text-18;
+  font-weight: $font-medium;
+  line-height: 24px;
+  letter-spacing: 0;
+ 
+}
+
+.alert-bar__wrapper--ursus {
+  padding: 20px 10px;
+  
+}
+
