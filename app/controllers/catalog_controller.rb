@@ -408,10 +408,11 @@ class CatalogController < ApplicationController
   # 'discovery'-level permission.
   def enforce_show_permissions(_opts = {})
     permissions = current_ability.permissions_doc(solr_id)
-    unless can? :discover, permissions
+    if (permissions['read_access_group_ssim'].present? && permissions['read_access_group_ssim'].include?('registered')) || can?(:discover, permissions)
+      permissions
+    else
       raise Blacklight::AccessControls::AccessDenied.new('You do not have sufficient access privileges to view this document, which has been marked private.', :discover, params[:id])
     end
-    permissions
   end
 
   # ------------------------------------------------------
@@ -419,7 +420,11 @@ class CatalogController < ApplicationController
   # override this method from Blacklight::Catalog.rb to find the collection count
   # https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb -- line: 46
   # https://www.rubydoc.info/github/projectblacklight/blacklight/Blacklight/Catalog
+  # rubocop:disable Metrics/CyclomaticComplexity
   def show
+    if cookies[:message_shown].nil? && request.env['HTTP_USER_AGENT'] =~ /Firefox/
+      flash.now[:notice] = "To view the high-quality images for this item in  Firefox, you'll need to change some browser settings"
+    end
     deprecated_response, @document = search_service.fetch(solr_id)
     @response = ActiveSupport::Deprecation::DeprecatedObjectProxy.new(deprecated_response, 'The @response instance variable is deprecated; use @document.response instead.')
     respond_to do |format|
