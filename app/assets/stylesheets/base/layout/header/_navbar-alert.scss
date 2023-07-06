@@ -11,8 +11,10 @@
 
 .alert-bar__wrapper {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: $text-14;
+  align-content: center;
 }
 
 .alert-bar__text {
@@ -47,4 +49,54 @@
 
 .alert-bar__button {
   padding: 5px;
+}
+
+.alert-bar__text-main {
+  border-bottom: 1px solid $gray-10;
+  display: flex;
+  flex-direction: row;
+
+  
+  @media (max-width: 923px) {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  @media (max-width: 575px) {
+    align-items: flex-start;
+    
+  }
+  
+  
+}
+
+.alert-bar__toggle-text {
+  display: none;
+}
+
+.alert-bar__list {
+  margin: 0 20px 0 80px;
+  font-size: $text-16;
+  font-weight: $font-medium;
+  line-height: 24px;
+  list-style-type: disc;
+}
+
+.alert-bar__divider {
+  margin: 0 auto 15px;
+  width: 95%;
+  border-bottom: 2px solid $gray-10;
+}
+
+.alert-bar__sub-list {
+  margin: 0 10px 0 30px;
+  list-style-type: disc;
+}
+
+.alert-bar__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  gap: 15px;
 }
