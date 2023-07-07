@@ -7,7 +7,7 @@ RSpec.describe Ursus::TaglineMetadataPresenter do
       'ark_ssi' => 'test',
       'title_tesim' => 'Test record',
       'repository_tesim' => 'Test Repository',
-      'local_identifier_ssm' => '890_abc',
+      'local_identifier_ssim' => '890_abc',
       'oclc_ssi' => 'abc123_oclc',
       'dlcs_collection_name_ssm' => 'Collection 1',
       'resource_type_tesim' => 'still image'
@@ -19,7 +19,7 @@ RSpec.describe Ursus::TaglineMetadataPresenter do
       'ark_ssi' => 'test',
       'title_tesim' => 'Test record',
       'repository_tesim' => 'Test Repository',
-      'local_identifier_ssm' => '890_abc',
+      'local_identifier_ssim' => '890_abc',
       'oclc_ssi' => 'abc123_oclc',
       'dlcs_collection_name_ssm' => 'Collection 1',
       'resource_type_tesim' => 'still image',

@@ -21,7 +21,7 @@ RSpec.describe 'View a Collection', type: :system, js: true do
       accessControl_ssim: ['7b1af782-af1f-46a6-9bd2-b53be0f1bb68'],
       title_tesim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
       collection_type_gid_ssim: ['gid://californica/hyrax-collectiontype/1'],
-      local_identifier_ssm: ['Collection 686'],
+      local_identifier_ssim: ['Collection 686'],
       normalized_date_tesim: ['1937/1983'],
       photographer_tesim: ['Bennett, Walter E. (Walter Edward), 1921-1995'],
       repository_tesim: ['University of California, Los Angeles. Library Special Collections'],
@@ -71,7 +71,7 @@ RSpec.describe 'View a Collection', type: :system, js: true do
     # expect(page).to have_selector('.primary-metadata')
     # expect(page).to have_selector('.secondary-metadata')
     # expect(page.find('div.secondary-metadata dd.blacklight-services_contact_ssm').text).to eq 'UCLA'
-    # expect(page.find('div.secondary-metadata dd.blacklight-local_identifier_ssm').text).to eq 'Collection 686'
+    # expect(page.find('div.secondary-metadata dd.blacklight-local_identifier_ssim').text).to eq 'Collection 686'
 
     expect(page).to have_content 'Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'
     expect(page).to have_content 'LOCAL IDENTIFIER  Collection 686'

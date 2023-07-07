@@ -1,5 +1,5 @@
 repository_tesim: "Repository"
-local_identifier_ssm: "Local identifier"
+local_identifier_ssim: "Local identifier"
 opac_url_tesim: "Opac url"
 oclc_ssi: "OCLC Number"
 ark_ssi: "ARK"

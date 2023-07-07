@@ -5,7 +5,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
   let(:solr_doc) do
     {
       'repository_tesim' => 'Repository',
-      'local_identifier_ssm' => 'Local identifier',
+      'local_identifier_ssim' => 'Local identifier',
       'opac_url_tesim' => 'Opac url',
       'oclc_ssi' => 'OCLC Number',
       'ark_ssi' => 'ARK'
@@ -14,7 +14,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
   let(:solr_doc_missing_items) do
     {
       'repository_tesim' => 'Repository',
-      'local_identifier_ssm' => 'Local identifier',
+      'local_identifier_ssim' => 'Local identifier',
       'oclc_ssi' => 'OCLC Number'
     }
   end
@@ -29,7 +29,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       end
 
       it 'returns the Local identifier Key' do
-        expect(config['local_identifier_ssm'].to_s).to eq('Local identifier')
+        expect(config['local_identifier_ssim'].to_s).to eq('Local identifier')
       end
 
       it 'returns the Opac url' do
