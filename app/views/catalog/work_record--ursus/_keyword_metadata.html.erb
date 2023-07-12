@@ -6,31 +6,30 @@
       <h4 class='metadata-block__title'>Keywords</h4>
       <dl class='metadata-block__group'>
         <% keyword.each do |field_name, field| %>
-        <% if field_name != "subject_tesim" && field_name != "subject_topic_tesim" %>
-          <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
-            <!-- KEY -->
-            <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
-            <!-- VALUE -->
-              <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
-                <%= doc_presenter.field_value field %>
-              </dd>
-          </dt>
-
+          <% if field_name != "subject_tesim" && field_name != "subject_topic_tesim" %>
+            <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
+              <!-- KEY -->
+              <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
+              <!-- VALUE -->
+                <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
+                  <%= doc_presenter.field_value field %>
+                </dd>
+            </dt>
+          <% end %>
         <% end %>
         <% if (@document[:subject_tesim].present? && !@document[:subject_tesim].empty?) || (document[:subject_topic_tesim].present? && !@document[:subject_topic_tesim].empty?) %>
-        <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
-        <!-- KEY -->
-        Subjects
-        <!-- VALUE -->
-        <% keyword.each do |field_name, field| %>
-
-          <% if field_name == "subject_tesim" || field_name == "subject_topic_tesim" %>
-          <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
-            <%= doc_presenter.field_value field %>
-          </dd>
-          <% end %>
-          <% end %>
-      </dt>
+          <dt class="blacklight-subjects metadata-block__label-key">
+          <!-- KEY -->
+          Subjects
+          <!-- VALUE -->
+            <% keyword.each do |field_name, field| %>
+              <% if field_name == "subject_tesim" || field_name == "subject_topic_tesim" %>
+                <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
+                  <%= doc_presenter.field_value field %>
+                </dd>
+              <% end %>
+            <% end %>
+          </dt>
 
         <% end %>
       </dl>
