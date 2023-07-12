@@ -4,27 +4,35 @@
 <% if keyword.length > 0 %>
   <div class='metadata-block'>
     <h2 class='metadata-block__title'>Keywords</h2>
+    <div class='metadata-block__group--collection-pg'>
     <% keyword.each do |field_name, field| %>
 
-      <div class='metadata-block__group--collection-pg'>
-
-       <% if field_name == "subject_tesim" || field_name == "subject_topic_tesim" %>
-          <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
-            <%= (render_document_show_field_label document, field: field_name).tr(':', '') if field_name == "subject_tesim" %>
-          </div>
-          <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
-            <%= doc_presenter.field_value field %>
-          </div>
-        <% else %>
+       <% if field_name != "subject_tesim" && field_name != "subject_topic_tesim" %>
           <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
             <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
           </div>
           <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
             <%= doc_presenter.field_value field %>
           </div>
+        <% else %>
+
         <% end %>
-      </div>
+
     <% end %>
+    <% if (@document[:subject_tesim].present? && !@document[:subject_tesim].empty?) || (document[:subject_topic_tesim].present? && !@document[:subject_topic_tesim].empty?) %>
+    <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
+    Subjects
+   </div>
+   <% keyword.each do |field_name, field| %>
+
+    <% if field_name == "subject_tesim" || field_name == "subject_topic_tesim" %>
+   <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-value">
+     <%= doc_presenter.field_value field %>
+   </div>
+    <% end %>
+    <% end %>
+    <% end %>
+    </div>
     <hr class='divider divider--ursus'>
   </div>
 <% end %>
