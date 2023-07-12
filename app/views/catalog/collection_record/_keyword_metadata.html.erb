@@ -20,7 +20,7 @@
 
     <% end %>
     <% if (@document[:subject_tesim].present? && !@document[:subject_tesim].empty?) || (document[:subject_topic_tesim].present? && !@document[:subject_topic_tesim].empty?) %>
-    <div class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
+    <div class="blacklight-subjects metadata-block__label-key">
     Subjects
    </div>
    <% keyword.each do |field_name, field| %>
