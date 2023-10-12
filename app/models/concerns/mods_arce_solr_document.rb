@@ -165,7 +165,7 @@ module ModsArceSolrDocument
         if topic_geographic.any? { |topic_geographic_key| self[topic_geographic_key].present? }
           xml['mods'].subject do
             self[:named_subject_tesim]&.each { |value| xml['mods'].name { xml['mods'].namePart value.to_s } }
-            filtered_topic_array =  self[:subject_topic_tesim]&.reject { |item| self[:subject_cultural_object_tesim]&.include?(item) }
+            filtered_topic_array = self[:subject_topic_tesim]&.reject { |item| self[:subject_cultural_object_tesim]&.include?(item) }
             filtered_topic_array&.each { |value| xml['mods'].topic value.to_s }
             self[:subject_temporal_tesim]&.each { |value| xml['mods'].temporal value.to_s }
             self[:subject_cultural_object_tesim]&.each { |value| xml['mods'].topic({ type: 'culturalObject' }, value.to_s) }
