@@ -935,7 +935,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
         <xsl:value-of select='name(.)' />
       </span>
   <xsl:apply-templates select="@*"
-        mode='xmlMarkup' />&gt;<xsl:apply-templates select="node()" mode='xmlMarkup' /> &lt;/<span
+        mode='xmlMarkup' />hello&gt;hello<xsl:apply-templates select="node()" mode='xmlMarkup' />
+    &lt;/<span
         class="xmlTagName">
         <xsl:value-of select='name(.)' />
       </span>&gt; </div>
@@ -953,7 +954,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <xsl:value-of select='name()' />
     </span>="<span class="xmlAttrValue">
       <xsl:value-of select='.' />
-    </span>" </xsl:template>
+    </span>"hello</xsl:template>
 
   <xsl:template name="xmlstyle"> .xmlSource { font-size: 70%; border: solid #c0c0a0 1px;
     background-color: #ffffe0; padding: 2em 2em 2em 0em; } .xmlBlock { padding-left: 2em; }
