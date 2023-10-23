@@ -8,7 +8,7 @@ class CustomJoin < Blacklight::Rendering::AbstractStep
       next_step(values.map { |x| html_escape(x) })
     else
       joiner = (config.join_with || '<br>'.html_safe)
-      next_step(safe_join(values, joiner))
+      next_step(safe_join(values.map(&:html_safe), joiner))
     end
   end
 
