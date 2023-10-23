@@ -4,17 +4,18 @@ require 'rails_helper'
 RSpec.describe Ursus::NoteMetadataPresenter do
   let(:solr_doc) do
     {
-      'caption_tesim' => 'Caption',
       'summary_tesim' => 'Summary',
       'description_tesim' => 'Description',
-      'provenance_tesim' => 'Provenance',
+      'caption_tesim' => 'Caption',
       'contents_note_tesim' => 'Contents note',
       'colophon_tesim' => 'Colophon',
-      'incipit_tesim' => 'Incipit',
-      'explicit_tesim' => 'Explicit',
+      'provenance_tesim' => 'Provenance',
       'note_tesim' => 'Note',
+      'related_to_ssm' => 'Related items',
       'resp_statement_tesim' => 'Statement of Responsibility',
-      'citation_source_tesim' => 'References'
+      'citation_source_tesim' => 'References',
+      'incipit_tesim' => 'Incipit',
+      'explicit_tesim' => 'Explicit'
     }
   end
   let(:solr_doc_missing_items) do
@@ -30,10 +31,6 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
   context 'with a solr document containing overview metadata' do
     describe 'config' do
-      it 'returns the Caption Key' do
-        expect(config['caption_tesim'].to_s).to eq('Caption')
-      end
-
       it 'returns the Summary Key' do
         expect(config['summary_tesim'].to_s).to eq('Summary')
       end
@@ -42,8 +39,8 @@ RSpec.describe Ursus::NoteMetadataPresenter do
         expect(config['description_tesim'].to_s).to eq('Description')
       end
 
-      it 'returns the Provenance Key' do
-        expect(config['provenance_tesim'].to_s).to eq('Provenance')
+      it 'returns the Caption Key' do
+        expect(config['caption_tesim'].to_s).to eq('Caption')
       end
 
       it 'returns the Contents note Key' do
@@ -54,16 +51,16 @@ RSpec.describe Ursus::NoteMetadataPresenter do
         expect(config['colophon_tesim'].to_s).to eq('Colophon')
       end
 
-      it 'returns the Incipit Key' do
-        expect(config['incipit_tesim'].to_s).to eq('Incipit')
-      end
-
-      it 'returns the Explicit Key' do
-        expect(config['explicit_tesim'].to_s).to eq('Explicit')
+      it 'returns the Provenance Key' do
+        expect(config['provenance_tesim'].to_s).to eq('Provenance')
       end
 
       it 'returns the Note Key' do
         expect(config['note_tesim'].to_s).to eq('Note')
+      end
+
+      it 'returns the Related items Key' do
+        expect(config['related_to_ssm'].to_s).to eq('Related items')
       end
 
       it 'returns the Statement of Responsibility Key' do
@@ -73,6 +70,14 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       it 'returns the References Key' do
         expect(config['citation_source_tesim'].to_s).to eq('References')
       end
+
+      it 'returns the Incipit Key' do
+        expect(config['incipit_tesim'].to_s).to eq('Incipit')
+      end
+
+      it 'returns the Explicit Key' do
+        expect(config['explicit_tesim'].to_s).to eq('Explicit')
+      end
     end
 
     describe "#note terms" do
@@ -81,7 +86,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.note_terms).to be_instance_of(Hash)
-        expect(all).to eq 11
+        expect(all).to eq 12
         expect(config.length).to eq all
       end
 

@@ -26,6 +26,7 @@ gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
 gem 'puma', '~> 5.5' # app server
 gem 'rails', '~> 5.2'
+gem 'rails_autolink'
 gem 'rollbar' # Error reporting tool
 gem 'rsolr', '>= 1.0'
 gem 'sassc-rails', '>= 2.1.2' # SASS -> CSS compiler
