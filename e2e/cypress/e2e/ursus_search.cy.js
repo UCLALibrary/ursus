@@ -28,7 +28,7 @@ describe('Search', () => {
   it('Search Subject Found', () => {
     cy.visit('/');
     cy.get('[id=q]').type('engineer');
-    cy.get('select').select('Subject').should('have.value', 'combined_subject_ssim');
+    cy.get('select').select('Subject').should('have.value', 'subject_tesim subject_topic_tesim subject_geographic_tesim subject_temporal_tesim');
     cy.get('[id=search]').click();
     cy.get('.search-count__heading').contains('Catalog Results');
     cy.percySnapshot();
