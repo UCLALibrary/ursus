@@ -346,9 +346,9 @@ class CatalogController < ApplicationController
           pf: ''
         }
       end
-      config.add_search_field('combined_subject_ssim', label: 'Subject') do |field|
+      config.add_search_field('subject_tesim subject_topic_tesim subject_geographic_tesim subject_temporal_tesim', label: 'Subject') do |field|
         field.solr_parameters = {
-          qf: 'combined_subject_ssim',
+          qf: 'subject_tesim subject_topic_tesim subject_geographic_tesim subject_temporal_tesim',
           pf: ''
         }
       end
