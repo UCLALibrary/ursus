@@ -68,7 +68,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
         expect(config['related_record_ssm'].to_s).to eq('Related records')
       end
 
-      it 'returns the Statement of Responsibility Key' do
+      it 'returns the Statement of responsibility Key' do
         expect(config['resp_statement_tesim'].to_s).to eq('Statement of responsibility')
       end
 
