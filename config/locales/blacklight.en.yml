@@ -137,7 +137,7 @@ en:
           publisher_tesim: 'Publisher'
           repository_sim: 'Repository'
           repository_tesim: 'Repository'
-          resp_statement_tesim: 'Statement of Responsibility'
+          resp_statement_tesim: 'Statement of responsibility'
           rights_country_tesim: 'Rights Country'
           rights_holder_tesim: 'Rights Holder'
           human_readable_rights_statement_tesim: 'Rights statement'

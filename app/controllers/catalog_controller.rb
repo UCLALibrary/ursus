@@ -222,7 +222,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'provenance_tesim', label: 'Provenance'
     config.add_show_field 'colophon_tesim', label: 'Colophon'
     config.add_show_field 'note_tesim', label: 'Note'
-    config.add_show_field 'resp_statement_tesim', label: 'Statement of Responsibility'
+    config.add_show_field 'resp_statement_tesim', label: 'Statement of responsibility'
     config.add_show_field 'citation_source_tesim', label: 'References'
     config.add_show_field 'related_to_ssm', label: 'Related Items', auto_link: true # make this field url aware
     config.add_show_field 'related_record_ssm', label: 'Related Records', auto_link: true # make this field url aware
