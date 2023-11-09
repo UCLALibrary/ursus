@@ -13,7 +13,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       'note_tesim' => 'Note',
       'related_to_ssm' => 'Related items',
       'human_readable_related_record_title_ssm' => 'Related records',
-      'resp_statement_tesim' => 'Statement of responsibility',
+      'resp_statement_tesim' => 'Statement of Responsibility',
       'citation_source_tesim' => 'References',
       'incipit_tesim' => 'Incipit',
       'explicit_tesim' => 'Explicit'
@@ -68,8 +68,8 @@ RSpec.describe Ursus::NoteMetadataPresenter do
         expect(config['human_readable_related_record_title_ssm'].to_s).to eq('Related records')
       end
 
-      it 'returns the Statement of responsibility Key' do
-        expect(config['resp_statement_tesim'].to_s).to eq('Statement of responsibility')
+      it 'returns the Statement of Responsibility Key' do
+        expect(config['resp_statement_tesim'].to_s).to eq('Statement of Responsibility')
       end
 
       it 'returns the References Key' do
