@@ -225,6 +225,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'resp_statement_tesim', label: 'Statement of Responsibility'
     config.add_show_field 'citation_source_tesim', label: 'References'
     config.add_show_field 'related_to_ssm', label: 'Related Items', auto_link: true # make this field url aware
+    config.add_show_field 'human_readable_related_record_title_ssm', label: 'Related Records'
 
     # Physical description
     config.add_show_field 'medium_tesim', label: 'Medium'

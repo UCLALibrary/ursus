@@ -12,6 +12,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       'provenance_tesim' => 'Provenance',
       'note_tesim' => 'Note',
       'related_to_ssm' => 'Related items',
+      'human_readable_related_record_title_ssm' => 'Related records',
       'resp_statement_tesim' => 'Statement of Responsibility',
       'citation_source_tesim' => 'References',
       'incipit_tesim' => 'Incipit',
@@ -63,6 +64,10 @@ RSpec.describe Ursus::NoteMetadataPresenter do
         expect(config['related_to_ssm'].to_s).to eq('Related items')
       end
 
+      it 'returns the Related records Key' do
+        expect(config['human_readable_related_record_title_ssm'].to_s).to eq('Related records')
+      end
+
       it 'returns the Statement of Responsibility Key' do
         expect(config['resp_statement_tesim'].to_s).to eq('Statement of Responsibility')
       end
@@ -86,7 +91,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.note_terms).to be_instance_of(Hash)
-        expect(all).to eq 12
+        expect(all).to eq 13
         expect(config.length).to eq all
       end
 
