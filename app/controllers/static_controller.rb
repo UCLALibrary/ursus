@@ -11,4 +11,9 @@ class StaticController < ApplicationController
   def ursus_iiif_guide; end
 
   def version; end
+
+  def stgall_tei_msdesc
+    # Your code to render the specific TEI file
+    render template: "static/stgall/#{params[:id]}"
+  end
 end

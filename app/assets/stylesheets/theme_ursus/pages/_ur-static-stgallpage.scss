@@ -1,0 +1,92 @@
+/* Add your CSS styles here */
+.stgall-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+
+}
+
+.stgall-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.stgall-work-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.stgall-subnav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.stgall-subnav-item {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.stgall-subnav-item:hover {
+    background-color: #e0e0e0;
+}
+
+.stagll-flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px;
+}
+
+.stgall-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stgall-contents {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    margin: 20px;
+}
+
+.stgall-sub-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.stgall-work-item-content {}
+
+.stgall-work-item-bibliography {}
+
+.stgall-work-item-transcription {}
+
+/*.manuscript-bibliography {
+
+    }
+    .manuscript-description{
+
+    }
+    .toggleDiv {
+    display: none;
+    }*/
+.toggleDivWorkItem {
+    display: none;
+}
+
+.stgall-manuscript-contents {
+    display: flex;
+}
+
+/* Add more styles as needed */
