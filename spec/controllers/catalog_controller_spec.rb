@@ -45,7 +45,8 @@ RSpec.describe CatalogController, type: :controller do
          'human_readable_language',
          'generic_type',
          'member_of_collections',
-         'repository']
+         'repository',
+         'program_tesim']
       end
 
       it 'has exactly expected facets' do
