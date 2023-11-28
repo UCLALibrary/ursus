@@ -119,6 +119,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'human_readable_language_sim', limit: 5
     config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
     config.add_facet_field 'repository_sim', limit: 5
+    config.add_facet_field 'program_sim', label: 'Program', limit: 5
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
@@ -339,21 +340,17 @@ class CatalogController < ApplicationController
       }
     end
 
-    # URSUS
-    unless Flipflop.sinai?
-      config.add_search_field('title_tesim', label: 'Title') do |field|
-        field.solr_parameters = {
-          qf: 'title_tesim',
-          pf: ''
-        }
-      end
-      config.add_search_field('subject_tesim subject_topic_tesim subject_geographic_tesim subject_temporal_tesim', label: 'Subject') do |field|
-        field.solr_parameters = {
-          qf: 'subject_tesim subject_topic_tesim subject_geographic_tesim subject_temporal_tesim',
-          pf: ''
-        }
-      end
-
+    config.add_search_field('title_tesim', label: 'Title') do |field|
+      field.solr_parameters = {
+        qf: 'title_tesim',
+        pf: ''
+      }
+    end
+    config.add_search_field('subject_tesim subject_topic_tesim subject_geographic_tesim subject_temporal_tesim', label: 'Subject') do |field|
+      field.solr_parameters = {
+        qf: 'subject_tesim subject_topic_tesim subject_geographic_tesim subject_temporal_tesim',
+        pf: ''
+      }
     end
 
     # ------------------------------------------------------
