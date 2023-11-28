@@ -109,7 +109,7 @@ class CatalogController < ApplicationController
     # solr fields that will be treated as facets by the blacklight application
     # The ordering of the field names is the order of the display
 
-    config.add_facet_field 'program_tesim', label: 'Program', limit: 5
+    config.add_facet_field 'program_sim', label: 'Program', limit: 5
     config.add_facet_field 'combined_subject_ssim', limit: 5, label: 'Subject'
     # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5 same as : config.add_facet_field 'resource_type_sim', limit: 5
     config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
