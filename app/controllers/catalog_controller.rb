@@ -109,7 +109,6 @@ class CatalogController < ApplicationController
     # solr fields that will be treated as facets by the blacklight application
     # The ordering of the field names is the order of the display
 
-    config.add_facet_field 'program_sim', label: 'Program', limit: 5
     config.add_facet_field 'combined_subject_ssim', limit: 5, label: 'Subject'
     # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5 same as : config.add_facet_field 'resource_type_sim', limit: 5
     config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
@@ -120,6 +119,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'human_readable_language_sim', limit: 5
     config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
     config.add_facet_field 'repository_sim', limit: 5
+    config.add_facet_field 'program_sim', label: 'Program', limit: 5
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
