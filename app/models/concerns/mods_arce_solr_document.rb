@@ -81,6 +81,11 @@ module ModsArceSolrDocument
             end
           end
         end
+        if self[:related_record_ssm]
+          xml['mods'].relatedItem(otherType: "relatedRecord") do
+            self[:related_record_ssm]&.each { |related_record| xml['mods'].identifier({ type: 'ark' }, related_record.to_s) }
+          end
+        end
         if self[:related_to_ssm]
           xml['mods'].relatedItem(otherType: "relatedTo", otherTypeAuth: "Bibframe") do
             xml['mods'].titleInfo do
