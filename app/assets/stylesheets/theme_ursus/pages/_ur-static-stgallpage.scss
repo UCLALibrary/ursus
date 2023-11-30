@@ -1,30 +1,30 @@
 /* Add your CSS styles here */
 .stgall-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
 }
 
 .stgall-work-title,
 .stgall-transcription-title {
-    font-weight: bold;
-    font-style: italic;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .stgall-subnav {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .stgall-subnav-item {
-    flex: 1;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border: 1px solid #ccc;
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 
 // .stgall-subnav-item:hover {
@@ -32,25 +32,25 @@
 // }
 
 .stagll-flex-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 20px;
 }
 
 .stgall-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .stgall-work-item-bibliography,
 .stgall-work-item-content,
 .stgall-work-item-transcription {
-    padding: 1rem;
-    margin-top: -0.5rem;
-    background-color: $ucla-lightest-blue-2;
+  padding: 1rem;
+  margin-top: -0.5rem;
+  background-color: $ucla-lightest-blue-2;
 }
 
 .stgall-work-item-bibliography .WorkBibiliography {
@@ -67,10 +67,10 @@
 }
 
 .stgall-contents {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .toggleDivWorkItem .stgall-work-title {
@@ -150,19 +150,21 @@
 
 
 .stgall-sub-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
 
-    a {
-        background-color: $ucla-lightest-blue-2;
-        color: $ucla-darkest-blue;
-        line-height: 1;
-        margin: 0.5rem 0 0.5rem;
-        padding: 0.7rem 1rem;
-    }
+  a,
+  button {
+    background-color: $ucla-lightest-blue-2;
+    color: $ucla-darkest-blue;
+    line-height: 1;
+    margin: 0.5rem 0 0.5rem;
+    padding: 0.7rem 1rem;
+    border: none;
+  }
 }
 
 .stgall-work-item-content {}
@@ -181,11 +183,11 @@
     display: none;
     }*/
 .toggleDivWorkItem {
-    display: none;
+  display: none;
 }
 
 .stgall-manuscript-contents {
-    display: flex;
+  display: flex;
 }
 
 /* Add more styles as needed */
