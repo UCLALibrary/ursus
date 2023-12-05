@@ -8,7 +8,8 @@
 }
 
 .stgall-work-title,
-.stgall-transcription-title {
+.stgall-transcription-title,
+.stgall-bibliograghy-title {
   font-weight: bold;
   font-style: italic;
 }
@@ -27,10 +28,6 @@
   border: 1px solid #ccc;
 }
 
-// .stgall-subnav-item:hover {
-//     background-color: #e0e0e0;
-// }
-
 .stagll-flex-container {
   display: flex;
   flex-direction: row;
@@ -48,9 +45,7 @@
 .stgall-work-item-bibliography,
 .stgall-work-item-content,
 .stgall-work-item-transcription {
-  padding: 1rem;
   margin-top: -0.5rem;
-  background-color: $ucla-lightest-blue-2;
 }
 
 .stgall-work-item-bibliography .WorkBibiliography {
@@ -59,10 +54,14 @@
   gap: 16px;
   list-style-type: none;
 
-  li {
+  > li {
     display: flex;
     flex-direction: column;
     gap: 8px;
+  }
+
+  p {
+    margin-bottom: 4px;
   }
 }
 
@@ -74,7 +73,7 @@
 }
 
 .toggleDivWorkItem .stgall-work-title {
-  margin-bottom: 16px;
+  padding: 1rem;
   font-size: 16px;
 }
 
@@ -82,20 +81,19 @@
   flex-direction: column;
 
   justify-content: flex-start;
-  gap: 16px;
 
   br {
     display: none;
   }
 
   .stgall-work-item {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 8px;
 
-    &:not(:last-child) {
-      border-bottom: 1px dotted $ucla-blue;
-      padding-bottom: 1rem;
+    &:nth-child(odd) {
+      background-color: rgba($gray-10,0.5);
     }
 
     .stgall-work-item-heading {
@@ -121,11 +119,17 @@
       list-style-type: none;
       font-size: 12px;
 
-      li {
+      > li {
         display: flex;
         flex-direction: column;
         gap: 4px;
       }
+    }
+
+    .stgall-work-item-bibliography + h4,
+    .document-metadata + h4 {
+      border-top: 1px dotted $ucla-darker-blue;
+      padding-top: 1.5rem;
     }
   }
 }
@@ -141,53 +145,135 @@
   gap: 16px;
   list-style-type: none;
 
-  li {
+  > li {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
 }
+.bibliography-links {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 12px;
 
+  > li {
+    display: inline;
+  }
+
+  a {
+    padding: 1rem 0;
+    font-size: 10px;
+    font-weight: 600;
+    color: $ucla-blue;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &::after {
+      content: "";
+      width: 11px;
+      height: 11px;
+      margin-left: 4px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+    }
+  }
+}
 
 .stgall-sub-links {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 2px;
+  position: relative;
 
   a,
   button {
     background-color: $ucla-lightest-blue-2;
-    color: $ucla-darkest-blue;
+    color: $ucla-darker-blue;
     line-height: 1;
     margin: 0.5rem 0 0.5rem;
     padding: 0.7rem 1rem;
-    border: none;
+    border: 2px solid transparent;
+
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    top: 2px;
+
+    &:hover:not(.active) {
+      background-color: $ucla-blue;
+      color: $white;
+    }
+
+    &:focus,
+    &.active {
+      background-color: $white;
+      border-color: $ucla-darker-blue;
+      border-bottom-color: $white;
+      border-top-width: 6px;
+      border-top-color: $ucla-blue;
+    }
+
+    &:visited {
+      background-color: $ucla-lightest-blue-2;
+      color: $ucla-darker-blue;
+    }
   }
 }
 
-.stgall-work-item-content {}
+.stgall-work-item-bibliography {
+  padding: 1rem;
+}
 
-.stgall-work-item-bibliography {}
+.stgall-work-item-transcription .stgall-transcriptionSource {
+  padding: 1rem;
+}
 
-.stgall-work-item-transcription {}
-
-/*.manuscript-bibliography {
-
-    }
-    .manuscript-description{
-
-    }
-    .toggleDiv {
-    display: none;
-    }*/
 .toggleDivWorkItem {
   display: none;
+
+  border: 2px solid $ucla-darker-blue;
+  background-color: $white;
 }
 
 .stgall-manuscript-contents {
   display: flex;
+
+  .document__list-metadata-key--ursus {
+    color: $black;
+  }
+}
+
+.book-level-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+
+  .book-level-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .book-title, .book-level-item > p {
+    font-weight: bold;
+  }
+}
+
+.stgall-tan_divider > br {
+  display: none;
+}
+
+.stgall-tan_divider {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 /* Add more styles as needed */
