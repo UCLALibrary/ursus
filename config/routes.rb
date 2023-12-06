@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/copyright_and_collections', to: 'static#ursus_copyright'
   get '/privacy_policy', to: 'static#ursus_privacy'
   get '/iiif_guide', to: 'static#ursus_iiif_guide'
-  get '/stgall/*id', to: 'static#stgall_tei_msdesc'
+  get '/stgall/*id', to: 'static#stgall_tei_msdesc', format: false
 
 
   # Canon Law
