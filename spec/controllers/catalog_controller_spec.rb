@@ -98,7 +98,7 @@ RSpec.describe CatalogController, type: :controller do
        "musician_tesim", "printer_tesim", "researcher_tesim",
        'format_book_tesim', 'resp_statement_tesim', 'citation_source_tesim',
        'related_to_ssm', 'human_readable_related_record_title_ssm',
-       "oai_set_ssim","identifier_global_tesim"]
+       "oai_set_ssim", "identifier_global_tesim"]
     end
 
     it 'has exactly expected show fields' do
