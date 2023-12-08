@@ -142,7 +142,7 @@ class CatalogController < ApplicationController
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
     config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
-    config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' unless Flipflop.sinai?
+    config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim'
 
     # ------------------------------------------------------
     # SHOW PAGE / ITEM PAGE / Individual Work (Universal Viewer Page)
@@ -167,11 +167,14 @@ class CatalogController < ApplicationController
 
     # List set
     config.add_show_field 'oai_set_ssim'
+
     # Item Overview
-    config.add_show_field 'shelfmark_ssi', label: 'Shelfmark' # Sinai only
-    config.add_show_field 'descriptive_title_tesim', label: 'Descriptive title' # Sinai only
-    config.add_show_field 'associated_name_tesim', label: 'Associated name', link_to_facet: 'associated_name_sim' # Sinai only
-    config.add_show_field 'references_tesim', label: 'References' # Sinai only
+    # config.add_show_field 'shelfmark_ssi', label: 'Shelfmark' # Sinai only
+    # config.add_show_field 'descriptive_title_tesim', label: 'Descriptive title' # Sinai only
+    # config.add_show_field 'associated_name_tesim', label: 'Associated name', link_to_facet: 'associated_name_sim' # Sinai only
+    # config.add_show_field 'references_tesim', label: 'References' # Sinai only
+
+    # ITEM OVERVIEW
     config.add_show_field 'title_tesim', label: 'Title'
     config.add_show_field 'alternative_title_tesim', label: 'Alternative title'
     config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'uniform_title_sim'
@@ -206,15 +209,16 @@ class CatalogController < ApplicationController
     config.add_show_field 'producer_tesim', label: 'Producer', link_to_facet: 'producer_sim'
     config.add_show_field 'program_tesim', label: 'Program', link_to_facet: 'program_sim'
     config.add_show_field 'recipient_tesim', label: 'Recipient', link_to_facet: 'recipient_sim'
+    config.add_show_field 'edition_ssm', label: 'Edition'
 
     # IF SINAI ?
-    config.add_show_field 'explicit_tesim', label: 'Explicit'
-    config.add_show_field 'incipit_tesim', label: 'Incipit'
-    config.add_show_field 'inscription_tesim', label: 'Inscription'
-    config.add_show_field 'script_tesim', label: 'Script', link_to_facet: 'script_sim'
-    config.add_show_field 'writing_system_tesim', label: 'Writing system', link_to_facet: 'writing_system_sim'
+    # config.add_show_field 'explicit_tesim', label: 'Explicit'
+    # config.add_show_field 'incipit_tesim', label: 'Incipit'
+    # config.add_show_field 'inscription_tesim', label: 'Inscription'
+    # config.add_show_field 'script_tesim', label: 'Script', link_to_facet: 'script_sim'
+    # config.add_show_field 'writing_system_tesim', label: 'Writing system', link_to_facet: 'writing_system_sim'
 
-    # Notes
+    # NOTES
     config.add_show_field 'summary_tesim', label: 'Summary'
     config.add_show_field 'description_tesim', label: 'Description'
     config.add_show_field 'caption_tesim', label: 'Caption'
@@ -227,8 +231,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'citation_source_tesim', label: 'References'
     config.add_show_field 'related_to_ssm', label: 'Related Items', auto_link: true # make this field url aware
     config.add_show_field 'human_readable_related_record_title_ssm', label: 'Related Records'
+    config.add_show_field 'history_tesim', label: 'History'
 
-    # Physical description
+    # PHYSICAL DESCRIPTION
     config.add_show_field 'medium_tesim', label: 'Medium'
     config.add_show_field 'extent_tesim', label: 'Extent'
     config.add_show_field 'dimensions_tesim', label: 'Dimensions'
@@ -264,7 +269,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'researcher_tesim', label: 'Researcher', link_to_facet: 'researcher_sim'
 
     # SECONDARY
-    # Find This Item
+    # FIND THIS ITEM
     config.add_show_field 'repository_tesim', label: 'Repository', link_to_facet: 'repository_sim'
     config.add_show_field 'local_identifier_ssim', label: 'Local identifier'
     config.add_show_field 'oclc_ssi', label: 'OCLC Number'
@@ -273,8 +278,10 @@ class CatalogController < ApplicationController
     config.add_show_field 'opac_url_ssi', label: 'Opac url'
     config.add_show_field 'ark_ssi', label: 'ARK'
     config.add_show_field 'other_versions_tesim', label: 'Other version(s)'
+    config.add_show_field 'identifier_global_tesim', label: 'Identifier'
+    config.add_show_field 'identifier_tesim', label: 'Other identifier'
 
-    # Access Conditions
+    # ACCESS CONDITION
     config.add_show_field 'human_readable_rights_statement_tesim', label: 'Rights statement'
     config.add_show_field 'local_rights_statement_ssm', label: 'Local rights statement'
     config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation'
