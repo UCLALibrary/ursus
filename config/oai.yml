@@ -6,6 +6,7 @@ default:
   alternative:
     - alternative_title_tesim
     - uniform_title_tesim
+    - edition_ssm
   creator:
     - creator_tesim
   contributor:
@@ -63,6 +64,7 @@ default:
     - content_disclaimer_ssm
     - resp_statement_tesim
     - citation_source_tesim
+    - history_tesim
   format:
     - format_tesim
     - format_book_tesim
@@ -78,6 +80,7 @@ default:
     - opac_url_ssi
     - oclc_ssi
     - ark_ssi
+    - identifier_global_tesim
   source:
     - member_of_collections_ssim
 DC:
@@ -85,12 +88,9 @@ DC:
   identifier:
     - thumbnail_url_ss
     - permalink
-    - identifier_global_tesim
   description:
     - content_disclaimer_ssm
     - related_to_ssm
-  dcterms: alternative
-    - history_tesim
 
 DPLA:
   parent_schema: default
