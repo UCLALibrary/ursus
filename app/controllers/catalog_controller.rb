@@ -211,13 +211,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'recipient_tesim', label: 'Recipient', link_to_facet: 'recipient_sim'
     config.add_show_field 'edition_ssm', label: 'Edition'
 
-    # IF SINAI ?
-    # config.add_show_field 'explicit_tesim', label: 'Explicit'
-    # config.add_show_field 'incipit_tesim', label: 'Incipit'
-    # config.add_show_field 'inscription_tesim', label: 'Inscription'
-    # config.add_show_field 'script_tesim', label: 'Script', link_to_facet: 'script_sim'
-    # config.add_show_field 'writing_system_tesim', label: 'Writing system', link_to_facet: 'writing_system_sim'
-
     # NOTES
     config.add_show_field 'summary_tesim', label: 'Summary'
     config.add_show_field 'description_tesim', label: 'Description'

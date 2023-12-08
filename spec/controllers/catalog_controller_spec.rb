@@ -67,15 +67,14 @@ RSpec.describe CatalogController, type: :controller do
        "caption_tesim", "collation_tesim", "colophon_tesim", "composer_tesim",
        "condition_note_ssi", "contents_note_tesim", "contributor_tesim",
        "creator_tesim", "date_created_tesim", "description_tesim",
-       "dimensions_tesim", "dlcs_collection_name_tesim",
-       "edition_ssm", "editor_tesim",
+       "dimensions_tesim", "dlcs_collection_name_tesim", "editor_tesim",
        "engraver_tesim", "explicit_tesim", "extent_tesim", "features_tesim",
        "finding_aid_url_ssm", "foliation_tesim", "format_tesim",
        "funding_note_tesim", "genre_tesim", "geographic_coordinates_ssim",
-       "history_tesim", "human_readable_resource_type_tesim",
+       "human_readable_resource_type_tesim",
        "human_readable_rights_statement_tesim",
        "human_readable_language_tesim",
-       "identifier_global_tesim", "identifier_tesim", "illuminator_tesim", "illustrator_tesim",
+       "identifier_tesim", "illuminator_tesim", "illustrator_tesim",
        "iiif_manifest_url_ssi", "illustrations_note_tesim", "incipit_tesim",
        "inscription_tesim", "keyword_tesim", "latitude_tesim",
        "local_rights_statement_ssm", "location_tesim", "local_identifier_ssim",
@@ -97,7 +96,7 @@ RSpec.describe CatalogController, type: :controller do
        "interviewer_tesim", "interviewee_tesim", "cartographer_tesim",
        "artist_tesim", "recipient_tesim", "director_tesim", "producer_tesim", "host_tesim",
        "musician_tesim", "printer_tesim", "researcher_tesim",
-       'format_book_tesim', 'resp_statement_tesim', 'citation_source_tesim', 'related_to_ssm', 'human_readable_related_record_title_ssm', "oai_set_ssim"]
+       'format_book_tesim', 'resp_statement_tesim', 'citation_source_tesim', 'related_to_ssm', 'human_readable_related_record_title_ssm', "oai_set_ssim","identifier_global_tesim"]
     end
 
     it 'has exactly expected show fields' do

@@ -96,7 +96,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.note_terms).to be_instance_of(Hash)
-        expect(all).to eq 15
+        expect(all).to eq 14
         expect(config.length).to eq all
       end
 
