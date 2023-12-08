@@ -180,7 +180,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'condition_note_ssi', label: 'Condition note' # Primary / Physical description
     config.add_show_field 'content_disclaimer_ssm', label: 'Content disclaimer'
     config.add_show_field 'contents_note_tesim', label: 'Contents note', auto_link: true # make this field url aware # Primary / Notes
-    config.add_show_field 'contributor_tesim', label: 'Contributor'# Not Using
+    config.add_show_field 'contributor_tesim', label: 'Contributor' # Not Using
     config.add_show_field 'creator_tesim', label: 'Creator', link_to_facet: 'creator_sim' # Primary / Item Overview
     config.add_show_field 'date_created_tesim', label: 'Date created' # Primary / Item Overview
     config.add_show_field 'description_tesim', label: 'Description' # Primary / Notes
@@ -211,7 +211,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'identifier_global_tesim', label: 'Identifier' # Secondary / Find This Item
     config.add_show_field 'iiif_manifest_url_ssi', label: 'Manifest url' # Secondary / Find This Item
     config.add_show_field 'illuminator_tesim', label: 'Illuminator', link_to_facet: 'illuminator_sim' # Primary / Item Overview
-    config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note'# Primary / Physical description
+    config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note' # Primary / Physical description
     config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'illustrator_sim' # Primary / Item Overview
     config.add_show_field 'interviewee_tesim', label: 'Interviewee', link_to_facet: 'interviewee_sim' # Primary / Item Overview
     config.add_show_field 'interviewer_tesim', label: 'Interviewer', link_to_facet: 'interviewee_sim' # Primary / Item Overview
