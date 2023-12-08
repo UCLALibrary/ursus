@@ -6,7 +6,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
     {
       'repository_tesim' => 'Repository',
       'local_identifier_ssim' => 'Local identifier',
-      'identifier_global_tesim' => "Identifier",
+      'identifier_global_tesim' => 'Identifier',
       'opac_url_tesim' => 'Opac url',
       'oclc_ssi' => 'OCLC Number',
       'ark_ssi' => 'ARK'
