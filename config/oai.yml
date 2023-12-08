@@ -85,9 +85,13 @@ DC:
   identifier:
     - thumbnail_url_ss
     - permalink
+    - identifier_global_tesim
   description:
     - content_disclaimer_ssm
     - related_to_ssm
+  dcterms: alternative
+    - history_tesim
+
 DPLA:
   parent_schema: default
   object:
