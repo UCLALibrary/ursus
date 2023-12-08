@@ -53,6 +53,10 @@ RSpec.describe Ursus::NoteMetadataPresenter do
         expect(config['colophon_tesim'].to_s).to eq('Colophon')
       end
 
+      it 'returns the History Key' do
+        expect(config['history_tesim'].to_s).to eq('History')
+      end
+
       it 'returns the Provenance Key' do
         expect(config['provenance_tesim'].to_s).to eq('Provenance')
       end
@@ -92,7 +96,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.note_terms).to be_instance_of(Hash)
-        expect(all).to eq 14
+        expect(all).to eq 15
         expect(config.length).to eq all
       end
 
