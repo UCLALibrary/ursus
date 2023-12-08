@@ -109,7 +109,7 @@ RSpec.describe CatalogController, type: :controller do
         'human_readable_related_record_title_ssm',
         "human_readable_rights_statement_tesim",
         "identifier_tesim",
-        "identifier_global_tesim",
+        "identifier_global_ssim",
         "iiif_manifest_url_ssi",
         "illuminator_tesim",
         "illustrations_note_tesim",

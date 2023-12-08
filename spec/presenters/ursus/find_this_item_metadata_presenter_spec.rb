@@ -6,7 +6,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
     {
       'repository_tesim' => 'Repository',
       'local_identifier_ssim' => 'Local identifier',
-      'identifier_global_tesim' => 'Identifier',
+      'identifier_global_ssim' => 'Identifier',
       'opac_url_tesim' => 'Opac url',
       'oclc_ssi' => 'OCLC Number',
       'ark_ssi' => 'ARK'
@@ -34,7 +34,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       end
 
       it 'returns the Identifier' do
-        expect(config['identifier_global_tesim'].to_s).to eq('Identifier')
+        expect(config['identifier_global_ssim'].to_s).to eq('Identifier')
       end
 
       it 'returns the Opac url' do

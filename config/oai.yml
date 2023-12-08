@@ -80,7 +80,7 @@ default:
     - opac_url_ssi
     - oclc_ssi
     - ark_ssi
-    - identifier_global_tesim
+    - identifier_global_ssim
   source:
     - member_of_collections_ssim
 DC:

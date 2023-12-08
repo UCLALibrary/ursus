@@ -208,7 +208,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'human_readable_related_record_title_ssm', label: 'Related Records' # Primary / Notes
     config.add_show_field 'human_readable_rights_statement_tesim', label: 'Rights statement' # Secondary / Access Conditions
     config.add_show_field 'identifier_tesim', label: 'Identifier' # Not Using
-    config.add_show_field 'identifier_global_tesim', label: 'Identifier' # Secondary / Find This Item
+    config.add_show_field 'identifier_global_ssim', label: 'Identifier' # Secondary / Find This Item
     config.add_show_field 'iiif_manifest_url_ssi', label: 'Manifest url' # Secondary / Find This Item
     config.add_show_field 'illuminator_tesim', label: 'Illuminator', link_to_facet: 'illuminator_sim' # Primary / Item Overview
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note' # Primary / Physical description
