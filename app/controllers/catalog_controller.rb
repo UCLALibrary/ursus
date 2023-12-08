@@ -279,7 +279,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'ark_ssi', label: 'ARK'
     config.add_show_field 'other_versions_tesim', label: 'Other version(s)'
     config.add_show_field 'identifier_global_tesim', label: 'Identifier'
-    config.add_show_field 'identifier_tesim', label: 'Other identifier'
 
     # ACCESS CONDITION
     config.add_show_field 'human_readable_rights_statement_tesim', label: 'Rights statement'
