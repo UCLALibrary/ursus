@@ -18,6 +18,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'date_created_tesim' => 'Date Created',
       'descriptive_title_tesim' => 'Descriptive title',
       'director_tesim' => 'Director',
+      'edition_ssm' => 'Edition',
       'editor_tesim' => 'Editor',
       'engraver_tesim' => 'Engraver',
       'human_readable_language_tesim' => 'Language',
@@ -126,6 +127,10 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
         expect(config['director_tesim'].to_s).to eq('Director')
       end
 
+      it 'returns the Edition Key' do
+        expect(config['edition_ssm'].to_s).to eq('Edition')
+      end
+
       it 'returns the Editor Key' do
         expect(config['editor_tesim'].to_s).to eq('Editor')
       end
@@ -228,7 +233,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       let(:missing) { presenter_object_missing_items.overview_terms.keys.length }
 
       it "returns existing keys" do
-        expect(all).to eq 44
+        expect(all).to eq 45
         expect(config.length).to eq all
       end
 

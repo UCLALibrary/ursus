@@ -8,6 +8,7 @@ uniform_title_tesim: 'Uniform title'
 # Relators
 creator_tesim: 'Creator'
 author_tesim: 'Author'
+edition_ssm: 'Edition'
 editor_tesim: 'Editor'
 photographer_tesim: 'Photographer'
 architect_tesim: 'Architect'
