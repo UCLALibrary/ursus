@@ -1,6 +1,6 @@
 FROM ruby:2.6
 
-RUN gem install bundler
+RUN gem install bundler -v 2.4.22
 
 RUN apt-get update -qq
 # Add https support to apt to download yarn & newer node
