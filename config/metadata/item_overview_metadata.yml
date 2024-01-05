@@ -8,7 +8,6 @@ uniform_title_tesim: 'Uniform title'
 # Relators
 creator_tesim: 'Creator'
 author_tesim: 'Author'
-edition_ssm: 'Edition'
 editor_tesim: 'Editor'
 photographer_tesim: 'Photographer'
 architect_tesim: 'Architect'
@@ -41,6 +40,7 @@ normalized_date_sim: 'Date'
 year_isim: 'Year'
 place_of_origin_tesim: 'Place of Origin'
 publisher_tesim: 'Publisher'
+edition_ssm: 'Edition'
 
 # Other
 human_readable_language_tesim: 'Language'
