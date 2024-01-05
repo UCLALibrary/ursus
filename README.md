@@ -67,6 +67,11 @@ docker-compose up
 
 - Ursus / [UCLA Library Digital Collections](https://digital.library.ucla.edu/) UI is enabled on [port 3003](http://localhost:3003)
 
+The data you're viewing is coming from a solr instance, preloaded with data from [Californica-test]
+(https://californica-test.library.ucla.edu), and should not need to be changed in most cases,
+since Ursus is a discovery interface only.
+You can view the solr console on port 8983.
+
 ---
 
 ### Running linters and unit tests
@@ -122,3 +127,5 @@ Visual regression testing is done via [percy.io](https://percy.io/UCLA-Library-S
 If you need to rebuild the docker image (for example, if packages were added to the Gemfile), run:
 1. `docker-compose pull`
 1. `docker-compose up --build`
+
+#### OAI https://digital.library.ucla.edu/catalog/oai  --->
