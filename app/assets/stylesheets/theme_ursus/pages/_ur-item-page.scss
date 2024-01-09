@@ -1,7 +1,17 @@
-.item-page__secondary-metadata--ursus {
-  @extend .col-lg-5;
+// .item-page__secondary-metadata--ursus {
+//   @extend .col-lg-5;
 
-  background-color: $ucla-lightest-blue;
+//   // display: flex;
+//   // flex-direction: column;
+
+// }
+
+.item-page__secondary-metadata--ursus-block {
+  align-self: baseline;
+  padding-top: 30px;
+  padding-left: 15px;
+  background-color:
+  $ucla-lightest-blue;
 }
 
 .item-page__pagination-widgets--ursus {

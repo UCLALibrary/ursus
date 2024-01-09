@@ -13,6 +13,7 @@
 .btn-outline-ursus--blue {
   color: $ucla-darker-blue;
   border-color: $ucla-darker-blue;
+  background-color: $white;
 
   &:hover {
     color: $white;
@@ -76,20 +77,32 @@
 
 .btn-ursus--show-toggle {
   display: block;
- 
+
 }
 
 .btn-ursus--hide-toggle {
   display: none;
- 
+
 }
 
 .btn-base-lg--alert--ursus {
   @media (max-width: 1303px) {
     font-size: $text-16;
   }
-  
+
   @media (max-width: 575px) {
     font-size: $text-16;
   }
+}
+
+.btn-ursus--secondary-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+
+  text-align: left;
+  padding-left: 15px;
 }
