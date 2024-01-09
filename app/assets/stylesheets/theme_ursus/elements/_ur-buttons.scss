@@ -12,8 +12,8 @@
 
 .btn-outline-ursus--blue {
   color: $ucla-darker-blue;
-  border-color: $ucla-darker-blue;
   background-color: $white;
+  border-color: $ucla-darker-blue;
 
   &:hover {
     color: $white;
@@ -82,7 +82,6 @@
 
 .btn-ursus--hide-toggle {
   display: none;
-
 }
 
 .btn-base-lg--alert--ursus {
@@ -99,10 +98,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  align-items: center;
   justify-content: flex-start;
   align-content: flex-start;
-  align-items: center;
 
-  text-align: left;
   padding-left: 15px;
+  text-align: left;
 }
