@@ -100,17 +100,14 @@
   align-items: center;
   justify-content: flex-start;
   align-content: flex-start;
-  text-align: left;
   margin-bottom: 1.5rem;
-  color: $ucla-darker-blue;
+  text-align: left;
   padding-left: 15px;
+  color: $ucla-darker-blue;
 
   &:hover {
-    color: $white;
     text-decoration: none;
-  }
-  &:visited {
-    color: $ucla-darker-blue;
+    color: $white;
   }
 }
 
@@ -127,18 +124,5 @@
   &:hover {
     color: $white;
     text-decoration: none;
-  }
-  &:visited {
-    color: $ucla-darker-blue;
-  }
-}
-.icon-external-link {
-  fill: red;
-  stroke: blue;
-  .svg__fill--primary-blue-03 {
-    fill: $white;
-
-    fill: $white;
-    stroke: $white;
   }
 }
