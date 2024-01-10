@@ -188,7 +188,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'director_tesim', label: 'Director', link_to_facet: 'director_sim' # Primary / Item Overview
     config.add_show_field 'dlcs_collection_name_tesim' # Not Using
     config.add_show_field 'edition_ssm', label: 'Edition' # Primary / Item Overview
-    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_sim' # Primary / Item Overview
+    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_sim'
+    config.add_show_field 'electronic_locator_ss', label: 'External item record' # Secondary / Button
+    # Primary / Item Overview
     config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim' # Primary / Item Overview
     config.add_show_field 'extent_tesim', label: 'Extent' # Primary / Physical description
     config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim' # Primary / Physical description
