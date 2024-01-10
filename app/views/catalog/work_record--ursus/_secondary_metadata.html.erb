@@ -4,7 +4,11 @@
   <% if document_json['electronic_locator_ss'] %>
     <button type="button" class='btn-base btn-base-md btn-outline-ursus--blue btn-ursus--secondary-block' style='margin-bottom: 1.5rem'>
       View Item at <br>
-      <a href=<%= document_json['electronic_locator_ss'] %>>&nbsp;<span><%= image_tag('icon-external-link.svg') %></span></a>
+      <a href=<%= document_json['electronic_locator_ss'] %> target = '_blank' style="  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: flex-start;"><%= document_json['electronic_locator_ss'] %> &nbsp; <span><%= image_tag('icon-external-link.svg') %></span></a>
     </button>
   <% end %>
 
