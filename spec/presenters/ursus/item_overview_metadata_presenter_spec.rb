@@ -48,8 +48,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'host_tesim' => 'Host',
       'musician_tesim' => 'Musician',
       'printer_tesim' => 'Printer',
-      'researcher_tesim' => 'Researcher',
-      'electronic_locator_ss' => "External item record"
+      'researcher_tesim' => 'Researcher'
     }
   end
   let(:solr_doc_missing_items) do
@@ -227,10 +226,6 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       it 'returns the ProgramKey' do
         expect(config['program_tesim'].to_s).to eq('Program')
       end
-
-      it 'returns the External item record key' do
-        expect(config['electronic_locator_ss'].to_s).to eq("External item record")
-      end
     end
 
     describe "#overview_terms terms" do
@@ -238,7 +233,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       let(:missing) { presenter_object_missing_items.overview_terms.keys.length }
 
       it "returns existing keys" do
-        expect(all).to eq 46
+        expect(all).to eq 45
         expect(config.length).to eq all
       end
 

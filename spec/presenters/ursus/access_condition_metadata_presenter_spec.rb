@@ -9,8 +9,7 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
       'services_contact_ssm' => 'Rights Contact',
       'rights_holder_tesim' => 'Rights Holder',
       'rights_country_tesim' => 'Rights (country of creation)',
-      'funding_note_tesim' => 'Funding Note',
-      'electronic_locator_ss' => "External item record"
+      'funding_note_tesim' => 'Funding Note'
     }
   end
   let(:solr_doc_missing_items) do
@@ -49,10 +48,6 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
       it 'returns the Local Rights Statement key' do
         expect(config['local_rights_statement_ssm'].to_s).to eq('Local Rights statement')
       end
-
-      it 'returns the External item record key' do
-        expect(config['electronic_locator_ss'].to_s).to eq("External item record")
-      end
     end
 
     describe "#access_condition terms" do
@@ -61,7 +56,7 @@ RSpec.describe Ursus::AccessConditionMetadataPresenter do
 
       it "returns existing keys" do
         expect(presenter_object.access_condition_terms).to be_instance_of(Hash)
-        expect(all).to eq 7
+        expect(all).to eq 6
         expect(config.length).to eq all
       end
 
