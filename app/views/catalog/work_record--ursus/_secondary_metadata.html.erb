@@ -3,7 +3,7 @@
 
   <% if document_json['electronic_locator_ss'] %>
     <button type="button" class='btn-base btn-base-md btn-outline-ursus--blue btn-ursus--secondary-block' style='margin-bottom: 1.5rem'>
-      View Item at <a href=<%= document_json['electronic_locator_ss'] %> target = '_blank'><%= document_json['repository_tesim'] %> <span><%= image_tag('icon-external-link.svg') %></span></a>
+      View Item at <a href=<%= document_json['electronic_locator_ss'] %> target = '_blank'><%= document_json['repository_tesim'][0] %> <span><%= image_tag('icon-external-link.svg') %></span></a>
     </button>
   <% end %>
 
