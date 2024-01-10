@@ -2,8 +2,8 @@
   <% document_json = JSON.parse @document.to_json.tr("'", '_') %>
 
   <% if document_json['electronic_locator_ss'] %>
-    <button type="button" class='btn-base btn-base-md btn-outline-ursus--blue btn-ursus--secondary-block' style='margin-bottom: 1.5rem'>
-      View Item at <a href =<%= document_json['electronic_locator_ss'] %> target = '_blank' class='btn-ursus--secondary-block-link'><%= document_json['repository_tesim'][0] %> <%= image_tag('icon-external-link.svg') %></a>
+    <button type="button" class='btn-base btn-base-md btn-outline-ursus--blue btn-secondary-block--ursus' style='margin-bottom: 1.5rem'>
+      View Item at <a href =<%= document_json['electronic_locator_ss'] %> target = '_blank' class='btn-secondary-block-link--ursus'><%= document_json['repository_tesim'][0] %> <%= image_tag('icon-external-link.svg') %></a>
     </button>
   <% end %>
 
