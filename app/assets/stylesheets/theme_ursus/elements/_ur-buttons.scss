@@ -101,8 +101,9 @@
   justify-content: flex-start;
   align-content: flex-start;
   margin-bottom: 1.5rem;
-  text-align: left;
   padding-left: 15px;
+  text-align: left;
+
   color: $ucla-darker-blue;
 
   &:hover {
@@ -118,11 +119,11 @@
   align-items: center;
   justify-content: flex-start;
   align-content: flex-start;
-  color: $ucla-darker-blue;
   padding-left: 8px;
+  color: $ucla-darker-blue;
 
   &:hover {
-    color: $white;
     text-decoration: none;
+    color: $white;
   }
 }
