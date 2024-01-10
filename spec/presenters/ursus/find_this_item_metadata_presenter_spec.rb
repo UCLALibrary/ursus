@@ -5,8 +5,8 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
   let(:solr_doc) do
     {
       'repository_tesim' => 'Repository',
+      'identifier_tesim' => "Identifier",
       'local_identifier_ssim' => 'Local identifier',
-      'identifier_global_ssim' => 'Identifier',
       'opac_url_tesim' => 'Opac url',
       'oclc_ssi' => 'OCLC Number',
       'ark_ssi' => 'ARK',
@@ -28,6 +28,10 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
     describe 'config' do
       it 'returns the Repository Key' do
         expect(config['repository_tesim'].to_s).to eq('Repository')
+      end
+
+      it "returns the Identifier key" do
+        expect(config['identifier_tesim'].to_s).to eq ("Identifier")
       end
 
       it 'returns the Local identifier Key' do
@@ -62,7 +66,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       it "returns existing keys" do
         expect(presenter_object.find_this_item_terms).to be_instance_of(Hash)
         expect(presenter_object.find_this_item_terms.include?('ark_ssi')).to be true
-        expect(all).to eq 7
+        expect(all).to eq 8
         expect(config.length).to eq all
       end
 

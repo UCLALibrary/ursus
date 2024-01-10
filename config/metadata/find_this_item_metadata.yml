@@ -1,4 +1,5 @@
 repository_tesim: "Repository"
+identifier_tesim: 'Identifier'
 local_identifier_ssim: "Local identifier"
 identifier_global_ssim: "Identifier"
 opac_url_tesim: "Opac url"
