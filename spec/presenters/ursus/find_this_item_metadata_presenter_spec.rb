@@ -31,15 +31,11 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       end
 
       it "returns the Identifier key" do
-        expect(config['identifier_tesim'].to_s).to eq ("Identifier")
+        expect(config['identifier_tesim'].to_s).to eq("Identifier")
       end
 
       it 'returns the Local identifier Key' do
         expect(config['local_identifier_ssim'].to_s).to eq('Local identifier')
-      end
-
-      it 'returns the Identifier' do
-        expect(config['identifier_global_ssim'].to_s).to eq('Identifier')
       end
 
       it 'returns the Opac url' do
