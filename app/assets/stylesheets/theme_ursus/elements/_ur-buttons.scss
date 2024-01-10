@@ -102,6 +102,15 @@
   align-content: flex-start;
   text-align: left;
   margin-bottom: 1.5rem;
+  color: $ucla-darker-blue;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+  &:visited {
+    color: $ucla-darker-blue;
+  }
 }
 
 .btn-secondary-block-link--ursus {
