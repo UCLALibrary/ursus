@@ -104,3 +104,20 @@
   padding-left: 15px;
   text-align: left;
 }
+
+.btn-ursus--secondary-block-link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: flex-start;
+  color: $ucla-darker-blue;
+  background-color: $white;
+  border-color: $ucla-darker-blue;
+
+  &:hover {
+    color: $white;
+    background-color: $ucla-darker-blue;
+  }
+}
