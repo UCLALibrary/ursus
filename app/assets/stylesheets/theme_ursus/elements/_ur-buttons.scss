@@ -100,8 +100,8 @@
   align-items: center;
   justify-content: flex-start;
   align-content: flex-start;
-  padding-left: 15px;
   text-align: left;
+  margin-bottom: 1.5rem;
 }
 
 .btn-secondary-block-link--ursus {
@@ -112,7 +112,7 @@
   justify-content: flex-start;
   align-content: flex-start;
   color: $ucla-darker-blue;
-  padding-left: 8px;
+  padding-left: 15px;
 
   &:hover {
     color: $white;
