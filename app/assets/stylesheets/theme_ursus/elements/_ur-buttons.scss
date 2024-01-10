@@ -112,11 +112,14 @@
   justify-content: flex-start;
   align-content: flex-start;
   color: $ucla-darker-blue;
-  padding-left: 2px;
+  padding-left: 8px;
 
   &:hover {
     color: $white;
     background-color: $ucla-darker-blue;
-    text-decoration: none; 
+    text-decoration: none;
+  }
+  &:visited {
+    color: $ucla-darker-blue;
   }
 }
