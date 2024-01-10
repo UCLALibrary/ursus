@@ -2,12 +2,12 @@
   <% document_json = JSON.parse @document.to_json.tr("'", '_') %>
 
   <% if document_json['electronic_locator_ss'] %>
-    <button class='btn-base btn-base-md btn-outline-ursus--blue btn-ursus--secondary-block' style='margin-bottom: 1.5rem'>
+    <button type="button" class='btn-base btn-base-md btn-outline-ursus--blue btn-ursus--secondary-block' style='margin-bottom: 1.5rem'>
       View Item at <br><%= document_json['electronic_locator_ss'] %>&nbsp;<span><%= image_tag('icon-external-link.svg') %></span>
     </button>
   <% end %>
 
-  <div class='item-page__secondary-metadata--ursus-block'>
+  <div class='item-page__secondary-metadata--ursus-block'>&nbsp;<span><%= image_tag('icon-external-link.svg') %></span>
 
     <%= render 'catalog/work_record--ursus/find_this_item_metadata', document: document %>
 
