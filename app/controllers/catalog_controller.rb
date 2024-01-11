@@ -261,7 +261,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_temporal_tesim', label: 'Subject Temporal', link_to_facet: 'subject_temporal_sim' # Primary / Physical description
     config.add_show_field 'subject_tesim', label: 'Subject', link_to_facet: 'subject_sim' # Primary / Physical description
     config.add_show_field 'subject_topic_tesim', label: 'Subject Topic', link_to_facet: 'subject_topic_sim' # Primary / Physical description
-    config.add_show_field 'summary_tesim', label: 'Summary' # Primary / Notes
+    config.add_show_field 'summary_tesim', label: 'Summary'auto_link: true # make this field url aware # Primary / Notes
     config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim' # Primary / Physical description
     config.add_show_field 'title_tesim', label: 'Title' # Primary / Item Overview
     config.add_show_field 'toc_tesim', label: 'Table of Contents' # Primary / Notes
