@@ -31,6 +31,8 @@
       <p class='static_page__paragraph static-page__iiif-guide_p'><span class='static-page__italic'>Zoom, pan, and rotate:</span> <span class='static-page__bold'>Zoom and rotate</span> buttons are located in the top left of the viewer. You can zoom in (&#43;) or out (<span class='static-page__bold'>&#45;</span>) and rotate the image (⟳) in 90-degree increments. If you zoom in closer than 100%, you can click in the viewing area and use your cursor to move the image and pan horizontally and vertically.</p>
       <%= image_tag 'static/ucla_iiif_zoom-rotate.gif', alt: 'A GIF demonstrating the zoom, rotate, and pan functions on a page image from an  autograph album', class: "static-page__image" %>
 
+      <p class='static_page__paragraph static-page__iiif-guide_p'><a href="https://digital.library.ucla.edu/catalog/ark:/21198/n12k6g"  class="ur-link">Autograph album no. 4</a>, from <a href="https://digital.library.ucla.edu/catalog/ark:/21198/n1t31k" class="ur-link">Five autograph albums belonging to nurse E.F. Raynes Plante and signed by soldiers recuperating at the Red Cross Hospital at 6 Third Avenue, Hove, Sussex, England, 1914-1943, bulk 1914-1918</a>, UCLA Library Digital Collections.</p>
+
       <%#= Viewing Mode %>
       <p class='static_page__paragraph static-page__iiif-guide_p'><span class='static-page__italic'>Viewing mode:</span> The <span class='static-page__bold'>view mode</span> icons in the upper right-hand corner of the viewer allow you to toggle between viewing modes: a single image, a book view with facing pages (for paginated items), or a gallery view (when there are multiple images).</p>
       <%= image_tag 'static/ucla_iiif_view-mode.gif', alt: 'A GIF demonstrating the different view modes.', class: "static-page__image" %>
@@ -62,7 +64,7 @@
 
       <%#=  IIIF Manifest URL %>
       <p class='static_page__paragraph  static-page__iiif-guide_p'>To use the IIIF Manifest, you first need to locate the <span class='static-page__bold'>IIIF Manifest URL</span> for the resources that you wish to compare. For resources in the UCLA Library Digital Collections portal, you will find the IIIF Manifest URL in the “Find this Item” section of the resource’s item page.</p>
-      <%= image_tag 'static/ucla_iiif_manifest-url.png', alt: 'The “Find This Item” section from the Map of Frankfurt and Its Environs item page.', class: "static-page__image" %>
+      <%= image_tag 'static/ucla_iiif_manifest-url.png', alt: 'Screenshot of the - Find This Item - section from the item record for the mural Our People.', class: "static-page__image" %>
 
       <p class='static_page__paragraph  static-page__iiif-guide_p'>To <span class='static-page__bold'>copy</span> the IIIF Manifest URL, right click the IIIF logo <%= image_tag 'static/ucla_iiif_logo.png', alt: 'iiif logo icon', width: '20px', style: 'display:inline' %> and select “Copy Link.” Clicking on the IIIF logo will open the IIIF Manifest in a new tab in your browser.</p>
 
@@ -77,11 +79,15 @@
 
         <li class="static-page__li-steps">
           <span class='static-page__bold'>Step 2</span>: Click on the blue &#34; &#43; Start Here &#34; button in the top left corner.
-          </li>
+        </li>
 
         <li class="static-page__li-steps">
           <span class='static-page__bold'>Step 3</span>: Click on the blue &#34; &#43; Add Resource &#34; button at the bottom right corner of the page and paste the IIIF Manifest URL into the text box. Click &#34;Add.&#34; The item should now appear in the list of available IIIF resources. Click on the resource you just added to open it in Mirador.
-          </li>
+        </li>
+
+        <li class="static-page__li-steps">
+          <span class='static-page__bold'>Step 4</span>: Copy the IIIF Manifest URL for the second resource that you would like to compare, for example <a href="https://digital.library.ucla.edu/catalog/ark:/21198/zz0025nnnp">the mural "Untitled" by El Congreso de Artistas Cosmicos de las Americas de San Diego</a> from the same collection. Select the blue /"+/" button in the top left corner. Click the /"+ Add Resource/" button to import this IIIF resource. You can add more items to the list of resources and compare multiple images side-by-side in the Mirador viewer.
+        </li>
 
         <li class="static-page__li-steps">
           <span class='static-page__bold'>Step 4</span>: Copy the IIIF Manifest URL for the second resource that you would like to compare, for example a <a href="https://digital.library.ucla.edu/catalog/ark:/21198/zz0025nnnp" class="ur-link">second mural photograph</a>. Select the blue &#34; &#43; &#34; button in the top left corner. Click the &#34; &#43; Add Resource &#34; button to import this IIIF resource. You can add more items to the list of resources and compare multiple images side-by-side in the Mirador viewer.
@@ -93,6 +99,19 @@
       <%= image_tag 'static/ucla_iiif_import-manifest.gif', alt: 'A GIF demonstrating how to import a IIIF Manifest into Mirador.', class: 'static-page__image static-page__top_bottom_margin' %>
 
       <%= image_tag 'static/ucla_iiif_open-2-images.gif', alt: 'A GIF demonstrating how to open two different images in the Mirador viewer.', class: 'static-page__image static-page__top_bottom_margin' %>
+
+  <hr class='divider divider--ursus static-page__hr_margins'>
+
+    <div class='static-page__subtitle static-page__subtitle--iiif-guide'>
+      <%= t('static_pages.iiif_guide.discover_and_collect').upcase %>
+    </div>
+
+    <p class='static_page__paragraph static-page__iiif-guide_p'>There is no unified search for IIIF resources, but many institutions across the globe have guides for finding IIIF resources within their digital collections. For a list of these resources, visit the IIIF’s <a href="https://iiif.io/guides/finding_resources/" class="ur-link">Guides to finding IIIF resources</a> page.</p>
+
+    <p class='static_page__paragraph static-page__iiif-guide_p'><a href="https://seige.digital/en/detektiiif/" class="ur-link">detektIIIF</a> is a browser extension for Chrome and Firefox that detects IIIF resources (manifests, images, and collections) in websites. It allows you to collect IIIF manifests in a basket and send them to any compatible IIIF application.</p>
+
+      <!-- image -->
+      <%= image_tag 'static/flowers1.jpg', alt: '', class: "static-page__image" %>
 
   </div>
 
@@ -151,6 +170,104 @@
             <li>IIIF Curation Viewer is an image viewer compliant with IIIF standards. In addition to zoom and   page-view capabilities, it offers a light box feature that allows users to cut and curate parts of images from multiple IIIF objects.</li>
           </ul>
       </ul>
+
+  <hr class='divider divider--ursus static-page__hr_margins'>
+
+      <div class='static-page__subtitle static-page__subtitle--iiif-guide'>
+        <%= t('static_pages.iiif_guide.discover_and_collect').upcase %>
+      </div>
+
+      <p class='static_page__paragraph static-page__iiif-guide_p'>IIIF also supports transformation and embedding of image resources without the use of a IIIF Manifest in a dedicated viewer. A IIIF-enabled image, or even regions of that image, can be embedded in numerous contexts such as web pages, presentation slides, social media, and teaching and learning materials. In this way, you can easily share curated and transformed content in new contexts across the web using the IIIF image URL. </p>
+
+      <div class='static-page__subtitle static-page__subtitle--iiif-guide'>
+        <%= t('static_pages.iiif_guide.discover_and_collect').upcase %>
+      </div>
+
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <!--- image --->
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <!--- image --->
+      <%= image_tag 'static/ucla_iiif_image-region.gif', alt: '', class: "static-page__image" %>
+
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+
+  <hr class='divider divider--ursus static-page__hr_margins'>
+
+      <div class='static-page__subtitle static-page__subtitle--iiif-guide'>
+        <%= t('crop_images_with_iiif').upcase %>
+      </div>
+
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+
+      <!-- image -->
+      <%= image_tag 'static/ucla_iiif_zoom-rotate.gif', alt: '', class: "static-page__image" %>
+
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <!-- image -->
+      <%= image_tag 'static/ucla_iiif_crop-tool.png', alt: '', class: "static-page__image" %>
+
+      <div class='static-page__subtitle static-page__subtitle--iiif-guide'>
+        <%= t('resize_and_rotate').upcase %>
+      </div>
+
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+
+      <!-- image -->
+      <%= image_tag 'static/ucla_iiif_rotated-image.png', alt: '', class: "static-page__image" %>
+
+  <hr class='divider divider--ursus static-page__hr_margins'>
+
+      <div class='static-page__subtitle static-page__subtitle--iiif-guide'>
+        <%= t('adjust_image_quality').upcase %>
+      </div>
+
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+
+      <!-- image -->
+      <%= image_tag 'static/ucla_iiif_grayscale-image.png', alt: '', class: "static-page__image" %>
+      <p class='static_page__paragraph static-page__iiif-guide_p'></p>
+
+  <hr class='divider divider--ursus static-page__hr_margins'>
+
+      <div class='static-page__subtitle static-page__subtitle--iiif-guide'>
+        <%= t('embed_images').upcase %>
+      </div>
+
+      <p class='static_page__paragraph static-page__iiif-guide_p'>Once you have a IIIF image URL and have transformed it to meet your needs, you can share or embed the resulting image just like you would any other image where you can use a direct image URL. For example:
+</p>
+  <ul class='static-page__list static-page__list--ursus'>
+    <li>Add the image to a Google slide using the “Insert image from web” option</li>
+    <li>Include the image in a web page using the HTML &62;img/&60; tag</li>
+    <li>Share the image URL on social media, via email, etc.</li>
+  </ul>
+
     </div>
     <hr class='divider divider--ursus static-page__hr_margins'>
 
