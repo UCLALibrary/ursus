@@ -2,4 +2,3 @@ app/assets/stylesheets/legacy/**
 app/assets/stylesheets/blacklight_gallery.css.scss
 app/assets/stylesheets/base/utilities/old-css/**
 app/assets/stylesheets/blacklight_oai_provider/*.xsl
-app/views/catalog/work_record--ursus/_secondary_metadata.html.erb

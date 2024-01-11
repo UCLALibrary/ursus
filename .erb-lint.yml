@@ -1,9 +1,10 @@
 ---
 EnableDefaultLinters: true
-exclude: 
+exclude:
   - '**/views_legacy/**'
   - '**/vendor/**/*'
   - '**/node_modules/**/*'
+  - '/app/views/catalog/work_record--ursus/_secondary_metadata.html.erb'
 linters:
   ErbSafety:
     enabled: false
