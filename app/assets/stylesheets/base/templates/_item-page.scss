@@ -62,4 +62,13 @@
   display: flex;
   flex-direction: column;
   align-self: baseline;
+
 }
+
+.item-page__secondary-metadata-block--ursus {
+  align-self: baseline;
+  padding-top: 30px;
+  padding-left: 15px;
+  background-color: $gray-40;
+}
+
