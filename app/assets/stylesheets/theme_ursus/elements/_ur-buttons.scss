@@ -105,12 +105,13 @@
   text-align: left;
   color: $ucla-darker-blue;
 
+  &:visited {
+    color: inherit;
+  }
+
   &:hover {
     text-decoration: none;
     color: $white;
-  }
-  &:visited {
-    color: inherit;
   }
 }
 
