@@ -9,8 +9,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       'local_identifier_ssim' => 'Local identifier',
       'opac_url_tesim' => 'Opac url',
       'oclc_ssi' => 'OCLC Number',
-      'ark_ssi' => 'ARK',
-      'electronic_locator_ss' => "External item record"
+      'ark_ssi' => 'ARK'
     }
   end
   let(:solr_doc_missing_items) do
@@ -49,10 +48,6 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       it 'returns the ARK Key' do
         expect(config['ark_ssi'].to_s).to eq('ARK')
       end
-
-      it 'returns the External item record' do
-        expect(config['electronic_locator_ss'].to_s).to eq('External item record')
-      end
     end
 
     describe "#find_this_item_terms" do
@@ -62,7 +57,7 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       it "returns existing keys" do
         expect(presenter_object.find_this_item_terms).to be_instance_of(Hash)
         expect(presenter_object.find_this_item_terms.include?('ark_ssi')).to be true
-        expect(all).to eq 8
+        expect(all).to eq 7
         expect(config.length).to eq all
       end
 
