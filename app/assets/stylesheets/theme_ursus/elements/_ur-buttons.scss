@@ -109,6 +109,9 @@
     text-decoration: none;
     color: $white;
   }
+  &:visited {
+    color: inherit;
+  }
 }
 
 .btn-secondary-block-link--ursus {
