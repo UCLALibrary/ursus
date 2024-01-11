@@ -115,22 +115,6 @@
   }
 }
 
-.btn-secondary-block-link--ursus {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  align-content: flex-start;
-  padding-left: 8px;
-  color: $ucla-darker-blue;
-
-  &:hover {
-    text-decoration: none;
-    color: $white;
-  }
-}
-
 .btn-secondary-block-link-value--ursus {
   padding: 0 5px;
 }

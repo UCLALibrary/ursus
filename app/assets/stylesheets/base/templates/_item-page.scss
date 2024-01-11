@@ -56,7 +56,7 @@
   @extend .col-lg-6;
 }
 
-.item-page__secondary-metadata {
+.item-page__secondary-metadata-container {
   @extend .col-lg-5;
 
   display: flex;
@@ -64,9 +64,9 @@
   align-self: baseline;
 }
 
-.item-page__secondary-metadata-block--ursus {
+.item-page__secondary-metadata {
+  @extend .col-lg-5;
+
   align-self: baseline;
-  padding-top: 30px;
-  padding-left: 15px;
   background-color: $gray-40;
 }

@@ -1,4 +1,4 @@
-<div class='item-page__secondary-metadata'>
+<div class='item-page__secondary-metadata-container'>
   <% document_json = JSON.parse @document.to_json.tr("'", '_') %>
 
   <% if document_json['electronic_locator_ss'] && document_json['repository_tesim'] %>
