@@ -2,7 +2,7 @@
   <% document_json = JSON.parse @document.to_json.tr("'", '_') %>
 
   <% if document_json['electronic_locator_ss'] && document_json['repository_tesim'] %>
-    <a href=<%= document_json['electronic_locator_ss'] %> ' target=' _blank ' rel=' noopener noreferrer ' class=' btn-secondary-block-link--ursus '>View item at<span class=' btn-secondary-block-link-value--ursus '> <%= document_json['repository_tesim'][0] %> </span> <span class=' icon-external-link ' role=' img ' aria-label=' Eternal link icon '> <%= image_tag('icon-external-link.svg') %> </span> </a>
+    <a href=<%= document_json['electronic_locator_ss'] %> 'target='_blank' rel='noopener noreferrer' class='btn-secondary-block-link--ursus'>View item at<span class='btn-secondary-block-link-value--ursus'> <%= document_json['repository_tesim'][0] %> </span> <span class='icon-external-link' role='img' aria-label='Eternal link icon'> <%= image_tag('icon-external-link.svg') %> </span> </a>
   <% end %>
 
   <div class=' item-page__secondary-metadata--ursus-block '>
