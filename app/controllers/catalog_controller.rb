@@ -188,7 +188,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'director_tesim', label: 'Director', link_to_facet: 'director_sim' # Primary / Item Overview
     config.add_show_field 'dlcs_collection_name_tesim' # Not Using
     config.add_show_field 'edition_ssm', label: 'Edition' # Primary / Item Overview
-    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_sim' # Primary / Item Overview
+    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_sim'
+    config.add_show_field 'electronic_locator_ss', label: 'External item record' # Secondary / Button
+    # Primary / Item Overview
     config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim' # Primary / Item Overview
     config.add_show_field 'extent_tesim', label: 'Extent' # Primary / Physical description
     config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim' # Primary / Physical description
@@ -259,7 +261,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_temporal_tesim', label: 'Subject Temporal', link_to_facet: 'subject_temporal_sim' # Primary / Physical description
     config.add_show_field 'subject_tesim', label: 'Subject', link_to_facet: 'subject_sim' # Primary / Physical description
     config.add_show_field 'subject_topic_tesim', label: 'Subject Topic', link_to_facet: 'subject_topic_sim' # Primary / Physical description
-    config.add_show_field 'summary_tesim', label: 'Summary' # Primary / Notes
+    config.add_show_field 'summary_tesim', label: 'Summary', auto_link: true # make this field url aware # Primary / Notes
     config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim' # Primary / Physical description
     config.add_show_field 'title_tesim', label: 'Title' # Primary / Item Overview
     config.add_show_field 'toc_tesim', label: 'Table of Contents' # Primary / Notes

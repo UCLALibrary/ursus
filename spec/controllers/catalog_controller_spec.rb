@@ -90,6 +90,7 @@ RSpec.describe CatalogController, type: :controller do
         "dlcs_collection_name_tesim",
         "edition_ssm",
         "editor_tesim",
+        "electronic_locator_ss",
         "engraver_tesim",
         "extent_tesim",
         "features_tesim",
