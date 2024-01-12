@@ -62,3 +62,11 @@
   align-self: baseline;
   background-color: $gray-40;
 }
+
+.item-page__secondary-metadata-container {
+  @extend .col-lg-5;
+
+  display: flex;
+  flex-direction: column;
+  align-self: baseline;
+}
