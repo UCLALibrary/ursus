@@ -18,7 +18,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
     visit "/catalog/#{ark}"
 
     expect(page).to have_selector('.item-page__primary-metadata')
-    expect(page).to have_selector('.item-page__secondary-metadata')
+    expect(page).to have_selector('.item-page__secondary-metadata' , 'item-page__secondary-metadata-container')
     expect(page).to have_content 'The Title of my Work'
     expect(page).to have_content 'DESCRIPTION Description 1'
     expect(page).to have_content 'Description 2'
