@@ -1,5 +1,24 @@
-<div class='item-page__secondary-metadata item-page__secondary-metadata--ursus'>
-  <%= render 'catalog/work_record--ursus/find_this_item_metadata', document: document %>
+<% document_json = JSON.parse @document.to_json.tr("'", '_') %>
 
-  <%= render 'catalog/work_record--ursus/access_condition_metadata', document: document %>
-</div>
+<% if document_json['electronic_locator_ss'] && document_json['repository_tesim'] %>
+
+    <%# External item record button above the blue secondary block %>
+    <div class='item-page__secondary-metadata-container'>
+        <a href=<%= document_json['electronic_locator_ss'] %> class='btn-base btn-base-md btn-outline-ursus--blue btn-secondary-block--ursus' target='_blank' rel='noopener noreferrer'>View item at <span class='btn-secondary-block-link-value--ursus'> <%= document_json['repository_tesim'][0] %> </span> <span class='icon-external-link' role='img' aria-label='External link icon'> <%= image_tag('icon-external-link.svg') %> </span> </a>
+
+    <%# Blue secondary block - Find This Item & Access Condition%>
+    <div class=' item-page__secondary-metadata-block--ursus '>
+      <%= render 'catalog/work_record--ursus/find_this_item_metadata', document: document %>
+      <%= render 'catalog/work_record--ursus/access_condition_metadata', document: document %>
+    </div>
+
+
+<% else %>
+
+  <%# ONLY Blue secondary block - Find This Item & Access Condition%>
+  <div class='item-page__secondary-metadata item-page__secondary-metadata--ursus'>
+    <%= render 'catalog/work_record--ursus/find_this_item_metadata', document: document %>
+
+    <%= render 'catalog/work_record--ursus/access_condition_metadata', document: document %>
+  </div>
+<% end %>
