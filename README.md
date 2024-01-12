@@ -94,6 +94,27 @@ Or individually:
 1. root@ursus:/ursus# yarn run lint
 1. root@ursus:/ursus# rubocop
 
+## Ursus WITH Californica's database
+
+Go to the `docker.env` file for directions
+
+#### In the `docker.env file`
+
+1. Comment out `SOLR_URL=http://solr:8983/solr/ursus`
+
+2. Uncomment this line `SOLR_URL=http://host.docker.internal:8983/solr/californica`
+
+3. In your terminal run $`docker-compose -f docker-compose-with-californica.yml up`
+
+#### Before deploying
+
+1. Be sure to comment out `SOLR_URL=http://host.docker.internal:8983/solr/californica`
+
+2. And uncomment this line `SOLR_URL=http://host.docker.internal:8983/solr/californica`
+
+#### You cannot run `docker-compose run web bash` in this environment.
+
+---
 
 ### Running the integration tests
 
