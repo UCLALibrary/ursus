@@ -76,20 +76,45 @@
 
 .btn-ursus--show-toggle {
   display: block;
- 
+
 }
 
 .btn-ursus--hide-toggle {
   display: none;
- 
 }
 
 .btn-base-lg--alert--ursus {
   @media (max-width: 1303px) {
     font-size: $text-16;
   }
-  
+
   @media (max-width: 575px) {
     font-size: $text-16;
   }
+}
+
+.btn-secondary-block--ursus {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin-bottom: 1.5rem;
+  padding-left: 15px;
+  text-align: left;
+  color: $ucla-darker-blue;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+.btn-secondary-block-link-value--ursus {
+  padding: 0 5px;
 }
