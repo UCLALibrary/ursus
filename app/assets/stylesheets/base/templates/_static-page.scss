@@ -38,29 +38,6 @@
   }
 }
 
-.static-page__row {
-  padding: 1.5rem 0;
-}
-
-.static-page__subtitle {
-  font-size: $text-20;
-  letter-spacing: 0.15rem;
-
-  @media (max-width: 991px) {
-    margin-bottom: 1rem;
-  }
-}
-
-.static-page__text {
-  margin-bottom: 1rem;
-  font-size: $text-18;
-  line-height: 2;
-
-  @media (max-width: 991px) {
-    font-size: $text-16;
-  }
-}
-
 .static_page__paragraph {
   margin: 2rem 0;
   font-size: $text-18;
