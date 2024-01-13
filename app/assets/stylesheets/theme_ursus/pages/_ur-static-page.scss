@@ -7,7 +7,12 @@
 }
 
 .static-page__subtitle--ursus {
-  @extend .col-lg-4;
+  font-size: $text-20;
+  letter-spacing: 0.15rem;
+
+  @media (max-width: 991px) {
+    margin-bottom: 1rem;
+  }
 }
 
 .static-page__text--ursus {
