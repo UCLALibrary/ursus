@@ -1,3 +1,7 @@
+.static-page__image--ursus {
+  margin-left: 50px;
+}
+
 .static-page__row--ursus {
   @extend .row;
 }
@@ -104,3 +108,6 @@
 .static-page__subtitle--iiif-guide {
   @extend .col-lg-8;
 }
+
+
+
