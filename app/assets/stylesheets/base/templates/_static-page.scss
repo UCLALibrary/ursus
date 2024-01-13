@@ -11,6 +11,10 @@
 }
 
 .static-page__list {
+  margin: 2rem;
+  font-size: $text-18;
+  line-height: 2;
+
   @media (max-width: 991px) {
     font-size: $text-16;
   }
@@ -96,13 +100,6 @@
   font-size: $text-14;
 }
 
-.static-page__list {
-  margin: 15px 50px 25px 25px;
-  padding-left: 24px;
-  font-size: $text-18;
-  line-height: 2;
-}
-
 .static-page__steps {
   border: 1px solid $ucla-darker-blue;
   border-radius: 5px;
@@ -123,15 +120,5 @@
 
   @media (max-width: 991px) {
     font-size: 11px;
-  }
-}
-
-.static-page__list {
-  margin: 2rem;
-  font-size: $text-18;
-  line-height: 2;
-
-  @media (max-width: 991px) {
-    font-size: $text-16;
   }
 }
