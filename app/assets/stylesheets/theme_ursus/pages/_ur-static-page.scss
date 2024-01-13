@@ -6,6 +6,16 @@
   @extend .row;
 }
 
+.static-page__text--ursus {
+  @extend .col-lg-8;
+}
+
+.static-page__list--ursus {
+  @media (max-width: 991px) {
+    font-size: $text-16;
+  }
+}
+
 .static-page__subtitle--ursus {
   font-size: $text-20;
   letter-spacing: 0.15rem;
@@ -15,13 +25,12 @@
   }
 }
 
-.static-page__text--ursus {
-  @extend .col-lg-8;
-}
+.static-page__title--ursus {
+  font-size: $text-36;
+  font-weight: $font-bold;
 
-.static-page__list--ursus {
-  @media (max-width: 991px) {
-    font-size: $text-16;
+  @media (max-width: 767px) {
+    font-size: calc(80% + 0.875rem);
   }
 }
 
