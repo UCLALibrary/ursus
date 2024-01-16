@@ -28,6 +28,10 @@
   height: 100%;
 }
 
+.static-page_steps_container--ursus {
+  width: 100%;
+}
+
 .static-page__steps--ursus {
   margin: 1.3rem -1rem 1.3rem 0.5rem;
   padding: 0;
@@ -35,8 +39,7 @@
   line-height: 1.5em;
 
   @media (max-width: 991px) {
-    margin-right: -1rem;
-    margin-left: -0.5rem;
+    margin: 1.3rem;
   }
 }
 
