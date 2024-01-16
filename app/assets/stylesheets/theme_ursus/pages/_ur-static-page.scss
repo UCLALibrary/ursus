@@ -36,10 +36,10 @@
 // }
 
 .static-page__steps--ursus {
-  margin: 1.3rem -1rem 1.3rem .5rem;
+  margin: 1.3rem -1rem 1.3rem 0.5rem;
+  padding: 0;
   font-size: 1.1rem;
   line-height: 1.5em;
-  padding: 0;
 
   @media (max-width: 991px) {
     margin-right: -1rem;
@@ -49,8 +49,8 @@
 
 .static-page__image--ursus {
   margin-left: 50px;
+  margin-top: -0.5rem;
   width: 50%;
-  margin-top: -.5rem;
 }
 
 .static-page__image_manifest_code--ursus {
