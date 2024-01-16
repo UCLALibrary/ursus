@@ -14,7 +14,7 @@
 .static-page__responsive-iframe-container--ursus {
   position: relative;
   overflow: hidden;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
   width: 100%;
 }
 
@@ -22,8 +22,8 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
   right: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
@@ -36,16 +36,14 @@
 // }
 
 .static-page__steps--ursus {
+  margin: 1.3rem -1rem 1.3rem .5rem;
   font-size: 1.1rem;
   line-height: 1.5em;
-  margin: 1.3rem;
   padding: 0;
-  margin-left: 3rem;
-  margin-right: 5rem;
 
   @media (max-width: 991px) {
-    margin-left: -.5rem;
     margin-right: -1rem;
+    margin-left: -0.5rem;
   }
 }
 
@@ -64,9 +62,9 @@
 }
 
 .static-page__iiif-guide_p {
+  margin: 1.5rem;
   font-size: 1.1rem;
   line-height: 1.5em;
-  margin: 1.5rem;
 }
 
 .static-page__row--ursus {
