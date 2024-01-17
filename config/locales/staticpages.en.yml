@@ -1,7 +1,7 @@
---- 
-en: 
-  static_pages: 
-    copyright_and_collections: 
+---
+en:
+  static_pages:
+    copyright_and_collections:
       copyright_statement: 'Copyright'
       opt_out_procedure: 'Opt-Out Procedure'
       page_title: 'Copyright and Collections'
@@ -26,7 +26,14 @@ en:
       page_title: 'Using Digital Collections Content with IIIF'
       viewing_experience: 'A rich viewing experience'
       compare_images: 'Compare images'
+      discover_and_collect: 'Discover and collect IIIF resources'
       build_your_own: 'Build your own digital exhibit'
       annotate_images: 'Annotate images'
       iiif_friendly: 'More IIIF-friendly tools and viewers'
+      use_and_transform: 'Use and transform IIIF Images'
+      the_iiif_image_url: 'The IIIF image URL'
+      crop_images_with_iiif: 'Crop images with the IIIF image URL'
+      resize_and_rotate: 'Resize and rotate images with the IIIF image URL'
+      adjust_image_quality: 'Adjust the image quality using the IIIF image URL'
+      embed_images: 'Embed images in new contexts'
       contributors: 'Contributors: Patricia Ledesma Villon, Syan Lunsford, Julia Tennenbaum, Dawn Childress'
