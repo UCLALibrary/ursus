@@ -6,32 +6,39 @@
   }
 }
 
-.static-page_fig-caption--ursus {
-  margin-left: 60px;
-  width: 50%;
-}
+.static-page__subtitle--ursus {
+  font-size: $text-20;
+  letter-spacing: 0.15rem;
 
-.static-page__responsive-iframe-container--ursus {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-  width: 100%;
-
-  @media (max-width: 767px) {
-    margin-left: 20px;
-    width: 90%;
-    height: 600px;
+  @media (max-width: 991px) {
+    margin-bottom: 1rem;
   }
 }
 
-.static-page__responsive-iframe--ursus {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.static-page__text--ursus {
+  @extend .col-lg-8;
+}
+
+.static-page__list--ursus {
+  font-size: 1.1rem;
+  line-height: 1.5em;
+  @media (max-width: 991px) {
+    font-size: $text-16;
+  }
+}
+
+.static-page__title--ursus {
+  font-size: $text-36;
+  font-weight: $font-bold;
+
+  @media (max-width: 767px) {
+    font-size: calc(80% + 0.875rem);
+  }
+}
+
+.static-page__hr_margins--ursus {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .static-page_steps-container--ursus {
@@ -63,6 +70,38 @@
   width: 80%;
 }
 
+.static-page_fig-caption--ursus {
+  margin-left: 60px;
+  width: 50%;
+
+  @media (max-width: 991px) {
+    width: 79%;
+  }
+}
+
+.static-page__responsive-iframe-container--ursus {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  width: 100%;
+
+  @media (max-width: 767px) {
+    margin-left: 20px;
+    width: 90%;
+    height: 600px;
+  }
+}
+
+.static-page__responsive-iframe--ursus {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .static-page__image_find--ursus {
   width: 40%;
 }
@@ -71,45 +110,6 @@
   margin: 1.5rem;
   font-size: 1.1rem;
   line-height: 1.5em;
-}
-
-.static-page__row--ursus {
-  @extend .row;
-}
-
-.static-page__text--ursus {
-  @extend .col-lg-8;
-}
-
-.static-page__list--ursus {
-  font-size: 1.1rem;
-  line-height: 1.5em;
-  @media (max-width: 991px) {
-    font-size: $text-16;
-  }
-}
-
-.static-page__subtitle--ursus {
-  font-size: $text-20;
-  letter-spacing: 0.15rem;
-
-  @media (max-width: 991px) {
-    margin-bottom: 1rem;
-  }
-}
-
-.static-page__title--ursus {
-  font-size: $text-36;
-  font-weight: $font-bold;
-
-  @media (max-width: 767px) {
-    font-size: calc(80% + 0.875rem);
-  }
-}
-
-.static-page__hr_margins {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
 }
 
 .static-page__iiif-guide_code_blue--ursus {

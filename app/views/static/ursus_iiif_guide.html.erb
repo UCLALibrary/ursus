@@ -8,7 +8,7 @@
   <p class='static_page__paragraph static-page__iiif-guide_p'>IIIF (pronounced “triple-eye-eff”) is a set of open standards for publishing image and audiovisual content on the web as <span class='static-page__italic'>interoperable</span> and <span class='static-page__italic'>portable</span> resources. With IIIF, resources can be reused in new contexts and imported into IIIF-friendly tools to view, share, or re-contextualize digital collections materials. The guide introduces some of the ways you can leverage IIIF when using the <a href="https://digital.library.ucla.edu" class="ur-link">UCLA Library Digital Collections</a>, including:</p>
 
   <ul class='static-page__list static-page__list--ursus'>
-      <li>Navigating rich viewing experiences for photographs, books and manuscripts, archival materials, and other image-based content</li>
+    <li>Navigating rich viewing experiences for photographs, books and manuscripts, archival materials, and other image-based content</li>
     <li>Comparing images across collections and institutions</li>
     <li>Building digital exhibits</li>
     <li>Annotating images</li>
@@ -19,7 +19,7 @@
 
   <p class=' static-page__iiif-guide_p static-page__italic static-page__note'>Note: Copyright laws may apply to materials within our collections, so remember to consult the UCLA Library <a href="https://digital.library.ucla.edu/copyright_and_collections" class="ur-link">copyright policies</a> when reusing images.</p>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# A Rich Viewing Experience %>
   <div class='static-page__title-row'>
@@ -56,7 +56,7 @@
   <p class='static_page__paragraph static-page__iiif-guide_p'><span class='static-page__italic'>Download images:</span> The download icon in the lower left-hand corner gives you the option to download the image displayed in the main viewing area. After clicking on the download icon, a white download menu will appear. Click on the “Download” button to open the image in a new tab in your web browser. You can then download the image using your browser’s Save command. The URL for the image can also be copied and used in new contexts, which is covered in the “Reusing IIIF Images” section below.</p>
   <%= image_tag 'static/ucla_iiif_download-images.png', alt: 'Left screenshot displays an album page displayed on Universal Viewer with the download icon circled in red at the bottom left of the screen. Right screenshot displays the download menu that appears after clicking on the icon.', class: "static-page__image static-page__image--ursus" %>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# Compare images %>
   <div class='static-page__title-row'>
@@ -100,7 +100,8 @@
       <li class="static-page__li-steps static-page__li-steps--ursus"><%= image_tag 'static/ucla_iiif_open-2-images.gif', alt: 'A GIF demonstrating how to open two different images in the Mirador viewer.', class: 'static-page__image static-page__image--ursus' %></li>
     </ul>
   </div>
-  <hr class='divider divider--ursus static-page__hr_margins'>
+
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# Discover and Collect %>
   <div class='static-page__title-row'>
@@ -113,7 +114,7 @@
 
     <%= image_tag 'static/ucla_iiif_detektiiif.jpg', alt: 'Screenshot of detekt iiif selecting a basket', class: "static-page__image static-page__image--ursus" %>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# Build your own digital exhibit %>
   <div class='static-page__title-row'>
@@ -128,7 +129,7 @@
     <iframe src="https://www.exhibit.so/exhibits/zgUYUqaUgin5g7oHnhic?embedded=true" class="static-page__responsive-iframe--ursus" allowfullscreen allow="autoplay" frameborder="0"></iframe>
   </div>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# Annotate images %>
   <div class='static-page__title-row'>
@@ -139,7 +140,7 @@
 
   <%= image_tag 'static/ucla_iiif_annotation.png', alt: 'Screenshot of an annotation on Vincent Van Gogh’s self-portrait in the Mirador viewer.', class: 'static-page__image static-page__image--ursus' %>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# More IIIF-friendly tools and viewers %>
   <div class='static-page__title-row'>
@@ -158,7 +159,7 @@
     <li><a href="http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/" class="ur-link">IIIF Curation Viewer</a> is an image viewer compliant with IIIF standards. In addition to zoom and   page-view capabilities, it offers a light box feature that allows users to cut and curate parts of images from multiple IIIF objects.</li>
   </ul>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# Use and transform IIIF Images %>
   <div class='static-page__title-row'>
@@ -167,7 +168,7 @@
 
   <p class='static_page__paragraph static-page__iiif-guide_p'>IIIF also supports transformation and embedding of image resources without the use of a IIIF Manifest in a dedicated viewer. A IIIF-enabled image, or even regions of that image, can be embedded in numerous contexts such as web pages, presentation slides, social media, and teaching and learning materials. In this way, you can easily share curated and transformed content in new contexts across the web using the IIIF image URL. </p>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# The IIIF image URL %>
   <div class='static-page__title-row'>
@@ -195,7 +196,7 @@
   <p class='static_page__paragraph static-page__iiif-guide_p'>The detektIIIF browser plugin discussed above is also an easy way to find IIIF images URLs that are present on your current web page.</p>
   <p class='static_page__paragraph static-page__iiif-guide_p'>Now that you can find your IIIF image URLs, you are ready to transform your images. Some of the transformations you can achieve using only the IIIF image URL include adjusting the region (cropping), adjusting the size or rotation, and adjusting the image quality.</p>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# Crop images with the IIIF image URL %>
   <div class='static-page__title-row'>
@@ -212,7 +213,7 @@
 
   <%= image_tag 'static/ucla_iiif_crop-tool.png', alt: '', class: "static-page__image static-page__image--ursus" %>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# Resize and rotate images with the IIIF image URL %>
   <div class='static-page__title-row'>
@@ -245,7 +246,7 @@
   </li>
   </ul>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# Adjust the image quality using the IIIF image URL %>
   <div class='static-page__title-row'>
@@ -260,7 +261,7 @@
 
   <p class='static_page__paragraph static-page__iiif-guide_p'>If you want to experiment with adjusting the IIIF image URL parameters, try the <a href="https://www.learniiif.org/image-api/playground.html" class="ur-link" target="_blank" rel="noopener noreferrer">IIIF Image API Playground</a>.</p>
 
-  <hr class='divider divider--ursus static-page__hr_margins'>
+  <hr class='divider divider--ursus static-page__hr_margins static-page__hr_margins--ursus'>
 
   <%# Embed images in new contexts %>
   <div class='static-page__title-row'>
