@@ -164,7 +164,7 @@ class CatalogController < ApplicationController
 
     config.add_show_field 'architect_tesim', label: 'Architect', link_to_facet: 'architect_sim' # Primary / Item Overview
     config.add_show_field 'alternative_title_tesim', label: 'Alternative title' # Primary / Item Overview
-    config.add_show_field 'archival_collection_tesi'
+    config.add_show_field 'archival_collection_tesi', label: 'Archival Collection' # Secondary / Find This Item
     config.add_show_field 'ark_ssi', label: 'ARK' # Secondary / Find This Item
     config.add_show_field 'artist_tesim', label: 'Artist', link_to_facet: 'artist_sim' # Primary / Item Overview
     config.add_show_field 'author_tesim', label: 'Author', link_to_facet: 'author_sim' # Primary / Item Overview
