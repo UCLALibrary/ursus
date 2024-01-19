@@ -3,3 +3,4 @@ local_identifier_ssim: "Local identifier"
 oclc_ssi: "OCLC Number"
 ark_ssi: "ARK"
 opac_url_ssi: "Opac url"
+archival_collection_tesi: 'Archival Collection'
