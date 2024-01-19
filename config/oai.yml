@@ -81,6 +81,7 @@ default:
     - oclc_ssi
     - ark_ssi
     - identifier_tesim
+    - archival_collection_tesi
   source:
     - member_of_collections_ssim
 DC:
