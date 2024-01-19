@@ -313,13 +313,6 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('archival_collection_title archival_collection_number archival_collection_box archival_collection_folder', label: 'Archival Collection') do |field|
-      field.solr_parameters = {
-        qf: 'archival_collection_title_ssi archival_collection_number_ssi archival_collection_box_ssi archival_collection_folder_ssi',
-        pf: ''
-      }
-    end
-
     # ------------------------------------------------------
     # CATALOG RESULTS 'SORT RESULTS BY' DROPDOWN
     # the _sort_widget.html.erb partial called in the _browse_results.html.erb partial
