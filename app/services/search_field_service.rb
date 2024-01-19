@@ -4,10 +4,11 @@ class SearchFieldService
   include Singleton
 
   SEARCH_FIELDS = [
-    'archival_collection_title',
-    'archival_collection_number',
-    'archival_collection_box',
-    'archival_collection_folder',
+    'archival_collection_tesi',
+    'archival_collection_title_ssi',
+    'archival_collection_number_ssi',
+    'archival_collection_box_ssi',
+    'archival_collection_folder_ssi',
     'ark_ssi',
     'artist_tesim',
     'alternative_title_tesim',
