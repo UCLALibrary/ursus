@@ -65,6 +65,7 @@ RSpec.describe CatalogController, type: :controller do
       [
         "architect_tesim",
         "alternative_title_tesim",
+        "archival_collection_tesi",
         "ark_ssi",
         "artist_tesim",
         "author_tesim",
