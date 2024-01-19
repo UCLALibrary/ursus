@@ -42,9 +42,10 @@ RSpec.describe SearchFieldService do
       'medium_tesim',
       'named_subject_tesim',
       'page_layout_ssim',
-       'opac_url_ssi',
+      'opac_url_ssi',
       'page_layout_ssim',
-      'photographer_tesim','place_of_origin_tesim',
+      'photographer_tesim',
+      'place_of_origin_tesim',
       'producer_tesim',
       'provenance_tesim',
       'publisher_tesim',
@@ -74,6 +75,7 @@ RSpec.describe SearchFieldService do
       'researcher_tesim',
       'format_book_tesim',
       'resp_statement_tesim',
-      'citation_source_tesim'].join(' '))
+      'citation_source_tesim
+    '].join(' '))
   end
 end
