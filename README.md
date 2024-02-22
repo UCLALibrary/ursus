@@ -55,6 +55,26 @@ cd ursus
 docker-compose run web bundle exec rails db:setup
 ```
 
+#### If the above commnad throws folowing error
+
+```
+ docker-compose run web bundle exec rails db:setup
+Could not find rails_autolink-1.1.8 in any of the sources
+Run `bundle install` to install missing gems.
+```
+
+- Running this command
+
+```
+docker-compose up --build
+```
+
+** Then run the following command again
+
+```
+docker-compose run web bundle exec rails db:setup
+```
+
 #### 4. Bring up the development environment
 
 ** Do this _after_ setting up the databases** - the startup scripts require the database to be ready so that they can set feature flags e.g. for the Sinai UI mode.
@@ -62,6 +82,8 @@ docker-compose run web bundle exec rails db:setup
 ```
 docker-compose up
 ```
+
+
 
 #### Ursus should now be running
 
@@ -114,6 +136,73 @@ Go to the `docker.env` file for directions
 
 #### You cannot run `docker-compose run web bash` in this environment.
 
+---
+#### Steps to connect to Ursus Maria db
+
+Here's how you can do it using Docker and Docker Compose commands.
+
+### Step 1: Access the Database Container
+
+```
+docker-compose exec db bash
+```
+
+### Step 2: Log into the MariaDB Database
+
+```
+mysql -u root
+```
+
+### Step 3: Check Your Tables
+
+```
+USE ursus_development;
+```
+
+## Then, list all tables:
+
+```
+SHOW TABLES;
+```
+## You can also check the schema of a specific table:
+
+```
+DESCRIBE users;
+```
+
+```
+DESCRIBE searches;
+```
+
+## You can run sql queries:
+
+```
+select * from searches;
+```
+
+### Exiting the Shell
+
+```
+exit;
+```
+
+### Additional Tips
+Rails Console: For Rails-specific data inspection or manipulation, you can also use the Rails console. Run docker-compose exec web rails console to access it. This is particularly useful for operations that involve Rails models.
+
+---
+
+#### Running Rake tasks
+
+- To run the Rake task, open a terminal, navigate to the root of your Rails application, and execute:
+```
+docker-compose run web bash
+rake blacklight:clear_tables
+```
+- Or, if you are using Rails 5.1 or later, you should use the rails command instead:
+```
+docker-compose run web bash
+rails blacklight:clear_tables
+```
 ---
 
 ### Running the integration tests
