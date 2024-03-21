@@ -74,27 +74,41 @@
 }
 
 .grid-item-one {
-  background-image: image-url('home-collection-grid/ladnn_collection.jpg');
+  background-image: image-url('home-collection-grid/la-times.jpg');
 }
 
 .grid-item-two {
-  background-image: image-url('home-collection-grid/bennett_collection.jpg');
+  background-image: image-url('home-collection-grid/carteles-de-cine.jpg');
 }
 
 .grid-item-three {
-  background-image: image-url('home-collection-grid/connell_collection.jpg');
+  background-image: image-url('home-collection-grid/ramakatane.jpg');
 }
 
 .grid-item-four {
-  background-image: image-url('home-collection-grid/california_postcards.jpg');
+  background-image: image-url('home-collection-grid/tule-lake.jpg');
 }
 
 .grid-item-five {
-  background-image: image-url('home-collection-grid/ethiopic_manuscripts.jpg');
+  background-image: image-url('home-collection-grid/cashin.jpg');
 }
 
 .grid-item-six {
-  background-image: image-url('home-collection-grid/arkatov_collection.jpg');
+  background-image: image-url('home-collection-grid/trade-cards.jpg');
+}
+
+.collection-grid__item-content {
+  .grid-summary {
+
+    // truncate to 3 lines - mostly but not universally supported
+    display: -webkit-box;
+    overflow: hidden;  
+
+    // fallback for browsers that don't support line-clamp; won't have ellipsis
+    max-height: 100px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
 }
 
 .collection-grid__item-title {
