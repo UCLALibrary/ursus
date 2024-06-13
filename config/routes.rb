@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/stgall/*id', to: 'static#stgall_tei_msdesc', format: false
 
 
+  get '/tomreed', to: 'catalog#show', id: 'ark:/21198/z1wq1vx1'
+
   # Canon Law
   get '/canonlaw', to: 'canon_law#index'
   get '/canonlaw/introduction', to: 'canon_law#introduction'
