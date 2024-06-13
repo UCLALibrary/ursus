@@ -405,6 +405,8 @@ class CatalogController < ApplicationController
   end
 
   def cannonical_url_redirect
+    return if request.path.match?(/^\/tomreed\/?$/)
+
     if params[:id].match?(/ark(\:|(%3A))(\/|(%2F)).*(\/|(%2F)).*/)
       return if request.path == CGI.unescape(request.path) # Good URL!
       target = solr_document_path(params[:id]) # redirect to an unescaped URL
