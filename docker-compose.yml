@@ -38,7 +38,7 @@ services:
   solr_test:
     image: uclalibrary/solr-ursus:7.4
     ports:
-      - '127.0.0.1:8985:8983'
+      - '127.0.0.1:8986:8983'
 
 volumes:
   mysql_data:
