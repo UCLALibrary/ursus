@@ -1,7 +1,7 @@
 .alert-bar--ursus {
-  background-color: $white;
-  border: 1px solid $gray-10;
-  border-top: 3px solid $ucla-gold;
+  background-color: $ucla-gold;
+  // border: 1px solid $gray-10;
+  // border-top: 3px solid $ucla-gold;
 }
 
 .alert-title--ursus {
@@ -13,7 +13,14 @@
 }
 
 .alert-bar__wrapper--ursus {
-  padding: 20px 10px;
-  
+  // padding: 20px 10px; // this is not used anywhere in code so comenting it out
+  justify-content: center; /* Center content horizontally */
+  width: 100%; /* Ensure wrapper takes full width */
+}
+
+.alert-bar__text--ursus {
+  font-weight: unset;
+  flex-basis: auto; /* Adjust to auto so it can take up necessary space */
+  text-align: center; /* Center text inside the span */
 }
 
