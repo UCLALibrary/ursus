@@ -58,6 +58,7 @@ jobs:
         docker-compose up --detach
         docker-compose run web bundle exec rails db:setup
         docker-compose ps
+        docker-compose logs solr
     - name: run rspec
       run: docker-compose run web bundle exec rspec spec
     - name: Stop docker services
