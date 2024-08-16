@@ -75,7 +75,8 @@ RSpec.describe SearchFieldService do
       'researcher_tesim',
       'format_book_tesim',
       'resp_statement_tesim',
-      'citation_source_tesim'
+      'citation_source_tesim',
+      'program_tesim'
     ].join(' '))
   end
 end
