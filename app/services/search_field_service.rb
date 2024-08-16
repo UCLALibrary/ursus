@@ -74,7 +74,8 @@ class SearchFieldService
     'researcher_tesim',
     'format_book_tesim',
     'resp_statement_tesim',
-    'citation_source_tesim'
+    'citation_source_tesim',
+    'program_tesim'
   ].join(' ').freeze
 
   def search_fields
