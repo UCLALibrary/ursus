@@ -37,7 +37,8 @@ RSpec.describe 'View a Collection', type: :system, js: true do
       ursus_id_ssi: '21198-zz00011f8m',
       human_readable_type_tesim: ['Collection'],
       license_tesim: ['https://creativecommons.org/licenses/by/4.0/'],
-      medium_tesim: ['b&w negative']
+      medium_tesim: ['b&w negative'],
+      program_tesim: ['Program Name']
     }
   end
 
@@ -74,6 +75,7 @@ RSpec.describe 'View a Collection', type: :system, js: true do
 
     expect(page).to have_content 'Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'
     expect(page).to have_content 'LOCAL IDENTIFIER  Collection 686'
+    expect(page).to have_content 'Program Name'
   end
 
   it 'displays the schema.org values' do
