@@ -33,20 +33,9 @@ Rollbar.configure do |config|
   # Valid levels: 'critical', 'error', 'warning', 'info', 'debug', 'ignore'
   # 'ignore' will cause the exception to not be reported at all.
   config.exception_level_filters.merge!(
-    'ActionController::RoutingError' => lambda do |error|
-      case error.message
-      when 'No route matches [GET] "/ads.txt"', 'No route matches [GET] "/sheetmusic"'
-        'ignore'
-      when 'Not Found'
-        if error.backtrace&.first&.match?(/\/blacklight\/catalog.rb\:\d+\:in `facet'/)
-          'ignore'
-        else
-          'warning'
-        end
-      else
-        'warning'
-      end
-    end,
+    'ActionController::RoutingError' => 'ignore',
+    'ActionController::InvalidAuthenticityToken' => 'ignore',
+    'I18n::InvalidLocale' => 'ignore',
     'Blacklight::Exceptions::RecordNotFound' => 'ignore'
   )
 
