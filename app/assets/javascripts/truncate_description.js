@@ -14,7 +14,7 @@ document.addEventListener("turbolinks:load", function () {
     // To avoid truncation in the middle of the word get the end of the word
     //   from the the cut part of the description.
     var cutString = originalText.substr(299);
-    truncatedText += cutString.match(/^[a-z]*/i)[0]; //regex gets the end of the word
+    truncatedText += cutString.match(/^[a-z0-9]*/i)[0]; //regex gets the end of the word
 
     truncatedText += "…";
     description.innerText = truncatedText;
