@@ -17,7 +17,7 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       has_model_ssim: ['Work'],
       title_tesim: ['Orange Carrot'],
       photographer_tesim: ['Bittersweet Tangerine'],
-      description_tesim: ['Long description Long description Long description Long description Long description Long description']
+      description_tesim: ['Long description Long description Long description<br>Long description Long description Long description']
     }
   end
 
@@ -147,7 +147,8 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
     # Search for something
     fill_in 'q', with: 'carrot'
     click_on 'search'
-    expect(page).not_to have_content('Read More')
+    expect(page).to have_content('Read More')
+    expect(page).not_to have_content('<br>')
   end
 
   context 'when the sinai? flag is disabled' do

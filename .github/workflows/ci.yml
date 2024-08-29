@@ -83,10 +83,11 @@ jobs:
         docker-compose run web yarn install --frozen-lockfile
         docker-compose up --detach
         docker-compose run web bundle exec rails db:setup
-    - uses: cypress-io/github-action@v3
+    - uses: cypress-io/github-action@v6
       with:
         command-prefix: 'percy exec -- npx'
         working-directory: e2e
+        browser: chrome
       env: 
         PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
     - name: Stop docker services
