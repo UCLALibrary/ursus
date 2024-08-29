@@ -33,5 +33,13 @@ module Ursus
         return description
       end
     end
+
+    # Parse links in the string and return html_safe result
+    #
+    # @param [String] string
+    # @return [ActiveSupport::SafeBuffer]
+    def autolink_string(string)
+      auto_link(string).html_safe # rubocop:disable Rails/OutputSafety
+    end
   end
 end
