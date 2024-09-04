@@ -1,0 +1,36 @@
+.content-container--error-page {
+  max-width: 832px;
+  margin: 0 auto;
+
+  .error-page__title-row {
+    margin-bottom: 48px;
+    color: $ucla-darkest-blue;
+
+    h1 {
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 62px;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  ul {
+    margin-left: 40px;
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        font-size: 16px;
+        line-height: 24px;
+        text-decoration: underline;
+        color: #000000;
+      }
+    }
+  }
+}
