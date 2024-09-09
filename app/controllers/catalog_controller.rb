@@ -230,6 +230,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' # Primary / Item Overview
     config.add_show_field 'musician_tesim', label: 'Musician', link_to_facet: 'musician_sim' # Primary / Physical description
     config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim' # Primary / Physical description
+    config.add_show_field 'normalized_date_sim', label: 'Date' # Primary / Item Overview
     config.add_show_field 'note_tesim', label: 'Note' # Primary / Notes
     config.add_show_field 'oai_set_ssim'
     config.add_show_field 'oclc_ssi', label: 'OCLC Number' # Secondary / Find This Item

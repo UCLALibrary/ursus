@@ -130,6 +130,7 @@ RSpec.describe CatalogController, type: :controller do
         "member_of_collections_ssim",
         "musician_tesim",
         "named_subject_tesim",
+        "normalized_date_sim",
         "note_tesim",
         "oai_set_ssim",
         "oclc_ssi",
