@@ -23,7 +23,7 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','<%= ENV["GOOGLE_TAG_MGR_ID"] %>');</script>
     <% end %>
-    <% if ENV["RAILS_HOST"] && (ENV["RAILS_HOST"].include?("stage") || ENV["RAILS_HOST"].include?("test") || ENV["RAILS_HOST"].include?("dev") || ENV["RAILS_HOST"].include?("localhost")%>
+    <% if ENV["RAILS_HOST"] && (ENV["RAILS_HOST"].include?("stage") || ENV["RAILS_HOST"].include?("test") || ENV["RAILS_HOST"].include?("dev") || ENV["RAILS_HOST"].include?("localhost") %>
       <script defer src="https://test-librarystudy.library.ucla.edu/gsurvey.js"></script>
     <% else %>
       <script defer src="https://librarystudy.library.ucla.edu/gsurvey.js"></script>
