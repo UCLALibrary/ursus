@@ -67,4 +67,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.7.0' # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'xray-rails', '>= 0.3.2'
+
+  # Debugging gems
+  gem 'debase-ruby_core_source', '= 0.10.5'
+  gem 'debase', '= 0.2.4'
+  gem 'ruby-debug-ide', '= 0.7.0'
+
 end

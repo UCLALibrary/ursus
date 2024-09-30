@@ -1,0 +1,52 @@
+version: '2.0'
+
+services:
+  web:
+    build: .
+    hostname: ursus
+    depends_on:
+      - db
+      - solr
+    env_file:
+      - ./default.env
+      - ./docker.env
+    stdin_open: true
+    tty: true
+    ports:
+      - '127.0.0.1:3003:3000'
+      - '127.0.0.1:1234:1234'
+    volumes:
+      - .:/ursus
+      - ursus_public_uv:/ursus/public/uv
+      - ursus_tmp:/ursus/tmp
+    working_dir: /ursus
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rdebug-ide -d --host 0.0.0.0 --port 1234 -- bin/rails s -p 3000 -b 0.0.0.0"
+
+
+
+  db:
+    image: uclalibrary/californica-mariadb:10.3
+    volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - mysql_data:/var/lib/mysql
+    ports:
+      - '127.0.0.1:3306:3306'
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+
+  solr:
+    image: uclalibrary/solr-ursus:7.4
+    ports:
+      - '127.0.0.1:8983:8983'
+
+  solr_test:
+    image: uclalibrary/solr-ursus:7.4
+    ports:
+      - '127.0.0.1:8985:8983'
+
+volumes:
+  mysql_data:
+  ursus_bundle_dir:
+  ursus_node_modules:
+  ursus_public_uv:
+  ursus_tmp:

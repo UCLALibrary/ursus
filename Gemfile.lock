@@ -143,6 +143,9 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
+    debase (0.2.4)
+      debase-ruby_core_source (>= 0.10.2)
+    debase-ruby_core_source (0.10.5)
     deprecation (1.1.0)
       activesupport
     devise (4.8.1)
@@ -377,6 +380,8 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     rubocop-rspec (1.22.2)
       rubocop (>= 0.52.1)
+    ruby-debug-ide (0.7.0)
+      rake (>= 0.8.1)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     ruby_dep (1.5.0)
@@ -490,6 +495,8 @@ DEPENDENCIES
   capybara (~> 2.18, >= 2.18.0)
   capybara-mechanize (>= 1.11.0)
   coveralls (>= 0.8.23)
+  debase (= 0.2.4)
+  debase-ruby_core_source (= 0.10.5)
   devise (>= 4.7.1)
   devise-guests (~> 0.7, >= 0.7.0)
   dotenv-rails (>= 2.7.5)
@@ -514,6 +521,7 @@ DEPENDENCIES
   rspec-its
   rspec-rails (~> 5.0)
   rubocop
+  ruby-debug-ide (= 0.7.0)
   sassc-rails (>= 2.1.2)
   selenium-webdriver (>= 3.142.3)
   sidekiq (~> 6.4)

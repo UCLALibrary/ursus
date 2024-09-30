@@ -18,6 +18,35 @@ In 1984 to mark its 50th Anniversary, the UCLA Alumni Association commissioned "
 
 ---
 
+## Debug Branch
+
+This is a branch that supports visual debugging in VSCode.
+
+To start a debugging session:
+
+- Download and manually install deprecated [Ruby extension by Peng Lv](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby)
+- To install, download file above, then in VSCode:
+  - Click Extensions (Lego block icon on left)
+  - Choose `...` in top of EXTENSIONS column
+  - Choose `Install from VSIX...`
+  - Navigate to downloaded file and choose
+- Confirm `.vscode/launch.json` is present and directories accurate
+- Before you start the application, set a breakpoint anywhere in the application. A missing breakpoint seemed to crash debugger.
+- First time, set up database like you normally would: `docker-compose run web bundle exec rails db:setup`
+- Run `docker-compose -f docker-compose.yml -f docker-compose-debug.yml up`
+- Choose Debug or F5, this will attach to debugging process
+
+Note: This is very delicate branch due to older debugging libraries.
+The following combo is verified working:
+
+- debase-ruby_core_source (= 0.10.5)
+- debase (= 0.2.4)
+- ruby-debug-ide (= 0.7.0)
+
+I had problems with deviations from the above combo. Not installing `debase-ruby_core_source (= 0.10.5)` explicitly would jump to `debase-ruby_core_source (= 3.x)` and not work.
+
+The reason for old gem installs is the debug gem significantly changes starting in [2.7](https://github.com/ruby/debug), these changes are to enable visual debugging in 2.6.
+
 ## Development
 
 This section gives basic instructions to get Ursus running locally. More extensive developer documentation is maintained [in the wiki](https://github.com/UCLALibrary/amalgamated-samvera/wiki).
@@ -69,7 +98,7 @@ Run `bundle install` to install missing gems.
 docker-compose up --build
 ```
 
-** Then run the following command again
+\*\* Then run the following command again
 
 ```
 docker-compose run web bundle exec rails db:setup
@@ -82,8 +111,6 @@ docker-compose run web bundle exec rails db:setup
 ```
 docker-compose up
 ```
-
-
 
 #### Ursus should now be running
 
@@ -109,9 +136,11 @@ Then run the entire suite, except for the cypress integration test, with:
 ```
 sh start-ci.sh
 ```
+
 You can inspect the `start-ci.sh` script to see which linters and tests this invokes.
 
 Or individually:
+
 1. root@ursus:/ursus# bundle exec erblint --lint-all
 1. root@ursus:/ursus# yarn run lint
 1. root@ursus:/ursus# rubocop
@@ -137,6 +166,7 @@ Go to the `docker.env` file for directions
 #### You cannot run `docker-compose run web bash` in this environment.
 
 ---
+
 #### Steps to connect to Ursus Maria db
 
 Here's how you can do it using Docker and Docker Compose commands.
@@ -164,6 +194,7 @@ USE ursus_development;
 ```
 SHOW TABLES;
 ```
+
 ## You can also check the schema of a specific table:
 
 ```
@@ -187,6 +218,7 @@ exit;
 ```
 
 ### Additional Tips
+
 Rails Console: For Rails-specific data inspection or manipulation, you can also use the Rails console. Run docker-compose exec web rails console to access it. This is particularly useful for operations that involve Rails models.
 
 ---
@@ -194,15 +226,19 @@ Rails Console: For Rails-specific data inspection or manipulation, you can also 
 #### Running Rake tasks
 
 - To run the Rake task, open a terminal, navigate to the root of your Rails application, and execute:
+
 ```
 docker-compose run web bash
 rake blacklight:clear_tables
 ```
+
 - Or, if you are using Rails 5.1 or later, you should use the rails command instead:
+
 ```
 docker-compose run web bash
 rails blacklight:clear_tables
 ```
+
 ---
 
 ### Running the integration tests
@@ -235,7 +271,8 @@ Visual regression testing is done via [percy.io](https://percy.io/UCLA-Library-S
 ### Rebuilding the image
 
 If you need to rebuild the docker image (for example, if packages were added to the Gemfile), run:
+
 1. `docker-compose pull`
 1. `docker-compose up --build`
 
-#### OAI https://digital.library.ucla.edu/catalog/oai  --->
+#### OAI https://digital.library.ucla.edu/catalog/oai --->
