@@ -3,5 +3,5 @@
 
 <%= render :partial => "paginate_compact", :object => @response-%>
 
-<h4><b><%= @response['response'].dig(:numFound) %></b> Catalog Results</h4>
+<h4><b><%= number_with_delimiter @response['response'].dig(:numFound) %></b> Catalog Results</h4>
 <%= paginate paginate_compact, :page_entries_info => page_entries_info(paginate_compact), :theme => :blacklight_compact %>
