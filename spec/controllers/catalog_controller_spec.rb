@@ -276,9 +276,16 @@ RSpec.describe CatalogController, type: :controller do
     context 'when the URL contains the ID of a hyrax object without an ark (e.g. a permissions object)' do
       let(:solr_document) { SolrDocument.new(id: 'cba-321') }
 
-      it 'raises an exception' do
+      before do
         allow(SolrDocument).to receive(:find).and_call_original
-        expect { get('/catalog/cba-321') } .to raise_exception(Blacklight::Exceptions::RecordNotFound)
+      end
+
+      it 'catches not_found and renders errors/not_found' do
+        expect(get('/catalog/cba-321')).to render_template('errors/not_found')
+      end
+
+      it 'raises an exception' do
+        expect { get('/catalog/cba-321') }.not_to raise_exception(Blacklight::Exceptions::RecordNotFound)
       end
     end
   end

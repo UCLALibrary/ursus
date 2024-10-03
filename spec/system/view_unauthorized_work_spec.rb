@@ -23,6 +23,6 @@ RSpec.feature "View a work you aren't authorized to see", js: true do
 
   it 'denies access' do
     visit "/catalog/#{ark}"
-    expect(page).to have_content 'The page you were looking for doesn\'t exist'
+    expect(page).to have_content 'Page not found'
   end
 end
