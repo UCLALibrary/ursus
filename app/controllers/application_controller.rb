@@ -53,6 +53,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from Blacklight::AccessControls::AccessDenied, with: :render_404
   rescue_from Blacklight::Exceptions::RecordNotFound, with: :render_404
+  rescue_from ActionController::RoutingError, with: :render_404
 
   def render_404
     render 'errors/not_found'
