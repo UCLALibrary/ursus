@@ -325,7 +325,7 @@ class CatalogController < ApplicationController
     # config.add_sort_field 'sort_title_ssort desc', label: 'Title (Z-A)'
     config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
     config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
-    config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
+    config.add_sort_field 'date_desc_dtsi desc', label: 'Date (newest)'
     config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
 
     #------------------------------------------------------
