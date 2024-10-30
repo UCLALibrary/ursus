@@ -50,7 +50,6 @@ RSpec.describe 'View a Work', type: :system, js: true do
     expect(page).to have_content 'Physical Description'
     expect(page).to have_content 'Keywords'
     expect(page).to have_content 'Find This Item'
-    expect(page).to have_content 'Use This Item'
     expect(page).to have_content 'Access Condition'
     expect(page).to have_content 'Use This Item'
     expect(page).to have_content 'IIIF Guide & Toolkit'
