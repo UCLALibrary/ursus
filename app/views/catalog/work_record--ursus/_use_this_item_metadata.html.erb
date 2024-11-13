@@ -1,0 +1,24 @@
+<div class="metadata-block">
+  <h4 class='metadata-block__title'>Use This Item</h4>
+  <dl class='metadata-block__group'>
+    <!-- iiif drag and drop logo -->
+    <dt class='metadata-block__label-key'>Manifest url</dt>
+    <dd class='metadata-block__label-value d-flex'>
+      <%=
+        link_to(@document[:iiif_manifest_url_ssi], target: :_blank) do
+          image_tag('iiif-logo.png', alt: 'IIIF Manifest', class: 'mb-2')
+        end
+      %>
+    </dd>
+    <dt class='metadata-block__label-key'>Learn about IIIF</dt>
+    <dd class='metadata-block__label-value'>
+      <%= link_to 'IIIF Guide & Toolkit', 'https://guides.library.ucla.edu/digital-collections/iiif', target: :_blank %>
+    </dd>
+    <dt class='metadata-block__label-key'>How to cite</dt>
+    <dd class='metadata-block__label-value'>
+      <%= link_to 'Citation Guide', 'https://guides.library.ucla.edu/digital-collections/cite', target: :_blank %>
+    </dd>
+  </dl>
+  <hr>
+  <hr class='divider divider--white'>
+</div>
