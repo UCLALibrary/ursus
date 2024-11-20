@@ -42,6 +42,7 @@ dataLayer.push({
   'Opac url': <%= raw @document[:opac_url_ssi].to_json %> === null ? undefined : <%= raw @document[:opac_url_ssi].to_json.html_safe %>,
   'Project Name': <%= raw @document[:member_of_collections_ssim].to_json %> === null ? undefined : <%= raw @document[:member_of_collections_ssim].to_json.html_safe %>, // Not sure if pulling from the right field there is no project_tesin field in solr
   'Publisher.publisherName': <%= raw @document[:publisher_tesim].to_json %> === null ? undefined : <%= raw @document[:publisher_tesim].to_json.html_safe %>,
+  'Program': <%= raw @document[:program_tesim].to_json %> === null ? undefined : <%= raw @document[:program_tesim].to_json.html_safe %>,
   'Repository': <%= raw @document[:repository_tesim].to_json %> === null ? undefined : <%= raw @document[:repository_tesim].to_json.html_safe %>,
   'Subject geographic': <%= raw @document[:subject_geographic_tesim].to_json %> === null ? undefined : <%= raw @document[:subject_geographic_tesim].to_json.html_safe %>,
   'Subject name': <%= raw @document[:named_subject_tesim].to_json %> === null ? undefined : <%= raw @document[:named_subject_tesim].to_json.html_safe %>,
