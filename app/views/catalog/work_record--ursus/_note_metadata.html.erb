@@ -9,17 +9,15 @@
     <dl class='metadata-block__group'>
       <!-- LOOP START -->
       <% note.each do |field_name, field| %>
+        <% next if field_name == 'citation_source_tesim' %>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <!-- KEY -->
           <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
-
           <!-- VALUE -->
-
           <!-- URSUS -->
-
-            <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
-              <%= raw doc_presenter.field_value field %>
-            </dd>
+          <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
+            <%= raw doc_presenter.field_value field %>
+          </dd>
         </dt>
       <!-- LOOP END -->
       <% end %>
@@ -27,9 +25,18 @@
       <!-- TABLE OF CONTENTS -->
       <dt class='metadata-block__label-key'><%= toc_key %></dt>
       <dd class='metadata-block__label-value'><%= raw toc_value %></dd>
+
+      <!-- References should always be the last field -->
+      <% if note['citation_source_tesim'] %>
+        <dt class="blacklight-citation_source_tesim metadata-block__label-key">
+          References
+        </dt>
+        <dd class="blacklight-citation_source_tesim metadata-block__label-value metadata-block__label-value--ursus">
+          <%= raw doc_presenter.field_value note['citation_source_tesim'] %>
+        </dd>
+      <% end %>
     </dl>
 
     <hr class='divider divider--ursus'>
-
   </div>
 <% end %>
