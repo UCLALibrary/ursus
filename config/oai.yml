@@ -92,6 +92,12 @@ DC:
   description:
     - content_disclaimer_ssm
     - related_to_ssm
+    - inscription_tesim
+    - script_tesim
+  contributor:
+    - arranger_tesim
+    - collector_tesim
+    - librettist_tesim
 
 DPLA:
   parent_schema: default
