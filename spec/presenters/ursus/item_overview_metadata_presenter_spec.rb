@@ -53,7 +53,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'title_tesim' => 'Title',
       'translator_tesim' => 'Translator',
       'uniform_title_tesim' => 'Uniform title',
-      'year_isim' => 'Year',
+      'year_isim' => 'Year'
     }
   end
   let(:solr_doc_missing_items) do

@@ -80,7 +80,7 @@ class SearchFieldService
     'toc_tesim',
     'uniform_title_tesim',
     'uniform_title_tesim',
-    'writing_system_tesim',
+    'writing_system_tesim'
   ].join(' ').freeze
 
   def search_fields

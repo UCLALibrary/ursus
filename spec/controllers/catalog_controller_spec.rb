@@ -171,7 +171,7 @@ RSpec.describe CatalogController, type: :controller do
         "title_tesim",
         "toc_tesim",
         "translator_tesim",
-        "uniform_title_tesim",
+        "uniform_title_tesim"
       ]
     end
 
