@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/iiif_guide', to: 'static#ursus_iiif_guide'
 
   get '/tomreed', to: 'catalog#show', id: 'ark:/21198/z1wq1vx1'
+  get '/ktla', to: 'catalog#show', id: 'ark:/21198/z1032vqf'
 
   # Canon Law
   get '/canonlaw', to: 'canon_law#index'
