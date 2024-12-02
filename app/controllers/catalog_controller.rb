@@ -217,7 +217,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note' # Primary / Physical description
     config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'illustrator_sim' # Primary / Item Overview
     config.add_show_field 'interviewee_tesim', label: 'Interviewee', link_to_facet: 'interviewee_sim' # Primary / Item Overview
-    config.add_show_field 'interviewer_tesim', label: 'Interviewer', link_to_facet: 'interviewee_sim' # Primary / Item Overview
+    config.add_show_field 'interviewer_tesim', label: 'Interviewer', link_to_facet: 'interviewer_sim' # Primary / Item Overview
     config.add_show_field 'keyword_tesim', label: 'Keyword' # Not Using
     config.add_show_field 'latitude_tesim', label: 'Latitude' # Primary / Physical description
     config.add_show_field 'license_tesim', label: 'License', helper_method: :render_license # Secondary / Access Conditions
