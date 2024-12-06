@@ -114,8 +114,8 @@ Licensed under the MIT license.
 	// @param {number} width New height of the canvas, in pixels.
 
 	Canvas.prototype.resize = function(width, height) {
-        console.log("Canvas resize, width:"+width);
-        console.log("Canvas resize, height:"+height)
+        // console.log("Canvas resize, width:"+width);
+        // console.log("Canvas resize, height:"+height)
 		if (width <= 0 || height <= 0) {
 			throw new Error("Invalid dimensions for plot, width = " + width + ", height = " + height);
 		}
@@ -155,8 +155,8 @@ Licensed under the MIT license.
 		// appear at the same size; the extra pixels will just make them crisper.
 
         context.scale(pixelRatio, pixelRatio);
-        console.log("Canvas resize, this.width:"+this.width);
-        console.log("Canvas resize, this.height:"+this.height)
+        // console.log("Canvas resize, this.width:"+this.width);
+        // console.log("Canvas resize, this.height:"+this.height)
 	};
 
 	// Clears the entire canvas area, not including any overlaid HTML text
@@ -681,8 +681,8 @@ Licensed under the MIT license.
         plot.resize = function () {
         	var width = placeholder.width(),
                 height = placeholder.height();
-                console.log("plot resize width:"+width);
-                console.log("plot resize height:"+height);
+                // console.log("plot resize width:"+width);
+                // console.log("plot resize height:"+height);
             surface.resize(width, height);
             overlay.resize(width, height);
         };
