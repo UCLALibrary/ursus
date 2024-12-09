@@ -219,19 +219,21 @@ RSpec.describe CatalogController, type: :controller do
     it { expect(search_fields).to contain_exactly(*expected_search_fields) }
   end
 
-  xdescribe "show action" do
-    before do
-      # allow(controller).to receive(:search_service).and_return(search_service)
-      # expect(search_service).to receive(:fetch).and_return([mock_response, mock_document])
-    end
-    # let(:doc_id) { '2007020969' }
-    # let(:mock_response) { instance_double(Blacklight::Solr::Response) }
-    # let(:mock_document) { instance_double(SolrDocument, export_formats: {}) }
-    # let(:search_service) { instance_double(Blacklight::SearchService) }
+  describe "show action" do
+    render_views
 
-    it "has collection count on Collection Item record page" do
-      # get :show, params: { id: doc_id }
-      # expect(assigns[:document]).not_to be_nil
+    before do
+      allow(controller).to receive(:enforce_show_permissions).and_return(true)
+      allow(controller).to receive(:search_service).and_return(search_service)
+      allow(search_service).to receive(:fetch).and_return([mock_response, mock_document])
+    end
+    let(:doc_id) { 'ark:/123/abc' }
+    let(:mock_response) { instance_double(Blacklight::Solr::Response) }
+    let(:mock_document) { instance_double(SolrDocument, export_formats: {}) }
+    let(:search_service) { instance_double(Blacklight::SearchService) }
+
+    it "Renders a blank SolrDocument (meaning missing fields don\'t cause errors)" do
+      get :show, params: { id: doc_id }
     end
   end
 
