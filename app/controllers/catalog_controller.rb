@@ -404,7 +404,7 @@ class CatalogController < ApplicationController
   end
 
   def cannonical_url_redirect
-    return if request.path.match?(/^\/tomreed\/?$/)
+    return if request.path.match?(/^\/tomreed|ktla\/?$/)
 
     if params[:id].match?(/ark(\:|(%3A))(\/|(%2F)).*(\/|(%2F)).*/)
       return if request.path == CGI.unescape(request.path) # Good URL!
