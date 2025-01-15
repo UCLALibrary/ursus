@@ -35,8 +35,8 @@ Blacklight.onLoad(function () {
         var slider_el = container.find('.slider');
 
         if (plot && slider_el) {
-          console.log('plot width: ' + plot.width());
-          console.log('slider width before: ' + slider_el.width());
+          // console.log('plot width: ' + plot.width());
+          // console.log('slider width before: ' + slider_el.width());
           /* if(plot.width() > 210){
             
             slider_el.css("width", "205px");
@@ -48,13 +48,13 @@ Blacklight.onLoad(function () {
           slider_el.css('margin-right', 'auto');
           slider_el.css('margin-left', 'auto');
           //slider_el.css("width", "100%");
-          console.log('slider width after: ' + slider_el.width());
+          // console.log('slider width after: ' + slider_el.width());
         } else if (slider_el) {
-          console.log('slider width before: ' + slider_el.width());
+          // console.log('slider width before: ' + slider_el.width());
           slider_el.css('width', '100%');
           //slider_el.css("width", "205px"); //Added later
 
-          console.log('slider width after: ' + slider_el.width());
+          // console.log('slider width after: ' + slider_el.width());
         }
       }
 
@@ -104,8 +104,8 @@ Blacklight.onLoad(function () {
     var slider_el = area.find('.slider');
 
     if (plot && slider_el) {
-      console.log('Redraw: plot width is  ' + plot.width());
-      console.log('redraw slider width before: ' + slider_el.width());
+      // console.log('Redraw: plot width is  ' + plot.width());
+      // console.log('redraw slider width before: ' + slider_el.width());
       /*  if(plot.width() > 220){
         slider_el.css("width", "205px");
        
@@ -118,7 +118,7 @@ Blacklight.onLoad(function () {
       slider_el.css('display', 'block');
       slider_el.css('margin-right', 'auto');
       slider_el.css('margin-left', 'auto');
-      console.log('redraw slider width after: ' + slider_el.width());
+      // console.log('redraw slider width after: ' + slider_el.width());
     }
   });
 

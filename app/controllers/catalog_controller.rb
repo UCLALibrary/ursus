@@ -220,7 +220,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'illustrator_sim' # Primary / Item Overview
     config.add_show_field 'inscription_tesim', label: 'Inscription' # Primary / Item Overview
     config.add_show_field 'interviewee_tesim', label: 'Interviewee', link_to_facet: 'interviewee_sim' # Primary / Item Overview
-    config.add_show_field 'interviewer_tesim', label: 'Interviewer', link_to_facet: 'interviewee_sim' # Primary / Item Overview
+    config.add_show_field 'interviewer_tesim', label: 'Interviewer', link_to_facet: 'interviewer_sim' # Primary / Item Overview
     config.add_show_field 'keyword_tesim', label: 'Keyword' # Not Using
     config.add_show_field 'latitude_tesim', label: 'Latitude' # Primary / Physical description
     config.add_show_field 'librettist_tesim', label: 'Librettist', link_to_facet: 'librettist_sim' # Primary / Item Overview
@@ -409,7 +409,7 @@ class CatalogController < ApplicationController
   end
 
   def cannonical_url_redirect
-    return if request.path.match?(/^\/tomreed\/?$/)
+    return if request.path.match?(/^\/tomreed|ktla\/?$/)
 
     if params[:id].match?(/ark(\:|(%3A))(\/|(%2F)).*(\/|(%2F)).*/)
       return if request.path == CGI.unescape(request.path) # Good URL!
