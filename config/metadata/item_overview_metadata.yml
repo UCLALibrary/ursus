@@ -33,6 +33,9 @@ artist_tesim: 'Artist'
 recipient_tesim: 'Recipient'
 director_tesim: 'Director'
 producer_tesim: 'Producer'
+arranger_tesim: 'Arranger'
+collector_tesim: 'Collector'
+librettist_tesim: 'Librettist'
 
 # Publication info
 date_created_tesim: 'Date Created'
@@ -46,6 +49,8 @@ edition_ssm: 'Edition'
 human_readable_language_tesim: 'Language'
 member_of_collections_ssim: 'Collection'
 series_tesim: 'Series'
+inscription_tesim: 'Inscription'
+script_tesim: 'Script'
 # dlcs_collection_name_tesim: 'Collection (native)'
 
 associated_name_tesim: 'Associated name'
