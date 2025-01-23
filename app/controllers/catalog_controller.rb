@@ -237,7 +237,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'note_tesim', label: 'Note' # Primary / Notes
     config.add_show_field 'oai_set_ssim'
     config.add_show_field 'oclc_ssi', label: 'OCLC Number' # Secondary / Find This Item
-    config.add_show_field 'opac_url_ssi', label: 'Opac url' # Secondary / Find This Item
+    config.add_show_field 'opac_url_ssi', label: 'Opac url', auto_link: true # Secondary / Find This Item
     config.add_show_field 'other_versions_tesim', label: 'Other version(s)' # Secondary / Find This Item
     config.add_show_field 'page_layout_ssim', label: 'Page layout' # Primary / Physical description
     config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim' # Primary / Item Overview
