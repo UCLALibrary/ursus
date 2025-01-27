@@ -18,6 +18,7 @@ RSpec.describe 'The facet sidebar', :clean, type: :system do
         has_model_ssim: ['Work'],
         has_model_sim: ['Work'],
         combined_subject_ssim: ['People', 'Crime'],
+        combined_names_ssim: ['Jogn Smith', 'Jane Doe'],
         human_readable_resource_type_sim: ['Photograph'],
         genre_sim: ['news photographs'],
         named_subject_sim: ['Aimee McPherson Semple'],
