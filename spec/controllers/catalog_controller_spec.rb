@@ -40,7 +40,7 @@ RSpec.describe CatalogController, type: :controller do
           'combined_subject',
           'human_readable_resource_type',
           'genre',
-          'named_subject',
+          'combined_names',
           'location',
           'year_isim',
           'human_readable_language',
