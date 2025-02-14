@@ -113,7 +113,7 @@ class CatalogController < ApplicationController
     # config.add_facet_field ::Solrizer.solr_name('resource_type', :facetable), limit: 5 same as : config.add_facet_field 'resource_type_sim', limit: 5
     config.add_facet_field 'human_readable_resource_type_sim', limit: 5, label: 'Resource Type'
     config.add_facet_field 'genre_sim', limit: 5
-    config.add_facet_field 'named_subject_sim', limit: 5
+    config.add_facet_field 'combined_names_ssim', limit: 5, label: 'Names'
     config.add_facet_field 'location_sim', limit: 5
     config.add_facet_field 'year_isim', limit: 5, range: true
     config.add_facet_field 'human_readable_language_sim', limit: 5
