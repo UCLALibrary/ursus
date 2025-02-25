@@ -66,21 +66,21 @@ RSpec.describe Ursus::ThumbnailPresenter do
 
   describe '#thumbnail_value_from_document' do
     it 'uses thumbnail_url_ss' do
-      expect(presenter.thumbnail_value_from_document(solr_document)).to eq thumbnail_url
+      expect(presenter.thumbnail_value_from_document).to eq thumbnail_url
     end
 
     context 'when `thumbnail_url_ss` is empty' do
       let(:solr_document) { SolrDocument.new(resource_type_ssim: ['http://id.loc.gov/vocabulary/resourceTypes/aum']) }
 
       it 'uses a default icon' do
-        expect(presenter.thumbnail_value_from_document(solr_document)).to eq 'https://static.library.ucla.edu/audio_icon.svg'
+        expect(presenter.thumbnail_value_from_document).to eq 'https://static.library.ucla.edu/audio_icon.svg'
       end
 
       context 'when no default is set for resource type' do
         let(:solr_document) { SolrDocument.new(resource_type_ssim: ['some other type']) }
 
         it 'returns nil' do
-          expect(presenter.thumbnail_value_from_document(solr_document)).to be_nil
+          expect(presenter.thumbnail_value_from_document).to be_nil
         end
       end
     end

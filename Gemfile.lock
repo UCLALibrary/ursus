@@ -72,7 +72,7 @@ GEM
     bixby (1.0.0)
       rubocop (~> 0.50, <= 0.52.1)
       rubocop-rspec (~> 1.22, <= 1.22.2)
-    blacklight (7.3.0)
+    blacklight (7.5.1)
       deprecation
       globalid
       jbuilder (~> 2.7)
@@ -219,7 +219,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.11.5)
+    jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jquery-rails (4.4.0)
@@ -473,7 +473,7 @@ PLATFORMS
 
 DEPENDENCIES
   bixby (~> 1.0)
-  blacklight (~> 7.3.0)
+  blacklight (~> 7.5.1)
   blacklight-access_controls (>= 6.0.0)
   blacklight-gallery (~> 1.7.0)
   blacklight_dynamic_sitemap (~> 0.1.0)
@@ -530,4 +530,4 @@ DEPENDENCIES
   xray-rails (>= 0.3.2)
 
 BUNDLED WITH
-   1.17.3
+   2.4.22

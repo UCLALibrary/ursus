@@ -20,11 +20,11 @@ module Ursus
       view_context.link_to_document document, value, url_options
     end
 
-    def thumbnail_value_from_document(document)
-      super(document) || thumbnail_default(document)
+    def thumbnail_value_from_document
+      super || thumbnail_default
     end
 
-    def thumbnail_default(document)
+    def thumbnail_default
       resource_type_id = document['resource_type_ssim'] || document['resource_type_tesim'] # We're indexing as _tesim, but should change to _ssim
 
       # based on resource type ids from https://github.com/UCLALibrary/californica/blob/main/config/authorities/resource_types.yml
