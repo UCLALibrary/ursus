@@ -47,10 +47,9 @@ edition_ssm: 'Edition'
 
 # Other
 human_readable_language_tesim: 'Language'
+script_tesim: 'Script'
 member_of_collections_ssim: 'Collection'
 series_tesim: 'Series'
-inscription_tesim: 'Inscription'
-script_tesim: 'Script'
 # dlcs_collection_name_tesim: 'Collection (native)'
 
 associated_name_tesim: 'Associated name'
