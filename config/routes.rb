@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get '/tomreed', to: 'catalog#show', id: 'ark:/21198/z1wq1vx1'
   get '/ktla', to: 'catalog#show', id: 'ark:/21198/z1032vqf'
+  get '/reflecciones', to: 'catalog#show', id: 'ark:/21198/z1x98m6j'
 
   # Canon Law
   get '/canonlaw', to: 'canon_law#index'
