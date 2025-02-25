@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'blacklight', '~> 7.3.0'
+gem 'blacklight', '~> 7.5.1'
 gem 'blacklight-access_controls', '>= 6.0.0'
 gem 'blacklight-gallery', '~> 1.7.0'
 gem 'blacklight_dynamic_sitemap', '~> 0.1.0'
