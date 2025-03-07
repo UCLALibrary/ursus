@@ -1,5 +1,5 @@
 <% doc_presenter = show_presenter(document) %>
-<% overview = Ursus::CollectionOverviewMetadataPresenter.new(document: doc_presenter.fields_to_render).overview_terms %>
+<% overview = Ursus::CollectionOverviewMetadataPresenter.new(document: doc_presenter).overview_terms %>
 
 <% if overview.length > 0 %>
   <div class='metadata-block'>

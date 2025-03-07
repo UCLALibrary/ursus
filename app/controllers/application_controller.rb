@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
   #   cookies[:banner_display_option] = "banner_off"
   # end
 
-  helper Openseadragon::OpenseadragonHelper
+  # helper Openseadragon::OpenseadragonHelper
   # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
   layout 'blacklight'

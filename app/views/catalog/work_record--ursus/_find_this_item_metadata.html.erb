@@ -1,5 +1,5 @@
 <% doc_presenter = show_presenter(document) %>
-<% find_this_item = Ursus::FindThisItemMetadataPresenter.new(document: doc_presenter.fields_to_render).find_this_item_terms %>
+<% find_this_item = Ursus::FindThisItemMetadataPresenter.new(document: doc_presenter).find_this_item_terms %>
 
 <% if find_this_item.length > 0 %>
   <div class="metadata-block">

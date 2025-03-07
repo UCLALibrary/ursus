@@ -46,7 +46,6 @@ class CatalogController < ApplicationController
     # config.view.slideshow.partials = [:index]
 
     config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
-    config.show.partials.insert(1, :openseadragon)
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
     #
@@ -69,8 +68,9 @@ class CatalogController < ApplicationController
       ### we want to only return works where visibility_ssi == open (not restricted)
     }
 
+    config.show.partials.insert(1, :openseadragon)
     # config.show.partials.insert(1, :collection_banner)
-    config.show.partials.insert(2, :media_viewer)
+    config.show.partials.insert(0, :media_viewer)
 
     # ------------------------------------------------------
     # INDEX PAGE

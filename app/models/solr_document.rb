@@ -3,7 +3,7 @@ class SolrDocument
   include Blacklight::Solr::Document
   include BlacklightOaiProvider::SolrDocument
 
-  include Blacklight::Gallery::OpenseadragonSolrDocument
+  # include Blacklight::Gallery::OpenseadragonSolrDocument
   include ModsArceSolrDocument
 
   def self.add_field_semantics(label, solr_name, schema = nil)
