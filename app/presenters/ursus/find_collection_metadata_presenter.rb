@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Ursus
-  class FindCollectionMetadataPresenter < BasePresenter
+  class FindCollectionMetadataPresenter < BaseMetadataPresenter
     self.config_file = 'metadata/find_collection_metadata.yml'
 
     def find_collection_terms

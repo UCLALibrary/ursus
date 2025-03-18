@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Ursus
-  class NoteCollectionMetadataPresenter < BasePresenter
+  class NoteCollectionMetadataPresenter < BaseMetadataPresenter
     self.config_file = 'metadata/note_collection_metadata.yml'
 
     def note_collection_terms

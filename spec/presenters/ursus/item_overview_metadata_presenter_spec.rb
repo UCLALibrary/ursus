@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 require 'rails_helper'
+require 'support/solr_doc_double'
+
+include SolrDocDouble
 
 RSpec.describe Ursus::ItemOverviewMetadataPresenter do
   let(:solr_doc) do
-    {
+    doc_double_with_fields_to_render(
       'alternative_title_tesim' => 'Alternative Title',
       'architect_tesim' => 'Architect',
       'arranger_tesim' => 'Arranger',
@@ -54,17 +57,17 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'translator_tesim' => 'Translator',
       'uniform_title_tesim' => 'Uniform title',
       'year_isim' => 'Year'
-    }
+    )
   end
   let(:solr_doc_missing_items) do
-    {
+    doc_double_with_fields_to_render(
       'date_created_tesim' => 'Date Created',
       'human_readable_language_tesim' => 'Language',
       'member_of_collections_ssim' => 'Collection',
       'contents_note_tesim' => 'Contents note',
       'incipit_tesim' => 'Incipit',
       'explicit_tesim' => 'Explicit'
-    }
+    )
   end
   let(:presenter_object) { described_class.new(document: solr_doc) }
   let(:presenter_object_missing_items) { described_class.new(document: solr_doc_missing_items) }

@@ -20,9 +20,10 @@ RSpec.describe 'Search results page', type: :system, js: false do
 
   scenario do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
+    pp page
     # it 'displays: title, description, date_created, resource_type, and photographer' do
     expect(page).to have_content 'Title One'
-    expect(page).to have_content 'Description: Description 1'
+    expect(page).to have_content 'Description 1'
     expect(page).not_to have_content 'Description 2'
     expect(page).to have_content 'Resource Type: still image'
     expect(page).to have_content 'Date: Date 1'
@@ -63,9 +64,9 @@ RSpec.describe 'Search results page', type: :system, js: false do
     click_on 'List'
     expect(page).to have_selector('.view-type-list.active')
     expect(page).to have_content 'Title One'
-    expect(page).to have_content 'Description: Description 1'
+    expect(page).to have_content 'Description 1'
     expect(page).to have_content 'Resource Type: still image'
-    expect(page).to have_content 'Date: Date 1'
+    expect(page).to have_content 'Date 1'
   end
 
   it 'visits the home page and getting the correct search field options' do

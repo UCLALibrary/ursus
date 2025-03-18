@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 require 'rails_helper'
+require 'support/solr_doc_double'
+
+include SolrDocDouble
 
 RSpec.describe Ursus::FindThisItemMetadataPresenter do
   let(:solr_doc) do
-    {
+    doc_double_with_fields_to_render(
       'repository_tesim' => 'Repository',
       'identifier_tesim' => "Identifier",
       'local_identifier_ssim' => 'Local identifier',
@@ -11,15 +14,17 @@ RSpec.describe Ursus::FindThisItemMetadataPresenter do
       'oclc_ssi' => 'OCLC Number',
       'ark_ssi' => 'ARK',
       'archival_collection_tesi' => 'Archival Collection'
-    }
+    )
   end
+
   let(:solr_doc_missing_items) do
-    {
+    doc_double_with_fields_to_render(
       'repository_tesim' => 'Repository',
       'local_identifier_ssim' => 'Local identifier',
       'oclc_ssi' => 'OCLC Number'
-    }
+    )
   end
+
   let(:presenter_object) { described_class.new(document: solr_doc) }
   let(:presenter_object_missing_items) { described_class.new(document: solr_doc_missing_items) }
   let(:config) { YAML.safe_load(File.open(Rails.root.join('config', 'metadata/find_this_item_metadata.yml'))) }

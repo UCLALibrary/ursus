@@ -20,7 +20,7 @@ RSpec.describe 'the result bar displays the correct links', :clean, type: :syste
   it 'has expected fields on initial search page and show page' do
     visit '/catalog?q=Person&search_field=all_fields'
     expect(page).to have_content '2 Catalog Results'
-    expect(page).to have_content 'You searched for: Person'
+    expect(page).to have_content "You searched for:\nPerson"
     expect(page).to have_content 'Start Over'
     click_link('Title One', match: :first)
     expect(page).to have_content '1 of 2 results' # Upgrade to v 7.2 breaks in the test, not in prod

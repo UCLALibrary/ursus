@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Ursus
-  class CollectionOverviewMetadataPresenter < BasePresenter
+  class CollectionOverviewMetadataPresenter < BaseMetadataPresenter
     self.config_file = 'metadata/collection_overview_metadata.yml'
 
     def overview_terms

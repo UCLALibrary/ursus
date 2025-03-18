@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Ursus
-  class CollectionAccessConditionMetadataPresenter < BasePresenter
+  class CollectionAccessConditionMetadataPresenter < BaseMetadataPresenter
     self.config_file = 'metadata/collection_access_condition_metadata.yml'
 
     def collection_access_condition_terms

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Ursus
-  class SinaiIndexDatePresenter < BasePresenter
+  class SinaiIndexDatePresenter < BaseMetadataPresenter
     self.config_file = 'metadata/sinai_index_date.yml'
 
     def sinai_index_date_terms

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Ursus
-  class TaglineMetadataPresenter < BasePresenter
+  class TaglineMetadataPresenter < BaseMetadataPresenter
     self.config_file = 'metadata/tagline_metadata.yml'
 
     def tagline_terms

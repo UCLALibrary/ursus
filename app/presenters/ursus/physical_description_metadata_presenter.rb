@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Ursus
-  class PhysicalDescriptionMetadataPresenter < BasePresenter
+  class PhysicalDescriptionMetadataPresenter < BaseMetadataPresenter
     self.config_file = 'metadata/physical_description_metadata.yml'
 
     def physical_description_terms
