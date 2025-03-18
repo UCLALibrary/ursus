@@ -38,18 +38,15 @@ gem 'uglifier', '>= 1.3.0' # JavaScript compressor
 gem 'whenever', require: false
 
 group :development, :test do
-  gem 'bixby', '~> 1.0'
   gem 'byebug' # debugger
   gem 'capybara', '~> 2.18', '>= 2.18.0' # Adds support for Capybara system testing and selenium driver
   gem 'capybara-mechanize', '>= 1.11.0'
   gem 'equivalent-xml', '>= 0.6.0'
-  gem 'erb_lint', '>= 0.0.30', require: false
   gem 'factory_bot_rails', '>= 5.1.1'
   gem 'rails-controller-testing', '>= 1.0.4'
   gem 'rspec-collection_matchers'
   gem 'rspec-its'
   gem 'rspec-rails', '~> 5.0'
-  gem 'rubocop'
   gem 'selenium-webdriver', '>= 3.142.3'
   gem 'webmock'
 end
