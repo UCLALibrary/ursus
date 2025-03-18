@@ -68,7 +68,6 @@ class CatalogController < ApplicationController
       ### we want to only return works where visibility_ssi == open (not restricted)
     }
 
-    # config.show.partials.insert(1, :openseadragon)
     # config.show.partials.insert(1, :collection_banner)
     config.show.partials.insert(0, :media_viewer)
 
