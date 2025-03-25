@@ -30,7 +30,6 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       'human_readable_language_tesim' => 'Language',
       'illuminator_tesim' => 'Illuminator',
       'illustrator_tesim' => 'Illustrator',
-      'inscription_tesim' => 'Inscription',
       'interviewee_tesim' => 'Interviewee',
       'interviewer_tesim' => 'Interviewer',
       'librettist_tesim' => 'Librettist',
@@ -163,10 +162,6 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
         expect(config['illustrator_tesim'].to_s).to eq('Illustrator')
       end
 
-      it 'returns the Inscription key' do
-        expect(config['inscription_tesim'].to_s).to eq('Inscription')
-      end
-
       it 'returns the Interviewee Key' do
         expect(config['interviewee_tesim'].to_s).to eq('Interviewee')
       end
@@ -261,7 +256,7 @@ RSpec.describe Ursus::ItemOverviewMetadataPresenter do
       let(:missing) { presenter_object_missing_items.overview_terms.keys.length }
 
       it "returns existing keys" do
-        expect(all).to eq 50
+        expect(all).to eq 49
         expect(config.length).to eq all
       end
 

@@ -115,6 +115,7 @@ FOURTH_WORK = {
   date_created_tesim: ["Date 1"],
   sort_year_isi: 1929,
   human_readable_resource_type_tesim: ['still image'],
+  extent_tesim: ['1 photograph'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
   collection_tesim: ['Photographs', 'Digital'],
