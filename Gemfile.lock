@@ -73,7 +73,6 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
-    ast (2.4.2)
     autoprefixer-rails (10.4.2.0)
       execjs (~> 2)
     base64 (0.2.0)
@@ -301,13 +300,8 @@ GEM
       builder (>= 3.1.0)
       faraday
       faraday_middleware
-    openseadragon (1.0.17)
-      rails (> 6.1.0)
     orm_adapter (0.5.0)
     ostruct (0.6.1)
-    parallel (1.22.1)
-    parser (2.7.2.0)
-      ast (~> 2.4.1)
     pkg-config (1.4.7)
     popper_js (1.16.0)
     public_suffix (4.0.7)
@@ -351,7 +345,6 @@ GEM
       method_source
       rake (>= 12.2)
       thor (~> 1.0)
-    rainbow (3.1.1)
     rake (13.0.6)
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
@@ -451,7 +444,6 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.1)
-    unicode-display_width (1.8.0)
     view_component (3.21.0)
       activesupport (>= 5.2.0, < 8.1)
       concurrent-ruby (~> 1.0)
@@ -516,7 +508,6 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   loofah (>= 2.4.0)
   mysql2 (~> 0.5)
-  openseadragon
   pkg-config (~> 1.1)
   puma (~> 5.5)
   rails (~> 6.1)
