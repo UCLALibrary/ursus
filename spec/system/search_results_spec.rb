@@ -24,13 +24,13 @@ RSpec.describe 'Search results page', type: :system, js: false do
     expect(page).to have_content 'Title One'
     expect(page).to have_content 'Description: Description 1'
     expect(page).not_to have_content 'Description 2'
-    expect(page).to have_content 'Resource Type: still image'
+    expect(page).to have_content 'Extent: 1 photograph'
     expect(page).to have_content 'Date: Date 1'
     expect(page).to have_content 'Photographer: Person 1'
 
     # it 'displays facetable fields as links' do
     expect(page).to have_link 'Title One'
-    expect(page).to have_link 'still image'
+    expect(page).to have_link '1 photograph'
     expect(page).not_to have_link 'Date 1'
     expect(page).to have_link 'Person 1'
 
@@ -64,7 +64,7 @@ RSpec.describe 'Search results page', type: :system, js: false do
     expect(page).to have_selector('.view-type-list.active')
     expect(page).to have_content 'Title One'
     expect(page).to have_content 'Description: Description 1'
-    expect(page).to have_content 'Resource Type: still image'
+    expect(page).to have_content 'Extent: 1 photograph'
     expect(page).to have_content 'Date: Date 1'
   end
 

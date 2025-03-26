@@ -140,7 +140,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
     config.add_index_field 'date_created_tesim', label: 'Date Created'
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
-    config.add_index_field 'human_readable_resource_type_tesim', label: 'Resource Type', link_to_facet: 'human_readable_resource_type_sim'
+    config.add_index_field 'extent_tesim', label: 'Extent', link_to_facet: 'extent_sim'
     config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
     config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim'
 
