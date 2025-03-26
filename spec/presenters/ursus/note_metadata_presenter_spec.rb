@@ -22,7 +22,7 @@ RSpec.describe Ursus::NoteMetadataPresenter do
       'incipit_tesim' => 'Incipit',
       'explicit_tesim' => 'Explicit',
       'inscription_tesim' => 'Inscription'
-    }
+    )
   end
   let(:solr_doc_missing_items) do
     doc_double_with_fields_to_render(
