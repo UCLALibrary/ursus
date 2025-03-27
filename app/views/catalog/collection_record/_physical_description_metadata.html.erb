@@ -1,5 +1,5 @@
 <% doc_presenter = show_presenter(document) %>
-<% physical_description = Ursus::PhysicalDescriptionMetadataPresenter.new(document: doc_presenter.fields_to_render).physical_description_terms %>
+<% physical_description = Ursus::PhysicalDescriptionMetadataPresenter.new(document: doc_presenter).physical_description_terms %>
 
 <% if physical_description.length > 0 %>
   <div class='metadata-block'>

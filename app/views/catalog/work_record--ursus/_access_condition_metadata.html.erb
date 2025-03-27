@@ -1,5 +1,5 @@
 <% doc_presenter = show_presenter(document) %>
-<% access_condition = Ursus::AccessConditionMetadataPresenter.new(document: doc_presenter.fields_to_render).access_condition_terms %>
+<% access_condition = Ursus::AccessConditionMetadataPresenter.new(document: doc_presenter).access_condition_terms %>
 
 <% if access_condition.length > 0 %>
   <div class='metadata-block'>

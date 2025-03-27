@@ -1,15 +1,10 @@
 # frozen_string_literal: true
 module Ursus
-  class SinaiIndexLanguagePresenter
-    attr_reader :document
-
-    def initialize(document:)
-      @document = document
-      @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata/sinai_index_language.yml')))
-    end
+  class SinaiIndexLanguagePresenter < BaseMetadataPresenter
+    self.config_file = 'metadata/sinai_index_language.yml'
 
     def sinai_index_language_terms
-      @document.slice(*@config.keys)
+      fields_to_render_by_config_keys
     end
   end
 end

@@ -74,7 +74,7 @@ RSpec.describe 'View a Collection', type: :system, js: true do
     # expect(page.find('div.secondary-metadata dd.blacklight-local_identifier_ssim').text).to eq 'Collection 686'
 
     expect(page).to have_content 'Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'
-    expect(page).to have_content 'LOCAL IDENTIFIER  Collection 686'
+    expect(page).to have_content "LOCAL IDENTIFIER\nCollection 686"
     expect(page).to have_content 'Program Name'
   end
 
