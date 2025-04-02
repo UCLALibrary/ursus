@@ -14,6 +14,7 @@ gem 'blacklight_oai_provider', github: 'projectblacklight/blacklight_oai_provide
 gem 'blacklight_range_limit', '~> 7.0.0'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'coveralls', '>= 0.8.23', require: false
+gem 'date', '3.0.3'
 gem 'devise', '>= 4.7.1'
 gem 'devise-guests', '~> 0.7', '>= 0.7.0'
 gem 'dotenv-rails', '>= 2.7.5'

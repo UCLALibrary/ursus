@@ -154,7 +154,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
-    date (3.4.1)
+    date (3.0.3)
     deprecation (1.1.0)
       activesupport
     devise (4.8.1)
@@ -496,6 +496,7 @@ DEPENDENCIES
   capybara (~> 3.26)
   capybara-mechanize (>= 1.11.0)
   coveralls (>= 0.8.23)
+  date (= 3.0.3)
   devise (>= 4.7.1)
   devise-guests (~> 0.7, >= 0.7.0)
   dotenv-rails (>= 2.7.5)
