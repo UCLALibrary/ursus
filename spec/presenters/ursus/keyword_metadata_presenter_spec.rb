@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 require 'rails_helper'
+require 'support/solr_doc_double'
+
+include SolrDocDouble
 
 RSpec.describe Ursus::KeywordMetadataPresenter do
   let(:solr_doc) do
-    {
+    doc_double_with_fields_to_render(
       'genre_tesim' => 'Genre',
       'subject_tesim' => 'Subject',
       'subject_topic_tesim' => 'Subject topic',
@@ -15,14 +18,14 @@ RSpec.describe Ursus::KeywordMetadataPresenter do
       'longitude_tesim' => 'Longitude',
       'human_readable_resource_type_tesim' => 'Resource Type',
       'features_tesim' => 'Features'
-    }
+    )
   end
   let(:solr_doc_missing_items) do
-    {
+    doc_double_with_fields_to_render(
       'genre_tesim' => 'Genre',
       'features_tesim' => 'Features',
       'subject_tesim' => 'Subject'
-    }
+    )
   end
   let(:presenter_object) { described_class.new(document: solr_doc) }
   let(:presenter_object_missing_items) { described_class.new(document: solr_doc_missing_items) }

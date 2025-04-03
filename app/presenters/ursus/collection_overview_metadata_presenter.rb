@@ -1,18 +1,14 @@
 # frozen_string_literal: true
 module Ursus
-  class CollectionOverviewMetadataPresenter
-    attr_reader :document, :config
-    def initialize(document:)
-      @document = document
-      @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata/collection_overview_metadata.yml')))
-    end
+  class CollectionOverviewMetadataPresenter < BaseMetadataPresenter
+    self.config_file = 'metadata/collection_overview_metadata.yml'
 
     def overview_terms
-      @document.slice(*@config.keys)
+      fields_to_render_by_config_keys
     end
 
     def overview_labels
-      @document.slice(*@config.values)
+      fields_to_render_by_keys(@config.labels)
     end
   end
 end

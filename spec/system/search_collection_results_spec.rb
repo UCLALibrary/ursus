@@ -24,7 +24,7 @@ RSpec.describe 'Search collection results page', type: :system, js: false do
   it 'displays collection: title, description,' do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_collection_results_spec'
     expect(page).to have_content 'Title'
-    expect(page).to have_content 'Description: Description 1'
+    expect(page).to have_content 'Description 1'
   end
 
   it 'has a gallery view button' do

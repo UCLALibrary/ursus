@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 require 'rails_helper'
+require 'support/solr_doc_double'
+
+include SolrDocDouble
 
 RSpec.describe Ursus::TaglineMetadataPresenter do
   let(:solr_doc) do
-    {
+    doc_double_with_fields_to_render(
       'ark_ssi' => 'test',
       'title_tesim' => 'Test record',
       'repository_tesim' => 'Test Repository',
@@ -11,11 +14,11 @@ RSpec.describe Ursus::TaglineMetadataPresenter do
       'oclc_ssi' => 'abc123_oclc',
       'dlcs_collection_name_ssm' => 'Collection 1',
       'resource_type_tesim' => 'still image'
-    }
+    )
   end
 
   let(:solr_doc_with_tagline) do
-    {
+    doc_double_with_fields_to_render(
       'ark_ssi' => 'test',
       'title_tesim' => 'Test record',
       'repository_tesim' => 'Test Repository',
@@ -24,7 +27,7 @@ RSpec.describe Ursus::TaglineMetadataPresenter do
       'dlcs_collection_name_ssm' => 'Collection 1',
       'resource_type_tesim' => 'still image',
       'tagline_ssi' => 'test tag line'
-    }
+    )
   end
   let(:presenter_object) { described_class.new(document: solr_doc) }
   let(:presenter_object_with_tagline) { described_class.new(document: solr_doc_with_tagline) }

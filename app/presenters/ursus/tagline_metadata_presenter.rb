@@ -1,15 +1,10 @@
 # frozen_string_literal: true
 module Ursus
-  class TaglineMetadataPresenter
-    attr_reader :document
-
-    def initialize(document:)
-      @document = document
-      @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata/tagline_metadata.yml')))
-    end
+  class TaglineMetadataPresenter < BaseMetadataPresenter
+    self.config_file = 'metadata/tagline_metadata.yml'
 
     def tagline_terms
-      @document.slice(*@config.keys)
+      fields_to_render_by_config_keys
     end
   end
 end

@@ -1,5 +1,5 @@
 <% doc_presenter = show_presenter(document) %>
-<% keyword = Ursus::KeywordMetadataPresenter.new(document: doc_presenter.fields_to_render).keyword_terms %>
+<% keyword = Ursus::KeywordMetadataPresenter.new(document: doc_presenter).keyword_terms %>
 
 <% if keyword.length > 0 %>
   <div class='metadata-block'>
