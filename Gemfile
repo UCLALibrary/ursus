@@ -34,6 +34,7 @@ gem 'sassc-rails', '>= 2.1.2' # SASS -> CSS compiler
 gem 'sidekiq', '~> 6.4'
 gem 'solrizer', '>= 4.1.0'
 gem 'sprockets', '>= 3.7.2', '< 4'
+gem 'timeout', '0.1.0'
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'uglifier', '>= 1.3.0' # JavaScript compressor
 gem 'whenever', require: false
