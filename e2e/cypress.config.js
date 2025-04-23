@@ -11,4 +11,5 @@ module.exports = defineConfig({
     },
     baseUrl: 'http://localhost:3003',
   },
+  retries: 2,
 })
