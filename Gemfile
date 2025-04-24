@@ -6,14 +6,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'blacklight', '~> 7.5.1'
+gem 'blacklight', '7.40'
 gem 'blacklight-access_controls', '>= 6.0.0'
-gem 'blacklight-gallery', '~> 1.7.0'
-gem 'blacklight_dynamic_sitemap', '~> 0.1.0'
+gem 'blacklight-gallery', '~> 3.5.0'
+gem 'blacklight_dynamic_sitemap', '~> 0.6.0'
 gem 'blacklight_oai_provider', github: 'projectblacklight/blacklight_oai_provider'
 gem 'blacklight_range_limit', '~> 7.0.0'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'coveralls', '>= 0.8.23', require: false
+gem 'date', '3.0.3' # pin to version on RHEL 8 servers
 gem 'devise', '>= 4.7.1'
 gem 'devise-guests', '~> 0.7', '>= 0.7.0'
 gem 'dotenv-rails', '>= 2.7.5'
@@ -25,7 +26,7 @@ gem 'loofah', '>= 2.4.0'
 gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
 gem 'puma', '~> 5.5' # app server
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 6.1'
 gem 'rails_autolink'
 gem 'rollbar' # Error reporting tool
 gem 'rsolr', '>= 1.0'
@@ -33,13 +34,14 @@ gem 'sassc-rails', '>= 2.1.2' # SASS -> CSS compiler
 gem 'sidekiq', '~> 6.4'
 gem 'solrizer', '>= 4.1.0'
 gem 'sprockets', '>= 3.7.2', '< 4'
+gem 'timeout', '0.1.0' # pin to version on RHEL 8 servers
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'uglifier', '>= 1.3.0' # JavaScript compressor
 gem 'whenever', require: false
 
 group :development, :test do
   gem 'byebug' # debugger
-  gem 'capybara', '~> 2.18', '>= 2.18.0' # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 3.26' # Adds support for Capybara system testing and selenium driver
   gem 'capybara-mechanize', '>= 1.11.0'
   gem 'equivalent-xml', '>= 0.6.0'
   gem 'factory_bot_rails', '>= 5.1.1'

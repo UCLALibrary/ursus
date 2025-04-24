@@ -1,5 +1,5 @@
 <% doc_presenter = show_presenter(document) %>
-<% note = Ursus::NoteMetadataPresenter.new(document: doc_presenter.fields_to_render).note_terms %>
+<% note = Ursus::NoteMetadataPresenter.new(document: doc_presenter).note_terms %>
 <% toc_key = render_table_of_contents_key %>
 <% toc_value = render_table_of_contents_value %>
 

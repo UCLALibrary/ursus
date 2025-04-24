@@ -1,15 +1,10 @@
 # frozen_string_literal: true
 module Ursus
-  class KeywordMetadataPresenter
-    attr_reader :document
-
-    def initialize(document:)
-      @document = document
-      @config = YAML.safe_load(File.open(Rails.root.join('config', 'metadata/keyword_metadata.yml')))
-    end
+  class KeywordMetadataPresenter < BaseMetadataPresenter
+    self.config_file = 'metadata/keyword_metadata.yml'
 
     def keyword_terms
-      @document.slice(*@config.keys)
+      fields_to_render_by_config_keys
     end
   end
 end

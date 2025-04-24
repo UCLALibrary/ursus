@@ -1,5 +1,5 @@
 <% doc_presenter = show_presenter(document) %>
-<% find_collection = Ursus::FindCollectionMetadataPresenter.new(document: doc_presenter.fields_to_render).find_collection_terms %>
+<% find_collection = Ursus::FindCollectionMetadataPresenter.new(document: doc_presenter).find_collection_terms %>
 
 <% if find_collection.length > 0 %>
   <div class='metadata-block'>

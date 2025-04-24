@@ -1,5 +1,5 @@
 <% doc_presenter = show_presenter(document) %>
-<% note_collection = Ursus::NoteCollectionMetadataPresenter.new(document: doc_presenter.fields_to_render).note_collection_terms %>
+<% note_collection = Ursus::NoteCollectionMetadataPresenter.new(document: doc_presenter).note_collection_terms %>
 
 <% if note_collection.length > 0 %>
   <div class='metadata-block'>

@@ -18,31 +18,31 @@ RSpec.describe 'View a Work', type: :system, js: true do
     visit "/catalog/#{ark}"
 
     expect(page).to have_selector('.item-page__primary-metadata')
-    expect(page).to have_selector('.item-page__secondary-metadata', 'item-page__secondary-metadata-container')
+    expect(page).to have_selector('.item-page__secondary-metadata')
     expect(page).to have_content 'The Title of my Work'
-    expect(page).to have_content 'DESCRIPTION Description 1'
+    expect(page).to have_content "DESCRIPTION\nDescription 1"
     expect(page).to have_content 'Description 2'
-    expect(page).to have_content 'SUBJECTS Subj 1'
-    expect(page).to have_content 'RESOURCE TYPE still image'
-    expect(page).to have_content 'RIGHTS STATEMENT copyrighted'
-    expect(page).to have_content 'GENRE Genre 1'
-    expect(page).to have_content 'NAMES Named Subject 1'
-    expect(page).to have_content 'LOCATION Los Angeles'
-    expect(page).to have_content 'REPOSITORY University of California, Los Angeles. Library. Department of Special Collections'
-    expect(page).to have_content 'PUBLISHER Los Angeles Daily News'
-    expect(page).to have_content 'RIGHTS COUNTRY US'
-    expect(page).to have_content 'RIGHTS HOLDER Charles E. Young'
+    expect(page).to have_content "SUBJECTS\nSubj 1"
+    expect(page).to have_content "RESOURCE TYPE\nstill image"
+    expect(page).to have_content "RIGHTS STATEMENT\ncopyrighted"
+    expect(page).to have_content "GENRE\nGenre 1"
+    expect(page).to have_content "NAMES\nNamed Subject 1"
+    expect(page).to have_content "LOCATION\nLos Angeles"
+    expect(page).to have_content "REPOSITORY\nUniversity of California, Los Angeles. Library. Department of Special Collections"
+    expect(page).to have_content "PUBLISHER\nLos Angeles Daily News"
+    expect(page).to have_content "RIGHTS COUNTRY\nUS"
+    expect(page).to have_content "RIGHTS HOLDER\nCharles E. Young"
     expect(page).to_not have_content 'NORMALIZED DATE'
     expect(page).to_not have_content '1934-56-78'
-    expect(page).to have_content 'LOCAL IDENTIFIER local id 123'
-    expect(page).to have_content 'DATE CREATED September 17, 1947'
-    expect(page).to have_content 'MEDIUM 1 photograph'
-    expect(page).to have_content 'EXTENT 1 photograph'
-    expect(page).to have_content 'DIMENSIONS 10 x 12.5 cm.'
-    expect(page).to have_content 'FUNDING NOTE Info about funding'
-    expect(page).to have_content 'CAPTION the caption'
-    expect(page).to have_content 'LANGUAGE No linguistic content'
-    expect(page).to have_content 'PHOTOGRAPHER Poalillo, Charles'
+    expect(page).to have_content "LOCAL IDENTIFIER\nlocal id 123"
+    expect(page).to have_content "DATE CREATED\nSeptember 17, 1947"
+    expect(page).to have_content "MEDIUM\n1 photograph"
+    expect(page).to have_content "EXTENT\n1 photograph"
+    expect(page).to have_content "DIMENSIONS\n10 x 12.5 cm."
+    expect(page).to have_content "FUNDING NOTE\nInfo about funding"
+    expect(page).to have_content "CAPTION\nthe caption"
+    expect(page).to have_content "LANGUAGE\nNo linguistic content"
+    expect(page).to have_content "PHOTOGRAPHER\nPoalillo, Charles"
     expect(page).to have_content 'ark:/24920492/029402'
     expect(page).to have_content 'ARK'
     expect(page).to have_content 'Item Overview'

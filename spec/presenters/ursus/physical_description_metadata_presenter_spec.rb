@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 require 'rails_helper'
+require 'support/solr_doc_double'
+
+include SolrDocDouble
 
 RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
   let(:solr_doc) do
-    {
+    doc_double_with_fields_to_render(
       'extent_tesim' => 'Extent',
       'dimensions_tesim' => 'Dimensions',
       'collation_tesim' => 'Collation',
@@ -17,10 +20,10 @@ RSpec.describe Ursus::PhysicalDescriptionMetadataPresenter do
       'condition_note_ssi' => 'Condition note',
       'binding_note_ssi' => 'Binding note',
       'form_ssi' => 'Form'
-    }
+    )
   end
   let(:solr_doc_missing_items) do
-    { 'extent_tesim' => 'Extent' }
+    doc_double_with_fields_to_render('extent_tesim' => 'Extent')
   end
   let(:presenter_object) { described_class.new(document: solr_doc) }
   let(:presenter_object_missing_items) { described_class.new(document: solr_doc_missing_items) }

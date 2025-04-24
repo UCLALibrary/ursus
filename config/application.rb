@@ -15,6 +15,9 @@ module Ursus
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
+    config.autoloader = :classic
+    config.active_record.yaml_column_permitted_classes = [Symbol, Date]
+    config.active_record.use_yaml_unsafe_load = true
     config.autoload_paths += %W[#{config.root}/lib]
 
     config.middleware.insert_before(Rack::Sendfile, Rack::Deflater)
