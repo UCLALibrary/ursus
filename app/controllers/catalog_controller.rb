@@ -46,6 +46,7 @@ class CatalogController < ApplicationController
     # config.view.slideshow.partials = [:index]
 
     config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
+    config.index.document_component = Blacklight::DocumentComponent
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
     #
@@ -69,7 +70,7 @@ class CatalogController < ApplicationController
     }
 
     # config.show.partials.insert(1, :collection_banner)
-    config.show.partials.insert(0, :media_viewer)
+    config.show.partials.insert(1, :media_viewer)
 
     # ------------------------------------------------------
     # INDEX PAGE

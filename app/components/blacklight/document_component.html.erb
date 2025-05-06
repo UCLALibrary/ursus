@@ -1,0 +1,23 @@
+<%= content_tag @component,
+  id: @id,
+  data: {
+    'document-id': @document.id.to_s.parameterize,
+    'document-counter': @counter,
+  },
+  itemscope: true,
+  itemtype: @document.itemtype,
+  class: classes.flatten.join(' ') do %>
+  <%= header %>
+  <% if body.present? %>
+    <%= body %>
+  <% else %>
+    <div class="document__gallery-item-wrapper">
+      <%= thumbnail %>
+
+      <div class="caption document__gallery-item-text-wrapper document__gallery-item-text-wrapper--ursus">
+        <%= title %>
+      </div>
+    </div>
+  <% end %>
+  <%= footer %>
+<% end %>
