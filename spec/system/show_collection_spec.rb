@@ -81,8 +81,8 @@ RSpec.describe 'View a Collection', type: :system, js: true do
   it 'displays the schema.org values' do
     visit "/catalog/#{ark}"
     expect(page.find('div[itemtype = "http://schema.org/Collection"]')['itemid']).to end_with 'catalog/ark:/21198/zz00011f8m'
-    expect(page.find('div > p[itemprop]')['itemprop']).to have_content 'abstract'
-    expect(page.find('div[itemprop]')['itemprop']).to have_content 'collectionSize'
+    expect(page.find('div.metadata-block__group > div[itemprop]')['itemprop']).to have_content 'abstract'
+    expect(page.find('div.banner__collection-count[itemprop]')['itemprop']).to have_content 'collectionSize'
   end
 
   it 'displays headings' do
