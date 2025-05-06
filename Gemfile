@@ -8,7 +8,7 @@ end
 
 gem 'blacklight', '7.40'
 gem 'blacklight-access_controls', '>= 6.0.0'
-gem 'blacklight-gallery', '~> 3.5.0'
+gem 'blacklight-gallery', '~> 4.8.4'
 gem 'blacklight_dynamic_sitemap', '~> 0.6.0'
 gem 'blacklight_oai_provider', github: 'projectblacklight/blacklight_oai_provider'
 gem 'blacklight_range_limit', '~> 7.0.0'

@@ -270,7 +270,7 @@ module Blacklight::BlacklightHelperBehavior
     tag = options.fetch(:tag, :h4)
     document ||= @document
 
-    content_tag(tag, document_presenter(document).heading, itemprop: "name")
+    content_tag(tag, document_presenter(document).heading, itemprop: "name", class: "item-page__title")
   end
   deprecation_deprecate render_document_heading: 'Removed without replacement'
 

@@ -93,9 +93,9 @@ GEM
       blacklight (> 6.0, < 8)
       cancancan (>= 1.8)
       deprecation (~> 1.0)
-    blacklight-gallery (3.5.0)
-      blacklight (~> 7.17)
-      rails (>= 5.1, < 7)
+    blacklight-gallery (4.8.4)
+      blacklight (>= 7.17, < 9)
+      rails (>= 6.1, < 9)
     blacklight_dynamic_sitemap (0.6.0)
       blacklight (> 6.0)
       rails
@@ -481,7 +481,7 @@ PLATFORMS
 DEPENDENCIES
   blacklight (= 7.40)
   blacklight-access_controls (>= 6.0.0)
-  blacklight-gallery (~> 3.5.0)
+  blacklight-gallery (~> 4.8.4)
   blacklight_dynamic_sitemap (~> 0.6.0)
   blacklight_oai_provider!
   blacklight_range_limit (~> 7.0.0)
