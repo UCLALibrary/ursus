@@ -47,15 +47,18 @@
     <% end %>
 
     <div class="site-container" <%= schema_org_markup %>>
-      <%= render partial: 'shared/header/header_navbar' %>
+      <%= render partial: 'shared/header_navbar' %>
       <%= render 'catalog/banners/homepage_banner' %>
 
-        <main class="main-content-container container-constrained">
-          <%= content_for(:container_header) %>
-            <%= content_for?(:content) ? yield(:content) : yield %>
-        </main>
+      <main id="main-container" class="<%= container_classes %>" role="main" aria-label="<%= t('blacklight.main.aria.main_container') %>">
+        <%= content_for(:container_header) %>
 
-      <%= render partial: 'shared/footer/footer' %>
+        <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
+
+        <%= content_for?(:content) ? yield(:content) : yield %>
+      </main>
+
+      <%= render partial: 'shared/footer' %>
       <%= render partial: 'shared/modal' %>
     </div>
   </body>
