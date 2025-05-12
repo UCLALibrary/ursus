@@ -36,17 +36,20 @@ RSpec.describe CatalogController, type: :controller do
       end
 
       let(:expected_facets) do
-        ['combined_subject',
-         'human_readable_resource_type',
-         'genre',
-         'named_subject',
-         'location',
-         'year_isim',
-         'human_readable_language',
-         'generic_type',
-         'member_of_collections',
-         'repository',
-         'program']
+        [
+          'combined_subject',
+          'human_readable_resource_type',
+          'genre',
+          'named_subject',
+          'location',
+          'year_isim',
+          'human_readable_language',
+          'generic_type',
+          'member_of_collections',
+          'repository',
+          'program',
+          'has_model',
+        ]
       end
 
       it 'has exactly expected facets' do
