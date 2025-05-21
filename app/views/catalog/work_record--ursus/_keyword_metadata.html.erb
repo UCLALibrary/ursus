@@ -1,4 +1,4 @@
-<% doc_presenter = show_presenter(document) %>
+<% doc_presenter = document_presenter(document) %>
 <% keyword = Ursus::KeywordMetadataPresenter.new(document: doc_presenter).keyword_terms %>
 
 <% if keyword.length > 0 %>
@@ -9,7 +9,7 @@
           <% if field_name != "subject_tesim" && field_name != "subject_topic_tesim" %>
             <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
               <!-- KEY -->
-              <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
+              <%= field.label %>
               <!-- VALUE -->
                 <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">
                   <%= doc_presenter.field_value field %>

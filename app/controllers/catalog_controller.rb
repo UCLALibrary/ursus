@@ -69,7 +69,7 @@ class CatalogController < ApplicationController
     }
 
     # config.show.partials.insert(1, :collection_banner)
-    config.show.partials.insert(1, :media_viewer)
+    config.show.partials = [:media_viewer, :show_header, :show]
 
     # ------------------------------------------------------
     # INDEX PAGE
@@ -79,7 +79,7 @@ class CatalogController < ApplicationController
     config.index.display_type_field = 'has_model_ssim'
     config.index.thumbnail_field = 'thumbnail_url_ss'
     config.index.document_presenter_class = Ursus::IndexPresenter
-    config.advanced_search.enabled = true
+    config.advanced_search.enabled = false
 
     # solr path which will be added to solr base url before the other solr params.
     # config.solr_path = 'select'
@@ -142,7 +142,12 @@ class CatalogController < ApplicationController
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
     config.add_index_field 'extent_tesim', label: 'Extent', link_to_facet: 'extent_sim'
     config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
-    config.add_index_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim'
+    config.add_index_field 'member_of_collections_ssim', label: 'Collection', values: ->(_config, doc, view_context) do
+      view_context.link_to(
+        doc[:member_of_collections_ssim][0],
+        view_context.solr_document_path('ark:/' + doc[:member_of_collection_ids_ssim][0].reverse.sub('-', '/'))
+      )
+    end
 
     # ------------------------------------------------------
     # SHOW PAGE / ITEM PAGE / Individual Work (Universal Viewer Page)
@@ -231,7 +236,14 @@ class CatalogController < ApplicationController
     config.add_show_field 'longitude_tesim', label: 'Longitude' # Primary / Physical description
     config.add_show_field 'lyricist_tesim', label: 'Lyricist', link_to_facet: 'lyricist_sim' # Primary / Item Overview
     config.add_show_field 'medium_tesim', label: 'Medium' # Primary / Physical description
-    config.add_show_field 'member_of_collections_ssim', label: 'Collection', link_to_facet: 'member_of_collections_ssim' # Primary / Item Overview
+    config.add_show_field 'member_of_collections_ssim', label: 'Collection', values: ->(_config, doc, view_context) do
+      return unless doc[:member_of_collections_ssim].present?
+
+      view_context.link_to(
+        doc[:member_of_collections_ssim][0],
+        view_context.solr_document_path('ark:/' + doc[:member_of_collection_ids_ssim][0].reverse.sub('-', '/'))
+      )
+    end
     config.add_show_field 'musician_tesim', label: 'Musician', link_to_facet: 'musician_sim' # Primary / Physical description
     config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim' # Primary / Physical description
     config.add_show_field 'note_tesim', label: 'Note' # Primary / Notes
@@ -388,13 +400,15 @@ class CatalogController < ApplicationController
       flash.now[:notice] = "To view the high-quality images for this item in  Firefox, you'll need to change some browser settings"
     end
 
-    deprecated_response, @document = search_service.fetch(solr_id)
-    @response = ActiveSupport::Deprecation::DeprecatedObjectProxy.new(deprecated_response, 'The @response instance variable is deprecated; use @document.response instead.')
+    @document = search_service.fetch(solr_id)
+
     respond_to do |format|
       format.html { @search_context = setup_next_and_previous_documents }
       format.json
       additional_export_formats(@document, format)
     end
+
+    @response = ''
 
     if @document[:has_model_ssim][0] == 'Collection'
       facet_member_of_collections = blacklight_config.facet_fields['member_of_collections_ssim']

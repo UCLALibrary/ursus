@@ -1,4 +1,4 @@
-<% doc_presenter = show_presenter(document) %>
+<% doc_presenter = document_presenter(document) %>
 <% access_condition = Ursus::AccessConditionMetadataPresenter.new(document: doc_presenter).access_condition_terms %>
 
 <% if access_condition.length > 0 %>
@@ -8,7 +8,7 @@
       <% access_condition.each do |field_name, field| -%>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <!-- KEY -->
-          <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
+          <%= field.label %>
           <!-- VALUE -->
 
             <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">

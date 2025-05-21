@@ -1,4 +1,4 @@
-<% doc_presenter = show_presenter(document) %>
+<% doc_presenter = document_presenter(document) %>
 <% tagline = Ursus::TaglineMetadataPresenter.new(document: doc_presenter).tagline_terms %>
 
 <% if tagline.length > 0 %>

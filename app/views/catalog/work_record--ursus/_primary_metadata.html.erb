@@ -1,6 +1,6 @@
 <div hidden>
   <% document_json = JSON.parse @document.to_json.tr("'", '_') %>
-  <% tn = "<img src=\"" + document_json['thumbnail_url_ss'] + "\" alt=\"" + render_document_alttag(document) + "\" \>" unless document_json['thumbnail_url_ss'].blank? %>
+  <% tn = "<img src=\"" + document_json['thumbnail_url_ss'] + "\" alt=\"" + document_presenter(@document).heading + "\" \>" unless document_json['thumbnail_url_ss'].blank? %>
   <%= tn.html_safe unless document_json['thumbnail_url_ss'].blank? %>
 </div>
 
