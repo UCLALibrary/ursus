@@ -69,6 +69,8 @@ class CatalogController < ApplicationController
       ### we want to only return works where visibility_ssi == open (not restricted)
     }
 
+    config.search_state_fields += [:range_end, :range_field, :range_start]
+
     # config.show.partials.insert(1, :collection_banner)
     config.show.partials.insert(1, :media_viewer)
 
@@ -120,7 +122,48 @@ class CatalogController < ApplicationController
     config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
     config.add_facet_field 'repository_sim', limit: 5
     config.add_facet_field 'program_sim', label: 'Program', limit: 5
+
+    # following facets are hidden from the menu, and are here to allow user to search by them
     config.add_facet_field 'has_model_ssim', show: false
+    config.add_facet_field 'architect_sim', show: false
+    config.add_facet_field 'artist_sim', show: false
+    config.add_facet_field 'arranger_sim', show: false
+    config.add_facet_field 'author_sim', show: false
+    config.add_facet_field 'calligrapher_sim', show: false
+    config.add_facet_field 'cartographer_sim', show: false
+    config.add_facet_field 'collector_sim', show: false
+    config.add_facet_field 'commentator_sim', show: false
+    config.add_facet_field 'composer_sim', show: false
+    config.add_facet_field 'creator_sim', show: false
+    config.add_facet_field 'director_sim', show: false
+    config.add_facet_field 'editor_sim', show: false
+    config.add_facet_field 'engraver_sim', show: false
+    config.add_facet_field 'features_sim', show: false
+    config.add_facet_field 'form_sim', show: false
+    config.add_facet_field 'host_sim', show: false
+    config.add_facet_field 'illuminator_sim', show: false
+    config.add_facet_field 'illustrator_sim', show: false
+    config.add_facet_field 'interviewee_sim', show: false
+    config.add_facet_field 'interviewer_sim', show: false
+    config.add_facet_field 'librettist_sim', show: false
+    config.add_facet_field 'lyricist_sim', show: false
+    config.add_facet_field 'musician_sim', show: false
+    config.add_facet_field 'photographer_sim', show: false
+    config.add_facet_field 'printer_sim', show: false
+    config.add_facet_field 'printmaker_sim', show: false
+    config.add_facet_field 'producer_sim', show: false
+    config.add_facet_field 'recipient_sim', show: false
+    config.add_facet_field 'researcher_sim', show: false
+    config.add_facet_field 'rubricator_sim', show: false
+    config.add_facet_field 'scribe_sim', show: false
+    config.add_facet_field 'series_sim', show: false
+    config.add_facet_field 'subject_geographic_sim', show: false
+    config.add_facet_field 'subject_temporal_sim', show: false
+    config.add_facet_field 'subject_sim', show: false
+    config.add_facet_field 'subject_topic_sim', show: false
+    config.add_facet_field 'support_sim', show: false
+    config.add_facet_field 'translator_sim', show: false
+    config.add_facet_field 'uniform_title_sim', show: false
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
