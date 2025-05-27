@@ -69,7 +69,7 @@ class CatalogController < ApplicationController
     }
 
     # config.show.partials.insert(1, :collection_banner)
-    config.show.partials = [:media_viewer, :show_header, :show]
+    config.show.partials = [:show_header, :media_viewer, :show]
 
     # ------------------------------------------------------
     # INDEX PAGE

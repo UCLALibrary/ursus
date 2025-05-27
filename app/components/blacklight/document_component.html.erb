@@ -1,0 +1,45 @@
+<%= content_tag @component,
+  id: @id,
+  data: {
+    'document-id': @document.id.to_s.parameterize,
+    'document-counter': @counter,
+  },
+  itemscope: true,
+  itemtype: @document.itemtype,
+  class: classes.flatten.join(' ') do %>
+  <%= header %>
+  <% if body.present? %>
+    <%= body %>
+  <% elsif @gallery_view %>
+    <div class="document__gallery-item-wrapper">
+      <%= thumbnail %>
+      <div class="caption document__gallery-item-text-wrapper document__gallery-item-text-wrapper--ursus">
+        <%= title %>
+      </div>
+    </div>
+  <% else %>
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <%= title %>
+      </header>
+
+      <div class="document__list-item-wrapper">
+        <%= embed %>
+        <%= content %>
+        <%= metadata %>
+        <% metadata_sections.each do |section| %>
+          <%= section %>
+        <% end %>
+
+        <% partials.each do |partial| %>
+          <%= partial %>
+        <% end %>
+
+        <div class="document__gallery-thumbnail">
+          <%= thumbnail %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= footer %>
+<% end %>

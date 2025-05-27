@@ -17,7 +17,7 @@
 
   <%= render 'search_results_header' %>
   <%= render 'constraints' %>
-  <%= render 'search_header' %>
+  <%= render partial: 'search_header',  locals: { pagination_only: false } %>
 
   <h2 class="sr-only visually-hidden"><%= t('blacklight.search.search_results') %></h2>
 

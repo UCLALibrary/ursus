@@ -121,7 +121,7 @@ module Blacklight
       [
         @classes,
         helpers.render_document_class(@document),
-        'document',
+        'document document__list-item blacklight-work document-position-0',
         ("document-position-#{@counter}" if @counter)
       ].compact.flatten
     end

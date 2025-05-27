@@ -14,13 +14,3 @@
     <% end %>
   <% end %>
 </div>
-
-<%= render (document_component).new(document_component.collection_parameter => document_presenter(@document), component: :div, show: true, partials: blacklight_config.view_config(:show).partials) do |component| %>
-  <% component.with_title(as: 'h1', classes: '', link_to_document: false, actions: false) %>
-  <% component.with_footer do %>
-    <% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
-      <!-- COinS, for Zotero among others. -->
-      <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_presenter(@document).display_type) %>"></span>
-    <% end %>
-  <% end %>
-<% end %>
