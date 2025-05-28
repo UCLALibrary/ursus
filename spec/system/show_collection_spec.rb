@@ -38,7 +38,8 @@ RSpec.describe 'View a Collection', type: :system, js: true do
       human_readable_type_tesim: ['Collection'],
       license_tesim: ['https://creativecommons.org/licenses/by/4.0/'],
       medium_tesim: ['b&w negative'],
-      program_tesim: ['Program Name']
+      program_tesim: ['Program Name'],
+      related_to_ssm: ['Related Items 1']
     }
   end
 
@@ -76,6 +77,7 @@ RSpec.describe 'View a Collection', type: :system, js: true do
     expect(page).to have_content 'Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'
     expect(page).to have_content "LOCAL IDENTIFIER\nCollection 686"
     expect(page).to have_content 'Program Name'
+    expect(page).to have_content 'Related Items 1'
   end
 
   it 'displays the schema.org values' do
