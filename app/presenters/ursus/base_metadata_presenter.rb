@@ -22,7 +22,12 @@ module Ursus
                .each do |field_name, field_config, _field_presenter|
                  result[field_name] = field_config if keys.include?(field_name)
                end
-      result
+
+      keys.map do |key|
+        next unless result[key].present?
+
+        [key, result[key]]
+      end.compact.to_h
     end
   end
 end

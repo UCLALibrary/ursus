@@ -46,6 +46,7 @@ class CatalogController < ApplicationController
     # config.view.slideshow.partials = [:index]
 
     config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
+    config.index.document_component = Blacklight::DocumentComponent
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
     #
@@ -67,6 +68,8 @@ class CatalogController < ApplicationController
       fq: '(ark_ssi:* AND ((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !((visibility_ssi:restricted) OR (visibility_ssi:discovery) OR (visibility_ssi:sinai)))'
       ### we want to only return works where visibility_ssi == open (not restricted)
     }
+
+    config.search_state_fields += [:range_end, :range_field, :range_start]
 
     # config.show.partials.insert(1, :collection_banner)
     config.show.partials = [:show_header, :media_viewer, :show]
@@ -121,6 +124,48 @@ class CatalogController < ApplicationController
     config.add_facet_field 'repository_sim', limit: 5
     config.add_facet_field 'program_sim', label: 'Program', limit: 5
 
+    # following facets are hidden from the menu, and are here to allow user to search by them
+    config.add_facet_field 'has_model_ssim', show: false
+    config.add_facet_field 'architect_sim', show: false
+    config.add_facet_field 'artist_sim', show: false
+    config.add_facet_field 'arranger_sim', show: false
+    config.add_facet_field 'author_sim', show: false
+    config.add_facet_field 'calligrapher_sim', show: false
+    config.add_facet_field 'cartographer_sim', show: false
+    config.add_facet_field 'collector_sim', show: false
+    config.add_facet_field 'commentator_sim', show: false
+    config.add_facet_field 'composer_sim', show: false
+    config.add_facet_field 'creator_sim', show: false
+    config.add_facet_field 'director_sim', show: false
+    config.add_facet_field 'editor_sim', show: false
+    config.add_facet_field 'engraver_sim', show: false
+    config.add_facet_field 'features_sim', show: false
+    config.add_facet_field 'form_sim', show: false
+    config.add_facet_field 'host_sim', show: false
+    config.add_facet_field 'illuminator_sim', show: false
+    config.add_facet_field 'illustrator_sim', show: false
+    config.add_facet_field 'interviewee_sim', show: false
+    config.add_facet_field 'interviewer_sim', show: false
+    config.add_facet_field 'librettist_sim', show: false
+    config.add_facet_field 'lyricist_sim', show: false
+    config.add_facet_field 'musician_sim', show: false
+    config.add_facet_field 'photographer_sim', show: false
+    config.add_facet_field 'printer_sim', show: false
+    config.add_facet_field 'printmaker_sim', show: false
+    config.add_facet_field 'producer_sim', show: false
+    config.add_facet_field 'recipient_sim', show: false
+    config.add_facet_field 'researcher_sim', show: false
+    config.add_facet_field 'rubricator_sim', show: false
+    config.add_facet_field 'scribe_sim', show: false
+    config.add_facet_field 'series_sim', show: false
+    config.add_facet_field 'subject_geographic_sim', show: false
+    config.add_facet_field 'subject_temporal_sim', show: false
+    config.add_facet_field 'subject_sim', show: false
+    config.add_facet_field 'subject_topic_sim', show: false
+    config.add_facet_field 'support_sim', show: false
+    config.add_facet_field 'translator_sim', show: false
+    config.add_facet_field 'uniform_title_sim', show: false
+
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
     config.add_facet_field 'generic_type_sim', if: false
@@ -140,7 +185,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'description_tesim', itemprop: 'description', helper_method: :render_truncated_description
     config.add_index_field 'date_created_tesim', label: 'Date Created'
     # config.add_index_field ::Solrizer.solr_name('normalized_date', :stored_searchable), itemprop: 'dateCreated'
-    config.add_index_field 'extent_tesim', label: 'Extent', link_to_facet: 'extent_sim'
+    config.add_index_field 'extent_tesim', label: 'Extent'
     config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
     config.add_index_field 'member_of_collections_ssim', label: 'Collection', values: ->(_config, doc, view_context) do
       return unless doc[:member_of_collections_ssim].present? && doc[:member_of_collection_ids_ssim].present?

@@ -30,7 +30,7 @@ RSpec.describe 'Search results page', type: :system, js: false do
 
     # it 'displays facetable fields as links' do
     expect(page).to have_link 'Title One'
-    expect(page).to have_link '1 photograph'
+    expect(page).not_to have_link '1 photograph'
     expect(page).not_to have_link 'Date 1'
     expect(page).to have_link 'Person 1'
 
