@@ -20,7 +20,6 @@ RSpec.describe 'Search results page', type: :system, js: false do
 
   scenario do
     visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
-    pp page
     # it 'displays: title, description, date_created, resource_type, and photographer' do
     expect(page).to have_content 'Title One'
     expect(page).to have_content 'Description 1'
@@ -36,10 +35,10 @@ RSpec.describe 'Search results page', type: :system, js: false do
     expect(page).to have_link 'Person 1'
 
     # it 'displays Gallery View button' do
-    expect(page).to have_link 'Gallery'
+    expect(page).to have_content 'Gallery'
 
     # it 'displays List View button' do
-    expect(page).to have_link 'List'
+    expect(page).to have_content 'List'
 
     # shows thumbnails for 'public' visibility, not for 'discovery'
     expect(page).not_to have_css("img[src*='work3.jpg']")

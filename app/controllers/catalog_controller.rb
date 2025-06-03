@@ -143,6 +143,8 @@ class CatalogController < ApplicationController
     config.add_index_field 'extent_tesim', label: 'Extent', link_to_facet: 'extent_sim'
     config.add_index_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim'
     config.add_index_field 'member_of_collections_ssim', label: 'Collection', values: ->(_config, doc, view_context) do
+      return unless doc[:member_of_collections_ssim].present? && doc[:member_of_collection_ids_ssim].present?
+
       view_context.link_to(
         doc[:member_of_collections_ssim][0],
         view_context.solr_document_path('ark:/' + doc[:member_of_collection_ids_ssim][0].reverse.sub('-', '/'))
