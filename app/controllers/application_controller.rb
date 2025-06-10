@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  rescue_from Blacklight::Exceptions::AccessDenied, with: :render_404
+  rescue_from Blacklight::AccessControls::AccessDenied, with: :render_404
   rescue_from Blacklight::Exceptions::RecordNotFound, with: :render_404
 
   def render_404

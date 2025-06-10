@@ -26,7 +26,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
     expect(page).to have_content "RESOURCE TYPE\nstill image"
     expect(page).to have_content "RIGHTS STATEMENT\ncopyrighted"
     expect(page).to have_content "GENRE\nGenre 1"
-    expect(page).to have_content "NAMES\nNamed Subject 1"
+    expect(page).to have_content "NAMED SUBJECT\nNamed Subject 1"
     expect(page).to have_content "LOCATION\nLos Angeles"
     expect(page).to have_content "REPOSITORY\nUniversity of California, Los Angeles. Library. Department of Special Collections"
     expect(page).to have_content "PUBLISHER\nLos Angeles Daily News"

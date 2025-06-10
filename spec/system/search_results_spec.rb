@@ -19,7 +19,7 @@ RSpec.describe 'Search results page', type: :system, js: false do
   let(:work_3_attributes) { FOURTH_WORK }
 
   scenario do
-    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec'
+    visit '/catalog?f%5Blocation_sim%5D%5B%5D=search_results_spec'
     # it 'displays: title, description, date_created, resource_type, and photographer' do
     expect(page).to have_content 'Title One'
     expect(page).to have_content 'Description 1'
@@ -52,15 +52,15 @@ RSpec.describe 'Search results page', type: :system, js: false do
   end
 
   it 'displays Gallery View results' do
-    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec&view=gallery'
-    click_on 'Gallery'
+    visit '/catalog?f%5Blocation_sim%5D%5B%5D=search_results_spec&view=gallery'
+    find_by_id('view-button-gallery').click
     expect(page).to have_selector('.view-type-gallery.active')
     expect(page).to have_content 'Title One'
   end
 
   it 'displays List View results' do
-    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_results_spec&view=list'
-    click_on 'List'
+    visit '/catalog?f%5Blocation_sim%5D%5B%5D=search_results_spec&view=list'
+    find_by_id('view-button-list').click
     expect(page).to have_selector('.view-type-list.active')
     expect(page).to have_content 'Title One'
     expect(page).to have_content 'Description 1'
