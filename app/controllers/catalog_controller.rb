@@ -312,7 +312,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'repository_tesim', label: 'Repository', link_to_facet: 'repository_sim' # Secondary / Find This Item
     config.add_show_field 'researcher_tesim', label: 'Researcher', link_to_facet: 'researcher_sim' # Primary / Physical description
     config.add_show_field 'resp_statement_tesim', label: 'Statement of Responsibility' # Primary / Notes
-    config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation' # Secondary / Access Conditions
+    config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation)' # Secondary / Access Conditions
     config.add_show_field 'rights_holder_tesim', label: 'Rights holder' # Secondary / Access Conditions
     config.add_show_field 'rubricator_tesim', label: 'Rubricator', link_to_facet: 'rubricator_sim' # Primary / Item Overview
     config.add_show_field 'script_tesim', label: 'Script' # Primary / Item Overview
