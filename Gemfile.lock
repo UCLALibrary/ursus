@@ -104,11 +104,10 @@ GEM
     blacklight_dynamic_sitemap (0.6.0)
       blacklight (> 6.0)
       rails
-    blacklight_range_limit (7.0.0)
-      blacklight
-      jquery-rails
-      rails (>= 3.0)
-      tether-rails
+    blacklight_range_limit (8.5.0)
+      blacklight (>= 7.25.2, < 9)
+      deprecation
+      view_component (>= 2.54, < 4)
     bootstrap (4.6.1)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
@@ -435,8 +434,6 @@ GEM
       tins (~> 1.0)
     terser (1.2.5)
       execjs (>= 0.3.0, < 3)
-    tether-rails (1.4.0)
-      rails (>= 3.1)
     thor (1.2.1)
     tilt (2.0.10)
     timeout (0.1.0)
@@ -490,7 +487,7 @@ DEPENDENCIES
   blacklight-gallery (~> 4.8)
   blacklight_dynamic_sitemap (~> 0.6.0)
   blacklight_oai_provider!
-  blacklight_range_limit (~> 7.0.0)
+  blacklight_range_limit (~> 8.5.0)
   bootstrap (~> 4.4, >= 4.4.1)
   byebug
   capistrano (= 3.11.0)

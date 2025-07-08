@@ -11,7 +11,7 @@ gem 'blacklight-access_controls',  git: 'https://github.com/projectblacklight/bl
 gem 'blacklight-gallery', '~> 4.8'
 gem 'blacklight_dynamic_sitemap', '~> 0.6.0'
 gem 'blacklight_oai_provider',  git: 'https://github.com/projectblacklight/blacklight_oai_provider', branch: 'update-to-bl-8.x'
-gem 'blacklight_range_limit', '~> 7.0.0'
+gem 'blacklight_range_limit', '~> 8.5.0'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'coveralls', '>= 0.8.23', require: false
 gem 'date', '3.0.3' # pin to version on RHEL 8 servers

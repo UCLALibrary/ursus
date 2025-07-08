@@ -118,7 +118,9 @@ class CatalogController < ApplicationController
     config.add_facet_field 'genre_sim', limit: 5
     config.add_facet_field 'named_subject_sim', limit: 5
     config.add_facet_field 'location_sim', limit: 5
-    config.add_facet_field 'year_isim', limit: 5, range: true
+    config.add_facet_field 'year_isim', limit: 5, range: {
+      assumed_boundaries: [0, Time.now.year + 2],
+    }
     config.add_facet_field 'human_readable_language_sim', limit: 5
     config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
     config.add_facet_field 'repository_sim', limit: 5
