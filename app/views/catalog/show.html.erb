@@ -4,6 +4,7 @@
 <% else %>
   <% if current_search_session && controller.controller_name == 'catalog' && controller.action_name == 'show' %>
     <div id='appliedParams' class='item-page__pagination-wrapper'>
+      <%= render blacklight_config.view_config(:show).document_header_component.new(document: @document, search_context: @search_context, search_session: search_session) %>
       <%= link_back_to_catalog label: 'Back to Search Results', class: 'btn-base btn-base-sm btn-outline-ursus--blue' %>
     </div>
   <% elsif current_search_session %>
@@ -12,6 +13,8 @@
       <%= link_back_to_catalog class: 'btn btn-outline-secondary' %>
     </div>
   <% end %>
+
+  <hr class="divider divider--ursus">
 
   <%= render 'show_main_content' %>
 <% end %>
