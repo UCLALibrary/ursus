@@ -51,11 +51,7 @@
   }
 }
 
-.facet-field__heading.collapse-toggle.collapsed::after {
-  color: $ucla-darker-blue;
-}
-
-.facet-field__heading.collapse-toggle::after {
+.facet-field__heading {
   color: $ucla-darker-blue;
 }
 
