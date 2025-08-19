@@ -34,6 +34,11 @@
   <%= render 'home' %>
   <%= render 'shared/sitelinks_search_box' %>
 <% else %>
+  <% if @program_partial %>
+    <%= render partial: "catalog/programs/#{@program_partial}" %>
+    <%= render partial: "catalog/programs/recent_collections" %>
+  <% end %>
+
   <div class="content-container--index-page">
     <%= render 'facets' %>
     <%= render 'search_results' %>

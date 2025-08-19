@@ -34,6 +34,17 @@ Rails.application.routes.draw do
     concerns :range_searchable
   end
 
+  namespace :program do
+    get 'modern-endangered-archives-program', {
+      to: '/catalog#index',
+      f: {
+        has_model_ssim: ["Collection"],
+        program_sim: ["Modern Endangered Archives Program"],
+      },
+      sort: "date_dtsort desc"
+    }
+  end
+
   devise_for :users
   concern :exportable, Blacklight::Routes::Exportable.new
 
