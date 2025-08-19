@@ -453,11 +453,24 @@ class CatalogController < ApplicationController
       document_export_formats(format)
     end
 
-    if params.dig(:f, :has_model_ssim, 0) == "Collection" && params.dig(:f, :program_sim, 0) == "Modern Endangered Archives Program"
-      @program_partial = 'meap'
+    if params.dig(:f, :has_model_ssim, 0) == "Collection" &&
+        ["Modern Endangered Archives Program"].include?(params.dig(:f, :program_sim, 0)) # to use with other programs as well
 
       if params[:page].blank?
         @program_first_four = @response.response[:docs].shift(4)
+      end
+
+      begin
+        url = Rails.application.routes.url_helpers.search_catalog_path(format: :json, f: { program_sim: params[:f][:program_sim] })
+        url = "#{request.base_url}#{url}"
+        response = Net::HTTP.get(URI(url))
+        @works_data = JSON.parse(response, symbolize_names: true)
+      rescue
+        @works_data = nil
+      end
+
+      if params.dig(:f, :program_sim, 0) == "Modern Endangered Archives Program"
+        @program_partial = 'meap'
       end
     end
   end

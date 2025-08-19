@@ -7,7 +7,10 @@
   <div class="banner__overlay--collection">
     <h1 class="banner__title--collection">Modern Endangered Archives Program</h1>
     <div class="banner__collection-detail">
-      <div class="banner__collection-count" itemprop="collectionSize">TODO items <%= @response.response["numFound"] %> collections</div>
+      <div class="banner__collection-count" itemprop="collectionSize">
+        <%= @works_data && @works_data.dig(:meta, :pages, :total_count) ? "#{@works_data.dig(:meta, :pages, :total_count)} items in " : '' %>
+        <%= @response.response["numFound"] %> collections
+      </div>
       <a class="btn-base btn-outline-ursus--gold ur-link--gold banner__overlay-btn-text" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Ustadh+Mau+Digital+Archive+%28UMADA%29">Browse items in this collection</a>
     </div>
   </div>
