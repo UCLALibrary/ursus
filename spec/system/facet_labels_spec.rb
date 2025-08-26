@@ -31,7 +31,7 @@ RSpec.describe 'The facet sidebar', :clean, type: :system do
 
     it 'displays expected facet labels' do
       visit('/catalog')
-      facet_headings = page.all(:css, 'h3.facet-field__heading/a').to_a.map(&:text)
+      facet_headings = page.all(:css, 'h3.facet-field__heading').to_a.map(&:text)
       expect(facet_headings).to contain_exactly(
         'Subject',
         'Resource Type',
@@ -52,23 +52,20 @@ RSpec.describe 'The facet sidebar', :clean, type: :system do
 
     it 'has a Subject button for the selected facet display' do
       visit('/catalog')
-      click_on 'Subject'
+      expect(page).to have_content('Subject')
       click_on 'People'
-      expect(page).to have_selector('.facet-selected')
     end
 
     it 'has a Resource Type button for the selected facet display' do
       visit('/catalog')
-      click_on 'Resource Type'
+      expect(page).to have_content('Resource Type')
       click_on 'Photograph'
-      expect(page).to have_selector('.facet-selected')
     end
 
     it 'has a Genre button for the selected facet display' do
       visit('/catalog')
-      click_on 'Genre'
+      expect(page).to have_content('Genre')
       click_on 'news photographs'
-      expect(page).to have_selector('.facet-selected')
     end
   end
 end

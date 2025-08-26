@@ -1,0 +1,33 @@
+<span class="btn-group">
+  <span class="btn-base filter-group__label filter-group__label--ursus">
+    <% unless @label.blank? %>
+      <span class="filter-label-key filter-label-key--ursus">
+        <% if @label == "Has Model Ssim" %>
+          Object Type
+        <% else %>
+          <%= @label %>
+        <% end %>
+        </span>
+    <% end %>
+    <% unless @value.blank? %>
+      <%= content_tag :span, @value, class: 'filter-label-value filter-label-value--ursus', title: strip_tags(@value) %>
+    <% end %>
+  </span>
+  <% if @remove_path.present? %>
+    <%
+      accessible_remove_label = content_tag :span, class: 'sr-only' do
+        if @label.blank?
+          t('blacklight.search.filters.remove.value', value: @value)
+        else
+          t('blacklight.search.filters.remove.label_value', label: @label, value: @value)
+        end
+      end
+    %>
+
+    <%= link_to(
+      content_tag(:span, '✖', class: 'remove-icon') + accessible_remove_label,
+      @remove_path,
+      class: 'btn-base filter-label-remove filter-label-remove--ursus'
+    ) %>
+  <%- end -%>
+</span>

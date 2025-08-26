@@ -1,31 +1,33 @@
-<%
-@page_title = if Flipflop.sinai?
-                t('blacklight.search.page_title.title', constraints: render_search_to_page_title(params), application_name: sinai_application_name)
-              else
-                t('blacklight.search.page_title.title', constraints: render_search_to_page_title(params), application_name: application_name)
-              end
-@page_title = @page_title.sub(' - ', '') if @page_title.starts_with? " - "
-%>
-<% content_for(:head) do %>
-  <%= render_opensearch_response_metadata %>
-  <%= rss_feed_link_tag %>
-  <%= atom_feed_link_tag %>
-  <%= json_api_link_tag %>
-<% end %>
+<div class="search-results-container">
+  <% @page_title = t('blacklight.search.page_title.title', constraints: render_search_to_page_title(search_state), application_name: application_name) %>
 
-<!-- This adds the Filtered result (breadcrumbs) -->
-<% content_for(:container_header) do -%>
-  <h1 class='sr-only top-content-title'><%= t('blacklight.search.header') %></h1>
-  <% url = request.original_url %>
-<% end %>
-
-<% collection_block_presenter = Ursus::CollectionBlockPresenter.new(response: @response) %>
-<% unless collection_block_presenter.collection_selected? %>
-  <%= render 'browse_results' %>
-<% else %>
-  <% if !@response['response']['docs'].empty? %>
-    <%= render 'browse_results' %>
-  <% else %>
-    <%= render 'zero_results' %>
+  <% content_for(:head) do -%>
+    <%= render 'catalog/opensearch_response_metadata', response: @response %>
+    <%= rss_feed_link_tag %>
+    <%= atom_feed_link_tag %>
+    <%= json_api_link_tag %>
   <% end %>
-<% end %>
+
+  <% content_for(:skip_links) do -%>
+      <%= link_to t('blacklight.skip_links.first_result'), '#documents', class: 'd-inline-flex p-2 m-1', data: { turbolinks: 'false' } %>
+  <% end %>
+
+  <% content_for(:container_header) do -%>
+  <% end %>
+
+  <%= render 'search_results_header' %>
+  <%= render 'constraints' %>
+  <%= render partial: 'search_header',  locals: { pagination_only: false } %>
+
+  <h2 class="sr-only visually-hidden"><%= t('blacklight.search.search_results') %></h2>
+
+  <%- if @response.empty? %>
+    <%= render "zero_results" %>
+  <%- elsif render_grouped_response? %>
+    <%= render 'group' %>
+  <%- else %>
+    <%= render_document_index @response.documents %>
+  <%- end %>
+
+  <%= render 'results_pagination' %>
+</div>

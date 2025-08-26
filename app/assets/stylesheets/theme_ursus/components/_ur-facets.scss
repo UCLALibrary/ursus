@@ -1,10 +1,10 @@
-.facets__navbar--ursus {
+.facets__navbar {
   @media (max-width: 991px) {
     background-color: $ucla-lightest-blue;
   }
 }
 
-.facets__navbar-heading--ursus {
+.facets__navbar-heading {
   color: $ucla-darker-blue;
 
   @media (max-width: 991px) {
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 991px) {
-  .facets__svg-icon--ursus {
+  .facets__svg-icon {
     stroke: $ucla-darkest-blue;
     stroke-width: 0.05rem;
 
@@ -23,7 +23,9 @@
   }
 }
 
-.facet-field__heading--ursus {
+.facet-field__heading {
+  color: $ucla-darker-blue;
+
   a,
   a:active,
   a:visited {
@@ -39,10 +41,11 @@
     border: 1px solid $gray-10;
     border-radius: 0;
   }
+  
 }
 
 .facet-limit-active {
-  .facet-field__heading--ursus {
+  .facet-field__heading {
     background-color: $ucla-blue;
 
     &.collapse-toggle[aria-expanded='true'] {
@@ -51,21 +54,13 @@
   }
 }
 
-.facet-field__heading--ursus.collapse-toggle.collapsed::after {
-  color: $ucla-darker-blue;
-}
-
-.facet-field__heading--ursus.collapse-toggle::after {
-  color: $ucla-darker-blue;
-}
-
-.facet-field__body--ursus {
+.facet-field__body {
   .btn {
     background-color: $ucla-lightest-blue;
   }
 }
 
-.facet-label--ursus {
+.facet-label {
   a,
   a:active,
   a:visited {
@@ -73,7 +68,7 @@
   }
 }
 
-.more_facets--ursus {
+.more_facets {
   a,
   a:active,
   a:visited {

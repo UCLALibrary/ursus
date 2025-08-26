@@ -1,5 +1,5 @@
-<%# bookmark/folder functions -%>
-<%= render_document_heading(document, tag: :h1) %>
+<h1 itemprop="name" class="item-page__title"><%= document_presenter(@document).heading %></h1>
+
 <% if document[:visibility_ssi] && document[:visibility_ssi] == "authenticated" && flash[:notice].present? %>
     <%= render 'shared/alert-bar' %>
 <% end %>

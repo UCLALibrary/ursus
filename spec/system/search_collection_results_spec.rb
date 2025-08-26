@@ -17,23 +17,24 @@ RSpec.describe 'Search collection results page', type: :system, js: false do
       title_tesim: ['Title'],
       description_tesim: ['Description 1'],
       thumbnail_path_ss: '/assets/collection-a38b932554788aa578debf2319e8c4ba8a7db06b3ba57ecda1391a548a4b6e0a.png',
-      location_tesim: ['search_collection_results_spec'] # to control what displays
+      location_tesim: ['search_collection_results_spec'], # to control what displays
+      location_sim: ['search_collection_results_spec'] # to control what displays
     }
   end
 
   it 'displays collection: title, description,' do
-    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_collection_results_spec'
+    visit '/catalog?f%5Blocation_sim%5D%5B%5D=search_collection_results_spec'
     expect(page).to have_content 'Title'
     expect(page).to have_content 'Description 1'
   end
 
   it 'has a gallery view button' do
-    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_collection_results_spec'
+    visit '/catalog?f%5Blocation_sim%5D%5B%5D=search_collection_results_spec'
     expect(page).to have_selector '.view-type-gallery'
   end
 
   it 'has a list view button' do
-    visit '/catalog?f%5Blocation_tesim%5D%5B%5D=search_collection_results_spec'
+    visit '/catalog?f%5Blocation_sim%5D%5B%5D=search_collection_results_spec'
     expect(page).to have_selector '.view-type-list'
   end
 end

@@ -28,6 +28,10 @@
   font-weight: 600;
   color: $white;
   border: 0;
+
+  option {
+    color: $ucla-darker-blue;
+  }
 }
 
 .input-group {

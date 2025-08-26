@@ -1,36 +1,20 @@
 <% if @document[:has_model_ssim][0] == 'Collection' %>
-<%
-@page_title = if Flipflop.sinai?
-                t('blacklight.search.show.title', document_title: document_show_html_title, application_name: sinai_application_name).html_safe
-              else
-                t('blacklight.search.show.title', document_title: document_show_html_title, application_name: application_name).html_safe
-              end
-%>
+  <% @page_title = t('blacklight.search.show.title', document_title: document_presenter(@document).html_title, application_name: application_name).html_safe %>
  <%= render 'catalog/collection_record/collection_record', document: @document %>
 <% else %>
   <% if current_search_session && controller.controller_name == 'catalog' && controller.action_name == 'show' %>
-
-    <div class='content-container--item-page'>
-      <%# PAGINATION %>
-      <% if !Flipflop.sinai? %>
-        <div id='appliedParams' class='item-page__pagination-wrapper'>
-          <%= render 'previous_next_doc' if @search_context %>
-          <%= link_back_to_catalog label: 'Back to Search Results', class: 'btn-base btn-base-sm btn-outline-ursus--blue' %>
-        </div>
-      <% end %>
-
-  <% if !Flipflop.sinai? %>
-    <hr class='divider divider--ursus'>
-  <% end %>
-
+    <div id='appliedParams' class='item-page__pagination-wrapper'>
+      <%= render blacklight_config.view_config(:show).document_header_component.new(document: @document, search_context: @search_context, search_session: search_session) %>
+      <%= link_back_to_catalog label: 'Back to Search Results', class: 'btn-base btn-base-sm btn-outline-ursus--blue' %>
+    </div>
   <% elsif current_search_session %>
-
     <div id='appliedParams' class='search-filter-wrapper'>
       <%#= link_to t('blacklight.search.start_over'), start_over_path, class: 'btn-base btn-base-sm btn-ursus--blue ur-link--light' %>
       <%= link_back_to_catalog class: 'btn btn-outline-secondary' %>
     </div>
-
   <% end %>
-  <%= render_document_main_content_partial %>
-</div>
+
+  <hr class="divider divider--ursus">
+
+  <%= render 'show_main_content' %>
 <% end %>

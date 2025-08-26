@@ -1,19 +1,10 @@
-<%
-@page_title = if Flipflop.sinai?
-                t('blacklight.search.show.title', document_title: document_show_html_title, application_name: sinai_application_name).html_safe
-              else
-                t('blacklight.search.show.title', document_title: document_show_html_title, application_name: application_name).html_safe
-              end
-%>
-<%# content_for(:head) { render_link_rel_alternates } # Uncomment once routing is fixed for format suffixes (e.g. .json, .xml) %>
-<!--
-  <div id='document' class="document blacklight-work" itemscope  itemtype="http://schema.org/CreativeWork" itemid="https://digital.library.ucla.edu/catalog/5rsn2000zz-89112">
-  <link itemprop="isPartOf" itemscope itemtype="http://schema.org/Collection" itemid="https://digital.library.ucla.edu/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Los+Angeles+Daily+News+Negatives" />
+<%#= render blacklight_config.view_config(:show).document_header_component.new(document: @document, search_context: @search_context, search_session: search_session) %>
+<% @page_title = t('blacklight.search.show.title', document_title: document_presenter(@document).html_title, application_name: application_name).html_safe %>
+<% content_for(:head) { render_link_rel_alternates } %>
 
-</div>
--->
+<% document_component = blacklight_config.view_config(:show).document_component -%>
+
 <div id='document' class="item-page__content-wrapper document <%= render_document_class %>">
-
   <div id="doc_<%= @document.id.to_s.parameterize %>">
     <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
   </div>
@@ -23,12 +14,3 @@
     <% end %>
   <% end %>
 </div>
-
-<% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
-  <!--
-       // COinS, for Zotero among others.
-       // This document_partial_name(@document) business is not quite right,
-       // but has been there for a while.
-  -->
-  <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_partial_name(@document)) %>"></span>
-<% end %>

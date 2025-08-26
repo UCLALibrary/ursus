@@ -293,7 +293,7 @@ RSpec.describe CatalogController, type: :controller do
 
     before do
       allow_any_instance_of(CatalogController).to receive(:enforce_show_permissions).and_return true
-      allow_any_instance_of(Blacklight::SearchService).to receive(:fetch).and_return [nil, solr_document]
+      allow_any_instance_of(Blacklight::SearchService).to receive(:fetch).and_return solr_document
       allow(SolrDocument).to receive(:find).and_return solr_document
     end
 

@@ -1,4 +1,4 @@
-<% doc_presenter = show_presenter(document) %>
+<% doc_presenter = document_presenter(document) %>
 <% note = Ursus::NoteMetadataPresenter.new(document: doc_presenter).note_terms %>
 <% toc_key = render_table_of_contents_key %>
 <% toc_value = render_table_of_contents_value %>
@@ -12,7 +12,7 @@
         <% next if field_name == 'citation_source_tesim' %>
         <dt class="blacklight-<%= field_name.parameterize %> metadata-block__label-key">
           <!-- KEY -->
-          <%= (render_document_show_field_label document, field: field_name).tr(':', '') %>
+          <%= field.label %>
           <!-- VALUE -->
           <!-- URSUS -->
           <dd class="blacklight-<%= field_name.parameterize %> metadata-block__label-value metadata-block__label-value--ursus">

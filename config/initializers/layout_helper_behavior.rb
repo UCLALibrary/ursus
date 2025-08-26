@@ -37,7 +37,7 @@ module Blacklight
     # overwritten to return 'container-fluid' for Bootstrap full-width layout
     # @return [String]
     def container_classes
-      'container'
+      'main-content-container container-constrained'
     end
   end
 end

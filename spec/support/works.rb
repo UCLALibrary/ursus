@@ -15,6 +15,7 @@ FIRST_WORK = {
   named_subject_tesim: ["Named Subject 1", "Named Subject 2", "Named Subject 3", "Named Subject 4"],
   repository_tesim: ['University of California, Los Angeles. Library. Department of Special Collections'],
   location_tesim: ['Los Angeles'],
+  location_sim: ['Los Angeles'],
   publisher_tesim: ['Los Angeles Daily News'],
   rights_country_tesim: ['US'],
   rights_holder_tesim: ['Charles E. Young'],
@@ -63,6 +64,7 @@ SECOND_WORK = {
   photographer_tesim: ['Person 1', 'Person 2'],
   place_of_origin_tesim: ['Boston, MA', 'Philadelphia, PA', 'New York, NY', 'Los Angeles, CA'],
   location_tesim: ['search_results_spec'], # to control what displays,
+  location_sim: ['search_results_spec'], # to control what displays,
   member_of_collection_ids_ssim: ['coll-123'],
   read_access_group_ssim: ["public"],
   thumbnail_url_ss: ["http://thumbnail/work2.jpg"],
@@ -84,6 +86,7 @@ THIRD_WORK = {
   subject_tesim: ['Testing', 'Minitest'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
+  location_sim: ['search_results_spec'], # to control what displays
   collection_tesim: ['Slide Film', 'Analog', 'Photographs'],
   member_of_collections_ssim: ['Photographic Collection'],
   member_of_collection_ids_ssim: ['coll-123'],
@@ -118,6 +121,7 @@ FOURTH_WORK = {
   extent_tesim: ['1 photograph'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
+  location_sim: ['search_results_spec'], # to control what displays
   collection_tesim: ['Photographs', 'Digital'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
   visibility_ssi: ['open']
@@ -137,6 +141,7 @@ WORK_A = {
   human_readable_resource_type_tesim: ['still image'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
+  location_sim: ['search_results_spec'], # to control what displays
   member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
   member_of_collection_ids_ssim: ['m8f11000zz-89112'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
@@ -157,6 +162,7 @@ WORK_B = {
   human_readable_resource_type_tesim: ['still image'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
+  location_sim: ['search_results_spec'], # to control what displays
   member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
   member_of_collection_ids_ssim: ['m8f11000zz-89112'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
@@ -177,6 +183,7 @@ WORK_C = {
   human_readable_resource_type_tesim: ['still image'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
+  location_sim: ['search_results_spec'], # to control what displays
   member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
   member_of_collection_ids_ssim: ['m8f11000zz-89112'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
@@ -197,6 +204,7 @@ WORK_D = {
   human_readable_resource_type_tesim: ['still image'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
+  location_sim: ['search_results_spec'], # to control what displays
   member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
   member_of_collection_ids_ssim: ['m8f11000zz-89112'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
@@ -217,6 +225,7 @@ WORK_E = {
   human_readable_resource_type_tesim: ['still image'],
   photographer_tesim: ['Person 1'],
   location_tesim: ['search_results_spec'], # to control what displays
+  location_sim: ['search_results_spec'], # to control what displays
   member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
   member_of_collection_ids_ssim: ['m8f11000zz-89112'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],

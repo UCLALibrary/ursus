@@ -26,11 +26,11 @@ RSpec.describe 'View a Work', type: :system, js: true do
     expect(page).to have_content "RESOURCE TYPE\nstill image"
     expect(page).to have_content "RIGHTS STATEMENT\ncopyrighted"
     expect(page).to have_content "GENRE\nGenre 1"
-    expect(page).to have_content "NAMES\nNamed Subject 1"
+    expect(page).to have_content "NAMED SUBJECT\nNamed Subject 1"
     expect(page).to have_content "LOCATION\nLos Angeles"
     expect(page).to have_content "REPOSITORY\nUniversity of California, Los Angeles. Library. Department of Special Collections"
     expect(page).to have_content "PUBLISHER\nLos Angeles Daily News"
-    expect(page).to have_content "RIGHTS COUNTRY\nUS"
+    expect(page).to have_content "RIGHTS (COUNTRY OF CREATION)\nUS"
     expect(page).to have_content "RIGHTS HOLDER\nCharles E. Young"
     expect(page).to_not have_content 'NORMALIZED DATE'
     expect(page).to_not have_content '1934-56-78'
@@ -87,7 +87,7 @@ RSpec.describe 'View a Work', type: :system, js: true do
     expect(page.find('dd.blacklight-location_tesim')).to have_link 'Los Angeles'
     expect(page.find('dd.blacklight-photographer_tesim')).to have_link 'Poalillo, Charles'
     expect(page.find('dd.blacklight-human_readable_language_tesim')).to have_link 'No linguistic content'
-    expect(page).to have_link 'Photographic Collection'
+    expect(page).to have_link 'Hathaway Manuscripts'
     expect(page.html).to match(/member_of_collections_ssim/)
   end
 

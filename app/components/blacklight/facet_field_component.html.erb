@@ -1,0 +1,24 @@
+<div class="facet-field blacklight-<%= @facet_field.key %> <%= 'facet-limit-active' if @facet_field.active? %>">
+  <h3 class="<%= "collapsed" if @facet_field.collapsed? %> collapse-toggle facet-field__heading facet-field__heading--ursus" id="<%= header_html_id %>"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#<%= html_id %>"
+      data-bs-target="#<%= html_id %>"
+      aria-expanded="<%= @facet_field.collapsed? ? 'false' : 'true' %>"
+      arial-controls="<%= html_id %>"
+    >
+      <%= label %>
+  </h3>
+  <div id="<%= html_id %>" role="region" aria-labelledby="<%= header_html_id %>" class="panel-collapse facet-field__body facet-content collapse <%= "show" unless @facet_field.collapsed? %>">
+    <%= body %>
+
+    <% if @facet_field.modal_path %>
+      <div class="more_facets">
+        <%= link_to t("more_#{@facet_field.key}_html", scope: 'blacklight.search.facets', default: :more_html, field_name: @facet_field.label),
+          @facet_field.modal_path,
+          data: { blacklight_modal: 'trigger', turbo: false } %>
+      </div>
+    <% end %>
+  </div>
+</div>

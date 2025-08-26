@@ -1,5 +1,27 @@
 <div id='sortAndPerPage'>
-  <%#= render partial: "paginate_compact", object: @response if show_pagination? %>
-  <%#= render_results_collection_tools wrapping_class: "search-widgets float-md-right" %>
-  <%= paginate @response, left: 2, right: 3, :theme => 'blacklight'%>
+  <% unless pagination_only %>
+    <% url = request.original_url %>
+    <% if url.include?('has_model_ssim') && url.include?('Collection') %>
+      <div class='search-count-wrapper'>
+        <h2 class='search-count__heading'>
+          <%= @response.dig('response', :numFound) %> Collections
+        </h2>
+        <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper" %>
+      </div>
+    <% else %>
+      <div class='search-count-wrapper'>
+        <h2 class='search-count__heading'>
+          <span class="search-count__results-found"><%= number_with_delimiter @response.dig('response', :numFound) %></span>
+          <span class="search-count__catalog-results">Catalog Results</span>
+        </h2>
+        <%= render_results_collection_tools wrapping_class: "search-widgets search-widgets-wrapper search-widgets-wrapper--sinai" %>
+      </div>
+    <% end %>
+    <hr class='divider'>
+  <% end %>
+
+  <div class='pagination-block'>
+    <%= paginate @response, left: 2, right: 3, :theme => 'blacklight'%>
+  </div>
+  <hr class='divider'>
 </div>

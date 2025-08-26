@@ -1,77 +1,38 @@
-<!-- This will render the searchbar when render_search_bar is called in the header_navbar partial -->
-<% url = request.original_url %>
-  <% unless url.include?('login') %>
-<% if Flipflop.sinai? %>
-<%= form_tag search_action_url, method: :get, class: 'form-group mx-auto mb-0', role: 'search' do %>
-  <%= render_hash_as_hidden_fields(search_state.params_for_search.except(:q, :search_field, :qt, :page, :utf8)) %>
-
-  <% if search_fields.length > 1 %>
-    <label for="search_field" class="sr-only">JEN<%= t('blacklight.search.form.search_field.label') %></label>
-  <% end %>
-
-  <div class="input-group input-group--sinai">
-     <!-- All Fields -->
-      <%= select_tag(
-            :search_field,
-            options_for_select(search_fields, h(params[:search_field])),
-            title: t('blacklight.search.form.search_field.title'),
-            class: "custom-select custom-select--sinai site-searchbar__dropdown site-searchbar__dropdown--sinai"
-          ) %>
-    <% url = request.original_url %>
-    <% if url.include?('member_of_collections_ssim') %>
-      <% placeholder_text = t('blacklight.search.form.search.placeholder_collection') %>
-      <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
-      <%= text_field_tag :q, params[:q], class: "search-q q form-control form-control--sinai site-searchbar__query-field", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
-
-    <% else %>
-      <% placeholder_text = t('blacklight.search.form.search.placeholder') %>
-      <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
-      <%= text_field_tag :q, params[:q], class: "search-q q form-control form-control--sinai site-searchbar__query-field", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
-    <% end %>
-
-    <div class="input-group-append site-searchbar__search-icon site-searchbar__search-icon--ursus site-searchbar__search-icon--sinai">
-      <button type="submit" class="btn btn-light border-0 search-btn" id="search">
-      <svg xmlns="https://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 16 16"><title>Search</title><g fill="none"><g stroke="#005587"><circle cx="6" cy="6" r="5"></circle><path d="M14 14L10 10" style="stroke-linejoin:round;stroke-width:2;"></path></g></g></svg>
-      </button>
-    </div>
-
-  </div>
-
-  <% end %>
-    <% else %>
-<%= form_tag search_action_url, method: :get, class: 'form-group mx-auto mb-0 site-searchbar__search-form site-searchbar__search-form--ursus', role: 'search' do %>
+<%= form_tag search_action_url, method: :get, class: 'search-query-form', role: 'search' do %>
   <%= render_hash_as_hidden_fields(search_state.params_for_search.except(:q, :search_field, :qt, :page, :utf8)) %>
   <% if search_fields.length > 1 %>
     <label for="search_field" class="sr-only"><%= t('blacklight.search.form.search_field.label') %></label>
   <% end %>
-
   <div class="input-group">
-    <% url = request.original_url %>
-    <% if url.include?('member_of_collections_ssim') %>
-      <% placeholder_text = t('blacklight.search.form.search.placeholder_collection') %>
-      <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
-      <%= text_field_tag :q, params[:q], placeholder: placeholder_text.to_s, class: "search-q q form-control site-searchbar__query-field", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
-    <% else %>
-      <% placeholder_text = t('blacklight.search.form.search.placeholder') %>
-      <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
-      <%= text_field_tag :q, params[:q], placeholder: placeholder_text.to_s, class: "search-q q form-control site-searchbar__query-field", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) } %>
+    <% if search_fields.length > 1 %>
+        <%= select_tag(:search_field,
+                       options_for_select(search_fields, h(params[:search_field])),
+                       title: t('blacklight.search.form.search_field.title'),
+                       id: "search_field",
+                       class: "custom-select search-field") %>
+    <% elsif search_fields.length == 1 %>
+      <%= hidden_field_tag :search_field, search_fields.first.last %>
     <% end %>
 
-    <div class="input-group-append site-searchbar__search-icon site-searchbar__search-icon--ursus site-searchbar__search-icon--sinai">
-      <button type="submit" class="btn btn-light border-0 search-btn" id="search">
-      <svg xmlns="https://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 16 16"><title>Search</title><g fill="none"><g stroke="#005587"><circle cx="6" cy="6" r="5"></circle><path d="M14 14L10 10" style="stroke-linejoin:round;stroke-width:2;"></path></g></g></svg>
+    <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
+    <%=
+      text_field_tag :q,
+                      params[:q],
+                      placeholder: url.include?('member_of_collections_ssim') ? t('blacklight.search.form.search.placeholder_collection') : t('blacklight.search.form.search.placeholder'),
+                      class: "search-q q form-control rounded-#{search_fields.length > 1 ? '0' : 'left'}",
+                      id: "q",
+                      autofocus: presenter.autofocus?,
+                      data: {
+                        autocomplete_enabled: presenter.autocomplete_enabled?,
+                        autocomplete_path: search_action_path(action: :suggest)
+                      }
+    %>
+
+    <span class="input-group-append">
+      <button type="submit" class="btn btn-primary search-btn" id="search">
+        <span class="submit-search-text"><%= t('blacklight.search.form.submit') %></span>
+        <%= blacklight_icon :search, aria_hidden: true %>
       </button>
-    </div>
-
-<!-- All Fields -->
-      <%= select_tag(
-            :search_field,
-            options_for_select(search_fields, h(params[:search_field])),
-            title: t('blacklight.search.form.search_field.title'),
-            class: "custom-select site-searchbar__dropdown"
-          ) %>
-
+    </span>
   </div>
-  <% end %>
-  <% end %>
 <% end %>

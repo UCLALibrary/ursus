@@ -40,7 +40,7 @@ RSpec.describe 'Search the catalog', :clean, type: :system do
 
     fill_in 'range_year_isim_begin', with: '1920'
     fill_in 'range_year_isim_end', with: '1925'
-    click_on 'Limit'
+    click_on 'Apply', class: 'sr-only'
 
     within '#documents' do
       expect(page).to     have_link('Llama Love')

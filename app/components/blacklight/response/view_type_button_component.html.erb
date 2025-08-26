@@ -1,0 +1,4 @@
+<%= link_to url, title: label, aria: aria_attributes, id: "view-button-#{label.downcase}", class: "#{Array(@classes).join(' ')} view-type-#{ @key.to_s.parameterize } #{"active" if selected?}" do %>
+  <%= icon %>
+  <span><%= label %></span>
+<% end %>

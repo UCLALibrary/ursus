@@ -26,7 +26,6 @@ end
 Dir[Pathname.new(File.expand_path('support/**/*.rb', __dir__))].each { |f| require f }
 
 RSpec.configure do |config|
-  Deprecation.default_deprecation_behavior = :silence
   config.disable_monkey_patching!
 
   # When we're testing the API, only run the api tests

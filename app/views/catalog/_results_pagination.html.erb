@@ -1,9 +1,3 @@
-
-<!-- URSUS -->
-
 <% if show_pagination? and @response.total_pages > 1 %>
-  <div class='pagination-block'>
-    <%= render 'search_header' %>
-  </div>
-  <hr class='divider'>
+  <%= render partial: 'search_header', locals: { pagination_only: true } %>
 <% end %>

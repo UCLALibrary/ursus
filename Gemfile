@@ -6,12 +6,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'blacklight', '7.40'
-gem 'blacklight-access_controls', '>= 6.0.0'
-gem 'blacklight-gallery', '~> 4.8.4'
+gem 'blacklight', '~> 8.8'
+gem 'blacklight-access_controls',  git: 'https://github.com/projectblacklight/blacklight-access_controls', branch: 'rails7_ruby3_blacklight8_upgrade'
+gem 'blacklight-gallery', '~> 4.8'
 gem 'blacklight_dynamic_sitemap', '~> 0.6.0'
-gem 'blacklight_oai_provider', github: 'projectblacklight/blacklight_oai_provider'
-gem 'blacklight_range_limit', '~> 7.0.0'
+gem 'blacklight_oai_provider',  git: 'https://github.com/projectblacklight/blacklight_oai_provider', branch: 'update-to-bl-8.x'
+gem 'blacklight_range_limit', '~> 8.5.0'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'coveralls', '>= 0.8.23', require: false
 gem 'date', '3.0.3' # pin to version on RHEL 8 servers
@@ -34,9 +34,9 @@ gem 'sassc-rails', '>= 2.1.2' # SASS -> CSS compiler
 gem 'sidekiq', '~> 6.4'
 gem 'solrizer', '>= 4.1.0'
 gem 'sprockets', '>= 3.7.2', '< 4'
+gem 'terser'
 gem 'timeout', '0.1.0' # pin to version on RHEL 8 servers
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'uglifier', '>= 1.3.0' # JavaScript compressor
 gem 'whenever', require: false
 
 group :development, :test do
