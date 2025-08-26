@@ -24,6 +24,8 @@
 }
 
 .facet-field__heading {
+  color: $ucla-darker-blue;
+
   a,
   a:active,
   a:visited {
@@ -39,6 +41,7 @@
     border: 1px solid $gray-10;
     border-radius: 0;
   }
+  
 }
 
 .facet-limit-active {
@@ -49,10 +52,6 @@
       background-color: $ucla-blue;
     }
   }
-}
-
-.facet-field__heading {
-  color: $ucla-darker-blue;
 }
 
 .facet-field__body {
