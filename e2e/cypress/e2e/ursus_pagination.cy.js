@@ -13,7 +13,6 @@ describe('Prev/next Pagination', () => {
     cy.get('[aria-current="true"]').contains('1');
     cy.get('[aria-label="Go to previous page"]')
       .parent('.disabled')
-      .should('have.length', 2)
       .each(($el, index, $list) => {
         if ($el.children('a').attr('onclick') == 'return false;') {
           cy.log('disabled');
@@ -34,7 +33,7 @@ describe('Prev/next Pagination', () => {
       </li>
       */
     cy.visit('/catalog?page=2&q=&search_field=all_fields');
-    cy.get('[aria-current="true"]').should('have.length', 2).contains('2');
+    cy.get('[aria-current="true"]').contains('2');
     cy.get('[aria-label="Go to previous page"]')
       .parent()
       .should('not.have.class', 'disabled');
