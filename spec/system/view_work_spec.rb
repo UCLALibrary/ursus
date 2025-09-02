@@ -71,8 +71,8 @@ RSpec.describe 'View a Work', type: :system, js: true do
   context 'license' do
     it 'displays the creative commons text and logo when there is a cc license' do
       visit "/catalog/#{ark}"
-      expect(page).to have_content 'License'
-      expect(page).to have_link 'Creative Commons Attribution 4.0 International License'
+      expect(page).to have_content 'LICENSE'
+      expect(page).to have_link 'Creative Commons BY Attribution 4.0 International'
     end
   end
 
