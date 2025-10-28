@@ -22,14 +22,19 @@ module BlacklightHelper
   end
 
   def license_markup(license_data)
-    %( <a rel="license" href="#{license_data['id']}">
-      <img alt="#{license_data['term']}" style="border-width:0; width:120px"
-      src="#{license_data['image']}" />
-      </a>This work is licensed under a
-      <a rel="license"
-      href="#{license_data['id']}">
-      "#{license_data['term']}"
-      </a>. )
+    html = ""
+
+    if license_data['image'].present?
+      html += %(
+        <a rel="license" href="#{license_data['id']}">
+          <img alt="#{license_data['term']}" style="border-width:0; width:120px" src="#{license_data['image']}" />
+        </a>
+      )
+    end
+
+    html + %(
+      This work is licensed under a <a rel="license" href="#{license_data['id']}"> "#{license_data['term']}" </a>.
+    )
   end
 
   def schema_org_markup

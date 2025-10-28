@@ -15,11 +15,11 @@ RSpec.describe BlacklightHelper, type: :helper do
         SolrDocument.new(
           'title_tsim' => "A Fake Document",
           'id' => '8',
-          'license_tesim' => ["http://creativecommons.org/licenses/by/4.0/"]
+          'license_tesim' => ["https://creativecommons.org/licenses/by/4.0/"]
         )
       end
       it 'renders a cc license' do
-        expect(render_license).to match(/Creative Commons Attribution 4.0 International License/)
+        expect(render_license).to include('Creative Commons BY Attribution 4.0 International')
       end
     end
     context 'no license' do
