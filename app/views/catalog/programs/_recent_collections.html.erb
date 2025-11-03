@@ -1,0 +1,20 @@
+<div class="collection-grid four-grid">
+  <h2 class="collection-grid__title">Recently published Collections</h2>
+  <div class="collection-grid__wrapper">
+  <% @program_first_four&.map do |hsh|  %>
+    <div class="collection-grid__item-wrapper">
+      <a href="<%= solr_document_path(hsh["ark_ssi"]) %>">
+        <div class="collection-grid__item-image grid-item-one" style="background-image: url(<%= hsh["thumbnail_path_ss"] %>);"></div>
+      </a>
+      <div class="collection-grid__item-content">
+        <h3 class="collection-grid__item-title"><%= link_to hsh["title_tesim"]&.first, solr_document_path(hsh["ark_ssi"]) %></h3>
+        <hr class="collection-grid__item-liner align-item-start">
+        <p class="collection-grid__item-desc"><%= auto_link(hsh["summary_tesim"]&.first).html_safe %></p>
+        <a href="<%= solr_document_path(hsh["ark_ssi"]) %>" class="collection-grid__item-link">More about this collection</a>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<hr class="divider divider--ursus" style="margin-bottom: 40px">

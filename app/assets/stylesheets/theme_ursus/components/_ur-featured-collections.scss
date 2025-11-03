@@ -73,6 +73,10 @@
   background-size: cover;
 }
 
+.collection-grid__item-desc a {
+  color: $ucla-darker-blue;
+}
+
 .grid-item-one {
   background-image: image-url('home-collection-grid/la-times.jpg');
 }
@@ -102,7 +106,7 @@
 
     // truncate to 3 lines - mostly but not universally supported
     display: -webkit-box;
-    overflow: hidden;  
+    overflow: hidden;
 
     // fallback for browsers that don't support line-clamp; won't have ellipsis
     max-height: 100px;
@@ -133,5 +137,20 @@
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.collection-grid.four-grid {
+  max-width: 100%;
+  flex: 0 0 100%;
+  margin-top: 20px;
+
+  .collection-grid__title {
+    color: black;
+  }
+
+  .collection-grid__item-wrapper {
+    @extend .col-sm-6;
+    @extend .col-xl-3;
   }
 }

@@ -437,6 +437,44 @@ class CatalogController < ApplicationController
     end
   end
 
+    # get search results from the solr index
+  def index
+    @response = search_service.search_results
+
+    respond_to do |format|
+      format.html { store_preferred_view }
+      format.rss  { render layout: false }
+      format.atom { render layout: false }
+      format.json do
+        @presenter = Blacklight::JsonPresenter.new(@response,
+                                                   blacklight_config)
+      end
+      additional_response_formats(format)
+      document_export_formats(format)
+    end
+
+    if params.dig(:f, :has_model_ssim, 0) == "Collection" &&
+        ["Modern Endangered Archives Program"].include?(params.dig(:f, :program_sim, 0)) # to use with other programs as well
+
+      if params[:page].blank?
+        @program_first_four = @response.response[:docs].shift(4)
+      end
+
+      begin
+        url = Rails.application.routes.url_helpers.search_catalog_path(format: :json, f: { program_sim: params[:f][:program_sim] })
+        url = "#{request.base_url}#{url}"
+        response = Net::HTTP.get(URI(url))
+        @works_data = JSON.parse(response, symbolize_names: true)
+      rescue
+        @works_data = nil
+      end
+
+      if params.dig(:f, :program_sim, 0) == "Modern Endangered Archives Program"
+        @program_partial = 'meap'
+      end
+    end
+  end
+
   # ------------------------------------------------------
   # COLLECTION COUNT
   # override this method from Blacklight::Catalog.rb to find the collection count
