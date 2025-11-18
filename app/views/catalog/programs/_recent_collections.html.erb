@@ -4,7 +4,7 @@
   <% @program_first_four&.map do |hsh|  %>
     <div class="collection-grid__item-wrapper">
       <a href="<%= solr_document_path(hsh["ark_ssi"]) %>">
-        <div class="collection-grid__item-image grid-item-one" style="background-image: url(<%= hsh["thumbnail_path_ss"] %>);"></div>
+        <div class="collection-grid__item-image grid-item-one" style="background-image: url(<%= hsh["thumbnail_url_ss"] %>);"></div>
       </a>
       <div class="collection-grid__item-content">
         <h3 class="collection-grid__item-title"><%= link_to hsh["title_tesim"]&.first, solr_document_path(hsh["ark_ssi"]) %></h3>
