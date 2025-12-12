@@ -41,7 +41,7 @@ Rails.application.routes.draw do
         has_model_ssim: ["Collection"],
         program_sim: ["Modern Endangered Archives Program"],
       },
-      sort: "system_modified_dtsi desc"
+      sort: "timestamp desc"
     }
   end
 

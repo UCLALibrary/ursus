@@ -393,6 +393,7 @@ class CatalogController < ApplicationController
     config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
     config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
     config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
+    config.add_sort_field 'timestamp desc', label: 'Date Updated (newest)'
 
     #------------------------------------------------------
     # AUTO_SUGGEST / AUTO_COMPLETE
