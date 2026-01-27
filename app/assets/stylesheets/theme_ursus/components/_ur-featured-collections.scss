@@ -141,12 +141,12 @@
 }
 
 .collection-grid.four-grid {
+  margin-top: 20px;
   max-width: 100%;
   flex: 0 0 100%;
-  margin-top: 20px;
 
   .collection-grid__title {
-    color: black;
+    color: #000;
   }
 
   .collection-grid__item-wrapper {
