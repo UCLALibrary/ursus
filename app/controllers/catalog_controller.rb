@@ -454,7 +454,8 @@ class CatalogController < ApplicationController
       document_export_formats(format)
     end
 
-    if params.dig(:f, :has_model_ssim, 0) == "Collection" &&
+    if request.path.include?('/program') &&
+        params.dig(:f, :has_model_ssim, 0) == "Collection" &&
         ["Modern Endangered Archives Program"].include?(params.dig(:f, :program_sim, 0)) # to use with other programs as well
 
       if params[:page].blank?
