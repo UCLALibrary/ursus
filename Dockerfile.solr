@@ -1,0 +1,13 @@
+FROM uclalibrary/solr-ursus:8
+
+# Install feed_ursus
+USER root
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+RUN uv tool install feed_ursus
+ENV PATH=/root/.local/bin:$PATH
+USER solr
+
+
+# copy data
+COPY ./fixtures /fixtures
+RUN sh /fixtures/load_data.sh

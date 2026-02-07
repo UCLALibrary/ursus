@@ -69,7 +69,7 @@ Run `bundle install` to install missing gems.
 docker-compose up --build
 ```
 
-** Then run the following command again
+\*\* Then run the following command again
 
 ```
 docker-compose run web bundle exec rails db:setup
@@ -82,8 +82,6 @@ docker-compose run web bundle exec rails db:setup
 ```
 docker-compose up
 ```
-
-
 
 #### Ursus should now be running
 
@@ -109,9 +107,11 @@ Then run the entire suite, except for the cypress integration test, with:
 ```
 sh start-ci.sh
 ```
+
 You can inspect the `start-ci.sh` script to see which linters and tests this invokes.
 
 Or individually:
+
 1. root@ursus:/ursus# bundle exec erblint --lint-all
 1. root@ursus:/ursus# yarn run lint
 1. root@ursus:/ursus# rubocop
@@ -137,6 +137,7 @@ Go to the `docker.env` file for directions
 #### You cannot run `docker-compose run web bash` in this environment.
 
 ---
+
 #### Steps to connect to Ursus Maria db
 
 Here's how you can do it using Docker and Docker Compose commands.
@@ -159,12 +160,13 @@ mysql -u root
 USE ursus_development;
 ```
 
-## Then, list all tables:
+Then, list all tables:
 
 ```
 SHOW TABLES;
 ```
-## You can also check the schema of a specific table:
+
+You can also check the schema of a specific table:
 
 ```
 DESCRIBE users;
@@ -174,35 +176,40 @@ DESCRIBE users;
 DESCRIBE searches;
 ```
 
-## You can run sql queries:
+You can run sql queries:
 
 ```
 select * from searches;
 ```
 
-### Exiting the Shell
+Exiting the Shell
 
 ```
 exit;
 ```
 
-### Additional Tips
+## Additional Tips
+
 Rails Console: For Rails-specific data inspection or manipulation, you can also use the Rails console. Run docker-compose exec web rails console to access it. This is particularly useful for operations that involve Rails models.
 
 ---
 
-#### Running Rake tasks
+### Running Rake tasks
 
 - To run the Rake task, open a terminal, navigate to the root of your Rails application, and execute:
+
 ```
 docker-compose run web bash
 rake blacklight:clear_tables
 ```
+
 - Or, if you are using Rails 5.1 or later, you should use the rails command instead:
+
 ```
 docker-compose run web bash
 rails blacklight:clear_tables
 ```
+
 ---
 
 ### Running the integration tests
@@ -235,7 +242,16 @@ Visual regression testing is done via [percy.io](https://percy.io/UCLA-Library-S
 ### Rebuilding the image
 
 If you need to rebuild the docker image (for example, if packages were added to the Gemfile), run:
+
 1. `docker-compose pull`
 1. `docker-compose up --build`
 
-#### OAI https://digital.library.ucla.edu/catalog/oai  --->
+### OAI
+
+https://digital.library.ucla.edu/catalog/oai
+
+### Data Fixtures
+
+Sample data is found in the /fixtures/seed*data*_.jsonl files (broken up to fit github's maximum file size), which was created using `feed_ursus dump` and the previous dev solr image. Note that this sample data \_must_ be created with feed_ursus, as not every indexed field is stored, and feed_ursus knows how to recreate the unstored fields from stored ones. (Usually this is just a matter of a main `*_tesim` field that is stored and indexed as text, plus a second unstored `*_sim` field indexed as symbols for faceting.)
+
+When adding data in the future, the best approach will probably be to add CSV files directly to the /fixtures/ directory and use [feed_ursus](https://github.com/uclalibrary/feed_ursus) to ingest them during the solr build.
