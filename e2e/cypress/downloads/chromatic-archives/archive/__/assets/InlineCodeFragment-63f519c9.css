@@ -1,0 +1,7 @@
+
+input[type="search"][data-v-0dfe973e]::-webkit-search-decoration,
+input[type="search"][data-v-0dfe973e]::-webkit-search-cancel-button,
+input[type="search"][data-v-0dfe973e]::-webkit-search-results-button,
+input[type="search"][data-v-0dfe973e]::-webkit-search-results-decoration { display: none !important;
+}
+

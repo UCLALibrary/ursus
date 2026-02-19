@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head> <script type='text/javascript'> document.domain = 'localhost'; (()=>{"use strict";const e=window.Cypress=parent.Cypress;if(!e)throw new Error("Something went terribly wrong and we cannot proceed. We expected to find the global Cypress in the parent window but it is missing. This should never happen and likely is a bug. Please open an issue.");const t=(()=>{let e,t,n,r;const i=()=>{e=!1,t=!1,n=[],r={}},o=(e,t=[])=>"function"==typeof e?e.apply(window,t):window.eval(e);return i(),{wrap:()=>{const i={setTimeout:window.setTimeout,setInterval:window.setInterval,requestAnimationFrame:window.requestAnimationFrame,clearTimeout:window.clearTimeout,clearInterval:window.clearInterval},a=(e,t)=>i[e].apply(window,t),s=e=>n=>(t&&(r[n]=!0),a(e,[n])),w=t=>(...r)=>{let i,[s,w,...p]=r;return i=a(t,[(...r)=>{if(!e)return o(s,r);n.push({timerId:i,fnOrCode:s,params:r,type:t})},w,...p]),i};window.setTimeout=w("setTimeout"),window.setInterval=w("setInterval"),window.requestAnimationFrame=w("requestAnimationFrame"),window.clearTimeout=s("clearTimeout"),window.clearInterval=s("clearInterval")},reset:i,pause:a=>{e=Boolean(a),e||(t=!0,n.forEach((e=>{const{timerId:t,type:n,fnOrCode:i,params:a}=e;"setInterval"===n&&r[t]||o(i,a)})),i())}}})();e.removeAllListeners("app:timers:reset"),e.removeAllListeners("app:timers:pause"),e.on("app:timers:reset",t.reset),e.on("app:timers:pause",t.pause),t.wrap(),e.action("app:window:before:load",window)})(); </script>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Internet Explorer use the highest version available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="Description" content="Ms. 35 Arganon - UCLA Library Digital Collections">
+    <meta name="theme-color" content="#2774ae">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    </script>
+      <script defer src="https://test-librarystudy.library.ucla.edu/gsurvey.js"></script>
+    <title>Ms. 35 Arganon - UCLA Library Digital Collections</title>
+
+    <link href="http://localhost:3003/catalog/opensearch.xml" title="UCLA Library Digital Collections" type="application/opensearchdescription+xml" rel="search" />
+
+      <link rel="shortcut icon" type="image/x-icon" href="/assets/favicons/favicon-90bf0f861168939b329ff16e7e1c12753d97d0dda2a54b6185d972ea80c39a57.ico" />
+
+    <link rel="stylesheet" media="all" href="/assets/ursus.self-78ee85b78fb437861f1fb4f2689d2b1afc6c7438dbc729fa96f2ac71f10833e3.css?body=1" />
+    <script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1"></script>
+<script src="/assets/jquery3.self-2a83d06853bd343c7bfc2e5d4539814cfa934676e2948ed348311435eca862f5.js?body=1"></script>
+<script src="/assets/xray.self-130d130a29b059ab5e1f6b7ea349011b67ee8593ecb3e9222db86c7a5d55ed3a.js?body=1"></script>
+<script src="/assets/rails-ujs.self-7a9eba54e8cfe7870a3883ae952e65192568e8e1a7cd58567ed5d0631b18992e.js?body=1"></script>
+<script src="/assets/popper.self-55bd1408b0e4ff3edf21524b78fbe2266615c8015ce0e5f0828089b1de27d63c.js?body=1"></script>
+<script src="/assets/bootstrap.self-c8ed2cc97fb18c91c13fe8e20ea459956ee952f8776ce5d99b08db147704a2bf.js?body=1"></script>
+<script src="/assets/blacklight/blacklight.self-5dcf64325c6a45553032cfab2fa2d11b3dd6dbc306844355920a9959b8ce784e.js?body=1"></script>
+<script src="/assets/blacklight_gallery/blacklight-gallery.self-9b0a2df273c6c6e56153aeb2e3bd501444715c64ac60ba67faeaa492de9ce2ed.js?body=1"></script>
+<script src="/assets/blacklight_gallery.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1"></script>
+<script src="/assets/action_cable.self-f31e24ce71c4c4fe0add3d0d7543567faa2d0285a4ef1563a7552e4b634a0840.js?body=1"></script>
+<script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1"></script>
+<script src="/assets/canon_law.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1"></script>
+<script src="/assets/feedback.self-8adf847c0e84f6de5e43c1e075e76aab15a41252447f5765e08bf705ccc52c66.js?body=1"></script>
+<script src="/assets/truncate_description.self-01c665442abfa56afa8cb6f2021962e328eb62c55ca7cce177de772790221dc9.js?body=1"></script>
+<script src="/assets/flot/jquery.canvaswrapper.self-7ced6f3748604e8262c77a2d0b4fa82c0915b3ebdd121410ec2a474cf3fbbc42.js?body=1"></script>
+<script src="/assets/flot/jquery.colorhelpers.self-28edaae550a3241b7ed793aff7c537fc1acd1b6378e31c0410ca99eceed7612f.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.self-c8ff452f46d8bd2bba54eeb2f2dfd59f18f120714508f5c6c951bb926faaf3c7.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.browser.self-c475f595341469361e14343f9415d847f3bfc945c5d008a4c913ca1820468a7e.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.saturated.self-aed54087354d370cc711465d728a5259779d4e4bd90358f23de6ff7c73bdbd0a.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.drawSeries.self-95d74d2f8b453754b88e7422a1e79d05f2e47e1cf9710d6230b9a32ad6f8d2bb.js?body=1"></script>
+<script src="/assets/flot/jquery.event.drag.self-80d9bfb0151c14a3806a1a448dd08472cdb17fef3cd7a8c51f381b6ed3ec09a7.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.hover.self-aeb05b7be39c2b7ff30a0cd305885943b198be8f377303e5c186d24ef23bdeb4.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.uiConstants.self-7241ad2ce2c97437555991d0f6ba7c56ed19dd0958826695c36f15fdaba143d5.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.selection.self-304fc7780607c357af778285dbe0c84e462d95c093ee4d1be53175a6bf6baecb.js?body=1"></script>
+<script src="/assets/bootstrap-slider.self-92ad13fd376f207da97bcc4062ef8a25c5508295e1b931cc0034ea7e0bce4dd1.js?body=1"></script>
+<script src="/assets/blacklight_range_limit/blacklight_range_limit.umd.self-ef152401302c6e0b0aded12c760f6316e2aa74ee6933c71c4acbfa93c1909091.js?body=1"></script>
+<script src="/assets/blacklight_range_limit.self-8b4e0dd8565b2543a8161b775d3332debd298c69a82f2be93866675d359f3882.js?body=1"></script>
+<script src="/assets/application.self-e988d8e758ae474f8aecc2374a5012b0a1cf72f51f59f8b7f1638d0348895d14.js?body=1"></script>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="tdnNfpimJPaRHtag53KdUVQp/xBcc8TFENicHSlQeJ9015Gef4THva9ztMd+PJqYyChMsK19j2Xeanmyg0cvpg==" />
+    <link rel="alternate" title="xml" type="application/xml" href="http://localhost:3003/catalog/ark:/21198/zz0009q5nq" />
+<link rel="alternate" title="dc_xml" type="text/xml" href="http://localhost:3003/catalog/ark:/21198/zz0009q5nq" />
+<link rel="alternate" title="oai_dc_xml" type="text/xml" href="http://localhost:3003/catalog/ark:/21198/zz0009q5nq" />
+<link rel="alternate" title="dpla_xml" type="text/xml" href="http://localhost:3003/catalog/ark:/21198/zz0009q5nq" />
+<link rel="alternate" title="oai_dpla_xml" type="text/xml" href="http://localhost:3003/catalog/ark:/21198/zz0009q5nq" />
+  </head>
+
+  <body class="blacklight-catalog blacklight-catalog-show">
+<div id="xray-bar" style="display:none">
+    <div id="xray-bar-controller-path">
+        <span class="xray-bar-btn xray-bar-controller xray-icon-flash" data-path="/ursus/app/controllers/catalog_controller.rb">
+          <b></b>
+          CatalogController<span class="xray-bar-controller-action">#show</span>
+        </span>
+        <span class="xray-bar-btn xray-bar-layout xray-icon-columns" data-path="/ursus/app/views/layouts/blacklight.html.erb">
+          <b></b>
+          blacklight.html.erb
+        </span>
+        <span class="xray-bar-btn xray-bar-view xray-icon-doc" data-path="/ursus/app/views/catalog/show.html.erb">
+          show.html.erb
+        </span>
+    </div>
+  <div id="xray-bar-togglers">
+    <span class="xray-bar-btn xray-bar-all-toggler xray-icon-search"></span>
+    <span class="xray-bar-btn xray-bar-templates-toggler">
+      templates
+    </span>
+    <span class="xray-bar-btn xray-bar-views-toggler">
+      views
+    </span>
+  </div>
+  <span class="xray-bar-settings-btn xray-icon-cog"></span>
+  <div id="xray-settings" style="display:none">
+    <form>
+      <label for="xray-editor-input">Editor</label>
+      <input id="xray-editor-input" type="text" value="/usr/local/bin/subl">
+      <button type="submit">Save</button>
+      <p>Settings are saved to /root/.xrayconfig</p>
+  </form>
+  </div>
+  <link rel="stylesheet" media="screen" href="/assets/xray.self-589afea231bb72a951911af17272482dab39a68c4d183dfcb0e3c50b2c8e4838.css?body=1" />
+</div>
+
+
+    <div class="site-container" itemscope itemid='http://localhost:3003/catalog/ark:/21198/zz0009q5nq' itemtype="http://schema.org/CreativeWork">
+      <!--XRAY START 621 /usr/local/bundle/ruby/2.7.0/gems/blacklight-8.8.4/app/views/shared/_header_navbar.html.erb-->
+<div class="container-full container-full--navbar site-navbar site-navbar--ursus">
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar__wrapper site-navbar__wrapper--ursus" role="navigation">
+    <div class="site-navbar__logo-block">
+      <a href="/"><img class="site-navbar__logo" alt="UCLA Library Digital Collections Logo" src="/assets/logo/ucla-library-digital-collections_logo-4be7c5a1014cc8a8623e1d86dddfd083886b7fb8ff975e92e8f04fbac625752f.svg" /></a>
+    </div>
+    <button
+      class="navbar-toggler navbar-toggler-icon--ursus"
+      type="button"
+      data-toggle="collapse"
+      data-target="#user-util-collapse"
+      aria-controls="user-util-collapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="user-util-collapse">
+      <ul class="navbar-nav nav ml-auto">
+        <li class='site-navbar__item site-navbar__item--ursus'><a class="site-navbar__item-link site-navbar__item-link--ursus" href="/iiif_guide">Using Digital Collections Content</a></li>
+        <li class="site-navbar__item site-navbar__item--ursus">
+          <a class='site-navbar__item-link site-navbar__item-link--ursus' href="/ursus_about">About</a>
+        </li>
+        <li class="site-navbar__item site-navbar__item--ursus">
+          <a class='site-navbar__item-link site-navbar__item-link--ursus'
+            href="https://forms.gle/x2BV9dJMK241VsAJA"
+            target="_blank"
+            rel="noopener"
+            data-cy='nav-feedback'>
+            Give Us Feedback
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container-full site-searchbar site-searchbar--ursus" role="search">
+  <div class="navbar-search" role="navigation" aria-label="Search">
+  <search>
+  <form class="form-group mx-auto mb-0 site-searchbar__search-form site-searchbar__search-form--ursus" action="http://localhost:3003/catalog" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" />
+    
+      <label class="sr-only visually-hidden">Search in</label>
+    <div class="input-group">
+      <label class="sr-only visually-hidden">search for</label>
+        <input placeholder="Search" class="search-q q form-control site-searchbar__query-field" aria-label="search for" type="search" name="q" />
+
+      <div class="input-group-append site-searchbar__search-icon site-searchbar__search-icon--ursus site-searchbar__search-icon--sinai">
+        <button type="submit" class="btn btn-light border-0 search-btn" id="search">
+        <svg xmlns="https://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 16 16"><title>Search</title><g fill="none"><g stroke="#005587"><circle cx="6" cy="6" r="5"></circle><path d="M14 14L10 10" style="stroke-linejoin:round;stroke-width:2;"></path></g></g></svg>
+        </button>
+      </div>
+
+        <select title="Targeted search options" class="custom-select site-searchbar__dropdown" name="search_field"><option value="all_fields">All Fields</option>
+<option value="title_tesim">Title</option>
+<option value="subject_tesim subject_topic_tesim subject_geographic_tesim subject_temporal_tesim">Subject</option></select>
+    </div>
+</form>
+</search>
+
+</div>
+</div>
+
+<!--XRAY END 621-->
+      <!--XRAY START 623 /ursus/app/views/catalog/banners/_homepage_banner.html.erb-->
+
+<!-- URSUS -->
+
+  <!--XRAY START 622 /ursus/app/views/catalog/banners/_homepage_banner--ursus.html.erb-->
+<!-- Home page banner -->
+
+<!-- Collection page banner -->
+
+<!--XRAY END 622-->
+
+<!--XRAY END 623-->
+
+      <main id="main-container" class="main-content-container container-constrained" role="main" aria-label="Main content">
+        
+
+        
+    <!--XRAY START 620 /ursus/app/views/catalog/show.html.erb-->
+
+  <hr class="divider divider--ursus">
+
+  <!--XRAY START 619 /ursus/app/views/catalog/_show_main_content.html.erb-->
+
+
+<div id='document' class="item-page__content-wrapper document ">
+  <div id="doc_ark-21198-zz0009q5nq">
+    <!--XRAY START 605 /ursus/app/views/catalog/_show_header.html.erb-->
+<h1 itemprop="name" class="item-page__title">Ms. 35 Arganon</h1>
+
+
+<!--XRAY END 605-->
+<!--XRAY START 606 /ursus/app/views/catalog/_media_viewer.html.erb-->
+    <div class='media-viewer-container'>
+      <iframe
+        class='media-viewer-iframe'
+        src="https://p-w-dl-viewer01.library.ucla.edu/#?manifest=https%3A%2F%2Fiiif.library.ucla.edu%2Fark%253A%252F21198%252Fzz0009q5nq%2Fmanifest"
+        width='924px'
+        height='668px'
+        id='media-viewer-iframe'
+        allowfullscreen
+        frameborder='0'>
+      </iframe>
+    </div>
+
+<!--XRAY END 606-->
+<!--XRAY START 618 /ursus/app/views/catalog/_show.html.erb-->
+
+<div class='item-page__metadata-wrapper'>
+  <!--XRAY START 611 /ursus/app/views/catalog/work_record--ursus/_primary_metadata.html.erb-->
+<div hidden>
+  <img src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz0009q780/full/!200,200/0/default.jpg" alt="Ms. 35 Arganon" >
+</div>
+
+<div class="item-page__primary-metadata">
+  <!--XRAY START 607 /ursus/app/views/catalog/work_record--ursus/_item_overview_metadata.html.erb-->
+
+  <div class="metadata-block">
+    <h4 class="metadata-block__title">Item Overview</h4>
+    <dl class="metadata-block__group">
+        <dt class="blacklight-title_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Title
+          <!-- VALUE -->
+          <dd class="blacklight-title_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            Ms. 35 Arganon
+          </dd>
+        </dt>
+        <dt class="blacklight-alternative_title_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Alternative title
+          <!-- VALUE -->
+          <dd class="blacklight-alternative_title_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            አርጋኖን<br>Arganon (Praise) of Mary
+          </dd>
+        </dt>
+        <dt class="blacklight-uniform_title_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Uniform title
+          <!-- VALUE -->
+          <dd class="blacklight-uniform_title_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            <a href="/catalog?f%5Buniform_title_sim%5D%5B%5D=Hymns+for+St.+Mary">Hymns for St. Mary</a>
+          </dd>
+        </dt>
+        <dt class="blacklight-date_created_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Date created
+          <!-- VALUE -->
+          <dd class="blacklight-date_created_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            16th-17th c.
+          </dd>
+        </dt>
+        <dt class="blacklight-place_of_origin_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Place of origin
+          <!-- VALUE -->
+          <dd class="blacklight-place_of_origin_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            Ethiopia
+          </dd>
+        </dt>
+        <dt class="blacklight-human_readable_language_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Language
+          <!-- VALUE -->
+          <dd class="blacklight-human_readable_language_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            <a href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=Ethiopic">Ethiopic</a>
+          </dd>
+        </dt>
+        <dt class="blacklight-member_of_collections_ssim metadata-block__label-key">
+          <!-- KEY -->
+          Collection
+          <!-- VALUE -->
+          <dd class="blacklight-member_of_collections_ssim metadata-block__label-value metadata-block__label-value--ursus">
+            <a href="/catalog/ark:/21198/zz0009gx3x">Ethiopic Manuscripts</a>
+          </dd>
+        </dt>
+    </dl>
+  <hr class="divider divider--ursus">
+  </div>
+
+<!--XRAY END 607-->
+  <!--XRAY START 608 /ursus/app/views/catalog/work_record--ursus/_note_metadata.html.erb-->
+
+  <div class='metadata-block'>
+    <h5 class='metadata-block__title'>Notes</h5>
+    <dl class='metadata-block__group'>
+      <!-- LOOP START -->
+        <dt class="blacklight-description_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Description
+          <!-- VALUE -->
+          <!-- URSUS -->
+          <dd class="blacklight-description_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            Texts in black ink, the beginning of each prayer and St. Mary's name is in red ink.<br>The manuscript is composed of quires of eight and ten leaves each.<br>Small illustration on P. 257.<br>Layout:  Two columns per page, 18 lines of text per page.
+          </dd>
+        </dt>
+      <!-- LOOP END -->
+
+      <!-- TABLE OF CONTENTS -->
+      <dt class='metadata-block__label-key'>Table of contents</dt>
+      <dd class='metadata-block__label-value'>P. 1 Canon on fasting ;Pp. 2-3 Geneology of Ethiopian Monastic leaders ;P. 4 List of saints day ;Pp. 5 Arganon (Hymns of St. Mary)አርጋኖን ;Pp. 5-51 of Monday ዘሰኑይ ;Pp. 51-88 of Tuesday ዘሠሉስ ; Pp. 89-126 of Wednesday ዘረቡዕ ;Pp. 127-167 of Thursday ዘሐሙስ ;Pp. 167-203 of Friday ዘአርብ ;Pp. 204-220 of Saturday ዘቀዳሚት ;Pp. 221-256 of Sunday ዘእሑድ .</dd>
+
+      <!-- References should always be the last field -->
+    </dl>
+
+    <hr class='divider divider--ursus'>
+  </div>
+
+<!--XRAY END 608-->
+  <!--XRAY START 609 /ursus/app/views/catalog/work_record--ursus/_physical_description_metadata.html.erb-->
+
+  <div class='metadata-block'>
+    <h4 class='metadata-block__title'>Physical Description</h4>
+    <dl class='metadata-block__group'>
+        <dt class="blacklight-extent_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Extent
+          <!-- VALUE -->
+          <dd class="blacklight-extent_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            256 Pages
+          </dd>
+        </dt>
+        <dt class="blacklight-dimensions_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Dimensions
+          <!-- VALUE -->
+          <dd class="blacklight-dimensions_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            222 mm x 190 mm x 80 mm
+          </dd>
+        </dt>
+        <dt class="blacklight-support_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Support
+          <!-- VALUE -->
+          <dd class="blacklight-support_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            <a href="/catalog?f%5Bsupport_sim%5D%5B%5D=Vellum+and+wooden+board">Vellum and wooden board</a>
+          </dd>
+        </dt>
+        <dt class="blacklight-binding_note_ssi metadata-block__label-key">
+          <!-- KEY -->
+          Binding note
+          <!-- VALUE -->
+          <dd class="blacklight-binding_note_ssi metadata-block__label-value metadata-block__label-value--ursus">
+            Wooden board.
+          </dd>
+        </dt>
+        <dt class="blacklight-condition_note_ssi metadata-block__label-key">
+          <!-- KEY -->
+          Condition note
+          <!-- VALUE -->
+          <dd class="blacklight-condition_note_ssi metadata-block__label-value metadata-block__label-value--ursus">
+            Front wooden board broken.
+          </dd>
+        </dt>
+    </dl>
+    <hr class='divider divider--ursus'>
+  </div>
+
+<!--XRAY END 609-->
+  <!--XRAY START 610 /ursus/app/views/catalog/work_record--ursus/_keyword_metadata.html.erb-->
+
+  <div class='metadata-block'>
+      <h4 class='metadata-block__title'>Keywords</h4>
+      <dl class='metadata-block__group'>
+            <dt class="blacklight-genre_tesim metadata-block__label-key">
+              <!-- KEY -->
+              Genre
+              <!-- VALUE -->
+                <dd class="blacklight-genre_tesim metadata-block__label-value metadata-block__label-value--ursus">
+                  <a href="/catalog?f%5Bgenre_sim%5D%5B%5D=Manuscripts">Manuscripts</a>
+                </dd>
+            </dt>
+            <dt class="blacklight-human_readable_resource_type_tesim metadata-block__label-key">
+              <!-- KEY -->
+              Resource type
+              <!-- VALUE -->
+                <dd class="blacklight-human_readable_resource_type_tesim metadata-block__label-value metadata-block__label-value--ursus">
+                  <a href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=text">text</a><br><a href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=still+image">still image</a>
+                </dd>
+            </dt>
+      </dl>
+      <hr class='divider divider--ursus'>
+    </div>
+
+<!--XRAY END 610-->
+</div>
+
+<!--XRAY END 611-->
+  <!--XRAY START 617 /ursus/app/views/catalog/work_record--ursus/_secondary_metadata.html.erb-->
+
+  <div class='item-page__secondary-metadata item-page__secondary-metadata--ursus'>
+    <!--XRAY START 616 /ursus/app/views/catalog/work_record--ursus/_secondary_metadata_blocks.html.erb-->
+<!--XRAY START 612 /ursus/app/views/catalog/work_record--ursus/_find_this_item_metadata.html.erb-->
+
+  <div class="metadata-block">
+    <h4 class='metadata-block__title'>Find This Item</h4>
+    <dl class='metadata-block__group'>
+        <dt class="blacklight-repository_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Repository
+          <!-- VALUE -->
+          <dd class="blacklight-repository_tesim metadata-block__label-value metadata-block__label-value--ursus">
+            <a href="/catalog?f%5Brepository_sim%5D%5B%5D=University+of+California%2C+Los+Angeles.+Library.+Department+of+Special+Collections">University of California, Los Angeles. Library. Department of Special Collections</a>
+          </dd>
+        </dt>
+        <dt class="blacklight-ark_ssi metadata-block__label-key">
+          <!-- KEY -->
+          ARK
+          <!-- VALUE -->
+          <dd class="blacklight-ark_ssi metadata-block__label-value metadata-block__label-value--ursus">
+            ark:/21198/zz0009q5nq
+          </dd>
+        </dt>
+
+
+      
+    </dl>
+    <hr>
+    <hr class='divider divider--white'>
+  </div>
+
+<!--XRAY END 612-->
+<!--XRAY START 613 /ursus/app/views/catalog/work_record--ursus/_use_this_item_metadata.html.erb-->
+<div class="metadata-block">
+  <h4 class='metadata-block__title'>Use This Item</h4>
+  <dl class='metadata-block__group'>
+    <!-- iiif drag and drop logo -->
+    <dt class='metadata-block__label-key'>Manifest url</dt>
+    <dd class='metadata-block__label-value d-flex'>
+      <a target="_blank" href="https://iiif.library.ucla.edu/ark%3A%2F21198%2Fzz0009q5nq/manifest"><img alt="IIIF Manifest" class="mb-2" src="/assets/iiif-logo-305a2471c2d7a587f847a59172bf2a4d29e5493c4b96391590bd117578ddc1dd.png" /></a>
+    </dd>
+    <dt class='metadata-block__label-key'>Learn about IIIF</dt>
+    <dd class='metadata-block__label-value'>
+      <a target="_blank" href="https://guides.library.ucla.edu/digital-collections/iiif">IIIF Guide &amp; Toolkit</a>
+    </dd>
+    <dt class='metadata-block__label-key'>How to cite</dt>
+    <dd class='metadata-block__label-value'>
+      <a target="_blank" href="https://guides.library.ucla.edu/digital-collections/cite">Citation Guide</a>
+    </dd>
+  </dl>
+  <hr>
+  <hr class='divider divider--white'>
+</div>
+
+<!--XRAY END 613-->
+<!--XRAY START 615 /ursus/app/views/catalog/work_record--ursus/_access_condition_metadata.html.erb-->
+
+  <div class='metadata-block'>
+    <h4 class='metadata-block__title'>Access Condition</h4>
+    <dl class='metadata-block__group'>
+        <dt class="blacklight-human_readable_rights_statement_tesim metadata-block__label-key">
+          <!-- KEY -->
+          Rights statement
+          <!-- VALUE -->
+
+            <dd class="blacklight-human_readable_rights_statement_tesim metadata-block__label-value metadata-block__label-value--ursus">
+              public domain
+            </dd>
+
+        </dt>
+        <dt class="blacklight-services_contact_ssm metadata-block__label-key">
+          <!-- KEY -->
+          Rights contact
+          <!-- VALUE -->
+
+            <dd class="blacklight-services_contact_ssm metadata-block__label-value metadata-block__label-value--ursus">
+              UCLA Library Special Collections, A1713 Charles E. Young Research Library, Box 951575, Los Angeles, CA 90095-1575. Email: spec-coll@library.ucla.edu. Phone: (310) 825-4958
+            </dd>
+
+        </dt>
+      <!--XRAY START 614 /ursus/app/views/catalog/_license.html.erb-->
+
+<!--XRAY END 614-->
+    </dl>
+
+    <hr class='divider divider--white'>
+
+  </div>
+
+<!--XRAY END 615-->
+
+<!--XRAY END 616-->
+  </div>
+
+<!--XRAY END 617-->
+</div>
+
+<script>
+dataLayer.push({
+  'event':'pageLoad',
+  'page_type':'asset',
+  'AltTitle.other': ["አርጋኖን","Arganon (Praise) of Mary"] === null ? undefined : ["አርጋኖን","Arganon (Praise) of Mary"],
+  'Coverage.geographic': null === null ? undefined : null,
+  'Date.normalized': null === null ? undefined : null,
+  'Description.fundingNote': null === null ? undefined : null,
+  'View Record': null === null ? undefined : null,
+  'Finding Aid URL': null === null ? undefined : null,
+  'Item ARK': "ark:/21198/zz0009q5nq" === null ? undefined : "ark:/21198/zz0009q5nq",
+  'Language': ["Ethiopic"] === null ? undefined : ["Ethiopic"],
+  'Name.architect': null === null ? undefined : null,
+  'Name.artist': null === null ? undefined : null,
+  'Name.caligrapher': null === null ? undefined : null,
+  'Name.cartographer': null === null ? undefined : null,
+  'Name.commentator': null === null ? undefined : null,
+  'Name.composer': null === null ? undefined : null,
+  'Name.creator': null === null ? undefined : null,
+  'Name.director': null === null ? undefined : null,
+  'Name.editor': null === null ? undefined : null,
+  'Name.engraver': null === null ? undefined : null,
+  'Name.illuminator': null === null ? undefined : null,
+  'Name.illustrator': null === null ? undefined : null,
+  'Name.interviewee': null === null ? undefined : null,
+  'Name.interviewer': null === null ? undefined : null,
+  'Name.lyricist': null === null ? undefined : null,
+  'Name.photographer': null === null ? undefined : null,
+  'Name.printmaker': null === null ? undefined : null,
+  'Name.producer': null === null ? undefined : null,
+  'Name.recipient': null === null ? undefined : null,
+  'Name.rubricator': null === null ? undefined : null,
+  'Name.subject': null === null ? undefined : null,
+  'Name.scribe': null === null ? undefined : null,
+  'Name.translator': null === null ? undefined : null,
+  'Opac url': null === null ? undefined : null,
+  'Project Name': ["Ethiopic Manuscripts"] === null ? undefined : ["Ethiopic Manuscripts"], // Not sure if pulling from the right field there is no project_tesin field in solr
+  'Publisher.publisherName': null === null ? undefined : null,
+  'Program': null === null ? undefined : null,
+  'Repository': ["University of California, Los Angeles. Library. Department of Special Collections"] === null ? undefined : ["University of California, Los Angeles. Library. Department of Special Collections"],
+  'Subject geographic': null === null ? undefined : null,
+  'Subject name': null === null ? undefined : null,
+  'Subject temporal': null === null ? undefined : null,
+  'Subject topic': null === null ? undefined : null,
+  'Title': ["Ms. 35 Arganon"]  === null ? undefined : ["Ms. 35 Arganon"],
+  'Type.genre': ["Manuscripts"]  === null ? undefined : ["Manuscripts"],
+  'Type.typeOfResource':["text","still image"] === null ? undefined : ["text","still image"]
+  })
+</script>
+
+<!--XRAY END 618-->
+  </div>
+      <link itemprop="isPartOf" itemscope itemtype="http://schema.org/Collection" itemid="http://localhost:3003/catalog/x3xg9000zz-89112">
+</div>
+
+<!--XRAY END 619-->
+
+<!--XRAY END 620-->
+
+      </main>
+
+      <!--XRAY START 624 /ursus/app/views/shared/_footer.html.erb-->
+<footer class='site-footer'>
+  <div class='container-full site-footer__primary site-footer__primary--ursus'>
+    <div class='site-footer__primary-wrapper--ursus'>
+      <div class="site-footer__block--ursus">
+        <a target="_blank" rel="noopener" data-cy="main-library-site" href="https://www.library.ucla.edu/"><img class="site-footer__logo site-footer__logo--ursus" alt="UCLA Library Logo" src="/assets/logo/ucla-library-logo-2676c640b239f469c0ce6d8220bcc11b9f1ecab03ec934d11da3bf8a2a7fdd76.svg" /></a>
+      </div>
+      <div class="site-footer__block--ursus">
+        <ul class='site-footer__list'>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus" href="/copyright_and_collections">Copyright and Collections</a></li>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus" href="/privacy_policy">Privacy Policy</a></li>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus" href="/ursus_contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__block--ursus">
+        <ul class='site-footer__list'>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus-gold" target="_blank" rel="noopener" data-cy="footer-feedback" href="https://forms.gle/x2BV9dJMK241VsAJA">Give Us Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class='container-full site-footer__secondary site-footer__secondary--ursus'>
+    <div class='site-footer__secondary-text'>
+      &#169; 2019-2026 UC Regents. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!--XRAY END 624-->
+      <!--XRAY START 625 /ursus/app/views_legacy/shared/_modal.html.erb-->
+<div id="blacklight-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+<!--XRAY END 625-->
+    </div>
+  </body>
+</html>
+

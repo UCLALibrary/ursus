@@ -1,0 +1,1515 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head> <script type='text/javascript'> document.domain = 'localhost'; (()=>{"use strict";const e=window.Cypress=parent.Cypress;if(!e)throw new Error("Something went terribly wrong and we cannot proceed. We expected to find the global Cypress in the parent window but it is missing. This should never happen and likely is a bug. Please open an issue.");const t=(()=>{let e,t,n,r;const i=()=>{e=!1,t=!1,n=[],r={}},o=(e,t=[])=>"function"==typeof e?e.apply(window,t):window.eval(e);return i(),{wrap:()=>{const i={setTimeout:window.setTimeout,setInterval:window.setInterval,requestAnimationFrame:window.requestAnimationFrame,clearTimeout:window.clearTimeout,clearInterval:window.clearInterval},a=(e,t)=>i[e].apply(window,t),s=e=>n=>(t&&(r[n]=!0),a(e,[n])),w=t=>(...r)=>{let i,[s,w,...p]=r;return i=a(t,[(...r)=>{if(!e)return o(s,r);n.push({timerId:i,fnOrCode:s,params:r,type:t})},w,...p]),i};window.setTimeout=w("setTimeout"),window.setInterval=w("setInterval"),window.requestAnimationFrame=w("requestAnimationFrame"),window.clearTimeout=s("clearTimeout"),window.clearInterval=s("clearInterval")},reset:i,pause:a=>{e=Boolean(a),e||(t=!0,n.forEach((e=>{const{timerId:t,type:n,fnOrCode:i,params:a}=e;"setInterval"===n&&r[t]||o(i,a)})),i())}}})();e.removeAllListeners("app:timers:reset"),e.removeAllListeners("app:timers:pause"),e.on("app:timers:reset",t.reset),e.on("app:timers:pause",t.pause),t.wrap(),e.action("app:window:before:load",window)})(); </script>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Internet Explorer use the highest version available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- URSUS -->
+        <meta name="Description" content="The UCLA Library Digital Collections includes rare and unique digital materials developed by the UCLA Library to support education, research, service, and creative expression. This website is our new interface for discovery and engagement of these collections. See collections of historic photographs and manuscripts. More collections added weekly.">
+    <meta name="theme-color" content="#2774ae">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    </script>
+      <script defer src="https://test-librarystudy.library.ucla.edu/gsurvey.js"></script>
+    <title> - UCLA Library Digital Collections Search Results</title>
+
+    <link href="http://localhost:3003/catalog/opensearch.xml" title="UCLA Library Digital Collections" type="application/opensearchdescription+xml" rel="search" />
+
+      <link rel="shortcut icon" type="image/x-icon" href="/assets/favicons/favicon-90bf0f861168939b329ff16e7e1c12753d97d0dda2a54b6185d972ea80c39a57.ico" />
+
+    <link rel="stylesheet" media="all" href="/assets/ursus.self-78ee85b78fb437861f1fb4f2689d2b1afc6c7438dbc729fa96f2ac71f10833e3.css?body=1" />
+    <script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1"></script>
+<script src="/assets/jquery3.self-2a83d06853bd343c7bfc2e5d4539814cfa934676e2948ed348311435eca862f5.js?body=1"></script>
+<script src="/assets/xray.self-130d130a29b059ab5e1f6b7ea349011b67ee8593ecb3e9222db86c7a5d55ed3a.js?body=1"></script>
+<script src="/assets/rails-ujs.self-7a9eba54e8cfe7870a3883ae952e65192568e8e1a7cd58567ed5d0631b18992e.js?body=1"></script>
+<script src="/assets/popper.self-55bd1408b0e4ff3edf21524b78fbe2266615c8015ce0e5f0828089b1de27d63c.js?body=1"></script>
+<script src="/assets/bootstrap.self-c8ed2cc97fb18c91c13fe8e20ea459956ee952f8776ce5d99b08db147704a2bf.js?body=1"></script>
+<script src="/assets/blacklight/blacklight.self-5dcf64325c6a45553032cfab2fa2d11b3dd6dbc306844355920a9959b8ce784e.js?body=1"></script>
+<script src="/assets/blacklight_gallery/blacklight-gallery.self-9b0a2df273c6c6e56153aeb2e3bd501444715c64ac60ba67faeaa492de9ce2ed.js?body=1"></script>
+<script src="/assets/blacklight_gallery.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1"></script>
+<script src="/assets/action_cable.self-f31e24ce71c4c4fe0add3d0d7543567faa2d0285a4ef1563a7552e4b634a0840.js?body=1"></script>
+<script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1"></script>
+<script src="/assets/canon_law.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1"></script>
+<script src="/assets/feedback.self-8adf847c0e84f6de5e43c1e075e76aab15a41252447f5765e08bf705ccc52c66.js?body=1"></script>
+<script src="/assets/truncate_description.self-01c665442abfa56afa8cb6f2021962e328eb62c55ca7cce177de772790221dc9.js?body=1"></script>
+<script src="/assets/flot/jquery.canvaswrapper.self-7ced6f3748604e8262c77a2d0b4fa82c0915b3ebdd121410ec2a474cf3fbbc42.js?body=1"></script>
+<script src="/assets/flot/jquery.colorhelpers.self-28edaae550a3241b7ed793aff7c537fc1acd1b6378e31c0410ca99eceed7612f.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.self-c8ff452f46d8bd2bba54eeb2f2dfd59f18f120714508f5c6c951bb926faaf3c7.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.browser.self-c475f595341469361e14343f9415d847f3bfc945c5d008a4c913ca1820468a7e.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.saturated.self-aed54087354d370cc711465d728a5259779d4e4bd90358f23de6ff7c73bdbd0a.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.drawSeries.self-95d74d2f8b453754b88e7422a1e79d05f2e47e1cf9710d6230b9a32ad6f8d2bb.js?body=1"></script>
+<script src="/assets/flot/jquery.event.drag.self-80d9bfb0151c14a3806a1a448dd08472cdb17fef3cd7a8c51f381b6ed3ec09a7.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.hover.self-aeb05b7be39c2b7ff30a0cd305885943b198be8f377303e5c186d24ef23bdeb4.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.uiConstants.self-7241ad2ce2c97437555991d0f6ba7c56ed19dd0958826695c36f15fdaba143d5.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.selection.self-304fc7780607c357af778285dbe0c84e462d95c093ee4d1be53175a6bf6baecb.js?body=1"></script>
+<script src="/assets/bootstrap-slider.self-92ad13fd376f207da97bcc4062ef8a25c5508295e1b931cc0034ea7e0bce4dd1.js?body=1"></script>
+<script src="/assets/blacklight_range_limit/blacklight_range_limit.umd.self-ef152401302c6e0b0aded12c760f6316e2aa74ee6933c71c4acbfa93c1909091.js?body=1"></script>
+<script src="/assets/blacklight_range_limit.self-8b4e0dd8565b2543a8161b775d3332debd298c69a82f2be93866675d359f3882.js?body=1"></script>
+<script src="/assets/application.self-e988d8e758ae474f8aecc2374a5012b0a1cf72f51f59f8b7f1638d0348895d14.js?body=1"></script>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="0s/XHg9pPD0PgYjdoOYaZ6vhSvkywqDiG4cu2OzgLRfxMGFjzvqI0B8kLknp03TvXV66/NLNrUsjM7aisq7lQg==" />
+      <meta name="blacklight-search-storage" content="server">
+    <!--XRAY START 488 /ursus/app/views_legacy/catalog/_opensearch_response_metadata.html.erb-->
+<meta name="totalResults" content="49370" />
+<meta name="startIndex" content="10" />
+<meta name="itemsPerPage" content="10" />
+
+<!--XRAY END 488-->
+    <link rel="alternate" type="application/rss+xml" title="RSS for results" href="/catalog.rss?page=2&amp;q=&amp;search_field=all_fields" />
+    <link rel="alternate" type="application/atom+xml" title="Atom for results" href="/catalog.atom?page=2&amp;q=&amp;search_field=all_fields" />
+    <link rel="alternate" type="application/json" title="JSON" href="/catalog.json?page=2&amp;q=&amp;search_field=all_fields" />
+
+  </head>
+
+  <body class="blacklight-catalog blacklight-catalog-index">
+<div id="xray-bar" style="display:none">
+    <div id="xray-bar-controller-path">
+        <span class="xray-bar-btn xray-bar-controller xray-icon-flash" data-path="/ursus/app/controllers/catalog_controller.rb">
+          <b></b>
+          CatalogController<span class="xray-bar-controller-action">#index</span>
+        </span>
+        <span class="xray-bar-btn xray-bar-layout xray-icon-columns" data-path="/ursus/app/views/layouts/blacklight.html.erb">
+          <b></b>
+          blacklight.html.erb
+        </span>
+        <span class="xray-bar-btn xray-bar-view xray-icon-doc" data-path="/ursus/app/views/catalog/index.html.erb">
+          index.html.erb
+        </span>
+    </div>
+  <div id="xray-bar-togglers">
+    <span class="xray-bar-btn xray-bar-all-toggler xray-icon-search"></span>
+    <span class="xray-bar-btn xray-bar-templates-toggler">
+      templates
+    </span>
+    <span class="xray-bar-btn xray-bar-views-toggler">
+      views
+    </span>
+  </div>
+  <span class="xray-bar-settings-btn xray-icon-cog"></span>
+  <div id="xray-settings" style="display:none">
+    <form>
+      <label for="xray-editor-input">Editor</label>
+      <input id="xray-editor-input" type="text" value="/usr/local/bin/subl">
+      <button type="submit">Save</button>
+      <p>Settings are saved to /root/.xrayconfig</p>
+  </form>
+  </div>
+  <link rel="stylesheet" media="screen" href="/assets/xray.self-589afea231bb72a951911af17272482dab39a68c4d183dfcb0e3c50b2c8e4838.css?body=1" />
+</div>
+
+
+    <div class="site-container" >
+      <!--XRAY START 540 /usr/local/bundle/ruby/2.7.0/gems/blacklight-8.8.4/app/views/shared/_header_navbar.html.erb-->
+<div class="container-full container-full--navbar site-navbar site-navbar--ursus">
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar__wrapper site-navbar__wrapper--ursus" role="navigation">
+    <div class="site-navbar__logo-block">
+      <a href="/"><img class="site-navbar__logo" alt="UCLA Library Digital Collections Logo" src="/assets/logo/ucla-library-digital-collections_logo-4be7c5a1014cc8a8623e1d86dddfd083886b7fb8ff975e92e8f04fbac625752f.svg" /></a>
+    </div>
+    <button
+      class="navbar-toggler navbar-toggler-icon--ursus"
+      type="button"
+      data-toggle="collapse"
+      data-target="#user-util-collapse"
+      aria-controls="user-util-collapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="user-util-collapse">
+      <ul class="navbar-nav nav ml-auto">
+        <li class='site-navbar__item site-navbar__item--ursus'><a class="site-navbar__item-link site-navbar__item-link--ursus" href="/iiif_guide">Using Digital Collections Content</a></li>
+        <li class="site-navbar__item site-navbar__item--ursus">
+          <a class='site-navbar__item-link site-navbar__item-link--ursus' href="/ursus_about">About</a>
+        </li>
+        <li class="site-navbar__item site-navbar__item--ursus">
+          <a class='site-navbar__item-link site-navbar__item-link--ursus'
+            href="https://forms.gle/x2BV9dJMK241VsAJA"
+            target="_blank"
+            rel="noopener"
+            data-cy='nav-feedback'>
+            Give Us Feedback
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container-full site-searchbar site-searchbar--ursus" role="search">
+  <div class="navbar-search" role="navigation" aria-label="Search">
+  <search>
+  <form class="form-group mx-auto mb-0 site-searchbar__search-form site-searchbar__search-form--ursus" action="http://localhost:3003/catalog" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" />
+    
+      <label class="sr-only visually-hidden">Search in</label>
+    <div class="input-group">
+      <label class="sr-only visually-hidden">search for</label>
+        <input value="" placeholder="Search" class="search-q q form-control site-searchbar__query-field" aria-label="search for" type="search" name="q" />
+
+      <div class="input-group-append site-searchbar__search-icon site-searchbar__search-icon--ursus site-searchbar__search-icon--sinai">
+        <button type="submit" class="btn btn-light border-0 search-btn" id="search">
+        <svg xmlns="https://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 16 16"><title>Search</title><g fill="none"><g stroke="#005587"><circle cx="6" cy="6" r="5"></circle><path d="M14 14L10 10" style="stroke-linejoin:round;stroke-width:2;"></path></g></g></svg>
+        </button>
+      </div>
+
+        <select title="Targeted search options" class="custom-select site-searchbar__dropdown" name="search_field"><option selected="selected" value="all_fields">All Fields</option>
+<option value="title_tesim">Title</option>
+<option value="subject_tesim subject_topic_tesim subject_geographic_tesim subject_temporal_tesim">Subject</option></select>
+    </div>
+</form>
+</search>
+
+</div>
+</div>
+
+<!--XRAY END 540-->
+      <!--XRAY START 542 /ursus/app/views/catalog/banners/_homepage_banner.html.erb-->
+
+<!-- URSUS -->
+
+  <!--XRAY START 541 /ursus/app/views/catalog/banners/_homepage_banner--ursus.html.erb-->
+<!-- Home page banner -->
+
+<!-- Collection page banner -->
+
+<!--XRAY END 541-->
+
+<!--XRAY END 542-->
+
+      <main id="main-container" class="main-content-container container-constrained" role="main" aria-label="Main content">
+        
+
+        
+    <!--XRAY START 539 /ursus/app/views/catalog/index.html.erb-->
+<!--
+
+
+  <div class='content-container--index-page'>
+  </div>
+
+<!-- add Title/Shelfmark Sort
+<script type="text/javascript">
+ // var urlFacet = window.location.search;
+ // if ( urlFacet.indexOf("catalog?sort=" ) !== -1){
+ //   window.history.replaceState('page2', 'Title', '/catalog');
+ // } else if ( ((urlFacet.indexOf("&q=&") !== -1) || (urlFacet.indexOf("%5B%5D=") !== -1)) && ((urlFacet.indexOf("[member_of_collections_") !== -1) || ((urlFacet.indexOf("&sort=") == -1) && (urlFacet != "?utf8=%E2%9C%93&q=&search_field=all_fields"))) ) {
+//
+ //     var titleSortUrl = urlFacet+"&sort=title_alpha_numeric_ssort+asc";
+//
+ //     window.location = titleSortUrl;
+ // }
+</script>
+-->
+
+
+  <div class="content-container--index-page">
+    <!--XRAY START 487 /ursus/app/views/catalog/_facets.html.erb-->
+<!-- # main container for facets/limits menu -->
+
+<!-- URSUS -->
+
+  <div id="facets" class="facets facets-toggleable-md facets-container">
+    <div id="facet-panel-collapse" class="facets-collapse collapse facet-field__heading--ursus">
+      <search>
+    <div id="facets" class="facets sidenav facets-toggleable-md">
+  <div class="navbar facets__navbar facets__navbar--ursus">
+    <h2 class="facets__navbar-heading facets__navbar-heading--ursus">Browse items</h2>
+
+    <button class="btn btn-outline-secondary facet-toggle-button d-block d-lg-none" type="button" data-toggle="collapse" data-target="#facet-panel-collapse" data-bs-toggle="collapse" data-bs-target="#facet-panel-collapse" aria-controls="facet-panel-collapse" aria-expanded="false">
+      <span data-show-label>Show facets</span>
+      <span data-hide-label>Hide facets</span>
+</button>  </div>
+
+  <div id="facet-panel-collapse" class="facets-collapse collapse">
+            <div class="facet-field blacklight-combined_subject_ssim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-combined_subject_ssim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-combined_subject_ssim"
+      data-bs-target="#facet-combined_subject_ssim"
+      aria-expanded="false"
+      arial-controls="facet-combined_subject_ssim"
+    >
+          Subject
+
+  </h3>
+  <div id="facet-combined_subject_ssim" role="region" aria-labelledby="facet-combined_subject_ssim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=Chicano+archives&amp;q=&amp;search_field=all_fields">Chicano archives</a></span><span class="facet-count">2,785</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=People&amp;q=&amp;search_field=all_fields">People</a></span><span class="facet-count">2,625</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=photography+--+Chicano&amp;q=&amp;search_field=all_fields">photography -- Chicano</a></span><span class="facet-count">2,097</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=photography+--+Mexican+American&amp;q=&amp;search_field=all_fields">photography -- Mexican American</a></span><span class="facet-count">2,079</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=Chicano+artists--California--Los+Angeles+County&amp;q=&amp;search_field=all_fields">Chicano artists--California--Los Angeles County</a></span><span class="facet-count">1,943</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/combined_subject_ssim?q=&amp;search_field=all_fields">more <span class="sr-only visually-hidden">Subject</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-human_readable_resource_type_sim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-human_readable_resource_type_sim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-human_readable_resource_type_sim"
+      data-bs-target="#facet-human_readable_resource_type_sim"
+      aria-expanded="false"
+      arial-controls="facet-human_readable_resource_type_sim"
+    >
+          Resource Type
+
+  </h3>
+  <div id="facet-human_readable_resource_type_sim" role="region" aria-labelledby="facet-human_readable_resource_type_sim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=still+image&amp;q=&amp;search_field=all_fields">still image</a></span><span class="facet-count">29,731</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=text&amp;q=&amp;search_field=all_fields">text</a></span><span class="facet-count">10,252</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=cartographic&amp;q=&amp;search_field=all_fields">cartographic</a></span><span class="facet-count">3,352</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=sound+recording&amp;q=&amp;search_field=all_fields">sound recording</a></span><span class="facet-count">2,774</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=sound+recording-nonmusical&amp;q=&amp;search_field=all_fields">sound recording-nonmusical</a></span><span class="facet-count">476</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/human_readable_resource_type_sim?q=&amp;search_field=all_fields">more <span class="sr-only visually-hidden">Resource Type</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-genre_sim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-genre_sim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-genre_sim"
+      data-bs-target="#facet-genre_sim"
+      aria-expanded="false"
+      arial-controls="facet-genre_sim"
+    >
+          Genre
+
+  </h3>
+  <div id="facet-genre_sim" role="region" aria-labelledby="facet-genre_sim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bgenre_sim%5D%5B%5D=newspapers&amp;q=&amp;search_field=all_fields">newspapers</a></span><span class="facet-count">7,716</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bgenre_sim%5D%5B%5D=black-and-white+photographs&amp;q=&amp;search_field=all_fields">black-and-white photographs</a></span><span class="facet-count">7,568</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bgenre_sim%5D%5B%5D=cellulose+nitrate+film&amp;q=&amp;search_field=all_fields">cellulose nitrate film</a></span><span class="facet-count">7,233</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bgenre_sim%5D%5B%5D=news+photographs&amp;q=&amp;search_field=all_fields">news photographs</a></span><span class="facet-count">5,195</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bgenre_sim%5D%5B%5D=acetate+film&amp;q=&amp;search_field=all_fields">acetate film</a></span><span class="facet-count">4,057</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/genre_sim?q=&amp;search_field=all_fields">more <span class="sr-only visually-hidden">Genre</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-named_subject_sim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-named_subject_sim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-named_subject_sim"
+      data-bs-target="#facet-named_subject_sim"
+      aria-expanded="false"
+      arial-controls="facet-named_subject_sim"
+    >
+          Names
+
+  </h3>
+  <div id="facet-named_subject_sim" role="region" aria-labelledby="facet-named_subject_sim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bnamed_subject_sim%5D%5B%5D=Southern+California+Women+for+Understanding&amp;q=&amp;search_field=all_fields">Southern California Women for Understanding</a></span><span class="facet-count">835</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bnamed_subject_sim%5D%5B%5D=Santa+Monica+Civic+Opera+Association&amp;q=&amp;search_field=all_fields">Santa Monica Civic Opera Association</a></span><span class="facet-count">414</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bnamed_subject_sim%5D%5B%5D=University+of+California%2C+Los+Angeles.+Institute+of+Ethnomusicology&amp;q=&amp;search_field=all_fields">University of California, Los Angeles. Institute of Ethnomusicology</a></span><span class="facet-count">249</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bnamed_subject_sim%5D%5B%5D=University+of+California%2C+Los+Angeles.+Department+of+Music&amp;q=&amp;search_field=all_fields">University of California, Los Angeles. Department of Music</a></span><span class="facet-count">247</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bnamed_subject_sim%5D%5B%5D=Barnum+Hall+Theatre+%28Santa+Monica%2C+Calif.%29&amp;q=&amp;search_field=all_fields">Barnum Hall Theatre (Santa Monica, Calif.)</a></span><span class="facet-count">200</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/named_subject_sim?q=&amp;search_field=all_fields">more <span class="sr-only visually-hidden">Names</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-location_sim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-location_sim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-location_sim"
+      data-bs-target="#facet-location_sim"
+      aria-expanded="false"
+      arial-controls="facet-location_sim"
+    >
+          Location
+
+  </h3>
+  <div id="facet-location_sim" role="region" aria-labelledby="facet-location_sim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Blocation_sim%5D%5B%5D=Los+Angeles+%28Calif.%29&amp;q=&amp;search_field=all_fields">Los Angeles (Calif.)</a></span><span class="facet-count">5,331</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Blocation_sim%5D%5B%5D=California--Santa+Monica&amp;q=&amp;search_field=all_fields">California--Santa Monica</a></span><span class="facet-count">2,574</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Blocation_sim%5D%5B%5D=California--Los+Angeles&amp;q=&amp;search_field=all_fields">California--Los Angeles</a></span><span class="facet-count">2,573</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Blocation_sim%5D%5B%5D=California&amp;q=&amp;search_field=all_fields">California</a></span><span class="facet-count">1,098</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Blocation_sim%5D%5B%5D=United+States&amp;q=&amp;search_field=all_fields">United States</a></span><span class="facet-count">594</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/location_sim?q=&amp;search_field=all_fields">more <span class="sr-only visually-hidden">Location</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-year_isim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-year_isim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-year_isim"
+      data-bs-target="#facet-year_isim"
+      aria-expanded="false"
+      arial-controls="facet-year_isim"
+    >
+          Date
+
+  </h3>
+  <div id="facet-year_isim" role="region" aria-labelledby="facet-year_isim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        <div class="limit_content range_limit year_isim-config blrl-plot-config">
+
+      <!-- no results profile if missing is selected -->
+        <!-- you can hide this if you want, but it has to be on page if you want
+             JS slider and calculated facets to show up, JS sniffs it. -->
+        <div class="profile">
+
+              <div class="distribution subsection chart_js">
+                <!-- if  we already fetched segments from solr, display them
+                     here. Otherwise, display a link to fetch them, which JS
+                     will AJAX fetch.  -->
+                  <ul class="facet-values list-unstyled ">
+  <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=0&amp;range%5Byear_isim%5D%5Bend%5D=199&amp;search_field=all_fields"><span class="from" data-blrl-begin="0">0</span> to <span class="to" data-blrl-end="199">199</span></a></span><span class="facet-count">0</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=200&amp;range%5Byear_isim%5D%5Bend%5D=399&amp;search_field=all_fields"><span class="from" data-blrl-begin="200">200</span> to <span class="to" data-blrl-end="399">399</span></a></span><span class="facet-count">0</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=400&amp;range%5Byear_isim%5D%5Bend%5D=599&amp;search_field=all_fields"><span class="from" data-blrl-begin="400">400</span> to <span class="to" data-blrl-end="599">599</span></a></span><span class="facet-count">0</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=600&amp;range%5Byear_isim%5D%5Bend%5D=799&amp;search_field=all_fields"><span class="from" data-blrl-begin="600">600</span> to <span class="to" data-blrl-end="799">799</span></a></span><span class="facet-count">0</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=800&amp;range%5Byear_isim%5D%5Bend%5D=999&amp;search_field=all_fields"><span class="from" data-blrl-begin="800">800</span> to <span class="to" data-blrl-end="999">999</span></a></span><span class="facet-count">1</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=1000&amp;range%5Byear_isim%5D%5Bend%5D=1199&amp;search_field=all_fields"><span class="from" data-blrl-begin="1000">1000</span> to <span class="to" data-blrl-end="1199">1199</span></a></span><span class="facet-count">12</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=1200&amp;range%5Byear_isim%5D%5Bend%5D=1399&amp;search_field=all_fields"><span class="from" data-blrl-begin="1200">1200</span> to <span class="to" data-blrl-end="1399">1399</span></a></span><span class="facet-count">31</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=1400&amp;range%5Byear_isim%5D%5Bend%5D=1599&amp;search_field=all_fields"><span class="from" data-blrl-begin="1400">1400</span> to <span class="to" data-blrl-end="1599">1599</span></a></span><span class="facet-count">93</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=1600&amp;range%5Byear_isim%5D%5Bend%5D=1799&amp;search_field=all_fields"><span class="from" data-blrl-begin="1600">1600</span> to <span class="to" data-blrl-end="1799">1799</span></a></span><span class="facet-count">231</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=1800&amp;range%5Byear_isim%5D%5Bend%5D=1999&amp;search_field=all_fields"><span class="from" data-blrl-begin="1800">1800</span> to <span class="to" data-blrl-end="1999">1999</span></a></span><span class="facet-count">32,864</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5Byear_isim%5D%5Bbegin%5D=2000&amp;range%5Byear_isim%5D%5Bend%5D=2026&amp;search_field=all_fields"><span class="from" data-blrl-begin="2000">2000</span> to <span class="to" data-blrl-end="2026">2026</span></a></span><span class="facet-count">1,485</span></li>
+</ul>
+
+              </div>
+            <p class="range subsection slider_js">
+              Current results range from <span class="min">801</span> to <span class="max">25000</span>
+            </p>
+        </div>
+
+        <form class="range_limit subsection form-inline range_year_isim d-flex justify-content-center" action="http://localhost:3003/catalog" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" />
+  <input type="hidden" name="q" value="" autocomplete="off" />
+<input type="hidden" name="search_field" value="all_fields" autocomplete="off" />
+
+  <div class="input-group input-group-sm mb-3 flex-nowrap range-limit-input-group">
+    <input type="number" name="range[year_isim][begin]" id="range_year_isim_begin" class="form-control text-center range_begin" /><label class="sr-only visually-hidden" for="range_year_isim_begin">Date range begin</label>
+    <input type="number" name="range[year_isim][end]" id="range_year_isim_end" class="form-control text-center range_end" /><label class="sr-only visually-hidden" for="range_year_isim_end">Date range end</label>
+    <div class="input-group-append visually-hidden">
+      <input type="submit" value="Apply" class="submit btn btn-secondary" data-disable-with="Apply" />
+    </div>
+    <input type="submit" value="Apply" class="submit btn btn-secondary sr-only" aria-hidden="true" data-disable-with="Apply" />
+  </div>
+</form>
+
+        <div class="more_facets"><a data-blacklight-modal="trigger" href="/catalog/facet/year_isim?q=&amp;search_field=all_fields">View larger »</a></div>
+
+          <ul class="facet-values list-unstyled missing subsection">
+  <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?q=&amp;range%5B-year_isim%5D%5B%5D=%5B%2A+TO+%2A%5D&amp;search_field=all_fields">[Missing]</a></span><span class="facet-count">15,080</span></li>
+</ul>
+
+    </div>
+
+
+  </div>
+</div>
+<div class="facet-field blacklight-human_readable_language_sim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-human_readable_language_sim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-human_readable_language_sim"
+      data-bs-target="#facet-human_readable_language_sim"
+      aria-expanded="false"
+      arial-controls="facet-human_readable_language_sim"
+    >
+          Language
+
+  </h3>
+  <div id="facet-human_readable_language_sim" role="region" aria-labelledby="facet-human_readable_language_sim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=No+linguistic+content&amp;q=&amp;search_field=all_fields">No linguistic content</a></span><span class="facet-count">13,115</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=German&amp;q=&amp;search_field=all_fields">German</a></span><span class="facet-count">8,204</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=English&amp;q=&amp;search_field=all_fields">English</a></span><span class="facet-count">5,979</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=French&amp;q=&amp;search_field=all_fields">French</a></span><span class="facet-count">640</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=Spanish&amp;q=&amp;search_field=all_fields">Spanish</a></span><span class="facet-count">418</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/human_readable_language_sim?q=&amp;search_field=all_fields">more <span class="sr-only visually-hidden">Language</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-member_of_collections_ssim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-member_of_collections_ssim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-member_of_collections_ssim"
+      data-bs-target="#facet-member_of_collections_ssim"
+      aria-expanded="false"
+      arial-controls="facet-member_of_collections_ssim"
+    >
+          Collection
+
+  </h3>
+  <div id="facet-member_of_collections_ssim" role="region" aria-labelledby="facet-member_of_collections_ssim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Deutsches+Nachrichtenb%C3%BCro&amp;q=&amp;search_field=all_fields">Deutsches Nachrichtenbüro</a></span><span class="facet-count">7,443</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Adelbert+Bartlett+Papers%2C+1922-1950&amp;q=&amp;search_field=all_fields">Adelbert Bartlett Papers, 1922-1950</a></span><span class="facet-count">6,438</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Los+Angeles+Daily+News+Negatives&amp;q=&amp;search_field=all_fields">Los Angeles Daily News Negatives</a></span><span class="facet-count">5,116</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Henry+J.+Bruman+Map+Collection&amp;q=&amp;search_field=all_fields">Henry J. Bruman Map Collection</a></span><span class="facet-count">2,810</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Friedlander+%28Jonathan%29+Collection+of+Middle+Eastern+Americana%2C+1875-2006&amp;q=&amp;search_field=all_fields">Friedlander (Jonathan) Collection of Middle Eastern Americana, 1875-2006</a></span><span class="facet-count">2,669</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/member_of_collections_ssim?q=&amp;search_field=all_fields">more <span class="sr-only visually-hidden">Collection</span> »</a>
+      </div>
+  </div>
+</div>
+
+
+  </div>
+</div></search>
+
+    </div>
+  </div>
+
+<!--XRAY END 487-->
+    <!--XRAY START 538 /ursus/app/views/catalog/_search_results.html.erb-->
+<div class="search-results-container">
+
+
+
+
+  <!--XRAY START 489 /usr/local/bundle/ruby/2.7.0/gems/blacklight-8.8.4/app/views/catalog/_search_results_header.html.erb-->
+<h1 class="sr-only visually-hidden top-content-title">Search</h1>
+
+<!--XRAY END 489-->
+  <!--XRAY START 490 /ursus/app/views/catalog/_constraints.html.erb-->
+
+
+<!--XRAY END 490-->
+  <!--XRAY START 509 /ursus/app/views_legacy/catalog/_search_header.html.erb-->
+<!--XRAY START 491 /ursus/app/views_legacy/catalog/_did_you_mean.html.erb-->
+
+
+<!--XRAY END 491-->
+<!--XRAY START 508 /ursus/app/views_legacy/catalog/_sort_and_per_page.html.erb-->
+<div id='sortAndPerPage'>
+      <div class='search-count-wrapper'>
+        <h2 class='search-count__heading'>
+          <span class="search-count__results-found">49,370</span>
+          <span class="search-count__catalog-results">Catalog Results</span>
+        </h2>
+        <div class="search-widgets search-widgets-wrapper search-widgets-wrapper--sinai">
+      <!--XRAY START 492 /ursus/app/views/catalog/_sort_widget.html.erb-->
+<div id="sort-dropdown" class="search-widget__dropdown">
+
+  <button type="button" class="btn-base btn-outline-ursus--light dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    Sort by Relevance <span class="caret"></span>
+  </button>
+
+  <div class="dropdown-menu" role="menu">
+      <a class="dropdown-item dropdown-item--ursus ur-link" href="/catalog?page=1&amp;q=&amp;search_field=all_fields&amp;sort=score+desc">Relevance</a>
+      <a class="dropdown-item dropdown-item--ursus ur-link" href="/catalog?page=1&amp;q=&amp;search_field=all_fields&amp;sort=title_alpha_numeric_ssort+asc">Title (A-Z)</a>
+      <a class="dropdown-item dropdown-item--ursus ur-link" href="/catalog?page=1&amp;q=&amp;search_field=all_fields&amp;sort=title_alpha_numeric_ssort+desc">Title (Z-A)</a>
+      <a class="dropdown-item dropdown-item--ursus ur-link" href="/catalog?page=1&amp;q=&amp;search_field=all_fields&amp;sort=date_dtsort+desc">Date (newest)</a>
+      <a class="dropdown-item dropdown-item--ursus ur-link" href="/catalog?page=1&amp;q=&amp;search_field=all_fields&amp;sort=date_dtsort+asc">Date (oldest)</a>
+  </div>
+</div>
+
+<!--XRAY END 492-->
+
+      <!--XRAY START 493 /ursus/app/views/catalog/_per_page_widget.html.erb-->
+<span class="sr-only">Number of results to display per page</span>
+<div id="per_page-dropdown" class="search-widget__dropdown">
+
+  <button type="button" class="btn-base btn-outline-ursus--light dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    10 per page <span class="caret"></span>
+  </button>
+
+  <div class="dropdown-menu dropdown-menu-right" role="menu">
+      <a class="dropdown-item dropdown-item--ursus ur-link" href="/catalog?page=1&amp;per_page=10&amp;q=&amp;search_field=all_fields">10<span class="sr-only visually-hidden"> per page</span></a>
+      <a class="dropdown-item dropdown-item--ursus ur-link" href="/catalog?page=1&amp;per_page=20&amp;q=&amp;search_field=all_fields">20<span class="sr-only visually-hidden"> per page</span></a>
+      <a class="dropdown-item dropdown-item--ursus ur-link" href="/catalog?page=1&amp;per_page=50&amp;q=&amp;search_field=all_fields">50<span class="sr-only visually-hidden"> per page</span></a>
+      <a class="dropdown-item dropdown-item--ursus ur-link" href="/catalog?page=1&amp;per_page=100&amp;q=&amp;search_field=all_fields">100<span class="sr-only visually-hidden"> per page</span></a>
+  </div>
+</div>
+
+<!--XRAY END 493-->
+
+      <!--XRAY START 494 /ursus/app/views/catalog/_view_type_group.html.erb-->
+<div class="view-type">
+  <span class="sr-only visually-hidden">View results as: </span>
+  <div class="view-type-group btn-group">
+      <a title="List" aria-current="true" id="view-button-list" class="btn btn-outline-ursus--light view-type-list active" href="/catalog?page=2&amp;q=&amp;search_field=all_fields&amp;view=list">
+  <span class="blacklight-icons blacklight-icons-list"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+  <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/><path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+</span>
+  <span>List</span>
+</a>
+      <a title="Gallery" id="view-button-gallery" class="btn btn-outline-ursus--light view-type-gallery " href="/catalog?page=2&amp;q=&amp;search_field=all_fields&amp;view=gallery">
+  <span class="blacklight-icons blacklight-icon-gallery"><?xml version="1.0"?>
+<svg width="24" height="24" viewBox="0 0 24 24" aria-label="Gallery" role="img">
+  <title>Gallery</title>
+  <path fill="none" d="M0 0h24v24H0V0z"/>
+  <path d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"/>
+</svg>
+</span>
+  <span>Gallery</span>
+</a>
+  </div>
+</div>
+
+<!--XRAY END 494-->
+
+</div>
+      </div>
+    <hr class='divider'>
+
+  <div class='pagination-block'>
+    <!--XRAY START 507 /ursus/app/views/kaminari/blacklight/_paginator.html.erb-->
+  <ul class="pagination__list-wrapper">
+    <!--XRAY START 495 /ursus/app/views/kaminari/blacklight/_prev_page.html.erb-->
+
+<!-- URSUS -->
+
+      <li class="pagination__page-item pagination__page-item--ursus">
+        <a rel="prev" class="pagination__page-link pagination__page-link--ursus" aria-label="Go to previous page" href="/catalog?q=&amp;search_field=all_fields">&lsaquo; Prev</a>
+      </li>
+
+<!--XRAY END 495-->
+    <!--XRAY START 496 /ursus/app/views/kaminari/blacklight/_next_page.html.erb-->
+
+<!-- URSUS -->
+
+      <li class="pagination__page-item pagination__page-item--ursus">
+        <a rel="next" class="pagination__page-link pagination__page-link--ursus" aria-label="Go to next page" href="/catalog?page=3&amp;q=&amp;search_field=all_fields">Next &rsaquo;</a>
+      </li>
+
+<!--XRAY END 496-->
+        <!--XRAY START 497 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+      <a rel="prev" class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 1" href="/catalog?q=&amp;search_field=all_fields">1</a>
+  </li>
+
+<!--XRAY END 497-->
+        <!--XRAY START 498 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus active">
+      <span class="pagination__page-link pagination__page-link--ursus" aria-label="Current Page, Page 2" aria-current="true">2</span>
+  </li>
+
+<!--XRAY END 498-->
+        <!--XRAY START 499 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+         <a rel="next" class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 3" href="/catalog?page=3&amp;q=&amp;search_field=all_fields">3</a>
+  </li>
+
+<!--XRAY END 499-->
+        <!--XRAY START 500 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 4" href="/catalog?page=4&amp;q=&amp;search_field=all_fields">4</a>
+  </li>
+
+<!--XRAY END 500-->
+        <!--XRAY START 501 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 5" href="/catalog?page=5&amp;q=&amp;search_field=all_fields">5</a>
+  </li>
+
+<!--XRAY END 501-->
+        <!--XRAY START 502 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 6" href="/catalog?page=6&amp;q=&amp;search_field=all_fields">6</a>
+  </li>
+
+<!--XRAY END 502-->
+        <!--XRAY START 503 /ursus/app/views/kaminari/blacklight/_gap.html.erb-->
+
+<!-- URSUS -->
+
+  <li class="pagination__page-item pagination__page-item--ursus disabled">
+    <span class="pagination__page-link pagination__page-link--ursus">&hellip;</span>
+  </li>
+
+<!--XRAY END 503-->
+        <!--XRAY START 504 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 4,935" href="/catalog?page=4935&amp;q=&amp;search_field=all_fields">4,935</a>
+  </li>
+
+<!--XRAY END 504-->
+        <!--XRAY START 505 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 4,936" href="/catalog?page=4936&amp;q=&amp;search_field=all_fields">4,936</a>
+  </li>
+
+<!--XRAY END 505-->
+        <!--XRAY START 506 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 4,937" href="/catalog?page=4937&amp;q=&amp;search_field=all_fields">4,937</a>
+  </li>
+
+<!--XRAY END 506-->
+  </ul>
+
+<!--XRAY END 507-->
+  </div>
+  <hr class='divider'>
+</div>
+
+<!--XRAY END 508-->
+
+<!--XRAY END 509-->
+
+  <h2 class="sr-only visually-hidden">Search Results</h2>
+
+    <!--XRAY START 520 /ursus/app/views/catalog/_document_list.html.erb-->
+<div id="documents" class="documents-list">
+  <article data-document-id="ark-21198-zz002d5208" data-document-counter="11" itemscope="itemscope" itemtype="http://schema.org/Thing" class="blacklight-work document document__list-item blacklight-work document-position-0 document-position-11">
+  
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <header class="document__list-title document__list-title--ursus">
+  <h3 class="document__list-title document__list-title--ursus">
+
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d5208/track?counter=11&amp;document_id=ark%3A%2F21198%2Fzz002d5208&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" itemprop="name" href="/catalog/ark:/21198/zz002d5208">Montage photograph of Barbara Lee Tramutto in 5 poses in ethnic costumes, Santa Monica, 1951</a>
+</h3>
+    <div class="index-document-functions col-sm-3 col-lg-2">
+      <!--XRAY START 510 /ursus/app/views/catalog/_bookmark_control.html.erb-->
+
+<!--XRAY END 510-->
+
+</div>
+</header>
+
+      </header>
+
+      <div class="document__list-item-wrapper">
+        
+        
+        
+<dl class="document-metadata document__list-metadata-group">    <dt class="blacklight-description_tesim document__list-metadata-key document__list-metadata-key--ursus">    Description:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-description_tesim">    <div class="truncate-description"><div class='description'>Composite of 5 photographs, all of Barbara Lee Tramuto posing or dancing in Spanish-style, Indian-style, Polynesian-style, and beaded and caped costumes, indoors with wall in background. The photographs were taken at the home of Adelbert Bartlett, located at 535 15th St., Santa Monica.</div><div class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></div></div>
+</dd>
+
+    <dt class="blacklight-date_created_tesim document__list-metadata-key document__list-metadata-key--ursus">    Date:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">    1951
+</dd>
+
+    <dt class="blacklight-extent_tesim document__list-metadata-key document__list-metadata-key--ursus">    Extent:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-extent_tesim">    1 photographic negative
+</dd>
+
+    <dt class="blacklight-photographer_tesim document__list-metadata-key document__list-metadata-key--ursus">    Photographer:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-photographer_tesim">    <a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Bartlett%2C+Adelbert%2C+1887-1966">Bartlett, Adelbert, 1887-1966</a>
+</dd>
+
+    <dt class="blacklight-member_of_collections_ssim document__list-metadata-key document__list-metadata-key--ursus">    Collection:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-member_of_collections_ssim">    <a href="/catalog/ark:/21198/zz000s9bm1">Adelbert Bartlett Papers, 1922-1950</a>
+</dd>
+
+</dl>
+
+
+
+        <div class="document__gallery-thumbnail">
+          
+  <div class="document-thumbnail">
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d5208/track?counter=11&amp;document_id=ark%3A%2F21198%2Fzz002d5208&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" aria-hidden="true" tabindex="-1" href="/catalog/ark:/21198/zz002d5208"><img alt="" src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz002d5208/full/!200,200/0/default.jpg" /></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  
+</article><article data-document-id="ark-21198-zz002d503v" data-document-counter="12" itemscope="itemscope" itemtype="http://schema.org/Thing" class="blacklight-work document document__list-item blacklight-work document-position-0 document-position-12">
+  
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <header class="document__list-title document__list-title--ursus">
+  <h3 class="document__list-title document__list-title--ursus">
+
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d503v/track?counter=12&amp;document_id=ark%3A%2F21198%2Fzz002d503v&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" itemprop="name" href="/catalog/ark:/21198/zz002d503v">Group of Mojave Indians mourning over the body of Chief Sistuma, Arizona, circa 1902</a>
+</h3>
+    <div class="index-document-functions col-sm-3 col-lg-2">
+      <!--XRAY START 511 /ursus/app/views/catalog/_bookmark_control.html.erb-->
+
+<!--XRAY END 511-->
+
+</div>
+</header>
+
+      </header>
+
+      <div class="document__list-item-wrapper">
+        
+        
+        
+<dl class="document-metadata document__list-metadata-group">    <dt class="blacklight-description_tesim document__list-metadata-key document__list-metadata-key--ursus">    Description:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-description_tesim">    <div class="truncate-description"><div class='description'>Original photograph by C.C. (Charles C.) Pierce. Caption on the photo notes the copyright date as 1902 by C.C. Pierce & Co. (photo numbered “1402”). Copy print date unknown.</div><div class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></div></div>
+</dd>
+
+    <dt class="blacklight-date_created_tesim document__list-metadata-key document__list-metadata-key--ursus">    Date:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">    [circa 1902]
+</dd>
+
+    <dt class="blacklight-extent_tesim document__list-metadata-key document__list-metadata-key--ursus">    Extent:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-extent_tesim">    1 photographic negative
+</dd>
+
+    <dt class="blacklight-photographer_tesim document__list-metadata-key document__list-metadata-key--ursus">    Photographer:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-photographer_tesim">    <a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Pierce%2C+C.+C.+%28Charles+C.%29%2C+%24d1861-1946">Pierce, C. C. (Charles C.), $d1861-1946</a><br><a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Bartlett%2C+Adelbert%2C+1887-1966">Bartlett, Adelbert, 1887-1966</a>
+</dd>
+
+    <dt class="blacklight-member_of_collections_ssim document__list-metadata-key document__list-metadata-key--ursus">    Collection:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-member_of_collections_ssim">    <a href="/catalog/ark:/21198/zz000s9bm1">Adelbert Bartlett Papers, 1922-1950</a>
+</dd>
+
+</dl>
+
+
+
+        <div class="document__gallery-thumbnail">
+          
+  <div class="document-thumbnail">
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d503v/track?counter=12&amp;document_id=ark%3A%2F21198%2Fzz002d503v&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" aria-hidden="true" tabindex="-1" href="/catalog/ark:/21198/zz002d503v"><img alt="" src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz002d503v/full/!200,200/0/default.jpg" /></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  
+</article><article data-document-id="ark-21198-zz002d502b" data-document-counter="13" itemscope="itemscope" itemtype="http://schema.org/Thing" class="blacklight-work document document__list-item blacklight-work document-position-0 document-position-13">
+  
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <header class="document__list-title document__list-title--ursus">
+  <h3 class="document__list-title document__list-title--ursus">
+
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d502b/track?counter=13&amp;document_id=ark%3A%2F21198%2Fzz002d502b&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" itemprop="name" href="/catalog/ark:/21198/zz002d502b">Indigenous Africans conversing with a missionary, Central Africa, 1928-1948</a>
+</h3>
+    <div class="index-document-functions col-sm-3 col-lg-2">
+      <!--XRAY START 512 /ursus/app/views/catalog/_bookmark_control.html.erb-->
+
+<!--XRAY END 512-->
+
+</div>
+</header>
+
+      </header>
+
+      <div class="document__list-item-wrapper">
+        
+        
+        
+<dl class="document-metadata document__list-metadata-group">    <dt class="blacklight-description_tesim document__list-metadata-key document__list-metadata-key--ursus">    Description:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-description_tesim">    <div class="truncate-description"><div class='description'>Copy photograph of villagers from an unidentified Central African nation, with Anglo missionaries. Men, women and children are represented in the photo; men and boys are seated on the ground with the missionaries, while the women and girls stand. The women wear wrappers (textiles wrapped around their bodies), and head ties. The men wear caftans and head coverings. They sit across from an Anglo wearing a pith helmet, shirt, pants, and boots. Behind the men sits a second Anglo, also wearing a pith helmet, shirt, tie and pants (probably rolled up) with tall socks. He sits atop a loose pile of thatch. Further behind him, a woman peaks out from part of a woven thatch structure. The group is surrounded by trees and foliage.</div><div class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></div></div>
+</dd>
+
+    <dt class="blacklight-date_created_tesim document__list-metadata-key document__list-metadata-key--ursus">    Date:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">    [between 1928-1948]
+</dd>
+
+    <dt class="blacklight-extent_tesim document__list-metadata-key document__list-metadata-key--ursus">    Extent:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-extent_tesim">    1 photographic negative
+</dd>
+
+    <dt class="blacklight-photographer_tesim document__list-metadata-key document__list-metadata-key--ursus">    Photographer:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-photographer_tesim">    <a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Bartlett%2C+Adelbert%2C+1887-1966">Bartlett, Adelbert, 1887-1966</a>
+</dd>
+
+    <dt class="blacklight-member_of_collections_ssim document__list-metadata-key document__list-metadata-key--ursus">    Collection:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-member_of_collections_ssim">    <a href="/catalog/ark:/21198/zz000s9bm1">Adelbert Bartlett Papers, 1922-1950</a>
+</dd>
+
+</dl>
+
+
+
+        <div class="document__gallery-thumbnail">
+          
+  <div class="document-thumbnail">
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d502b/track?counter=13&amp;document_id=ark%3A%2F21198%2Fzz002d502b&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" aria-hidden="true" tabindex="-1" href="/catalog/ark:/21198/zz002d502b"><img alt="" src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz002d502b/full/!200,200/0/default.jpg" /></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  
+</article><article data-document-id="ark-21198-zz002d512t" data-document-counter="14" itemscope="itemscope" itemtype="http://schema.org/Thing" class="blacklight-work document document__list-item blacklight-work document-position-0 document-position-14">
+  
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <header class="document__list-title document__list-title--ursus">
+  <h3 class="document__list-title document__list-title--ursus">
+
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d512t/track?counter=14&amp;document_id=ark%3A%2F21198%2Fzz002d512t&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" itemprop="name" href="/catalog/ark:/21198/zz002d512t">Portrait of Mrs. Oscar Rittmaster, Santa Monica, 1956</a>
+</h3>
+    <div class="index-document-functions col-sm-3 col-lg-2">
+      <!--XRAY START 513 /ursus/app/views/catalog/_bookmark_control.html.erb-->
+
+<!--XRAY END 513-->
+
+</div>
+</header>
+
+      </header>
+
+      <div class="document__list-item-wrapper">
+        
+        
+        
+<dl class="document-metadata document__list-metadata-group">    <dt class="blacklight-description_tesim document__list-metadata-key document__list-metadata-key--ursus">    Description:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-description_tesim">    <div class="truncate-description"><div class='description'>Portrait of Mrs. Oscar (Maude) Rittmaster, seated with arm resting on chair, wearing a skirt and blouse with broach. Photographed at Adelbert Bartlett’s home (535 15th Street).</div><div class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></div></div>
+</dd>
+
+    <dt class="blacklight-date_created_tesim document__list-metadata-key document__list-metadata-key--ursus">    Date:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">    June 9, 1956
+</dd>
+
+    <dt class="blacklight-extent_tesim document__list-metadata-key document__list-metadata-key--ursus">    Extent:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-extent_tesim">    1 photographic negative
+</dd>
+
+    <dt class="blacklight-photographer_tesim document__list-metadata-key document__list-metadata-key--ursus">    Photographer:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-photographer_tesim">    <a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Bartlett%2C+Adelbert%2C+1887-1966">Bartlett, Adelbert, 1887-1966</a>
+</dd>
+
+    <dt class="blacklight-member_of_collections_ssim document__list-metadata-key document__list-metadata-key--ursus">    Collection:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-member_of_collections_ssim">    <a href="/catalog/ark:/21198/zz000s9bm1">Adelbert Bartlett Papers, 1922-1950</a>
+</dd>
+
+</dl>
+
+
+
+        <div class="document__gallery-thumbnail">
+          
+  <div class="document-thumbnail">
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d512t/track?counter=14&amp;document_id=ark%3A%2F21198%2Fzz002d512t&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" aria-hidden="true" tabindex="-1" href="/catalog/ark:/21198/zz002d512t"><img alt="" src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz002d512t/full/!200,200/0/default.jpg" /></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  
+</article><article data-document-id="ark-21198-zz002d5119" data-document-counter="15" itemscope="itemscope" itemtype="http://schema.org/Thing" class="blacklight-work document document__list-item blacklight-work document-position-0 document-position-15">
+  
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <header class="document__list-title document__list-title--ursus">
+  <h3 class="document__list-title document__list-title--ursus">
+
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d5119/track?counter=15&amp;document_id=ark%3A%2F21198%2Fzz002d5119&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" itemprop="name" href="/catalog/ark:/21198/zz002d5119">Portrait of Mrs. Oscar Rittmaster, Santa Monica, 1956</a>
+</h3>
+    <div class="index-document-functions col-sm-3 col-lg-2">
+      <!--XRAY START 514 /ursus/app/views/catalog/_bookmark_control.html.erb-->
+
+<!--XRAY END 514-->
+
+</div>
+</header>
+
+      </header>
+
+      <div class="document__list-item-wrapper">
+        
+        
+        
+<dl class="document-metadata document__list-metadata-group">    <dt class="blacklight-description_tesim document__list-metadata-key document__list-metadata-key--ursus">    Description:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-description_tesim">    <div class="truncate-description"><div class='description'>Anne Maude Rittmaster (noted as Maude Rittmaster or Mrs. Oscar Rittmaster) was a member of the Santa Monica Civic Opera Association Board of Directors.</div><div class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></div></div>
+</dd>
+
+    <dt class="blacklight-date_created_tesim document__list-metadata-key document__list-metadata-key--ursus">    Date:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">    June 9, 1956
+</dd>
+
+    <dt class="blacklight-extent_tesim document__list-metadata-key document__list-metadata-key--ursus">    Extent:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-extent_tesim">    1 photographic negative
+</dd>
+
+    <dt class="blacklight-photographer_tesim document__list-metadata-key document__list-metadata-key--ursus">    Photographer:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-photographer_tesim">    <a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Bartlett%2C+Adelbert%2C+1887-1966">Bartlett, Adelbert, 1887-1966</a>
+</dd>
+
+    <dt class="blacklight-member_of_collections_ssim document__list-metadata-key document__list-metadata-key--ursus">    Collection:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-member_of_collections_ssim">    <a href="/catalog/ark:/21198/zz000s9bm1">Adelbert Bartlett Papers, 1922-1950</a>
+</dd>
+
+</dl>
+
+
+
+        <div class="document__gallery-thumbnail">
+          
+  <div class="document-thumbnail">
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d5119/track?counter=15&amp;document_id=ark%3A%2F21198%2Fzz002d5119&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" aria-hidden="true" tabindex="-1" href="/catalog/ark:/21198/zz002d5119"><img alt="" src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz002d5119/full/!200,200/0/default.jpg" /></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  
+</article><article data-document-id="ark-21198-zz002d510s" data-document-counter="16" itemscope="itemscope" itemtype="http://schema.org/Thing" class="blacklight-work document document__list-item blacklight-work document-position-0 document-position-16">
+  
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <header class="document__list-title document__list-title--ursus">
+  <h3 class="document__list-title document__list-title--ursus">
+
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d510s/track?counter=16&amp;document_id=ark%3A%2F21198%2Fzz002d510s&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" itemprop="name" href="/catalog/ark:/21198/zz002d510s">Portrait of Mrs. Oscar Rittmaster, Santa Monica, 1956</a>
+</h3>
+    <div class="index-document-functions col-sm-3 col-lg-2">
+      <!--XRAY START 515 /ursus/app/views/catalog/_bookmark_control.html.erb-->
+
+<!--XRAY END 515-->
+
+</div>
+</header>
+
+      </header>
+
+      <div class="document__list-item-wrapper">
+        
+        
+        
+<dl class="document-metadata document__list-metadata-group">    <dt class="blacklight-description_tesim document__list-metadata-key document__list-metadata-key--ursus">    Description:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-description_tesim">    <div class="truncate-description"><div class='description'>Anne Maude Rittmaster (noted as Maude Rittmaster or Mrs. Oscar Rittmaster) was a member of the Santa Monica Civic Opera Association Board of Directors.</div><div class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></div></div>
+</dd>
+
+    <dt class="blacklight-date_created_tesim document__list-metadata-key document__list-metadata-key--ursus">    Date:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">    June 9, 1956
+</dd>
+
+    <dt class="blacklight-extent_tesim document__list-metadata-key document__list-metadata-key--ursus">    Extent:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-extent_tesim">    1 photographic negative
+</dd>
+
+    <dt class="blacklight-photographer_tesim document__list-metadata-key document__list-metadata-key--ursus">    Photographer:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-photographer_tesim">    <a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Bartlett%2C+Adelbert%2C+1887-1966">Bartlett, Adelbert, 1887-1966</a>
+</dd>
+
+    <dt class="blacklight-member_of_collections_ssim document__list-metadata-key document__list-metadata-key--ursus">    Collection:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-member_of_collections_ssim">    <a href="/catalog/ark:/21198/zz000s9bm1">Adelbert Bartlett Papers, 1922-1950</a>
+</dd>
+
+</dl>
+
+
+
+        <div class="document__gallery-thumbnail">
+          
+  <div class="document-thumbnail">
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d510s/track?counter=16&amp;document_id=ark%3A%2F21198%2Fzz002d510s&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" aria-hidden="true" tabindex="-1" href="/catalog/ark:/21198/zz002d510s"><img alt="" src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz002d510s/full/!200,200/0/default.jpg" /></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  
+</article><article data-document-id="ark-21198-zz002d4v82" data-document-counter="17" itemscope="itemscope" itemtype="http://schema.org/Thing" class="blacklight-work document document__list-item blacklight-work document-position-0 document-position-17">
+  
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <header class="document__list-title document__list-title--ursus">
+  <h3 class="document__list-title document__list-title--ursus">
+
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d4v82/track?counter=17&amp;document_id=ark%3A%2F21198%2Fzz002d4v82&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" itemprop="name" href="/catalog/ark:/21198/zz002d4v82">Group of People on Navy Day, Santa Monica, 1934</a>
+</h3>
+    <div class="index-document-functions col-sm-3 col-lg-2">
+      <!--XRAY START 516 /ursus/app/views/catalog/_bookmark_control.html.erb-->
+
+<!--XRAY END 516-->
+
+</div>
+</header>
+
+      </header>
+
+      <div class="document__list-item-wrapper">
+        
+        
+        
+<dl class="document-metadata document__list-metadata-group">    <dt class="blacklight-description_tesim document__list-metadata-key document__list-metadata-key--ursus">    Description:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-description_tesim">    <div class="truncate-description"><div class='description'>This image is of a group of people, likely standing on the ship the U.S. Philip. The two men in the picture are dressed in naval uniforms, while the women wear fashionable day dresses and hats. The woman on the far left has her arm raised, her hand resting on part of the ship. Behind them, the ocean and the Santa Monica coastline can be seen.</div><div class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></div></div>
+</dd>
+
+    <dt class="blacklight-date_created_tesim document__list-metadata-key document__list-metadata-key--ursus">    Date:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">    October 27, 1934
+</dd>
+
+    <dt class="blacklight-extent_tesim document__list-metadata-key document__list-metadata-key--ursus">    Extent:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-extent_tesim">    1 photographic negative
+</dd>
+
+    <dt class="blacklight-photographer_tesim document__list-metadata-key document__list-metadata-key--ursus">    Photographer:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-photographer_tesim">    <a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Bartlett%2C+Adelbert%2C+1887-1966">Bartlett, Adelbert, 1887-1966</a>
+</dd>
+
+    <dt class="blacklight-member_of_collections_ssim document__list-metadata-key document__list-metadata-key--ursus">    Collection:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-member_of_collections_ssim">    <a href="/catalog/ark:/21198/zz000s9bm1">Adelbert Bartlett Papers, 1922-1950</a>
+</dd>
+
+</dl>
+
+
+
+        <div class="document__gallery-thumbnail">
+          
+  <div class="document-thumbnail">
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d4v82/track?counter=17&amp;document_id=ark%3A%2F21198%2Fzz002d4v82&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" aria-hidden="true" tabindex="-1" href="/catalog/ark:/21198/zz002d4v82"><img alt="" src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz002d4v82/full/!200,200/0/default.jpg" /></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  
+</article><article data-document-id="ark-21198-zz002d501t" data-document-counter="18" itemscope="itemscope" itemtype="http://schema.org/Thing" class="blacklight-work document document__list-item blacklight-work document-position-0 document-position-18">
+  
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <header class="document__list-title document__list-title--ursus">
+  <h3 class="document__list-title document__list-title--ursus">
+
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d501t/track?counter=18&amp;document_id=ark%3A%2F21198%2Fzz002d501t&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" itemprop="name" href="/catalog/ark:/21198/zz002d501t">Sketches of the Yukon River, 1910</a>
+</h3>
+    <div class="index-document-functions col-sm-3 col-lg-2">
+      <!--XRAY START 517 /ursus/app/views/catalog/_bookmark_control.html.erb-->
+
+<!--XRAY END 517-->
+
+</div>
+</header>
+
+      </header>
+
+      <div class="document__list-item-wrapper">
+        
+        
+        
+<dl class="document-metadata document__list-metadata-group">    <dt class="blacklight-description_tesim document__list-metadata-key document__list-metadata-key--ursus">    Description:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-description_tesim">    <div class="truncate-description"><div class='description'>Two color sketches representing the Yukon River’s varied landscapes. At top: Bartlett manipulates the natural landscape, creating a sky of dark and light green bands of color. A red ribbon floats in from above and out to the left of the image. The band is highlighted with violet. The pink and violet tines from above are reflected in the glaciers below. Bottom: The sun rises in a purple-hewn sky above the Yukon River, its red and gold rays radiating to the image edge and illuminating the floodplain at foreground. Adelbert Bartlett, artist.</div><div class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></div></div>
+</dd>
+
+    <dt class="blacklight-date_created_tesim document__list-metadata-key document__list-metadata-key--ursus">    Date:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">    1910
+</dd>
+
+    <dt class="blacklight-extent_tesim document__list-metadata-key document__list-metadata-key--ursus">    Extent:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-extent_tesim">    1 photographic negative
+</dd>
+
+    <dt class="blacklight-photographer_tesim document__list-metadata-key document__list-metadata-key--ursus">    Photographer:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-photographer_tesim">    <a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Bartlett%2C+Adelbert%2C+1887-1966">Bartlett, Adelbert, 1887-1966</a>
+</dd>
+
+    <dt class="blacklight-member_of_collections_ssim document__list-metadata-key document__list-metadata-key--ursus">    Collection:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-member_of_collections_ssim">    <a href="/catalog/ark:/21198/zz000s9bm1">Adelbert Bartlett Papers, 1922-1950</a>
+</dd>
+
+</dl>
+
+
+
+        <div class="document__gallery-thumbnail">
+          
+  <div class="document-thumbnail">
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d501t/track?counter=18&amp;document_id=ark%3A%2F21198%2Fzz002d501t&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" aria-hidden="true" tabindex="-1" href="/catalog/ark:/21198/zz002d501t"><img alt="" src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz002d501t/full/!200,200/0/default.jpg" /></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  
+</article><article data-document-id="ark-21198-zz002d53bx" data-document-counter="19" itemscope="itemscope" itemtype="http://schema.org/Thing" class="blacklight-work document document__list-item blacklight-work document-position-0 document-position-19">
+  
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <header class="document__list-title document__list-title--ursus">
+  <h3 class="document__list-title document__list-title--ursus">
+
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d53bx/track?counter=19&amp;document_id=ark%3A%2F21198%2Fzz002d53bx&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" itemprop="name" href="/catalog/ark:/21198/zz002d53bx">Colonial House resort, Palm Springs, 1940</a>
+</h3>
+    <div class="index-document-functions col-sm-3 col-lg-2">
+      <!--XRAY START 518 /ursus/app/views/catalog/_bookmark_control.html.erb-->
+
+<!--XRAY END 518-->
+
+</div>
+</header>
+
+      </header>
+
+      <div class="document__list-item-wrapper">
+        
+        
+        
+<dl class="document-metadata document__list-metadata-group">    <dt class="blacklight-description_tesim document__list-metadata-key document__list-metadata-key--ursus">    Description:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-description_tesim">    <div class="truncate-description"><div class='description'>Colonial House resort, with wide single-story section in front, 2-story section at left, tree and road in foreground, car parked at left</div><div class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></div></div>
+</dd>
+
+    <dt class="blacklight-date_created_tesim document__list-metadata-key document__list-metadata-key--ursus">    Date:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">    1940
+</dd>
+
+    <dt class="blacklight-extent_tesim document__list-metadata-key document__list-metadata-key--ursus">    Extent:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-extent_tesim">    1 photographic negative
+</dd>
+
+    <dt class="blacklight-photographer_tesim document__list-metadata-key document__list-metadata-key--ursus">    Photographer:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-photographer_tesim">    <a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Bartlett%2C+Adelbert%2C+1887-1966">Bartlett, Adelbert, 1887-1966</a>
+</dd>
+
+    <dt class="blacklight-member_of_collections_ssim document__list-metadata-key document__list-metadata-key--ursus">    Collection:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-member_of_collections_ssim">    <a href="/catalog/ark:/21198/zz000s9bm1">Adelbert Bartlett Papers, 1922-1950</a>
+</dd>
+
+</dl>
+
+
+
+        <div class="document__gallery-thumbnail">
+          
+  <div class="document-thumbnail">
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d53bx/track?counter=19&amp;document_id=ark%3A%2F21198%2Fzz002d53bx&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" aria-hidden="true" tabindex="-1" href="/catalog/ark:/21198/zz002d53bx"><img alt="" src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz002d53bx/full/!200,200/0/default.jpg" /></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  
+</article><article data-document-id="ark-21198-zz002d521s" data-document-counter="20" itemscope="itemscope" itemtype="http://schema.org/Thing" class="blacklight-work document document__list-item blacklight-work document-position-0 document-position-20">
+  
+    <div class="document-main-section">
+      <header class="document__list-header">
+        <header class="document__list-title document__list-title--ursus">
+  <h3 class="document__list-title document__list-title--ursus">
+
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d521s/track?counter=20&amp;document_id=ark%3A%2F21198%2Fzz002d521s&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" itemprop="name" href="/catalog/ark:/21198/zz002d521s">Barbara Lee Tramutto in Indian-style costume, Santa Monica, 1951</a>
+</h3>
+    <div class="index-document-functions col-sm-3 col-lg-2">
+      <!--XRAY START 519 /ursus/app/views/catalog/_bookmark_control.html.erb-->
+
+<!--XRAY END 519-->
+
+</div>
+</header>
+
+      </header>
+
+      <div class="document__list-item-wrapper">
+        
+        
+        
+<dl class="document-metadata document__list-metadata-group">    <dt class="blacklight-description_tesim document__list-metadata-key document__list-metadata-key--ursus">    Description:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-description_tesim">    <div class="truncate-description"><div class='description'>This image also appears as part of montage photograph uclamss_1300_3303</div><div class='view-more' href>Read More <div class='down-arrow'>&raquo;</div></div></div>
+</dd>
+
+    <dt class="blacklight-date_created_tesim document__list-metadata-key document__list-metadata-key--ursus">    Date:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">    1951
+</dd>
+
+    <dt class="blacklight-extent_tesim document__list-metadata-key document__list-metadata-key--ursus">    Extent:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-extent_tesim">    1 photographic negative
+</dd>
+
+    <dt class="blacklight-photographer_tesim document__list-metadata-key document__list-metadata-key--ursus">    Photographer:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-photographer_tesim">    <a href="/catalog?f%5Bphotographer_sim%5D%5B%5D=Bartlett%2C+Adelbert%2C+1887-1966">Bartlett, Adelbert, 1887-1966</a>
+</dd>
+
+    <dt class="blacklight-member_of_collections_ssim document__list-metadata-key document__list-metadata-key--ursus">    Collection:
+</dt>
+  <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-member_of_collections_ssim">    <a href="/catalog/ark:/21198/zz000s9bm1">Adelbert Bartlett Papers, 1922-1950</a>
+</dd>
+
+</dl>
+
+
+
+        <div class="document__gallery-thumbnail">
+          
+  <div class="document-thumbnail">
+    <a data-context-href="/catalog/ark:%2F21198%2Fzz002d521s/track?counter=20&amp;document_id=ark%3A%2F21198%2Fzz002d521s&amp;search_id=7" data-context-method="post" data-turbo-prefetch="false" aria-hidden="true" tabindex="-1" href="/catalog/ark:/21198/zz002d521s"><img alt="" src="https://iiif.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fzz002d521s/full/!200,200/0/default.jpg" /></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  
+</article>
+</div>
+
+<!--XRAY END 520-->
+
+  <!--XRAY START 537 /ursus/app/views/catalog/_results_pagination.html.erb-->
+  <!--XRAY START 536 /ursus/app/views_legacy/catalog/_search_header.html.erb-->
+<!--XRAY START 521 /ursus/app/views_legacy/catalog/_did_you_mean.html.erb-->
+
+
+<!--XRAY END 521-->
+<!--XRAY START 535 /ursus/app/views_legacy/catalog/_sort_and_per_page.html.erb-->
+<div id='sortAndPerPage'>
+
+  <div class='pagination-block'>
+    <!--XRAY START 534 /ursus/app/views/kaminari/blacklight/_paginator.html.erb-->
+  <ul class="pagination__list-wrapper">
+    <!--XRAY START 522 /ursus/app/views/kaminari/blacklight/_prev_page.html.erb-->
+
+<!-- URSUS -->
+
+      <li class="pagination__page-item pagination__page-item--ursus">
+        <a rel="prev" class="pagination__page-link pagination__page-link--ursus" aria-label="Go to previous page" href="/catalog?q=&amp;search_field=all_fields">&lsaquo; Prev</a>
+      </li>
+
+<!--XRAY END 522-->
+    <!--XRAY START 523 /ursus/app/views/kaminari/blacklight/_next_page.html.erb-->
+
+<!-- URSUS -->
+
+      <li class="pagination__page-item pagination__page-item--ursus">
+        <a rel="next" class="pagination__page-link pagination__page-link--ursus" aria-label="Go to next page" href="/catalog?page=3&amp;q=&amp;search_field=all_fields">Next &rsaquo;</a>
+      </li>
+
+<!--XRAY END 523-->
+        <!--XRAY START 524 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+      <a rel="prev" class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 1" href="/catalog?q=&amp;search_field=all_fields">1</a>
+  </li>
+
+<!--XRAY END 524-->
+        <!--XRAY START 525 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus active">
+      <span class="pagination__page-link pagination__page-link--ursus" aria-label="Current Page, Page 2" aria-current="true">2</span>
+  </li>
+
+<!--XRAY END 525-->
+        <!--XRAY START 526 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+         <a rel="next" class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 3" href="/catalog?page=3&amp;q=&amp;search_field=all_fields">3</a>
+  </li>
+
+<!--XRAY END 526-->
+        <!--XRAY START 527 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 4" href="/catalog?page=4&amp;q=&amp;search_field=all_fields">4</a>
+  </li>
+
+<!--XRAY END 527-->
+        <!--XRAY START 528 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 5" href="/catalog?page=5&amp;q=&amp;search_field=all_fields">5</a>
+  </li>
+
+<!--XRAY END 528-->
+        <!--XRAY START 529 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 6" href="/catalog?page=6&amp;q=&amp;search_field=all_fields">6</a>
+  </li>
+
+<!--XRAY END 529-->
+        <!--XRAY START 530 /ursus/app/views/kaminari/blacklight/_gap.html.erb-->
+
+<!-- URSUS -->
+
+  <li class="pagination__page-item pagination__page-item--ursus disabled">
+    <span class="pagination__page-link pagination__page-link--ursus">&hellip;</span>
+  </li>
+
+<!--XRAY END 530-->
+        <!--XRAY START 531 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 4,935" href="/catalog?page=4935&amp;q=&amp;search_field=all_fields">4,935</a>
+  </li>
+
+<!--XRAY END 531-->
+        <!--XRAY START 532 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 4,936" href="/catalog?page=4936&amp;q=&amp;search_field=all_fields">4,936</a>
+  </li>
+
+<!--XRAY END 532-->
+        <!--XRAY START 533 /ursus/app/views/kaminari/blacklight/_page.html.erb-->
+
+<!-- URSUS -->
+
+
+  <li class="pagination__page-item pagination__page-item--ursus ">
+              <a class="pagination__page-link pagination__page-link--ursus" aria-label="Go to page 4,937" href="/catalog?page=4937&amp;q=&amp;search_field=all_fields">4,937</a>
+  </li>
+
+<!--XRAY END 533-->
+  </ul>
+
+<!--XRAY END 534-->
+  </div>
+  <hr class='divider'>
+</div>
+
+<!--XRAY END 535-->
+
+<!--XRAY END 536-->
+
+<!--XRAY END 537-->
+</div>
+
+<!--XRAY END 538-->
+  </div>
+
+<!--XRAY END 539-->
+
+      </main>
+
+      <!--XRAY START 543 /ursus/app/views/shared/_footer.html.erb-->
+<footer class='site-footer'>
+  <div class='container-full site-footer__primary site-footer__primary--ursus'>
+    <div class='site-footer__primary-wrapper--ursus'>
+      <div class="site-footer__block--ursus">
+        <a target="_blank" rel="noopener" data-cy="main-library-site" href="https://www.library.ucla.edu/"><img class="site-footer__logo site-footer__logo--ursus" alt="UCLA Library Logo" src="/assets/logo/ucla-library-logo-2676c640b239f469c0ce6d8220bcc11b9f1ecab03ec934d11da3bf8a2a7fdd76.svg" /></a>
+      </div>
+      <div class="site-footer__block--ursus">
+        <ul class='site-footer__list'>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus" href="/copyright_and_collections">Copyright and Collections</a></li>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus" href="/privacy_policy">Privacy Policy</a></li>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus" href="/ursus_contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__block--ursus">
+        <ul class='site-footer__list'>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus-gold" target="_blank" rel="noopener" data-cy="footer-feedback" href="https://forms.gle/x2BV9dJMK241VsAJA">Give Us Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class='container-full site-footer__secondary site-footer__secondary--ursus'>
+    <div class='site-footer__secondary-text'>
+      &#169; 2019-2026 UC Regents. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!--XRAY END 543-->
+      <!--XRAY START 544 /ursus/app/views_legacy/shared/_modal.html.erb-->
+<div id="blacklight-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+<!--XRAY END 544-->
+    </div>
+  </body>
+</html>
+

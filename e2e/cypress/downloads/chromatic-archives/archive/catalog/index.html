@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head> <script type='text/javascript'> document.domain = 'localhost'; (()=>{"use strict";const e=window.Cypress=parent.Cypress;if(!e)throw new Error("Something went terribly wrong and we cannot proceed. We expected to find the global Cypress in the parent window but it is missing. This should never happen and likely is a bug. Please open an issue.");const t=(()=>{let e,t,n,r;const i=()=>{e=!1,t=!1,n=[],r={}},o=(e,t=[])=>"function"==typeof e?e.apply(window,t):window.eval(e);return i(),{wrap:()=>{const i={setTimeout:window.setTimeout,setInterval:window.setInterval,requestAnimationFrame:window.requestAnimationFrame,clearTimeout:window.clearTimeout,clearInterval:window.clearInterval},a=(e,t)=>i[e].apply(window,t),s=e=>n=>(t&&(r[n]=!0),a(e,[n])),w=t=>(...r)=>{let i,[s,w,...p]=r;return i=a(t,[(...r)=>{if(!e)return o(s,r);n.push({timerId:i,fnOrCode:s,params:r,type:t})},w,...p]),i};window.setTimeout=w("setTimeout"),window.setInterval=w("setInterval"),window.requestAnimationFrame=w("requestAnimationFrame"),window.clearTimeout=s("clearTimeout"),window.clearInterval=s("clearInterval")},reset:i,pause:a=>{e=Boolean(a),e||(t=!0,n.forEach((e=>{const{timerId:t,type:n,fnOrCode:i,params:a}=e;"setInterval"===n&&r[t]||o(i,a)})),i())}}})();e.removeAllListeners("app:timers:reset"),e.removeAllListeners("app:timers:pause"),e.on("app:timers:reset",t.reset),e.on("app:timers:pause",t.pause),t.wrap(),e.action("app:window:before:load",window)})(); </script>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Internet Explorer use the highest version available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- URSUS -->
+        <meta name="Description" content="The UCLA Library Digital Collections includes rare and unique digital materials developed by the UCLA Library to support education, research, service, and creative expression. This website is our new interface for discovery and engagement of these collections. See collections of historic photographs and manuscripts. More collections added weekly.">
+    <meta name="theme-color" content="#2774ae">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    </script>
+      <script defer src="https://test-librarystudy.library.ucla.edu/gsurvey.js"></script>
+    <title>UCLA Library Digital Collections</title>
+
+    <link href="http://localhost:3003/catalog/opensearch.xml" title="UCLA Library Digital Collections" type="application/opensearchdescription+xml" rel="search" />
+
+      <link rel="shortcut icon" type="image/x-icon" href="/assets/favicons/favicon-90bf0f861168939b329ff16e7e1c12753d97d0dda2a54b6185d972ea80c39a57.ico" />
+
+    <link rel="stylesheet" media="all" href="/assets/ursus.self-78ee85b78fb437861f1fb4f2689d2b1afc6c7438dbc729fa96f2ac71f10833e3.css?body=1" />
+    <script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1"></script>
+<script src="/assets/jquery3.self-2a83d06853bd343c7bfc2e5d4539814cfa934676e2948ed348311435eca862f5.js?body=1"></script>
+<script src="/assets/xray.self-130d130a29b059ab5e1f6b7ea349011b67ee8593ecb3e9222db86c7a5d55ed3a.js?body=1"></script>
+<script src="/assets/rails-ujs.self-7a9eba54e8cfe7870a3883ae952e65192568e8e1a7cd58567ed5d0631b18992e.js?body=1"></script>
+<script src="/assets/popper.self-55bd1408b0e4ff3edf21524b78fbe2266615c8015ce0e5f0828089b1de27d63c.js?body=1"></script>
+<script src="/assets/bootstrap.self-c8ed2cc97fb18c91c13fe8e20ea459956ee952f8776ce5d99b08db147704a2bf.js?body=1"></script>
+<script src="/assets/blacklight/blacklight.self-5dcf64325c6a45553032cfab2fa2d11b3dd6dbc306844355920a9959b8ce784e.js?body=1"></script>
+<script src="/assets/blacklight_gallery/blacklight-gallery.self-9b0a2df273c6c6e56153aeb2e3bd501444715c64ac60ba67faeaa492de9ce2ed.js?body=1"></script>
+<script src="/assets/blacklight_gallery.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1"></script>
+<script src="/assets/action_cable.self-f31e24ce71c4c4fe0add3d0d7543567faa2d0285a4ef1563a7552e4b634a0840.js?body=1"></script>
+<script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1"></script>
+<script src="/assets/canon_law.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1"></script>
+<script src="/assets/feedback.self-8adf847c0e84f6de5e43c1e075e76aab15a41252447f5765e08bf705ccc52c66.js?body=1"></script>
+<script src="/assets/truncate_description.self-01c665442abfa56afa8cb6f2021962e328eb62c55ca7cce177de772790221dc9.js?body=1"></script>
+<script src="/assets/flot/jquery.canvaswrapper.self-7ced6f3748604e8262c77a2d0b4fa82c0915b3ebdd121410ec2a474cf3fbbc42.js?body=1"></script>
+<script src="/assets/flot/jquery.colorhelpers.self-28edaae550a3241b7ed793aff7c537fc1acd1b6378e31c0410ca99eceed7612f.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.self-c8ff452f46d8bd2bba54eeb2f2dfd59f18f120714508f5c6c951bb926faaf3c7.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.browser.self-c475f595341469361e14343f9415d847f3bfc945c5d008a4c913ca1820468a7e.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.saturated.self-aed54087354d370cc711465d728a5259779d4e4bd90358f23de6ff7c73bdbd0a.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.drawSeries.self-95d74d2f8b453754b88e7422a1e79d05f2e47e1cf9710d6230b9a32ad6f8d2bb.js?body=1"></script>
+<script src="/assets/flot/jquery.event.drag.self-80d9bfb0151c14a3806a1a448dd08472cdb17fef3cd7a8c51f381b6ed3ec09a7.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.hover.self-aeb05b7be39c2b7ff30a0cd305885943b198be8f377303e5c186d24ef23bdeb4.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.uiConstants.self-7241ad2ce2c97437555991d0f6ba7c56ed19dd0958826695c36f15fdaba143d5.js?body=1"></script>
+<script src="/assets/flot/jquery.flot.selection.self-304fc7780607c357af778285dbe0c84e462d95c093ee4d1be53175a6bf6baecb.js?body=1"></script>
+<script src="/assets/bootstrap-slider.self-92ad13fd376f207da97bcc4062ef8a25c5508295e1b931cc0034ea7e0bce4dd1.js?body=1"></script>
+<script src="/assets/blacklight_range_limit/blacklight_range_limit.umd.self-ef152401302c6e0b0aded12c760f6316e2aa74ee6933c71c4acbfa93c1909091.js?body=1"></script>
+<script src="/assets/blacklight_range_limit.self-8b4e0dd8565b2543a8161b775d3332debd298c69a82f2be93866675d359f3882.js?body=1"></script>
+<script src="/assets/application.self-e988d8e758ae474f8aecc2374a5012b0a1cf72f51f59f8b7f1638d0348895d14.js?body=1"></script>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="PA4siJjcQvJX2f6QsazBOifCQF+scTsrZeqeHy62L8fq6FazyiZZuIMcw5s55ThGO6bg3HpnC6fl+7H7ggEBSw==" />
+      <meta name="blacklight-search-storage" content="server">
+
+  </head>
+
+  <body class="blacklight-catalog blacklight-catalog-index">
+<div id="xray-bar" style="display:none">
+    <div id="xray-bar-controller-path">
+        <span class="xray-bar-btn xray-bar-controller xray-icon-flash" data-path="/ursus/app/controllers/catalog_controller.rb">
+          <b></b>
+          CatalogController<span class="xray-bar-controller-action">#index</span>
+        </span>
+        <span class="xray-bar-btn xray-bar-layout xray-icon-columns" data-path="/ursus/app/views/layouts/blacklight.html.erb">
+          <b></b>
+          blacklight.html.erb
+        </span>
+        <span class="xray-bar-btn xray-bar-view xray-icon-doc" data-path="/ursus/app/views/catalog/index.html.erb">
+          index.html.erb
+        </span>
+    </div>
+  <div id="xray-bar-togglers">
+    <span class="xray-bar-btn xray-bar-all-toggler xray-icon-search"></span>
+    <span class="xray-bar-btn xray-bar-templates-toggler">
+      templates
+    </span>
+    <span class="xray-bar-btn xray-bar-views-toggler">
+      views
+    </span>
+  </div>
+  <span class="xray-bar-settings-btn xray-icon-cog"></span>
+  <div id="xray-settings" style="display:none">
+    <form>
+      <label for="xray-editor-input">Editor</label>
+      <input id="xray-editor-input" type="text" value="/usr/local/bin/subl">
+      <button type="submit">Save</button>
+      <p>Settings are saved to /root/.xrayconfig</p>
+  </form>
+  </div>
+  <link rel="stylesheet" media="screen" href="/assets/xray.self-589afea231bb72a951911af17272482dab39a68c4d183dfcb0e3c50b2c8e4838.css?body=1" />
+</div>
+
+
+    <div class="site-container" >
+      <!--XRAY START 371 /usr/local/bundle/ruby/2.7.0/gems/blacklight-8.8.4/app/views/shared/_header_navbar.html.erb-->
+<div class="container-full container-full--navbar site-navbar site-navbar--ursus">
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar__wrapper site-navbar__wrapper--ursus" role="navigation">
+    <div class="site-navbar__logo-block">
+      <a href="/"><img class="site-navbar__logo" alt="UCLA Library Digital Collections Logo" src="/assets/logo/ucla-library-digital-collections_logo-4be7c5a1014cc8a8623e1d86dddfd083886b7fb8ff975e92e8f04fbac625752f.svg" /></a>
+    </div>
+    <button
+      class="navbar-toggler navbar-toggler-icon--ursus"
+      type="button"
+      data-toggle="collapse"
+      data-target="#user-util-collapse"
+      aria-controls="user-util-collapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="user-util-collapse">
+      <ul class="navbar-nav nav ml-auto">
+        <li class='site-navbar__item site-navbar__item--ursus'><a class="site-navbar__item-link site-navbar__item-link--ursus" href="/iiif_guide">Using Digital Collections Content</a></li>
+        <li class="site-navbar__item site-navbar__item--ursus">
+          <a class='site-navbar__item-link site-navbar__item-link--ursus' href="/ursus_about">About</a>
+        </li>
+        <li class="site-navbar__item site-navbar__item--ursus">
+          <a class='site-navbar__item-link site-navbar__item-link--ursus'
+            href="https://forms.gle/x2BV9dJMK241VsAJA"
+            target="_blank"
+            rel="noopener"
+            data-cy='nav-feedback'>
+            Give Us Feedback
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container-full site-searchbar site-searchbar--ursus" role="search">
+  <div class="navbar-search" role="navigation" aria-label="Search">
+  <search>
+  <form class="form-group mx-auto mb-0 site-searchbar__search-form site-searchbar__search-form--ursus" action="http://localhost:3003/catalog" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" />
+    
+      <label class="sr-only visually-hidden">Search in</label>
+    <div class="input-group">
+      <label class="sr-only visually-hidden">search for</label>
+        <input placeholder="Search" class="search-q q form-control site-searchbar__query-field" aria-label="search for" type="search" name="q" />
+
+      <div class="input-group-append site-searchbar__search-icon site-searchbar__search-icon--ursus site-searchbar__search-icon--sinai">
+        <button type="submit" class="btn btn-light border-0 search-btn" id="search">
+        <svg xmlns="https://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 16 16"><title>Search</title><g fill="none"><g stroke="#005587"><circle cx="6" cy="6" r="5"></circle><path d="M14 14L10 10" style="stroke-linejoin:round;stroke-width:2;"></path></g></g></svg>
+        </button>
+      </div>
+
+        <select title="Targeted search options" class="custom-select site-searchbar__dropdown" name="search_field"><option value="all_fields">All Fields</option>
+<option value="title_tesim">Title</option>
+<option value="subject_tesim subject_topic_tesim subject_geographic_tesim subject_temporal_tesim">Subject</option></select>
+    </div>
+</form>
+</search>
+
+</div>
+</div>
+
+<!--XRAY END 371-->
+      <!--XRAY START 373 /ursus/app/views/catalog/banners/_homepage_banner.html.erb-->
+
+<!-- URSUS -->
+
+  <!--XRAY START 372 /ursus/app/views/catalog/banners/_homepage_banner--ursus.html.erb-->
+<!-- Home page banner -->
+
+<!-- Collection page banner -->
+
+<!--XRAY END 372-->
+
+<!--XRAY END 373-->
+
+      <main id="main-container" class="main-content-container container-constrained" role="main" aria-label="Main content">
+        
+
+        
+    <!--XRAY START 370 /ursus/app/views/catalog/index.html.erb-->
+<!--
+
+
+  <div class='content-container--index-page'>
+  </div>
+
+<!-- add Title/Shelfmark Sort
+<script type="text/javascript">
+ // var urlFacet = window.location.search;
+ // if ( urlFacet.indexOf("catalog?sort=" ) !== -1){
+ //   window.history.replaceState('page2', 'Title', '/catalog');
+ // } else if ( ((urlFacet.indexOf("&q=&") !== -1) || (urlFacet.indexOf("%5B%5D=") !== -1)) && ((urlFacet.indexOf("[member_of_collections_") !== -1) || ((urlFacet.indexOf("&sort=") == -1) && (urlFacet != "?utf8=%E2%9C%93&q=&search_field=all_fields"))) ) {
+//
+ //     var titleSortUrl = urlFacet+"&sort=title_alpha_numeric_ssort+asc";
+//
+ //     window.location = titleSortUrl;
+ // }
+</script>
+-->
+
+
+  <!--XRAY START 368 /ursus/app/views/catalog/_home.html.erb-->
+<div class='content-container--homepage'>
+  <!--XRAY START 364 /ursus/app/views/catalog/_lead_text.html.erb-->
+
+<!-- this is a reusable partial that should bring in multiple partials -->
+
+<!--XRAY END 364-->
+  <!--XRAY START 365 /ursus/app/views/shared/_sitelinks_search_box.html.erb-->
+<script>
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "http://localhost:3003/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "http://localhost:3003/?q={search_term_string}",
+      "query-input": "required name=search_term_string"}
+  }
+</script>
+
+<!--XRAY END 365-->
+  <div class='facets-grid-wrapper'>
+      <!--XRAY START 366 /ursus/app/views/catalog/_facets.html.erb-->
+<!-- # main container for facets/limits menu -->
+
+<!-- URSUS -->
+
+  <div id="facets" class="facets facets-toggleable-md facets-container">
+    <div id="facet-panel-collapse" class="facets-collapse collapse facet-field__heading--ursus">
+      <search>
+    <div id="facets" class="facets sidenav facets-toggleable-md">
+  <div class="navbar facets__navbar facets__navbar--ursus">
+    <h2 class="facets__navbar-heading facets__navbar-heading--ursus">Browse items</h2>
+
+    <button class="btn btn-outline-secondary facet-toggle-button d-block d-lg-none" type="button" data-toggle="collapse" data-target="#facet-panel-collapse" data-bs-toggle="collapse" data-bs-target="#facet-panel-collapse" aria-controls="facet-panel-collapse" aria-expanded="false">
+      <span data-show-label>Show facets</span>
+      <span data-hide-label>Hide facets</span>
+</button>  </div>
+
+  <div id="facet-panel-collapse" class="facets-collapse collapse">
+            <div class="facet-field blacklight-combined_subject_ssim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-combined_subject_ssim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-combined_subject_ssim"
+      data-bs-target="#facet-combined_subject_ssim"
+      aria-expanded="false"
+      arial-controls="facet-combined_subject_ssim"
+    >
+          Subject
+
+  </h3>
+  <div id="facet-combined_subject_ssim" role="region" aria-labelledby="facet-combined_subject_ssim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=Chicano+archives">Chicano archives</a></span><span class="facet-count">2,785</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=People">People</a></span><span class="facet-count">2,625</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=photography+--+Chicano">photography -- Chicano</a></span><span class="facet-count">2,097</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=photography+--+Mexican+American">photography -- Mexican American</a></span><span class="facet-count">2,079</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bcombined_subject_ssim%5D%5B%5D=Chicano+artists--California--Los+Angeles+County">Chicano artists--California--Los Angeles County</a></span><span class="facet-count">1,943</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/combined_subject_ssim">more <span class="sr-only visually-hidden">Subject</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-human_readable_resource_type_sim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-human_readable_resource_type_sim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-human_readable_resource_type_sim"
+      data-bs-target="#facet-human_readable_resource_type_sim"
+      aria-expanded="false"
+      arial-controls="facet-human_readable_resource_type_sim"
+    >
+          Resource Type
+
+  </h3>
+  <div id="facet-human_readable_resource_type_sim" role="region" aria-labelledby="facet-human_readable_resource_type_sim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=still+image">still image</a></span><span class="facet-count">29,731</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=text">text</a></span><span class="facet-count">10,252</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=cartographic">cartographic</a></span><span class="facet-count">3,352</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=sound+recording">sound recording</a></span><span class="facet-count">2,774</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_resource_type_sim%5D%5B%5D=sound+recording-nonmusical">sound recording-nonmusical</a></span><span class="facet-count">476</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/human_readable_resource_type_sim">more <span class="sr-only visually-hidden">Resource Type</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-genre_sim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-genre_sim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-genre_sim"
+      data-bs-target="#facet-genre_sim"
+      aria-expanded="false"
+      arial-controls="facet-genre_sim"
+    >
+          Genre
+
+  </h3>
+  <div id="facet-genre_sim" role="region" aria-labelledby="facet-genre_sim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bgenre_sim%5D%5B%5D=newspapers">newspapers</a></span><span class="facet-count">7,716</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bgenre_sim%5D%5B%5D=black-and-white+photographs">black-and-white photographs</a></span><span class="facet-count">7,568</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bgenre_sim%5D%5B%5D=cellulose+nitrate+film">cellulose nitrate film</a></span><span class="facet-count">7,233</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bgenre_sim%5D%5B%5D=news+photographs">news photographs</a></span><span class="facet-count">5,195</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bgenre_sim%5D%5B%5D=acetate+film">acetate film</a></span><span class="facet-count">4,057</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/genre_sim">more <span class="sr-only visually-hidden">Genre</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-named_subject_sim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-named_subject_sim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-named_subject_sim"
+      data-bs-target="#facet-named_subject_sim"
+      aria-expanded="false"
+      arial-controls="facet-named_subject_sim"
+    >
+          Names
+
+  </h3>
+  <div id="facet-named_subject_sim" role="region" aria-labelledby="facet-named_subject_sim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bnamed_subject_sim%5D%5B%5D=Southern+California+Women+for+Understanding">Southern California Women for Understanding</a></span><span class="facet-count">835</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bnamed_subject_sim%5D%5B%5D=Santa+Monica+Civic+Opera+Association">Santa Monica Civic Opera Association</a></span><span class="facet-count">414</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bnamed_subject_sim%5D%5B%5D=University+of+California%2C+Los+Angeles.+Institute+of+Ethnomusicology">University of California, Los Angeles. Institute of Ethnomusicology</a></span><span class="facet-count">249</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bnamed_subject_sim%5D%5B%5D=University+of+California%2C+Los+Angeles.+Department+of+Music">University of California, Los Angeles. Department of Music</a></span><span class="facet-count">247</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bnamed_subject_sim%5D%5B%5D=Barnum+Hall+Theatre+%28Santa+Monica%2C+Calif.%29">Barnum Hall Theatre (Santa Monica, Calif.)</a></span><span class="facet-count">200</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/named_subject_sim">more <span class="sr-only visually-hidden">Names</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-location_sim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-location_sim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-location_sim"
+      data-bs-target="#facet-location_sim"
+      aria-expanded="false"
+      arial-controls="facet-location_sim"
+    >
+          Location
+
+  </h3>
+  <div id="facet-location_sim" role="region" aria-labelledby="facet-location_sim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Blocation_sim%5D%5B%5D=Los+Angeles+%28Calif.%29">Los Angeles (Calif.)</a></span><span class="facet-count">5,331</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Blocation_sim%5D%5B%5D=California--Santa+Monica">California--Santa Monica</a></span><span class="facet-count">2,574</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Blocation_sim%5D%5B%5D=California--Los+Angeles">California--Los Angeles</a></span><span class="facet-count">2,573</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Blocation_sim%5D%5B%5D=California">California</a></span><span class="facet-count">1,098</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Blocation_sim%5D%5B%5D=United+States">United States</a></span><span class="facet-count">594</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/location_sim">more <span class="sr-only visually-hidden">Location</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-year_isim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-year_isim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-year_isim"
+      data-bs-target="#facet-year_isim"
+      aria-expanded="false"
+      arial-controls="facet-year_isim"
+    >
+          Date
+
+  </h3>
+  <div id="facet-year_isim" role="region" aria-labelledby="facet-year_isim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        <div class="limit_content range_limit year_isim-config blrl-plot-config">
+
+      <!-- no results profile if missing is selected -->
+        <!-- you can hide this if you want, but it has to be on page if you want
+             JS slider and calculated facets to show up, JS sniffs it. -->
+        <div class="profile">
+
+              <div class="distribution subsection chart_js">
+                <!-- if  we already fetched segments from solr, display them
+                     here. Otherwise, display a link to fetch them, which JS
+                     will AJAX fetch.  -->
+                  <ul class="facet-values list-unstyled ">
+  <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=0&amp;range%5Byear_isim%5D%5Bend%5D=199"><span class="from" data-blrl-begin="0">0</span> to <span class="to" data-blrl-end="199">199</span></a></span><span class="facet-count">0</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=200&amp;range%5Byear_isim%5D%5Bend%5D=399"><span class="from" data-blrl-begin="200">200</span> to <span class="to" data-blrl-end="399">399</span></a></span><span class="facet-count">0</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=400&amp;range%5Byear_isim%5D%5Bend%5D=599"><span class="from" data-blrl-begin="400">400</span> to <span class="to" data-blrl-end="599">599</span></a></span><span class="facet-count">0</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=600&amp;range%5Byear_isim%5D%5Bend%5D=799"><span class="from" data-blrl-begin="600">600</span> to <span class="to" data-blrl-end="799">799</span></a></span><span class="facet-count">0</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=800&amp;range%5Byear_isim%5D%5Bend%5D=999"><span class="from" data-blrl-begin="800">800</span> to <span class="to" data-blrl-end="999">999</span></a></span><span class="facet-count">1</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=1000&amp;range%5Byear_isim%5D%5Bend%5D=1199"><span class="from" data-blrl-begin="1000">1000</span> to <span class="to" data-blrl-end="1199">1199</span></a></span><span class="facet-count">12</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=1200&amp;range%5Byear_isim%5D%5Bend%5D=1399"><span class="from" data-blrl-begin="1200">1200</span> to <span class="to" data-blrl-end="1399">1399</span></a></span><span class="facet-count">31</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=1400&amp;range%5Byear_isim%5D%5Bend%5D=1599"><span class="from" data-blrl-begin="1400">1400</span> to <span class="to" data-blrl-end="1599">1599</span></a></span><span class="facet-count">93</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=1600&amp;range%5Byear_isim%5D%5Bend%5D=1799"><span class="from" data-blrl-begin="1600">1600</span> to <span class="to" data-blrl-end="1799">1799</span></a></span><span class="facet-count">231</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=1800&amp;range%5Byear_isim%5D%5Bend%5D=1999"><span class="from" data-blrl-begin="1800">1800</span> to <span class="to" data-blrl-end="1999">1999</span></a></span><span class="facet-count">32,864</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5Byear_isim%5D%5Bbegin%5D=2000&amp;range%5Byear_isim%5D%5Bend%5D=2026"><span class="from" data-blrl-begin="2000">2000</span> to <span class="to" data-blrl-end="2026">2026</span></a></span><span class="facet-count">1,485</span></li>
+</ul>
+
+              </div>
+            <p class="range subsection slider_js">
+              Current results range from <span class="min">801</span> to <span class="max">25000</span>
+            </p>
+        </div>
+
+        <form class="range_limit subsection form-inline range_year_isim d-flex justify-content-center" action="http://localhost:3003/catalog" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" />
+  
+
+  <div class="input-group input-group-sm mb-3 flex-nowrap range-limit-input-group">
+    <input type="number" name="range[year_isim][begin]" id="range_year_isim_begin" class="form-control text-center range_begin" /><label class="sr-only visually-hidden" for="range_year_isim_begin">Date range begin</label>
+    <input type="number" name="range[year_isim][end]" id="range_year_isim_end" class="form-control text-center range_end" /><label class="sr-only visually-hidden" for="range_year_isim_end">Date range end</label>
+    <div class="input-group-append visually-hidden">
+      <input type="submit" value="Apply" class="submit btn btn-secondary" data-disable-with="Apply" />
+    </div>
+    <input type="submit" value="Apply" class="submit btn btn-secondary sr-only" aria-hidden="true" data-disable-with="Apply" />
+  </div>
+</form>
+
+        <div class="more_facets"><a data-blacklight-modal="trigger" href="/catalog/facet/year_isim">View larger »</a></div>
+
+          <ul class="facet-values list-unstyled missing subsection">
+  <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?range%5B-year_isim%5D%5B%5D=%5B%2A+TO+%2A%5D">[Missing]</a></span><span class="facet-count">15,080</span></li>
+</ul>
+
+    </div>
+
+
+  </div>
+</div>
+<div class="facet-field blacklight-human_readable_language_sim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-human_readable_language_sim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-human_readable_language_sim"
+      data-bs-target="#facet-human_readable_language_sim"
+      aria-expanded="false"
+      arial-controls="facet-human_readable_language_sim"
+    >
+          Language
+
+  </h3>
+  <div id="facet-human_readable_language_sim" role="region" aria-labelledby="facet-human_readable_language_sim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=No+linguistic+content">No linguistic content</a></span><span class="facet-count">13,115</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=German">German</a></span><span class="facet-count">8,204</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=English">English</a></span><span class="facet-count">5,979</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=French">French</a></span><span class="facet-count">640</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bhuman_readable_language_sim%5D%5B%5D=Spanish">Spanish</a></span><span class="facet-count">418</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/human_readable_language_sim">more <span class="sr-only visually-hidden">Language</span> »</a>
+      </div>
+  </div>
+</div>
+<div class="facet-field blacklight-member_of_collections_ssim ">
+  <h3 class="collapsed collapse-toggle facet-field__heading facet-field__heading--ursus" id="facet-member_of_collections_ssim-header"
+      type="button"
+      data-toggle="collapse"
+      data-bs-toggle="collapse"
+      data-target="#facet-member_of_collections_ssim"
+      data-bs-target="#facet-member_of_collections_ssim"
+      aria-expanded="false"
+      arial-controls="facet-member_of_collections_ssim"
+    >
+          Collection
+
+  </h3>
+  <div id="facet-member_of_collections_ssim" role="region" aria-labelledby="facet-member_of_collections_ssim-header" class="panel-collapse facet-field__body facet-content collapse ">
+        
+    <ul class="facet-values list-unstyled">
+      <li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Deutsches+Nachrichtenb%C3%BCro">Deutsches Nachrichtenbüro</a></span><span class="facet-count">7,443</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Adelbert+Bartlett+Papers%2C+1922-1950">Adelbert Bartlett Papers, 1922-1950</a></span><span class="facet-count">6,438</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Los+Angeles+Daily+News+Negatives">Los Angeles Daily News Negatives</a></span><span class="facet-count">5,116</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Henry+J.+Bruman+Map+Collection">Henry J. Bruman Map Collection</a></span><span class="facet-count">2,810</span></li><li><span class="facet-label"><a class="facet-select" rel="nofollow" href="/catalog?f%5Bmember_of_collections_ssim%5D%5B%5D=Friedlander+%28Jonathan%29+Collection+of+Middle+Eastern+Americana%2C+1875-2006">Friedlander (Jonathan) Collection of Middle Eastern Americana, 1875-2006</a></span><span class="facet-count">2,669</span></li>
+    </ul>
+
+
+      <div class="more_facets">
+        <a data-blacklight-modal="trigger" data-turbo="false" href="/catalog/facet/member_of_collections_ssim">more <span class="sr-only visually-hidden">Collection</span> »</a>
+      </div>
+  </div>
+</div>
+
+
+  </div>
+</div></search>
+
+    </div>
+  </div>
+
+<!--XRAY END 366-->
+    <div class='collection-grid'>
+      <h2 class='collection-grid__title'>Featured Collections</h2>
+      <!--XRAY START 367 /ursus/app/views/catalog/_image_grid.html.erb-->
+<div class='collection-grid__wrapper'>
+<!-- Grid One  -->
+ <a class="collection-grid__item-wrapper" href="/catalog/ark:/21198/zz0002np7z">
+     <div class="collection-grid__item-image grid-item-one"></div>
+      <div class="collection-grid__item-content">
+        <h3 class="collection-grid__item-title">Los Angeles Times Photographic Collection</h3>
+        <hr class="collection-grid__item-liner align-item-start">
+        <p class="collection-grid__item-desc">Collection of photonegatives and prints documenting events and people in So. CA, the US, and the world. The material originates from the Los Angeles Times.  </p>
+        <p class="collection-grid__item-link">More about this  collection</p>
+      </div>
+  </a>
+    <!-- Grid Two  -->
+ <a class="collection-grid__item-wrapper" href="/catalog/ark:/21198/z1db9vb9">
+     <div class="collection-grid__item-image grid-item-two"></div>
+      <div class="collection-grid__item-content">
+        <h3 class="collection-grid__item-title">Carteles de Cine</h3>
+        <hr class="collection-grid__item-liner align-item-start">
+        <p class="grid-summary">Over 1300 posters from 1960s-2016 designed by Cuban artists for both Cuban and foreign films, film festivals, and film related special events. Posters were commissioned by Cinemateca de Cuba, part of Instituto Cubano del Arte e Industria Cinematográficos.
+
+        </p>
+        <p class="collection-grid__item-link">More about this collection</p>
+      </div>
+  </a>
+  <!-- Grid Three  -->
+ <a class="collection-grid__item-wrapper" href="/catalog?f%5Bhas_model_ssim%5D%5B%5D=Collection&f%5Bprogram_sim%5D%5B%5D=Modern+Endangered+Archives+Program">
+     <div class="collection-grid__item-image grid-item-three"></div>
+      <div class="collection-grid__item-content">
+        <h3 class="collection-grid__item-title">Modern Endangered Archives Program</h3>
+        <hr class="collection-grid__item-liner align-item-start">
+        <p class="grid-summary">The Modern Endangered Archive Program (MEAP) funds documentation and digitization to preserve global cultural heritage.</p>
+        <p class="collection-grid__item-link">More about this collection</p>
+      </div>
+  </a>
+  <!-- Grid Four  -->
+ <a class="collection-grid__item-wrapper" href="/catalog/ark:/21198/z1qv83mc">
+     <div class="collection-grid__item-image grid-item-four"></div>
+      <div class="collection-grid__item-content">
+        <h3 class="collection-grid__item-title">Material Culture of the Tule Lake Japanese Language Library</h3>
+        <hr class="collection-grid__item-liner align-item-start">
+        <p class="grid-summary">The Tule Lake Japanese Language Library (Tsūri Rēki Nihongo Toshokan ツーリレーキ日本語圖書館) was conceptualized, created, and administered by incarcerated Japanese Americans and Japanese immigrants at the Tule Lake Internment Camp in Newell, California (Block 46, Barracks 8) between November 26, 1943 and November 30, 1945 during WWII. It housed roughly 7,000 volumes and at its peak had a circulation of over 17,000 volumes loaned per month and fostered intellectual activity, social engagement, and a quiet space for reflection. The majority of the collection was donated by those who had come to Tule Lake with only what they could carry, with some additional contributions from other incarceration sites. The collection was established and run by a subgroup of the Tsūri Rēki Danjo Seinendan 鶴嶺湖男女青年團 (“Tule Lake Young Men and Women’s Group”). It can be contextualized as both a prison collection and a diaspora collection. Donated by the Japanese Language School Unified System (Kyodo System) in 1999, UCLA has the only known archive of materials from this historic library, currently holding 1,947 volumes. The material culture of these texts can tell us much about the paths the books traveled before their arrival at Tule Lake, logistics of the systems the volunteer librarians developed, innovative wartime preservation methods of well-loved materials, and U.S. governmental monitoring and censorship of Japanese language texts. Many of the volumes also contain the original checkout cards with borrowers’ signatures and barracks addresses; the collection includes 1,205 of these cards. For more information about the collection, please visit the library guide at: https://guides.library.ucla.edu/japanese/tulelake.</p>
+        <p class="collection-grid__item-link">More about this collection</p>
+      </div>
+  </a>
+  <!-- Grid Five  -->
+ <a class="collection-grid__item-wrapper" href="/catalog/ark:/21198/zz0002bk1c">
+     <div class="collection-grid__item-image grid-item-five"></div>
+      <div class="collection-grid__item-content">
+        <h3 class="collection-grid__item-title">Cashin (Bonnie) Collection of Fashion, Theater and Film Costume Design, 1913-2000</h3>
+        <hr class="collection-grid__item-liner align-item-start">
+        <p class="grid-summary">The collection contains Bonnie Cashin's personal archive documenting her design career. The collection includes Cashin's design illustrations, writings on design, contractual paperwork, photographs of her clothing designs, and press materials including press releases and editorial coverage of her work. Personal photographs and letters to Cashin are also included.</p>
+        <p class="collection-grid__item-link">More about this collection</p>
+      </div>
+  </a>
+  <!-- Grid Six  -->
+ <a class="collection-grid__item-wrapper" href="/catalog/ark:/21198/zz0002gwzg">
+     <div class="collection-grid__item-image grid-item-six"></div>
+      <div class="collection-grid__item-content">
+        <h3 class="collection-grid__item-title">Patent Medicine Trade Cards</h3>
+        <hr class="collection-grid__item-liner align-item-start">
+        <p class="grid-summary">A collection of 247 patent medicine trade cards. Patent medicines were medical compounds sold under a variety of names and labels, though they were for the most part actually trademarked medicines, not patented. The trade cards are small, colorfully illustrated advertising cards touting a particular medicine and its many cures. The era of patent medicine began to unravel in the U.S. with the passage of the first Pure Food and Drug Act in 1906.</p>
+        <p class="collection-grid__item-link">More about this collection</p>
+      </div>
+  </a>
+</div>
+<a href="/catalog?f%5Bhas_model_ssim%5D%5B%5D=Collection&view=list" class="btn-base btn-base-lg btn-ursus--gold">See More Collections</a>
+
+<!--XRAY END 367-->
+    </div>
+  </div>
+</div>
+
+<!--XRAY END 368-->
+  <!--XRAY START 369 /ursus/app/views/shared/_sitelinks_search_box.html.erb-->
+<script>
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "http://localhost:3003/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "http://localhost:3003/?q={search_term_string}",
+      "query-input": "required name=search_term_string"}
+  }
+</script>
+
+<!--XRAY END 369-->
+
+<!--XRAY END 370-->
+
+      </main>
+
+      <!--XRAY START 374 /ursus/app/views/shared/_footer.html.erb-->
+<footer class='site-footer'>
+  <div class='container-full site-footer__primary site-footer__primary--ursus'>
+    <div class='site-footer__primary-wrapper--ursus'>
+      <div class="site-footer__block--ursus">
+        <a target="_blank" rel="noopener" data-cy="main-library-site" href="https://www.library.ucla.edu/"><img class="site-footer__logo site-footer__logo--ursus" alt="UCLA Library Logo" src="/assets/logo/ucla-library-logo-2676c640b239f469c0ce6d8220bcc11b9f1ecab03ec934d11da3bf8a2a7fdd76.svg" /></a>
+      </div>
+      <div class="site-footer__block--ursus">
+        <ul class='site-footer__list'>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus" href="/copyright_and_collections">Copyright and Collections</a></li>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus" href="/privacy_policy">Privacy Policy</a></li>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus" href="/ursus_contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__block--ursus">
+        <ul class='site-footer__list'>
+          <li class='site-footer__list-item'><a class="site-footer__link site-footer__link--ursus-gold" target="_blank" rel="noopener" data-cy="footer-feedback" href="https://forms.gle/x2BV9dJMK241VsAJA">Give Us Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class='container-full site-footer__secondary site-footer__secondary--ursus'>
+    <div class='site-footer__secondary-text'>
+      &#169; 2019-2026 UC Regents. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!--XRAY END 374-->
+      <!--XRAY START 375 /ursus/app/views_legacy/shared/_modal.html.erb-->
+<div id="blacklight-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+<!--XRAY END 375-->
+    </div>
+  </body>
+</html>
+
