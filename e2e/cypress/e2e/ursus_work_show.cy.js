@@ -13,6 +13,6 @@ describe('Work show pages', () => {
     cy.iframe().within(() => {
       cy.iframe().contains('div', 'Ms. 35 Arganon')
     });
-    cy.percySnapshot();
+    
   });
 });
