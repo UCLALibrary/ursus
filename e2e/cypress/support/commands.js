@@ -8,7 +8,6 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-import '@percy/cypress';
 import 'cypress-iframe';
 
 

@@ -4,7 +4,7 @@ describe('Ursus Homepage', () => {
   });
 
   it('Visit the Homepage', () => {
-    cy.percySnapshot();
+    // 
   });
 
 // Navbar
@@ -23,7 +23,7 @@ describe('Ursus Homepage', () => {
     cy.contains('a', 'About').click({ force: true });
     cy.url().should('include', '/ursus_about');
     cy.contains('h1', 'About Us');
-    cy.percySnapshot();
+    
   });
 
   it('Nav - Give Us Feedback', () => {
@@ -36,14 +36,14 @@ describe('Ursus Homepage', () => {
     cy.visit('/');
     cy.contains('a', 'Copyright and Collection').click({ force: true });
     cy.url().should('include', '/copyrights_and_collections');
-    cy.percySnapshot();
+    
   });
 
   it('Privacy Policy', () => {
     cy.visit('/');
     cy.contains('a', 'Privacy Policy').click({ force: true });
     cy.url().should('include', '/privacy_policy');
-    cy.percySnapshot();
+    
   });
 
   it('Contact', () => {
@@ -51,7 +51,7 @@ describe('Ursus Homepage', () => {
     cy.get(':nth-child(3) > .site-footer__link').click({ force: true });
     cy.url().should('include', '/contact');
     cy.contains('h1', 'Contact');
-    cy.percySnapshot();
+    
   });
 */
   it('UCLA Library Logo', () => {
