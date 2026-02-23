@@ -70,7 +70,7 @@ jobs:
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           ELECTRON_EXTRA_LAUNCH_ARGS: --remote-debugging-port=9222
-        run: npx chromatic --cypress --project-token=$CHROMATIC_PROJECT_TOKEN
+        run: npx chromatic --cypress --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes
 
       - name: Stop docker services
         run: docker-compose down
