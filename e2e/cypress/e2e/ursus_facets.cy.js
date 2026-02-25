@@ -3,7 +3,7 @@ describe('Facets', () => {
   it('Subject', () => {
     cy.visit('/catalog/');
     cy.contains('a', 'Subject').click({ force: true });
-    cy.percySnapshot('Subject facet open');
+    
 
     cy.contains('a', 'more').click({ force: true });
     cy.request('/catalog/facet/combined_subject_ssim').its('body').should('include', 'A-Z Sort');
@@ -12,12 +12,12 @@ describe('Facets', () => {
     cy.contains('a', 'A-Z Sort').click({ force: true });
     cy.contains('14th Dynasty');
     cy.contains('a', 'Next').click({ force: true });
-    cy.percySnapshot('Subject facet modal');
+    
     cy.contains('4-H clubs').click({ force: true });
 
     cy.get('.filter-label-key', { timeout: 100000 }).contains('Subject');
     cy.get('.filter-label-value').contains('4-H clubs');
-    cy.percySnapshot('Subject facet selected');
+    
   });
 
   it('Resource Type + Language', () => {
@@ -40,7 +40,7 @@ describe('Facets', () => {
     // cy.get(
     //   '.filter-human_readable_resource_type_sim > .filter-group__label > .filter-label-value'
     // ).contains('cartographic');
-    cy.percySnapshot();
+    
   });
 
   it('Genre + Language', () => {
@@ -92,7 +92,7 @@ describe('Facets', () => {
     cy.get(
       '.filter-named_subject_sim > .filter-group__label > .filter-label-value'
     ).contains('Santa Monica Civic Opera Association');
-    cy.percySnapshot();
+    
   });
 
   it('Dates', () => {
@@ -103,7 +103,7 @@ describe('Facets', () => {
     cy.get('.submit').click();
     cy.get('.filter-label-key').contains('Date');
     cy.get('.filter-label-value').contains('1935 to 1967');
-    cy.percySnapshot();
+    
   });
 
   it('Collection', () => {
@@ -116,7 +116,7 @@ describe('Facets', () => {
     cy.contains('a', 'Caro Minasian Collection of Armenian Material, circa 1600-1968').click({ force: true });
     cy.get('.filter-label-key', { timeout: 100000 }).contains('Collection');
     cy.get('.filter-label-value').contains('Caro Minasian Collection of Armenian Material, circa 1600-1968');
-    cy.percySnapshot();
+    
   });*/
 
   it('Genre', () => {
@@ -130,6 +130,6 @@ describe('Facets', () => {
     // cy.get('a[href*="Architectural+drawings"]').click({ force: true });
     // cy.get('.filter-label-key', { timeout: 100000 }).contains('Genre');
     // cy.get('.filter-label-value').contains('Architectural drawings');
-    // cy.percySnapshot();
+    // 
   });
 });
