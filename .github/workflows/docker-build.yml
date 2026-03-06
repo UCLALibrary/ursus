@@ -10,15 +10,10 @@ jobs:
     name: Build Docker Image
     runs-on: ubuntu-latest
     steps:
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@154c24e1f33dbb5865a021c99f1318cfebf27b32
-    - name: Cache Docker layers
-      uses: actions/cache@26968a09c0ea4f3e233fdddbafd1166051a095f6
-      with:
-        path: /tmp/.buildx-cache
-        key: ${{ runner.os }}-buildx-${{ github.sha }}
-        restore-keys: |
-          ${{ runner.os }}-buildx-
+      uses: docker/setup-buildx-action@v3
     - name: Login to DockerHub
       uses: docker/login-action@f3364599c6aa293cdc2b8391b1b56d0c30e45c8a
       with:
@@ -34,8 +29,9 @@ jobs:
           {{major}}.{{minor}}
           {{major}}
     - name: Build and push to Dockerhub
-      uses: docker/build-push-action@9379083e426e2e84abb80c8c091f5cdeb7d3fd7a
+      uses: docker/build-push-action@v6
       with:
+        platforms: linux/amd64,linux/arm64
         push: true
         tags: ${{ steps.docker_meta.outputs.tags }}
         cache-from: type=local,src=/tmp/.buildx-cache
