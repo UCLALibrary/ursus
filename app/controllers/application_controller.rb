@@ -58,12 +58,11 @@ class ApplicationController < ActionController::Base
   end
 
   def solr_document_path(*args)
-    ark = case args[0]
-          when nil
+    ark = if args[0].nil?
             params[:id]
-          when SolrDocument
+          elsif args[0].class.name == 'SolrDocument'
             args[0].id
-          when String
+          elsif args[0].is_a?(String)
             args[0]
           else
             raise ArgumentError, 'Argument must be a SolrDocument with an ARK, or a string containing a SolrDocument ARK'
