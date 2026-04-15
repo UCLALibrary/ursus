@@ -2,6 +2,7 @@
     <div class='media-viewer-container'>
       <% iiif_service = IiifService.new %>
       <iframe
+        title='Media viewer'
         class='media-viewer-iframe'
         src="<%= iiif_service.src(request, document) %>"
         width='924px'
