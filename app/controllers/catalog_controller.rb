@@ -393,6 +393,7 @@ class CatalogController < ApplicationController
     config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
     config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
     config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
+    config.add_sort_field 'timestamp desc', label: 'Date Updated (newest)'
 
     #------------------------------------------------------
     # AUTO_SUGGEST / AUTO_COMPLETE
@@ -434,6 +435,45 @@ class CatalogController < ApplicationController
       permissions
     else
       raise Blacklight::AccessControls::AccessDenied.new('You do not have sufficient access privileges to view this document, which has been marked private.', :discover, params[:id])
+    end
+  end
+
+    # get search results from the solr index
+  def index
+    @response = search_service.search_results
+
+    respond_to do |format|
+      format.html { store_preferred_view }
+      format.rss  { render layout: false }
+      format.atom { render layout: false }
+      format.json do
+        @presenter = Blacklight::JsonPresenter.new(@response,
+                                                   blacklight_config)
+      end
+      additional_response_formats(format)
+      document_export_formats(format)
+    end
+
+    if request.path.include?('/program') &&
+        params.dig(:f, :has_model_ssim, 0) == "Collection" &&
+        ["Modern Endangered Archives Program"].include?(params.dig(:f, :program_sim, 0)) # to use with other programs as well
+
+      if params[:page].blank?
+        @program_first_four = @response.response[:docs].shift(4)
+      end
+
+      begin
+        url = Rails.application.routes.url_helpers.search_catalog_path(format: :json, f: { program_sim: params[:f][:program_sim] })
+        url = "#{request.base_url}#{url}"
+        response = Net::HTTP.get(URI(url))
+        @works_data = JSON.parse(response, symbolize_names: true)
+      rescue
+        @works_data = nil
+      end
+
+      if params.dig(:f, :program_sim, 0) == "Modern Endangered Archives Program"
+        @program_partial = 'meap'
+      end
     end
   end
 

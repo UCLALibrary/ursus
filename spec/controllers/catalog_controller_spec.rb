@@ -230,7 +230,7 @@ RSpec.describe CatalogController, type: :controller do
     end
 
     let(:expected_sort_fields) do
-      ["score desc", "title_alpha_numeric_ssort asc", "title_alpha_numeric_ssort desc", "date_dtsort desc", "date_dtsort asc"]
+      ["score desc", "title_alpha_numeric_ssort asc", "title_alpha_numeric_ssort desc", "date_dtsort desc", "date_dtsort asc", "timestamp desc"]
     end
 
     it 'has exactly expected sort fields' do

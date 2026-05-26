@@ -21,4 +21,6 @@
 <!-- Collection page banner -->
 <% if controller.controller_name == 'catalog' && @document && @document[:has_model_ssim] && @document[:has_model_ssim][0] == 'Collection' %>
   <%= render 'catalog/banners/collection_banner--ursus' %>
+<% elsif @program_partial %>
+  <%= render "catalog/programs/#{@program_partial}_banner" %>
 <% end %>
