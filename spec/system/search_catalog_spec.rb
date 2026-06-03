@@ -17,7 +17,8 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       has_model_ssim: ['Work'],
       title_tesim: ['Orange Carrot'],
       photographer_tesim: ['Bittersweet Tangerine'],
-      description_tesim: ['Long description Long description Long description<br>Long description Long description Long description']
+      description_tesim: ['Long description Long description Long description<br>Long description Long description Long description'],
+      discover_access_group_ssim: ["public"],
     }
   end
 
@@ -27,7 +28,8 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       ark_ssi: 'ark:/222',
       has_model_ssim: ['Work'],
       title_tesim: ['Yellow Banana'],
-      photographer_tesim: ['Buff Saffron']
+      photographer_tesim: ['Buff Saffron'],
+      discover_access_group_ssim: ["public"],
     }
   end
 
@@ -37,7 +39,8 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       ark_ssi: 'ark:/333',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in creator',
-      creator_tesim: ['3Guv4P44']
+      creator_tesim: ['3Guv4P44'],
+      discover_access_group_ssim: ["public"],
     }
   end
 
@@ -47,7 +50,8 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       ark_ssi: 'ark:/444',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in contributor',
-      contributor_tesim: ['3Guv4P44']
+      contributor_tesim: ['3Guv4P44'],
+      discover_access_group_ssim: ["public"],
     }
   end
 
@@ -57,7 +61,8 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       ark_ssi: 'ark:/555',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in publisher',
-      publisher_tesim: ['3Guv4P44']
+      publisher_tesim: ['3Guv4P44'],
+      discover_access_group_ssim: ["public"],
     }
   end
 
@@ -67,7 +72,8 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       ark_ssi: 'ark:/666',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in genre',
-      genre_tesim: ['3Guv4P44']
+      genre_tesim: ['3Guv4P44'],
+      discover_access_group_ssim: ["public"],
     }
   end
 
@@ -77,7 +83,8 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       ark_ssi: 'ark:/777',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in medium',
-      medium_tesim: ['3Guv4P44']
+      medium_tesim: ['3Guv4P44'],
+      discover_access_group_ssim: ["public"],
     }
   end
 
@@ -87,7 +94,8 @@ RSpec.describe 'Search the catalog', type: :system, js: false do
       ark_ssi: 'ark:/888',
       has_model_ssim: ['Work'],
       title_tesim: 'Target in named_subject',
-      named_subject_tesim: ['3Guv4P44']
+      named_subject_tesim: ['3Guv4P44'],
+      discover_access_group_ssim: ["public"],
     }
   end
 

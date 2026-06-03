@@ -45,7 +45,8 @@ FIRST_WORK = {
   support_tesim: ['Mom & Dad'],
   read_access_group_ssim: ["public"],
   thumbnail_url_ss: ["http://thumbnail/work1.jpg"],
-  visibility_ssi: ['open']
+  visibility_ssi: ['open'],
+  discover_access_group_ssim: ['public'],
 }.freeze
 
 SECOND_WORK = {
@@ -68,7 +69,8 @@ SECOND_WORK = {
   member_of_collection_ids_ssim: ['coll-123'],
   read_access_group_ssim: ["public"],
   thumbnail_url_ss: ["http://thumbnail/work2.jpg"],
-  visibility_ssi: ['open']
+  visibility_ssi: ['open'],
+  discover_access_group_ssim: ['public'],
 }.freeze
 
 THIRD_WORK = {
@@ -92,7 +94,8 @@ THIRD_WORK = {
   member_of_collection_ids_ssim: ['coll-123'],
   read_access_group_ssim: ["public"],
   thumbnail_url_ss: ["http://thumbnail/work3.jpg"],
-  visibility_ssi: ['open']
+  visibility_ssi: ['open'],
+  discover_access_group_ssim: ['public'],
 }.freeze
 
 FIRST_COLLECTION = {
@@ -103,7 +106,8 @@ FIRST_COLLECTION = {
   date_created_tesim: ["Date 1"],
   repository_tesim: ['UCLA Collection'],
   languages_tesim: ['en', 'es', 'gk'],
-  human_readable_language_tesim: ['English', 'Spanish', 'Greek']
+  human_readable_language_tesim: ['English', 'Spanish', 'Greek'],
+  discover_access_group_ssim: ['public'],
 }.freeze
 
 FOURTH_WORK = {
@@ -124,7 +128,8 @@ FOURTH_WORK = {
   location_sim: ['search_results_spec'], # to control what displays
   collection_tesim: ['Photographs', 'Digital'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
-  visibility_ssi: ['open']
+  visibility_ssi: ['open'],
+  discover_access_group_ssim: ['public'],
 }.freeze
 
 WORK_A = {
@@ -145,7 +150,8 @@ WORK_A = {
   member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
   member_of_collection_ids_ssim: ['m8f11000zz-89112'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
-  visibility_ssi: ['open']
+  visibility_ssi: ['open'],
+  discover_access_group_ssim: ['public'],
 }.freeze
 
 WORK_B = {
@@ -166,7 +172,8 @@ WORK_B = {
   member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
   member_of_collection_ids_ssim: ['m8f11000zz-89112'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
-  visibility_ssi: ['open']
+  visibility_ssi: ['open'],
+  discover_access_group_ssim: ['public'],
 }.freeze
 
 WORK_C = {
@@ -187,7 +194,8 @@ WORK_C = {
   member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
   member_of_collection_ids_ssim: ['m8f11000zz-89112'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
-  visibility_ssi: ['open']
+  visibility_ssi: ['open'],
+  discover_access_group_ssim: ['public'],
 }.freeze
 
 WORK_D = {
@@ -208,7 +216,8 @@ WORK_D = {
   member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
   member_of_collection_ids_ssim: ['m8f11000zz-89112'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
-  visibility_ssi: ['open']
+  visibility_ssi: ['open'],
+  discover_access_group_ssim: ['public'],
 }.freeze
 
 WORK_E = {
@@ -229,5 +238,6 @@ WORK_E = {
   member_of_collections_ssim: ['Bennett (Walter E.) Photographic Collection, 1937-1983 (bulk 1952-1982)'],
   member_of_collection_ids_ssim: ['m8f11000zz-89112'],
   thumbnail_url_ss: ["http://thumbnail/work4.jpg"],
-  visibility_ssi: ['open']
+  visibility_ssi: ['open'],
+  discover_access_group_ssim: ['public'],
 }.freeze

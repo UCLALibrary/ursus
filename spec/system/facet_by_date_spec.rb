@@ -15,7 +15,8 @@ RSpec.describe 'Search the catalog', :clean, type: :system do
       ark_ssi: 'ark:/aaa/111',
       has_model_ssim: ['Work'],
       title_tesim: ['Llama Love'],
-      year_isim: [1920]
+      year_isim: [1920],
+      discover_access_group_ssim: ["public"],
     }
   end
 
@@ -25,7 +26,8 @@ RSpec.describe 'Search the catalog', :clean, type: :system do
       ark_ssi: 'ark:/222',
       has_model_ssim: ['Work'],
       title_tesim: ['Newt Nutrition'],
-      year_isim: [1940]
+      year_isim: [1940],
+      discover_access_group_ssim: ["public"],
     }
   end
 
