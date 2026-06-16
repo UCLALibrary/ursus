@@ -232,8 +232,8 @@ RSpec.describe CatalogController, type: :controller do
     let(:expected_sort_fields) do
       [
         "score desc",
-        "exists(sort_title_ssort) asc, sort_title_ssort asc, exists(title_alpha_numeric_ssort) asc, title_alpha_numeric_ssort asc",
-        "exists(sort_title_ssort) asc, sort_title_ssort  desc, exists(title_alpha_numeric_ssort) asc, title_alpha_numeric_ssort desc",
+        "exists(sort_title_tsort) desc, sort_title_tsort asc, exists(title_alpha_numeric_ssort) desc, title_alpha_numeric_ssort asc",
+        "exists(sort_title_tsort) desc, sort_title_tsort  desc, exists(title_alpha_numeric_ssort) desc, title_alpha_numeric_ssort desc",
         "date_dtsort desc",
         "date_dtsort asc",
       ]

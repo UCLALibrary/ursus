@@ -55,12 +55,19 @@ jobs:
         with:
           working-directory: e2e
           browser: chrome
-      - name: Run Chromatic
+      - name: Run Chromatic (PR)
+        if: github.event_name == 'pull_request'
         working-directory: e2e
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           ELECTRON_EXTRA_LAUNCH_ARGS: --remote-debugging-port=9222
         run: npx chromatic --cypress --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes
+      - name: Run Chromatic (Merged)
+        working-directory: e2e
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          ELECTRON_EXTRA_LAUNCH_ARGS: --remote-debugging-port=9222
+        run: npx chromatic --cypress --project-token=$CHROMATIC_PROJECT_TOKEN --auto-accept-changes
 
       - name: Stop docker services
         run: docker-compose down
