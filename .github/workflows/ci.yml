@@ -50,7 +50,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Start and Initialize Docker services
-        run: docker-compose up --detach
+        run: docker-compose up --detach web
       - uses: cypress-io/github-action@v6
         with:
           working-directory: e2e
