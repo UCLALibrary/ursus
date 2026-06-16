@@ -387,8 +387,8 @@ class CatalogController < ApplicationController
     # (it must be asc or desc except in the relevancy case)
     # label is key, solr field is value
     config.add_sort_field 'score desc', label: 'Relevance'
-    config.add_sort_field 'exists(sort_title_ssort) asc, sort_title_ssort asc, exists(title_alpha_numeric_ssort) asc, title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
-    config.add_sort_field 'exists(sort_title_ssort) asc, sort_title_ssort  desc, exists(title_alpha_numeric_ssort) asc, title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
+    config.add_sort_field 'exists(sort_title_tsort) desc, sort_title_tsort asc, exists(title_alpha_numeric_ssort) desc, title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
+    config.add_sort_field 'exists(sort_title_tsort) desc, sort_title_tsort  desc, exists(title_alpha_numeric_ssort) desc, title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
     # config.add_sort_field 'title_alpha_numeric_ssort asc', label: 'Title (A-Z)'
     # config.add_sort_field 'title_alpha_numeric_ssort desc', label: 'Title (Z-A)'
     config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
