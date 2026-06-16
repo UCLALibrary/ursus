@@ -28,14 +28,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      - name: Start and Initialize Docker services
-        run: |
-          docker-compose run web bundle install
-          docker-compose up --detach
-          docker-compose run web bundle exec rails db:setup
-          docker-compose ps
       - name: run rspec
-        run: docker-compose run web bundle exec rspec spec
+        run: docker-compose run rspec
       - name: Stop docker services
         run: docker-compose down
 
@@ -56,11 +50,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Start and Initialize Docker services
-        run: |
-          docker-compose run web bundle install
-          docker-compose run web yarn install --frozen-lockfile
-          docker-compose up --detach
-          docker-compose run web bundle exec rails db:setup
+        run: docker-compose up --detach
       - uses: cypress-io/github-action@v6
         with:
           working-directory: e2e

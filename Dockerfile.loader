@@ -1,0 +1,4 @@
+FROM ghcr.io/astral-sh/uv:python3.14-trixie
+
+# Install feed_ursus
+RUN uv tool install feed_ursus

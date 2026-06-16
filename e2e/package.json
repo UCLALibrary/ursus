@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "sh ./start-e2e.sh"
+    "test": "npx cypress run"
   },
   "author": "",
   "license": "ISC",
