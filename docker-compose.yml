@@ -1,12 +1,16 @@
-version: '2.0'
-
 services:
   web:
     build: .
     hostname: ursus
     depends_on:
-      - db
-      - solr
+      db:
+        condition: service_healthy
+      solr:
+        condition: service_healthy
+      dbsetup:
+        condition: service_completed_successfully
+      solrload:
+        condition: service_completed_successfully
     env_file:
       - ./default.env
       - ./docker.env
@@ -22,6 +26,12 @@ services:
 
   db:
     image: uclalibrary/californica-mariadb:10.3
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 3s
+      interval: 10s
+      timeout: 5s
+      retries: 3
     volumes:
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - mysql_data:/var/lib/mysql
@@ -31,14 +41,72 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
 
   solr:
-    image: uclalibrary/solr-ursus:7.4
+    image: uclalibrary/solr-ursus:8
     ports:
       - '127.0.0.1:8983:8983'
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8983/solr/admin/info/system"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 2s
 
   solr_test:
-    image: uclalibrary/solr-ursus:7.4
+    image: uclalibrary/solr-ursus:8
     ports:
       - '127.0.0.1:8985:8983'
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8983/solr/admin/info/system"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 2s
+  
+  dbsetup:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - ./default.env
+      - ./docker.env
+    volumes:
+      - .:/ursus
+      - ursus_public_uv:/ursus/public/uv
+      - ursus_tmp:/ursus/tmp
+    working_dir: /ursus
+    command: ["/bin/sh", "-c", "bundle exec rails db:setup"]
+
+  solrload:
+    depends_on:
+      solr:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile.loader
+    volumes:
+      - ./fixtures:/fixtures
+    working_dir: /fixtures
+    command: ["/bin/sh", "-c", "uvx feed_ursus --solr_url http://solr:8983/solr/ursus loaddump *.jsonl"]
+
+  rspec:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+      solr_test:
+        condition: service_healthy
+      dbsetup:
+        condition: service_completed_successfully
+    env_file:
+      - ./default.env
+      - ./docker.env
+    volumes:
+      - .:/ursus
+      - ursus_public_uv:/ursus/public/uv
+      - ursus_tmp:/ursus/tmp
+    working_dir: /ursus
+    command: ["/bin/sh", "-c", "bundle exec rspec spec"]
 
 volumes:
   mysql_data:
