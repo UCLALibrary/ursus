@@ -81,13 +81,12 @@ services:
     depends_on:
       solr:
         condition: service_healthy
-    build:
-      context: .
-      dockerfile: Dockerfile.loader
+    image: ghcr.io/astral-sh/uv:python3.14-trixie
     volumes:
       - ./fixtures:/fixtures
+      - uv-cache:/root/.cache/uv
     working_dir: /fixtures
-    command: ["/bin/sh", "-c", "uvx feed_ursus --solr_url http://solr:8983/solr/ursus loaddump *.jsonl"]
+    command: ["/bin/sh", "-c", "uvx feed_ursus@latest --solr_url http://solr:8983/solr/ursus loaddump *.jsonl"]
 
   rspec:
     build: .
@@ -114,3 +113,4 @@ volumes:
   ursus_node_modules:
   ursus_public_uv:
   ursus_tmp:
+  uv-cache:
