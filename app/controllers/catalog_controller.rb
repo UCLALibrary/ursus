@@ -65,8 +65,7 @@ class CatalogController < ApplicationController
       mm: '100%',
       rows: 10,
       qf: 'title_tesim description_tesim creator_tesim keyword_tesim',
-      fq: '(ark_ssi:* AND ((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !((visibility_ssi:restricted) OR (visibility_ssi:discovery) OR (visibility_ssi:sinai)))'
-      ### we want to only return works where visibility_ssi == open (not restricted)
+      fq: 'ark_ssi:* AND (has_model_ssim:Work OR has_model_ssim:Collection) AND discover_access_group_ssim:public',
     }
 
     config.search_state_fields += [:range_end, :range_field, :range_start]

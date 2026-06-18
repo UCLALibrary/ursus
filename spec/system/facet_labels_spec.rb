@@ -26,7 +26,8 @@ RSpec.describe 'The facet sidebar', :clean, type: :system do
         human_readable_language_sim: ['No linguistic content'],
         location_sim: ['Echo Park'],
         member_of_collections_ssim: ['Connell'],
-        repository_sim: ['Fowler Museum']
+        repository_sim: ['Fowler Museum'],
+      discover_access_group_ssim: ["public"],
       }
     end
 
