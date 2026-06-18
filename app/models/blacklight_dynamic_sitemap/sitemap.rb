@@ -10,7 +10,7 @@ module BlacklightDynamicSitemap
       index_connection.select(
         params: {
           q: "{!prefix f=#{hashed_id_field} v=#{id}}",
-          fq: '(((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !((visibility_ssi:restricted) OR (visibility_ssi:discovery) OR (visibility_ssi:sinai)))',
+          fq: 'ark_ssi:* AND (has_model_ssim:Work OR has_model_ssim:Collection) AND discover_access_group_ssim:public',
           fl: [unique_id_field, last_modified_field].join(','),
           rows: 2_000_000, # Ensure that we do not page this result
           facet: false,
@@ -42,7 +42,7 @@ module BlacklightDynamicSitemap
               q: '*:*',
               rows: 0,
               facet: false,
-              fq: '(((has_model_ssim:Work) OR (has_model_ssim:Collection)) AND !((visibility_ssi:restricted) OR (visibility_ssi:discovery) OR (visibility_ssi:sinai)))'
+              fq: 'ark_ssi:* AND (has_model_ssim:Work OR has_model_ssim:Collection) AND discover_access_group_ssim:public',
             }
           )['response']['numFound']
         end
