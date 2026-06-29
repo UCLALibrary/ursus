@@ -25,7 +25,7 @@ RSpec.describe 'The photographer field of the item display view', :clean, type: 
     visit("/catalog/#{ark}")
 
     page.within('dd.blacklight-photographer_tesim') do
-      expect(page).to have_link('photographer1', href: '/catalog?f%5Bphotographer_sim%5D%5B%5D=photographer1')
+      expect(page).to have_link('photographer1', href: '/catalog?f%5Bcombined_names_ssim%5D%5B%5D=photographer1')
     end
   end
 end
