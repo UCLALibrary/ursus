@@ -72,6 +72,7 @@ RSpec.describe CatalogController, type: :controller do
           'librettist',
           'lyricist',
           'musician',
+          'named_subject',
           'photographer',
           'printer',
           'printmaker',

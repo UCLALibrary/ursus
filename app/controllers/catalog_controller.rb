@@ -150,6 +150,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'librettist_sim', show: false
     config.add_facet_field 'lyricist_sim', show: false
     config.add_facet_field 'musician_sim', show: false
+    config.add_facet_field 'named_subject_sim', show: false
     config.add_facet_field 'photographer_sim', show: false
     config.add_facet_field 'printer_sim', show: false
     config.add_facet_field 'printmaker_sim', show: false
@@ -215,39 +216,39 @@ class CatalogController < ApplicationController
     #
     # More details: https://github.com/projectblacklight/blacklight/wiki/value-rendering
 
-    config.add_show_field 'architect_tesim', label: 'Architect', link_to_facet: 'architect_sim' # Primary / Item Overview
+    config.add_show_field 'architect_tesim', label: 'Architect', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'alternative_title_tesim', label: 'Alternative title' # Primary / Item Overview
     config.add_show_field 'archival_collection_tesi', label: 'Archival Collection' # Secondary / Find This Item
     config.add_show_field 'ark_ssi', label: 'ARK' # Secondary / Find This Item
-    config.add_show_field 'artist_tesim', label: 'Artist', link_to_facet: 'artist_sim' # Primary / Item Overview
-    config.add_show_field 'arranger_tesim', label: 'Arranger', link_to_facet: 'arranger_sim' # Primary / Item Overview
-    config.add_show_field 'author_tesim', label: 'Author', link_to_facet: 'author_sim' # Primary / Item Overview
+    config.add_show_field 'artist_tesim', label: 'Artist', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
+    config.add_show_field 'arranger_tesim', label: 'Arranger', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
+    config.add_show_field 'author_tesim', label: 'Author', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'based_near_label_tesim', label: 'Location (based near)' # Not Using
     config.add_show_field 'binding_note_ssi', label: 'Binding note' # Primary / Physical description
-    config.add_show_field 'calligrapher_tesim', label: 'Calligrapher', link_to_facet: 'calligrapher_sim' # Primary / Item Overview
+    config.add_show_field 'calligrapher_tesim', label: 'Calligrapher', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'caption_tesim', label: 'Caption' # Primary / Notes
-    config.add_show_field 'cartographer_tesim', label: 'Cartographer', link_to_facet: 'cartographer_sim' # Primary / Item Overview
+    config.add_show_field 'cartographer_tesim', label: 'Cartographer', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'citation_source_tesim', label: 'References' # Primary / Notes
     config.add_show_field 'collation_tesim', label: 'Collation' # Primary / Physical description
-    config.add_show_field 'collector_tesim', label: 'Collector', link_to_facet: 'collector_sim' # Primary / Item Overview
+    config.add_show_field 'collector_tesim', label: 'Collector', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'colophon_tesim', label: 'Colophon' # Primary / Notes
-    config.add_show_field 'commentator_tesim', label: 'Commentator', link_to_facet: 'commentator_sim' # Primary / Item Overview
-    config.add_show_field 'composer_tesim', label: 'Composer', link_to_facet: 'composer_sim' # Primary / Item Overview
+    config.add_show_field 'commentator_tesim', label: 'Commentator', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
+    config.add_show_field 'composer_tesim', label: 'Composer', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'condition_note_ssi', label: 'Condition note' # Primary / Physical description
     config.add_show_field 'content_disclaimer_ssm', label: 'Content disclaimer'
     config.add_show_field 'contents_note_tesim', label: 'Contents note', auto_link: true # make this field url aware # Primary / Notes
     config.add_show_field 'contributor_tesim', label: 'Contributor' # Not Using
-    config.add_show_field 'creator_tesim', label: 'Creator', link_to_facet: 'creator_sim' # Primary / Item Overview
+    config.add_show_field 'creator_tesim', label: 'Creator', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'date_created_tesim', label: 'Date created' # Primary / Item Overview
     config.add_show_field 'description_tesim', label: 'Description' # Primary / Notes
     config.add_show_field 'dimensions_tesim', label: 'Dimensions' # Primary / Physical description
-    config.add_show_field 'director_tesim', label: 'Director', link_to_facet: 'director_sim' # Primary / Item Overview
+    config.add_show_field 'director_tesim', label: 'Director', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'dlcs_collection_name_tesim' # Not Using
     config.add_show_field 'edition_ssm', label: 'Edition' # Primary / Item Overview
-    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'editor_sim'
+    config.add_show_field 'editor_tesim', label: 'Editor', link_to_facet: 'combined_names_ssim'
     config.add_show_field 'electronic_locator_ss', label: 'External item record' # Secondary / Button
     # Primary / Item Overview
-    config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'engraver_sim' # Primary / Item Overview
+    config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'extent_tesim', label: 'Extent' # Primary / Physical description
     config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim' # Primary / Physical description
     config.add_show_field 'finding_aid_url_ssm', label: 'Finding aid url' # Secondary / Find This Item
@@ -260,7 +261,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'geographic_coordinates_ssim' # Primary / Physical description
     config.add_show_field 'hand_note_tesim', limit: 7, label: 'Hand note' # 'Writing and hands'# Primary / Physical description
     config.add_show_field 'history_tesim', label: 'History' # Primary / Notes
-    config.add_show_field 'host_tesim', label: 'Host', link_to_facet: 'host_sim' # Primary / Physical description
+    config.add_show_field 'host_tesim', label: 'Host', link_to_facet: 'combined_names_ssim' # Primary / Physical description
     config.add_show_field 'human_readable_language_tesim', label: 'Language', link_to_facet: 'human_readable_language_sim' # Primary / Item Overview
     config.add_show_field 'human_readable_resource_type_tesim', label: 'Resource type', link_to_facet: 'human_readable_resource_type_sim' # Primary / Physical description
     config.add_show_field 'human_readable_related_record_title_ssm', label: 'Related Records' # Primary / Notes
@@ -268,21 +269,21 @@ class CatalogController < ApplicationController
     config.add_show_field 'identifier_tesim', label: 'Identifier' # Not Using
     config.add_show_field 'identifier_global_ssim', label: 'Identifier' # Secondary / Find This Item
     config.add_show_field 'iiif_manifest_url_ssi', label: 'Manifest url' # Secondary / Find This Item
-    config.add_show_field 'illuminator_tesim', label: 'Illuminator', link_to_facet: 'illuminator_sim' # Primary / Item Overview
+    config.add_show_field 'illuminator_tesim', label: 'Illuminator', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note' # Primary / Physical description
-    config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'illustrator_sim' # Primary / Item Overview
+    config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'inscription_tesim', label: 'Inscription' # Primary / Item Overview
-    config.add_show_field 'interviewee_tesim', label: 'Interviewee', link_to_facet: 'interviewee_sim' # Primary / Item Overview
-    config.add_show_field 'interviewer_tesim', label: 'Interviewer', link_to_facet: 'interviewer_sim' # Primary / Item Overview
+    config.add_show_field 'interviewee_tesim', label: 'Interviewee', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
+    config.add_show_field 'interviewer_tesim', label: 'Interviewer', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'keyword_tesim', label: 'Keyword' # Not Using
     config.add_show_field 'latitude_tesim', label: 'Latitude' # Primary / Physical description
-    config.add_show_field 'librettist_tesim', label: 'Librettist', link_to_facet: 'librettist_sim' # Primary / Item Overview
+    config.add_show_field 'librettist_tesim', label: 'Librettist', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'license_tesim', label: 'License', helper_method: :render_license # Secondary / Access Conditions
     config.add_show_field 'local_identifier_ssim', label: 'Local identifier' # Secondary / Find This Item
     config.add_show_field 'local_rights_statement_ssm', label: 'Local rights statement' # Secondary / Access Conditions
     config.add_show_field 'location_tesim', label: 'Location', link_to_facet: 'location_sim' # Primary / Physical description
     config.add_show_field 'longitude_tesim', label: 'Longitude' # Primary / Physical description
-    config.add_show_field 'lyricist_tesim', label: 'Lyricist', link_to_facet: 'lyricist_sim' # Primary / Item Overview
+    config.add_show_field 'lyricist_tesim', label: 'Lyricist', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'medium_tesim', label: 'Medium' # Primary / Physical description
     config.add_show_field 'member_of_collections_ssim', label: 'Collection', values: ->(_config, doc, view_context) do
       return unless doc[:member_of_collections_ssim].present?
@@ -292,7 +293,7 @@ class CatalogController < ApplicationController
         view_context.solr_document_path('ark:/' + doc[:member_of_collection_ids_ssim][0].reverse.sub('-', '/'))
       )
     end
-    config.add_show_field 'musician_tesim', label: 'Musician', link_to_facet: 'musician_sim' # Primary / Physical description
+    config.add_show_field 'musician_tesim', label: 'Musician', link_to_facet: 'combined_names_ssim' # Primary / Physical description
     config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim' # Primary / Physical description
     config.add_show_field 'note_tesim', label: 'Note' # Primary / Notes
     config.add_show_field 'oai_set_ssim'
@@ -300,24 +301,24 @@ class CatalogController < ApplicationController
     config.add_show_field 'opac_url_ssi', label: 'Opac url', auto_link: true # Secondary / Find This Item
     config.add_show_field 'other_versions_tesim', label: 'Other version(s)' # Secondary / Find This Item
     config.add_show_field 'page_layout_ssim', label: 'Page layout' # Primary / Physical description
-    config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'photographer_sim' # Primary / Item Overview
+    config.add_show_field 'photographer_tesim', label: 'Photographer', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'place_of_origin_tesim', label: 'Place of origin' # Primary / Physical description
-    config.add_show_field 'printer_tesim', label: 'Printer', link_to_facet: 'printer_sim' # Primary / Physical description
-    config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'printmaker_sim' # Primary / Item Overview
-    config.add_show_field 'producer_tesim', label: 'Producer', link_to_facet: 'producer_sim' # Primary / Item Overview
+    config.add_show_field 'printer_tesim', label: 'Printer', link_to_facet: 'combined_names_ssim' # Primary / Physical description
+    config.add_show_field 'printmaker_tesim', label: 'Printmaker', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
+    config.add_show_field 'producer_tesim', label: 'Producer', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'program_tesim', label: 'Program', link_to_facet: 'program_sim' # Primary / Item Overview
     config.add_show_field 'provenance_tesim', label: 'Provenance' # Primary / Notes
     config.add_show_field 'publisher_tesim', label: 'Publisher' # Primary / Item Overview
-    config.add_show_field 'recipient_tesim', label: 'Recipient', link_to_facet: 'recipient_sim' # Primary / Item Overview
+    config.add_show_field 'recipient_tesim', label: 'Recipient', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'related_to_ssm', label: 'Related Items', auto_link: true # make this field url aware # Primary / Notes
     config.add_show_field 'repository_tesim', label: 'Repository', link_to_facet: 'repository_sim' # Secondary / Find This Item
-    config.add_show_field 'researcher_tesim', label: 'Researcher', link_to_facet: 'researcher_sim' # Primary / Physical description
+    config.add_show_field 'researcher_tesim', label: 'Researcher', link_to_facet: 'combined_names_ssim' # Primary / Physical description
     config.add_show_field 'resp_statement_tesim', label: 'Statement of Responsibility' # Primary / Notes
     config.add_show_field 'rights_country_tesim', label: 'Rights (country of creation)' # Secondary / Access Conditions
     config.add_show_field 'rights_holder_tesim', label: 'Rights holder' # Secondary / Access Conditions
-    config.add_show_field 'rubricator_tesim', label: 'Rubricator', link_to_facet: 'rubricator_sim' # Primary / Item Overview
+    config.add_show_field 'rubricator_tesim', label: 'Rubricator', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'script_tesim', label: 'Script' # Primary / Item Overview
-    config.add_show_field 'scribe_tesim', label: 'Scribe', link_to_facet: 'scribe_sim' # Primary / Item Overview
+    config.add_show_field 'scribe_tesim', label: 'Scribe', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'series_tesim', label: 'Series', link_to_facet: 'series_sim' # Primary / Item Overview
     config.add_show_field 'services_contact_ssm', label: 'Rights contact' # Secondary / Access Conditions
     config.add_show_field 'subject_cultural_object_tesim' # Primary / Physical description
@@ -330,7 +331,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'support_tesim', label: 'Support', link_to_facet: 'support_sim' # Primary / Physical description
     config.add_show_field 'title_tesim', label: 'Title' # Primary / Item Overview
     config.add_show_field 'toc_tesim', label: 'Table of Contents' # Primary / Notes
-    config.add_show_field 'translator_tesim', label: 'Translator', link_to_facet: 'translator_sim' # Primary / Item Overview
+    config.add_show_field 'translator_tesim', label: 'Translator', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'uniform_title_tesim', label: 'Uniform title', link_to_facet: 'uniform_title_sim' # Primary / Item Overview
 
     # ----------------------------------------------
