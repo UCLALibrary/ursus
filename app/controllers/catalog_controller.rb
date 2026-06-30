@@ -294,7 +294,7 @@ class CatalogController < ApplicationController
       )
     end
     config.add_show_field 'musician_tesim', label: 'Musician', link_to_facet: 'combined_names_ssim' # Primary / Physical description
-    config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'named_subject_sim' # Primary / Physical description
+    config.add_show_field 'named_subject_tesim', label: 'Named subject', link_to_facet: 'combined_names_ssim' # Primary / Physical description
     config.add_show_field 'note_tesim', label: 'Note' # Primary / Notes
     config.add_show_field 'oai_set_ssim'
     config.add_show_field 'oclc_ssi', label: 'OCLC Number' # Secondary / Find This Item
