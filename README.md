@@ -27,19 +27,29 @@ This section gives basic instructions to get Ursus running locally. More extensi
 ```
 git clone git@github.com:UCLALibrary/ursus.git
 cd ursus
-docker-compose up --detach
+docker compose up --detach
 ```
 
 As of June 2026, you do not need to explicitly set up the database or load data into solr. These jobs are handled by the dbsetup and solrload containers, defined in docker-compose.yml, and the web server will not run until they have completed.
 
+### Run tests
 
-#### If the above commnad throws folowing error
+```
+docker compose run rspec
+```
+For now (July 2026), ignore the many deprecation warnings. Many things are out of date. Check the message near the end, which should look like this, with no failures:
+
+```
+256 examples, 0 failures, 3 pending
+```
+
+## Information below is deprecated as of June 2026 and will be removed at some point
 
 > [!NOTE]
 > The compose environment has been refactored significantly, this may or may not still be relevant.
 
 ```
- docker-compose run web bundle exec rails db:setup
+ docker compose run web bundle exec rails db:setup
 Could not find rails_autolink-1.1.8 in any of the sources
 Run `bundle install` to install missing gems.
 ```
@@ -47,13 +57,13 @@ Run `bundle install` to install missing gems.
 - Running this command
 
 ```
-docker-compose up --build
+docker compose up --build
 ```
 
 \*\* Then run the following command again
 
 ```
-docker-compose run web bundle exec rails db:setup
+docker compose run web bundle exec rails db:setup
 ```
 
 #### 4. Bring up the development environment
@@ -61,7 +71,7 @@ docker-compose run web bundle exec rails db:setup
 ** Do this _after_ setting up the databases** - the startup scripts require the database to be ready so that they can set feature flags e.g. for the Sinai UI mode.
 
 ```
-docker-compose up
+docker compose up
 ```
 
 #### Ursus should now be running
@@ -80,7 +90,7 @@ You can view the solr console on port 8983.
 Connect to a shell _inside_ the container with:
 
 ```
-docker-compose run web bash
+docker compose run web bash
 ```
 
 Then run the entire suite, except for the cypress integration test, with:
@@ -107,7 +117,7 @@ Go to the `docker.env` file for directions
 
 2. Uncomment this line `SOLR_URL=http://host.docker.internal:8983/solr/californica`
 
-3. In your terminal run $`docker-compose -f docker-compose-with-californica.yml up`
+3. In your terminal run $`docker compose -f docker-compose-with-californica.yml up`
 
 #### Before deploying
 
@@ -115,7 +125,7 @@ Go to the `docker.env` file for directions
 
 2. And uncomment this line `SOLR_URL=http://host.docker.internal:8983/solr/californica`
 
-#### You cannot run `docker-compose run web bash` in this environment.
+#### You cannot run `docker compose run web bash` in this environment.
 
 ---
 
@@ -126,7 +136,7 @@ Here's how you can do it using Docker and Docker Compose commands.
 ### Step 1: Access the Database Container
 
 ```
-docker-compose exec db bash
+docker compose exec db bash
 ```
 
 ### Step 2: Log into the MariaDB Database
@@ -171,7 +181,7 @@ exit;
 
 ## Additional Tips
 
-Rails Console: For Rails-specific data inspection or manipulation, you can also use the Rails console. Run docker-compose exec web rails console to access it. This is particularly useful for operations that involve Rails models.
+Rails Console: For Rails-specific data inspection or manipulation, you can also use the Rails console. Run docker compose exec web rails console to access it. This is particularly useful for operations that involve Rails models.
 
 ---
 
@@ -180,14 +190,14 @@ Rails Console: For Rails-specific data inspection or manipulation, you can also 
 - To run the Rake task, open a terminal, navigate to the root of your Rails application, and execute:
 
 ```
-docker-compose run web bash
+docker compose run web bash
 rake blacklight:clear_tables
 ```
 
 - Or, if you are using Rails 5.1 or later, you should use the rails command instead:
 
 ```
-docker-compose run web bash
+docker compose run web bash
 rails blacklight:clear_tables
 ```
 
@@ -224,8 +234,8 @@ Visual regression testing is done via [percy.io](https://percy.io/UCLA-Library-S
 
 If you need to rebuild the docker image (for example, if packages were added to the Gemfile), run:
 
-1. `docker-compose pull`
-1. `docker-compose up --build`
+1. `docker compose pull`
+1. `docker compose up --build`
 
 ### OAI
 
