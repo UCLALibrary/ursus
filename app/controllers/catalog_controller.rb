@@ -390,10 +390,8 @@ class CatalogController < ApplicationController
 
     # First sort by "exists", always descending, so that any records where the field is not 
     # populated move to the back.
-    config.add_sort_field 'exists(sort_title_tsort) desc, ' \
-                          'sort_title_tsort asc', label: 'Title (A-Z)'
-    config.add_sort_field 'exists(sort_title_tsort) desc, ' \
-                          'sort_title_tsort desc', label: 'Title (Z-A)'
+    config.add_sort_field 'exists(sort_title_tsort) desc, sort_title_tsort asc', label: 'Title (A-Z)'
+    config.add_sort_field 'exists(sort_title_tsort) desc, sort_title_tsort desc', label: 'Title (Z-A)'
 
     config.add_sort_field 'date_dtsort desc', label: 'Date (newest)'
     config.add_sort_field 'date_dtsort asc', label: 'Date (oldest)'
