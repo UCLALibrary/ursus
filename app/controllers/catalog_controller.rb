@@ -249,6 +249,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'electronic_locator_ss', label: 'External item record' # Secondary / Button
     # Primary / Item Overview
     config.add_show_field 'engraver_tesim', label: 'Engraver', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
+    config.add_show_field 'explicit_tesim', label: 'Explicit' # Primary / Item Overview
     config.add_show_field 'extent_tesim', label: 'Extent' # Primary / Physical description
     config.add_show_field 'features_tesim', label: 'Features', link_to_facet: 'features_sim' # Primary / Physical description
     config.add_show_field 'finding_aid_url_ssm', label: 'Finding aid url' # Secondary / Find This Item
@@ -272,6 +273,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'illuminator_tesim', label: 'Illuminator', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'illustrations_note_tesim', label: 'Illustrations note' # Primary / Physical description
     config.add_show_field 'illustrator_tesim', label: 'Illustrator', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
+    config.add_show_field 'incipit_tesim', label: 'Incipit' # Primary / Item Overview
     config.add_show_field 'inscription_tesim', label: 'Inscription' # Primary / Item Overview
     config.add_show_field 'interviewee_tesim', label: 'Interviewee', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
     config.add_show_field 'interviewer_tesim', label: 'Interviewer', link_to_facet: 'combined_names_ssim' # Primary / Item Overview
