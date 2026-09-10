@@ -14,4 +14,3 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 Rails.application.config.assets.precompile << %w[ursus.css]
 Rails.application.config.assets.precompile << %w[sinai.css]
-Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/

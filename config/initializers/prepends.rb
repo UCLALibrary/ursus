@@ -1,3 +1,6 @@
 # frozen_string_literal: true
-CatalogHelper.send(:prepend, Blacklight::FacetLabelButtonBehavior)
-Blacklight::BlacklightHelperBehavior.send(:prepend, Blacklight::UrsusLayoutHelperBehavior)
+
+Rails.application.config.to_prepare do
+	Ursus::CatalogHelper.prepend(Blacklight::FacetLabelButtonBehavior)
+	Blacklight::BlacklightHelperBehavior.prepend(Blacklight::UrsusLayoutHelperBehavior)
+end
