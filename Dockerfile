@@ -1,21 +1,26 @@
-FROM ruby:2.7
+FROM ruby:3.4-bookworm
 
-RUN gem install bundler -v 2.4.22
+RUN gem install bundler -v 2.6.9
 
-RUN apt-get update -qq
-# Add https support to apt to download yarn & newer node
-RUN apt-get install -y  apt-transport-https
-
-# Add yarn repo and install along with other rails deps
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update -qq
-RUN apt-get install mariadb-client build-essential libpq-dev yarn nodejs chromium-driver libatk-bridge2.0-0 libgtk-3.0 -y
+RUN apt-get update -qq \
+	&& apt-get install --no-install-recommends -y \
+		build-essential \
+		chromium \
+		chromium-driver \
+		libatk-bridge2.0-0 \
+		libgtk-3-0 \
+		libmariadb-dev \
+		libpq-dev \
+		mariadb-client \
+		nodejs \
+		npm \
+	&& npm install --global yarn@1.22.22 \
+	&& rm -rf /var/lib/apt/lists/*
 
 WORKDIR /ursus
 
 # Install Ruby Gems
-ENV BUNDLE_PATH /usr/local/bundle
+ENV BUNDLE_PATH=/usr/local/bundle
 COPY Gemfile ./Gemfile
 COPY Gemfile.lock ./Gemfile.lock
 RUN bundle install
