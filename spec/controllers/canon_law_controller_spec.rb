@@ -6,6 +6,8 @@ require 'rails_helper'
 RSpec.describe CanonLawController, type: :controller do
   describe "GET #canonlaw" do
     it "returns http success" do
+      allow(Flipflop).to receive(:sinai?).and_return(false)
+
       get :index
       expect(response).to have_http_status(:success)
     end
