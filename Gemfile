@@ -7,14 +7,13 @@ git_source(:github) do |repo_name|
 end
 
 gem 'blacklight', '~> 8.8'
-gem 'blacklight-access_controls',  git: 'https://github.com/projectblacklight/blacklight-access_controls', branch: 'rails7_ruby3_blacklight8_upgrade'
+gem 'blacklight-access_controls',  git: 'https://github.com/projectblacklight/blacklight-access_controls', branch: 'main'
 gem 'blacklight-gallery', '~> 4.8'
 gem 'blacklight_dynamic_sitemap', '~> 0.6.0'
 gem 'blacklight_oai_provider',  git: 'https://github.com/projectblacklight/blacklight_oai_provider', branch: 'update-to-bl-8.x'
 gem 'blacklight_range_limit', '~> 8.5.0'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'coveralls', '>= 0.8.23', require: false
-gem 'date', '3.0.3' # pin to version on RHEL 8 servers
 gem 'devise', '>= 4.7.1'
 gem 'devise-guests', '~> 0.7', '>= 0.7.0'
 gem 'dotenv-rails', '>= 2.7.5'
@@ -25,45 +24,46 @@ gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
 gem 'loofah', '>= 2.4.0'
 gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
-gem 'puma', '~> 5.5' # app server
-gem 'rails', '~> 6.1'
+gem 'puma', '~> 7.0' # app server
+gem 'rails', '~> 8.1'
 gem 'rails_autolink'
 gem 'rollbar' # Error reporting tool
 gem 'rsolr', '>= 1.0'
 gem 'sassc-rails', '>= 2.1.2' # SASS -> CSS compiler
-gem 'sidekiq', '~> 6.4'
+gem 'sidekiq', '~> 8.0'
 gem 'solrizer', '>= 4.1.0'
-gem 'sprockets', '>= 3.7.2', '< 4'
+gem 'sprockets', '>= 4.2', '< 5'
 gem 'terser'
-gem 'timeout', '0.1.0' # pin to version on RHEL 8 servers
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'whenever', require: false
 
 group :development, :test do
-  gem 'byebug' # debugger
-  gem 'capybara', '~> 3.26' # Adds support for Capybara system testing and selenium driver
+  gem 'debug' # debugger
+  gem 'capybara', '~> 3.40' # Adds support for Capybara system testing and selenium driver
   gem 'capybara-mechanize', '>= 1.11.0'
   gem 'equivalent-xml', '>= 0.6.0'
   gem 'factory_bot_rails', '>= 5.1.1'
+  gem 'mutex_m'
+  gem 'nkf'
   gem 'rails-controller-testing', '>= 1.0.4'
   gem 'rspec-collection_matchers'
   gem 'rspec-its'
-  gem 'rspec-rails', '~> 5.0'
-  gem 'selenium-webdriver', '>= 3.142.3'
+  gem 'rspec-rails', '~> 8.0'
+  gem 'selenium-webdriver', '>= 4.0', '< 5'
   gem 'webmock'
 end
 
 group :development do
-  gem 'capistrano', '3.11.0'
+  gem 'capistrano', '~> 3.20'
   gem 'capistrano-bundler', '~> 1.3'
   gem 'capistrano-ext'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-sidekiq', '~> 2.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.7', '< 4'
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen', '~> 2.1'
   gem 'web-console', '>= 3.7.0' # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'xray-rails', '>= 0.3.2'
 end
