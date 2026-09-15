@@ -1,4 +1,4 @@
-FROM ruby:3.4-bookworm
+FROM ruby:3.3-bookworm
 
 RUN gem install bundler -v 2.6.9
 
