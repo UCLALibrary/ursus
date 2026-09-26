@@ -18,7 +18,7 @@ gem 'date', '3.0.3' # pin to version on RHEL 8 servers
 gem 'devise', '>= 4.7.1'
 gem 'devise-guests', '~> 0.7', '>= 0.7.0'
 gem 'dotenv-rails', '>= 2.7.5'
-gem 'flipflop'
+gem 'flipflop', '~> 2.7'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'httparty'
 gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
@@ -27,6 +27,7 @@ gem 'mysql2', '~> 0.5'
 gem 'pkg-config', '~> 1.1'
 gem 'puma', '~> 5.5' # app server
 gem 'rails', '~> 6.1'
+gem 'concurrent-ruby', '1.1.10'
 gem 'rails_autolink'
 gem 'rollbar' # Error reporting tool
 gem 'rsolr', '>= 1.0'
@@ -65,5 +66,4 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.7.0' # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'xray-rails', '>= 0.3.2'
 end
