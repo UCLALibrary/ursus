@@ -15,8 +15,6 @@
 /e2e/cypress/videos
 /e2e/build-archive.log
 /e2e/cypress/downloads
-# Ignore bundler config.
-/.bundle
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
