@@ -1,0 +1,7 @@
+# Don't use system pre-compiled gems, to work around problem
+# with nokogiri-1.12.5-x86_64-linux, which requires requires 
+# ruby version < 3.1.dev, >= 2.5, which is
+# incompatible with the current version, 3.3.12.
+# Needed on our target servers, not in local Docker dev environment.
+# See LSI-708.
+BUNDLE_FORCE_RUBY_PLATFORM: "true"
